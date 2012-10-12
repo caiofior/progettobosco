@@ -1,0 +1,71 @@
+TravelMate6460 acer
+PHP 5.3.2-1ubuntu4.9 with Suhosin-Patch (cli) (built: May  3 2011 00:43:34) 
+Copyright (c) 1997-2009 The PHP Group
+Zend Engine v2.3.0, Copyright (c) 1998-2010 Zend Technologies
+    with Suhosin v0.9.29, Copyright (c) 2007, by SektionEins GmbH
+
+9 ore 30 giugno 
+lunedi
+martedi
+giovedi
+sabato
+Floreanini
+0464578518
+
+[PHP modules]
+bcmath
+bz2
+calendar
+Core
+ctype
+date
+dba
+dom
+ereg
+exif
+fileinfo
+filter
+ftp
+gd
+gettext
+hash
+iconv
+json
+libxml
+mbstring
+mcrypt
+mhash
+mysql
+mysqli
+openssl
+pcntl
+pcre
+PDO
+pdo_mysql
+pdo_pgsql
+pgsql
+Phar
+posix
+readline
+Reflection
+session
+shmop
+SimpleXML
+soap
+sockets
+SPL
+standard
+suhosin
+sysvmsg
+sysvsem
+sysvshm
+tokenizer
+wddx
+xml
+xmlreader
+xmlwriter
+zip
+zlib
+
+
+Postgre 8.4.8

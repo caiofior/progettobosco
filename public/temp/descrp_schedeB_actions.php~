@@ -1,0 +1,87 @@
+<?
+// controllo inserimento valori di codice e particella derivanti da descrp.php
+if (isset($_REQUEST["particella"])){
+	if ($_REQUEST["proprieta"] == '-1' or $_REQUEST["particella"] == '-1') {
+		$proprieta= $_REQUEST["proprieta"];
+		$particella= $_REQUEST["particella"];
+		echo 'Attenzione! Errore inserimento ';
+		die("bosco = $proprieta e particella = $particella. <br />Tornare in 'Descrizione Particellare'.");
+	}
+}
+elseif ($_REQUEST["proprieta"] == '-1' ) {
+	$proprieta= $_REQUEST["proprieta"];
+	echo 'Attenzione! Errore inserimento ';
+	die("bosco = $proprieta. <br />Tornare in 'Descrizione Particellare'.");
+}
+
+// -----------------------------------------------------------------------------
+
+// cancellazione di una particella inserita nella scheda_a, con l'ancora href='?page=descrp&delete=$proprieta&particella=$particella'
+if( isset($_GET['delete']) ) {
+	$proprieta 	= $_GET['proprieta'] ;
+	$particella	= $_GET['particella'];
+	
+	list( $res , $id ) = cancellaPartB($proprieta, $particella) ;
+	list( $res1 , $id ) = cancellaPartB1($proprieta, $particella) ;
+	
+	if( $res and $res1 ) 	{die('Tornare a Descrizione Particellare');}
+	else 		echo "errore" ;
+}
+// ########################### arboree #################################################
+// cancellazione di una voce di arboree 
+if( isset($_REQUEST['delete_arboreeB1']) ) {
+	$schede		= $_REQUEST['schedB1'] ;
+	$proprieta 	= $_REQUEST['proprieta'] ;
+	$particella	= $_REQUEST['particella'];
+	$cod_coltu	= $_REQUEST['cod_coltu'];
+	list( $res , $id ) = cancellaPartB1_arboree ($proprieta, $particella, $cod_coltu) ;
+
+	unset($_REQUEST['delete_arboreeB1']) ;	
+
+	if( !$res ) echo "errore" ;
+}
+// ###########################   #################################################
+// ########################### arbusti #################################################
+// cancellazione di una voce di arbusti 
+if( isset($_REQUEST['delete_arbuB1']) ) {
+	$schede		= $_REQUEST['schedB1'] ;
+	$proprieta 	= $_REQUEST['proprieta'] ;
+	$particella	= $_REQUEST['particella'];
+	$cod_coltu	= $_REQUEST['cod_coltu'];
+	list( $res , $id ) = cancellaPartB1_arbu ($proprieta, $particella, $cod_coltu) ;
+
+	unset($_REQUEST['delete_arbuB1']) ;	
+
+	if( !$res ) echo "errore" ;
+}
+// ###########################   #################################################
+// ########################### erbacee #################################################
+// cancellazione di una voce di arbusti 
+if( isset($_REQUEST['delete_erbaB1']) ) {
+	$schede		= $_REQUEST['schedB1'] ;
+	$proprieta 	= $_REQUEST['proprieta'] ;
+	$particella	= $_REQUEST['particella'];
+	$cod_coltu	= $_REQUEST['cod_coltu'];
+	list( $res , $id ) = cancellaPartB1_erba ($proprieta, $particella, $cod_coltu) ;
+
+	unset($_REQUEST['delete_erbaB1']) ;	
+
+	if( !$res ) echo "errore" ;
+}
+// ###########################   #################################################
+// ########################### note singole voci #################################################
+// cancellazione di una particella inserita nella scheda_a, con l'ancora href='?page=descrp&delete=$proprieta&particella=$particella'
+if( isset($_REQUEST['delete_noteB1']) ) {
+	$schede		= $_REQUEST['schedB1'] ;
+	$proprieta 	= $_REQUEST['proprieta'] ;
+	$particella	= $_REQUEST['particella'];
+	$cod_nota	= $_REQUEST['cod_nota'];
+	list( $res , $id ) = cancellaPartB1_note ($proprieta, $particella, $cod_nota) ;
+
+	unset($_REQUEST['delete_noteB1']) ;	
+
+	if( !$res ) echo "errore" ;
+	
+}
+
+?>

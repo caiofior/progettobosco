@@ -1,0 +1,3 @@
+<?php
+$azione = $_GET ['scheda']
+?>
