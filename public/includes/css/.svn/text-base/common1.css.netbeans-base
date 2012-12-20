@@ -127,7 +127,7 @@ div#header {
 	margin-right:auto;
 }
 div#isafa {
-	background-image: url(../images/isafa1.png);
+	background-image: url("/DEV/includes/images/isafa1.png");
 	background-repeat: no-repeat;
   	background-position: top left;
 	width: 70px;
@@ -136,7 +136,7 @@ div#isafa {
 	/*//margin-left: 70px;*/
 }
 div#logo {
-	background-image: url(../images/logo2.png);
+	background-image: url("/DEV/includes/images/logo2.png");
 	background-repeat: no-repeat;
   	background-position: top left;
 	width: 354px;
@@ -151,7 +151,7 @@ div#line{
   
 }
 div#iss {
-	background-image: url(../images/iss1.png);
+	background-image: url("/DEV/includes/images/iss1.png");
 	background-repeat: no-repeat;
   	background-position: top left;
 	width: 70px;
@@ -208,7 +208,7 @@ a.nav_bar_selected {
 
 /* --------------- DIV#HOME.pagina ---------------  */
 div#home {
-	background-image: url(../images/regioni_11-1.png);
+	background-image: url("/DEV/includes/images/regioni_11-1.png");
 	background-repeat: no-repeat;
   	background-position: 120px 0;
 	margin: auto;
@@ -405,31 +405,31 @@ a.daticat_button{
 	background:  #FFFFFF ;
 	line-height: 1em;
 }
-div#home a#bosco {background: url(../images/bosco.png) no-repeat;}
+div#home a#bosco {background: url("/DEV/includes/images/bosco.png") no-repeat;}
 a#edp {
-	background: url(../images/edp.png) no-repeat;
+	background: url("/DEV/includes/images/edp.png") no-repeat;
 	line-height: 1em;
 }
-a#tavole {background: url(../images/tavole.png) no-repeat;}
-a#descrp {background: url(../images/descrp.png) no-repeat;}
-a#comprese {background: url(../images/comprese.png) no-repeat;}
-a#dizionari {background: url(../images/dizionari.png) no-repeat;}
-a#daticat {background: url(../images/daticat.png) no-repeat;}
+a#tavole {background: url("/DEV/includes/images/tavole.png") no-repeat;}
+a#descrp {background: url("/DEV/includes/images/descrp.png") no-repeat;}
+a#comprese {background: url("/DEV/includes/images/comprese.png") no-repeat;}
+a#dizionari {background: url("/DEV/includes/images/dizionari.png") no-repeat;}
+a#daticat {background: url("/DEV/includes/images/daticat.png") no-repeat;}
 a#spazio {}
-a#strumenti {background: url(../images/strumenti.png) no-repeat;}
-a#rildend {background: url(../images/rildend.png) no-repeat;}
+a#strumenti {background: url("/DEV/includes/images/strumenti.png") no-repeat;}
+a#rildend {background: url("/DEV/includes/images/rildend.png") no-repeat;}
 a#elabdp {
-	background: url(../images/elabdp.png) no-repeat;
+	background: url("/DEV/includes/images/elabdp.png") no-repeat;
 	line-height: 1em;
 }
-a#gsta {background: url(../images/gsta.png) no-repeat;}
-a#viab {background: url(../images/viab.png) no-repeat;}
-a#piano {background: url(../images/piano.png) no-repeat;}
-a#decod {background: url(../images/codschede.png) no-repeat;}
+a#gsta {background: url("/DEV/includes/images/gsta.png") no-repeat;}
+a#viab {background: url("/DEV/includes/images/viab.png") no-repeat;}
+a#piano {background: url("/DEV/includes/images/piano.png") no-repeat;}
+a#decod {background: url("/DEV/includes/images/codschede.png") no-repeat;}
 a#menu_princ {
 	height: 15px;
 	width: 120px;
-	background: url(../images/menu.png) no-repeat;
+	background: url("/DEV/includes/images/menu.png") no-repeat;
 	color:  #FFFFFF;
 	margin-left: 40%;
 }
@@ -489,7 +489,7 @@ a.dizionari_picture {
 	height: 50px;
 	float: left;
 	font-weight: bold;
-	background: url(../images/dizionari_picture.png) no-repeat;
+	background: url("/DEV/includes/images/dizionari_picture.png") no-repeat;
 }
 
 a#viab_button{
@@ -608,7 +608,7 @@ div#descrp_schede div.bottone_alto {
 	height: 40px;}
 div.mod_ins{	float: left; 
 	display: block;
-	background-image: url(../images/big-button-bg1.gif);
+	background-image: url("/DEV/includes/images/big-button-bg1.gif");
 	background-repeat: no-repeat;
   	background-position: top left;
 	width: 130px;	
@@ -633,7 +633,7 @@ div#cancella {	float: left;
 	width: 130px;
 	height: 40px;
 	background: #808080 ;  /*// #008080;*/
-	background-image: url(../images/big-button-bg2.gif);
+	background-image: url("/DEV/includes/images/big-button-bg2.gif");
 	background-repeat: no-repeat;
   	background-position: top left;
 	text-align:center;}
