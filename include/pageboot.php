@@ -1,7 +1,10 @@
 <?php
 // include functions
-	require(__DIR__.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR.'pb_base'.DIRECTORY_SEPARATOR.'functions.php') ;
-        require(__DIR__.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR.'pb_base'.DIRECTORY_SEPARATOR.'insert_update.php') ;
+        set_include_path(get_include_path().PATH_SEPARATOR.'/usr/share/php/libzend-framework-php');
+
+        require('Zend'.DIRECTORY_SEPARATOR.'Loader.php');
+	require(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR.'pb_base'.DIRECTORY_SEPARATOR.'functions.php') ;
+        require(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR.'pb_base'.DIRECTORY_SEPARATOR.'insert_update.php') ;
 
 // connession pg
 	  $dbname="progettobosco15-05-11"; //progettobosco28-09-10 dumpSboarina  pietrabbondante
