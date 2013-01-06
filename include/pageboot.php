@@ -10,30 +10,26 @@
 	  $dbname="progettobosco15-05-11"; //progettobosco28-09-10 dumpSboarina  pietrabbondante
 	  $conn=pg_Connect( "host=localhost user=postgres password=postgres dbname=$dbname" ) or die("Impossibile collegarsi al server");
 	  if(!$conn){die("Impossibile connettersi al database $dbname");}
+          Zend_Loader::loadClass('Zend_View');
+          $view = new Zend_View(array(
+              'basePath' => __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'views'
+              
+          ));
+          $view->blocks = array(
+                'HEADERS' => 'general'.DIRECTORY_SEPARATOR.'header.php',
+                'CONTENT' => 'content'.DIRECTORY_SEPARATOR.'index.php'
+              );
+          echo $view->render('main.php');
+          exit;
 
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it"> 
 	<head> 
-		<meta name="Author" content="Chiara Lora" />
-		
-		<meta http-equiv="Content-Language" content="it" /> 
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>Progetto Bosco DEV</title>
-
-		<link href="includes/css/common1.css" rel="stylesheet" type="text/css" />
-		<link rel="shortcut icon" href="includes/images/favicon.ico" type="image/ico" />
-		<script src="includes/js/mootools.core.js" type="text/javascript"></script>
-		<script src="includes/js/default.js" type="text/javascript"></script>
-
 	</head>
 
 	<body class="body"> 
 <?php
 	$page = '' ;
-	echo "<div id='header'>\n";
-	echo "<div id='isafa'></div> <a href='?page=main'><div id='logo'></div></a> <div id='iss'></div>\n";
-	echo "</div>\n";
-	echo "<div id='line'></div>\n";
       if( isset($_REQUEST['page']) and $_REQUEST['page'] != 'main' ) {
 	
 		$menu = array() ;
