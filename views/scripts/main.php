@@ -15,6 +15,21 @@
 	<div id='isafa'></div> <a href='?page=main'><div id='logo'></div></a> <div id='iss'></div>
 	</div>
 	<div id='line'></div>
-        <?php if(is_file(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'blocks'.DIRECTORY_SEPARATOR.$this->blocks['CONTENT'])) require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'blocks'.DIRECTORY_SEPARATOR.$this->blocks['CONTENT']; ?>
+        <?php if (
+                key_exists('CONTENT', $this->blocks) && 
+                is_string($this->blocks['CONTENT'])  && 
+                is_file(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'blocks'.DIRECTORY_SEPARATOR.$this->blocks['CONTENT'])
+                ) require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'blocks'.DIRECTORY_SEPARATOR.$this->blocks['CONTENT']; 
+        else if (
+                key_exists('CONTENT', $this->blocks) && 
+                is_array($this->blocks['CONTENT'])
+                ) {
+                    foreach($this->blocks['CONTENT'] as $content) {
+                        if (is_file(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'blocks'.DIRECTORY_SEPARATOR.$content))
+                         require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'blocks'.DIRECTORY_SEPARATOR.$content; 
+                    }
+                }
+        ?>
+        
     </body>
 </html>

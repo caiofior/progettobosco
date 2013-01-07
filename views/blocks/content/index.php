@@ -1,6 +1,6 @@
 <div id='home'>
 
-  <a class='main_button' id='bosco' href='?page=bosco'>Bosco</a>
+  <a class='main_button' id='bosco' href='bosco.php'>Bosco</a>
   
   <a class='main_button' id='edp' href='?page=descrp'>Elaborazione descrizioni particellari</a>
 
