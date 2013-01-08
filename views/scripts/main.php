@@ -12,7 +12,7 @@
     </head>
     <body class="body">
         <div id='header'>
-	<div id='isafa'></div> <a href='?page=main'><div id='logo'></div></a> <div id='iss'></div>
+	<div id='isafa'></div> <a href='<?php echo $GLOBALS['BASE_URL'];?>'><div id='logo'></div></a> <div id='iss'></div>
 	</div>
 	<div id='line'></div>
         <?php if (
