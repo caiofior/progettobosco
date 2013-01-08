@@ -2,11 +2,11 @@
 
   <a class='main_button' id='bosco' href='bosco.php'>Bosco</a>
   
-  <a class='main_button' id='edp' href='descrp.php'>Elaborazione descrizioni particellari</a>
+  <a class='main_button' id='edp' href='?page=descrp'>Elaborazione descrizioni particellari</a>
 
   <a class='main_button' id='tavole' href='?page=tavole'>Tavole di cubatura</a>
 
-  <a class='main_button' id='descrp' href='?page=descrp'>Descrizioni particellari</a>
+  <a class='main_button' id='descrp' href='descrp.php'>Descrizioni particellari</a>
 
   <a class='main_button' id='comprese' href='?'>Comprese/Classi colturali</a>
 

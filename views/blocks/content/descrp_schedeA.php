@@ -1,8 +1,7 @@
 <?php 
 if(   isset($_REQUEST['schedaA']) ) 	{/* isset($_POST['scheda'])*/
 
-	// inserisco controlli e azioni relativi alla scheda_a
-	include('descrp_schedeA_actions.php') ;
+
 	//assegnazione della variabili del form precedente
 	$proprieta = $_REQUEST["proprieta"];
 	$particella = $_REQUEST["particella"];

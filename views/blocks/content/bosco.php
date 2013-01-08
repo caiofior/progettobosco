@@ -12,10 +12,12 @@
 		<form action="#" method='post'>
 		<tr><td><select name='regione'>
 			<option selected='selected' value='-2' >...</option>
-			<?foreach ($ids as $idd){
-				$selected1 =($idd->descriz == $codice->descriz)? 'selected' : ''; 
-				echo "<option value='$idd->codice' $selected1> $idd->descriz ($idd->codice)</option>\n";
-			}?>
+			<?foreach ($ids as $idd) :
+				$selected1 =($idd->descriz == $codice->descriz)? 'selected' : ''; ?>
+				<option value='<?php echo $idd->codice; ?>' <?php echo $selected1; ?>>
+                                    <?php echo $idd->descriz; ?> (<?php echo $idd->codice; ?>)
+                                </option>
+			<?php endforeach; ?>
 		</select></td>
 
 		<td><input type='text' name='codice' value='<?php echo $codice->codice?>' ></td>
@@ -30,9 +32,12 @@
 	<form  name='bosco_form' action="#" method="post">   <!-- FORM x gestire i campi a compilazione dell'utente (regione, codice, descrizIONE) -->
 		<tr><td><select id='bosco_select' name='regione1' onChange='javascript:bosco_regione();'> 
 		<?php	echo "<option selected='selected' value='-1' >bosco...</option>\n";
-			foreach( $ids as $id ) { 
-				$selected = ( !isset($_POST['insert']) and isset($_POST['regione1']) and $_POST['regione1'] == $id->codice )? 'selected' : ' ' ;
-				echo "<option value='$id->codice' $selected> $id->descriz ($id->codice)</option>\n";}
+			foreach( $ids as $id ) : 
+				$selected = ( !isset($_POST['insert']) and isset($_POST['regione1']) and $_POST['regione1'] == $id->codice )? 'selected' : ' ' ; ?>
+				<option value='<?php echo $id->codice; ?>' <?php echo $selected; ?>>
+                                    <?php echo $id->descriz ?>(<?php echo $id->codice; ?>)
+                                </option>
+s                        <?php endforeach;
 			$id = ( isset($_POST['regione1']) ) ? $_POST['regione1'] : '-1' ;?>
 		  </select></td>
 		  <td><input TYPE="text" NAME="codice1" VALUE="<?if ( !isset($_POST['insert']) and isset($_POST['regione1'])): echo $id; endif;?>"></td>
