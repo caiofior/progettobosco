@@ -51,7 +51,7 @@
 </tbody>
 
 
-<!--<table>
+<table>
   <tbody>
     <tr>
     <form action="insdendr.php" method="get"> 
@@ -60,7 +60,7 @@
     <?
     $rows = getCodiciBoschi();
     foreach ($rows as $row){
-   // echo "<option value= '".$row->codice."'>".$row->codice." ".$row->descrizion."</option>\n";
+        echo "<option value= '".$row->codice."'>".$row->codice." ".$row->descrizion."</option>\n";
     }
 
     ?>
@@ -97,7 +97,7 @@
  dati dendrometrici"></form>
     </td></tr>
 </tbody>
-  </TABLE>-->
+  </TABLE>
   </td>
   </tr>
 </table>

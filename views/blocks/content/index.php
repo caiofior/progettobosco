@@ -18,13 +18,13 @@
 
   <a class='main_button' id='strumenti' href='?'>Strumenti</a>
 
-  <a class='main_button' id='rildend' href='?page=rildend'>Rilievi dendrometrici</a>
+  <a class='main_button' id='rildend' href='<?php echo $GLOBALS['BASE_URL'];?>rildend.php'>Rilievi dendrometrici</a>
 
   <a class='main_button' id='elabdp' href='?'>Elaborazione dati dendrometrici</a>
 
   <a class='main_button' id='gsta' href='?'>Gestione stampe</a>
 
-  <a class='main_button' id='viab' href='?page=viabilita'>Descrizioni viabilità</a>
+  <a class='main_button' id='viab' href='viabilita.php'>Descrizioni viabilità</a>
 
   <a class='main_button' id='piano' href='?'>Piano degli interventi</a>
 

@@ -29,7 +29,7 @@
 	  $strada = ( isset($_POST['strada'])) ? $_POST['strada']: 'null';
       ?>
 
-	  <tr><td colspan="2"><a id='viab_button' href='?page=viabilita&scheda=viab&codice=<?php echo $codice?>&strada=<?php echo $strada?>'>Schede E</a></td></tr>
+	  <tr><td colspan="2"><a id='viab_button' href='?scheda=viab&codice=<?php echo $codice?>&strada=<?php echo $strada?>'>Schede E</a></td></tr>
 	</table>
 
 </form>
