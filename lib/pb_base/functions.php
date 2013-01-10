@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * @author Chiara Lora <chiara.lora@gmail.com>
+ * @copyright CRA
+ * Main Functions
+ */
 function redirect( $url ) {
 	if (!headers_sent()) {
 		header('Location: '.$url);
@@ -935,4 +939,4 @@ function array_to_object($array = array()) {
     }
     return false;
 }
-?>
+

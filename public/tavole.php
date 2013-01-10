@@ -2,10 +2,13 @@
 /**
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Dati catastali page contoller
+ * Tavole dendrometriche page contoller
  */
 require (__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'include'.DIRECTORY_SEPARATOR.'pageboot.php');
 $message = '';
+$content = 'content'.DIRECTORY_SEPARATOR.'tavole.php';
+if (isset( $_REQUEST['scheda'] ) )  
+    $content = 'content'.DIRECTORY_SEPARATOR.'tavole_modify.php';
 $view = new Zend_View(array(
     'basePath' => __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'views'
 
@@ -16,7 +19,7 @@ $view->blocks = array(
       'HEADERS' => 'general'.DIRECTORY_SEPARATOR.'header.php',
       'CONTENT' => array(
           'general'.DIRECTORY_SEPARATOR.'menu.php',
-          'content'.DIRECTORY_SEPARATOR.'daticat.php'
+          $content
       ),
       'FOOTER' => 'general'.DIRECTORY_SEPARATOR.'footer.php',
     );

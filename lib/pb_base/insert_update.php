@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * @author Chiara Lora <chiara.lora@gmail.com>
+ * @copyright CRA
+ * Save and modufy functions
+ */
 //-- Schede_a ----------------------------------------------------
 
 // ------------ formA2 --------------------------
@@ -316,4 +320,3 @@ function cancellaPart_note ($proprieta, $particella, $cod_nota, $scheda){
 	//echo "<b><i>'Cancellazione note' di bosco ($proprieta) $particella avvenuta con successo.</i></b><br />";
 	return array(($res),null) ;
 }
-?>

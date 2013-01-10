@@ -582,9 +582,9 @@ file
 
 
 
+replace
 
-2010-06-24T08:29:18.000000Z
-52eb5b916ab7258e1fc19e28372bda0e
+c2357d39b56127e44263221c8cd13588
 2011-03-22T00:02:15.630811Z
 2
 chiara
@@ -596,27 +596,16 @@ has-props
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-7412
+copied
+http://code.fabiocannioto.eu/svn/fabiocannioto/progettobosco/trunk/trunk/includes/images/isafa1.png
+18
 
 isafa1.png
 file
 18
 
 
-
+delete
 2011-05-04T14:24:04.000000Z
 c2357d39b56127e44263221c8cd13588
 2011-05-04T16:05:24.255870Z
@@ -650,9 +639,9 @@ file
 
 
 
+replace
 
-2010-06-24T08:29:18.000000Z
-d8d7045a4649f85e0c592b08f7fc01cc
+c4ec12658861fa22bfd7b3d3f2d28896
 2011-03-22T00:02:15.630811Z
 2
 chiara
@@ -664,27 +653,16 @@ has-props
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-7626
+copied
+http://code.fabiocannioto.eu/svn/fabiocannioto/progettobosco/trunk/trunk/includes/images/iss1.png
+18
 
 iss1.png
 file
 18
 
 
-
+delete
 2011-05-04T14:25:49.000000Z
 c4ec12658861fa22bfd7b3d3f2d28896
 2011-05-04T16:05:24.255870Z
@@ -718,9 +696,9 @@ file
 
 
 
+replace
 
-2010-06-24T08:29:18.000000Z
-aed728de6b825daaac221f9100061a8f
+8ef68cd08a6ea458c11ca1c1df8e0a72
 2011-03-22T00:02:15.630811Z
 2
 chiara
@@ -732,27 +710,16 @@ has-props
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-5755
+copied
+http://code.fabiocannioto.eu/svn/fabiocannioto/progettobosco/trunk/trunk/includes/images/logo2.png
+18
 
 logo1.png
 file
 18
 
 
-
+delete
 2011-05-04T14:27:24.000000Z
 e070517760ad340ca8560f393d72775e
 2011-05-04T16:05:24.255870Z
@@ -786,7 +753,7 @@ file
 18
 
 
-
+delete
 2011-05-04T14:40:35.000000Z
 8ef68cd08a6ea458c11ca1c1df8e0a72
 2011-05-04T16:05:24.255870Z
@@ -888,7 +855,7 @@ file
 18
 
 
-
+delete
 2011-05-04T14:56:04.000000Z
 84723ed327fa6d7af674533de3c93807
 2011-05-04T16:05:24.255870Z
@@ -922,9 +889,9 @@ file
 
 
 
+replace
 
-2010-06-24T08:29:18.000000Z
-58a8f5237fd21902f142ac7c106ccda1
+84723ed327fa6d7af674533de3c93807
 2011-03-22T00:02:15.630811Z
 2
 chiara
@@ -936,20 +903,9 @@ has-props
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-4224
+copied
+http://code.fabiocannioto.eu/svn/fabiocannioto/progettobosco/trunk/trunk/includes/images/regioni_11-1.png
+18
 
 rildend.png
 file

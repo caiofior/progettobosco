@@ -1,1 +1,1 @@
-<title>Progetto Bosco DEV</title>
+<title>Progetto Bosco</title>

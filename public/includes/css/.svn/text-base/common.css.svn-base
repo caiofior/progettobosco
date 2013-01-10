@@ -4,6 +4,7 @@
 }
 html{
 }
+/* --------------- GENERALE ---------------  */
 a:link {
 	text-decoration:none; 
 	color:#000000;
@@ -23,7 +24,7 @@ body{
 	font-size: .8em;
 	word-spacing: normal;
 	line-height: 1.7em;
-	background: #008080	; /*#808080 #B2E0E0  azzurro chiarochiaro!! molto meglio*/
+	background: 	#808080; /*#B2E0E0  azzurro chiarochiaro!! molto meglio#008080*/
 /* 	margin: 10px 0 0 10px ; */
 	margin-left:auto;
 	margin-right:auto;
@@ -46,6 +47,7 @@ body{
 	padding-left: 10px;
 	padding-right: 10px;
 }
+
 .pad_t10 { padding-top: 10px; }
 .top {vertical-align: text-top;}
 .white {color: white;}
@@ -75,7 +77,7 @@ table.descrp {border: none;}
 .descrp td { padding: 5px;	border: none; }
 .descrp tr {border: none;}
 
-table#bosco { width: 600px;}
+
 table#daticat {
 	width: 300px;
 	margin-top: 5px;}
@@ -107,15 +109,19 @@ caption  {
 }
 caption.span  { background: none; }
 caption.span span  {padding: 2px 5px 2px 5px ;	background: #000066;}
+caption.span_white span  {padding: 2px 5px 2px 5px ;
+	background: #FFFFFF;
+	color: #000066;}
 caption.span span.light_span   {background: #000099;}
 caption.vuoto  { background: none; }
 caption.vuoto span  {padding: 2px 5px 2px 5px ;}
 
+/* --------------- HEADER con loghi ---------------  */
 div#header {
 	width: 530px;
 	text-align: center;
 	height: 80px;
-	background:  #008080;
+	background: #808080 ; /*// #008080;*/
 /* 	margin-left: 200px; */
 	margin-left:auto;
 	margin-right:auto;
@@ -127,10 +133,10 @@ div#isafa {
 	width: 70px;
 	height: 80px;
 	float: left;
-	//margin-left: 70px;
+	/*//margin-left: 70px;*/
 }
 div#logo {
-	background-image: url("/DEV/includes/images/logo1.png");
+	background-image: url("/DEV/includes/images/logo2.png");
 	background-repeat: no-repeat;
   	background-position: top left;
 	width: 354px;
@@ -153,9 +159,8 @@ div#iss {
 	margin-left: 10px;
 	float: left;
 }
-div#regione {
-	font-size: .6em;
-	    }
+
+/* --------------- NAVIGATION BAR ---------------  */	    
 ul#navigatio_bar {
 	list-style-type:none;
 	padding:0;
@@ -188,7 +193,7 @@ a.nav_bar_selected {
 	height:20px;
 	font-weight:bold;
 	color:#000000;
-	background-color:#008080;
+	background-color:#808080  ;/*// #008080;*/
 	border-top: solid 1px #00FFFF;
 	border-left: solid 1px #00FFFF;
 	border-right: solid 1px #00FFFF;
@@ -200,8 +205,10 @@ a.nav_bar_selected {
 	line-height: 1em;
 }
 
+
+/* --------------- DIV#HOME.pagina ---------------  */
 div#home {
-	background-image: url("/DEV/includes/images/regioni_11.png");
+	background-image: url("/DEV/includes/images/regioni_11-1.png");
 	background-repeat: no-repeat;
   	background-position: 120px 0;
 	margin: auto;
@@ -210,10 +217,16 @@ div#home {
 	padding-top: 30px;
 }
 div#home.bosco {
+	background: #AEAEAE;
 	background-image: none;
 	width: 800px;
 	padding-top: 0;
-	min-height: 340px;
+	min-height: 200px;
+	max-height: 600px;
+	-moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-box-shadow: 0px 0px 15px #000;
+  -webkit-box-shadow: 0px 0px 15px #000;
 }
 div#home.descrp {
 	background: #AEAEAE;
@@ -236,10 +249,18 @@ div#home.descrp_schede {
   -moz-box-shadow: 0px 0px 15px #000;
   -webkit-box-shadow: 0px 0px 15px #000;
 }
-div#home.schedeA{ height: 2200px;}
-div#home.schedeB1{ height: 1600px;}
-div#home.schedeB2{ height: 1800px;}
-div#home.schedeB3{ height: 2000px;}
+/* ----------------------- altezze pagine schedaA, b1, b2... --------------------- */
+div#home.schedeA{ height: 2100px;}
+div#home.schedeB1{ 
+	height: 1750px;
+	background:#808080 ;  /*( #DBDED5 ) #008080;#ADA96E#827839;#C8BBBE*/
+	}
+div#home.schedeB2{ height: 1910px;}
+div#home.schedeB3{ height: 1800px;}
+div#home.schedeB4{ height: 1450px;}
+
+/* ----------------------- altezze altre pagine --------------------- */
+
 div#home.daticat {
 	background-image: none;
 	width: 1200px;
@@ -259,6 +280,10 @@ div#home.viabilita {
 	padding-top: 0;
 	height: 1000px;
 }
+
+/* --------------- DIV#altro ---------------  */
+div#regione { 	font-size: .6em;    }
+
 
 div.b_title {
 	padding: 10px;
@@ -296,27 +321,39 @@ div#b_title_reg {
 div#footer {
 	width: 800px;
 	height: 60px;
-	background:  #008080;
+	background: #808080 ; /*// #008080;*/
 	text-align: center;
 	margin-bottom: 20px;
 	margin-top: 50px;
 	margin-left:auto;
 	margin-right:auto;
 }
-/* per BOSCO.php */
+
+/* --------------- per BOSCO.php ---------------  */
 div#home.bosco input[type="text"] {
-	background:  #008080 ;
+	background: #808080 ; /*//#008080 ;*/
 	font-size: 0.9em;
 	color: white;
 }
 div#home.bosco select {
-	background:  #008080 ;
+	background: #808080 ;/* //  #008080 ;*/
 	font-size: 0.9em;
 	color: white;
 }
+div#home.bosco div#titolo {
+	padding: 20px;
+}
 div#home.bosco th { color: white; font-style: italic;}
-div#home.bosco  tr.back_blue th { background: #000066}
-/*  per DATI CATASTALI */
+div#home.bosco  tr.back_blue th { background: #000066;}
+div#home.bosco div#table_bosco {
+	margin-left: 150px; 
+	width: 500px;
+	height:250px;
+	overflow:auto; }
+div#home.bosco div#table_bosco table#bosco { 
+	position:relative;
+	width: 400px;}
+/* ------------------------- per DATI CATASTALI ---------------------- */
 div#daticat {
 	width: 1200px;
 	display: block;
@@ -347,10 +384,7 @@ div#daticat_top{
 	float: left;
 	border: none;
 }
-#daticat #daticat_table1 td {
-width: 100px;
-}
-
+#daticat #daticat_table1 td { width: 100px; }
 
 a.main_button {
 	display: block;
@@ -522,15 +556,6 @@ table.row{border-collapse: separate;
 	border-spacing: 3px;}
 table.row tr, table.row th { border: dotted 1px #000066;vertical-align:top;}
 
-
-table.dati_catastali{border-collapse: separate;
-	border-spacing: 3px;
-	text-align:center;}
-table.dati_catastali tr, table.dati_catastali th{ text-align:center; vertical-align: bottom;} 
-table.dati_catastali input[type="text"] { text-align:center;} 
-table.dati_catastali td.border{ border: dotted 1px #00FFFF; text-align:center;} 
-table.dati_catastali tr.span span {padding: 2px 5px 2px 5px ; background: #000099;}
-
 div#descrp_schede {
 	width: 1200px;
 	display: block;
@@ -542,19 +567,12 @@ div#centra { margin:auto;/* serve per centrare tutta la pagina rispetto ai 1200p
 /*	width:70%;*/
 	width: 1100px;
 }
-div#descrp_schede th { color: white; font-style: italic;}
-div#descrp_schede  tr.back_blue th { background: #000066}
-div#descrp_schede  tr.back_light_blue th { background: #000099}
-
-div#descrp_schede  tr.back_light_blue_top th, div#descrp_schede  tr.back_light_blue_top td {border-top:solid 1px #000099;
-				}
-div#descrp_schede  tr.back_light_blue_top th { background: #000099}
-
-
-div#descrp_schede select { background:  #008080 ;
+div#descrp_schede th { color: #000066; font-style: italic;}  /*color: #FFFFFF;*/
+div#descrp_schede  tr.back_blue th { background: #000066; color: #FFFFFF;} 
+div#descrp_schede select { background:  #808080 ; /*// #008080 ;*/
 	border-color: #000000; }
 div#descrp_schede input[type="text"] {
-	background:  #008080 ;
+	background: #808080 ;  /*//  #008080 ;*/
 	font-size: 0.9em;
 	border: none;
 	color: #000066;}
@@ -614,7 +632,7 @@ div#cancella {	float: left;
 	display: block;
 	width: 130px;
 	height: 40px;
-	background: #008080;
+	background: #808080 ;  /*// #008080;*/
 	background-image: url("/DEV/includes/images/big-button-bg2.gif");
 	background-repeat: no-repeat;
   	background-position: top left;
@@ -626,9 +644,17 @@ a.bot_descrp{
 	top: 10px;
 	position:relative;
 	}
+div.centro{
+	display: block;
+	width: 300px;
+	height: 40px;
+	margin-left:100px;
+}
+/* ------------- per la scheda A ---------------*/
+div#descrp_schede  tr.back_light_blue th { background: #000099}
+div#descrp_schede  tr.back_blue_top th, div#descrp_schede  tr.back_blue_top td {border-top:solid 1px #000066;}
+div#descrp_schede  tr.back_blue_top th { background: #000066; color: #ffffff; font-style: italic;}
 
-
-/* per la scheda A */
 div#descrp_schede div#ds_center1 {padding-bottom: 5px;	width:1100px;}
 div#descrp_schede div#ds_center1 div#ds_container1 { width: 500px;}
 div#descrp_schede div#ds_center1 div#ds_container2 { width: 250px;}
@@ -649,7 +675,14 @@ div#descrp_schede div#ds_center6 { width:1000px; }
 div#descrp_schede div#ds_center6 div#ds_container13 {width:1100px;}
 div#descrp_schede div#ds_center6 div#ds_container14 {width:1100px;}
 div#descrp_schede div#ds_center7 div#ds_container15 {width:1000px;}
-div#descrp_schede div#ds_center7 div#ds_container15 table#note_singole_a {width:1000px;
+div#descrp_schede div#ds_center7 div#ds_container15 div#div_note_singole_a {
+	width: 1010px;
+	height: 130px;}
+div#descrp_schede div#ds_center7 div#ds_container15 div#note_singole_a_int {
+	width: 1000px;
+	height: 90px;
+	overflow:auto;}	
+div#descrp_schede div#ds_center7 div#ds_container15 table#note_singole_a {
 	background: #AEAEAE; 
 	border: dotted 1px #00FFFF;
 	border-collapse: collapse;
@@ -670,7 +703,7 @@ div#descrp_schede div#ds_center7 div#ds_container15 table#note_singole_a  select
 }
 div#descrp_schede div#ds_center7 div#ds_container16 {width:1100px;}
 div#descrp_schede div#ds_center7 div#ds_container16 div#contorno_dati{height: 250px;}
-div#descrp_schede div#ds_center7 div#ds_container16 table.big_200{  width:180px; height:200px;}
+div#descrp_schede div#ds_center7 div#ds_container16 table.big_200{  width:176px; height:200px;}
 div#descrp_schede div#ds_center7 div#ds_container16 table.big_200 td.top{vertical-align:top;}
 div#descrp_schede div#ds_center8 { width: 900px; padding-bottom: 20px ;}
 div#descrp_schede div#ds_center8  div.bottone_basso { 
@@ -690,10 +723,34 @@ div#descrp_schede div#ds_center7 div#ds_container16 input.catastoA_buttom { heig
   -webkit-border-radius: 5px;
   -moz-box-shadow: 0px 0px 5px #000;
   -webkit-box-shadow: 0px 0px 5px #000;}
-
-div#descrp_schede div#contorno_dati_cat .green {background-color: #008080;}
+  
+/*div#descrp_schede div#ds_center8{ width: 1100px; b;}  */
+div#descrp_schede div#contorno_dati_cat{
+	height: 220px;
+	width: 720px;}
+div#descrp_schede div#interno_dati_cat{
+	height: 180px;
+	width: 715px;
+	overflow:auto;	}
+div#descrp_schede div#contorno_dati_cat .green {background-color: #808080 ; }/*// #008080;*/
 div#descrp_schede div#contorno_dati_cat .grey {background-color: #AEAEAE;}
 
+table#dati_catastali{border-collapse: separate;
+	border-spacing: 3px;
+	text-align:center;
+	 width: 695px;}
+table#dati_catastali tr th{ text-align:center; vertical-align: bottom;} 
+table#dati_catastali input[type="text"] { text-align:center;} 
+table#dati_catastali td.border{ border: dotted 1px #00FFFF; text-align:center;} 
+table#dati_catastali tr span {padding: 2px 5px 2px 5px ; background: #000099;}
+
+table#dati_catastali_sum {margin-left: 130px;
+	border-collapse: separate;
+	border-spacing: 3px;
+	text-align:center;}
+table#dati_catastali_sum td {width: 60px;} 
+table#dati_catastali_sum th {width: 60px;} 
+table#dati_catastali_sum td.border{ border: dotted 1px #00FFFF; text-align:center;}
 
 /* ------------------ per la scheda B1 ------------------- */
 
@@ -717,7 +774,12 @@ div#descrp_schede div#ds_center2_B1 { width: 1100px;}
 div#descrp_schede div#ds_center2_B1 div#ds_container3_B1 { width: 680px;}
 div#descrp_schede div#ds_center2_B1 div#ds_container4_B1 { width: 730px;}
 div#descrp_schede div#ds_center2_B1 div#ds_container5_B1 { width: 410px; height: 150px;}
-div#descrp_schede div#ds_center2_B1 div#ds_container5_B1 table#arboree {width: 400px; background: #AEAEAE; 
+div#descrp_schede div#ds_center2_B1 div#ds_container5_B1 div#div_arboree {width: 420px;
+	 height: 130px;}
+div#descrp_schede div#ds_center2_B1 div#ds_container5_B1 div#arboree_int{width: 400px;
+	 height: 110px;
+	overflow:auto;}
+div#descrp_schede div#ds_center2_B1 div#ds_container5_B1 table#arboree { background: #AEAEAE; 
 	border: dotted 1px #00FFFF;
 	border-collapse: collapse;
 	line-height: 1.2em;}
@@ -725,16 +787,24 @@ div#descrp_schede div#ds_center2_B1 div#ds_container5_B1 table#arboree select {b
 div#descrp_schede div#ds_center2_B1 div#ds_container5_B1 table#arboree  input[type="text"] {background: #AEAEAE;}
 div#descrp_schede div#ds_center3_B1 { width: 1050px;}
 div#descrp_schede div#ds_center3_B1 div#ds_container6_B1 { width: 700px; padding-bottom:10px;}
-div#descrp_schede div#ds_center3_B1 div#ds_container7_B1 { width: 700px; padding-bottom:10px;}
-div#descrp_schede div#ds_center3_B1 div#ds_container7_B1 div#div_arbustive{ height: 100px;}
-div#descrp_schede div#ds_center3_B1 div#ds_container7_B1 table#arbusti{ width: 300px; background: #AEAEAE; 
+div#descrp_schede div#ds_center3_B1 div#ds_container7_B1 { width: 750px; padding-bottom:10px;}
+div#descrp_schede div#ds_center3_B1 div#ds_container7_B1 div#div_arbustive{	width: 310px;
+	height: 110px;}
+div#descrp_schede div#ds_center3_B1 div#ds_container7_B1 div#arbustive_int{	width: 300px;
+	height: 90px;
+	overflow:auto;}
+div#descrp_schede div#ds_center3_B1 div#ds_container7_B1 table#arbusti{ background: #AEAEAE; 
 	border: dotted 1px #00FFFF;
 	border-collapse: collapse;
 	line-height: 1.2em;}
 div#descrp_schede div#ds_center3_B1 div#ds_container7_B1 table#arbusti select {background: #AEAEAE;}
-div#descrp_schede div#ds_center3_B1 div#ds_container8_B1 { width: 700px; padding-bottom:10px;}
-div#descrp_schede div#ds_center3_B1 div#ds_container8_B1 div#div_erbacee{ height: 100px;}
-div#descrp_schede div#ds_center3_B1 div#ds_container8_B1 table#erbacee{ width: 300px; background: #AEAEAE; 
+div#descrp_schede div#ds_center3_B1 div#ds_container8_B1 { width: 750px; padding-bottom:10px;}
+div#descrp_schede div#ds_center3_B1 div#ds_container8_B1 div#div_erbacee{ 	width: 310px;
+	height: 110px;}
+div#descrp_schede div#ds_center3_B1 div#ds_container8_B1 div#erbacee_int{ 	width: 300px;
+	height: 90px;
+	overflow:auto;}
+div#descrp_schede div#ds_center3_B1 div#ds_container8_B1 table#erbacee{ background: #AEAEAE; 
 	border: dotted 1px #00FFFF;
 	border-collapse: collapse;
 	line-height: 1.2em;}
@@ -743,13 +813,43 @@ div#descrp_schede div#ds_center3_B1 div#ds_container9_B1 { width: 1020px; paddin
 div#descrp_schede div#ds_center3_B1 div#ds_container10_B1 { width: 600px; padding-bottom:10px;}
 div#descrp_schede div#ds_center4_B1 { width: 1000px;}
 div#descrp_schede div#ds_center4_B1 div#ds_container11_B1 { width: 900px;}
-div#descrp_schede div#ds_center4_B1 div#ds_container12_B1 { width: 900px;}
-div#descrp_schede div#ds_center4_B1 div#ds_container13_B1 { width: 900px;}
-div#descrp_schede div#ds_center4_B1 div#ds_container13_B1  table#note_sing{background: #AEAEAE; 
+div#descrp_schede div#ds_center4_B1 div#ds_container12_B1 { width: 1100px;}
+div#descrp_schede div.biancoB1{ 
+	height: 18px;
+	border: dotted 1px #000000;
+	background: white;
+	margin: 10px 115px 0px 0px;
+	line-height: 1.2em; }
+div#descrp_schede div.biancoB1 p{ 
+	font-weight: bold;
+	color: #000066;}
+div#descrp_schede div#ds_center4_B1 div#ds_container12_B1 div.conifere{
+	margin-left: 100px;}
+div#descrp_schede div#ds_center4_B1 div#ds_container12_B1 div#stime_sint{
+		 width: 400px;
+		 height: 140px;}
+div#descrp_schede div#ds_center4_B1 div#ds_container14_B1 { width: 410px; height: 160px;}
+div#descrp_schede div#ds_center4_B1 div#ds_container14_B1 div#div_specie_cont {	height: 130px;	width: 430px;}
+div#descrp_schede div#ds_center4_B1 div#ds_container14_B1 div#div_specie_int {width: 420px;
+	 height: 120px;
+	overflow:auto;}
+div#descrp_schede div#ds_center4_B1 div#ds_container14_B1 table#specie {background: #AEAEAE; 
 	border: dotted 1px #00FFFF;
 	border-collapse: collapse;
-	line-height: 1.2em; 
-	 width: 880px;}
+	line-height: 1.2em;}
+div#descrp_schede div#ds_center4_B1 div#ds_container14_B1 table#specie select {background: #AEAEAE;}
+div#descrp_schede div#ds_center4_B1 div#ds_container14_B1 table#specie  input[type="text"] {background: #AEAEAE;}	 
+		 
+div#descrp_schede div#ds_center4_B1 div#ds_container13_B1 { width: 1100px;}
+div#descrp_schede div#ds_center4_B1 div#ds_container13_B1 div#div_note_sing{  width: 1010px;
+	height: 130px;}
+	div#descrp_schede div#ds_center4_B1 div#ds_container13_B1 div#note_sing_int{  width: 1000px;
+	height: 90px;
+	overflow:auto;}
+div#descrp_schede div#ds_center4_B1 div#ds_container13_B1 table#note_sing{background: #AEAEAE; 
+	border: dotted 1px #00FFFF;
+	border-collapse: collapse;
+	line-height: 1.2em; }
 div#descrp_schede div#ds_center4_B1 div#ds_container13_B1 table#note_sing input[type="text"] {
 	border: dotted 1px #00FFFF;
 	border-collapse: collapse;
@@ -766,7 +866,7 @@ div#descrp_schede div#ds_center4_B1 div#ds_container13_B1 table#note_sing select
 	margin-right: 1px;
 	font-size: .9em;
 }
-/*------------ per la scheda B2 ------------ */
+/*-------------------- per la scheda B2 -------------------- */
 
 
 div#descrp_schede div#descrp_schede_top_B2{
@@ -817,7 +917,12 @@ div#descrp_schede div#ds_center5_B2 div#ds_container10_B2 { width: 580px;
 	border:1px #00FFFF;
 	border-style:none dashed none none;
 	margin-right:5px;}
-div#descrp_schede div#ds_center5_B2 div#ds_container10_B2 table#arboree {width: 350px; background: #AEAEAE; 
+	
+div#descrp_schede div#ds_center5_B2 div#ds_container10_B2 div#arboree_cont{height: 120px;	width: 420px;}
+div#descrp_schede div#ds_center5_B2 div#ds_container10_B2 div#arboree_int{width: 410px;
+	 height: 90px;
+	overflow:auto;}	
+div#descrp_schede div#ds_center5_B2 div#ds_container10_B2 table#arboree {background: #AEAEAE; 
 	border: dotted 1px #00FFFF;
 	border-collapse: collapse;
 	line-height: 1.2em;}
@@ -828,27 +933,43 @@ div#descrp_schede div#ds_center5_B2 div#ds_container10_B2 div#ds_container10_2_B
 div#descrp_schede div#ds_center5_B2 div#ds_container10_B2 div#ds_container12_B2 {width:540px;}
 
 div#descrp_schede div#ds_center5_B2 div#ds_container11_B2 { width: 500px; }
-div#descrp_schede div#ds_center5_B2 div#ds_container11_B2 div#div_arbustive {height:130px;}
-div#descrp_schede div#ds_center5_B2 div#ds_container11_B2 table#arbusti {width: 280px; background: #AEAEAE; 
+div#descrp_schede div#ds_center5_B2 div#ds_container11_B2 div#arbustive_cont{height: 130px;	width: 320px;}
+div#descrp_schede div#ds_center5_B2 div#ds_container11_B2 div#arbustive_int{width: 300px;
+	 height: 100px;
+	overflow:auto;}	
+div#descrp_schede div#ds_center5_B2 div#ds_container11_B2 table#arbusti {background: #AEAEAE; 
 	border: dotted 1px #00FFFF;
 	border-collapse: collapse;
 	line-height: 1.2em;}
 div#descrp_schede div#ds_center5_B2 div#ds_container11_B2 table#arbusti select {background: #AEAEAE;}
 div#descrp_schede div#ds_center5_B2 div#ds_container11_B2 table#arbusti  input[type="text"] {background: #AEAEAE;}
 
-div#descrp_schede div#ds_center5_B2 div#ds_container11_B2 div#div_erbacee {height:130px;}
-div#descrp_schede div#ds_center5_B2 div#ds_container11_B2 table#erbacee {width: 280px; background: #AEAEAE; 
+
+div#descrp_schede div#ds_center5_B2 div#ds_container11_B2 div#erbacee_cont{height: 130px;	width: 320px;}
+div#descrp_schede div#ds_center5_B2 div#ds_container11_B2 div#erbacee_int{width: 300px;
+	 height: 100px;
+	overflow:auto;}	
+div#descrp_schede div#ds_center5_B2 div#ds_container11_B2 table#erbacee {background: #AEAEAE; 
 	border: dotted 1px #00FFFF;
 	border-collapse: collapse;
 	line-height: 1.2em;}
 div#descrp_schede div#ds_center5_B2 div#ds_container11_B2 table#erbacee select {background: #AEAEAE;}
 div#descrp_schede div#ds_center5_B2 div#ds_container11_B2 table#erbacee  input[type="text"] {background: #AEAEAE;}
 
+div#descrp_schede div#ds_center5_B2 div#ds_container11_B2 div#div_container6{
+	width: 250px;
+}
+div#descrp_schede div#ds_center5_B2 div#ds_container11_B2 div#div_container6 table{
+	width: 165px;
+}
+div#descrp_schede div#ds_center6_B2 div#note_cont{height: 120px;	width: 1010px;}
+div#descrp_schede div#ds_center6_B2 div#note_int{width: 1000px;
+	 height: 90px;
+	overflow:auto;}	
 div#descrp_schede div#ds_center6_B2 table#note_sing{background: #AEAEAE; 
 	border: dotted 1px #00FFFF;
 	border-collapse: collapse;
-	line-height: 1.2em; 
-	 width: 980px;}
+	line-height: 1.2em; }
 div#descrp_schede div#ds_center6_B2 table#note_sing input[type="text"] {
 	border: dotted 1px #00FFFF;
 	border-collapse: collapse;
@@ -865,7 +986,7 @@ div#descrp_schede div#ds_center6_B2 table#note_sing select {
 	margin-right: 1px;
 	font-size: .9em;
 }
-/*------------ per la scheda B3 ------------ */
+/*--------------------------- per la scheda B3 ----------------------------- */
 
 
 div#descrp_schede div#descrp_schede_top_B3{
@@ -885,20 +1006,21 @@ div#descrp_schede div#ds_center1_B3 { width: 1000px;}
 div#descrp_schede div#ds_center1_B3 div#ds_container1_B3 { width: 1000px;}
 div#descrp_schede div#ds_center1_B3 div#ds_container2_B3 { width: 850px; margin-left: 250px;}
 div.riga_schedeB3 {width:1100px;
-	border:1px #00FFFF;
+	border:2px #00FFFF;
 	border-style:dashed none none none;
 	height:2px;
 	margin-top: 25px; 
 	padding-bottom:10px;
 }
+
 div#descrp_schede div#ds_center2_B3 { width: 1000px;}
 div#descrp_schede div#ds_center2_B3 div#ds_container3_B3 {width:1100px}
 div#descrp_schede div#biancoB3{ 
 	width: 150px;
-	height: 50px;
+	height: 20px;
 	border: dotted 1px #000000;
 	background: white;
-	margin: 0px 110px 10px 0px;
+	margin: 0px 90px 10px 0px;
 	line-height: 1.2em; }
 div#descrp_schede div#biancoB3 p{ 
 	font-weight: bold;
@@ -906,7 +1028,12 @@ div#descrp_schede div#biancoB3 p{
 }
 
 div#descrp_schede div#ds_center2_B3 div#ds_container3_B3 { width: 1000px; }
-div#descrp_schede div#ds_center2_B3 div#ds_container3_B3 div#div_arbustive {width: 310px; height: 130px;}
+div#descrp_schede div#ds_center2_B3 div#ds_container3_B3 div#div_arbustive {width: 310px; 
+	height: 110px;
+	padding-top: 10px;}
+div#descrp_schede div#ds_center2_B3 div#ds_container3_B3 div#arbustive_int {width: 300px;
+	 height: 90px;
+	overflow:auto;}
 div#descrp_schede div#ds_center2_B3 div#ds_container3_B3 table#arbusti {width: 280px; background: #AEAEAE; 
 	border: dotted 1px #00FFFF;
 	border-collapse: collapse;
@@ -914,7 +1041,12 @@ div#descrp_schede div#ds_center2_B3 div#ds_container3_B3 table#arbusti {width: 2
 div#descrp_schede div#ds_center2_B3 div#ds_container3_B3 table#arbusti select {background: #AEAEAE;}
 div#descrp_schede div#ds_center2_B3 div#ds_container3_B3 table#arbusti  input[type="text"] {background: #AEAEAE;}
 
-div#descrp_schede div#ds_center2_B3 div#ds_container3_B3 div#div_erbacee {width: 310px; height: 130px;}
+div#descrp_schede div#ds_center2_B3 div#ds_container3_B3 div#div_erbacee {width: 310px; 
+	height: 110px;
+	padding-top: 10px;}
+div#descrp_schede div#ds_center2_B3 div#ds_container3_B3 div#erbacee_int {width: 300px;
+	 height: 90px;
+	overflow:auto;}
 div#descrp_schede div#ds_center2_B3 div#ds_container3_B3 table#erbacee {width: 280px; background: #AEAEAE; 
 	border: dotted 1px #00FFFF;
 	border-collapse: collapse;
@@ -922,14 +1054,24 @@ div#descrp_schede div#ds_center2_B3 div#ds_container3_B3 table#erbacee {width: 2
 div#descrp_schede div#ds_center2_B3 div#ds_container3_B3 table#erbacee select {background: #AEAEAE;}
 div#descrp_schede div#ds_center2_B3 div#ds_container3_B3 table#erbacee  input[type="text"] {background: #AEAEAE;}
 
-div#descrp_schede div#ds_center3_B3 { width: 900px;}
+div#descrp_schede div#ds_center3_B3 { width: 255px;
+	border:2px #00FFFF;
+	border-style:solid dashed none none;
+	padding-top: 10px; 
+	padding-bottom:10px;
+	margin-top: 10px}
 
 div#descrp_schede div#ds_center4_B3 { width: 1100px;}
-div#descrp_schede div#ds_center4_B3 div#ds_container5_B3 { width: 550px; 
-	border:1px #00FFFF;
-	border-style:none dashed none none;
-	margin-right:5px;}
-div#descrp_schede div#ds_center4_B3 div#ds_container5_B3 div#div_infe {width: 310px; height: 130px;}
+div#descrp_schede div#ds_center4_B3 div#ds_container5_B3 { width: 540px; 
+	border:2px #00FFFF;
+	border-style:solid dashed solid none;
+	padding-top:10px;
+	margin-right:5px;
+	padding-bottom:10px;}
+div#descrp_schede div#ds_center4_B3 div#ds_container5_B3 div#div_infe {width: 340px; height: 130px;}
+div#descrp_schede div#ds_center4_B3 div#ds_container5_B3 div#infe_int {width: 310px;
+	 height: 90px;
+	overflow:auto;}
 div#descrp_schede div#ds_center4_B3 div#ds_container5_B3 table#infestanti {width: 280px; background: #AEAEAE; 
 	border: dotted 1px #00FFFF;
 	border-collapse: collapse;
@@ -937,8 +1079,15 @@ div#descrp_schede div#ds_center4_B3 div#ds_container5_B3 table#infestanti {width
 div#descrp_schede div#ds_center4_B3 div#ds_container5_B3 table#infestanti select {background: #AEAEAE;}
 div#descrp_schede div#ds_center4_B3 div#ds_container5_B3 table#infestanti input[type="text"] {background: #AEAEAE;}
 	
-div#descrp_schede div#ds_center4_B3 div#ds_container6_B3 { width: 530px;}
-div#descrp_schede div#ds_center4_B3 div#ds_container6_B3 div#div_arboree { height:130px; width: 310px;}
+div#descrp_schede div#ds_center4_B3 div#ds_container6_B3 { width: 530px;
+	border:2px #00FFFF;
+	border-style: dashed none dashed none;
+	padding: 10px 0px 10px 10px; 
+	margin-top: 100px;}
+div#descrp_schede div#ds_center4_B3 div#ds_container6_B3 div#div_arboree { width: 310px; height:130px; }
+div#descrp_schede div#ds_center4_B3 div#ds_container6_B3 div#arboree_int {width: 300px;
+	 height: 90px;
+	overflow:auto;}
 div#descrp_schede div#ds_center4_B3 div#ds_container6_B3 table#arboree {width: 280px; background: #AEAEAE; 
 	border: dotted 1px #00FFFF;
 	border-collapse: collapse;
@@ -947,6 +1096,9 @@ div#descrp_schede div#ds_center4_B3 div#ds_container6_B3 table#arboree select {b
 div#descrp_schede div#ds_center4_B3 div#ds_container6_B3 table#arboree  input[type="text"] {background: #AEAEAE;}
 
 div#descrp_schede div#ds_center4_B3 div#ds_container6_B3 div#div_rinnovaz { height:130px; width: 310px;}
+div#descrp_schede div#ds_center4_B3 div#ds_container6_B3 div#rinnovaz_int {width: 300px;
+	 height: 90px;
+	overflow:auto;}
 div#descrp_schede div#ds_center4_B3 div#ds_container6_B3 table#rinnovaz {width: 280px; background: #AEAEAE; 
 	border: dotted 1px #00FFFF;
 	border-collapse: collapse;
@@ -955,8 +1107,16 @@ div#descrp_schede div#ds_center4_B3 div#ds_container6_B3 table#rinnovaz select {
 div#descrp_schede div#ds_center4_B3 div#ds_container6_B3 table#rinnovaz  input[type="text"] {background: #AEAEAE;}
 
 div#descrp_schede div#ds_center5_B3{ width: 1100px;}
-div#descrp_schede div#ds_center5_B3 div#ds_container7_B3 { width: 1000px; }
+div#descrp_schede div#ds_center5_B3 div#ds_container7_B3 { width: 550px; 
+	padding-top: 10px; 
+	padding-bottom:10px;}
+div#descrp_schede div#ds_center5_B3 div#ds_container7_B3 div#biancoB3{
+	margin-right: 200px;
+}
 div#descrp_schede div#ds_center5_B3 div#ds_container7_B3 div#div_albe { height:130px; width: 310px;}
+div#descrp_schede div#ds_center5_B3 div#ds_container7_B3 div#albe_int {width: 300px;
+	 height: 90px;
+	overflow:auto;}
 div#descrp_schede div#ds_center5_B3 div#ds_container7_B3 table#alberatura {width: 280px; background: #AEAEAE; 
 	border: dotted 1px #00FFFF;
 	border-collapse: collapse;
@@ -964,11 +1124,18 @@ div#descrp_schede div#ds_center5_B3 div#ds_container7_B3 table#alberatura {width
 div#descrp_schede div#ds_center5_B3 div#ds_container7_B3 select {background: #AEAEAE;}
 div#descrp_schede div#ds_center5_B3 div#ds_container7_B3 input[type="text"] {background: #AEAEAE;}
 
+div#descrp_schede div#ds_container8_B3 { width: 920px;
+ height: 100px;}
+div#descrp_schede div#ds_center6_B3{ width: 1100px;}
+div#descrp_schede div#ds_center6_B3 div#note_sing { height:130px; width: 920px;}
+div#descrp_schede div#ds_center6_B3 div#note_sing_int {width: 900px;
+	 height: 90px;
+	overflow:auto;}
 div#descrp_schede div#ds_center6_B3 table#note_sing{background: #AEAEAE; 
 	border: dotted 1px #00FFFF;
 	border-collapse: collapse;
 	line-height: 1.2em; 
-	 width: 980px;}
+	 width: 880px;}
 div#descrp_schede div#ds_center6_B3 table#note_sing input[type="text"] {
 	border: dotted 1px #00FFFF;
 	border-collapse: collapse;
@@ -978,6 +1145,120 @@ div#descrp_schede div#ds_center6_B3 table#note_sing input[type="text"] {
 	font-size: .9em;
 }
 div#descrp_schede div#ds_center6_B3 table#note_sing select {
+	border: dotted 1px #00FFFF;
+	border-collapse: collapse;
+	background:  #AEAEAE;
+	margin-left: 1px;
+	margin-right: 1px;
+	font-size: .9em;
+}
+
+/*------------ per la scheda B4 ------------ */
+
+div#descrp_schede div#descrp_schede_top_B4{
+	width: 1100px;
+	display: block;
+	float: left;
+	padding-bottom: 5px;
+}
+div#descrp_schede div#ds_title_B4 {	
+	padding: 5px;
+	color:  #780000 ;
+	font-size: 1em;
+	text-align: left;
+	font-weight: bold;
+	width: 670px;}
+div#descrp_schede div#ds_center1_B4 { width: 1000px;}
+div#descrp_schede div#ds_center1_B4 div#ds_container1_B4 { width: 1000px;}
+div#descrp_schede div#ds_center1_B4 div#ds_container2_B4 { width: 550px; margin-left: 370px;}
+div#descrp_schede div#ds_center2_B4 div.riga_schedeB4 {width:1100px;
+	border:1px #00FFFF;
+	border-style:dashed none none none;
+	height:2px;
+	margin-top: 15px; 
+	padding-bottom:10px;
+}
+div#descrp_schede div#ds_center2_B4 { width: 1100px;}
+div#descrp_schede div#ds_center2_B4 div#ds_container3_B4 {width:480px}
+div#descrp_schede div.biancoB4{ 
+	width: 350px;
+	height: 25px;
+	border: dotted 1px #000000;
+	background: white;
+	margin: 10px 110px 5px 0px;
+	line-height: 1.2em; }
+div#descrp_schede div.biancoB4 p{ 
+	font-weight: bold;
+	color: #000066; }
+div#descrp_schede div#ds_center2_B4 div#ds_container3_B4 div#arboree{width: 480px;
+	height: 130px;}
+div#descrp_schede div#ds_center2_B4 div#ds_container3_B4 div#arboree_int{width: 430px;
+	height: 100px; 
+	overflow:auto; }
+div#descrp_schede div#ds_center2_B4 div#ds_container3_B4 table#arboree {width: 410px; background: #AEAEAE; 
+	border: dotted 1px #00FFFF;
+	border-collapse: collapse;
+	line-height: 1.2em; }
+div#descrp_schede div#ds_center2_B4 div#ds_container3_B4 table#arboree select {background: #AEAEAE;}
+div#descrp_schede div#ds_center2_B4 div#ds_container3_B4 table#arboree  input[type="text"] {background: #AEAEAE;}
+
+div#descrp_schede div#ds_center2_B4 div#ds_container4_B4 {width:550px;
+	margin-top: 50px;
+	padding-left: 40px;
+	border:2px #00FFFF;
+	border-style: none none  none dotted;}
+div#descrp_schede div#ds_center2_B4 div#ds_container4_B4 div#arboree_b {width: 480px;
+	height: 130px;}
+div#descrp_schede div#ds_center2_B4 div#ds_container4_B4 div#arboree_b_int {width: 430px;
+	height: 100px; 
+	overflow:auto;}
+div#descrp_schede div#ds_center2_B4 div#ds_container4_B4 table#arboree_b {width: 410px; background: #AEAEAE; 
+	border: dotted 1px #00FFFF;
+	border-collapse: collapse;
+	line-height: 1.2em; }
+div#descrp_schede div#ds_center2_B4 div#ds_container4_B4 table#arboree_b select {background: #AEAEAE;}
+div#descrp_schede div#ds_center2_B4 div#ds_container4_B4 table#arboree_b  input[type="text"] {background: #AEAEAE;}
+
+div#descrp_schede div#ds_center3_B4 { width: 800px; margin-top:10px;}
+div#descrp_schede div#ds_center3_B4 div#ds_container5_B4 {width:620px}
+div#descrp_schede div#ds_center3_B4 div#ds_container5_B4 div#div_erbacee{width: 350px;
+	height: 130px;}
+div#descrp_schede div#ds_center3_B4 div#ds_container5_B4 div#erbacee_int {width: 300px;
+	height: 100px; 
+	overflow:auto;}
+div#descrp_schede div#ds_center3_B4 div#ds_container5_B4 table#erbacee { background: #AEAEAE; 
+	border: dotted 1px #00FFFF;
+	border-collapse: collapse;
+	line-height: 1.2em; }
+div#descrp_schede div#ds_center3_B4 div#ds_container5_B4 table#erbacee select {background: #AEAEAE;}
+div#descrp_schede div#ds_center3_B4 div#ds_container5_B4 table#erbacee  input[type="text"] {background: #AEAEAE;}
+
+div#descrp_schede div#ds_center3_B4 div#ds_container6_B4 {width:500px;}
+
+div#descrp_schede div#ds_center3_B4 div#ds_container7_B4 {width:1000px;}
+div#descrp_schede div#ds_center4_B4 {
+	height: 270px;
+	width:1000px
+}
+div#descrp_schede div#ds_center4_B4 div#div_note_sing { height: 130px;
+	width:970px;}
+div#descrp_schede div#ds_center4_B4 div#note_sing_int { height: 90px;
+	width:950px;
+	overflow:auto;}
+div#descrp_schede div#ds_center4_B4 table#note_sing{background: #AEAEAE; 
+	border: dotted 1px #00FFFF;
+	border-collapse: collapse;
+	line-height: 1.2em; 
+	 width: 930px;}
+div#descrp_schede div#ds_center4_B4 table#note_sing input[type="text"] {
+	border: dotted 1px #00FFFF;
+	border-collapse: collapse;
+	background:  #AEAEAE;
+	padding-left: 1px;
+	padding-right: 1px;
+	font-size: .9em;
+}
+div#descrp_schede div#ds_center4_B4 table#note_sing select {
 	border: dotted 1px #00FFFF;
 	border-collapse: collapse;
 	background:  #AEAEAE;

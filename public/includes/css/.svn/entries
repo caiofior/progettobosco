@@ -38,9 +38,9 @@ file
 18
 
 
+replace
 
-2011-05-04T14:49:34.000000Z
-3a590c65b7180767764a58ccdcd13e24
+305deaf80e52289200d319f2bd915a22
 2011-05-04T16:05:24.255870Z
 18
 chiara
@@ -52,27 +52,16 @@ has-props
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-29622
+copied
+http://code.fabiocannioto.eu/svn/fabiocannioto/progettobosco/trunk/trunk/includes/css/common1.css
+35
 
 common1.css
 file
 35
 
 
-
+delete
 2011-06-13T15:45:11.000000Z
 305deaf80e52289200d319f2bd915a22
 2011-06-13T16:33:14.788772Z
