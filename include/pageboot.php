@@ -13,8 +13,14 @@ require(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEP
 require(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR.'pb_base'.DIRECTORY_SEPARATOR.'functions.php') ;
 require(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR.'pb_base'.DIRECTORY_SEPARATOR.'insert_update.php') ;
 Zend_Loader::loadClass('Zend_View');
+Zend_Loader::loadClass('Zend_Registry');
 Zend_Loader::loadClass('Zend_Db');
+Zend_Loader::loadClass('Zend_Db_Table');
+Zend_Loader::loadClass('Zend_Auth');
+Zend_Loader::loadClass('Zend_Auth_Adapter_DbTable');
 
 $db = Zend_Db::factory($DB_CONFIG['adapter'],$DB_CONFIG);
 $db->getConnection();
-
+Zend_Db_Table::setDefaultAdapter($db);
+// Manages session
+require(__DIR__.DIRECTORY_SEPARATOR.'session.php');
