@@ -6,7 +6,7 @@
  */
 $authAdapter = new Zend_Auth_Adapter_DbTable(
     $db,
-    'users',
+    'user',
     'username',
     'password',
     'MD5(?)'
@@ -16,16 +16,15 @@ $authAdapter = new Zend_Auth_Adapter_DbTable(
  $auth = Zend_Auth::getInstance();
  $session = $auth->getStorage()->read();
  $user = false;
- /*if (is_numeric($session['user_id'])) {
-     $user = new Zend_Db_Table('users');
-     $user = $user->find($session['user_id'])->toArray();
+ if (is_numeric($session['user_id'])) {
+     $user = new User();
+     $user->loadFromId($session['user_id']);
   }
  else if ($auth->authenticate($authAdapter)->isValid()) {
-     $user = get_object_vars($authAdapter->getResultRowObject(null, 'password'));
+     $userdata = get_object_vars($authAdapter->getResultRowObject(null, 'password'));
      $authStorage = $auth->getStorage();  
-     $authStorage->write(array('user_id'=>$user['id']));  
+     $authStorage->write(array('user_id'=>$userdata['id']));
+     $user = new User();
+     $user->loadFromId($user['id']);
  }
  //$auth->clearIdentity();
-  * 
-  * 
-  */

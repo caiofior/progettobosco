@@ -8,6 +8,13 @@ require (__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'config.php');
 if (isset($ZEND_PATH))
     set_include_path(get_include_path().PATH_SEPARATOR.$ZEND_PATH);
 set_include_path(get_include_path().PATH_SEPARATOR.__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'lib');
+
+require_once('FirePHPCore/FirePHP.class.php');
+$firephp = FirePHP::getInstance(true);
+ 
+$var = array('i'=>10, 'j'=>20);
+ 
+$firephp->log($var, 'Iterators');
 require('Zend'.DIRECTORY_SEPARATOR.'Loader.php');
 require(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR.'pb'.DIRECTORY_SEPARATOR.'autoloader.php') ;
 require(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR.'pb_base'.DIRECTORY_SEPARATOR.'functions.php') ;
