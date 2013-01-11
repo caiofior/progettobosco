@@ -18,5 +18,5 @@ $DB_CONFIG = array(
     'port'      => '5432', 
     'username'  => 'postgres', 
     'password'  => 'postgres', 
-    'dbname'    => 'progettobosco15-05-11'
+    'dbname'    => 'progettobosco_0_1'
     );
