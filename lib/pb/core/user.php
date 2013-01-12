@@ -31,17 +31,52 @@ class User {
      * @param int $id
      */
     public function loadFromId($id) {
-        $this->data = array_shift($this->table->find($id)->toArray());
         $where = $this->table->getAdapter()->quoteInto('id = ?', $id); 
-        $this->data['lastlogin_datetime']='NOW()';
-        $this->table->update($this->data, $where);
+        $this->table->update(array('lastlogin_datetime'=>'NOW()'), $where);
+        $this->data = array_shift($this->table->find($id)->toArray());
     }
     /**
-     * return teh data
+     * Gets the data
      * @return array
      */
-    public function getData() {
-        return $this->data;
+    public function getData($field = null) {
+        if (is_null($field))
+            return $this->data;
+        if (key_exists($field, $this->data))
+            return $this->data[$field];
+    }
+    /**
+     * Sets the data
+     * @param variant $data
+     * @param string|null $field
+     */
+    public function setdata($data,$field=null){
+        if (is_array($data))
+            $this->data = $data;
+        else if (!is_null($field) && key_exists($field, $this->data))
+            $this->data[$field] = $data;
+    }
+    /**
+     * Adds a new user, please save the password in clear in password_new
+     */
+    public function insert() {
+        $this->data['creation_datetime']='NOW()';
+        $this->data['password']=md5($this->data['password_new']);
+        $this->table->insert($this->data);
+    }
+     /**
+     * Deletes user
+     */
+    public function delete() {
+        $where = $this->table->getAdapter()->quoteInto('id = ?', $this->data['id']);
+        $this->table->insert($where);
+    }
+    /**
+     * Updates user data
+     */
+    public function update() {
+        $where = $this->table->getAdapter()->quoteInto('id = ?', $this->data['id']);
+        $this->table->update($this->data, $where);
     }
 }
 
