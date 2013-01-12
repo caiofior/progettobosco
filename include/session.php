@@ -25,6 +25,6 @@ $authAdapter = new Zend_Auth_Adapter_DbTable(
      $authStorage = $auth->getStorage();  
      $authStorage->write(array('user_id'=>$userdata['id']));
      $user = new User();
-     $user->loadFromId($user['id']);
+     $user->loadFromId($userdata['id']);
  }
  //$auth->clearIdentity();
