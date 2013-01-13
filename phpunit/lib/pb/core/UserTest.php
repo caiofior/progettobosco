@@ -25,62 +25,87 @@ class UserTest extends PHPUnit_Framework_TestCase {
      * This method is called after a test is executed.
      */
     protected function tearDown() {
-        
+        $db = Zend_Db_Table::getDefaultAdapter();
+        $db->query('DELETE FROM "user" WHERE username =\'caio.fior@libero.it\';');
     }
 
     /**
      * @covers User::loadFromId
-     * @todo   Implement testLoadFromId().
      */
     public function testLoadFromId() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+         $this->object->loadFromId(1);
+         $this->setExpectedException('Exception');
+         $this->object->loadFromId(999);
     }
-
+    /**
+     * @covers User::loadFromUsername
+     */
+    public function testLoadFromUsername() {
+         $this->object->loadFromUsername('caiofior@gmail.com');
+         $this->setExpectedException('Exception');
+         $this->object->loadFromUsername(999);
+    }
     /**
      * @covers User::getData
-     * @todo   Implement testGetData().
      */
     public function testGetData() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->object->loadFromId(1);
+        $this->assertGreaterThan(0,sizeof($this->object->getData()));
     }
 
     /**
      * @covers User::setdata
-     * @todo   Implement testSetdata().
      */
-    public function testSetdata() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+    public function testSetData() {
+        $this->object->loadFromId(1);
+        $this->object->setData('12','username');
     }
 
     /**
      * @covers User::insert
-     * @todo   Implement testInsert().
      */
     public function testInsert() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->setExpectedException('Exception');
+        $this->object->insert();
+    }
+     /**
+     * @covers User::insert
+     */
+    public function testInsert1() {
+        $this->setExpectedException('Exception');
+        $this->object->setData(array(
+           'username'=>'caio.fior@libero.it',
+        ));
+        $this->object->insert();
+    }
+    /**
+     * @covers User::insert
+     */
+    public function testInsert2() {
+        $this->object->setData(array(
+           'username'=>'caio.fior@libero.it',
+           'password_new'=>'topolino'
+        ));
+        $this->object->insert();
+        $this->setExpectedException('Exception');
+        $this->object->setData(array(
+           'username'=>'caio.fior@libero.it',
+           'password_new'=>'topolino'
+        ));
+        $this->object->insert();
     }
 
     /**
      * @covers User::delete
-     * @todo   Implement testDelete().
      */
     public function testDelete() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->object->setData(array(
+           'username'=>'caio.fior@libero.it',
+           'password_new'=>'topolino'
+        ));
+        $this->object->insert();
+        $this->object->loadFromUsername('caio.fior@libero.it');
+        $this->object->delete();
     }
 
     /**
@@ -88,10 +113,14 @@ class UserTest extends PHPUnit_Framework_TestCase {
      * @todo   Implement testUpdate().
      */
     public function testUpdate() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->object->setData(array(
+           'username'=>'caio.fior@libero.it',
+           'password_new'=>'topolino'
+        ));
+        $this->object->insert();
+        $this->object->loadFromUsername('caio.fior@libero.it');
+        $this->object->setData('topolino2','password_new');
+        $this->object->update();
     }
 
 }

@@ -19,7 +19,7 @@ class User {
      * Data associated
      * @var array
      */
-    private $data;
+    private $data=array();
     /**
      * Instantiates the table
      */
@@ -32,8 +32,21 @@ class User {
      */
     public function loadFromId($id) {
         $where = $this->table->getAdapter()->quoteInto('id = ?', $id); 
-        $this->table->update(array('lastlogin_datetime'=>'NOW()'), $where);
+        $updated = $this->table->update(array('lastlogin_datetime'=>'NOW()'), $where);
+        if ($updated <> 1)
+            throw new Exception('User not found',1301130904);
         $this->data = array_shift($this->table->find($id)->toArray());
+    }
+        /**
+     * Loads user from its id
+     * @param int $id
+     */
+    public function loadFromUsername($username) {
+        $where = $this->table->getAdapter()->quoteInto('username = ?', $username); 
+        $updated = $this->table->update(array('lastlogin_datetime'=>'NOW()'), $where);
+        if ($updated <> 1)
+            throw new Exception('User not found',1301130908);
+        $this->data = $this->table->fetchRow($where)->toArray();
     }
     /**
      * Gets the data
@@ -50,18 +63,26 @@ class User {
      * @param variant $data
      * @param string|null $field
      */
-    public function setdata($data,$field=null){
+    public function setData($data,$field=null){
         if (is_array($data))
             $this->data = $data;
-        else if (!is_null($field) && key_exists($field, $this->data))
+        else if (!is_null($field) )
             $this->data[$field] = $data;
     }
     /**
      * Adds a new user, please save the password in clear in password_new
      */
     public function insert() {
-        $this->data['creation_datetime']='NOW()';
+        if (!key_exists('username', $this->data) || $this->data['username'] == '')
+          throw new Exception ('username is required ',130113906);
+        if (!key_exists('password_new', $this->data) || $this->data['password_new'] == '')
+          throw new Exception ('password_new is required ',130113907);
+        $rows = $this->table->fetchAll($this->table->select()->where('username = ?', $this->data['username']));
+        if (sizeof($rows) <> 0)
+            throw new Exception ('User with username '.$this->data['username'].' already present',130113905);
         $this->data['password']=md5($this->data['password_new']);
+        unset($this->data['password_new']);
+        $this->data['creation_datetime']='NOW()';
         $this->table->insert($this->data);
     }
      /**
@@ -69,12 +90,17 @@ class User {
      */
     public function delete() {
         $where = $this->table->getAdapter()->quoteInto('id = ?', $this->data['id']);
-        $this->table->insert($where);
+        $this->table->delete($where);
     }
     /**
      * Updates user data
      */
     public function update() {
+        $rows = $this->table->fetchAll($this->table->select()->where('username = ?', $this->data['username']));
+        if (sizeof($rows) <> 1)
+            throw new Exception ('User with username '.$this->data['username'].' not present',130113905);
+        $this->data['password']=md5($this->data['password_new']);
+        unset($this->data['password_new']);
         $where = $this->table->getAdapter()->quoteInto('id = ?', $this->data['id']);
         $this->table->update($this->data, $where);
     }
