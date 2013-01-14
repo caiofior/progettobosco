@@ -15,16 +15,9 @@ $firephp = FirePHP::getInstance(true);
 $var = array('i'=>10, 'j'=>20);
  
 $firephp->log($var, 'Iterators');
-require('Zend'.DIRECTORY_SEPARATOR.'Loader.php');
 require(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR.'pb'.DIRECTORY_SEPARATOR.'autoloader.php') ;
 require(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR.'pb_base'.DIRECTORY_SEPARATOR.'functions.php') ;
 require(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR.'pb_base'.DIRECTORY_SEPARATOR.'insert_update.php') ;
-Zend_Loader::loadClass('Zend_View');
-Zend_Loader::loadClass('Zend_Registry');
-Zend_Loader::loadClass('Zend_Db');
-Zend_Loader::loadClass('Zend_Db_Table');
-Zend_Loader::loadClass('Zend_Auth');
-Zend_Loader::loadClass('Zend_Auth_Adapter_DbTable');
 
 $db = Zend_Db::factory($DB_CONFIG['adapter'],$DB_CONFIG);
 $db->getConnection();
