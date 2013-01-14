@@ -37,9 +37,9 @@ class User {
             throw new Exception('User not found',1301130904);
         $this->data = array_shift($this->table->find($id)->toArray());
     }
-        /**
-     * Loads user from its id
-     * @param int $id
+     /**
+     * Loads user from its username
+     * @param string $username
      */
     public function loadFromUsername($username) {
         $where = $this->table->getAdapter()->quoteInto('username = ?', $username); 
@@ -83,7 +83,7 @@ class User {
         $this->data['password']=md5($this->data['password_new']);
         unset($this->data['password_new']);
         $this->data['creation_datetime']='NOW()';
-        $this->table->insert($this->data);
+        $this->data['id']=$this->table->insert($this->data);
     }
      /**
      * Deletes user
@@ -99,10 +99,27 @@ class User {
         $rows = $this->table->fetchAll($this->table->select()->where('username = ?', $this->data['username']));
         if (sizeof($rows) <> 1)
             throw new Exception ('User with username '.$this->data['username'].' not present',130113905);
-        $this->data['password']=md5($this->data['password_new']);
-        unset($this->data['password_new']);
+        if (key_exists('password_new', $this->data)) {
+            $this->data['password']=md5($this->data['password_new']);
+            unset($this->data['password_new']);
+        }
         $where = $this->table->getAdapter()->quoteInto('id = ?', $this->data['id']);
         $this->table->update($this->data, $where);
+    }
+    /**
+     * Gets associated profile to the user
+     * @return Profile
+     */
+    public function getProfile() {
+        $profile = new Profile();
+        try{
+            $profile->loadFromId($this->data['id']);
+        } catch (Exception $e) {
+            $profile->insert();
+            $this->data['profile_id']=$profile->getData('id');
+            $this->update();
+        }
+        return $profile;
     }
 }
 
