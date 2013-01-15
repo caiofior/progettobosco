@@ -4,13 +4,7 @@
  * @copyright CRA
  * Manages session login
  */
-$authAdapter = new Zend_Auth_Adapter_DbTable(
-    $db,
-    'user',
-    'username',
-    'password',
-    'MD5(?)'
-);
+ $authAdapter = User::getAuthAdapter();
  $authAdapter->setIdentity('caiofior@gmail.com');
  $authAdapter->setCredential('topolino');
  $auth = Zend_Auth::getInstance();
@@ -27,4 +21,4 @@ $authAdapter = new Zend_Auth_Adapter_DbTable(
      $user = new User();
      $user->loadFromId($userdata['id']);
  }
- //$auth->clearIdentity();
+ $auth->clearIdentity();

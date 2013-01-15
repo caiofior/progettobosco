@@ -5,22 +5,53 @@
  * Page boot actions, requirments ad db connection
  */
 require (__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'config.php');
+/**
+ * Includes monitoring script
+ */
+if (!isset($PHPUNIT) || !$PHPUNIT)
+    require (__DIR__.DIRECTORY_SEPARATOR.'monitoring.php');
+/**
+ * Config debug options
+ */
+if (isset($DEBUG) && $DEBUG) {
+    error_reporting(E_ALL | E_STRICT);
+    ini_set('display_errors', 1);
+    if (isset($PHPUNIT) && $PHPUNIT) {
+        ini_set('html_errors', 0);
+        ini_set('xdebug.collect_vars', 0);
+        ini_set('xdebug.dump_globals', 0);
+        ini_set('xdebug.show_local_vars', 0);
+    }
+    else {
+        ini_set('html_errors', 1);
+        ini_set('xdebug.collect_vars', 1);
+        ini_set('xdebug.collect_params', 4);
+        ini_set('xdebug.dump_globals', 1);
+        ini_set('xdebug.dump.SERVER', 'REQUEST_URI');
+        ini_set('xdebug.show_local_vars', 1);
+    }
+}
+/**
+ * Include paths
+ */
 if (isset($ZEND_PATH))
     set_include_path(get_include_path().PATH_SEPARATOR.$ZEND_PATH);
+if (isset($PEAR_PATH))
+    set_include_path(get_include_path().PATH_SEPARATOR.$PEAR_PATH);
 set_include_path(get_include_path().PATH_SEPARATOR.__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'lib');
 
-require_once('FirePHPCore/FirePHP.class.php');
-$firephp = FirePHP::getInstance(true);
- 
-$var = array('i'=>10, 'j'=>20);
- 
-$firephp->log($var, 'Iterators');
 require(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR.'pb'.DIRECTORY_SEPARATOR.'autoloader.php') ;
 if (!function_exists('redirect')) {
     require(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR.'pb_base'.DIRECTORY_SEPARATOR.'functions.php') ;
     require(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR.'pb_base'.DIRECTORY_SEPARATOR.'insert_update.php') ;
 }
-
+/*
+require_once('FirePHPCore/FirePHP.class.php');
+$firephp = FirePHP::getInstance(true);
+ 
+$var = array('i'=>10, 'j'=>20);
+ 
+$firephp->log($var, 'Iterators'); */
 $db = Zend_Db::factory($DB_CONFIG['adapter'],$DB_CONFIG);
 $db->getConnection();
 Zend_Db_Table::setDefaultAdapter($db);

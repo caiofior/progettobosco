@@ -9,9 +9,20 @@
  */
 $ZEND_PATH ='/usr/share/php/libzend-framework-php';
 /**
+ * Pear indtall directory
+ */
+$PEAR_PATH ='/usr/share/php/';
+/**
+ * Sets debug options
+ */
+$DEBUG=true;
+/**
  * Base url of the web site
  */
 $BASE_URL ='http://127.0.0.1/progettobosco/public/';
+/**
+ * Database configuration
+ */
 $DB_CONFIG = array(
     'adapter'   => 'Pgsql', 
     'host'      => 'localhost', 

@@ -35,7 +35,8 @@ class User {
         $updated = $this->table->update(array('lastlogin_datetime'=>'NOW()'), $where);
         if ($updated <> 1)
             throw new Exception('User not found',1301130904);
-        $this->data = array_shift($this->table->find($id)->toArray());
+        $data = $this->table->find($id)->toArray();
+        $this->data = array_shift($data);
     }
      /**
      * Loads user from its username
@@ -121,5 +122,18 @@ class User {
         }
         return $profile;
     }
-}
+    /**
+     * Creates user auth class
+     * @return \Zend_Auth_Adapter_DbTable
+     */
+    public static function getAuthAdapter()    {
+        return new Zend_Auth_Adapter_DbTable(
+    Zend_Db_Table::getDefaultAdapter(),
+    'user',
+    'username',
+    'password',
+    'MD5(?) AND "active" AND "confirmed"'
+);
+    }
 
+}

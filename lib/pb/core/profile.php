@@ -31,7 +31,8 @@ class Profile {
      * @param int $id
      */
     public function loadFromId($id) {
-        $this->data = array_shift($this->table->find($id)->toArray());
+        $data = $this->table->find($id)->toArray();
+        $this->data = array_shift($data);
         if (is_null($this->data))
             throw new Exception('Unable to find the profile',1301141428);;
     }

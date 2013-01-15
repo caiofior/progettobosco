@@ -14,4 +14,5 @@ if (!class_exists('Zend_Loader')) {
     Zend_Loader::loadClass('Zend_Auth_Adapter_DbTable');
     require (__DIR__.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'user.php');
     require (__DIR__.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'profile.php');
+    require (__DIR__.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'log.php');
 }
