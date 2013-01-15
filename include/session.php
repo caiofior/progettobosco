@@ -5,8 +5,7 @@
  * Manages session login
  */
  $authAdapter = User::getAuthAdapter();
- $authAdapter->setIdentity('caiofior@gmail.com');
- $authAdapter->setCredential('topolino');
+
  $auth = Zend_Auth::getInstance();
  $session = $auth->getStorage()->read();
  $user = false;
@@ -14,11 +13,15 @@
      $user = new User();
      $user->loadFromId($session['user_id']);
   }
- else if ($auth->authenticate($authAdapter)->isValid()) {
+ else if (key_exists('login', $_REQUEST) && $auth->authenticate($authAdapter)->isValid()) {
+     $authAdapter->setIdentity($_REQUEST['username']);
+     $authAdapter->setCredential($_REQUEST['password']);
      $userdata = get_object_vars($authAdapter->getResultRowObject(null, 'password'));
      $authStorage = $auth->getStorage();  
      $authStorage->write(array('user_id'=>$userdata['id']));
      $user = new User();
      $user->loadFromId($userdata['id']);
  }
- $auth->clearIdentity();
+ else if (key_exists('logout', $_REQUEST)) {
+    $auth->clearIdentity();
+ }
