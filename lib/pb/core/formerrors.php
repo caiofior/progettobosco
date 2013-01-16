@@ -89,7 +89,7 @@ class FormErrors {
      * @param string $message message, if custom all the message must be set
      * @param string $sex sex of the word (m or f)
      */
-    public function add_error($kind, $name,$message=null,$sex='m') {
+    public function addError($kind, $name,$message=null,$sex='m') {
         if ($sex != 'f') $sex != 'm';
         if (!key_exists($kind, $this->errors) || !is_array($this->errors[$kind])) $this->errors[$kind] = array();
         $this->errors[$kind][]=array('name'=>$name,'message'=>$message,'sex'=>$sex);
@@ -111,7 +111,7 @@ class FormErrors {
      * Return control field name and messages
      * @return array[]
      */
-    public function get_messages() {
+    public function getMessages() {
         if ($this->count() == 0) return true;
         $messages = array();
         $names= array();
@@ -149,17 +149,17 @@ class FormErrors {
     /**
      * Creates a json error message
      */
-    public function get_json_error () {
+    public function getJsonError () {
         header('Content-type: application/json');
         $response = true;
         if ($this->count()>0)
-            $response = $this->get_messages();
+            $response = $this->getMessages();
         echo Zend_Json::encode($response);
         exit;
     }
 
-    public function get_html_error () {
-        $messages = $this->get_messages();
+    public function getHtmlError () {
+        $messages = $this->getMessages();
         if (is_array($messages))
                 foreach($messages['messages'] as $error_item) echo '<p>'.$error_item.'</p>';
     }

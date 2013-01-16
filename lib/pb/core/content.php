@@ -50,8 +50,9 @@ abstract class Content {
      * @param string|null $field
      */
     public function setData($data,$field=null){
-        if (is_array($data))
-            $this->data = $data;
+        if (is_array($data)) {
+            $this->data = array_merge($this->data,  array_intersect_key($data,$this->data));
+         }
         else if (!is_null($field) )
             $this->data[$field] = $data;
     }

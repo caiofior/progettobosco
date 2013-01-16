@@ -7,12 +7,17 @@
 					
                                         <p>Puoi aggiungere i dati di un bosco, modificarne uno
                                         già esistente o aggiornare i tuoi dati personali</p>
-				
+				        <ul class="index_menu">
+                                            <li><a class="bosco" href='<?php echo $GLOBALS['BASE_URL'];?>bosco.php'>Bosco</a></li>
+                                        </ul>
 				<!-- /post -->	
 				</div>	
-			<div id='home'>
+                            
 
-  <a class='main_button' id='bosco' href='<?php echo $GLOBALS['BASE_URL'];?>bosco.php'>Bosco</a>
+                            <!--
+<div id='home'>
+
+  
   
   <a class='main_button' id='edp' href='<?php echo $GLOBALS['BASE_URL'];?>descrp.php''>Elaborazione descrizioni particellari</a>
 
@@ -43,5 +48,6 @@
   <a class='main_button' id='decod' href='?'>Decodifica schede</a>
 
 </div>
+                            -->
 			<!-- /main -->	
 			</div>

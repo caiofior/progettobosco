@@ -13,6 +13,7 @@ function formAjax(selector,messages_selector) {
      $(messages_selector).hide();
      $("#ajaxloader").show();
      el = $(this);
+     el.find(".error").removeClass("error");
      data = el.serializeArray();
      data.push({ name: "xhr", value: "1" });
      data.push({ name: el.find(":submit").attr("name"), value: "1" });
@@ -20,7 +21,6 @@ function formAjax(selector,messages_selector) {
        $("#ajaxloader").hide();
        if (response == true)
            return true;
-       el.find("input").removeClass("error");
        $.each(response["names"], function(id,val) {
            $("#"+val).addClass("error");
        });
@@ -39,7 +39,9 @@ function formAjax(selector,messages_selector) {
 * @param value default value
 */
 function defaultInputValue (selector,value) {
-  $(selector).val(value).focus(function (){
+  el = $(selector);
+  if (el.val() == "") el.val(value);
+  el.focus(function (){
   el = $(this);
   if (el.val()==value) el.val("");
 }).blur(function (){

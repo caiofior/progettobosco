@@ -4,7 +4,7 @@
  * @copyright CRA
  * Manages session login
  */
-$formErrors = new FormErrors();
+ $formErrors = new FormErrors();
  $authAdapter = User::getAuthAdapter();
  $auth = Zend_Auth::getInstance();
  $session = $auth->getStorage()->read();
@@ -20,9 +20,9 @@ $formErrors = new FormErrors();
         $user->loadFromId($userdata['id']);
      }
      else
-         $formErrors->add_error(FormErrors::custom,'username','Nome utente o password errati');
+         $formErrors->addError(FormErrors::custom,'username','Nome utente o password errati');
      if (key_exists('xhr', $_REQUEST)) {
-         $formErrors->get_json_error();
+         $formErrors->getJsonError();
      }
  }
  else if (key_exists('logout', $_REQUEST)) {
