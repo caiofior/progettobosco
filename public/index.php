@@ -10,12 +10,13 @@ $view = new Zend_View(array(
 
 ));
 $content = 'content'.DIRECTORY_SEPARATOR.'index.php';
-$sidebar = 'content'.DIRECTORY_SEPARATOR.'sidebar.php';
+$sidebar = 'general'.DIRECTORY_SEPARATOR.'sidebar.php';
 if ($user === false) {
-    $content = 'general'.DIRECTORY_SEPARATOR.'login.php';
-    $sidebar = 'general'.DIRECTORY_SEPARATOR.'login_sidebar.php';
-    }
+    $content = 'content'.DIRECTORY_SEPARATOR.'login.php';
+    $sidebar = 'sidebar'.DIRECTORY_SEPARATOR.'login.php';
+}
 $view->controler = basename(__FILE__);
+$view->user = $user;
 $view->blocks = array(
       'HEADERS' => 'general'.DIRECTORY_SEPARATOR.'header.php',
       'CONTENT' => $content,

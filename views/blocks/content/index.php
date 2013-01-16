@@ -1,4 +1,16 @@
-<div id='home'>
+			<!-- main -->
+			<div id="main">	
+					
+				<div class="post">
+			
+					<h2>Benvenuto</h2>
+					
+                                        <p>Puoi aggiungere i dati di un bosco, modificarne uno
+                                        già esistente o aggiornare i tuoi dati personali</p>
+				
+				<!-- /post -->	
+				</div>	
+			<div id='home'>
 
   <a class='main_button' id='bosco' href='<?php echo $GLOBALS['BASE_URL'];?>bosco.php'>Bosco</a>
   
@@ -31,3 +43,5 @@
   <a class='main_button' id='decod' href='?'>Decodifica schede</a>
 
 </div>
+			<!-- /main -->	
+			</div>

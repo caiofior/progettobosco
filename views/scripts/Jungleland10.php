@@ -29,7 +29,9 @@
 </head>
 
 <body>
-
+<div id="ajaxloader" style="display: none;">
+    <div>Caricamento in corso...<br/><img src="images/ajax-loader.gif"/></div>
+</div>
 <!-- wrap -->
 <div id="wrap">
 
@@ -93,7 +95,7 @@
 </div>
 
 	
-
+        <script type="text/javascript" src="js/general.js"></script>
         <?php
         if (
             key_exists('FOOTER', $this->blocks) && 

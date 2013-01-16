@@ -9,22 +9,12 @@
  * @copyright CRA
  * Manages User account
  */
-class User {
-    /**
-     * Zend Data table
-     * @var Zend_Db_Table 
-     */
-    private $table;
-    /**
-     * Data associated
-     * @var array
-     */
-    private $data=array();
+class User extends Content {
     /**
      * Instantiates the table
      */
     public function __construct() {
-        $this->table = new Zend_Db_Table('user');
+        parent::__construct('user');
     }
     /**
      * Loads user from its id
@@ -35,8 +25,7 @@ class User {
         $updated = $this->table->update(array('lastlogin_datetime'=>'NOW()'), $where);
         if ($updated <> 1)
             throw new Exception('User not found',1301130904);
-        $data = $this->table->find($id)->toArray();
-        $this->data = array_shift($data);
+        parent::loadFromId($id);
     }
      /**
      * Loads user from its username
@@ -48,27 +37,6 @@ class User {
         if ($updated <> 1)
             throw new Exception('User not found',1301130908);
         $this->data = $this->table->fetchRow($where)->toArray();
-    }
-    /**
-     * Gets the data
-     * @return array
-     */
-    public function getData($field = null) {
-        if (is_null($field))
-            return $this->data;
-        if (key_exists($field, $this->data))
-            return $this->data[$field];
-    }
-    /**
-     * Sets the data
-     * @param variant $data
-     * @param string|null $field
-     */
-    public function setData($data,$field=null){
-        if (is_array($data))
-            $this->data = $data;
-        else if (!is_null($field) )
-            $this->data[$field] = $data;
     }
     /**
      * Adds a new user, please save the password in clear in password_new
@@ -84,14 +52,7 @@ class User {
         $this->data['password']=md5($this->data['password_new']);
         unset($this->data['password_new']);
         $this->data['creation_datetime']='NOW()';
-        $this->data['id']=$this->table->insert($this->data);
-    }
-     /**
-     * Deletes user
-     */
-    public function delete() {
-        $where = $this->table->getAdapter()->quoteInto('id = ?', $this->data['id']);
-        $this->table->delete($where);
+        parent::insert();
     }
     /**
      * Updates user data
@@ -104,8 +65,7 @@ class User {
             $this->data['password']=md5($this->data['password_new']);
             unset($this->data['password_new']);
         }
-        $where = $this->table->getAdapter()->quoteInto('id = ?', $this->data['id']);
-        $this->table->update($this->data, $where);
+        parent::update();
     }
     /**
      * Gets associated profile to the user

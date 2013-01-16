@@ -12,6 +12,10 @@ if (!class_exists('Zend_Loader')) {
     Zend_Loader::loadClass('Zend_Db_Table');
     Zend_Loader::loadClass('Zend_Auth');
     Zend_Loader::loadClass('Zend_Auth_Adapter_DbTable');
+    Zend_Loader::loadClass('Zend_Json');
+    require (__DIR__.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'utils.php');
+    require (__DIR__.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'content.php');
+    require (__DIR__.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'formerrors.php');
     require (__DIR__.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'user.php');
     require (__DIR__.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'profile.php');
     require (__DIR__.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'log.php');

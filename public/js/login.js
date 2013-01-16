@@ -1,13 +1,12 @@
- $(function () {
-   $("#login_form").submit( function() {
-     el = $(this);
-     data = el.serializeArray();
-     data.push({ name: "xhr", value: "1" });
-     data.push({ name: "login", value: "1" });
-     $.get(el.attr("action"), data, function() {
-       return false;   
-     });
-     
-     return false;  
-   });
- });
+/**
+ * On page ready functions
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+$(function () {
+   
+   formAjax("#login_form",".login_messages");
+   defaultInputValue("#username","Nome utente");
+   defaultInputValue("#password","Password");
+   
+});
