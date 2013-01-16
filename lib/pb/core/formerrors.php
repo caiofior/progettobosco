@@ -131,13 +131,13 @@ class FormErrors {
                 elseif (sizeof($this->errors[$c])-2 > $prog) $message.=', ';
                 if ($error_item['sex'] == 'm') $sex = 'm';
             }
-            $messages[] = xml__specialchars($message.$this->default_messages[$c][$plu][$sex].'.',true);
+            $messages[] = $message.$this->default_messages[$c][$plu][$sex].'.';
         }
         if (key_exists(0,$this->errors) && is_array($this->errors[0])) {
             foreach($this->errors[0] as $error_item) {
                 $names[] =$error_item['name'];
                 if (!is_null($error_item['message']))
-                    $messages[] = xml__specialchars($error_item['message'],true);
+                    $messages[] = $error_item['message'];
             }
         }
         array_unique($names);

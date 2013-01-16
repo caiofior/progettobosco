@@ -15,6 +15,11 @@ function formAjax(selector,messages_selector) {
      el = $(this);
      el.find(".error").removeClass("error");
      data = el.serializeArray();
+     $.each(data,function(id,val) {
+         inp = el.find("[name=\""+val["name"]+"\"]");
+         if (inp.hasClass("default_value"))
+         val["value"]="";
+     })
      data.push({ name: "xhr", value: "1" });
      data.push({ name: el.find(":submit").attr("name"), value: "1" });
      $.post(el.attr("action"), data, function(response) {
@@ -40,13 +45,14 @@ function formAjax(selector,messages_selector) {
 */
 function defaultInputValue (selector,value) {
   el = $(selector);
-  if (el.val() == "") el.val(value);
+  el.attr("title", value);
+  if (el.val() == "") el.val(value).addClass("default_value");
   el.focus(function (){
   el = $(this);
-  if (el.val()==value) el.val("");
+  if (el.val()==value) el.val("").removeClass("default_value");
 }).blur(function (){
   el = $(this);
-  if (el.val()=="") el.val(value);
+  if (el.val()=="") el.val(value).addClass("default_value");
 });
 }
 
