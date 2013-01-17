@@ -9,8 +9,7 @@
 <meta name="author" content="Erwin Aligam - styleshout.com" />
 <?php $this->renderBlock('HEADERS'); ?>
 <link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" />
-<!--[if IE 6]><link rel="stylesheet" type="text/css" href="css/ie6.css" media="screen" /><![endif]-->
-
+<?php echo (isset($GLOBALS['DEBUG']) && $GLOBALS['DEBUG'] ? '<script type="text/javascript" >var DEBUG=true;</script>' : '') ;?>
 </head>
 
 <body>

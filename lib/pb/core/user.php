@@ -95,5 +95,13 @@ class User extends Content {
     'MD5(?) AND "active" AND "confirmed"'
 );
     }
+    /**
+     * Check password consistence
+     * @param string $new_password
+     * @return bool
+     */
+    public function checkPassword($new_password) {
+        return md5($new_password) == $this->data['password'];
+    }
 
 }

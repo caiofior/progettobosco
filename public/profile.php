@@ -43,7 +43,7 @@ if (key_exists('profile', $_REQUEST)) {
      }
 }
 else if (key_exists('modify_password', $_REQUEST)) {
-    if($user->getData('password') != md5($_REQUEST['old_password']))
+    if($user->chechPassword($_REQUEST['old_password']))
         $formErrors->addError(FormErrors::custom,'old_password', 'La vecchia password è errata');
     if ($_REQUEST['new_password'] == '')
         $formErrors->addError(FormErrors::required,'new_password','La password','f');

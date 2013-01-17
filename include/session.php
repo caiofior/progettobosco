@@ -12,6 +12,7 @@
  if (key_exists('login', $_REQUEST) ) {
      $authAdapter->setIdentity($_REQUEST['username']);
      $authAdapter->setCredential($_REQUEST['password']);
+     try {
      if ($auth->authenticate($authAdapter)->isValid()) { 
         $userdata = get_object_vars($authAdapter->getResultRowObject(null, 'password'));
         $authStorage = $auth->getStorage();  
@@ -21,9 +22,13 @@
      }
      else
          $formErrors->addError(FormErrors::custom,'username','Nome utente o password errati');
+     } catch (Exception $e) {
+         $formErrors->addError(FormErrors::custom,'username','Nome utente o password errati');
+     }
      if (key_exists('xhr', $_REQUEST)) {
          $formErrors->getJsonError();
      }
+     
  }
  else if (key_exists('logout', $_REQUEST)) {
     $auth->clearIdentity();
