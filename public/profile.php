@@ -6,12 +6,6 @@
  */
 require (__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'include'.DIRECTORY_SEPARATOR.'pageboot.php');
 if (key_exists('profile', $_REQUEST)) {
-    if($_REQUEST['username'] == '' ) {
-       $formErrors->addError(FormErrors::required,'username','Nome utente');       
-    }
-    else if(!filter_var($_REQUEST['username'], FILTER_VALIDATE_EMAIL)) {
-       $formErrors->addError(FormErrors::valid_email,'username','Nome utente');       
-    }
     if($_REQUEST['phone'] != '' && !filter_var($_REQUEST['phone'], FILTER_VALIDATE_REGEXP,array('options'=>array('regexp'=>'/[+ 0-9]{5,}/')))) {
        $formErrors->addError(FormErrors::custom,'phone','Indica un telefono valido ( +0-9) ');       
     }
@@ -30,7 +24,6 @@ if (key_exists('profile', $_REQUEST)) {
     if($_REQUEST['address_zip'] != '' && !filter_var($_REQUEST['address_zip'], FILTER_VALIDATE_REGEXP,array('options'=>array('regexp'=>'/[0-9]{5}/')))) {
        $formErrors->addError(FormErrors::custom,'address_zip','CAP non valido');       
     }
-    $_REQUEST['email'] =$_REQUEST['username'];
     if ($formErrors->count() == 0) {
         $user->setData($_REQUEST);
         $user->update();
@@ -43,12 +36,15 @@ if (key_exists('profile', $_REQUEST)) {
      }
 }
 else if (key_exists('modify_password', $_REQUEST)) {
+
     if($user->chechPassword($_REQUEST['old_password']))
-        $formErrors->addError(FormErrors::custom,'old_password', 'La vecchia password è errata');
+        $formErrors->addError(FormErrors::custom,'old_password', 'la vecchia password è errata');
     if ($_REQUEST['new_password'] == '')
-        $formErrors->addError(FormErrors::required,'new_password','La password','f');
+        $formErrors->addError(FormErrors::required,'new_password','la password','f');
+    else if(strlen($_REQUEST['password']) < 6 )
+       $formErrors->addError(FormErrors::custom,'password','la password deve avere almeno sei caratteri','f');       
     else if ($_REQUEST['new_password'] != $_REQUEST['confirm_password'])
-        $formErrors->addError(FormErrors::custom,'new_password', 'Le due password non coicidono');
+        $formErrors->addError(FormErrors::custom,'new_password', 'le due password non coicidono');
     if ($formErrors->count() == 0) {
         $user->setData($_REQUEST['new_password'],'password_new');
         $user->update();

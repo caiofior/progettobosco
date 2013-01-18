@@ -7,18 +7,18 @@
 					
                                         	<form action="<?php echo $GLOBALS['BASE_URL'];?>profile.php" method="post" id="profile_form">		
                                                         <div class="form_messages profile_messages" style="display: none;"></div>
-							<p >	
-								<label for="username">Nome utente-email</label>
-								<input class="large" id="username" class="required" name="username" value="<?php echo $this->user->getData('username');?>" type="text" tabindex="1" />
-							</p>
                                                         <p >	
 								<label for="first_name">Nome</label>
-								<input class="large" id="first_name" name="first_name" value="<?php echo $profile->getData('first_name');?>" type="text" tabindex="2" />
+								<input class="large" id="first_name" name="first_name" value="<?php echo $profile->getData('first_name');?>" type="text" tabindex="1" />
 							</p>
                                                         <p >	
 								<label for="last_name">Cognome</label>
-								<input class="large" id="last_name" name="last_name" value="<?php echo $profile->getData('last_name');?>" type="text" tabindex="3" />
-							</p>			
+								<input class="large" id="last_name" name="last_name" value="<?php echo $profile->getData('last_name');?>" type="text" tabindex="2" />
+							</p>
+                                                        <p >	
+								<label for="organization">Organizzazione</label>
+								<input class="large" id="organization" name="organization" value="<?php echo $profile->getData('organization');?>" type="text" tabindex="3" />
+							</p>
                                                         <p >	
 								<label for="phone">Telefono</label>
 								<input class="large" id="phone" name="phone" value="<?php echo $profile->getData('phone');?>" type="text" tabindex="4" />

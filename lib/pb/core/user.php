@@ -38,6 +38,17 @@ class User extends Content {
             throw new Exception('User not found',1301130908);
         $this->data = $this->table->fetchRow($where)->toArray();
     }
+     /**
+     * Loads user from its confirmation code
+     * @param string $username
+     */
+    public function loadFromConformationCode($confirmation_code) {
+        $where = $this->table->getAdapter()->quoteInto('confirmation_code = ?', $confirmation_code); 
+        $updated = $this->table->update(array('lastlogin_datetime'=>'NOW()'), $where);
+        if ($updated <> 1)
+            throw new Exception('User not found',1301130908);
+        $this->data = $this->table->fetchRow($where)->toArray();
+    }
     /**
      * Adds a new user, please save the password in clear in password_new
      */
@@ -51,8 +62,14 @@ class User extends Content {
             throw new Exception ('User with username '.$this->data['username'].' already present',130113905);
         $this->data['password']=md5($this->data['password_new']);
         unset($this->data['password_new']);
+        $this->data['confirmation_code']=md5(serialize($GLOBALS));
         $this->data['creation_datetime']='NOW()';
         parent::insert();
+        $profile = new Profile();
+        $profile->setData($this->data['username'],'email');
+        $profile->insert();
+        $user->setData($profile->getData('id'),'profile_id');
+        $this->update();
     }
     /**
      * Updates user data

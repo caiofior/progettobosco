@@ -9,7 +9,7 @@
 * @copyright CRA
 */
 function formAjax(selector,messages_selector) {
-    $(selector).submit( function() {
+    $(document).on("submit",selector, function() {
         status = false;
         $(messages_selector).hide();
         $("#ajaxloader").show();
@@ -68,16 +68,18 @@ function formAjax(selector,messages_selector) {
 * @param value default value
 */
 function defaultInputValue (selector,value) {
-  el = $(selector);
-  el.attr("title", value);
-  if (el.val() == "") el.val(value).data("default_value",1);
-  el.focus(function (){
-  el = $(this);
-  if (el.val()==value) el.val("").data("default_value",null);
-}).blur(function (){
-  el = $(this);
-  if (el.val()=="") el.val(value).data("default_value",1);
-});
+    el = $(selector);
+    $(document).ajaxComplete(function (e){
+        el.attr("title", value);
+        if (el.val()=="") el.val(value).data("default_value",1);
+    });
+    $(el).on("focus",el,function (e){
+        if (el.val()==value) el.val("").data("default_value",null);
+    }).on("blur",el,function (e){
+        if (el.val()=="") el.val(value).data("default_value",1);
+    });
+    $(document).trigger("ajaxComplete");
+    
 }
 /**
  * Dinamicaly updates elements 

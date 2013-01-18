@@ -66,8 +66,10 @@ abstract class Content {
      * Deletes data
      */
     public function delete() {
-        $where = $this->table->getAdapter()->quoteInto('id = ?', $this->data['id']);
-        $this->table->delete($where);
+        if (key_exists('id', $this->data)) {
+            $where = $this->table->getAdapter()->quoteInto('id = ?', $this->data['id']);
+            $this->table->delete($where);
+        }
     }
      /**
      * Updates data

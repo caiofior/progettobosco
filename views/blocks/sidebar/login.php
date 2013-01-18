@@ -1,11 +1,11 @@
 			<!-- sidebar -->
 			<div id="sidebar">
 							
-                <div class="sidemenu" id="sidebar_register" id="login_form">
+                <div class="sidemenu" id="sidebar_register" >
 					
  						<h3>Accedi</h3>				
 			
-						<form action="<?php echo $GLOBALS['BASE_URL'];?>" method="post" >		
+						<form action="<?php echo $GLOBALS['BASE_URL'];?>" method="post" id="login_form">		
                                                         <div class="form_messages login_messages" style="display: none;"></div>
 							<p >	
 								<label for="username">email</label><br />

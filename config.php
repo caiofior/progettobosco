@@ -21,6 +21,10 @@ $DEBUG=true;
  */
 $BASE_URL ='http://127.0.0.1/progettobosco/public/';
 /**
+ * Site name
+ */
+$SITE_NAME='Progettobosco';
+/**
  * Database configuration
  */
 $DB_CONFIG = array(
@@ -31,3 +35,21 @@ $DB_CONFIG = array(
     'password'  => 'postgres', 
     'dbname'    => 'progettobosco_master'
     );
+/**
+ * Administrator mail configuration
+ */
+$MAIL_ADMIN_CONFIG = array(
+    'server' => 'smtp.gmail.com',
+    'ssl' => 'tls',
+    'port' => 587,
+    'auth' => 'login',
+    'username' => 'caiofior@gmail.com',
+    'password' => 'arabis44',
+    'from' => 'caiofior@gmail.com',
+    'from_name' => 'Claudio Fior'
+    
+);
+/**
+ * Debugn mail for server maitenance
+ */
+$DEBUNG_MAIL='caiofior@gmail.com';
