@@ -13,6 +13,10 @@
 }
 .index_menu a{
     padding-left: 40px;
+    
+}
+.index_menu li{
+    margin-bottom: 15px;
 }
 .index_menu .bosco {
     background-image: url(../images/menu/bosco.png);

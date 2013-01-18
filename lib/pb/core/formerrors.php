@@ -81,7 +81,11 @@ class FormErrors {
             2=> array('m'=>' devono essere vero o falso','f'=>' devono essere vero o falso')
         ),
     );
-
+    /**
+     * Default Ok message
+     * @var variant
+     */
+    private $okMessage=true;
     /**
      * Adds an error to le list
      * @param int $kind is a constant of this class
@@ -151,17 +155,26 @@ class FormErrors {
      */
     public function getJsonError () {
         header('Content-type: application/json');
-        $response = true;
+        $response = $this->okMessage;
         if ($this->count()>0)
             $response = $this->getMessages();
         echo Zend_Json::encode($response);
         exit;
     }
-
+    /**
+     * Gets html formatted errors
+     */
     public function getHtmlError () {
         $messages = $this->getMessages();
         if (is_array($messages))
                 foreach($messages['messages'] as $error_item) echo '<p>'.$error_item.'</p>';
+    }
+    /**
+     * Sets the default ok message
+     * @param variant $okmessage
+     */
+    public function setOkMessage($okmessage) {
+        $this->okMessage = $okmessage;
     }
 
 }

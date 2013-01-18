@@ -64,12 +64,11 @@ class User extends Content {
         unset($this->data['password_new']);
         $this->data['confirmation_code']=md5(serialize($GLOBALS));
         $this->data['creation_datetime']='NOW()';
-        parent::insert();
         $profile = new Profile();
         $profile->setData($this->data['username'],'email');
         $profile->insert();
-        $user->setData($profile->getData('id'),'profile_id');
-        $this->update();
+        $this->data['profile_id']=$profile->getData('id');
+        parent::insert();
     }
     /**
      * Updates user data
@@ -118,7 +117,20 @@ class User extends Content {
      * @return bool
      */
     public function checkPassword($new_password) {
-        return md5($new_password) == $this->data['password'];
+        return md5($new_password) != $this->data['password'];
     }
-
+    /**
+    * Generates a new password
+    * @param int $n number of charcaters
+    * @return string password
+    */
+   public function generatePassword ($n=null) {
+        if (is_null($n))  $n = 6;
+        
+        $password = '';
+        for ($c  = 0; $c < 6 ; $c++)
+                $password .= ((rand(1,4) != 1) ? chr(rand(97, 122)) : rand(0, 9));
+        $this->data['password_new']=$password;
+        return $password;
+   }
 }

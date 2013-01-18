@@ -36,15 +36,21 @@ function formAjax(selector,messages_selector) {
             data: data,
             success: function(response) {
                 $("#ajaxloader").hide();
+                console.log(typeof(response));
                 if (response == true) {
                     el.find(":submit").removeAttr("name");
                     status = true;
+                }
+                else if (typeof(response)=="string") {
+                    el.find(":submit").removeAttr("name");
+                    $(messages_selector).html(response).addClass("succesfull").show();
+                    status = false;
                 }
                 else {
                     $.each(response["names"], function(id,val) {
                         $("#"+val).addClass("error");
                     });
-                    $(messages_selector).text(response["messages"]).show();  
+                    $(messages_selector).html(response["messages"]).show();  
                 }
             },
             error: function(jqXHR , textStatus,  errorThrown) {
@@ -52,7 +58,7 @@ function formAjax(selector,messages_selector) {
                     console.log(textStatus,errorThrown,$(jqXHR.responseText).text());
                 }
                 $("#ajaxloader").hide();
-                $(messages_selector).text("Eorrore di connessione, riprova in un secondo momento").show();
+                $(messages_selector).text("Errore di connessione, riprova in un secondo momento").show();
             },
             dataType: "json"
         });

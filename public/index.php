@@ -35,6 +35,7 @@ if (key_exists('action', $_REQUEST) && $_REQUEST['action']='xhr_update') {
 } else if (key_exists('register', $_REQUEST) ) {
     $user_unique = false;
     $new_user = new User();
+    
     try{
         $new_user->loadFromUsername($_REQUEST['username']);
     } catch (Exception $e) {
@@ -49,25 +50,28 @@ if (key_exists('action', $_REQUEST) && $_REQUEST['action']='xhr_update') {
        $formErrors->addError(FormErrors::valid_email,'username','nome utente');       
     }
     else if (!$user_unique) {
-       $formErrors->addError(FormErrors::custom,'username','nome utente già presente (recupera password)');       
+       $formErrors->addError(FormErrors::custom,'username','Nome utente già presente (<a href="#" class="password_recover">recupera password</a>)');       
     }
     if($_REQUEST['password'] == '' ) {
        $formErrors->addError(FormErrors::required,'password','password','f');       
     }
     else if(strlen($_REQUEST['password']) < 6 ) {
-       $formErrors->addError(FormErrors::custom,'password','la password deve avere almeno sei caratteri','f');       
+       $formErrors->addError(FormErrors::custom,'password','La password deve avere almeno sei caratteri','f');       
     }
     else if($_REQUEST['password'] !=  $_REQUEST['confirm_password']) {
-       $formErrors->addError(FormErrors::custom,'password','le due password non sono uguali');       
+       $formErrors->addError(FormErrors::custom,'password','Le due password non sono uguali');       
     }
+    
     if ($formErrors->count() == 0) {
+         
         $user=new User();
+        
         $user->setData($_REQUEST['username'],'username');
         $user->setData($_REQUEST['message'],'message');
         $user->setData($_REQUEST['password'],'password_new');
+        
         $user->insert();
-        
-        
+               
         ob_start();
         require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'mail'.DIRECTORY_SEPARATOR.'confirmation.php';
         $content = ob_get_clean();
@@ -84,9 +88,10 @@ if (key_exists('action', $_REQUEST) && $_REQUEST['action']='xhr_update') {
             $formErrors->addError(FormErrors::custom,'password','C\'è stato un problema durante la registrazione, prova in un secondo momento.');       
         }
     }
-     if (key_exists('xhr', $_REQUEST)) {
+    $formErrors->setOkMessage('L\'utente è stato creato e ti è stata inviata una mail per confermare l\'indirizzo di posta');
+    if (key_exists('xhr', $_REQUEST)) {
          $formErrors->getJsonError();
-     }
+    }
 } else if (key_exists('subscription_confirm', $_REQUEST)) {
     $user = new User();
     $content = 'content'.DIRECTORY_SEPARATOR.'confirmation_succesfull.php';
@@ -104,6 +109,47 @@ if (key_exists('action', $_REQUEST) && $_REQUEST['action']='xhr_update') {
         }
     }
     
+} else if (key_exists('recoverpassword', $_REQUEST)) {
+    $user_unique = false;
+    $new_user = new User();
+    
+    try{
+        $new_user->loadFromUsername($_REQUEST['username']);
+    } catch (Exception $e) {
+        if ($e->getCode()==1301130908)
+            $user_unique = true;
+        else  throw $e;
+    }
+    if($_REQUEST['username'] == '' ) {
+       $formErrors->addError(FormErrors::required,'username','nome utente');       
+    }
+    else if(!filter_var($_REQUEST['username'], FILTER_VALIDATE_EMAIL)) {
+       $formErrors->addError(FormErrors::valid_email,'username','nome utente');       
+    }
+    else if ($user_unique) {
+       $formErrors->addError(FormErrors::custom,'username','non trovo questo nome utente');       
+    }
+    $password =  $new_user->generatePassword();
+    $new_user->update();
+    ob_start();
+    require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'mail'.DIRECTORY_SEPARATOR.'recoverpassword.php';
+    $content = ob_get_clean();
+    $mail = new Zend_Mail('UTF-8');
+    $mail->setBodyText(strip_tags($content));
+    $mail->setBodyHTML($content);
+    $mail->setFrom($MAIL_ADMIN_CONFIG['from'], $MAIL_ADMIN_CONFIG['from_name']);
+    $mail->addTo($_REQUEST['username'], $_REQUEST['username']);
+    $mail->setSubject('Recupero password del sito '.$SITE_NAME);
+    try{
+        $mail->send(new Zend_Mail_Transport_Smtp($MAIL_ADMIN_CONFIG['server'], $MAIL_ADMIN_CONFIG));
+    } catch (Exception $e) {
+        $user->delete();
+        $formErrors->addError(FormErrors::custom,'password','C\'è stato un problema durante la registrazione, prova in un secondo momento.');       
+    }
+    $formErrors->setOkMessage('Ti è stata inviata una mail con una nuova password, accedi al tuo profilo e potrai modificarla');
+    if (key_exists('xhr', $_REQUEST)) {
+         $formErrors->getJsonError();
+    }
 }
 
 $view->controler = basename(__FILE__);

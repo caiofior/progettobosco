@@ -17,6 +17,10 @@ $PEAR_PATH ='/usr/share/php/';
  */
 $DEBUG=true;
 /**
+ * Monitoring enabled
+ */
+$MONITORING=false;
+/**
  * Base url of the web site
  */
 $BASE_URL ='http://127.0.0.1/progettobosco/public/';

@@ -1,7 +1,7 @@
 			<!-- sidebar -->
 			<div id="sidebar">
 							
-                <div class="sidemenu" id="sidebar_register" >
+                        <div class="sidemenu" id="sidebar_register" >
 					
  						<h3>Accedi</h3>				
 			
@@ -20,10 +20,11 @@
 			
 							<p class="no-border">
 								<input class="button" name="login" type="submit" value="Accedi" tabindex="3" />         		
-                                                                 o <a href="#" data-update="sidebar_register">Registrati</a>
+                                                                <a href="#" data-update="sidebar_register">registrati</a> o <a href="#" class="password_recover">recupera la password</a>
 							</p>
 					
 						</form>	
+                                                <?php require __DIR__.DIRECTORY_SEPARATOR.'recoverpassword.php'; ?>
 					
 				</div>
 

@@ -17,7 +17,7 @@
 							</p>
 							<p >	
 								<label for="confirm_password">Conferma password</label>
-								<input class="large" id="confirm_password" class="required" name="confirm_password"  type="text" tabindex="3" />
+								<input class="large" id="confirm_password" class="required" name="confirm_password"  type="password" tabindex="3" />
 							</p>
 
 							<p class="no-border">

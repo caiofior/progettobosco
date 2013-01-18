@@ -31,17 +31,17 @@ if (key_exists('profile', $_REQUEST)) {
         $profile->setData($_REQUEST);
         $profile->update();
     }
+    $formErrors->setOkMessage('I dati del profilo sono stati salvati');
      if (key_exists('xhr', $_REQUEST)) {
          $formErrors->getJsonError();
      }
 }
 else if (key_exists('modify_password', $_REQUEST)) {
-
-    if($user->chechPassword($_REQUEST['old_password']))
+    if($user->checkPassword($_REQUEST['old_password']))
         $formErrors->addError(FormErrors::custom,'old_password', 'la vecchia password è errata');
     if ($_REQUEST['new_password'] == '')
         $formErrors->addError(FormErrors::required,'new_password','la password','f');
-    else if(strlen($_REQUEST['password']) < 6 )
+    else if(strlen($_REQUEST['new_password']) < 6 )
        $formErrors->addError(FormErrors::custom,'password','la password deve avere almeno sei caratteri','f');       
     else if ($_REQUEST['new_password'] != $_REQUEST['confirm_password'])
         $formErrors->addError(FormErrors::custom,'new_password', 'le due password non coicidono');
@@ -49,6 +49,7 @@ else if (key_exists('modify_password', $_REQUEST)) {
         $user->setData($_REQUEST['new_password'],'password_new');
         $user->update();
     }
+    $formErrors->setOkMessage('Password modificata');
      if (key_exists('xhr', $_REQUEST)) {
          $formErrors->getJsonError();
      }

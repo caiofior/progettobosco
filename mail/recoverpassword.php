@@ -20,12 +20,10 @@
 	</STYLE>
 </HEAD>
 <BODY LANG="it-IT" DIR="LTR">
-<H1 CLASS="western">Benvenuto su <?php echo $SITE_NAME;?></H1>
-<P STYLE="margin-bottom: 0cm">Conferma la tua iscrizione su 
+<H1 CLASS="western">Recupero password di <?php echo $SITE_NAME;?></H1>
+<P STYLE="margin-bottom: 0cm">Come richiesto è stata generata una nuova password per accedere a 
 <?php echo $SITE_NAME;?>.</P>
-<P STYLE="margin-bottom: 0cm">Hai ricevuto questa mail a seguito
-dell'iscrizione su <a href="<?php echo $BASE_URL; ?>?subscription_confirm=<?php echo $user->getData('confirmation_code');?>"><?php echo $SITE_NAME;?></a> per confermare la validità del tuo
-indirizzo di posta elettronica.</P>
+<P STYLE="margin-bottom: 0cm">La password è : <?php echo $password; ?>.</P>
 <P ALIGN=RIGHT STYLE="margin-bottom: 0cm">Lo staff di <?php echo $SITE_NAME;?>.</P>
 </BODY>
 </HTML>

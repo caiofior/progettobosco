@@ -828,3 +828,7 @@ form .error {
     margin: 5px;
     width: 130px;
 }
+.succesfull {
+    background-image: url(../images/silk/accept.png);
+    border-color: #88881B;
+}

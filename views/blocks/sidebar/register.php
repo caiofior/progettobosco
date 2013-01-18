@@ -30,8 +30,9 @@
 			
 							<p class="no-border">
 								<input class="button" name="register" type="submit" value="Registrati" tabindex="5" />         		
-                                                                 o <a href="#" data-update="sidebar_login">Accedi</a>
+                                                                <a href="#" data-update="sidebar_login">Accedi</a> o <a href="#" class="password_recover">recupera la password</a>
 							</p>
 					
 						</form>	
+                                                <?php require __DIR__.DIRECTORY_SEPARATOR.'recoverpassword.php';  ?>
                                                 </div>

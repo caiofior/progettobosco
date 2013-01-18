@@ -8,7 +8,7 @@ require (__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'config.php');
 /**
  * Includes monitoring script
  */
-if (!isset($PHPUNIT) || !$PHPUNIT)
+if ((!isset($PHPUNIT) || !$PHPUNIT) && (isset($MONITORING) && $MONITORING))
     require (__DIR__.DIRECTORY_SEPARATOR.'monitoring.php');
 /**
  * Config debug options
