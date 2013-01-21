@@ -43,13 +43,11 @@ $DB_CONFIG = array(
  * Administrator mail configuration
  */
 $MAIL_ADMIN_CONFIG = array(
-    'server' => 'smtp.gmail.com',
-    'ssl' => 'tls',
-    'port' => 587,
+    'server' => 'smtp.entecra.it',
     'auth' => 'login',
-    'username' => 'caiofior@gmail.com',
-    'password' => 'arabis44',
-    'from' => 'caiofior@gmail.com',
+    'username' => 'claudio.fior@entecra.it',
+    'password' => 'topolino',
+    'from' => 'claudio.fior@entecra.it',
     'from_name' => 'Claudio Fior'
     
 );

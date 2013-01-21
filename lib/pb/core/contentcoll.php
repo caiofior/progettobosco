@@ -2,80 +2,103 @@
 /**
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Content object
+ * Content object collection
  */
 /**
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Content object
+ * Content object collection
  */
-abstract class Content {
-     /**
-     * Zend Data table
-     * @var Zend_Db_Table 
-     */
-    protected $table;
+abstract class ContentColl {
     /**
-     * Data associated
+     * Contet of the collection
+     * @var Content
+     */
+    protected $content;
+    /**
+     * Array of items
      * @var array
      */
-    protected $data=array();
-     /**
-     * Instantiates the table
+    protected $items=array();
+    /**
+     * Columns array
+     * @var array
      */
-    public function __construct($table) {
-        $this->table = new Zend_Db_Table($table);
+    protected $columns=null;
+     /**
+     * Instantiates the collection
+     */
+    public function __construct(Content $content) {
+        $this->content = $content;
     }
     /**
-     * Loads data from its id
-     * @param int $id
+     * Customizes select statement
+     * @param Zend_Db_Select $select Zend Db Select
      */
-    public function loadFromId($id) {
-        $data = $this->table->find($id)->toArray();
-        $this->data = array_shift($data);
-    }
-     /**
-     * Gets the data
-     * @return array
-     */
-    public function getData($field = null) {
-        if (is_null($field))
-            return $this->data;
-        if (key_exists($field, $this->data))
-            return $this->data[$field];
-    }
+    abstract protected function customSelect(Zend_Db_Select $select );
     /**
-     * Sets the data
-     * @param variant $data
-     * @param string|null $field
+     * Load all contents
+     * @param array $criteria
      */
-    public function setData($data,$field=null){
-        if (is_array($data)) {
-            $this->data = array_merge($this->data,  array_intersect_key($data,$this->data));
-         }
-        else if (!is_null($field) )
-            $this->data[$field] = $data;
-    }
-    /**
-     * Adds a data
-     */
-    public function insert() {
-        $this->data['id']=$this->table->insert($this->data);
-    }
-     /**
-     * Deletes data
-     */
-    public function delete() {
-        if (key_exists('id', $this->data)) {
-            $where = $this->table->getAdapter()->quoteInto('id = ?', $this->data['id']);
-            $this->table->delete($where);
+    public function loadAll(array $criteria) {
+        $profiler = $this->content->getTable()->getAdapter()->getProfiler();
+        $profiler->setEnabled(true);
+        $select = $this->customSelect($this->content->getTable()->select());
+        $this->columns = null;
+        if (key_exists('sColumns', $criteria))
+            $this->columns=  explode(',', $criteria['sColumns']);
+        if (key_exists('iSortingCols', $criteria) && is_array($this->columns)) {
+            for ($c =0; $c < $criteria['iSortingCols'];$c++) {
+                $sort = ' ASC';
+                if (key_exists('iSortDir_'.$c, $criteria))
+                    $sort = ' '.strtoupper($criteria['iSortDir_'.$c]);
+                $select->order($this->columns[$criteria['iSortCol_'.$c]]);
+            }
+        }
+        if (
+                key_exists('iDisplayStart',$criteria ) ||
+                key_exists('iDisplayLength',$criteria )
+            )
+        $select->limit($criteria['iDisplayLength'], $criteria['iDisplayStart']);
+        $data = $this->content->getTable()->fetchAll(
+                $select
+                )->toArray();
+        //var_dump($data);
+        //var_dump($profiler->getLastQueryProfile()->getQuery());
+        //die();
+        $this->items=array();
+        foreach($data as $dataitem) {
+            $item = clone $this->content;
+            $item->setData($dataitem);
+            array_push($this->items, $item);
         }
     }
-     /**
-     * Updates data
+    /**
+     * Returns the collection items
+     * @return array
      */
-    public function update() {
-        $where = $this->table->getAdapter()->quoteInto('id = ?', $this->data['id']);
-        $this->table->update($this->data, $where);
+    public function getItems() {
+        return $this->items;
+    }
+     /**
+     * Returns the collection items
+     * @return array
+     */
+    public function count() {
+        return sizeof($this->items);
+    }
+    /**
+     * Returns all contents without any filter
+     */
+    public function countAll() {
+        return intval($this->content->getTable()->getAdapter()->fetchOne(
+                'SELECT COUNT(*) AS count FROM "'.$this->content->getTable()->info('name').'";'
+                ));
+    }
+    /**
+     * Return the colum names
+     */
+    public function getColumns() {
+        return $this->columns;
     }
 }

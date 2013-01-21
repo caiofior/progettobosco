@@ -5,65 +5,39 @@
  * Index page contoller
  */
 require (__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'include'.DIRECTORY_SEPARATOR.'pageboot.php');
-if (key_exists('profile', $_REQUEST)) {
-    if($_REQUEST['phone'] != '' && !filter_var($_REQUEST['phone'], FILTER_VALIDATE_REGEXP,array('options'=>array('regexp'=>'/[+ 0-9]{5,}/')))) {
-       $formErrors->addError(FormErrors::custom,'phone','Indica un telefono valido ( +0-9) ');       
+if (key_exists('sEcho', $_REQUEST)) {
+    $usercoll = new UserColl();
+    $usercoll->loadAll($_REQUEST);
+    $response =array(
+        'sEcho'=>  intval($_REQUEST['sEcho']),
+        'iTotalRecords'=>$usercoll->countAll(),
+        'iTotalDisplayRecords'=>$usercoll->count(),
+        'aaData'=>array()
+    );
+    foreach($usercoll->getItems() as $user) {
+        $datarow = array();
+        
+        $datarow[]=intval($user->getData('id'));
+        $datarow[]=$user->getData('username');
+        $datarow[]=$user->getRawData('first_name').' '.$user->getRawData('last_name');
+        $datarow[]=$user->getRawData('phone');
+        $datarow[]=$user->getRawData('address_city');
+        $datarow[]=$user->getRawData('organization');
+        $datarow[]=$user->getRawData('creation_datetime');
+        $datarow[]='';
+        $response['aaData'][]=$datarow;
     }
-    if($_REQUEST['web'] != '' && !filter_var($_REQUEST['web'], FILTER_VALIDATE_URL)) {
-       $formErrors->addError(FormErrors::valid_url,'web','Indirizzo web');       
-    }
-    if($_REQUEST['facebook'] != '' && !filter_var($_REQUEST['facebook'], FILTER_VALIDATE_URL)) {
-       $formErrors->addError(FormErrors::valid_url,'facebook','Profilo facebook');       
-    }
-    if($_REQUEST['google'] != '' && !filter_var($_REQUEST['google'], FILTER_VALIDATE_URL)) {
-       $formErrors->addError(FormErrors::valid_url,'google','Profilo Google +');       
-    }
-    if($_REQUEST['address_province'] != '' && !filter_var($_REQUEST['address_province'], FILTER_VALIDATE_REGEXP,array('options'=>array('regexp'=>'/[A-Z]{2}/')))) {
-       $formErrors->addError(FormErrors::custom,'address_province','Indica la sigla di una provincia');       
-    }
-    if($_REQUEST['address_zip'] != '' && !filter_var($_REQUEST['address_zip'], FILTER_VALIDATE_REGEXP,array('options'=>array('regexp'=>'/[0-9]{5}/')))) {
-       $formErrors->addError(FormErrors::custom,'address_zip','CAP non valido');       
-    }
-    if ($formErrors->count() == 0) {
-        $user->setData($_REQUEST);
-        $user->update();
-        $profile = $user->getProfile();
-        $profile->setData($_REQUEST);
-        $profile->update();
-    }
-    $formErrors->setOkMessage('I dati del profilo sono stati salvati');
-     if (key_exists('xhr', $_REQUEST)) {
-         $formErrors->getJsonError();
-     }
-}
-else if (key_exists('modify_password', $_REQUEST)) {
-    if($user->checkPassword($_REQUEST['old_password']))
-        $formErrors->addError(FormErrors::custom,'old_password', 'la vecchia password è errata');
-    if ($_REQUEST['new_password'] == '')
-        $formErrors->addError(FormErrors::required,'new_password','la password','f');
-    else if(strlen($_REQUEST['new_password']) < 6 )
-       $formErrors->addError(FormErrors::custom,'password','la password deve avere almeno sei caratteri','f');       
-    else if ($_REQUEST['new_password'] != $_REQUEST['confirm_password'])
-        $formErrors->addError(FormErrors::custom,'new_password', 'le due password non coicidono');
-    if ($formErrors->count() == 0) {
-        $user->setData($_REQUEST['new_password'],'password_new');
-        $user->update();
-    }
-    $formErrors->setOkMessage('Password modificata');
-     if (key_exists('xhr', $_REQUEST)) {
-         $formErrors->getJsonError();
-     }
+    header('Content-type: application/json');
+    echo Zend_Json::encode($response);
+    exit;
 }
 $view = new Template(array(
     'basePath' => __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'views'
 
 ));
-$header = 'header'.DIRECTORY_SEPARATOR.'profile.php';
-$content = 'content'.DIRECTORY_SEPARATOR.'profile.php';
+$header = 'header'.DIRECTORY_SEPARATOR.'user.php';
+$content = 'content'.DIRECTORY_SEPARATOR.'user.php';
 $sidebar = 'general'.DIRECTORY_SEPARATOR.'sidebar.php';
-if (key_exists('action',$_REQUEST) && $_REQUEST['action']=='password') {
-    $content = 'content'.DIRECTORY_SEPARATOR.'password.php';
-}
 if ($user === false) {
     $header = 'general'.DIRECTORY_SEPARATOR.'header.php';
     $content = 'content'.DIRECTORY_SEPARATOR.'login.php';
@@ -78,7 +52,7 @@ $view->blocks = array(
       'SIDEBAR' => $sidebar,
       'FOOTER' => array(
           'general'.DIRECTORY_SEPARATOR.'footer.php',
-          'footer'.DIRECTORY_SEPARATOR.'profile.php'
+          'footer'.DIRECTORY_SEPARATOR.'user.php'
       )
     );
 echo $view->render('Jungleland10.php');

@@ -44,7 +44,9 @@
 	<!-- /content-wrap -->	
 	</div>	
 <!-- /wrap -->
-</div>
+</div> 
+        <script type="text/javascript" src="js/jquery-ui/js/jquery-1.8.3.js"></script>
+        <script type="text/javascript" src="js/jquery-ui/js/jquery-ui-1.9.2.custom.min.js"></script>
         <script type="text/javascript" src="js/general.js"></script>
         <?php $this->renderBlock('FOOTER'); ?>	
 

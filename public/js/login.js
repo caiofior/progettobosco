@@ -1,5 +1,5 @@
 /**
- * On page ready functions
+ * Home functions
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */

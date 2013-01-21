@@ -9,7 +9,7 @@
                                         già esistente o aggiornare i tuoi dati personali</p>
 				        <ul class="index_menu">
                                             <?php if ($this->user->getData('is_admin')) :?>
-                                            <li><a href='<?php echo $GLOBALS['BASE_URL'];?>users.php'>Amministra utenti</a></li>
+                                            <li><a href='<?php echo $GLOBALS['BASE_URL'];?>user.php'>Amministra utenti</a></li>
                                             <?php endif; ?>
                                             <li><a class="bosco" href='<?php echo $GLOBALS['BASE_URL'];?>bosco.php'>Bosco</a></li>
                                         </ul>
