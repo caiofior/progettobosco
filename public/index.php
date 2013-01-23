@@ -104,6 +104,7 @@ if (key_exists('action', $_REQUEST) && $_REQUEST['action']='xhr_update') {
         if ($user->getData('confirmed'))
             $content = 'content'.DIRECTORY_SEPARATOR.'confirmation_alreadyconfirmed.php';
         else {
+            $user->setData(true, 'active');
             $user->setData(true, 'confirmed');
             $user->update();
         }
