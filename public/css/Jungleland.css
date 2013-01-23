@@ -861,6 +861,18 @@ form .error {
 .cancel {
     background-position:-64px 0px;
 }
+.active {
+    background-position:-80px 0px;
+}
+.not_active {
+    background-position:-96px 0px;
+}
+.administrator {
+    background-position:-112px 0px;
+}
+.user {
+    background-position:-128px 0px;
+}
 #breadcrumb {
     font-size: x-small;
     padding: 0px;

@@ -35,6 +35,21 @@ $(document).on("click","#user .delete",function(){
     });
    return false;
 });
+$(document).on("click","#user .edit",function(){
+    el = $(this).parent("a");
+    $.ajax({
+         type: "POST",
+         url: el.attr("href"),
+         data: {"xhr":1},
+         dataType: "json",
+         success: function(response) {
+             if (response == true) {
+                 $("#user").dataTable().fnReloadAjax();
+             }
+         }
+     });
+   return false;
+});
 $(document).on("click","#user_delete_confirm",function(){
    el = $(this); 
    $.ajax({

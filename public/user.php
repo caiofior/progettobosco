@@ -15,24 +15,52 @@ if (key_exists('sEcho', $_REQUEST)) {
         'sColumns'=>  implode(',',$usercoll->getColumns()),
         'aaData'=>array()
     );
-    foreach($usercoll->getItems() as $user) :
+    foreach($usercoll->getItems() as $user_item) :
         $datarow = array();
         
-        $datarow[]=intval($user->getData('id'));
-        $datarow[]=$user->getData('username');
-        $datarow[]=$user->getRawData('first_name').' '.$user->getRawData('last_name');
-        $datarow[]=$user->getRawData('phone');
-        $datarow[]=$user->getRawData('address_city');
-        $datarow[]=$user->getRawData('organization');
-        $date = new DateTime($user->getRawData('creation_datetime'));
+        $datarow[]=intval($user_item->getData('id'));
+        $datarow[]=$user_item->getData('username');
+        $datarow[]=$user_item->getRawData('first_name').' '.$user_item->getRawData('last_name');
+        $datarow[]=$user_item->getRawData('phone');
+        $datarow[]=$user_item->getRawData('address_city');
+        $datarow[]=$user_item->getRawData('organization');
+        $date = new DateTime($user_item->getRawData('creation_datetime'));
         $datarow[]=$date->format('Y-m-d');
         ob_start();
         ?>
 <div class="table_actions">
-    <a href="user.php?action=show&id=<?php echo intval($user->getData('id'));?>"><img class="actions show" src="images/empty.png" title="Visualizza"/></a>
-    <?php if (!$user->getData('is_admin')) : ?>
-    <a href="user.php?action=manage&id=<?php echo intval($user->getData('id'));?>"><img class="actions manage" src="images/empty.png" title="Associa boschi"/></a>
-    <a href="user.php?action=delete&id=<?php echo intval($user->getData('id'));?>"><img class="actions delete" src="images/empty.png" title="Cancella"/></a>
+    <a href="user.php?action=show&id=<?php echo intval($user_item->getData('id'));?>"><img class="actions show" src="images/empty.png" title="Visualizza"/></a>
+    <?php
+     $value = 0;
+     $label = 'Attivo';
+     $class= 'active';
+     if ($user_item->getData('active')=='f') {
+         $value = 1;
+         $class= 'not_active';
+         $label = 'Non attivo';
+     }
+     if ($user_item->getData('id') == $user->getData('id'))
+         $value = 1;
+    ?>
+    <a href="user.php?action=edit&id=<?php echo intval($user_item->getData('id'));?>&field=active&value=<?php echo $value; ?>"><img class="actions edit <?php echo $class; ?>" src="images/empty.png" title="<?php echo $label; ?>"/></a>
+    <?php
+     $value = 0;
+     $class= 'administrator';
+     $label = 'Amministratore';
+     if ($user_item->getData('is_admin')=='f') {
+        $value = 1;
+        $label = 'Utente';
+        $class= 'user';
+     }
+     if ($user_item->getData('id') == $user->getData('id'))
+         $value = 1;
+    ?>
+    <a href="user.php?action=edit&id=<?php echo intval($user_item->getData('id'));?>&field=is_admin&value=<?php echo $value; ?>"><img class="actions edit <?php echo $class; ?>" src="images/empty.png" title="<?php echo $label; ?>"/></a>
+    <?php if (!$user_item->getData('is_admin')) : ?>
+    <a href="user.php?action=manage&id=<?php echo intval($user_item->getData('id'));?>"><img class="actions manage" src="images/empty.png" title="Associa boschi"/></a>
+    <?php endif; ?>
+    <?php if ($user_item->getData('id') != $user->getData('id')) : ?>
+    <a href="user.php?action=delete&id=<?php echo intval($user_item->getData('id'));?>"><img class="actions delete" src="images/empty.png" title="Cancella"/></a>
     <?php endif; ?>
 </div>
         <?php $datarow[]=  ob_get_clean();
@@ -65,6 +93,12 @@ else if (key_exists('action', $_REQUEST)) {
             $view->user_detail = new User();
             $view->user_detail->loadFromId($_REQUEST['id']);
             $content = 'content'.DIRECTORY_SEPARATOR.'user_manage.php';
+        break;
+        case 'edit' :
+            $user_edit = new User();
+            $user_edit->loadFromId($_REQUEST['id']);
+            $user_edit->setData($_REQUEST['value'], $_REQUEST['field']);
+            $user_edit->update();
         break;
         case 'delete':
             if (key_exists('confirm', $_REQUEST)) {
