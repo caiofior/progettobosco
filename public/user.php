@@ -5,7 +5,7 @@
  * Index page contoller
  */
 require (__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'include'.DIRECTORY_SEPARATOR.'pageboot.php');
-if (key_exists('sEcho', $_REQUEST)) {
+ if (key_exists('sEcho', $_REQUEST)) {
     $usercoll = new UserColl();
     $usercoll->loadAll($_REQUEST);
     $response =array(
@@ -56,7 +56,7 @@ if (key_exists('sEcho', $_REQUEST)) {
          $value = 't';
     ?>
     <a href="user.php?action=edit&id=<?php echo intval($user_item->getData('id'));?>&field=is_admin&value=<?php echo $value; ?>"><img class="actions edit <?php echo $class; ?>" src="images/empty.png" title="<?php echo $label; ?>"/></a>
-    <?php if (!$user_item->getData('is_admin')) : ?>
+    <?php if ($user_item->getData('is_admin')=='f') : ?>
     <a href="user.php?action=manage&id=<?php echo intval($user_item->getData('id'));?>"><img class="actions manage" src="images/empty.png" title="Associa boschi"/></a>
     <?php endif; ?>
     <?php if ($user_item->getData('id') != $user->getData('id')) : ?>
@@ -82,17 +82,35 @@ if ($user === false) {
     $content = 'content'.DIRECTORY_SEPARATOR.'login.php';
     $sidebar = 'sidebar'.DIRECTORY_SEPARATOR.'login.php';
 } 
+else if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
+            $user_detail = new User();
+            $user_detail->loadFromId($_REQUEST['id']);
+            $response = array();
+            $request = new RegexIterator(new ArrayIterator($_REQUEST), '/^[0-9]+$/',  RegexIterator::MATCH,  RegexIterator::USE_KEY); 
+            foreach ($request as  $value) {
+                $file_path = __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'blocks'.DIRECTORY_SEPARATOR;
+                $file_path .= str_replace('_', DIRECTORY_SEPARATOR, $value).'.php';
+                if (is_file($file_path)) {
+                    ob_start();
+                    require $file_path;
+                    $response[ $value]=  ob_get_clean();
+                    }
+            }
+            header('Content-type: application/json');
+            echo Zend_Json::encode($response);
+            exit;
+}
 else if (key_exists('action', $_REQUEST)) {
     switch ($_REQUEST['action']) {
         case 'show':
             $view->user_detail = new User();
             $view->user_detail->loadFromId($_REQUEST['id']);
-            $content = 'content'.DIRECTORY_SEPARATOR.'user_show.php';
+            $content = 'content'.DIRECTORY_SEPARATOR.'userShow.php';
         break;
         case 'manage':
             $view->user_detail = new User();
             $view->user_detail->loadFromId($_REQUEST['id']);
-            $content = 'content'.DIRECTORY_SEPARATOR.'user_manage.php';
+            $content = 'content'.DIRECTORY_SEPARATOR.'userManage.php';
         break;
         case 'edit' :
             $user_edit = new User();
@@ -119,6 +137,7 @@ else if (key_exists('action', $_REQUEST)) {
             else
                 $formErrors->addError(FormErrors::custom,'confirm','Vuoi cancellare l\'utente selezionato');
         break;
+       
     }
     if (key_exists('xhr', $_REQUEST))
          $formErrors->getJsonError();

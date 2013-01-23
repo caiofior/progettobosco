@@ -43,6 +43,12 @@ abstract class ContentColl {
     public function loadAll(array $criteria=null) {
         if (is_null($criteria))
             $criteria = array();
+        if (key_exists('iDisplayStart', $criteria))
+                $criteria['start']=$criteria['iDisplayStart'];
+        if (key_exists('iDisplayLength', $criteria))
+                $criteria['length']=$criteria['iDisplayLength'];
+        if (key_exists('sSearch', $criteria))
+                $criteria['search']=$criteria['sSearch'];
         $select = $this->customSelect($this->content->getTable()->select(), $criteria);
         $this->columns = null;
         if (key_exists('sColumns', $criteria))
@@ -56,10 +62,10 @@ abstract class ContentColl {
             }
         }
         if (
-                key_exists('iDisplayStart',$criteria ) ||
-                key_exists('iDisplayLength',$criteria )
+                key_exists('start',$criteria ) ||
+                key_exists('length',$criteria )
             )
-        $select->limit($criteria['iDisplayLength'], $criteria['iDisplayStart']);
+        $select->limit($criteria['length'], $criteria['start']);
         $data = $this->content->getTable()->fetchAll(
                 $select
                 )->toArray();

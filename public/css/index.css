@@ -23,3 +23,8 @@
     background-repeat: no-repeat;
     background-position: left center;
 }
+.index_menu .user_admin {
+    background-image: url(../images/menu/adminusers.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+}

@@ -22,6 +22,11 @@ if (!class_exists('Content')) {
  */
 class ForestColl extends \ContentColl {
     /**
+     * User reference
+     * @var \User
+     */
+    private $user;
+    /**
      * Instantiates the table
      */
     public function __construct() {
@@ -33,9 +38,45 @@ class ForestColl extends \ContentColl {
      * @return \Zend_Db_Select
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
-        $select->setIntegrityCheck(false); 
-        $select->from('propriet');
-        $select->join('diz_regioni','diz_regioni.codice = propriet.regione');
+        $select->setIntegrityCheck(false) 
+        ->from('propriet')
+        ->join('diz_regioni','diz_regioni.codice = propriet.regione')
+        ->joinLeft('user_propriet','user_propriet.propriet_codice = propriet.codice');
+        if (key_exists('search', $criteria) && $criteria['search'] != '') {
+            $select->where('descrizion LIKE ?', $criteria['search'].'%');   
+        }
+        if (key_exists('regione', $criteria) && $criteria['regione'] != '') {
+            $select->where('regione = ?', $criteria['regione']); 
+        }
         return $select;
+    }
+     /**
+     * Returns all contents without any filter
+     */
+    public function countAll(array $criteria = null) {
+        if (is_null($criteria))
+            parent::countAll();
+        else
+            return intval($this->content->getTable()->getAdapter()->fetchOne(
+                                    'SELECT COUNT(*) AS count FROM "' . $this->content->getTable()->info('name') . '" WHERE descrizion LIKE \'' . $criteria['search'] . '%\';'
+                            ));
+    }
+    /**
+     * Return a collection of regions
+     * @return \forest\RegionColl
+     */
+    public function getRegionColl() {
+        $regioncoll = new RegionColl();
+        $regioncoll->loadAll(array(
+            'filter_forest'=>1
+        ));
+        return $regioncoll;
+    }
+    /**
+     * Set the user forest owner
+     * @param \User $user
+     */
+    public function setUserForests(\User $user) {
+       $this->user = $user;
     }
 }

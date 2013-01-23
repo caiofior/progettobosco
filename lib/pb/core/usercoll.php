@@ -25,12 +25,12 @@ class UserColl extends ContentColl {
         $select->setIntegrityCheck(false); 
         $select->from('user',array('*','user_id'=>'id'));
         $select->join('profile','profile.id = '.$select->getAdapter()->quoteIdentifier('user').'.profile_id');
-        if (key_exists('sSearch', $criteria)) {
-            $select->where('username LIKE ?', $criteria['sSearch'].'%');
-            $select->orWhere('first_name LIKE ?', $criteria['sSearch'].'%');
-            $select->orWhere('address_city LIKE ?', $criteria['sSearch'].'%');
-            $select->orWhere('phone LIKE ?', $criteria['sSearch'].'%');
-            $select->orWhere('organization LIKE ?', $criteria['sSearch'].'%');
+        if (key_exists('search', $criteria)) {
+            $select->where('username LIKE ?', $criteria['search'].'%');
+            $select->orWhere('first_name LIKE ?', $criteria['search'].'%');
+            $select->orWhere('address_city LIKE ?', $criteria['search'].'%');
+            $select->orWhere('phone LIKE ?', $criteria['search'].'%');
+            $select->orWhere('organization LIKE ?', $criteria['search'].'%');
         }
         return $select;
     }

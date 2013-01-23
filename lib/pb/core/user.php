@@ -144,12 +144,12 @@ class User extends Content {
    }
    /**
     * Return the forrest collection
-    * @param array $criteria
     * @return \forest\ForestColl
     */
-   public function getForestColl(array $criteria=null) {
+   public function getForestColl() {
        $forestcoll = new \forest\ForestColl();
-       $forestcoll->loadAll();
+      
+       $forestcoll->setUserForests($this);
        return $forestcoll;
    }
 }

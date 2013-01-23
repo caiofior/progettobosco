@@ -30,7 +30,7 @@ class ForestCollTest extends \PHPUnit_Framework_TestCase {
         
     }
     /**
-     * @covers User::loadAll
+     * @covers ForestColl::loadAll
      */
     public function testLoadAll() {
         $this->object->loadAll();
