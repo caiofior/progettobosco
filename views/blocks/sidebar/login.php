@@ -8,7 +8,7 @@
 						<form action="<?php echo $GLOBALS['BASE_URL'];?>" method="post" id="login_form">		
                                                         <div class="form_messages login_messages" style="display: none;"></div>
 							<p >	
-								<label for="username">email</label><br />
+								<label for="username">Nome utente (email)</label><br />
 								<input id="username" class="required" name="username" value="" type="text" tabindex="1" />
 							</p>
 			

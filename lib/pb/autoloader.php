@@ -5,6 +5,7 @@
  * Autoloading files
  */
 if (!class_exists('Zend_Loader')) {
+    require('FirePHPCore'.DIRECTORY_SEPARATOR.'fb.php');
     require('Zend'.DIRECTORY_SEPARATOR.'Loader.php');
     Zend_Loader::loadClass('Zend_View');
     Zend_Loader::loadClass('Zend_Registry');

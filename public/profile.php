@@ -30,6 +30,12 @@ if (key_exists('profile', $_REQUEST)) {
         $profile = $user->getProfile();
         $profile->setData($_REQUEST);
         $profile->update();
+        $log->setData(array(
+            'user_id'=>$user->getData('id'),
+            'username'=>$user->getData('username'),
+            'description'=>'Aggiornamento profilo',
+        ));
+        $log->insert();
     }
     $formErrors->setOkMessage('I dati del profilo sono stati salvati');
      if (key_exists('xhr', $_REQUEST)) {
@@ -48,6 +54,12 @@ else if (key_exists('modify_password', $_REQUEST)) {
     if ($formErrors->count() == 0) {
         $user->setData($_REQUEST['new_password'],'password_new');
         $user->update();
+        $log->setData(array(
+            'user_id'=>$user->getData('id'),
+            'username'=>$user->getData('username'),
+            'description'=>'Modifica password',
+        ));
+        $log->insert();
     }
     $formErrors->setOkMessage('Password modificata');
      if (key_exists('xhr', $_REQUEST)) {

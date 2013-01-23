@@ -71,7 +71,12 @@ if (key_exists('action', $_REQUEST) && $_REQUEST['action']='xhr_update') {
         $user->setData($_REQUEST['password'],'password_new');
         
         $user->insert();
-               
+        $log->setData(array(
+            'user_id'=>$user->getData('id'),
+            'username'=>$_REQUEST['username'],
+            'description'=>'Creazione dell\'utente',
+        ));
+        $log->insert();
         ob_start();
         require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'mail'.DIRECTORY_SEPARATOR.'confirmation.php';
         $content = ob_get_clean();
@@ -104,6 +109,7 @@ if (key_exists('action', $_REQUEST) && $_REQUEST['action']='xhr_update') {
         if ($user->getData('confirmed'))
             $content = 'content'.DIRECTORY_SEPARATOR.'confirmation_alreadyconfirmed.php';
         else {
+            $user->setData(true, 'active');
             $user->setData(true, 'confirmed');
             $user->update();
         }

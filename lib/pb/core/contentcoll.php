@@ -35,24 +35,24 @@ abstract class ContentColl {
      * Customizes select statement
      * @param Zend_Db_Select $select Zend Db Select
      */
-    abstract protected function customSelect(Zend_Db_Select $select );
+    abstract protected function customSelect(Zend_Db_Select $select,array $criteria );
     /**
      * Load all contents
      * @param array $criteria
      */
-    public function loadAll(array $criteria) {
-        $profiler = $this->content->getTable()->getAdapter()->getProfiler();
-        $profiler->setEnabled(true);
-        $select = $this->customSelect($this->content->getTable()->select());
+    public function loadAll(array $criteria=null) {
+        if (is_null($criteria))
+            $criteria = array();
+        $select = $this->customSelect($this->content->getTable()->select(), $criteria);
         $this->columns = null;
         if (key_exists('sColumns', $criteria))
             $this->columns=  explode(',', $criteria['sColumns']);
         if (key_exists('iSortingCols', $criteria) && is_array($this->columns)) {
             for ($c =0; $c < $criteria['iSortingCols'];$c++) {
                 $sort = ' ASC';
-                if (key_exists('iSortDir_'.$c, $criteria))
-                    $sort = ' '.strtoupper($criteria['iSortDir_'.$c]);
-                $select->order($this->columns[$criteria['iSortCol_'.$c]]);
+                if (key_exists('sSortDir_'.$c, $criteria))
+                    $sort = ' '.strtoupper($criteria['sSortDir_'.$c]);
+                $select->order($this->columns[$criteria['iSortCol_'.$c]].' '.$sort);
             }
         }
         if (
@@ -63,9 +63,6 @@ abstract class ContentColl {
         $data = $this->content->getTable()->fetchAll(
                 $select
                 )->toArray();
-        //var_dump($data);
-        //var_dump($profiler->getLastQueryProfile()->getQuery());
-        //die();
         $this->items=array();
         foreach($data as $dataitem) {
             $item = clone $this->content;

@@ -9,6 +9,7 @@
 <meta name="author" content="Erwin Aligam - styleshout.com" />
 <?php $this->renderBlock('HEADERS'); ?>
 <link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="js/jquery-ui/css/smoothness/jquery-ui-1.9.2.custom.css"  />
 <?php echo (isset($GLOBALS['DEBUG']) && $GLOBALS['DEBUG'] ? '<script type="text/javascript" >var DEBUG=true;</script>' : '') ;?>
 </head>
 

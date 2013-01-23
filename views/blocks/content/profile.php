@@ -1,5 +1,6 @@
                         <!-- main -->
 			<div id="main">	
+                            <div id="breadcrumb"><a href="<?php echo $GLOBALS['BASE_URL'];?>">Home</a></div>
 <?php $profile = $this->user->getProfile(); ?>					
 				<div class="post">
 			

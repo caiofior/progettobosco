@@ -7,7 +7,7 @@
                                                             dei tecnici forestali italiani.
                                                         </p>
 							<p >	
-								<label for="username">email</label><br />
+								<label for="username">Nome utente (email)</label><br />
 								<input id="username" class="required" name="username" value="" type="text" tabindex="1" />
 							</p>
 			

@@ -15,6 +15,7 @@ class User extends Content {
      */
     public function __construct() {
         parent::__construct('user');
+        $this->empty_entity['password_new']=null;
     }
     /**
      * Loads user from its id
@@ -132,5 +133,23 @@ class User extends Content {
                 $password .= ((rand(1,4) != 1) ? chr(rand(97, 122)) : rand(0, 9));
         $this->data['password_new']=$password;
         return $password;
+   }
+   /*
+    * Remaps user id value
+    */
+   public function setData($data, $field = null) {
+       if (is_array($data) && key_exists('user_id', $data))
+               $data['id']=$data['user_id'];
+       parent::setData($data, $field);
+   }
+   /**
+    * Return the forrest collection
+    * @param array $criteria
+    * @return \forest\ForestColl
+    */
+   public function getForestColl(array $criteria=null) {
+       $forestcoll = new \forest\ForestColl();
+       $forestcoll->loadAll();
+       return $forestcoll;
    }
 }

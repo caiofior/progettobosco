@@ -34,9 +34,9 @@ function formAjax(selector,messages_selector) {
             async: false,
             url: el.attr("action"),
             data: data,
+            dataType: "json",
             success: function(response) {
                 $("#ajaxloader").hide();
-                console.log(typeof(response));
                 if (response == true) {
                     el.find(":submit").removeAttr("name");
                     status = true;
@@ -59,8 +59,7 @@ function formAjax(selector,messages_selector) {
                 }
                 $("#ajaxloader").hide();
                 $(messages_selector).text("Errore di connessione, riprova in un secondo momento").show();
-            },
-            dataType: "json"
+            }
         });
      
         return status;  

@@ -23,6 +23,7 @@ if (isset($DEBUG) && $DEBUG) {
         ini_set('xdebug.show_local_vars', 0);
     }
     else {
+        require_once('FirePHPCore/FirePHP.class.php');
         ini_set('html_errors', 1);
         ini_set('xdebug.collect_vars', 1);
         ini_set('xdebug.collect_params', 4);
@@ -39,21 +40,28 @@ if (isset($ZEND_PATH))
 if (isset($PEAR_PATH))
     set_include_path(get_include_path().PATH_SEPARATOR.$PEAR_PATH);
 set_include_path(get_include_path().PATH_SEPARATOR.__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'lib');
-
-require(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR.'pb'.DIRECTORY_SEPARATOR.'autoloader.php') ;
+/**
+ * Loads forest progetto bosco module
+ */
+require(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR.'pb'.DIRECTORY_SEPARATOR.'forest'.DIRECTORY_SEPARATOR.'autoloader.php') ;
 if (!function_exists('redirect')) {
     require(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR.'pb_base'.DIRECTORY_SEPARATOR.'functions.php') ;
     require(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR.'pb_base'.DIRECTORY_SEPARATOR.'insert_update.php') ;
 }
-/*
-require_once('FirePHPCore/FirePHP.class.php');
-$firephp = FirePHP::getInstance(true);
- 
-$var = array('i'=>10, 'j'=>20);
- 
-$firephp->log($var, 'Iterators'); */
 $db = Zend_Db::factory($DB_CONFIG['adapter'],$DB_CONFIG);
 $db->getConnection();
 Zend_Db_Table::setDefaultAdapter($db);
+$log = new Log();
+//Profiler
+if (isset($DEBUG) && $DEBUG) {
+    $profiler = $db->getProfiler();
+    $profiler->setEnabled(true);
+    $firephp = FirePHP::getInstance(true);
+    function lastQuery(){
+        $GLOBALS['firephp']->log($GLOBALS['profiler']->getLastQueryProfile());
+    }
+} else {
+    function lastQuery(){}
+}
 // Manages session
 require(__DIR__.DIRECTORY_SEPARATOR.'session.php');

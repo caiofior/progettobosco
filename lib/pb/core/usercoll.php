@@ -21,10 +21,17 @@ class UserColl extends ContentColl {
      * @param Zend_Db_Select $select
      * @return \Zend_Db_Select
      */
-    protected function customSelect(Zend_Db_Select $select ) {
+    protected function customSelect(Zend_Db_Select $select,array $criteria ) {
         $select->setIntegrityCheck(false); 
-        $select->from('user', Zend_Db_Table_Select::SQL_WILDCARD);
+        $select->from('user',array('*','user_id'=>'id'));
         $select->join('profile','profile.id = '.$select->getAdapter()->quoteIdentifier('user').'.profile_id');
+        if (key_exists('sSearch', $criteria)) {
+            $select->where('username LIKE ?', $criteria['sSearch'].'%');
+            $select->orWhere('first_name LIKE ?', $criteria['sSearch'].'%');
+            $select->orWhere('address_city LIKE ?', $criteria['sSearch'].'%');
+            $select->orWhere('phone LIKE ?', $criteria['sSearch'].'%');
+            $select->orWhere('organization LIKE ?', $criteria['sSearch'].'%');
+        }
         return $select;
     }
 }

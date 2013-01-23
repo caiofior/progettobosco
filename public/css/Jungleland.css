@@ -119,7 +119,7 @@ th {
 	padding: .8em 1em;	
   	border-color: #647C28 #586A22 #43511A #5A6F23;	
 	font-weight: bold;
-	color: #fff;
+	color: #000000;
 }
 td {
 	border-color: #231A14;
@@ -394,7 +394,7 @@ input.button {
 #main h2 {
 	color: #88881B;
 	border-bottom: 1px solid #29201c;
-	margin-top: 15px;
+	margin-top: 0px;
 }
 #main h2 a { color: #f0e8e8; }
 #main .block {
@@ -831,4 +831,38 @@ form .error {
 .succesfull {
     background-image: url(../images/silk/accept.png);
     border-color: #88881B;
+}
+.dataTables_filter {
+    float: right;
+    display: inline;
+}
+.dataTables_length {
+    float: left;
+    display: inline;
+}
+.actions {
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/tableactions.png);
+    background-repeat: no-repeat;
+}
+.show {
+    background-position:0x 0px;
+}
+.manage {
+    background-position:-16px 0px;
+}
+.delete {
+    background-position:-32px 0px;
+}
+.confirm {
+    background-position:-48px 0px;
+}
+.cancel {
+    background-position:-64px 0px;
+}
+#breadcrumb {
+    font-size: x-small;
+    padding: 0px;
+    margin: 0px;
 }
