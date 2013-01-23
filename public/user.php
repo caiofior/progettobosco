@@ -31,29 +31,29 @@ if (key_exists('sEcho', $_REQUEST)) {
 <div class="table_actions">
     <a href="user.php?action=show&id=<?php echo intval($user_item->getData('id'));?>"><img class="actions show" src="images/empty.png" title="Visualizza"/></a>
     <?php
-     $value = 0;
+     $value = 'f';
      $label = 'Attivo';
      $class= 'active';
      if ($user_item->getData('active')=='f') {
-         $value = 1;
+         $value = 't';
          $class= 'not_active';
          $label = 'Non attivo';
      }
      if ($user_item->getData('id') == $user->getData('id'))
-         $value = 1;
+         $value = 't';
     ?>
     <a href="user.php?action=edit&id=<?php echo intval($user_item->getData('id'));?>&field=active&value=<?php echo $value; ?>"><img class="actions edit <?php echo $class; ?>" src="images/empty.png" title="<?php echo $label; ?>"/></a>
     <?php
-     $value = 0;
+     $value = 'f';
      $class= 'administrator';
      $label = 'Amministratore';
      if ($user_item->getData('is_admin')=='f') {
-        $value = 1;
+        $value = 't';
         $label = 'Utente';
         $class= 'user';
      }
      if ($user_item->getData('id') == $user->getData('id'))
-         $value = 1;
+         $value = 't';
     ?>
     <a href="user.php?action=edit&id=<?php echo intval($user_item->getData('id'));?>&field=is_admin&value=<?php echo $value; ?>"><img class="actions edit <?php echo $class; ?>" src="images/empty.png" title="<?php echo $label; ?>"/></a>
     <?php if (!$user_item->getData('is_admin')) : ?>
