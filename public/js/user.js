@@ -3,6 +3,9 @@
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
+/**
+ * User table 
+ */
 $("#user").dataTable( {
         "oLanguage": {
             "sUrl": "js/DataTables/locale/it_IT.json"
@@ -70,6 +73,9 @@ $(document).on("click","#user_delete_cancel",function(){
    $.colorbox.close();
    return false;
 });
+/**
+ * Forest list management
+ */
 $("#forest_list").prepend("<a id=\"forest_list_update\" style=\"display:none;\" data-basehref=\""+$("#forest_list").attr("action")+"\" data-update=\"content_userManageForestlist\">Test</a>");
 $("#descrizion").keyup(function(){
    el = $("#forest_list_update"); 

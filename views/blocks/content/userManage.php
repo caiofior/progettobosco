@@ -6,11 +6,7 @@
 					<h2>Boschi associati all'utente <?php echo $this->user_detail->getData('username');?></h2>
                                         <form action="<?php echo $GLOBALS['BASE_URL'];?>user.php?<?php echo http_build_query($_GET);?>" method="post" id="forest_list">		
                                                         <p>Filtra le foreste per regione e denominazione.</p>
-                                                        <p >	
-                                                            <?php 
-                                                            $forestcoll = $this->user_detail->getForestColl(); 
-                                                            ?>
-								<label for="regione">Regione</label>
+                                                        	<label for="regione">Regione</label>
                                                                 <select id="regione" name="regione"  tabindex="1" >
                                                                     <option value="">Italia</option>
                                                                     <?php 
@@ -26,7 +22,6 @@
                                                         <?php 
                                                         require __DIR__.DIRECTORY_SEPARATOR.'userManageForestlist.php'; 
                                                         ?>
-                                                        </p>
                                         </form>	
                                         	
 				<!-- /post -->	

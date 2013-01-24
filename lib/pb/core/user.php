@@ -144,12 +144,23 @@ class User extends Content {
    }
    /**
     * Return the forrest collection
+    * @param bool $filteres Set id data has to be filtered by user
     * @return \forest\ForestColl
     */
-   public function getForestColl() {
+   public function getForestColl($filtered = false) {
        $forestcoll = new \forest\ForestColl();
-      
        $forestcoll->setUserForests($this);
+       $forestcoll->setFilterByUser($filtered);
        return $forestcoll;
+   }
+   /**
+    * Check if a user manages a forest
+    * @param forest\Forest $forest
+    * @return boolean
+    */
+   public function isUserForestAdmin(forest\Forest $forest ) {
+       if ($this->data['is_admin'] == 't')
+           return true;
+       return in_array($this->data['id'],$forest->getRawData('write_users'));
    }
 }

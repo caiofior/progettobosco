@@ -38,6 +38,7 @@ class RegionColl extends \ContentColl {
                 ->from('diz_regioni',array('*','regione_codice'=>'codice'))
                 ->join('propriet','diz_regioni.codice = propriet.regione');
         }
+        $select->order('descriz');
         return $select;
     }
 }

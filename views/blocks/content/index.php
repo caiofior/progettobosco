@@ -8,7 +8,7 @@
                                         <p>Puoi aggiungere i dati di un bosco, modificarne uno
                                         già esistente o aggiornare i tuoi dati personali</p>
 				        <ul class="index_menu">
-                                            <?php if ($this->user->getData('is_admin')) :?>
+                                            <?php if ($this->user->getData('is_admin') == 't') :?>
                                             <li><a class="user_admin" href='<?php echo $GLOBALS['BASE_URL'];?>user.php'>Amministra utenti</a></li>
                                             <?php endif; ?>
                                             <li><a class="bosco" href='<?php echo $GLOBALS['BASE_URL'];?>bosco.php'>Bosco</a></li>

@@ -4,14 +4,16 @@
  * @copyright CRA
  * MOnitoring script
  */
-ini_set('display_errors', 0);
+//ini_set('display_errors', 0);
 $script_start_time=  microtime(true);
 /**
  * Resource usage monitoring
  */
 function server_resource_monitoring()
 {
+            
             $error =error_get_last();
+            
             $error_message = '';
             if ( $error['type'] != 2 &&
                  $error['type'] != 8 &&
@@ -23,12 +25,16 @@ function server_resource_monitoring()
                 $error_message .= "message\t".$error["message"].PHP_EOL;
                 $error_message .= "file\t".$error["file"].PHP_EOL;
                 $error_message .= "line\t".$error["line"].PHP_EOL;
+                
+
                 $mail = new Zend_Mail('UTF-8');
                 $mail->setBodyText($error_message);
                 $mail->setFrom($GLOBALS['MAIL_ADMIN_CONFIG']['from'], $GLOBALS['MAIL_ADMIN_CONFIG']['from_name']);
                 $mail->addTo($GLOBALS['DEBUG_MAIL'],$GLOBALS['DEBUG_MAIL']);
                 $mail->setSubject('Error in '.$_SERVER['SERVER_NAME']);
-                $mail->send(new Zend_Mail_Transport_Smtp($GLOBALS['MAIL_ADMIN_CONFIG']['server'], $GLOBALS['MAIL_ADMIN_CONFIG']));
+                try {
+                    $mail->send(new Zend_Mail_Transport_Smtp($GLOBALS['MAIL_ADMIN_CONFIG']['server'], $GLOBALS['MAIL_ADMIN_CONFIG']));
+                } catch (Exception $e) {}
             }
             else $error = '';
             $resource_log_db = new SQLite3(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'log'.DIRECTORY_SEPARATOR.'script_performance.db');

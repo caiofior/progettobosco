@@ -54,4 +54,4 @@ $MAIL_ADMIN_CONFIG = array(
 /**
  * Debugn mail for server maitenance
  */
-$DEBUNG_MAIL='caiofior@gmail.com';
+$DEBUG_MAIL='caiofior@gmail.com';

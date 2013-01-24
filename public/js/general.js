@@ -36,7 +36,6 @@ function formAjax(selector,messages_selector) {
             data: data,
             dataType: "json",
             success: function(response) {
-                $("#ajaxloader").hide();
                 if (response == true) {
                     el.find(":submit").removeAttr("name");
                     status = true;
@@ -52,13 +51,14 @@ function formAjax(selector,messages_selector) {
                     });
                     $(messages_selector).html(response["messages"]).show();  
                 }
+                $("#ajaxloader").hide();
             },
             error: function(jqXHR , textStatus,  errorThrown) {
                 if (typeof DEBUG != 'undefined') {
                     console.log(textStatus,errorThrown,$(jqXHR.responseText).text());
                 }
-                $("#ajaxloader").hide();
                 $(messages_selector).text("Errore di connessione, riprova in un secondo momento").show();
+                $("#ajaxloader").hide();
             }
         });
      
@@ -75,10 +75,12 @@ function formAjax(selector,messages_selector) {
 function defaultInputValue (selector,value) {
     el = $(selector);
     $(document).ajaxComplete(function (e){
+        el = $(selector);
         el.attr("title", value);
         if (el.val()=="") el.val(value).data("default_value",1);
+        e.stopPropagation();
     });
-    $(el).on("focus",el,function (e){
+    $(el).on("focus",el,function (){
         if (el.val()==value) el.val("").data("default_value",null);
     }).on("blur",el,function (e){
         if (el.val()=="") el.val(value).data("default_value",1);

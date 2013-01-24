@@ -27,6 +27,11 @@ class ForestColl extends \ContentColl {
      */
     private $user;
     /**
+     * Filters or not the forest by teh user
+     * @var bool
+     */
+    private $filterByUser=false;
+    /**
      * Instantiates the table
      */
     public function __construct() {
@@ -57,6 +62,17 @@ class ForestColl extends \ContentColl {
             ))
         ->join('diz_regioni','diz_regioni.codice = propriet.regione');
         
+        if ($this->filterByUser) {
+            $select->where(
+                    new \Zend_Db_Expr(
+                    ' ? IN ('.
+                    $select->getAdapter()->select()->from('user_propriet',
+                            new \Zend_Db_Expr('"user_propriet"."user_id"')
+                            )->where('user_propriet.propriet_codice = propriet.codice').
+                    ')')
+                    , $this->user->getData('id'));
+        }
+        
         if (key_exists('search', $criteria) && $criteria['search'] != '') {
             $select->where('descrizion LIKE ?', $criteria['search'].'%');   
         }
@@ -69,12 +85,17 @@ class ForestColl extends \ContentColl {
      * Returns all contents without any filter
      */
     public function countAll(array $criteria = null) {
-        if (is_null($criteria))
+        if ($this->filterByUser || is_array($criteria)) {
+            $sql = 'SELECT COUNT(*) AS count FROM "' . $this->content->getTable()->info('name') . '" WHERE TRUE';
+            if (key_exists('search', $criteria))
+                $sql .= ' AND descrizion LIKE \'' . $criteria['search'] . '%\'';
+            if ($this->filterByUser)
+                $sql .= ' AND '.$this->user->getData('id').' IN ( SELECT "user_id" FROM "user_propriet" WHERE "user_propriet"."propriet_codice" = "propriet"."codice" ) ';
+            return intval($this->content->getTable()->getAdapter()->fetchOne($sql));
+        }
+        else 
             parent::countAll();
-        else
-            return intval($this->content->getTable()->getAdapter()->fetchOne(
-                                    'SELECT COUNT(*) AS count FROM "' . $this->content->getTable()->info('name') . '" WHERE descrizion LIKE \'' . $criteria['search'] . '%\';'
-                            ));
+
     }
     /**
      * Return a collection of regions
@@ -93,5 +114,12 @@ class ForestColl extends \ContentColl {
      */
     public function setUserForests(\User $user) {
        $this->user = $user;
+    }
+    /**
+     * Filters or not the forest by the user
+     * @param bool $filtered
+     */
+    public function setFilterByUser ($filtered) {
+        $this->filterByUser = $filtered;
     }
 }
