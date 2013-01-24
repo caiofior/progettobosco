@@ -37,7 +37,7 @@ class Region extends \Content {
             throw new \Exception('Unable to find the region',1301221541);
     }
     /*
-    * Remaps user id value
+    * Remaps regione codice 
     */
    public function setData($data, $field = null) {
        if (is_array($data) && key_exists('regione_codice', $data))

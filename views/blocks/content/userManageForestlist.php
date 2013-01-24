@@ -3,12 +3,17 @@
                                                             <?php 
                                                                 if (!isset($forestcoll))
                                                                     $forestcoll = $user_detail->getForestColl(); 
+                                                                else 
+                                                                    $user_detail = $this->user_detail;
                                                                 if (!key_exists('start', $_GET))
                                                                     $_GET['start']=0;
                                                                 if (!key_exists('search', $_GET))
                                                                     $_GET['search']=null;
                                                                 if (!key_exists('regione', $_GET))
                                                                     $_GET['regione']=null;
+                                                                unset($_GET['owned_by']);
+                                                                unset($_GET['notowned_by']);
+                                                                unset($_GET['editowned_by']);
                                                                 $items_in_page =2;
                                                                 $forestcoll->loadAll(
                                                                         array(
@@ -19,11 +24,30 @@
                                                                 )
                                                                 );
                                                             foreach($forestcoll->getItems() as $forest) :
-                                                            $class='not_owned';
-                                                            if(is_numeric($forest->getRawData('user_id')))
-                                                                $class='owned';
                                                             ?>
-                                                            <li clas="<?php echo $class; ?>"><?php echo $forest->getData('descrizion');?></li>
+                                                            <li >
+                                                                <?php 
+                                                               if(
+                                                                        is_array($forest->getRawData('write_users')) &&
+                                                                        in_array($user_detail->getData('id'), $forest->getRawData('write_users'))
+                                                                   ) : ?>
+                                                                <a href="?<?php echo http_build_query($_GET);?>&forest_id=<?php echo $forest->getData('codice');?>&notowned_by=<?php echo $user_detail->getData('id');?>" data-update="content_userManageForestlist">
+                                                                <img class="actions editowned" src="images/empty.png" title="Assegnato - scrittura"/>
+                                                                </a>
+                                                                <?php elseif(
+                                                                        is_array($forest->getRawData('read_users')) &&
+                                                                        in_array($user_detail->getData('id'), $forest->getRawData('read_users'))
+                                                                   ) : ?>
+                                                                <a href="?<?php echo http_build_query($_GET);?>&forest_id=<?php echo $forest->getData('codice');?>&editowned_by=<?php echo $user_detail->getData('id');?>" data-update="content_userManageForestlist">
+                                                                <img class="actions owned" src="images/empty.png" title="Assegnato - lettura"/>
+                                                                </a>
+                                                                <?php else : ?>
+                                                                <a href="?<?php echo http_build_query($_GET);?>&forest_id=<?php echo $forest->getData('codice');?>&owned_by=<?php echo $user_detail->getData('id');?>" data-update="content_userManageForestlist">
+                                                                <img class="actions notowned" src="images/empty.png" title="Non assegnato"/>
+                                                                </a>
+                                                                <?php endif;
+                                                                echo $forest->getData('descrizion');?>
+                                                            </li>
                                                             <?php endforeach; ?>
                                                         </ul>
                                                         <?php

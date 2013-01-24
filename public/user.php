@@ -69,6 +69,27 @@ require (__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'include'.DIRECTOR
     header('Content-type: application/json');
     echo Zend_Json::encode($response);
     exit;
+} elseif (key_exists('owned_by', $_REQUEST)) {
+    $forest = new \forest\Forest();
+    $forest->loadFromId($_REQUEST['forest_id']);
+    $user_detail = new User();
+    $user_detail->loadFromId($_REQUEST['owned_by']);
+    $forest->addOwner($user_detail);
+    
+} elseif (key_exists('editowned_by', $_REQUEST)) {
+    $forest = new \forest\Forest();
+    $forest->loadFromId($_REQUEST['forest_id']);
+    $user_detail = new User();
+    $user_detail->loadFromId($_REQUEST['editowned_by']);
+    $forest->addOwner($user_detail,1);
+    
+} elseif (key_exists('notowned_by', $_REQUEST)) {
+    $forest = new \forest\Forest();
+    $forest->loadFromId($_REQUEST['forest_id']);
+    $user_detail = new User();
+    $user_detail->loadFromId($_REQUEST['notowned_by']);
+    $forest->removeOwner($user_detail);
+    
 }
 $view = new Template(array(
     'basePath' => __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'views'

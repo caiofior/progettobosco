@@ -6,3 +6,6 @@
         Purpose of the stylesheet follows.
 */
 
+#content_userManageForestlist ul {
+    list-style-type: none;
+}

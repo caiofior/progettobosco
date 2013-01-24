@@ -832,6 +832,9 @@ form .error {
     background-image: url(../images/silk/accept.png);
     border-color: #88881B;
 }
+/**
+* Data tables stiles
+**/
 .dataTables_filter {
     float: right;
     display: inline;
@@ -840,6 +843,9 @@ form .error {
     float: left;
     display: inline;
 }
+/**
+* Data tables actions
+**/
 .actions {
     width: 16px;
     height: 16px;
@@ -873,11 +879,23 @@ form .error {
 .user {
     background-position:-128px 0px;
 }
+.owned {
+    background-position:-144px 0px;
+}
+.notowned {
+    background-position:-160px 0px;
+}
+.editowned {
+    background-position:-176px 0px;
+}
 #breadcrumb {
     font-size: x-small;
     padding: 0px;
     margin: 0px;
 }
+/**
+* Autocomplete
+**/
 .autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
 .autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
 .autocomplete-selected { background: #F0F0F0; }

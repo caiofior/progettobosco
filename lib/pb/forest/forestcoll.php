@@ -38,10 +38,25 @@ class ForestColl extends \ContentColl {
      * @return \Zend_Db_Select
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
-        $select->setIntegrityCheck(false) 
-        ->from('propriet')
-        ->join('diz_regioni','diz_regioni.codice = propriet.regione')
-        ->joinLeft('user_propriet','user_propriet.propriet_codice = propriet.codice');
+        $select->setIntegrityCheck(false)
+        ->from('propriet',array(
+            '*',
+            'propriet_codice_raw'=>'codice',
+            'read_users'=>new \Zend_Db_Expr(
+                    '('.
+                    $select->getAdapter()->select()->from('user_propriet',
+                            new \Zend_Db_Expr('STRING_AGG(CAST("user_propriet"."user_id" AS TEXT),\'|\')')
+                            )->where('user_propriet.propriet_codice = propriet.codice').
+                    ')'),
+            'write_users'=>new \Zend_Db_Expr(
+                    '('.
+                    $select->getAdapter()->select()->from('user_propriet',
+                            new \Zend_Db_Expr('STRING_AGG(CAST("user_propriet"."user_id" AS TEXT),\'|\')')
+                            )->where('user_propriet.propriet_codice = propriet.codice AND user_propriet.write=\'1\'').
+                    ')')
+            ))
+        ->join('diz_regioni','diz_regioni.codice = propriet.regione');
+        
         if (key_exists('search', $criteria) && $criteria['search'] != '') {
             $select->where('descrizion LIKE ?', $criteria['search'].'%');   
         }
