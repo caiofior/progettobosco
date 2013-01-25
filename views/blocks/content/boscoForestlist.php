@@ -11,6 +11,7 @@
                                                                     $_GET['search']=null;
                                                                 if (!key_exists('regione', $_GET))
                                                                     $_GET['regione']=null;
+                                                                unset($_GET['delete']);
                                                                 $items_in_page =2;
                                                                 $forestcoll->loadAll(
                                                                         array(
@@ -23,11 +24,11 @@
                                                             foreach($forestcoll->getItems() as $forest) :
                                                             ?>
                                                             <li >
-                                                                <a href="" data-update="content_boscoForestlist">
+                                                                <a href="bosco.php?action=manage&id=<?php echo $forest->getData('objectid'); ?>" >
                                                                 <img class="actions edit" src="images/empty.png" title="Visualizza/Modifica"/>
                                                                 </a>
                                                                 <?php if ($user->isUserForestAdmin($forest)) : ?>
-                                                                <a href="" data-update="content_boscoForestlist">
+                                                                <a href="bosco.php?<?php echo http_build_query($_GET); ?>&delete=1&id=<?php echo $forest->getData('objectid'); ?>" data-update="content_boscoForestlist">
                                                                 <img class="actions delete" src="images/empty.png" title="Cancella"/>
                                                                 </a>
                                                                 <?php endif; ?>
@@ -58,7 +59,9 @@
                                                                 'data-update'=>''
                                                             ),
                                                         );
-                                                        
+                                                        $countall =$forestcoll->countAll(array('search'=>$_GET['search']));
+                                                        $last_page = floor($countall/$items_in_page)*$items_in_page;
+
                                                         if ($start>0) {
                                                             $actions['prev']=array(
                                                                 'url'=>'href="?'.$baseurl.'&start='.max($start-$items_in_page,0).'"',
@@ -69,15 +72,15 @@
                                                                 'data-update'=>'data-update="content_boscoForestlist"'
                                                             );
                                                         }
-                                                        $countall =$forestcoll->countAll(array('search'=>$_GET['search']));
                                                         
                                                         if ($start<$countall-$items_in_page) {
-                                                             $actions['next']=array(
-                                                                'url'=>'href="?'.$baseurl.'&start='.min($start+$items_in_page,$countall-$items_in_page-1).'"',
+                                                            
+                                                            $actions['next']=array(
+                                                                'url'=>'href="?'.$baseurl.'&start='.min($start+$items_in_page,$last_page).'"',
                                                                 'data-update'=>'data-update="content_boscoForestlist"'
                                                             );
                                                              $actions['last']=array(
-                                                                'url'=>'href="?'.$baseurl.'&start='.($countall-$items_in_page).'"',
+                                                                'url'=>'href="?'.$baseurl.'&start='.$last_page .'"',
                                                                 'data-update'=>'data-update="content_boscoForestlist"'
                                                             );
                                                         }

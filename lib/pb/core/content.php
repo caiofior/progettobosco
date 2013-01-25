@@ -103,6 +103,8 @@ abstract class Content {
      * Updates data
      */
     public function update() {
+        if (!key_exists('id', $this->data)) 
+            throw new Exception('Unable to update object without id',1301251051);
         $where = $this->table->getAdapter()->quoteInto('id = ?', $this->data['id']);
         $this->table->update($this->data, $where);
     }

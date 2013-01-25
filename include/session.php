@@ -4,6 +4,9 @@
  * @copyright CRA
  * Manages session login
  */
+/**
+ * @global FormErrors $formErrors
+ */
  $formErrors = new FormErrors();
  $authAdapter = User::getAuthAdapter();
  $auth = Zend_Auth::getInstance();

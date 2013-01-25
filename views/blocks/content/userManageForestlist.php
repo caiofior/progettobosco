@@ -72,7 +72,8 @@
                                                                 'data-update'=>''
                                                             ),
                                                         );
-                                                        
+                                                        $countall =$forestcoll->countAll(array('search'=>$_GET['search']));
+                                                        $last_page = floor($countall/$items_in_page)*$items_in_page; 
                                                         if ($start>0) {
                                                             $actions['prev']=array(
                                                                 'url'=>'href="?'.$baseurl.'&start='.max($start-$items_in_page,0).'"',
@@ -83,15 +84,15 @@
                                                                 'data-update'=>'data-update="content_userManageForestlist"'
                                                             );
                                                         }
-                                                        $countall =$forestcoll->countAll(array('search'=>$_GET['search']));
-                                                        
-                                                        if ($start<$countall-$items_in_page) {
+                                                                                                               
+                                                        if ($start<$last_page) {
+                                                             
                                                              $actions['next']=array(
-                                                                'url'=>'href="?'.$baseurl.'&start='.min($start+$items_in_page,$countall-$items_in_page-1).'"',
+                                                                'url'=>'href="?'.$baseurl.'&start='.min($start+$items_in_page,$last_page).'"',
                                                                 'data-update'=>'data-update="content_userManageForestlist"'
                                                             );
                                                              $actions['last']=array(
-                                                                'url'=>'href="?'.$baseurl.'&start='.($countall-$items_in_page).'"',
+                                                                'url'=>'href="?'.$baseurl.'&start='.$last_page.'"',
                                                                 'data-update'=>'data-update="content_userManageForestlist"'
                                                             );
                                                         }

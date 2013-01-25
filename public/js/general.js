@@ -43,15 +43,16 @@ function formAjax(selector,messages_selector) {
                 else if (typeof(response)=="string") {
                     el.find(":submit").removeAttr("name");
                     $(messages_selector).html(response).addClass("succesfull").show();
-                    status = false;
+                    $("#ajaxloader").hide();
                 }
                 else {
                     $.each(response["names"], function(id,val) {
                         $("#"+val).addClass("error");
                     });
                     $(messages_selector).html(response["messages"]).show();  
+                    $("#ajaxloader").hide();
                 }
-                $("#ajaxloader").hide();
+                
             },
             error: function(jqXHR , textStatus,  errorThrown) {
                 if (typeof DEBUG != 'undefined') {
@@ -74,18 +75,24 @@ function formAjax(selector,messages_selector) {
 */
 function defaultInputValue (selector,value) {
     el = $(selector);
-    $(document).ajaxComplete(function (e){
+    $(el).on("focus",el,function (){
+        el = $(selector);
+        if (el.val()==value) el.val("").data("default_value",null);
+    }).on("blur",el,function (e){
+        el = $(selector);
+        if (el.val()=="") el.val(value).data("default_value",1);
+    });
+    $(document).ajaxComplete(function (e,p){
+        if (typeof p != 'undefined') {
+            if ("#"+$(p).attr("id") != selector) {
+                return;
+            }
+        }
         el = $(selector);
         el.attr("title", value);
         if (el.val()=="") el.val(value).data("default_value",1);
-        e.stopPropagation();
     });
-    $(el).on("focus",el,function (){
-        if (el.val()==value) el.val("").data("default_value",null);
-    }).on("blur",el,function (e){
-        if (el.val()=="") el.val(value).data("default_value",1);
-    });
-    $(document).trigger("ajaxComplete");
+    $(document).trigger("ajaxComplete",el);
     
 }
 /**

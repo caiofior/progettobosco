@@ -19,7 +19,7 @@ $DEBUG=true;
 /**
  * Monitoring enabled
  */
-$MONITORING=false;
+$MONITORING=true;
 /**
  * Base url of the web site
  */
@@ -52,6 +52,6 @@ $MAIL_ADMIN_CONFIG = array(
     
 );
 /**
- * Debugn mail for server maitenance
+ * Debug mail for server maitenance
  */
-$DEBUG_MAIL='caiofior@gmail.com';
+//$DEBUG_MAIL='caiofior@gmail.com';

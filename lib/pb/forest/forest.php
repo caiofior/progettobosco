@@ -32,9 +32,23 @@ class Forest extends \Content {
      * @param int $id
      */
     public function loadFromId($id) {
-        parent::loadFromId($id);
-        if (is_null($this->data))
-            throw new \Exception('Unable to find the forest',1301221541);
+        $where = $this->table->getAdapter()->quoteInto('objectid = ?', $id);
+        $data = $this->table->fetchRow($where);
+        if (is_null($data))
+            throw new \Exception('Unable to find the forest',1301251115);
+        $this->data = $this->table->fetchRow($where)->toArray();
+    }
+     /**
+     * Loads forest from its code
+     * @param string $code
+     */
+    public function loadFromCode($code) {
+        $where = $this->table->getAdapter()->quoteInto('codice = ?', $code);
+        $data = $this->table->fetchRow($where);
+        if (is_null($data))
+            throw new \Exception('Unable to find the forest',1301251056);
+        $this->data = $this->table->fetchRow($where)->toArray();
+        
     }
     /*
     * Remaps propriet codice 
@@ -42,10 +56,12 @@ class Forest extends \Content {
    public function setData($data, $field = null) {
        if (is_array($data) && key_exists('propriet_codice_raw', $data))
                $data['codice']=$data['propriet_codice_raw'];
+       if (is_array($data) && key_exists('propriet_objectid_raw', $data))
+               $data['objectid']=$data['propriet_objectid_raw'];
        parent::setData($data, $field);
-       if ($this->rawData['read_users'] != '')
+       if (key_exists('read_users', $this->rawData) && $this->rawData['read_users'] != '')
            $this->rawData['read_users']= explode('|', $this->rawData['read_users']);
-       if ($this->rawData['write_users'] != '')
+       if (key_exists('write_users', $this->rawData) &&$this->rawData['write_users'] != '')
            $this->rawData['write_users']= explode('|', $this->rawData['write_users']);
    }
    /**
@@ -72,4 +88,22 @@ class Forest extends \Content {
         $table->getAdapter()->quoteInto(' AND propriet_codice = ?', $this->data['codice']);
         $table->delete($where); 
    }
+    /**
+     * Updates data
+     */
+    public function update() {
+        if (!key_exists('objectid', $this->data)) 
+            throw new Exception('Unable to update object without objectid',1301251130);
+        $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
+        $this->table->update($this->data, $where);
+    }
+    /**
+     * Deletes data
+     */
+    public function delete() {
+        if (key_exists('objectid', $this->data)) {
+            $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
+            $this->table->delete($where);
+        }
+    }
 }

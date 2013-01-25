@@ -29,6 +29,11 @@ else if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
                     $response[ $value]=  ob_get_clean();
                     }
             }
+            if (key_exists('delete', $_REQUEST)) {
+                $forest = new forest\Forest();
+                $forest->loadFromId($_REQUEST['id']);
+                $forest->delete();
+            }
             header('Content-type: application/json');
             echo Zend_Json::encode($response);
             exit;
@@ -36,9 +41,65 @@ else if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
     switch ($_REQUEST['action']) {
         case 'manage':
             $view->forest = new forest\Forest();
+            if (key_exists('id', $_REQUEST)) {
+                $view->forest->loadFromId($_REQUEST['id']);
+            }
+                    
             $content = 'content'.DIRECTORY_SEPARATOR.'boscoManage.php';
+            if (key_exists('update', $_REQUEST)) {
+                $is_new = false;
+                $new_forest = new forest\Forest();
+                try{
+                    $new_forest->loadFromCode($_REQUEST['regione'].$_REQUEST['codice']);
+                } catch (Exception $e) {$is_new = true;}
+                if ($_REQUEST['regione'] == '')
+                    $formErrors->addError(FormErrors::required,'regione','la regione','f');
+                if ($_REQUEST['descrizion'] == '')
+                    $formErrors->addError(FormErrors::required,'descrizion','la descrizione','f');
+                else if (strlen($_REQUEST['codice']) > 50)
+                    $formErrors->addError(FormErrors::custom,'descrizion','La descrizione deve avere al massimo 50 caratteri');
+                if ($_REQUEST['codice'] == '')
+                    $formErrors->addError(FormErrors::required,'codice','il codice');
+                else if (strlen($_REQUEST['codice']) > 3)
+                    $formErrors->addError(FormErrors::custom,'codice','il codice deve avere meno di tre caratteri');
+                else if (!$is_new && $view->forest->getData('id') != '')
+                    $formErrors->addError(FormErrors::custom,'codice','Il codice è già esistente');
+                
+                if ($formErrors->count() == 0) {
+                    $_REQUEST['codice']=$_REQUEST['regione'].$_REQUEST['codice'];
+                    $view->forest->setData($_REQUEST);
+                    
+                    if ($view->forest->getData('objectid') == '')  {
+                        $view->forest->insert();
+                            $log->setData(array(
+                            'user_id'=>$user->getData('id'),
+                            'username'=>$user->getData('username'),
+                            'description'=>'Creazione del bosco '.$_REQUEST['descrizion'],
+                            'objectid'=>$view->forest->getData('id'),
+                        ));
+                        }
+                    else {
+                        $view->forest->update();
+                        $log->setData(array(
+                            'user_id'=>$user->getData('id'),
+                            'username'=>$user->getData('username'),
+                            'description'=>'Modificato il bosco '.$_REQUEST['descrizion'],
+                            'objectid'=>$view->forest->getData('id'),
+                        ));
+                        }
+                    $view->forest->addOwner($user,1);
+                    $formErrors->setOkMessage('Le modifiche sono state salvate');
+                    $log->insert();
+                    
+                }
+                
+            }
         break;
-    } 
+    }
+    if (key_exists('xhr', $_REQUEST)) {
+        $formErrors->getJsonError ();
+        exit;
+    }
 }
 $view->controler = basename(__FILE__);
 $view->user = $user;

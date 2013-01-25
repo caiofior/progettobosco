@@ -24,3 +24,6 @@ $("#regione").change(function() {
 formAjax("#manage_bosco",".bosco_messages");
 defaultInputValue("#descrizion","Nome del bosco");
 defaultInputValue("#codice","Codice (a-z0-9)");
+$("#regione").change(function() {
+    $("#prefissocodice").text($(this).find(":selected").attr("value"));
+});

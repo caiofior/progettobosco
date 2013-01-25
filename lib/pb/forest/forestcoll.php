@@ -47,6 +47,7 @@ class ForestColl extends \ContentColl {
         ->from('propriet',array(
             '*',
             'propriet_codice_raw'=>'codice',
+            'propriet_objectid_raw'=>'objectid',
             'read_users'=>new \Zend_Db_Expr(
                     '('.
                     $select->getAdapter()->select()->from('user_propriet',
