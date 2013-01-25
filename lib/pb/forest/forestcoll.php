@@ -87,12 +87,12 @@ class ForestColl extends \ContentColl {
      */
     public function countAll(array $criteria = null) {
         if ($this->filterByUser || is_array($criteria)) {
-            $sql = 'SELECT COUNT(*) AS count FROM "' . $this->content->getTable()->info('name') . '" WHERE TRUE';
+            $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
             if (key_exists('search', $criteria))
-                $sql .= ' AND descrizion LIKE \'' . $criteria['search'] . '%\'';
+                $select->where('descrizion LIKE ?', $criteria['search'].'%');
             if ($this->filterByUser)
-                $sql .= ' AND '.$this->user->getData('id').' IN ( SELECT "user_id" FROM "user_propriet" WHERE "user_propriet"."propriet_codice" = "propriet"."codice" ) ';
-            return intval($this->content->getTable()->getAdapter()->fetchOne($sql));
+                $select->where(new \Zend_Db_Expr($this->user->getData('id').' IN ( SELECT "user_id" FROM "user_propriet" WHERE "user_propriet"."propriet_codice" = "propriet"."codice" ) '));
+            return intval($this->content->getTable()->getAdapter()->fetchOne($select));
         }
         else 
             parent::countAll();

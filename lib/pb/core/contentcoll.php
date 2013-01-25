@@ -95,7 +95,7 @@ abstract class ContentColl {
      */
     public function countAll() {
         return intval($this->content->getTable()->getAdapter()->fetchOne(
-                'SELECT COUNT(*) AS count FROM "'.$this->content->getTable()->info('name').'";'
+                $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)')
                 ));
     }
     /**
