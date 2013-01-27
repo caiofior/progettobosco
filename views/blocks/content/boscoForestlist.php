@@ -2,7 +2,7 @@
                                                         <ul >
                                                             <?php 
                                                                 if (!isset($forestcoll))
-                                                                    $forestcoll = $user->getForestColl($user->getData('is_admin') != 't');
+                                                                    $forestcoll = $user->getForestColl(!$user->isAdmin() || !($_GET['filter']=='checked'));
                                                                 else
                                                                     $user = $this->user;
                                                                 if (!key_exists('start', $_GET))
@@ -92,6 +92,7 @@
                                                             <a <?php echo $actions['prev']['url'];?> <?php echo $actions['prev']['data-update'];?> >
                                                                 <img class="actions prev" src="images/empty.png" title="Precedente">
                                                             </a>
+                                                            Bosco <input id="current" name="current" value="<?php echo $start; ?>" type="text"  /> di <?php echo $countall; ?>
                                                             <a <?php echo $actions['next']['url'];?> <?php echo $actions['next']['data-update'];?> >
                                                                 <img class="actions next" src="images/empty.png" title="Successivo">
                                                             </a>

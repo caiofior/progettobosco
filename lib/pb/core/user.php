@@ -163,4 +163,11 @@ class User extends Content {
            return true;
        return in_array($this->data['id'],$forest->getRawData('write_users'));
    }
+   /**
+    * Check if user is admin
+    * @return bool
+    */
+   public function isAdmin ()  {
+       return $this->data['is_admin'] == 't';
+   }
 }

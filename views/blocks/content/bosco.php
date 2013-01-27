@@ -11,15 +11,15 @@
                                                                 <select id="regione" name="regione"  tabindex="1" >
                                                                     <option value="">Italia</option>
                                                                     <?php 
-                                                                        $forestcoll = $this->user->getForestColl($this->user->getData('is_admin') != 't'); 
+                                                                        $forestcoll = $this->user->getForestColl(!$this->user->isAdmin()); 
                                                                         $regioncoll = $forestcoll->getRegionColl();
                                                                         foreach($regioncoll->getItems() as $region) : ?>
                                                                     <option value="<?php echo $region->getData('codice');?>"><?php echo $region->getData('descriz');?></option>        
                                                                     <?php endforeach; ?>
                                                                 </select>
 
-								<label for="descrizion">Denominazione</label>
-								<input class="large" id="descrizion" name="descrizion" value="" type="text" tabindex="2" />
+								<label for="descrizion_search">Denominazione</label>
+								<input class="large" id="descrizion_search" name="descrizion_search" value="" type="text" tabindex="2" />
                                                         <?php 
                                                         require __DIR__.DIRECTORY_SEPARATOR.'boscoForestlist.php'; 
                                                         ?>

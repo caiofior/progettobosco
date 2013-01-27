@@ -79,12 +79,33 @@ $(document).on("click","#user_delete_cancel",function(){
 $("#forest_list").prepend("<a id=\"forest_list_update\" style=\"display:none;\" data-basehref=\""+$("#forest_list").attr("action")+"\" data-update=\"content_userManageForestlist\">Test</a>");
 $("#descrizion").keyup(function(){
    el = $("#forest_list_update"); 
+   search = $("#descrizion");
    regione = $("#regione");
-   el.attr("href",el.data("basehref")+"&regione="+regione.val()+"&search="+$(this).val());
+   filter = $("#filter_owned");
+   el.attr("href",el.data("basehref")+"&regione="+regione.val()+"&search="+search.val()+"&filter="+filter.attr("checked"));
    el.trigger("click");
 });
 $("#regione").change(function() {
     el = $("#forest_list_update"); 
-    el.attr("href",el.data("basehref")+"&regione="+$(this).val());
+    regione = $("#regione");
+    filter = $("#filter_owned");
+    el.attr("href",el.data("basehref")+"&regione="+regione.val()+"&filter="+filter.attr("checked"));
     el.trigger("click");
+});
+$("#filter_owned").change(function () {
+   el = $("#forest_list_update"); 
+   search = $("#descrizion");
+   regione = $("#regione");
+   filter = $("#filter_owned");
+   el.attr("href",el.data("basehref")+"&regione="+regione.val()+"&search="+search.val()+"&filter="+filter.attr("checked"));
+   el.trigger("click");
+});
+$(document).on("change",$("#current"),function() {
+   el = $("#forest_list_update"); 
+   search = $("#descrizion");
+   regione = $("#regione");
+   filter = $("#filter_owned");
+   current = $("#current");
+   el.attr("href",el.data("basehref")+"&regione="+regione.val()+"&search="+search.val()+"&filter="+filter.attr("checked")+"&start="+current.val());
+   el.trigger("click");
 });

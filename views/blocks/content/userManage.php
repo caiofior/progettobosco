@@ -10,7 +10,7 @@
                                                                 <select id="regione" name="regione"  tabindex="1" >
                                                                     <option value="">Italia</option>
                                                                     <?php 
-                                                                        $forestcoll = $this->user_detail->getForestColl(); 
+                                                                        $forestcoll = $this->user_detail->getForestColl(false); 
                                                                         $regioncoll = $forestcoll->getRegionColl();
                                                                         foreach($regioncoll->getItems() as $region) : ?>
                                                                     <option value="<?php echo $region->getData('codice');?>"><?php echo $region->getData('descriz');?></option>        
@@ -18,7 +18,9 @@
                                                                 </select>
 
 								<label for="descrizion">Denominazione</label>
-								<input class="large" id="descrizion" name="descrizion" value="" type="text" tabindex="2" />
+								<input class="large" id="descrizion" name="descrizion" value="" type="text" tabindex="2" /> <br />
+                                                                <label for="filter_owned" >Solo i boschi gestiti</label>
+                                                                <input type="checkbox" id="filter_owned" name="filter_owned" checked="checked" />
                                                         <?php 
                                                         require __DIR__.DIRECTORY_SEPARATOR.'userManageForestlist.php'; 
                                                         ?>

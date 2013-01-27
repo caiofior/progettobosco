@@ -9,3 +9,6 @@
 #content_userManageForestlist ul {
     list-style-type: none;
 }
+#current {
+    width: 20px;
+}

@@ -1,8 +1,10 @@
                                                         <div id="content_userManageForestlist" >       
                                                         <ul >
                                                             <?php 
+                                                                if (!key_exists('filter', $_GET))
+                                                                    $_GET['filter']=null;
                                                                 if (!isset($forestcoll))
-                                                                    $forestcoll = $user_detail->getForestColl(); 
+                                                                    $forestcoll = $user_detail->getForestColl(!($_GET['filter']=='checked')); 
                                                                 else 
                                                                     $user_detail = $this->user_detail;
                                                                 if (!key_exists('start', $_GET))
@@ -104,6 +106,7 @@
                                                             <a <?php echo $actions['prev']['url'];?> <?php echo $actions['prev']['data-update'];?> >
                                                                 <img class="actions prev" src="images/empty.png" title="Precedente">
                                                             </a>
+                                                            Bosco <input id="current" name="current" value="<?php echo $start; ?>" type="text"  /> di <?php echo $countall; ?>
                                                             <a <?php echo $actions['next']['url'];?> <?php echo $actions['next']['data-update'];?> >
                                                                 <img class="actions next" src="images/empty.png" title="Successivo">
                                                             </a>
