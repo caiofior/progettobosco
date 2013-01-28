@@ -12,7 +12,9 @@ if (!class_exists('Forest')) {
         'forest.php',
         'forestcoll.php',
         'region.php',
-        'regioncoll.php'
+        'regioncoll.php',
+        'form'.DIRECTORY_SEPARATOR.'a.php',
+        'form'.DIRECTORY_SEPARATOR.'acoll.php'
         );
     if (!isset($file)) $file = array();
     $files = array_diff($files, $file);

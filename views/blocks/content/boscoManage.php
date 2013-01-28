@@ -37,7 +37,9 @@
                                                 <input class="button" name="update" type="submit" value="Aggiorna" tabindex="4" />         		
                                         </p>
                                         </form>	
-	
+                                        <?php if ($this->forest->getRawdata('forest_compartment_cont') > 0) : ?>
+                                        <h2>Particelle forestali</h2>
+                                        <?php endif; ?>
 				<!-- /post -->	
 				</div>	
                             

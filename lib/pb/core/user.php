@@ -161,6 +161,8 @@ class User extends Content {
    public function isUserForestAdmin(forest\Forest $forest ) {
        if ($this->data['is_admin'] == 't')
            return true;
+       if (!is_array($forest->getRawData()) || !$forest->getRawData('write_users'))
+           return false;
        return in_array($this->data['id'],$forest->getRawData('write_users'));
    }
    /**

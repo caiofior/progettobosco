@@ -85,22 +85,26 @@ $("#descrizion").keyup(function(){
    el.attr("href",el.data("basehref")+"&regione="+regione.val()+"&search="+search.val()+"&filter="+filter.attr("checked"));
    el.trigger("click");
 });
+$("#filter_owned").change(function() {
+   $("#descrizion").trigger("keyup");
+});
 $("#regione").change(function() {
+    $("#descrizion").val("");
     el = $("#forest_list_update"); 
     regione = $("#regione");
     filter = $("#filter_owned");
     el.attr("href",el.data("basehref")+"&regione="+regione.val()+"&filter="+filter.attr("checked"));
     el.trigger("click");
 });
-$("#filter_owned").change(function () {
-   el = $("#forest_list_update"); 
-   search = $("#descrizion");
-   regione = $("#regione");
-   filter = $("#filter_owned");
-   el.attr("href",el.data("basehref")+"&regione="+regione.val()+"&search="+search.val()+"&filter="+filter.attr("checked"));
-   el.trigger("click");
+$("#current").on("focus",$("#current"),function() {
+    $("#confirm_move, #cancel_move").show();
+    return false;
 });
-$(document).on("change",$("#current"),function() {
+$("#cancel_move").on("click",$("#cancel_move"),function(e) {
+    $("#confirm_move, #cancel_move").hide();
+   return false;
+});
+$("#confirm_move").on("click",$("#confirm_move"),function(e) {
    el = $("#forest_list_update"); 
    search = $("#descrizion");
    regione = $("#regione");
@@ -108,4 +112,6 @@ $(document).on("change",$("#current"),function() {
    current = $("#current");
    el.attr("href",el.data("basehref")+"&regione="+regione.val()+"&search="+search.val()+"&filter="+filter.attr("checked")+"&start="+current.val());
    el.trigger("click");
+   return false;
+  
 });

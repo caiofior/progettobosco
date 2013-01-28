@@ -10,7 +10,7 @@
                                                                 <select id="regione" name="regione"  tabindex="1" >
                                                                     <option value="">Italia</option>
                                                                     <?php 
-                                                                        $forestcoll = $this->user_detail->getForestColl(false); 
+                                                                        $forestcoll = $this->user_detail->getForestColl(true); 
                                                                         $regioncoll = $forestcoll->getRegionColl();
                                                                         foreach($regioncoll->getItems() as $region) : ?>
                                                                     <option value="<?php echo $region->getData('codice');?>"><?php echo $region->getData('descriz');?></option>        

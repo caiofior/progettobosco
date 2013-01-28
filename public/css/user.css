@@ -11,4 +11,9 @@
 }
 #current {
     width: 20px;
+    padding: 0px;
+}
+#scrollcontrols img {
+    margin-top: 5px;
+    vertical-align:top;
 }

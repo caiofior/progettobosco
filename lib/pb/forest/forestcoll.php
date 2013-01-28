@@ -80,6 +80,19 @@ class ForestColl extends \ContentColl {
         if (key_exists('regione', $criteria) && $criteria['regione'] != '') {
             $select->where('regione = ?', $criteria['regione']); 
         }
+        if ($this->user instanceof \User && !$this->filterByUser) {
+            $select->order(array(
+                    new \Zend_Db_Expr(
+                    $this->user->getData('id').' IN ('.
+                    $select->getAdapter()->select()->from('user_propriet',
+                            new \Zend_Db_Expr('"user_propriet"."user_id"')
+                            )->where('user_propriet.propriet_codice = propriet.codice').
+                    ') DESC')
+                    ,'descrizion')
+                    );
+        }
+        else
+            $select->order('descrizion');
         return $select;
     }
      /**

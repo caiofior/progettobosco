@@ -37,6 +37,7 @@ class Forest extends \Content {
         if (is_null($data))
             throw new \Exception('Unable to find the forest',1301251115);
         $this->data = $this->table->fetchRow($where)->toArray();
+        $this->addForestCompartmentCount();
     }
      /**
      * Loads forest from its code
@@ -48,7 +49,7 @@ class Forest extends \Content {
         if (is_null($data))
             throw new \Exception('Unable to find the forest',1301251056);
         $this->data = $this->table->fetchRow($where)->toArray();
-        
+        $this->addForestCompartmentCount();
     }
     /*
     * Remaps propriet codice 
@@ -105,5 +106,12 @@ class Forest extends \Content {
             $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
             $this->table->delete($where);
         }
+    }
+    /**
+     * Add the count of forest compartments
+     */
+    private function addForestCompartmentCount() {
+        $select = $this->table->getAdapter()->select()->from('schede_a','COUNT(*)')->where('proprieta = ? ',$this->data['codice']);
+        $this->rawData['forest_compartment_cont']=intval($this->table->getAdapter()->fetchOne($select));
     }
 }

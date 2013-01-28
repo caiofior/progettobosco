@@ -20,7 +20,15 @@ $("#regione").change(function() {
     el.attr("href",el.data("basehref")+"&regione="+regione.val());
     el.trigger("click");
 });
-$(document).on("change",$("#current"),function() {
+$("#current").on("focus",$("#current"),function() {
+    $("#confirm_move, #cancel_move").show();
+    return false;
+});
+$("#cancel_move").on("click",$("#cancel_move"),function(e) {
+    $("#confirm_move, #cancel_move").hide();
+   return false;
+});
+$("#confirm_move").on("click",$("#confirm_move"),function() {
    el = $("#forest_list_update"); 
    search = $("#descrizion_search");
    regione = $("#regione");

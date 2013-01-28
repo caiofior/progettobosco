@@ -4,7 +4,7 @@
                                                                 if (!key_exists('filter', $_GET))
                                                                     $_GET['filter']=null;
                                                                 if (!isset($forestcoll))
-                                                                    $forestcoll = $user_detail->getForestColl(!($_GET['filter']=='checked')); 
+                                                                    $forestcoll = $user_detail->getForestColl($_GET['filter']=='checked'); 
                                                                 else 
                                                                     $user_detail = $this->user_detail;
                                                                 if (!key_exists('start', $_GET))
@@ -99,14 +99,21 @@
                                                             );
                                                         }
                                                         ?>
-                                                        <div>
+                                                        <div id="scrollcontrols">
                                                             <a <?php echo $actions['first']['url'];?> <?php echo $actions['first']['data-update'];?> >
                                                                 <img class="actions first" src="images/empty.png" title="Primo">
                                                             </a>
                                                             <a <?php echo $actions['prev']['url'];?> <?php echo $actions['prev']['data-update'];?> >
                                                                 <img class="actions prev" src="images/empty.png" title="Precedente">
                                                             </a>
-                                                            Bosco <input id="current" name="current" value="<?php echo $start; ?>" type="text"  /> di <?php echo $countall; ?>
+                                                            <span>Bosco <input id="current" name="current" value="<?php echo $start; ?>" type="text"  /> di <?php echo $countall; ?></span>
+                                                            <a href="#" style="display: none;" id="confirm_move">
+                                                                <img class="actions confirm" src="images/empty.png" title="Vai">
+                                                            </a>
+                                                            <a href="#" style="display: none;" id="cancel_move">
+                                                                <img class="actions cancel" src="images/empty.png" title="Annulla">
+                                                            </a>
+
                                                             <a <?php echo $actions['next']['url'];?> <?php echo $actions['next']['data-update'];?> >
                                                                 <img class="actions next" src="images/empty.png" title="Successivo">
                                                             </a>

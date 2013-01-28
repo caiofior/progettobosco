@@ -6,9 +6,6 @@
         Purpose of the stylesheet follows.
 */
 
-#content_boscoForestlist ul {
-    list-style-type: none;
-}
 #manage_bosco p {
     padding: 1px;
 }
@@ -36,6 +33,14 @@
     float: right;
     font-weight: normal;
 }
+#content_boscoForestlist ul {
+    list-style-type: none;
+}
 #current {
     width: 20px;
+    padding: 0px;
+}
+#scrollcontrols img {
+    margin-top: 5px;
+    vertical-align:top;
 }
