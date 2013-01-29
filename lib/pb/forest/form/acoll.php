@@ -56,7 +56,9 @@ class AColl extends \ContentColl {
             '*',
             'usosuolo' =>new \Zend_Db_Expr('( SELECT usosuolo.descriz FROM usosuolo 
             LEFT JOIN schede_b ON schede_b.u=usosuolo.codice
-            WHERE schede_b.proprieta=schede_a.proprieta AND schede_b.cod_part=schede_a.cod_part)')
+            WHERE schede_b.proprieta=schede_a.proprieta AND schede_b.cod_part=schede_a.cod_part)'),
+            'rilevato' => new \Zend_Db_Expr(' (SELECT rilevato.descriz FROM rilevato
+             WHERE rilevato.codice=schede_a.codiope) ')
             )
         )
         ;

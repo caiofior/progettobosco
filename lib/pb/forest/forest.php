@@ -114,4 +114,23 @@ class Forest extends \Content {
         $select = $this->table->getAdapter()->select()->from('schede_a','COUNT(*)')->where('proprieta = ? ',$this->data['codice']);
         $this->rawData['forest_compartment_cont']=intval($this->table->getAdapter()->fetchOne($select));
     }
+    /**
+     * Gets the form a collection of the forest
+     * @return \forest\form\AColl
+     */
+    public function getForestCompartmentColl () {
+        $acoll = new form\AColl();
+        $acoll->setForest($this);
+        return $acoll;
+    }
+    /**
+     * Returns attribute collection available in this forest
+     * @param \forest\attribute\template\AttributeColl $attributecoll
+     * @return \forest\attribute\template\AttributeColl
+     */
+    public function getAttributeColl (\forest\attribute\template\AttributeColl $attributecoll) {
+        $attributecoll->setForest($this);
+        return $attributecoll;
+        
+    }
 }

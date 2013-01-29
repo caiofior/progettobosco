@@ -13,6 +13,12 @@ if (!class_exists('Forest')) {
         'forestcoll.php',
         'region.php',
         'regioncoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'attribute.php',
+        'attribute'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'attributecoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'soiluse.php',
+        'attribute'.DIRECTORY_SEPARATOR.'soilusecoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'collector.php',
+        'attribute'.DIRECTORY_SEPARATOR.'collectorcoll.php',
         'form'.DIRECTORY_SEPARATOR.'a.php',
         'form'.DIRECTORY_SEPARATOR.'acoll.php'
         );

@@ -37,8 +37,45 @@
                                                 <input class="button" name="update" type="submit" value="Aggiorna" tabindex="4" />         		
                                         </p>
                                         </form>	
-                                        <?php if ($this->forest->getRawdata('forest_compartment_cont') > 0) : ?>
+                                        <?php if ($this->forest->getData('codice') != '') : ?>
                                         <h2>Particelle forestali</h2>
+                                        <form action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=forest_compartment&<?php echo http_build_query($_GET);?>" method="post" id="forest_list">		
+                                        <p>Questo è l'elenco delle particelle di questo bosco, puoi modificarle o
+                                        aggiungerne di nuove.</p>
+                                        <?php 
+                                        $acoll = $this->forest->getForestCompartmentColl();
+                                        
+                                        ?>
+								<label for="usosuolo">Uso suolo</label>
+                                                                <select id="usosuolo" name="usosuolo"  tabindex="1" >
+                                                                    <option value="">Tutti</option>
+                                                                    <?php 
+                                                                        $soilusecoll = $this->forest-> getAttributeColl(new \forest\attribute\SoilUseColl());
+                                                                        $soilusecoll->loadAll();
+                                                                        foreach($soilusecoll->getItems() as $soiluse) : ?>
+                                                                    <option value="<?php echo $soiluse->getData('codice');?>"><?php echo $soiluse->getData('descriz');?></option>        
+                                                                    <?php endforeach; ?>
+                                                                </select>
+                                                                <label for="codiope">Operatore</label>
+                                                                <?php ?>
+                                                                <select id="codiope" name="codiope"  tabindex="2" >
+                                                                    <option value="">Tutti</option>
+                                                                    <?php 
+                                                                        $collectorcoll = $this->forest-> getAttributeColl(new \forest\attribute\CollectorColl());
+                                                                        $collectorcoll->loadAll();
+                                                                        foreach($collectorcoll->getItems() as $collector) : ?>
+                                                                    <option value="<?php echo $collector->getData('codice');?>"><?php echo $collector->getData('descriz');?></option>        
+                                                                    <?php endforeach; ?>
+                                                                </select><br />
+
+								<label for="search">Codice / Toponimo</label>
+								<input class="large" id="search" name="search" value="" type="text" tabindex="3" />
+                                                        <?php 
+                                                        //require __DIR__.DIRECTORY_SEPARATOR.'boscoForestlist.php'; 
+                                                        ?>
+                                        
+                                        </form>	
+
                                         <?php endif; ?>
 				<!-- /post -->	
 				</div>	
