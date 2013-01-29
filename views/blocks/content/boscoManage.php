@@ -39,13 +39,10 @@
                                         </form>	
                                         <?php if ($this->forest->getData('codice') != '') : ?>
                                         <h2>Particelle forestali</h2>
-                                        <form action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=forest_compartment&<?php echo http_build_query($_GET);?>" method="post" id="forest_list">		
+                                        <form action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?forest_codice=<?php echo $this->forest->getData('codice');?>" method="post" id="forestcompartment_list">		
                                         <p>Questo è l'elenco delle particelle di questo bosco, puoi modificarle o
                                         aggiungerne di nuove.</p>
-                                        <?php 
-                                        $acoll = $this->forest->getForestCompartmentColl();
-                                        
-                                        ?>
+                                        <?php $acoll = $this->forest->getForestCompartmentColl(); ?>
 								<label for="usosuolo">Uso suolo</label>
                                                                 <select id="usosuolo" name="usosuolo"  tabindex="1" >
                                                                     <option value="">Tutti</option>
@@ -71,7 +68,8 @@
 								<label for="search">Codice / Toponimo</label>
 								<input class="large" id="search" name="search" value="" type="text" tabindex="3" />
                                                         <?php 
-                                                        //require __DIR__.DIRECTORY_SEPARATOR.'boscoForestlist.php'; 
+                                                        $_GET['forest_codice']=$this->forest->getData('codice');
+                                                        require __DIR__.DIRECTORY_SEPARATOR.'boscoForestCompartmentlist.php'; 
                                                         ?>
                                         
                                         </form>	

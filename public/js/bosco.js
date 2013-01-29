@@ -4,7 +4,7 @@
  * @copyright CRA
  */
 /**
- * Forest Lis management
+ * Forest List management
  */
 $("#forest_list").prepend("<a id=\"forest_list_update\" style=\"display:none;\" data-basehref=\""+$("#forest_list").attr("action")+"\" data-update=\"content_boscoForestlist\"></a>");
 $("#descrizion").keyup(function(){

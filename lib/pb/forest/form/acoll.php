@@ -62,8 +62,17 @@ class AColl extends \ContentColl {
             )
         )
         ;
+        if (key_exists('usosuolo', $criteria) && $criteria['usosuolo'] != '') {
+           $select->where(new \Zend_Db_Expr('(SELECT schede_b.u FROM schede_b  WHERE schede_b.proprieta=schede_a.proprieta AND schede_b.cod_part=schede_a.cod_part) = \''.$criteria['usosuolo'].'\''));
+        }
+        if (key_exists('codiope', $criteria) && $criteria['codiope'] != '') {
+            $select->where('schede_a.codiope = ? ',$criteria['codiope']);
+        }
+        if (key_exists('search', $criteria) && $criteria['search'] != '') {
+            $select->where('(schede_a.cod_part LIKE ? OR schede_a.toponimo  LIKE ? )','%'.$criteria['search'].'%');
+        }
         if ($this->forest instanceof \forest\Forest) {
-            $select->where('proprieta = ?', $this->forest->getData('codice'));
+            $select->where('schede_a.proprieta = ?', $this->forest->getData('codice'));
         }
         return $select;
     }
@@ -73,6 +82,30 @@ class AColl extends \ContentColl {
      */
     public function setForest(\forest\Forest $forest) {
         $this->forest = $forest;
+    }
+     /**
+     * Returns all contents without any filter
+     */
+    public function countAll(array $criteria = null) {
+        if ($this->forest instanceof \forest\Forest || is_array($criteria)) {
+            $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
+             if (key_exists('usosuolo', $criteria) && $criteria['usosuolo'] != '') {
+                $select->where(new \Zend_Db_Expr('(SELECT schede_b.u FROM schede_b  WHERE schede_b.proprieta=schede_a.proprieta AND schede_b.cod_part=schede_a.cod_part) = \''.$criteria['usosuolo'].'\''));
+             }
+             if (key_exists('codiope', $criteria) && $criteria['codiope'] != '') {
+                 $select->where('schede_a.codiope = ? ',$criteria['codiope']);
+             }
+             if (key_exists('search', $criteria) && $criteria['search'] != '') {
+                 $select->where('(schede_a.cod_part LIKE ? OR schede_a.toponimo  LIKE ? )','%'.$criteria['search'].'%');
+             }
+             if ($this->forest instanceof \forest\Forest) {
+                 $select->where('schede_a.proprieta = ?', $this->forest->getData('codice'));
+             }
+            return intval($this->content->getTable()->getAdapter()->fetchOne($select));
+        }
+        else 
+            parent::countAll();
+
     }
 
 }
