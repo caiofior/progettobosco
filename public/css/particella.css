@@ -29,3 +29,16 @@
     font-weight: bold;
     font-size: 15px;
 }
+fieldset {
+    border-style: dotted;
+    border-width: 1px;
+    border-color: #000000;
+    color: #325D27;
+}
+legend {
+     border-style: dotted;
+    border-width: 1px;
+    border-color: #000000;
+    margin-left: 20px;
+    font-weight: bold;
+}

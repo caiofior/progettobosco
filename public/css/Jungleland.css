@@ -527,15 +527,11 @@ form .error {
 .addnew {
     background-position:-272px 0px;
 }
+.add {
+    background-position:-288px 0px;
+}
 #breadcrumb {
     font-size: x-small;
     padding: 0px;
     margin: 0px;
 }
-/**
-* Autocomplete
-**/
-.autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
-.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
-.autocomplete-selected { background: #F0F0F0; }
-.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }

@@ -42,11 +42,13 @@ else if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
             header('Content-type: application/json');
             echo Zend_Json::encode($response);
             exit;
-} 
-if (key_exists('task', $_REQUEST)) {
+} else if (key_exists('task', $_REQUEST)) {
     switch ($_REQUEST['task']) {
         case 'forest_compartment':
             require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'controls'.DIRECTORY_SEPARATOR.'bosco'.DIRECTORY_SEPARATOR.'forest_compartment.php';
+        break;
+        case 'autocomplete':
+            require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'controls'.DIRECTORY_SEPARATOR.'bosco'.DIRECTORY_SEPARATOR.'autocomplete.php';
         break;
     }
 }

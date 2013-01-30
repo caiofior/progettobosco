@@ -19,6 +19,10 @@ if (!class_exists('Forest')) {
         'attribute'.DIRECTORY_SEPARATOR.'soilusecoll.php',
         'attribute'.DIRECTORY_SEPARATOR.'collector.php',
         'attribute'.DIRECTORY_SEPARATOR.'collectorcoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'municipality.php',
+        'attribute'.DIRECTORY_SEPARATOR.'municipalitycoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'province.php',
+        'attribute'.DIRECTORY_SEPARATOR.'provincecoll.php',
         'form'.DIRECTORY_SEPARATOR.'a.php',
         'form'.DIRECTORY_SEPARATOR.'acoll.php'
         );

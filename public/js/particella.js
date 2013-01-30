@@ -21,4 +21,32 @@ $("#usosuolo, #codiope").change(function() {
 /**
  * Form a controls
  */
-$( "#datasch" ).datepicker({dateFormat:"yy-mm-dd"});
+$("#datasch").datepicker({dateFormat:"yy-mm-dd"});
+$("#comune_descriz").autocomplete({
+    source: "bosco.php?task=autocomplete&action=municipality",
+    select: function( event, ui ) {
+        $("#comune").val(ui.item.id )
+    }
+});
+$("fieldset div.hideme").hide().parent("fieldset").css("border-width","0").find("legend").css("border-width","0").prepend('<a href="#" class="more"><img class="actions add" src="images/empty.png" title="Visualizza" /></a> ');
+$(document).on("click","fieldset a.more",function(){
+   hideElement($("fieldset a.less"));
+   el = $(this);
+   el.removeClass("more").addClass("less");
+   el.find("img").removeClass("add").addClass("delete").attr("title","Nascondi");
+   fieldset = el.parents("fieldset");
+   fieldset.css("border-width","1px").find("legend").css("border-width","1px");
+   fieldset.find("div.hideme").show();
+   return false;
+});
+$(document).on("click","fieldset a.less",function(){
+   hideElement($("fieldset a.less"));
+   return false;
+});
+function hideElement(el) {
+   el.removeClass("less").addClass("more");
+   el.find("img").removeClass("delete").addClass("add").attr("title","Visualizza");
+   fieldset = el.parents("fieldset");
+   fieldset.css("border-width","0px").find("legend").css("border-width","0px");
+   fieldset.find("div.hideme").hide();
+}

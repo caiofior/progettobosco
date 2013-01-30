@@ -48,7 +48,7 @@ class Forest extends \Content {
         $data = $this->table->fetchRow($where);
         if (is_null($data))
             throw new \Exception('Unable to find the forest',1301251056);
-        $this->data = $this->table->fetchRow($where)->toArray();
+        $this->data = $data->toArray();
         $this->addForestCompartmentCount();
     }
     /*

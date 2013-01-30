@@ -70,7 +70,14 @@ class A extends \Content {
          * calcolo superficie boscata
          */
         $this->rawData['boscata_calcolo']=$this->data['sup_tot']-$this->rawData['improduttivi_calcolo']-$this->rawData['prod_non_bosc_calcolo'];
-        
-        
+    }
+    /**
+     * Gets the associated municipality
+     * @return \forest\attribute\Municipality
+     */
+    public function getMunicipality () {
+        $municipality = new \forest\attribute\Municipality();
+        $municipality->loadFromCode($this->data['comune']);
+        return $municipality;
     }
 }
