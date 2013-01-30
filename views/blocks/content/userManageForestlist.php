@@ -16,7 +16,7 @@
                                                                 unset($_GET['owned_by']);
                                                                 unset($_GET['notowned_by']);
                                                                 unset($_GET['editowned_by']);
-                                                                $items_in_page =2;
+                                                                $items_in_page =10;
                                                                 $forestcoll->loadAll(
                                                                         array(
                                                                     'start'=>$_GET['start'],

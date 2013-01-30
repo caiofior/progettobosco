@@ -12,7 +12,7 @@
                                                                 if (!key_exists('regione', $_GET))
                                                                     $_GET['regione']=null;
                                                                 unset($_GET['delete']);
-                                                                $items_in_page =2;
+                                                                $items_in_page =10;
                                                                 $forestcoll->loadAll(
                                                                         array(
                                                                     'start'=>$_GET['start'],

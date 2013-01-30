@@ -23,7 +23,7 @@ $MONITORING=true;
 /**
  * Base url of the web site
  */
-$BASE_URL ='http://127.0.0.1/progettobosco/public/';
+$BASE_URL ='http://'.$_SERVER['SERVER_NAME'].'/progettobosco/public/';
 /**
  * Site name
  */

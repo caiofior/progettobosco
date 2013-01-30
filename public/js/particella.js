@@ -18,4 +18,7 @@ $("#search").keyup(function(){
 $("#usosuolo, #codiope").change(function() {
    $("#search").val("").trigger("keyup");
 });
-
+/**
+ * Form a controls
+ */
+$( "#datasch" ).datepicker({dateFormat:"yy-mm-dd"});
