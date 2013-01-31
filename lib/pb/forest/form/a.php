@@ -80,4 +80,13 @@ class A extends \Content {
         $municipality->loadFromCode($this->data['comune']);
         return $municipality;
     }
+    /**
+     * Gets teh associated colelctor
+     * @return \forest\attribute\Collector
+     */
+    public function getCollector() {
+        $collector = new \forest\attribute\Collector();
+        $collector->loadFromId($this->data['codiope']);
+        return $collector;
+    }
 }

@@ -36,6 +36,25 @@ $("#confirm_move").on("click",$("#confirm_move"),function() {
    el.attr("href",el.data("basehref")+"&regione="+regione.val()+"&search="+search.val()+"&start="+current.val());
    el.trigger("click");
 });
+$(document).on("click","#content_boscoForestlist .delete",function(){
+    el = $(this).parent("a");
+    $.colorbox({
+        "html"  :   "Vuoi cancellare il bosco selezionato ?"+
+                    " <a id=\"bosco_delete_confirm\"href=\""+el.attr("href")+"\" data-update=\"content_boscoForestlist\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
+                    " <a id=\"bosco_delete_cancel\"href=\"#\"><img src=\"images/empty.png\" title=\"Annulla cancellazione\" class=\"actions cancel\"/> </a>",
+        "onLoad": function() {
+            $('#cboxClose').remove();
+        }
+    });
+   return false;
+});
+$(document).on("click","#bosco_delete_confirm",function(){
+   $.colorbox.close();
+});
+$(document).on("click","#bosco_delete_cancel",function(){
+   $.colorbox.close();
+   return false;
+});
 /**
  * Forest for management
  */

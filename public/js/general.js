@@ -109,7 +109,7 @@ function defaultInputValue (selector,value) {
         success: function(response) {
             $("#ajaxloader").hide();
             $.each(response, function(key,value) {
-              $("#"+key).replaceWith(value);   
+              $("#"+key).replaceWith(value);  
             });
         },
         error: function(jqXHR , textStatus,  errorThrown) {

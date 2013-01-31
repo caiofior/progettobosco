@@ -28,7 +28,7 @@
                                                                 <img class="actions edit" src="images/empty.png" title="Visualizza/Modifica"/>
                                                                 </a>
                                                                 <?php if ($user->isUserForestAdmin($forest)) : ?>
-                                                                <a href="bosco.php?<?php echo http_build_query($_GET); ?>&delete=1&id=<?php echo $forest->getData('objectid'); ?>" data-update="content_boscoForestlist">
+                                                                <a href="bosco.php?<?php echo http_build_query($_GET); ?>&delete=1&id=<?php echo $forest->getData('objectid'); ?>" >
                                                                 <img class="actions delete" src="images/empty.png" title="Cancella"/>
                                                                 </a>
                                                                 <?php endif; ?>

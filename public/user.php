@@ -47,7 +47,7 @@ require (__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'include'.DIRECTOR
      $value = 'f';
      $class= 'administrator';
      $label = 'Amministratore';
-     if ($user_item->getData('is_admin')=='f') {
+     if ($user_item->isAdmin ()) {
         $value = 't';
         $label = 'Utente';
         $class= 'user';
@@ -55,8 +55,8 @@ require (__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'include'.DIRECTOR
      if ($user_item->getData('id') == $user->getData('id'))
          $value = 't';
     ?>
-    <a href="user.php?action=edit&id=<?php echo intval($user_item->getData('id'));?>&field=is_admin&value=<?php echo $value; ?>"><img class="actions edit <?php echo $class; ?>" src="images/empty.png" title="<?php echo $label; ?>"/></a>
-    <?php if ($user_item->getData('is_admin')=='f') : ?>
+    <a href="user.php?action=edit&id=<?php echo intval($user_item->getData('id'));?>&field=is_admin&value=<?php echo $value; ?>"><img class="actions <?php echo $class; ?>" src="images/empty.png" title="<?php echo $label; ?>"/></a>
+    <?php if (!$user_item->isAdmin ()) : ?>
     <a href="user.php?action=manage&id=<?php echo intval($user_item->getData('id'));?>"><img class="actions manage" src="images/empty.png" title="Associa boschi"/></a>
     <?php endif; ?>
     <?php if ($user_item->getData('id') != $user->getData('id')) : ?>

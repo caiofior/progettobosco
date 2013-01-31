@@ -29,9 +29,9 @@ $("#user").dataTable( {
 $(document).on("click","#user .delete",function(){
     el = $(this).parent("a");
     $.colorbox({
-        "html"  :   "Vuoi cancellare l'utente ?"+
+        "html"  :   "Vuoi cancellare l'utente selezionato ?"+
                     " <a id=\"user_delete_confirm\"href=\""+el.attr("href")+"\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\"/> </a>"+
-                    " <a id=\"user_delete_cancel\"href=\"#\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions cancel\"/> </a>",
+                    " <a id=\"user_delete_cancel\"href=\"#\"><img src=\"images/empty.png\" title=\"Annulla cancellazione\" class=\"actions cancel\"/> </a>",
         "onLoad": function() {
             $('#cboxClose').remove();
         }

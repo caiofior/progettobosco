@@ -17,6 +17,21 @@ switch ($_REQUEST['action']) {
             $response[]=$data;
         }
     break;
+    case 'collector':
+        $collectorcoll = new \forest\attribute\CollectorColl();
+        $collectorcoll->loadAll(array(
+            'start'=>0,
+            'length'=>10,
+            'search'=>$_REQUEST['term']
+            ));
+        foreach($collectorcoll->getItems() as $collector) {
+            $data = array(
+                'id'=>$collector->getData('codice'),
+                'value'=>$collector->getData('descriz')
+            );
+            $response[]=$data;
+        }
+    break;
 }
 header('Content-type: application/json');
 echo Zend_Json::encode($response);

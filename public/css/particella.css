@@ -29,16 +29,60 @@
     font-weight: bold;
     font-size: 15px;
 }
+/*#formA {
+    position: relative;
+    height: 2000px;
+}*/
 fieldset {
-    border-style: dotted;
+    border-style: solid;
     border-width: 1px;
     border-color: #000000;
     color: #325D27;
 }
 legend {
-     border-style: dotted;
+    border-style: dotted;
     border-width: 1px;
     border-color: #000000;
     margin-left: 20px;
     font-weight: bold;
+}
+
+.e1 {
+    position: relative;
+}
+.e1.est {
+    left: 0px;
+    top: 94px;
+}
+.e1.nord {
+    left: 235px;
+    top:-37px;
+}
+.e1.nord-est{
+    left: 135px;
+    top:-15px;
+}
+.e1.nord-ovest{
+    left: 360px;
+    top:-42px;
+}
+.e1.nulla{
+    left: 236px;
+    top:-7px;
+}
+.e1.ovest {
+    left: 417px;
+    top: -32px;
+}
+.e1.sud {
+    left: 233px;
+    top: 51px;
+}
+.e1.sud-est {
+    left: 135px;
+    top: -20px;
+}
+.e1.sud-ovest {
+    left: 360px;
+    top: -45px;
 }

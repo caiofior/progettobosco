@@ -34,7 +34,9 @@ abstract class Content {
     /**
      * Instantiates the table
      */
-    public function __construct($table) {
+    public function __construct($table=null) {
+        if (is_null($table))
+            return;
         $this->table = new Zend_Db_Table($table);
         $cols = $this->table->info('cols');
         $cols = array_combine($cols, array_fill ( 0 , sizeof($cols) , null ));

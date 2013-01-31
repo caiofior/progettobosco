@@ -28,7 +28,7 @@
                                                                 <a href="bosco.php?task=forest_compartment&action=manage&id=<?php echo $a->getData('objectid'); ?>" >
                                                                 <img class="actions edit" src="images/empty.png" title="Visualizza/Modifica"/>
                                                                 </a>
-                                                                <a href="bosco.php?task=forest_compartment&delete=1&id=<?php echo $a->getData('objectid'); ?>" data-update="content_boscoForestlist">
+                                                                <a href="bosco.php?task=forest_compartment&delete=1&id=<?php echo $a->getData('objectid'); ?>" >
                                                                 <img class="actions delete" src="images/empty.png" title="Cancella"/>
                                                                 </a>
                                                                 Particella <?php echo $a->getData('cod_part');?>

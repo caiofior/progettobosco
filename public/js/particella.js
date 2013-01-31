@@ -18,6 +18,18 @@ $("#search").keyup(function(){
 $("#usosuolo, #codiope").change(function() {
    $("#search").val("").trigger("keyup");
 });
+$(document).on("click","#content_boscoForestCompartmentlist .delete",function(){
+    el = $(this).parent("a");
+    $.colorbox({
+        "html"  :   "Vuoi cancellare la particella selezionata ?"+
+                    " <a id=\"bosco_delete_confirm\"href=\""+el.attr("href")+"\" data-update=\"content_boscoForestCompartmentlist\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
+                    " <a id=\"bosco_delete_cancel\"href=\"#\"><img src=\"images/empty.png\" title=\"Annulla cancellazione\" class=\"actions cancel\"/> </a>",
+        "onLoad": function() {
+            $('#cboxClose').remove();
+        }
+    });
+   return false;
+});
 /**
  * Form a controls
  */
@@ -28,6 +40,23 @@ $("#comune_descriz").autocomplete({
         $("#comune").val(ui.item.id )
     }
 });
+$("#codiope_descriz").autocomplete({
+    source: "bosco.php?task=autocomplete&action=collector",
+    select: function( event, ui ) {
+        $("#codiope").val(ui.item.id )
+    }
+});
+$(document).on("change","#sup",function(){
+   el = $(this);
+   if (el.val()> 0)
+       $("input[name=delimitata]").removeAttr("disabled");
+   else
+       $("input[name=delimitata]").attr("disabled","disabled");
+});
+$("#sup").trigger("change");
+/**
+ * Hide subforms
+ */
 $("fieldset div.hideme").hide().parent("fieldset").css("border-width","0").find("legend").css("border-width","0").prepend('<a href="#" class="more"><img class="actions add" src="images/empty.png" title="Visualizza" /></a> ');
 $(document).on("click","fieldset a.more",function(){
    hideElement($("fieldset a.less"));

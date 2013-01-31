@@ -47,9 +47,13 @@ class CollectorColl  extends \ContentColl implements template\AttributeColl {
      * @return \Zend_Db_Select
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
+        $select->setIntegrityCheck(false)
+        ->from('rilevato');
+        if (key_exists('search', $criteria) && $criteria['search'] != '') {
+            $select->where('descriz LIKE ? ','%'.$criteria['search'].'%');
+        }
         if ($this->forest instanceof \forest\Forest) {
-            $select->setIntegrityCheck(false)
-            ->where(new \Zend_Db_Expr(' rilevato.codice IN (SELECT schede_a.codiope FROM schede_a WHERE schede_a.proprieta =  ? )'),$this->forest->getData('codice'));        
+            $select->where(new \Zend_Db_Expr(' rilevato.codice IN (SELECT schede_a.codiope FROM schede_a WHERE schede_a.proprieta =  ? )'),$this->forest->getData('codice'));        
         }
         $select->order('descriz');
         return $select;

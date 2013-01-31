@@ -9,5 +9,12 @@
  defaultInputValue("#username","Nome utente (email)");
  $(document).on("click",".password_recover",function(){
      $("#passwordrecover_container").show();
-    return false; 
+     $(window).scrollTop($("#passwordrecover_container").offset().top);
+     return false; 
  });
+ /**
+  * Set focu to the top
+  */
+$(document).on("click", "a[data-update]",function () {
+    $(window).scrollTop(0);
+});

@@ -23,6 +23,11 @@ else if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
                 $forest = new forest\Forest();
                 $forest->loadFromCode($_REQUEST['forest_codice']);
             }
+            if (key_exists('delete', $_REQUEST)) {
+                $forest = new forest\Forest();
+                $forest->loadFromId($_REQUEST['id']);
+                $forest->delete();
+            }
             $response = array();
             $request = new RegexIterator(new ArrayIterator($_REQUEST), '/^[0-9]+$/',  RegexIterator::MATCH,  RegexIterator::USE_KEY); 
             foreach ($request as  $value) {
@@ -33,11 +38,6 @@ else if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
                     require $file_path;
                     $response[ $value]=  ob_get_clean();
                     }
-            }
-            if (key_exists('delete', $_REQUEST)) {
-                $forest = new forest\Forest();
-                $forest->loadFromId($_REQUEST['id']);
-                $forest->delete();
             }
             header('Content-type: application/json');
             echo Zend_Json::encode($response);
@@ -103,7 +103,8 @@ else if (key_exists('action', $_REQUEST)) {
                         ));
                         }
                     $view->forest->addOwner($user,1);
-                    $formErrors->setOkMessage('Le modifiche sono state salvate');
+                    $formErrors->setOkMessage('Lo modifiche sono state salvate.<script type="text/javascript">window.location.href = "'.$BASE_URL.'bosco.php??action=manage&id='.$view->forest->getData('id').'"</script>');
+                    
                     $log->insert();
                     
                 }
