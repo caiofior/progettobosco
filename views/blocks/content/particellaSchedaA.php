@@ -3,6 +3,8 @@ $a = $this->a;
 $forest = $a->getForest();
 ?><div id="tabContent">
     <form id="formA" action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=forma&action=manage&id=87">
+        <fieldset>
+        
         <label for="bosco">Bosco</label>
         <input readonly="readonly" id="bosco" name="bosco" value="<?php echo $forest->getData('descrizion');?>"><br />
         <label for="codiope">Rilevatore</label>
@@ -28,12 +30,16 @@ $forest = $a->getForest();
         <input id="ap" name="ap" value="<?php echo $a->getData('ap');?>"><br/>
         <label for="pp">Pendenza prevalente (%)</label>
         <input id="pp" name="pp" value="<?php echo $a->getData('pp');?>"><br/>
+        
+        </fieldset>
         <fieldset>
+                
         <legend>Sottoparticella</legend>
         <label for="sup">Estesa su (%)</label>
         <input id="sup" name="sup" value="<?php echo $a->getData('sup');?>"><br/>
         <input type="radio" disabled="disabled" name="delimitata" <?php echo ($a->getData('delimitata') == 't' ? 'checked="checked"' : '')?> value="1">Delimitata<br/>
         <input type="radio" disabled="disabled" name="delimitata" <?php echo ($a->getData('delimitata') == 'f' ? 'checked="checked"' : '')?>value="0">Non delimitata<br/>
+        
         </fieldset>
         <fieldset id="pf1container">
         <legend>Posizione fisiografica prevalente</legend>
@@ -42,7 +48,7 @@ $forest = $a->getForest();
         $physiographicPositionColl->loadAll();
         foreach($physiographicPositionColl->getItems() as $physiographicPosition) :
         $checked = '';
-        if ($physiographicPosition->getData('codice') == $a->getData('pf1'))
+        if ($physiographicPosition->getRawData('codice') == $a->getData('pf1'))
             $checked = 'checked="checked"';
         ?>
         <input type="radio" name="pf1" <?php echo $checked; ?> value="<?php echo $physiographicPosition->getData('codice'); ?>"><?php echo $physiographicPosition->getData('descriz'); ?><br/>
@@ -55,7 +61,7 @@ $forest = $a->getForest();
         $aspectcoll->loadAll();
         foreach($aspectcoll->getItems() as $aspect) :
         $checked = '';
-        if ($aspect->getData('codice') == $a->getData('e1'))
+        if ($aspect->getRawData('codice') == $a->getData('e1'))
             $checked = 'checked="checked"';
         ?>
         <div class="e1 <?php echo strtolower($aspect->getData('descriz')); ?>"><input type="radio" name="e1" <?php echo $checked; ?> value="<?php echo $aspect->getData('codice'); ?>" ><?php echo $aspect->getData('descriz'); ?></div>
@@ -69,10 +75,10 @@ $forest = $a->getForest();
         $surfaceerosioncoll->loadAll();
         foreach($surfaceerosioncoll->getItems() as $surfaceerosion) :
         $checked = '';
-        if ($surfaceerosion->getData('codice') == $a->getRawData('a2'))
+        if ($surfaceerosion->getRawData('codice') == $a->getRawData('a2'))
             $checked = 'checked="checked"';
         ?>
-        <input type="radio" name="a2" <?php echo $checked; ?> value="<?php echo $surfaceerosion->getData('codice'); ?>" ><?php echo $surfaceerosion->getRawData('descriz'); ?>
+        <input type="radio" name="a2" <?php echo $checked; ?> value="<?php echo $surfaceerosion->getRawData('codice'); ?>" ><?php echo $surfaceerosion->getRawData('descriz'); ?>
         <?php endforeach;?>
         <br/>
         <label for="a3">Erosione profonda o calanchiva</label><br/>
@@ -81,10 +87,10 @@ $forest = $a->getForest();
         $catastrophicerosioncoll->loadAll();
         foreach($catastrophicerosioncoll->getItems() as $catastrophicerosion) :
         $checked = '';
-        if ($catastrophicerosion->getData('codice') == $a->getRawData('a3'))
+        if ($catastrophicerosion->getRawData('codice') == $a->getRawData('a3'))
             $checked = 'checked="checked"';
         ?>
-        <input type="radio" name="a3" <?php echo $checked; ?> value="<?php echo $catastrophicerosion->getData('codice'); ?>" ><?php echo $catastrophicerosion->getRawData('descriz'); ?>
+        <input type="radio" name="a3" <?php echo $checked; ?> value="<?php echo $catastrophicerosion->getRawData('codice'); ?>" ><?php echo $catastrophicerosion->getRawData('descriz'); ?>
         <?php endforeach;?>
         <br/>
         <label for="a4">Frane superficiali</label><br/>
@@ -93,10 +99,10 @@ $forest = $a->getForest();
         $surfacelandslidecoll->loadAll();
         foreach($surfacelandslidecoll->getItems() as $surfacelandslide) :
         $checked = '';
-        if ($surfacelandslide->getData('codice') == $a->getRawData('a4'))
+        if ($surfacelandslide->getRawData('codice') == $a->getRawData('a4'))
             $checked = 'checked="checked"';
         ?>
-        <input type="radio" name="a4" <?php echo $checked; ?> value="<?php echo $surfacelandslide->getData('codice'); ?>" ><?php echo $surfacelandslide->getRawData('descriz'); ?>
+        <input type="radio" name="a4" <?php echo $checked; ?> value="<?php echo $surfacelandslide->getRawData('codice'); ?>" ><?php echo $surfacelandslide->getRawData('descriz'); ?>
         <?php endforeach;?>
         <br/>
         <label for="a6">Rotolamento massi</label><br/>
@@ -105,10 +111,10 @@ $forest = $a->getForest();
         $stonerollingcoll->loadAll();
         foreach($stonerollingcoll->getItems() as $stonerolling) :
         $checked = '';
-        if ($stonerolling->getData('codice') == $a->getRawData('a6'))
+        if ($stonerolling->getRawData('codice') == $a->getRawData('a6'))
             $checked = 'checked="checked"';
         ?>
-        <input type="radio" name="a6" <?php echo $checked; ?> value="<?php echo $stonerolling->getData('codice'); ?>" ><?php echo $stonerolling->getRawData('descriz'); ?>
+        <input type="radio" name="a6" <?php echo $checked; ?> value="<?php echo $stonerolling->getRawData('codice'); ?>" ><?php echo $stonerolling->getRawData('descriz'); ?>
         <?php endforeach;?>
         <br/>
         <label for="a7">Altri fattori di dissesto</label><br/>
@@ -117,13 +123,118 @@ $forest = $a->getForest();
         $otherinstabilitycoll->loadAll();
         foreach($otherinstabilitycoll->getItems() as $otherinstability) :
         $checked = '';
-        if ($otherinstability->getData('codice') == $a->getRawData('a6'))
+        if ($otherinstability->getRawData('codice') == $a->getRawData('a7'))
             $checked = 'checked="checked"';
         ?>
-        <input type="radio" name="a7" <?php echo $checked; ?> value="<?php echo $otherinstability->getData('codice'); ?>" ><?php echo $otherinstability->getRawData('descriz'); ?>
+        <input type="radio" name="a7" <?php echo $checked; ?> value="<?php echo $otherinstability->getRawData('codice'); ?>" ><?php echo $otherinstability->getRawData('descriz'); ?>
         <?php endforeach;?>
         <br/>
-        <label for="a8">Specifica altri fattori</label>        <input id="a8" name="a8" value="<?php echo $a->getData('a8');?>"><br/>
+        <label for="a8">Specifica altri fattori</label>
+        <input id="a8" name="a8" value="<?php echo $a->getData('a8');?>"><br/>
+        </fieldset>
+        <fieldset>
+        <legend>Limiti allo sviluppo delle radici</legend>
+        <label for="r2">Superficialità terreno</label><br/>
+        <?php
+        $superficialsoilcoll = new \forest\attribute\SuperficialSoilColl();
+        $superficialsoilcoll->loadAll();
+        foreach($superficialsoilcoll->getItems() as $superficialsoil) :
+        $checked = '';
+        if ($superficialsoil->getRawData('codice') == $a->getRawData('r2'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="r2" <?php echo $checked; ?> value="<?php echo $superficialsoil->getRawData('codice'); ?>" ><?php echo $superficialsoil->getRawData('descriz'); ?>
+        <?php endforeach;?>
+        <br/>
+        <label for="r3">Rocciosità affiorante</label><br/>
+        <?php
+        $superficialrockcoll = new \forest\attribute\SuperficialRockColl();
+        $superficialrockcoll->loadAll();
+        foreach($superficialrockcoll->getItems() as $superficialrock) :
+        $checked = '';
+        if ($superficialrock->getRawData('codice') == $a->getRawData('r3'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="r3" <?php echo $checked; ?> value="<?php echo $superficialrock->getRawData('codice'); ?>" ><?php echo $superficialrock->getRawData('descriz'); ?>
+        <?php endforeach;?>
+        <br/>
+        <label for="r4">Pietrosità</label><br/>
+        <?php
+        $rockinesscoll = new \forest\attribute\RockinessColl();
+        $rockinesscoll->loadAll();
+        foreach($rockinesscoll->getItems() as $rockiness) :
+        $checked = '';
+        if ($rockiness->getRawData('codice') == $a->getRawData('r4'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="r4" <?php echo $checked; ?> value="<?php echo $rockiness->getRawData('codice'); ?>" ><?php echo $rockiness->getRawData('descriz'); ?>
+        <?php endforeach;?>
+        <br/>
+        <label for="r5">Ristagno idrico</label><br/>
+        <?php
+        $waterstasiscoll = new \forest\attribute\WaterStasisColl();
+        $waterstasiscoll->loadAll();
+        foreach($waterstasiscoll->getItems() as $waterstasis) :
+        $checked = '';
+        if ($waterstasis->getRawData('codice') == $a->getRawData('r5'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="r5" <?php echo $checked; ?> value="<?php echo $waterstasis->getRawData('codice'); ?>" ><?php echo $waterstasis->getRawData('descriz'); ?>
+        <?php endforeach;?>
+        <br/>  
+        <label for="r6">Altri fattori limitanti</label><br/>
+        <?php
+        $otherrootlimitingfactorcoll = new \forest\attribute\OtherRootLimitingFactorColl();
+        $otherrootlimitingfactorcoll->loadAll();
+        foreach($otherrootlimitingfactorcoll->getItems() as $otherrootlimitingfactor) :
+        $checked = '';
+        if ($otherrootlimitingfactor->getRawData('codice') == $a->getRawData('r6'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="r6" <?php echo $checked; ?> value="<?php echo $otherrootlimitingfactor->getRawData('codice'); ?>" ><?php echo $otherrootlimitingfactor->getRawData('descriz'); ?>
+        <?php endforeach;?>
+        <br/>  
+        <label for="r7">Specificare altre cause</label>
+        <input id="r7" name="r7" value="<?php echo $a->getData('r7');?>"><br/>
+        </fieldset>
+        <fieldset>
+        <legend>Fattori di alterazione fitosanitaria</legend>
+        <label for="f2">Bestiame</label><br/>
+        <?php
+        $livestockcoll = new \forest\attribute\LivestockColl();
+        $livestockcoll->loadAll();
+        foreach($livestockcoll->getItems() as $livestock) :
+        $checked = '';
+        if ($livestock->getRawData('codice') == $a->getRawData('f2'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="f2" <?php echo $checked; ?> value="<?php echo $livestock->getRawData('codice'); ?>" ><?php echo $livestock->getRawData('descriz'); ?>
+        <?php endforeach;?>
+        <br/>
+        <label for="f3">Selvatici</label><br/>
+        <?php
+        $wildanimalcoll = new \forest\attribute\WildAnimalColl();
+        $wildanimalcoll->loadAll();
+        foreach($wildanimalcoll->getItems() as $wildanimal) :
+        $checked = '';
+        if ($wildanimal->getRawData('codice') == $a->getRawData('f3'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="f3" <?php echo $checked; ?> value="<?php echo $wildanimal->getRawData('codice'); ?>" ><?php echo $wildanimal->getRawData('descriz'); ?>
+        <?php endforeach;?>
+        <br/>  
+        <label for="f4">Patogeni o parassiti</label><br/>
+        <?php
+        $wildanimalcoll = new \forest\attribute\WildAnimalColl();
+        $wildanimalcoll->loadAll();
+        foreach($wildanimalcoll->getItems() as $wildanimal) :
+        $checked = '';
+        if ($wildanimal->getRawData('codice') == $a->getRawData('f4'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="f4" <?php echo $checked; ?> value="<?php echo $wildanimal->getRawData('codice'); ?>" ><?php echo $wildanimal->getRawData('descriz'); ?>
+        <?php endforeach;?>
+        <br/>  
         </fieldset>
     </form>
 </div>
