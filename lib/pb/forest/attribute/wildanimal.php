@@ -21,6 +21,6 @@ if (!class_exists('Content')) {
  * @copyright CRA
  * Manages Wild Animal  attribute
  */
-class WildAnimal extends \Content implements template\Attribute {
+class WildAnimal extends template\Piu1_3 {
 
 }

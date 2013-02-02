@@ -21,6 +21,6 @@ if (!class_exists('Content')) {
  * @copyright CRA
  * Manages Superficial Rock attribute
  */
-class SuperficialRock extends \Content implements template\Attribute {
+class SuperficialRock extends template\Piu2_3 {
 
 }

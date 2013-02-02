@@ -21,6 +21,6 @@ if (!class_exists('Content')) {
  * @copyright CRA
  * Manages Rockiness  attribute
  */
-class Rockiness extends \Content implements template\Attribute {
+class Rockiness extends template\Piu2_3 {
 
 }

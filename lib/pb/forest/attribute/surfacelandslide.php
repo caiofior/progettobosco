@@ -21,6 +21,6 @@ if (!class_exists('Content')) {
  * @copyright CRA
  * Manages Surface Landslide attribute
  */
-class SurfaceLandslide extends \Content implements template\Attribute {
+class SurfaceLandslide extends template\Piu1_3 {
 
 }

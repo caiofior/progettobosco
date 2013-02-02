@@ -21,6 +21,6 @@ if (!class_exists('Content')) {
  * @copyright CRA
  * Manages Livestock  attribute
  */
-class Livestock extends \Content implements template\Attribute {
+class Livestock extends template\Piu1_3 {
 
 }

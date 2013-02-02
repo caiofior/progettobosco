@@ -21,6 +21,6 @@ if (!class_exists('Content')) {
  * @copyright CRA
  * Manages Other Instability attribute
  */
-class OtherInstability extends \Content implements template\Attribute {
+class OtherInstability extends template\Piu1_3 {
 
 }

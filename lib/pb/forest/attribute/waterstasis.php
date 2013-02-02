@@ -21,6 +21,6 @@ if (!class_exists('Content')) {
  * @copyright CRA
  * Manages Water Stasis  attribute
  */
-class WaterStasis extends \Content implements template\Attribute {
+class WaterStasis extends template\Piu2_3 {
 
 }

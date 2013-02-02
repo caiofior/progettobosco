@@ -21,6 +21,6 @@ if (!class_exists('Content')) {
  * @copyright CRA
  * Manages Surface Erosion attribute
  */
-class SurfaceErosion extends \Content implements template\Attribute {
+class SurfaceErosion extends template\Piu1_3 {
 
 }

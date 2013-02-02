@@ -21,6 +21,6 @@ if (!class_exists('Content')) {
  * @copyright CRA
  * Manages Stone Rolling attribute
  */
-class StoneRolling extends \Content implements template\Attribute {
+class StoneRolling extends template\Piu1_3 {
 
 }

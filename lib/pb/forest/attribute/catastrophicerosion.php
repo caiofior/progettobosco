@@ -21,6 +21,6 @@ if (!class_exists('Content')) {
  * @copyright CRA
  * Manages Catastrophic Erosion attribute
  */
-class CatastrophicErosion extends \Content implements template\Attribute {
+class CatastrophicErosion extends template\Piu1_3 {
 
 }

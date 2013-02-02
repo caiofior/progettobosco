@@ -21,6 +21,6 @@ if (!class_exists('Content')) {
  * @copyright CRA
  * Manages Other Root Limiting Factor  attribute
  */
-class OtherRootLimitingFactor extends \Content implements template\Attribute {
+class OtherRootLimitingFactor extends template\Piu2_3 {
 
 }

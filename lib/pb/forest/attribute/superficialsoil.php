@@ -21,6 +21,6 @@ if (!class_exists('Content')) {
  * @copyright CRA
  * Manages Superficial Soil attribute
  */
-class SuperficialSoil extends \Content implements template\Attribute {
+class SuperficialSoil extends template\Piu2_3 {
 
 }
