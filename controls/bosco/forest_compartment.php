@@ -16,5 +16,5 @@ $view->blocks = array(
           'footer'.DIRECTORY_SEPARATOR.'particella.php'
       )
     );
-echo $view->render('Jungleland10.php');
+echo $view->render('Jungleland10_1col.php');
 exit;

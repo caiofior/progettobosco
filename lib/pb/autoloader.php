@@ -16,6 +16,11 @@ if (!class_exists('Zend_Loader')) {
     Zend_Loader::loadClass('Zend_Json');
     Zend_Loader::loadClass('Zend_Mail');
     Zend_Loader::loadClass('Zend_Mail_Transport_Smtp');
+    Zend_Loader::loadClass('Zend_Cache');
+    Zend_Loader::loadClass('Zend_Cache_Core');
+    Zend_Loader::loadClass('Zend_Cache_Backend_Apc');
+    $GLOBALS['CACHE'] = new Zend_Cache_Core(array('automatic_serialization'=>true));
+    $GLOBALS['CACHE']->setBackend(new Zend_Cache_Backend_Apc());
     require (__DIR__.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'content.php');
     require (__DIR__.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'contentcoll.php');
     require (__DIR__.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'formerrors.php');

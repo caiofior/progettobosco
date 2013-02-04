@@ -1,0 +1,286 @@
+/* 
+    Document   : form_a
+    Created on : 4-feb-2013, 14.18.03
+    Author     : caiofior
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+fieldset {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000000;
+    color: #325D27;
+    position: relative;
+    display: block;
+}
+legend {
+    border-style: dotted;
+    border-width: 1px;
+    border-color: #000000;
+    margin-left: 20px;
+    font-weight: bold;
+}
+fieldset div {
+    position:absolute;
+}
+label {
+    background-color: #010080;
+    color: #ffffff!important;
+    display: block;
+}
+label.double {
+    height: 40px;
+}
+input:not([type='radio']) {
+   width: 80%;
+}
+/**
+* General part
+**/
+#general {
+    left: 0px;
+    top: 0px;
+    height: 313px;
+    border-style: none;
+}
+#bosco_container {
+    width: 250px;
+    top:4px;
+    left:4px;
+}
+#codiope_container {
+    width: 250px;
+    top: 4px;
+    left: 260px;
+}
+#datasch_container {
+    width: 250px;
+    top:4px;
+    left: 520px;
+}
+#note_1 {
+    width: 154px;
+    top:60px;
+    left: 4px;
+}
+#sup_tot_container {
+    top:66px;
+    width: 100px;
+    left: 299px;
+}
+#boscata_calcolo_container {
+    top:66px;
+    width: 100px;
+    left: 409px;
+}
+#cod_part_container {
+    width: 161px;
+    top:66px;
+    left: 520px;
+}
+#comune_container {
+    width: 150px;
+    top:159px;
+    left: 4px;
+}
+#ap_container {
+    width: 125px;
+    top:159px;
+    left: 164px;
+}
+#improduttivi_calcolo_container {
+    top:159px;
+    width: 100px;
+    left: 299px;
+}
+#prod_non_bosc_calcolo_container {
+    top:159px;
+    width: 100px;
+    left: 409px;
+}
+#toponimo_container {
+    width: 150px;
+    top:244px;
+    left: 4px;
+}
+#pp_container {
+    top:244px;
+    width: 125px;
+    left: 164px;
+}
+/**
+* Sub forest parcel
+*/
+#sub_forest_parcel {
+    top: -181px;
+    left: 522px;
+    width: 280px;
+    height: 160px;
+}
+#sup_container {
+    top: 14px;
+    left: 170px;
+    width: 100px;
+}
+/**
+* Posifisio
+**/
+#pf1container {
+    top: -150px;
+    left: 4px;
+    width: 488px;
+}
+.pf1_descr {
+    display: inline-block;
+    width: 60px;
+}
+/**
+* A conatiner
+*/
+#acontainer {
+    top: -147px;
+    left: 4px;
+    width: 488px;
+    height: 312px;
+}
+#acontainer table {
+    padding: 0px;
+    margin: 0px;
+    
+}
+#acontainer td {
+    padding: 1px;
+    margin: 0px;
+    
+}
+#a8_container {
+    top: 256px;
+    width: 300px;
+}
+/**
+* e1container
+*/
+#e1container {
+    top: -580px;
+    left: 522px;
+    width: 280px;
+    height: 281px;
+}
+.e1 {
+    position: relative;
+}
+.e1.est {
+    left: 0px;
+    top: 46px;
+}
+.e1.nord {
+    left: 134px;
+    top:-5px;
+}
+.e1.nord-est{
+    left: 45px;
+    top:9px;
+}
+.e1.nord-ovest{
+    left: 190px;
+    top:-140px;
+}
+.e1.nulla{
+    left: 134px;
+    top:-103px;
+}
+.e1.ovest {
+    left: 234px;
+    top: -53px;
+}
+.e1.sud {
+    left: 132px;
+    top: 110px;
+}
+.e1.sud-est {
+    left: 45px;
+    top: 100px;
+}
+.e1.sud-ovest {
+    left: 190px;
+    top: 45px;
+}
+/**
+* R container
+**/
+#rcontainer {
+    top: -400px;
+    left: 4px;
+    width: 488px;
+    height: 285px;
+}
+#rcontainer table {
+    padding: 0px;
+    margin: 0px;
+    
+}
+#rcontainer td {
+    padding: 1px;
+    margin: 0px;
+    
+}
+#r7_container {
+    top: 220px;
+    width: 300px;
+}
+
+/**
+* F container
+**/
+#fcontainer {
+    top: -400px;
+    left: 4px;
+    width: 488px;
+    height: 385px;
+}
+#fcontainer table {
+    padding: 0px;
+    margin: 0px;
+    
+}
+#fcontainer td {
+    padding: 1px;
+    margin: 0px;
+    
+}
+#f12_container {
+    top: 320px;
+    width: 300px;
+}
+/**
+* F container
+**/
+#vcontainer {
+    top: -400px;
+    left: 4px;
+    width: 488px;
+    height: 80px;
+}
+#v1_container {
+    top: 30px;
+    width: 200px;
+}
+#v3_container {
+    top: 30px;
+    left: 210px;
+    width: 200px;
+}
+/**
+* Posifisio
+**/
+#ocontainer {
+    top: -400px;
+    left: 4px;
+    width: 488px;
+}
+.o_descr {
+    display: inline-block;
+    width: 100px;
+}

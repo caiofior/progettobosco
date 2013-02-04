@@ -55,6 +55,9 @@ class MunicipalityColl  extends \ContentColl implements template\AttributeColl {
         if (key_exists('search', $criteria) && $criteria['search'] != '') {
             $select->where('descriz LIKE ? ','%'.$criteria['search'].'%');
         }
+        if (key_exists('codice_bosco', $criteria) && $criteria['codice_bosco'] != '') {
+            $select->where(new \Zend_Db_Expr('regione = ( SELECT regione FROM propriet WHERE codice=\''.intval($criteria['codice_bosco']).'\')'));
+        }
         $select->order('descriz');
         return $select;
     }

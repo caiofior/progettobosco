@@ -33,7 +33,7 @@ if (!class_exists('Content')) {
  * 
  * Manages Form A forest compartment
  */
-class AColl extends \ContentColl {
+class AColl extends \forest\form\template\FormColl {
     /**
      * Forest object
      * @var \forest\Forest

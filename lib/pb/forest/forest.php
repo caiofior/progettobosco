@@ -131,6 +131,22 @@ class Forest extends \Content {
     public function getAttributeColl (\forest\attribute\template\AttributeColl $attributecoll) {
         $attributecoll->setForest($this);
         return $attributecoll;
-        
+    }
+     /**
+     * Returns the associated control
+     * @param string $attribute
+     * @return boolean
+     */
+    public function getControl($attribute) {
+        if (!key_exists($this->table->info('name'),$this->all_attributes_data))
+                return false;
+        if (!key_exists($attribute, $this->all_attributes_data[$this->table->info('name')]))
+                return false;
+        $attribute = $this->all_attributes_data[$this->table->info('name')][$attribute];
+        if (key_exists('dizionario', $attribute)) {
+            $itemcoll = new \forest\form\control\Itemcoll( $attribute['dizionario']);
+            $itemcoll->loadAll();
+            return $itemcoll;
+        }
     }
 }

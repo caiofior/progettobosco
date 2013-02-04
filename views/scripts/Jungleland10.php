@@ -9,6 +9,7 @@
 <meta name="author" content="Erwin Aligam - styleshout.com" />
 <?php $this->renderBlock('HEADERS'); ?>
 <link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" />
+<link rel="stylesheet" type="text/css" media="screen" href="css/two_col.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="js/jquery-ui/css/smoothness/jquery-ui-1.9.2.custom.css"  />
 <?php echo (isset($GLOBALS['DEBUG']) && $GLOBALS['DEBUG'] ? '<script type="text/javascript" >var DEBUG=true;</script>' : '') ;?>
 </head>
@@ -25,7 +26,7 @@
 	
 		<a name="top"></a>
 		
-		<h1 id="logo-text"><a href="<?php echo $GLOBALS['BASE_URL'];?>" title="">progettobosco</a></h1>		
+		<h1 id="logo-text"><a href="<?php echo $GLOBALS['BASE_URL'];?>" title=""><img src="images/progettobosco.png" alt="progettobosco" width="352px" height="77px"/></a></h1>		
 		<p id="slogan">pianificazione forestale a portata di mouse ... </p>					
 		
 

@@ -21,7 +21,7 @@ if (!class_exists('Content')) {
  * @copyright CRA
  * Manages Form A forest compartment
  */
-class A extends \Content {
+class A extends \forest\form\template\Form {
      /**
      * Instantiates the table
      */
@@ -89,4 +89,5 @@ class A extends \Content {
         $collector->loadFromId($this->data['codiope']);
         return $collector;
     }
+
 }

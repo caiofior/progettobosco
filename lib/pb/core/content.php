@@ -33,6 +33,7 @@ abstract class Content {
 
     /**
      * Instantiates the table
+     * @param string $table
      */
     public function __construct($table=null) {
         if (is_null($table))

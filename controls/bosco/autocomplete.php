@@ -2,11 +2,14 @@
 $response=array();
 switch ($_REQUEST['action']) {
     case 'municipality' :
+        if (!key_exists('codice', $_REQUEST))
+                $_REQUEST['codice']=null;
         $municipalitycoll = new forest\attribute\MunicipalityColl();
         $municipalitycoll->loadAll(array(
             'start'=>0,
             'length'=>10,
-            'search'=>$_REQUEST['term']
+            'search'=>$_REQUEST['term'],
+            'codice_bosco'=>$_REQUEST['codice']
             ));
 
         foreach($municipalitycoll->getItems() as $municipality) {
