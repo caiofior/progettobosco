@@ -35,12 +35,14 @@ class ItemColl extends \ContentColl {
      * @param array $criteria
      */
     public function loadAll(array $criteria = null) {
-        $items = $GLOBALS['CACHE']->load($this->content->getTable()->info('name'));
+        $dbname = $this->content->getTable()->getAdapter()->getConfig();
+        $dbname = $dbname['dbname'];
+        $items = $GLOBALS['CACHE']->load($dbname.'_'.$this->content->getTable()->info('name'));
         if (is_array($items))
             $this->items = $items;
         else {
             parent::loadAll();
-            $GLOBALS['CACHE']->save($this->items,$this->content->getTable()->info('name'));
+            $GLOBALS['CACHE']->save($this->items,$dbname.'_'.$this->content->getTable()->info('name'));
         }
     }
     /**

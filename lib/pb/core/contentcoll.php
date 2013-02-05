@@ -104,4 +104,11 @@ abstract class ContentColl {
     public function getColumns() {
         return $this->columns;
     }
+    /**
+     * Add new item to the collection
+     * @return \Content
+     */
+    public function addItem() {
+        return  clone $this->content;
+    }
 }

@@ -59,3 +59,53 @@ $(document).on("change","#sup",function(){
        $("input[name=delimitata]").attr("disabled","disabled");
 });
 $("#sup").trigger("change");
+$("#cod_nota_descr").autocomplete({
+    source: "bosco.php?task=autocomplete&action=cod_nota",
+    select: function( event, ui ) {
+        $("#cod_nota").val(ui.item.id )
+    },
+    change: function( event, ui ) {
+            if ( !ui.item ) {
+                  $("#cod_nota_descr").val("");
+            }
+    }
+});
+$(document).on("click","#newnote .addnew",function(){
+    status = false;
+    el = $(this).parent("a");
+    data = {
+        "xhr":1,
+        "cod_nota" : $("#cod_nota").val(),
+        "text_nota" : $("#text_nota").val()
+    };
+    $.ajax({
+            type: "POST",
+            async: false,
+            url: el.attr("href"),
+            data: data,
+            dataType: "json",
+            success: function(response) {
+                if (response == true) {
+                    $("#cod_nota_descr").val("");
+                     $("#cod_nota").val("");
+                     $("#text_nota").val("");
+                    status = true;
+                }
+                else {
+                    $.each(response["names"], function(id,val) {
+                        $("#"+val).addClass("error");
+                    });
+                    //$(messages_selector).html(response["messages"]).show();  
+                    $("#ajaxloader").hide();
+                }
+                
+            },
+            error: function(jqXHR , textStatus,  errorThrown) {
+                $("#ajaxloader").hide();
+            }
+        });
+     
+        return status;  
+    
+    
+});

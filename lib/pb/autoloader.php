@@ -21,6 +21,7 @@ if (!class_exists('Zend_Loader')) {
     Zend_Loader::loadClass('Zend_Cache_Backend_Apc');
     $GLOBALS['CACHE'] = new Zend_Cache_Core(array('automatic_serialization'=>true));
     $GLOBALS['CACHE']->setBackend(new Zend_Cache_Backend_Apc());
+    Zend_Db_Table_Abstract::setDefaultMetadataCache($GLOBALS['CACHE']);
     require (__DIR__.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'content.php');
     require (__DIR__.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'contentcoll.php');
     require (__DIR__.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'formerrors.php');

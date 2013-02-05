@@ -47,6 +47,9 @@ else if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
         case 'forest_compartment':
             require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'controls'.DIRECTORY_SEPARATOR.'bosco'.DIRECTORY_SEPARATOR.'forest_compartment.php';
         break;
+        case 'forma':
+            require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'controls'.DIRECTORY_SEPARATOR.'bosco'.DIRECTORY_SEPARATOR.'forma.php';
+        break;
         case 'autocomplete':
             require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'controls'.DIRECTORY_SEPARATOR.'bosco'.DIRECTORY_SEPARATOR.'autocomplete.php';
         break;

@@ -89,5 +89,14 @@ class A extends \forest\form\template\Form {
         $collector->loadFromId($this->data['codiope']);
         return $collector;
     }
+    /**
+     * Retunr the associated note collection
+     * @return \forest\attribute\NoteAColl
+     */
+    public function getNotes () {
+        $notes = new \forest\attribute\NoteAColl();
+        $notes->setForm($this);
+        return $notes;
+    }
 
 }

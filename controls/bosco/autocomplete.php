@@ -35,6 +35,22 @@ switch ($_REQUEST['action']) {
             $response[]=$data;
         }
     break;
+    case 'cod_nota':
+        $notacoll = new \forest\attribute\NoteTemplateColl();
+        $notacoll->loadAll(array(
+            'start'=>0,
+            'length'=>10,
+            'archivio'=>'SCHEDE_A',
+            'search'=>$_REQUEST['term']
+            ));
+        foreach($notacoll->getItems() as $nota) {
+            $data = array(
+                'id'=>$nota->getData('objectid'),
+                'value'=>$nota->getData('intesta')
+            );
+            $response[]=$data;
+        }
+    break;
 }
 header('Content-type: application/json');
 echo Zend_Json::encode($response);
