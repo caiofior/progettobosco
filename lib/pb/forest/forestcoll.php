@@ -44,7 +44,7 @@ class ForestColl extends \ContentColl {
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
         $select->setIntegrityCheck(false)
-        ->from('propriet',array(
+        ->from($this->content->getTable()->info('name'),array(
             '*',
             'propriet_codice_raw'=>'codice',
             'propriet_objectid_raw'=>'objectid',

@@ -3,11 +3,13 @@ $a = $this->a;
 $forest = $a->getForest();
 ?><script type="text/javascript" >
 document.write("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"css/form_a.css\" />");
+document.write("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"css/form_a.css\" />");
 </script>
     <div id="tabContent">
-    <form id="formA" action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=forma&action=manage&id=<?php echo $a->getData('objectid');?>">
+    <form id="formA" action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=forma&action=manage">
         <fieldset id="general">
             <input type="hidden" id="codice_bosco" name="codice_bosco" value="<?php echo $forest->getData('codice');?>"/>
+            <input type="hidden" id="objectid" name="objectid" value="<?php echo $a->getData('objectid');?>"/>
         <div id="bosco_container">
             <label for="bosco">Bosco</label>
             <input readonly="readonly" id="bosco" name="bosco" value="<?php echo $forest->getData('descrizion');?>">
@@ -591,10 +593,11 @@ document.write("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href
             </div>
         </fieldset>
         <fieldset id="notescontainer">
+        <legend>Note alle singole voci</legend>
         <div id="newnote">
                 <div>
                     <span>
-                        <div>Campo</div>
+                        <div>Parametro</div>
                     </span>
                     <span>
                         <div>Nota</div>
@@ -609,7 +612,9 @@ document.write("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href
                 <input id="cod_nota_descr" name="cod_nota_descr" value=""/>
                 </span>
 
-            <span><textarea id="text_nota" name="text_nota"></textarea></span>
+            <span>
+                <textarea id="text_nota" name="text_nota" rows="2" cols="30"></textarea>
+            </span>
         
         <span>
             <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=forma&action=editnote&id=<?php echo $a->getData('objectid');?>" data-update="content_schedaa_note">
@@ -622,5 +627,16 @@ document.write("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href
         require __DIR__.DIRECTORY_SEPARATOR.'schedaa'.DIRECTORY_SEPARATOR.'note.php';
         ?>
         </fieldset>
+        <fieldset id="forestnotecontainer">
+            <label for="note">Note</label>
+            <textarea id="note" name="note" rows="16" cols="30"><?php echo $a->getData('note');?></textarea>
+        </fieldset>
+        <fieldset class="datatable" id="cadastraldata">
+            <legend>Dati catastali</legend>    
+            <?php
+            require __DIR__.DIRECTORY_SEPARATOR.'schedaa'.DIRECTORY_SEPARATOR.'catasto.php';
+            ?>
+        </fieldset>
     </form>
 </div>
+<script type="text/javascript" src="js/forma.js" defer></script>

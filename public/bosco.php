@@ -18,7 +18,20 @@ if ($user === false) {
     $content = 'content'.DIRECTORY_SEPARATOR.'login.php';
     $sidebar = 'sidebar'.DIRECTORY_SEPARATOR.'login.php';
 }
-else if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
+if (key_exists('task', $_REQUEST)) {
+    switch ($_REQUEST['task']) {
+        case 'forest_compartment':
+            require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'controls'.DIRECTORY_SEPARATOR.'bosco'.DIRECTORY_SEPARATOR.'forest_compartment.php';
+        break;
+        case 'forma':
+            require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'controls'.DIRECTORY_SEPARATOR.'bosco'.DIRECTORY_SEPARATOR.'forma.php';
+        break;
+        case 'autocomplete':
+            require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'controls'.DIRECTORY_SEPARATOR.'bosco'.DIRECTORY_SEPARATOR.'autocomplete.php';
+        break;
+    }
+}
+if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
             if (key_exists('forest_codice', $_REQUEST)) {
                 $forest = new forest\Forest();
                 $forest->loadFromCode($_REQUEST['forest_codice']);
@@ -42,18 +55,6 @@ else if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
             header('Content-type: application/json');
             echo Zend_Json::encode($response);
             exit;
-} else if (key_exists('task', $_REQUEST)) {
-    switch ($_REQUEST['task']) {
-        case 'forest_compartment':
-            require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'controls'.DIRECTORY_SEPARATOR.'bosco'.DIRECTORY_SEPARATOR.'forest_compartment.php';
-        break;
-        case 'forma':
-            require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'controls'.DIRECTORY_SEPARATOR.'bosco'.DIRECTORY_SEPARATOR.'forma.php';
-        break;
-        case 'autocomplete':
-            require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'controls'.DIRECTORY_SEPARATOR.'bosco'.DIRECTORY_SEPARATOR.'autocomplete.php';
-        break;
-    }
 }
 else if (key_exists('action', $_REQUEST)) {
     switch ($_REQUEST['action']) {

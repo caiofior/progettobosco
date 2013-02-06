@@ -48,7 +48,7 @@ class CollectorColl  extends \ContentColl implements template\AttributeColl {
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
         $select->setIntegrityCheck(false)
-        ->from('rilevato');
+        ->from($this->content->getTable()->info('name'));
         if (key_exists('search', $criteria) && $criteria['search'] != '') {
             $select->where('descriz LIKE ? ','%'.$criteria['search'].'%');
         }

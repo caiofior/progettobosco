@@ -25,7 +25,7 @@ legend {
 fieldset div {
     position:absolute;
 }
-label {
+fieldset label {
     background-color: #010080;
     color: #ffffff!important;
     display: block;
@@ -614,19 +614,19 @@ input[type='radio'] {
 #notescontainer {
     top: -550px;
     left: 4px;
-    width: 488px;
-    height: 500px;
+    width: 800px;
+    height: 310px;
 }
 
 #newnote {
-    top: 4px;
-    left: 4px;
-    width: 450px;
+    top: 24px;
+    left: 70px;
+    width: 700px;
 }
 #content_schedaa_note {
-    top: 104px;
-    left: 4px;
-    width: 450px;
+    top: 124px;
+    left: 70px;
+    width: 700px;
 }
 #content_schedaa_note  div{
     position: relative;
@@ -634,7 +634,7 @@ input[type='radio'] {
 }
 #content_schedaa_note  div span{
     float:left;
-    width: 145px;
+    width: 220px;
     text-align: center;
     word-break: break-all;
     border-top-style: solid;
@@ -645,12 +645,40 @@ input[type='radio'] {
     position: relative;
     clear: both;
 }
+
 #newnote div span{
     float:left;
-    width: 145px;
+    width: 220px;
     text-align: center;
     word-break: break-all;
     border-top-style: solid;
     border-top-width: 1px;
     border-top-color: #000000;
+}
+#scrollcontrols span input{
+    display: inline;
+    width: 50px;
+}
+#scrollcontrols img {
+    margin-top: 5px;
+    vertical-align:top;
+}
+/**
+* note container
+*/
+#forestnotecontainer {
+    top: -530px;
+    left: 4px;
+    width: 200px;
+    height: 310px;
+    border-style: none;
+}
+/**
+* cadastral container
+*/
+#cadastraldata {
+    top: -865px;
+    left: 274px;
+    width: 350px;
+    height: 320px;
 }

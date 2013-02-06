@@ -48,7 +48,7 @@ class MunicipalityColl  extends \ContentColl implements template\AttributeColl {
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
         $select->setIntegrityCheck(false)
-        ->from('comuni',array(
+        ->from($this->content->getTable()->info('name'),array(
             '*',
             'province_code'=>new \Zend_Db_Expr('( SELECT sigla FROM province WHERE province.provincia=comuni.provincia)')
             ));

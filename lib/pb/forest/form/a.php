@@ -98,5 +98,13 @@ class A extends \forest\form\template\Form {
         $notes->setForm($this);
         return $notes;
     }
-
-}
+    /**
+     * Return a collection of cadastral parcel associated with the forest parcel
+     * @return \forest\attribute\CadastralColl
+     */
+    public function getCadastalColl () {
+        $cadastralcoll = new \forest\attribute\CadastralColl();
+        $cadastralcoll->setForm($this);
+        return $cadastralcoll;
+    }
+} 

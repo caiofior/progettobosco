@@ -18,7 +18,7 @@
                                                 </thead>
                                                 <tbody>
                                                         <tr>
-                                                                <td colspan="5" class="dataTables_empty">Caricamento dei dati</td>
+                                                                <td colspan="8" class="dataTables_empty">Caricamento dei dati</td>
                                                         </tr>
                                                 </tbody>
                                                 <tfoot>

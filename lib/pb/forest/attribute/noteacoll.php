@@ -49,7 +49,7 @@ class NoteAColl  extends \ContentColl  {
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
         $select->setIntegrityCheck(false)
-        ->from('note_a',array(
+        ->from($this->content->getTable()->info('name'),array(
             '*',
             'nota_descr'=>new \Zend_Db_Expr(
                     '('.
@@ -57,13 +57,35 @@ class NoteAColl  extends \ContentColl  {
                             'intesta'
                             )->where('leg_note.nomecampo = note_a.cod_nota').
                     ')')
-            ));
+            ,
+            'nota_objectid'=>new \Zend_Db_Expr(
+                    '('.
+                    $select->getAdapter()->select()->from('leg_note',
+                            'objectid'
+                            )->where('leg_note.nomecampo = note_a.cod_nota').
+                    ')')
+            )   
+            );
         if ($this->form_a instanceof \forest\form\A) {
             $select->where(' cod_part = ? ',$this->form_a->getData('cod_part'))
             ->where(' proprieta = ? ',$this->form_a->getData('proprieta'));
         }
         $select->order('cod_nota');
         return $select;
+    }
+     /**
+     * Returns all contents without any filter
+     */
+    public function countAll(array $criteria = null) {
+        if ($this->form_a instanceof \forest\form\A) {
+            $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
+            $select->where(' cod_part = ? ',$this->form_a->getData('cod_part'))
+            ->where(' proprieta = ? ',$this->form_a->getData('proprieta'));
+            return intval($this->content->getTable()->getAdapter()->fetchOne($select));
+        }
+        else 
+            parent::countAll();
+
     }
     /**
      * Adds new note to form a

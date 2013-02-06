@@ -31,6 +31,8 @@ if (!class_exists('Forest')) {
         'attribute'.DIRECTORY_SEPARATOR.'noteacoll.php',
         'attribute'.DIRECTORY_SEPARATOR.'notetemplate.php',
         'attribute'.DIRECTORY_SEPARATOR.'notetemplatecoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'cadastral.php',
+        'attribute'.DIRECTORY_SEPARATOR.'cadastralcoll.php',
         'form'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'form.php',
         'form'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'formcoll.php',
         'form'.DIRECTORY_SEPARATOR.'control'.DIRECTORY_SEPARATOR.'item.php',
