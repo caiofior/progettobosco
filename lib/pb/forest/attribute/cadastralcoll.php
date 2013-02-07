@@ -53,6 +53,10 @@ class CadastralColl  extends \ContentColl  {
         if ($this->form_a instanceof \forest\form\A) {
             $select->where(' cod_part = ? ',$this->form_a->getData('cod_part'))
             ->where(' proprieta = ? ',$this->form_a->getData('proprieta'));
+            
+        }
+        if (key_exists('search', $criteria) && $criteria['search'] != '') {
+            $select->where(' particella LIKE ? OR foglio LIKE ?', '%'.$criteria['search'].'%');   
         }
         $select->order('foglio')->order('particella');
         return $select;
@@ -72,13 +76,15 @@ class CadastralColl  extends \ContentColl  {
 
     }
     /**
-     * Adds new note to form a
-     * @return NoteA
+     * Adds new cadastra to form a
+     * @return Cadastral
      */
     public function addItem() {
-        $note = parent::addItem();
-        $note->setData($this->form_a->getData('cod_part'),'cod_part');
-        $note->setData($this->form_a->getData('proprieta'),'proprieta');
-        return $note;
+        $cadastral = parent::addItem();
+        $cadastral->setData($this->form_a->getData('cod_part'),'cod_part');
+        $cadastral->setData($this->form_a->getData('proprieta'),'proprieta');
+        $cadastral->setData(0,'foglio');
+        $cadastral->setData(0,'particella');
+        return $cadastral;
     }
 }

@@ -6,7 +6,9 @@
         Purpose of the stylesheet follows.
 */
 
-
+#formA {
+    height: 3600px;
+}
 fieldset {
     border-style: solid;
     border-width: 1px;
@@ -22,10 +24,10 @@ legend {
     margin-left: 20px;
     font-weight: bold;
 }
-fieldset div {
+fieldset > div {
     position:absolute;
 }
-fieldset label {
+fieldset > div > label {
     background-color: #010080;
     color: #ffffff!important;
     display: block;
@@ -664,6 +666,26 @@ input[type='radio'] {
     vertical-align:top;
 }
 /**
+* cadastral container
+*/
+#cadastraldata {
+    top: -540px;
+    left: 4px;
+    width: 800px;
+    height: 420px;
+}
+#cadastraldata  div,table {
+    font-size: 7px;
+}
+#cadastraldata form {
+    background-color: #BFBFBF;
+}
+#cadastraldata form,div,input {
+    margin: 0px;
+    border: 0px;
+    padding: 2px;
+}
+/**
 * note container
 */
 #forestnotecontainer {
@@ -671,14 +693,7 @@ input[type='radio'] {
     left: 4px;
     width: 200px;
     height: 310px;
-    border-style: none;
 }
-/**
-* cadastral container
-*/
-#cadastraldata {
-    top: -865px;
-    left: 274px;
-    width: 350px;
-    height: 320px;
+#forestnotecontainer textarea {
+    border-style: none;
 }

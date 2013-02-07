@@ -182,25 +182,90 @@ $(document).on("click","#note_delete_cancel",function(){
 /**
  * Manages cadastral table
  */
-$("#cadastral").dataTable( {
+oTable = $("#cadastral").dataTable( {
         "oLanguage": {
             "sUrl": "js/DataTables/locale/it_IT.json"
         },
         "aoColumns": [
-            { "bVisible": false, "sName": "objectid"},
-            { "sName": "foglio", "sWidth": "10%"},
-            { "sName": "particella", "sWidth": "10%" },
-            { "sName": "sup_tot_cat", "sWidth": "10%" },
-            { "sName": "sup_tot", "sWidth": "10%"},
-            { "sName": "sup_bosc", "sWidth": "10%" },
-            { "sName": "sum_sup_non_bosc", "sWidth": "10%" },
-            { "sName": "porz_perc", "sWidth": "10%" },
-            { "sName": "note", "sWidth": "10%"},
+            { "bVisible": false, "sName": "objectid","sWidth": null},
+            { "sName": "foglio", "sClass": "editable", "sWidth": "10%"},
+            { "sName": "particella", "sClass": "editable", "sWidth": "10%" },
+            { "sName": "sup_tot_cat", "sClass": "editable", "sWidth": "10%" },
+            { "sName": "sup_tot", "sClass": "editable", "sWidth": "10%"},
+            { "sName": "sup_bosc", "sClass": "editable", "sWidth": "10%" },
+            { "sName": "sum_sup_non_bosc", "sClass": "editable", "sWidth": "10%" },
+            { "sName": "porz_perc", "sClass": "editable", "sWidth": "10%" },
+            { "sName": "note", "sClass": "editable", "sWidth": "10%"},
             { "sName": "actions", "sWidth": "20%"}
 
         ],
+         "fnDrawCallback": function () {
+            $('#cadastral tbody td.editable').editable( function (value) {
+                id = oTable.fnGetData(oTable.fnGetPosition( this )[0])[0];
+                field = oTable.fnSettings().aoColumns[oTable.fnGetPosition( this )[2]].sName;
+                url = "bosco.php?task=forma&action=cadastratableedit&elementid="+id+"&field="+field;
+                $.ajax({
+                    async:false,
+                    url: url,
+                    data:{
+                        id: $("#objectid").val(),
+                        value:value
+                    }
+                });
+                
+                
+                }, {
+                indicator : "Salvataggio",
+                placeholder   : "Clicca",
+                callback: function(  ) {
+                    
+                    oTable.fnDraw();
+                },
+                "height": "8px"
+            } );
+            add = $(".addcadastral");
+            if (add.length > 0)
+                $("#cadastral_length").append(" "+add.remove().show().html());
+        },
         "bStateSave": true,
         "bProcessing": true,
         "bServerSide": true,
         "sAjaxSource": "bosco.php?task=forma&action=cadastraltable&id="+$("#objectid").val()
+});
+$(document).on("click",$(".addcadastral"),function (e) {
+    url = "bosco.php?task=forma&action=cadastratableedit&elementid=new";
+                $.ajax({
+                    async:false,
+                    url: url,
+                    data:{
+                        id: $("#objectid").val()
+                    }
+                });
+    oTable.fnDraw();
+    return false;
+});
+$(document).on("click","#cadastral .actions.delete",function() {
+    el = $(this).parent("a");
+    $.colorbox({
+        "html"  :   "Vuoi cancellare la particella catastale selezionata ?"+
+                    " <a id=\"cadastral_delete_confirm\"href=\""+el.attr("href")+"\" ><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
+                    " <a id=\"cadastral_delete_cancel\"href=\"#\"><img src=\"images/empty.png\" title=\"Annulla cancellazione\" class=\"actions cancel\"/> </a>",
+        "onLoad": function() {
+            $('#cboxClose').remove();
+        }
+    });
+   return false;
+});
+$(document).on("click","#cadastral_delete_confirm",function(){
+     $.ajax({
+        async:false,
+        url: $(this).attr("href")
+    });
+   oTable.fnDraw();
+   $.colorbox.close();
+   return false;
+});
+$(document).on("click","#cadastral_delete_cancel",function(){
+   $.colorbox.close();
+   return false;
 });

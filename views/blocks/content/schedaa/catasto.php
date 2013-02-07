@@ -1,4 +1,7 @@
-<table cellpadding="0" cellspacing="0" border="0" class="display" id="cadastral">
+<a class="addcadastral" style="display: none;" href="#">
+    <img class="actions addnew" src="images/empty.png" title="Aggiungi una particella"/>
+</a>
+<table   cellpadding="0" cellspacing="0" border="0" class="display" id="cadastral">
                                                 <thead>
                                                         <tr>
                                                                 <th >Id</th>
@@ -33,4 +36,4 @@
                                                         </tr>
                                                 </tfoot>
                                         </table>
-    
+ 

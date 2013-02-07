@@ -627,15 +627,15 @@ document.write("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href
         require __DIR__.DIRECTORY_SEPARATOR.'schedaa'.DIRECTORY_SEPARATOR.'note.php';
         ?>
         </fieldset>
-        <fieldset id="forestnotecontainer">
-            <label for="note">Note</label>
-            <textarea id="note" name="note" rows="16" cols="30"><?php echo $a->getData('note');?></textarea>
-        </fieldset>
         <fieldset class="datatable" id="cadastraldata">
             <legend>Dati catastali</legend>    
             <?php
             require __DIR__.DIRECTORY_SEPARATOR.'schedaa'.DIRECTORY_SEPARATOR.'catasto.php';
             ?>
+        </fieldset>
+        <fieldset id="forestnotecontainer">
+            <label for="note">Note</label>
+            <textarea id="note" name="note" rows="16" cols="30"><?php echo $a->getData('note');?></textarea>
         </fieldset>
     </form>
 </div>

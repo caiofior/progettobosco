@@ -197,6 +197,7 @@ class Zend_Db_Statement_Pgsql extends Zend_Db_Statement {
         default:
         break;
     }
+    
     return $row;
     }
 

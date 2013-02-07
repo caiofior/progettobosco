@@ -13,6 +13,7 @@ if ((!isset($PHPUNIT) || !$PHPUNIT) && (isset($MONITORING) && $MONITORING))
 /**
  * Config debug options
  */
+ini_set('session.gc_probability',0);
 if (isset($DEBUG) && $DEBUG) {
     error_reporting(E_ALL | E_STRICT);
     ini_set('display_errors', 1);
