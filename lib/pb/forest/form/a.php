@@ -29,11 +29,24 @@ class A extends \forest\form\template\Form {
         parent::__construct('schede_a');
     }
     /**
-     * Loads fora a data
+     * Loads form a data
      * @param integer $id
      */
     public function loadFromId($id) {
         parent::loadFromId($id);
+        $this->calculatedVariables();
+    }
+    /**
+     * Loads form a data form foreat and parcel code
+     * @param integer $id
+     */
+    public function loadFromCodePart($proprieta,$cod_part) {
+        $where = $this->table->getAdapter()->quoteInto('proprieta = ?', $proprieta).' AND ';
+        $where .= $this->table->getAdapter()->quoteInto('cod_part = ?', $cod_part);
+        $data = $this->table->fetchRow($where);
+        if (is_null($data))
+            throw new \Exception('Unable to find the cod part',1302081202);
+        $this->data = $data->toArray();
         $this->calculatedVariables();
     }
 
@@ -106,5 +119,25 @@ class A extends \forest\form\template\Form {
         $cadastralcoll = new \forest\attribute\CadastralColl();
         $cadastralcoll->setForm($this);
         return $cadastralcoll;
+    }
+     /**
+     * Updates data
+     */
+    public function update() {
+        if (!key_exists('objectid', $this->data)) 
+            throw new Exception('Unable to update object without objectid',1301251130);
+        foreach($this->data as $key=>$value)
+            if ($value=='') $this->data[$key]=null;
+        $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
+        $this->table->update($this->data, $where);
+    }
+    /**
+     * Deletes data
+     */
+    public function delete() {
+        if (key_exists('objectid', $this->data)) {
+            $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
+            $this->table->delete($where);
+        }
     }
 } 

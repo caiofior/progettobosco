@@ -40,7 +40,13 @@ if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
                 $forest = new forest\Forest();
                 $forest->loadFromId($_REQUEST['id']);
                 $forest->delete();
+            } else if (key_exists('deleteforestcompartment', $_REQUEST)) {
+                $a = new \forest\form\A();
+                $a->loadFromId($_REQUEST['id']);
+                $forest = $a->getForest();
+                $a->delete();
             }
+                
             $response = array();
             $request = new RegexIterator(new ArrayIterator($_REQUEST), '/^[0-9]+$/',  RegexIterator::MATCH,  RegexIterator::USE_KEY); 
             foreach ($request as  $value) {
@@ -115,6 +121,41 @@ else if (key_exists('action', $_REQUEST)) {
                 
             }
         break;
+        case 'createforestcompartment' :
+            if (key_exists('forest_codice', $_REQUEST) && key_exists('cod_part', $_REQUEST)) {
+                if (key_exists('new_forma', $_REQUEST)) {
+                    $content = 'content'.DIRECTORY_SEPARATOR.'boscoManage.php';
+                    $view->forest = new forest\Forest();
+                    $view->forest->loadFromCode($_REQUEST['forest_codice']);
+                    $acoll = $view->forest->getForestCompartmentColl();
+                    $a = $acoll->addItem();
+                    $a->setData($_REQUEST['cod_part'],'cod_part');
+                    try{$a->insert();}
+                    catch (Exception $e) {}
+                }
+                else {
+                    $a = new \forest\form\A();
+                    $response = false;
+                    try{
+                        $a->loadFromCodePart($_REQUEST['forest_codice'],$_REQUEST['cod_part']);
+                    } catch (Exception $e) {
+                        if ($e->getCode() == 1302081202)
+                            $response = true;
+                        else
+                            throw $e;
+                    }
+                    header('Content-type: application/json');
+                    echo Zend_Json::encode($response);
+                    exit;
+                }
+                
+            }
+            else {
+                require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'blocks'.DIRECTORY_SEPARATOR.'content'.DIRECTORY_SEPARATOR.'schedaa'.DIRECTORY_SEPARATOR.'new.php';
+                exit;
+            }
+        break;
+
     }
     if (key_exists('xhr', $_REQUEST)) {
         $formErrors->getJsonError ();

@@ -4,9 +4,6 @@
 				<div class="post">
 			
 					<h2>Il nostro obiettivo</h2>
-					<div class="image-section">
-                                        <img src="images/progettobosco.png" alt="progettobosco" width="352px" height="77px"/>
-                                        </div>					
 					
 					<p>Le linee metodologiche per la pianificazione forestale in Italia presentano una estrema variabilità a livello 
                                         regionale e locale. Spesso è assente una specifica normativa di riferimento che indirizzi le varie fasi del

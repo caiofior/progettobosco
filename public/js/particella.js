@@ -30,3 +30,13 @@ $(document).on("click","#content_boscoForestCompartmentlist .delete",function(){
     });
    return false;
 });
+$(document).on("click","#content_boscoForestCompartmentlist .addnew",function(){
+    el = $(this).parent("a");
+    $.colorbox({
+        "href"  :   el.attr("href"),
+        "onLoad": function() {
+            $('#cboxClose').remove();
+        }
+    });
+   return false;
+});

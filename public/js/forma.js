@@ -225,14 +225,35 @@ oTable = $("#cadastral").dataTable( {
             } );
             add = $(".addcadastral");
             if (add.length > 0)
-                $("#cadastral_length").append(" "+add.remove().show().html());
+                $("#cadastral_length").append(" ").append(add.remove().show());
+            $(".dataTables_scrollFoot th").each(function(id,el) {
+                $("#cadastralsummary th").eq(id).width($(el).width());
+            });
+            surf = $(".surfacerecalc");
+            if (surf.length > 0)
+                $("#cadastral_length").append(" ").append(surf.remove().show());
+            $("#cadastralsummary").show();
+            $.get(
+                "bosco.php?task=forma&action=cadastratablesummary"
+                , {
+                    id: $("#objectid").val()
+                }, function (data) {
+                    $.each(data, function (id,val){
+                       $("#"+id).text(val); 
+                    });
+                },
+                "json"
+                
+            );
+            
         },
         "bStateSave": true,
         "bProcessing": true,
         "bServerSide": true,
+        "sScrollY": "100px",
         "sAjaxSource": "bosco.php?task=forma&action=cadastraltable&id="+$("#objectid").val()
 });
-$(document).on("click",$(".addcadastral"),function (e) {
+$(document).on("click",".addcadastral",function (e) {
     url = "bosco.php?task=forma&action=cadastratableedit&elementid=new";
                 $.ajax({
                     async:false,
@@ -268,4 +289,46 @@ $(document).on("click","#cadastral_delete_confirm",function(){
 $(document).on("click","#cadastral_delete_cancel",function(){
    $.colorbox.close();
    return false;
+});
+$(document).on("click",".surfacerecalc",function (e) {
+    el = $(this).parent("a");
+    $.colorbox({
+        "html"  :   "Vuoi ricalcolare la superficie della particella catastale selezionata ?"+
+                    " <a id=\"cadastral_recalc_confirm\"href=\""+el.attr("href")+"\" ><img src=\"images/empty.png\" title=\"Conferma ricalcolo\" class=\"actions confirm\" /> </a>"+
+                    " <a id=\"cadastral_recalc_cancel\"href=\"#\"><img src=\"images/empty.png\" title=\"Annulla ricalcolo\" class=\"actions cancel\"/> </a>",
+        "onLoad": function() {
+            $('#cboxClose').remove();
+        }
+    });
+
+    return false;
+});
+$(document).on("click","#cadastral_recalc_confirm",function(){
+            $.ajax({
+                async:false,
+                url: "bosco.php?task=forma&action=updatesurface",
+                data: {
+                    id: $("#objectid").val()
+                },
+                success : function (data) {
+                    $("#sup_tot").val(data);
+                    $("#sup_tot1").val(data);
+                }
+            });
+   $.colorbox.close();
+   return false;
+});
+$(document).on("click","#cadastral_recalc_cancel",function(){
+   $.colorbox.close();
+   return false;
+});
+formAjax("#formA",".forma_errors");
+$("fieldset > div > input").change(function () {
+   $("#formA").trigger("submit");
+});
+$("fieldset > div > input").dblclick(function () {
+    $(this).val("");
+});
+$("fieldset").dblclick(function () {
+    $(this).find("input:checkbox,input:radio").removeAttr("checked");
 });

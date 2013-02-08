@@ -93,6 +93,47 @@ if (key_exists('action', $_REQUEST)) {
             $cadastral->delete();
             exit;
         break;
+        case 'cadastratablesummary' :
+            $cadastralcoll = $a->getCadastalColl();
+            header('Content-type: application/json');
+            echo Zend_Json::encode($cadastralcoll->getSummary());
+            exit;
+        break;
+        case 'updatesurface':
+            $cadastralcoll = $a->getCadastalColl();
+            $data = $cadastralcoll->getSummary();
+            header('Content-type: application/json');
+            echo Zend_Json::encode($data['sum_sup_tot_cat']);
+            exit;
+        break;
+        case 'update':
+            if($_REQUEST['codice_bosco']== '')
+                $formErrors->addError(FormErrors::required,'codice_bosco','bosco');
+            if($_REQUEST['cod_part']== '')
+                $formErrors->add(FormErrors::required,'cod_part','codice particella');
+            if($_REQUEST['sup_tot'] != '' && !is_numeric($_REQUEST['sup_tot']))
+                $formErrors->addError(FormErrors::valid_float,'sup_tot','superficie totale','f');
+            if($_REQUEST['boscata_calcolo'] != '' && !is_numeric($_REQUEST['boscata_calcolo']))
+                $formErrors->addError(FormErrors::valid_float,'boscata_calcolo','superficie boscata','f');
+            if($_REQUEST['ap'] != '' && !is_numeric($_REQUEST['ap']))
+                $formErrors->addError(FormErrors::valid_int,'ap','altitudine prevalente');
+            if($_REQUEST['improduttivi_calcolo'] != '' && !is_numeric($_REQUEST['improduttivi_calcolo']))
+                $formErrors->addError(FormErrors::valid_float,'improduttivi_calcolo','superficie improduttiva','f');
+            if($_REQUEST['prod_non_bosc_calcolo'] != '' && !is_numeric($_REQUEST['prod_non_bosc_calcolo']))
+                $formErrors->addError(FormErrors::valid_float,'prod_non_bosc_calcolo','superficie produttiva non boscata','f');
+            if($_REQUEST['pp'] != '' && !is_numeric($_REQUEST['pp']))
+                $formErrors->addError(FormErrors::valid_float,'pp','pendenza prevalente','f');
+            if($_REQUEST['sup'] != '' && !is_numeric($_REQUEST['sup']))
+                $formErrors->addError(FormErrors::valid_int,'sup','Sottoparticella estesa su %','f');
+            $formErrors->setOkMessage(' I dati sono stati salvati alle '.  strftime('%k:%M:%S del %d %b'));
+            if ($formErrors->count() == 0) {
+                $a->setData($_REQUEST);
+                $a->update();
+            }
+            $formErrors->getJsonError ();
+            exit;
+        break;
+        
     }
 }
 if (key_exists('deletenote', $_REQUEST)) {

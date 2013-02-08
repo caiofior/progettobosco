@@ -87,4 +87,22 @@ class CadastralColl  extends \ContentColl  {
         $cadastral->setData(0,'particella');
         return $cadastral;
     }
+    /**
+     * Returns a cummary of cadastral data
+     * @return array
+     */
+    public function getSummary() {
+         $select = $this->content->getTable()->select()
+                 ->from($this->content->getTable()->info('name'),array(
+                     'sum_sup_tot_cat'=>'SUM(sup_tot_cat)',
+                     'sum_sup_tot'=>'SUM(sup_tot)',
+                     'sum_sup_bosc'=>'SUM(sup_bosc)'
+                     ));
+         if ($this->form_a instanceof \forest\form\A) {
+            $select->where(' cod_part = ? ',$this->form_a->getData('cod_part'))
+            ->where(' proprieta = ? ',$this->form_a->getData('proprieta'));
+        }
+        return $this->content->getTable()->getAdapter()->fetchRow($select);
+        
+    }
 }

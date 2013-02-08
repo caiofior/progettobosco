@@ -6,7 +6,8 @@ document.write("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href
 document.write("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"css/form_a.css\" />");
 </script>
     <div id="tabContent">
-    <form id="formA" action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=forma&action=manage">
+    <form id="formA" action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=forma&action=update&id=<?php echo $a->getData('objectid');?>">
+        <div class="form_messages forma_errors" style="display: none;"></div>
         <fieldset id="general">
             <input type="hidden" id="codice_bosco" name="codice_bosco" value="<?php echo $forest->getData('codice');?>"/>
             <input type="hidden" id="objectid" name="objectid" value="<?php echo $a->getData('objectid');?>"/>
@@ -17,7 +18,7 @@ document.write("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href
         <div id="codiope_container">
             <label for="codiope">Rilevatore</label>
             <input type="hidden" id="codiope" name="codiope" value="<?php echo $a->getData('codiope');?>"/>
-            <input type="text" id="codiope_descriz" name="codiope" value="<?php echo $a->getCollector()->getData('descriz');?>"/>
+            <input type="text" id="codiope_descriz" name="codiope_descriz" value="<?php echo $a->getCollector()->getData('descriz');?>"/>
         </div>
         <div id="datasch_container">
             <label for="datasch">Data del rilievo</label>
@@ -629,13 +630,88 @@ document.write("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href
         </fieldset>
         <fieldset class="datatable" id="cadastraldata">
             <legend>Dati catastali</legend>    
-            <?php
-            require __DIR__.DIRECTORY_SEPARATOR.'schedaa'.DIRECTORY_SEPARATOR.'catasto.php';
-            ?>
-        </fieldset>
+                <a class="addcadastral" style="display: none;" href="#">
+                    <img class="actions addnew" src="images/empty.png" title="Aggiungi una particella"/>
+                </a>
+                <a class="surfacerecalc" style="display: none;" href="#">
+                    Aggiorna superficie totale
+                </a>
+                <table cellpadding="0" cellspacing="0" border="0" class="display" id="cadastral">
+                    <thead>
+                            <tr>
+                                    <th >Id</th>
+                                    <th >Foglio</th>
+                                    <th >Particella</th>
+                                    <th >Superficie totale particella catastale</th>
+                                    <th >Sup. afferente alla particella forestale (ha)</th>
+                                    <th >di cui boscata (ha)</th>
+                                    <th >Non boscata (ha)</th>
+                                    <th >% afferente</th>
+                                    <th >Note</th>
+                                    <th >Azioni</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                                    <td colspan="10" class="dataTables_empty">Caricamento dei dati</td>
+                            </tr>
+                    </tbody>
+                    <tfoot>
+                            <tr>
+                                    <th >Id</th>
+                                    <th >Foglio</th>
+                                    <th >Particella</th>
+                                    <th >Superficie totale particella catastale</th>
+                                    <th >Sup. afferente alla particella forestale (ha)</th>
+                                    <th >di cui boscata (ha)</th>
+                                    <th >Non boscata (ha)</th>
+                                    <th >% afferente</th>
+                                    <th >Note</th>
+                                    <th >Azioni</th>
+                            </tr>
+                    </tfoot>
+            </table>
+            <table id="cadastralsummary" style="display: none;" cellspacing="0" cellpadding="0" border="0" >
+            <tfoot>
+            <tr>
+            <th rowspan="1" colspan="1" ></th>
+            <th rowspan="1" colspan="1" >Totale</th>
+            <th rowspan="1" colspan="1" ><div id="sum_sup_tot_cat"></div></th>
+            <th rowspan="1" colspan="1" ><div id="sum_sup_tot"></div></th>
+            <th rowspan="1" colspan="1" ><div id="sum_sup_bosc"></div></th>
+            <th rowspan="1" colspan="1" ></th>
+            <th rowspan="1" colspan="1" ></th>
+            <th rowspan="1" colspan="1" ></th>
+            <th rowspan="1" colspan="1" ></th>
+            </tr>
+            </tfoot>
+            </table>
+         </fieldset>
         <fieldset id="forestnotecontainer">
             <label for="note">Note</label>
             <textarea id="note" name="note" rows="16" cols="30"><?php echo $a->getData('note');?></textarea>
+        </fieldset>
+        <fieldset id="surfacesummary">
+        <div id="sup_tot1_container">
+            <label for="sup_tot1">Superficie totale (ha)</label>
+            <input readonly="readonly" id="sup_tot1" name="sup_tot1" value="<?php echo $a->getData('sup_tot');?>"><br/>
+        </div>
+        <div id="boscata_calcolo1_container">
+            <label for="boscata_calcolo1">Superficie boscata (ha)</label>
+            <input readonly="readonly" id="boscata_calcolo1" name="boscata_calcolo1" value="<?php echo $a->getRawData('boscata_calcolo');?>"><br/>
+        </div>
+        <div id="improduttivi_calcolo1_container">
+            <label for="improduttivi_calcolo1">Improduttivi (ha)</label>
+            <input readonly="readonly" id="improduttivi_calcolo1" name="improduttivi_calcolo1 value="<?php echo $a->getRawData('improduttivi_calcolo');?>">
+        </div>
+        <div id="prod_non_bosc_calcolo1_container">
+            <label for="prod_non_bosc_calcolo1">Produttivi non boscati (ha)</label>
+            <input readonly="readonly" id="prod_non_bosc_calcolo1" name="prod_non_bosc_calcolo1" value="<?php echo $a->getRawData('prod_non_bosc_calcolo');?>">
+        </div>
+        <div id="surfacenote">
+            <label>N.B. per comodità di lettura sono riportati i dati riepilogativi
+            delle superfici particellari</label>
+        </div>
         </fieldset>
     </form>
 </div>

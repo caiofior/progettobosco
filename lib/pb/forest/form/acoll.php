@@ -107,5 +107,13 @@ class AColl extends \forest\form\template\FormColl {
             parent::countAll();
 
     }
+    /**
+     * Adds a form to the colelction
+     */
+    public function addItem() {
+        $a = parent::addItem();
+        $a->setData($this->forest->getData('codice'),'proprieta');
+        return $a;
+    }
 
 }

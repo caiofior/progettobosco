@@ -7,7 +7,7 @@
 */
 
 #formA {
-    height: 3600px;
+    height: 3700px;
 }
 fieldset {
     border-style: solid;
@@ -672,7 +672,11 @@ input[type='radio'] {
     top: -540px;
     left: 4px;
     width: 800px;
-    height: 420px;
+    height: 470px;
+}
+#cadastral_filter {
+    margin-top: 10px;
+    margin-right: 10px;
 }
 #cadastraldata  div,table {
     font-size: 7px;
@@ -685,6 +689,11 @@ input[type='radio'] {
     border: 0px;
     padding: 2px;
 }
+#cadastralsummary {
+    position: absolute;
+    top: 420px;
+    left: -7px;
+}
 /**
 * note container
 */
@@ -696,4 +705,38 @@ input[type='radio'] {
 }
 #forestnotecontainer textarea {
     border-style: none;
+}
+/**
+* Surface summary container
+**/
+#surfacesummary   {
+    top: -855px;
+    left: 278px;
+    width: 525px;
+    height: 310px;
+}
+#sup_tot1_container {
+    top:4px;
+    width: 200px;
+    left: 4px;
+}
+#boscata_calcolo1_container {
+    top:44px;
+    width: 200px;
+    left: 4px;
+}
+#improduttivi_calcolo1_container {
+    top:88px;
+    width: 200px;
+    left: 4px;
+}
+#prod_non_bosc_calcolo1_container {
+    top:132px;
+    width: 200px;
+    left: 4px;
+}
+#surfacenote {
+    top:176px;
+    width: 200px;
+    left: 4px;
 }
