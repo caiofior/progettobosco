@@ -1,9 +1,15 @@
 <?php
-$a = $this->a;
+if (isset($this))
+    $a = $this->a;
+else {
+    $a = new forest\form\A();
+    $a->loadFromId($_REQUEST['id']);
+}
 $forest = $a->getForest();
-?><script type="text/javascript" >
-document.write("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"css/form_a.css\" />");
-document.write("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href=\"css/form_a.css\" />");
+?>
+<div id="forestcompartmentmaincontent">
+<script type="text/javascript" >
+document.getElementById("tabrelatedcss").href="css/forma.css";
 </script>
     <div id="tabContent">
     <form id="formA" action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=forma&action=update&id=<?php echo $a->getData('objectid');?>">
@@ -716,3 +722,4 @@ document.write("<link rel=\"stylesheet\" type=\"text/css\" media=\"screen\" href
     </form>
 </div>
 <script type="text/javascript" src="js/forma.js" defer></script>
+</div>

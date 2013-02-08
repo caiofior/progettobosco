@@ -56,6 +56,8 @@ abstract class Content {
      * @return array
      */
     public function getData($field = null) {
+        if (!is_array($this->data))
+            return;
         if (is_null($field))
             return $this->data;
         if (key_exists($field, $this->data))

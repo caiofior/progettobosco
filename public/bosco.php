@@ -55,7 +55,7 @@ if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
                 if (is_file($file_path)) {
                     ob_start();
                     require $file_path;
-                    $response[ $value]=  ob_get_clean();
+                    $response[$value]=  ob_get_clean();
                     }
             }
             header('Content-type: application/json');

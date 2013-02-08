@@ -33,6 +33,8 @@ class Municipality extends \Content implements template\Attribute {
      * @param string $codice
      */
     public function loadFromCode($code) {
+        if ($code == '')
+            return;
         $where = $this->table->getAdapter()->quoteInto('codice = ?', $code);
         $data = $this->table->fetchRow($where);
         if (is_null($data))

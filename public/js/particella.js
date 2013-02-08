@@ -40,3 +40,7 @@ $(document).on("click","#content_boscoForestCompartmentlist .addnew",function(){
     });
    return false;
 });
+$("#formtab a").click(function(){
+    $("#formtab > span").removeClass("active");
+    $(this).parent("span").addClass("active");
+});
