@@ -80,6 +80,7 @@ if ($user === false) {
     $header = 'general'.DIRECTORY_SEPARATOR.'header.php';
     $content = 'content'.DIRECTORY_SEPARATOR.'login.php';
     $sidebar = 'sidebar'.DIRECTORY_SEPARATOR.'login.php';
+    $_REQUEST=array();
 }
 $view->controler = basename(__FILE__);
 $view->user = $user;

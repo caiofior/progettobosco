@@ -17,6 +17,7 @@ if ($user === false) {
     $header = 'general'.DIRECTORY_SEPARATOR.'header.php';
     $content = 'content'.DIRECTORY_SEPARATOR.'login.php';
     $sidebar = 'sidebar'.DIRECTORY_SEPARATOR.'login.php';
+    $_REQUEST=array();
 }
 if (key_exists('task', $_REQUEST)) {
     switch ($_REQUEST['task']) {

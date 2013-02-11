@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>phpDocumentor » \forest\attribute\Municipality</title>
+<title>phpDocumentor » \forest\attribute\ForestTypeColl</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -58,19 +58,18 @@
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
 <li class="method public "><a href="#method___construct" title="__construct :: Instantiates the table"><span class="description">Instantiates the table</span><pre>__construct()</pre></a></li>
-<li class="method public inherited"><a href="#method_delete" title="delete :: Deletes data"><span class="description">Deletes data</span><pre>delete()</pre></a></li>
-<li class="method public inherited"><a href="#method_getData" title="getData :: Gets the data"><span class="description">Gets the data</span><pre>getData()</pre></a></li>
-<li class="method public inherited"><a href="#method_getRawData" title="getRawData :: Gets the raw data"><span class="description">Gets the raw data</span><pre>getRawData()</pre></a></li>
-<li class="method public inherited"><a href="#method_getTable" title="getTable :: Returns associated db table"><span class="description">Returns associated db table</span><pre>getTable()</pre></a></li>
-<li class="method public inherited"><a href="#method_insert" title="insert :: Adds a data"><span class="description">Adds a data</span><pre>insert()</pre></a></li>
-<li class="method public "><a href="#method_loadFromCode" title="loadFromCode :: Load data from code"><span class="description">Load data from code</span><pre>loadFromCode()</pre></a></li>
-<li class="method public inherited"><a href="#method_loadFromId" title="loadFromId :: Loads data from its id"><span class="description">Loads data from its id</span><pre>loadFromId()</pre></a></li>
-<li class="method public inherited"><a href="#method_setData" title="setData :: Sets the data"><span class="description">Sets the data</span><pre>setData()</pre></a></li>
-<li class="method public inherited"><a href="#method_update" title="update :: Updates data"><span class="description">Updates data</span><pre>update()</pre></a></li>
+<li class="method public inherited"><a href="#method_addItem" title="addItem :: Add new item to the collection"><span class="description">Add new item to the collection</span><pre>addItem()</pre></a></li>
+<li class="method public inherited"><a href="#method_count" title="count :: Returns the collection items"><span class="description">Returns the collection items</span><pre>count()</pre></a></li>
+<li class="method public inherited"><a href="#method_countAll" title="countAll :: Returns all contents without any filter"><span class="description">Returns all contents without any filter</span><pre>countAll()</pre></a></li>
+<li class="method public inherited"><a href="#method_getColumns" title="getColumns :: Return the colum names"><span class="description">Return the colum names</span><pre>getColumns()</pre></a></li>
+<li class="method public inherited"><a href="#method_getFirst" title="getFirst :: Return the first item of the collection"><span class="description">Return the first item of the collection</span><pre>getFirst()</pre></a></li>
+<li class="method public inherited"><a href="#method_getItems" title="getItems :: Returns the collection items"><span class="description">Returns the collection items</span><pre>getItems()</pre></a></li>
+<li class="method public inherited"><a href="#method_loadAll" title="loadAll :: Load all contents"><span class="description">Load all contents</span><pre>loadAll()</pre></a></li>
+<li class="method public "><a href="#method_setForest" title="setForest :: Sets the forest reference"><span class="description">Sets the forest reference</span><pre>setForest()</pre></a></li>
 </ul>
 </li>
-<li class="nav-header private">» Private
-                    <ul><li class="method private "><a href="#method_calculatedVariables" title="calculatedVariables :: Sets the calculated values"><span class="description">Sets the calculated values</span><pre>calculatedVariables()</pre></a></li></ul>
+<li class="nav-header protected">» Protected
+                    <ul><li class="method protected "><a href="#method_customSelect" title="customSelect :: Customizes the select statement"><span class="description">Customizes the select statement</span><pre>customSelect()</pre></a></li></ul>
 </li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties
@@ -78,16 +77,16 @@
 </li>
 <li class="nav-header protected">» Protected
                     <ul>
-<li class="property protected inherited"><a href="#property_data" title="$data :: Data used for insert and update"><span class="description"></span><pre>$data</pre></a></li>
-<li class="property protected inherited"><a href="#property_empty_entity" title="$empty_entity :: Columns available in database"><span class="description"></span><pre>$empty_entity</pre></a></li>
-<li class="property protected inherited"><a href="#property_rawData" title="$rawData :: Raw data, with cusom culoms"><span class="description"></span><pre>$rawData</pre></a></li>
-<li class="property protected inherited"><a href="#property_table" title="$table :: Zend Data table"><span class="description"></span><pre>$table</pre></a></li>
+<li class="property protected inherited"><a href="#property_columns" title="$columns :: Columns array"><span class="description"></span><pre>$columns</pre></a></li>
+<li class="property protected inherited"><a href="#property_content" title="$content :: Contet of the collection"><span class="description"></span><pre>$content</pre></a></li>
+<li class="property protected "><a href="#property_forest" title="$forest :: Forest Reference"><span class="description"></span><pre>$forest</pre></a></li>
+<li class="property protected inherited"><a href="#property_items" title="$items :: Array of items"><span class="description"></span><pre>$items</pre></a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="span8">
-<a id="\forest\attribute\Municipality"></a><ul class="breadcrumb">
+<a id="\forest\attribute\ForestTypeColl"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
@@ -96,13 +95,13 @@
 <span class="divider">\</span><a href="../namespaces/forest.attribute.html">attribute</a>
 </li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/forest.attribute.Municipality.html">Municipality</a>
+<span class="divider">\</span><a href="../classes/forest.attribute.ForestTypeColl.html">ForestTypeColl</a>
 </li>
 </ul>
 <div class="element class">
-<p class="short_description">Manages Municipality attribute</p>
+<p class="short_description">Manages Forest Type collection</p>
 <div class="details">
-<div class="long_description"><p>Manages Municipality attribute</p></div>
+<div class="long_description"><p>Manages Forest Type collection</p></div>
 <table class="table table-bordered">
 <tr>
 <th>author</th>
@@ -121,195 +120,174 @@
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a id="method_delete"></a><div class="element clickable method public method_delete" data-toggle="collapse" data-target=".method_delete .collapse">
-<h2>Deletes data</h2>
-<pre>delete() </pre>
+<a id="method_addItem"></a><div class="element clickable method public method_addItem" data-toggle="collapse" data-target=".method_addItem .collapse">
+<h2>Add new item to the collection</h2>
+<pre>addItem() : <a href="../classes/Content.html">\Content</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
-<td>\Content::delete()</td>
+<td>\ContentColl::addItem()</td>
 </tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Content.html">\Content</a></code></div>
 </div></div>
 </div>
-<a id="method_getData"></a><div class="element clickable method public method_getData" data-toggle="collapse" data-target=".method_getData .collapse">
-<h2>Gets the data</h2>
-<pre>getData(null | \sring $field) : array</pre>
+<a id="method_count"></a><div class="element clickable method public method_count" data-toggle="collapse" data-target=".method_count .collapse">
+<h2>Returns the collection items</h2>
+<pre>count() : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
-<td>\Content::getData()</td>
+<td>\ContentColl::count()</td>
 </tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$field</h4>
-<code>null</code><code>\sring</code><p>field data of interest</p></div>
 <h3>Returns</h3>
 <div class="subelement response"><code>array</code></div>
 </div></div>
 </div>
-<a id="method_getRawData"></a><div class="element clickable method public method_getRawData" data-toggle="collapse" data-target=".method_getRawData .collapse">
-<h2>Gets the raw data</h2>
-<pre>getRawData(null | \sring $field) : array</pre>
+<a id="method_countAll"></a><div class="element clickable method public method_countAll" data-toggle="collapse" data-target=".method_countAll .collapse">
+<h2>Returns all contents without any filter</h2>
+<pre>countAll() </pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
-<td>\Content::getRawData()</td>
+<td>\ContentColl::countAll()</td>
 </tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$field</h4>
-<code>null</code><code>\sring</code><p>field data of interest</p></div>
+</div></div>
+</div>
+<a id="method_getColumns"></a><div class="element clickable method public method_getColumns" data-toggle="collapse" data-target=".method_getColumns .collapse">
+<h2>Return the colum names</h2>
+<pre>getColumns() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\ContentColl::getColumns()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getFirst"></a><div class="element clickable method public method_getFirst" data-toggle="collapse" data-target=".method_getFirst .collapse">
+<h2>Return the first item of the collection</h2>
+<pre>getFirst() : <a href="../classes/Content.html">\Content</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\ContentColl::getFirst()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Content.html">\Content</a></code></div>
+</div></div>
+</div>
+<a id="method_getItems"></a><div class="element clickable method public method_getItems" data-toggle="collapse" data-target=".method_getItems .collapse">
+<h2>Returns the collection items</h2>
+<pre>getItems() : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\ContentColl::getItems()</td>
+</tr></table>
 <h3>Returns</h3>
 <div class="subelement response"><code>array</code></div>
 </div></div>
 </div>
-<a id="method_getTable"></a><div class="element clickable method public method_getTable" data-toggle="collapse" data-target=".method_getTable .collapse">
-<h2>Returns associated db table</h2>
-<pre>getTable() : \Zend_Db_Table</pre>
+<a id="method_loadAll"></a><div class="element clickable method public method_loadAll" data-toggle="collapse" data-target=".method_loadAll .collapse">
+<h2>Load all contents</h2>
+<pre>loadAll(array $criteria) </pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
-<td>\Content::getTable()</td>
+<td>\ContentColl::loadAll()</td>
 </tr></table>
-<h3>Returns</h3>
-<div class="subelement response"><code>\Zend_Db_Table</code></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$criteria</h4>
+<code>array</code><p>Filtering criteria</p></div>
 </div></div>
 </div>
-<a id="method_insert"></a><div class="element clickable method public method_insert" data-toggle="collapse" data-target=".method_insert .collapse">
-<h2>Adds a data</h2>
-<pre>insert() </pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\Content::insert()</td>
-</tr></table>
-</div></div>
-</div>
-<a id="method_loadFromCode"></a><div class="element clickable method public method_loadFromCode" data-toggle="collapse" data-target=".method_loadFromCode .collapse">
-<h2>Load data from code</h2>
-<pre>loadFromCode(string $code) </pre>
+<a id="method_setForest"></a><div class="element clickable method public method_setForest" data-toggle="collapse" data-target=".method_setForest .collapse">
+<h2>Sets the forest reference</h2>
+<pre>setForest(\forest\Forest $forest) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
-<h4>$code</h4>
-<code>string</code><p>Municipality code</p></div>
-</div></div>
-</div>
-<a id="method_loadFromId"></a><div class="element clickable method public method_loadFromId" data-toggle="collapse" data-target=".method_loadFromId .collapse">
-<h2>Loads data from its id</h2>
-<pre>loadFromId(int $id) </pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\Content::loadFromId()</td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$id</h4>
-<code>int</code>
+<h4>$forest</h4>
+<code><a href="../classes/forest.Forest.html">\forest\Forest</a></code>
 </div>
 </div></div>
 </div>
-<a id="method_setData"></a><div class="element clickable method public method_setData" data-toggle="collapse" data-target=".method_setData .collapse">
-<h2>Sets the data</h2>
-<pre>setData(\variant $data, string | null $field) </pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\Content::setData()</td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$data</h4>
-<code>\variant</code>
-</div>
-<div class="subelement argument">
-<h4>$field</h4>
-<code>string</code><code>null</code>
-</div>
-</div></div>
-</div>
-<a id="method_update"></a><div class="element clickable method public method_update" data-toggle="collapse" data-target=".method_update .collapse">
-<h2>Updates data</h2>
-<pre>update() </pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\Content::update()</td>
-</tr></table>
-</div></div>
-</div>
-<a id="method_calculatedVariables"></a><div class="element clickable method private method_calculatedVariables" data-toggle="collapse" data-target=".method_calculatedVariables .collapse">
-<h2>Sets the calculated values</h2>
-<pre>calculatedVariables() </pre>
+<a id="method_customSelect"></a><div class="element clickable method protected method_customSelect" data-toggle="collapse" data-target=".method_customSelect .collapse">
+<h2>Customizes the select statement</h2>
+<pre>customSelect(\Zend_Db_Select $select, array $criteria) : \Zend_Db_Select</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$select</h4>
+<code>\Zend_Db_Select</code>
+</div>
+<div class="subelement argument">
+<h4>$criteria</h4>
+<code>array</code><p>Filtering criteria</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\Zend_Db_Select</code></div>
+</div></div>
 </div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
-<a id="property_data"> </a><div class="element clickable property protected property_data" data-toggle="collapse" data-target=".property_data .collapse">
+<a id="property_columns"> </a><div class="element clickable property protected property_columns" data-toggle="collapse" data-target=".property_columns .collapse">
 <h2></h2>
-<pre>$data : array</pre>
+<pre>$columns : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
-<td>\Content::$$data</td>
+<td>\ContentColl::$$columns</td>
 </tr></table>
 </div></div>
 </div>
-<a id="property_empty_entity"> </a><div class="element clickable property protected property_empty_entity" data-toggle="collapse" data-target=".property_empty_entity .collapse">
+<a id="property_content"> </a><div class="element clickable property protected property_content" data-toggle="collapse" data-target=".property_content .collapse">
 <h2></h2>
-<pre>$empty_entity : array</pre>
+<pre>$content : <a href="../classes/Content.html">\Content</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
-<td>\Content::$$empty_entity</td>
+<td>\ContentColl::$$content</td>
 </tr></table>
 </div></div>
 </div>
-<a id="property_rawData"> </a><div class="element clickable property protected property_rawData" data-toggle="collapse" data-target=".property_rawData .collapse">
+<a id="property_forest"> </a><div class="element clickable property protected property_forest" data-toggle="collapse" data-target=".property_forest .collapse">
 <h2></h2>
-<pre>$rawData : array</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\Content::$$rawData</td>
-</tr></table>
-</div></div>
+<pre>$forest : <a href="../classes/forest.Forest.html">\forest\Forest</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a id="property_table"> </a><div class="element clickable property protected property_table" data-toggle="collapse" data-target=".property_table .collapse">
+<a id="property_items"> </a><div class="element clickable property protected property_items" data-toggle="collapse" data-target=".property_items .collapse">
 <h2></h2>
-<pre>$table : \Zend_Db_Table</pre>
+<pre>$items : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
-<td>\Content::$$table</td>
+<td>\ContentColl::$$items</td>
 </tr></table>
 </div></div>
 </div>

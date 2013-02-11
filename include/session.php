@@ -38,8 +38,7 @@
     header('Location: '.$BASE_URL);
     exit;
  }
- else   if (is_numeric($session['user_id'])) {
+ else if (is_numeric($session['user_id'])) {
      $user = new User();
      $user->loadFromId($session['user_id']);
   }
-  

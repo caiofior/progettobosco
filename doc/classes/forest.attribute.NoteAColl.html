@@ -32,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">150</span></a></li>
+                <span class="label label-info">0</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -65,7 +65,7 @@
 <li class="method public inherited"><a href="#method_getFirst" title="getFirst :: Return the first item of the collection"><span class="description">Return the first item of the collection</span><pre>getFirst()</pre></a></li>
 <li class="method public inherited"><a href="#method_getItems" title="getItems :: Returns the collection items"><span class="description">Returns the collection items</span><pre>getItems()</pre></a></li>
 <li class="method public inherited"><a href="#method_loadAll" title="loadAll :: Load all contents"><span class="description">Load all contents</span><pre>loadAll()</pre></a></li>
-<li class="method public "><a href="#method_setForm" title="setForm :: Sets the forest reference"><span class="description">Sets the forest reference</span><pre>setForm()</pre></a></li>
+<li class="method public "><a href="#method_setForm" title="setForm :: Sets the form reference"><span class="description">Sets the form reference</span><pre>setForm()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header protected">» Protected
@@ -99,9 +99,9 @@
 </li>
 </ul>
 <div class="element class">
-<p class="short_description"></p>
+<p class="short_description">Manages Note collection</p>
 <div class="details">
-<div class="long_description"></div>
+<div class="long_description"><p>Manages Note collection</p></div>
 <table class="table table-bordered">
 <tr>
 <th>author</th>
@@ -109,8 +109,7 @@
 </tr>
 <tr>
 <th>copyright</th>
-<td>CRA
-Manages Note collection</td>
+<td>CRA</td>
 </tr>
 </table>
 <h3>
@@ -152,7 +151,9 @@ Manages Note collection</td>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$criteria</h4></div>
+<div class="subelement argument">
+<h4>$criteria</h4>
+<code>array</code><p>Filtering criteria</p></div>
 </div></div>
 </div>
 <a id="method_getColumns"></a><div class="element clickable method public method_getColumns" data-toggle="collapse" data-target=".method_getColumns .collapse">
@@ -208,18 +209,20 @@ Manages Note collection</td>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$criteria</h4>
-<code>array</code>
-</div>
+<code>array</code><p>Filtering criteria</p></div>
 </div></div>
 </div>
 <a id="method_setForm"></a><div class="element clickable method public method_setForm" data-toggle="collapse" data-target=".method_setForm .collapse">
-<h2>Sets the forest reference</h2>
+<h2>Sets the form reference</h2>
 <pre>setForm(\forest\form\A $form) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$form</h4></div>
+<div class="subelement argument">
+<h4>$form</h4>
+<code><a href="../classes/forest.form.A.html">\forest\form\A</a></code>
+</div>
 </div></div>
 </div>
 <a id="method_customSelect"></a><div class="element clickable method protected method_customSelect" data-toggle="collapse" data-target=".method_customSelect .collapse">
@@ -231,9 +234,11 @@ Manages Note collection</td>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$select</h4>
-<code>\forest\attribute\Zend_Db_Select</code>
+<code>\Zend_Db_Select</code>
 </div>
-<div class="subelement argument"><h4>$criteria</h4></div>
+<div class="subelement argument">
+<h4>$criteria</h4>
+<code>array</code><p>Filtering criteria</p></div>
 <h3>Returns</h3>
 <div class="subelement response"><code>\Zend_Db_Select</code></div>
 </div></div>
@@ -289,7 +294,7 @@ Manages Note collection</td>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-02-11T11:22:00+01:00.<br></footer></div>
+            generated on 2013-02-11T16:31:09+01:00.<br></footer></div>
 </div>
 </body>
 </html>

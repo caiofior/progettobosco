@@ -102,6 +102,7 @@ if ($user === false) {
     $header = 'general'.DIRECTORY_SEPARATOR.'header.php';
     $content = 'content'.DIRECTORY_SEPARATOR.'login.php';
     $sidebar = 'sidebar'.DIRECTORY_SEPARATOR.'login.php';
+    $_REQUEST=array();
 } 
 else if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
             $user_detail = new User();

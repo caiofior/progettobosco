@@ -32,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">150</span></a></li>
+                <span class="label label-info">0</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -64,7 +64,7 @@
 <li class="method public inherited"><a href="#method_getTable" title="getTable :: Returns associated db table"><span class="description">Returns associated db table</span><pre>getTable()</pre></a></li>
 <li class="method public inherited"><a href="#method_insert" title="insert :: Adds a data"><span class="description">Adds a data</span><pre>insert()</pre></a></li>
 <li class="method public "><a href="#method_loadFromId" title="loadFromId :: Loads forest from its id"><span class="description">Loads forest from its id</span><pre>loadFromId()</pre></a></li>
-<li class="method public "><a href="#method_setData" title="setData :: Sets the data"><span class="description">Sets the data</span><pre>setData()</pre></a></li>
+<li class="method public "><a href="#method_setData" title="setData :: Remaps region codice"><span class="description">Remaps region codice</span><pre>setData()</pre></a></li>
 <li class="method public inherited"><a href="#method_update" title="update :: Updates data"><span class="description">Updates data</span><pre>update()</pre></a></li>
 </ul>
 </li>
@@ -93,9 +93,9 @@
 </li>
 </ul>
 <div class="element class">
-<p class="short_description"></p>
+<p class="short_description">Manages Region</p>
 <div class="details">
-<div class="long_description"></div>
+<div class="long_description"><p>Manages Region</p></div>
 <table class="table table-bordered">
 <tr>
 <th>author</th>
@@ -103,8 +103,7 @@
 </tr>
 <tr>
 <th>copyright</th>
-<td>CRA
-Manages Region</td>
+<td>CRA</td>
 </tr>
 </table>
 <h3>
@@ -129,7 +128,7 @@ Manages Region</td>
 </div>
 <a id="method_getData"></a><div class="element clickable method public method_getData" data-toggle="collapse" data-target=".method_getData .collapse">
 <h2>Gets the data</h2>
-<pre>getData($field) : array</pre>
+<pre>getData(null | \sring $field) : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -138,14 +137,16 @@ Manages Region</td>
 <td>\Content::getData()</td>
 </tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$field</h4></div>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>null</code><code>\sring</code><p>field data of interest</p></div>
 <h3>Returns</h3>
 <div class="subelement response"><code>array</code></div>
 </div></div>
 </div>
 <a id="method_getRawData"></a><div class="element clickable method public method_getRawData" data-toggle="collapse" data-target=".method_getRawData .collapse">
 <h2>Gets the raw data</h2>
-<pre>getRawData($field) : array</pre>
+<pre>getRawData(null | \sring $field) : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -154,7 +155,9 @@ Manages Region</td>
 <td>\Content::getRawData()</td>
 </tr></table>
 <h3>Parameters</h3>
-<div class="subelement argument"><h4>$field</h4></div>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>null</code><code>\sring</code><p>field data of interest</p></div>
 <h3>Returns</h3>
 <div class="subelement response"><code>array</code></div>
 </div></div>
@@ -199,15 +202,15 @@ Manages Region</td>
 </div></div>
 </div>
 <a id="method_setData"></a><div class="element clickable method public method_setData" data-toggle="collapse" data-target=".method_setData .collapse">
-<h2>Sets the data</h2>
-<pre>setData(\variant $data, string | null $field) </pre>
+<h2>Remaps region codice</h2>
+<pre>setData(\forest\variant $data, string | null $field) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$data</h4>
-<code>\variant</code>
+<code>\forest\variant</code>
 </div>
 <div class="subelement argument">
 <h4>$field</h4>
@@ -284,7 +287,7 @@ Manages Region</td>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-02-11T11:22:00+01:00.<br></footer></div>
+            generated on 2013-02-11T16:31:09+01:00.<br></footer></div>
 </div>
 </body>
 </html>
