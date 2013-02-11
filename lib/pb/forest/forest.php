@@ -1,10 +1,14 @@
 <?php
-namespace forest;
 /**
+ * Manages Forest
+ * 
+ * Manages Forest
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Forest
  */
+namespace forest;
+
 if (!class_exists('Content')) {
     $file = array(basename(__FILE__));
     $PHPUNIT=true;
@@ -16,9 +20,12 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
+ * Manages Forest
+ * 
+ * Manages Forest
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Forest
  */
 class Forest extends \Content {
      /**
@@ -51,9 +58,11 @@ class Forest extends \Content {
         $this->data = $data->toArray();
         $this->addForestCompartmentCount();
     }
-    /*
-    * Remaps propriet codice 
-    */
+    /**
+     * Remaps propriet codice
+     * @param variant $data
+     * @param string|null $field
+     */
    public function setData($data, $field = null) {
        if (is_array($data) && key_exists('propriet_codice_raw', $data))
                $data['codice']=$data['propriet_codice_raw'];
@@ -68,6 +77,7 @@ class Forest extends \Content {
    /**
     * Adds user owner
     * @param \User $user
+    * @param int $write Write support enabled or not
     */
    public function addOwner (\User $user,$write = 0) {
     $table = new \Zend_Db_Table('user_propriet');

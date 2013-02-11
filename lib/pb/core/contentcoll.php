@@ -1,13 +1,19 @@
 <?php
 /**
+ * Content object collection
+ * 
+ * Content object collection
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Content object collection
  */
 /**
+ * Content object collection
+ * 
+ * Content object collection
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Content object collection
  */
 abstract class ContentColl {
     /**
@@ -27,6 +33,7 @@ abstract class ContentColl {
     protected $columns=null;
      /**
      * Instantiates the collection
+     * @param \Content $content Content base of the collection
      */
     public function __construct(Content $content) {
         $this->content = $content;
@@ -34,11 +41,13 @@ abstract class ContentColl {
     /**
      * Customizes select statement
      * @param Zend_Db_Select $select Zend Db Select
+     * @param array $criteria Filtering criteria
+     * @return Zend_Db_Select Select is expected
      */
     abstract protected function customSelect(Zend_Db_Select $select,array $criteria );
     /**
      * Load all contents
-     * @param array $criteria
+     * @param array $criteria Filtering criteria
      */
     public function loadAll(array $criteria=null) {
         if (is_null($criteria))

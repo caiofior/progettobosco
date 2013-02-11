@@ -1,13 +1,19 @@
 <?php
 /**
+ * Manages User account collection
+ * 
+ * Manages User account collection
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages User account collection
  */
 /**
+ * Manages User account collection
+ * 
+ * Manages User account collection
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages User account collection
  */
 class UserColl extends ContentColl {
     /**
@@ -19,6 +25,7 @@ class UserColl extends ContentColl {
     /**
      * Customizes the select statement
      * @param Zend_Db_Select $select
+     * @param array $criteria Filtering criteria
      * @return \Zend_Db_Select
      */
     protected function customSelect(Zend_Db_Select $select,array $criteria ) {

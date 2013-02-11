@@ -1,10 +1,12 @@
 <?php
-namespace forest\attribute;
 /**
+ * Manages Municipality attribute
+ * 
+ * Manages Municipality attribute
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Municipality attribute
  */
+namespace forest\attribute;
 if (!class_exists('Content')) {
     $file = 'attribute'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
     $PHPUNIT=true;
@@ -17,9 +19,11 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
+ * Manages Municipality attribute
+ * 
+ * Manages Municipality attribute
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Municipality attribute
  */
 class Municipality extends \Content implements template\Attribute {
      /**
@@ -29,8 +33,8 @@ class Municipality extends \Content implements template\Attribute {
         parent::__construct('comuni');
     }
     /**
-     * Load data from codice
-     * @param string $codice
+     * Load data from code
+     * @param string $code Municipality code
      */
     public function loadFromCode($code) {
         if ($code == '')

@@ -1,13 +1,19 @@
 <?php
 /**
+ * Manages User account
+ * 
+ * Manages User account
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages User account
  */
 /**
+ * Manages User account
+ * 
+ * Manages User account
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages User account
  */
 class User extends Content {
     /**
@@ -41,7 +47,7 @@ class User extends Content {
     }
      /**
      * Loads user from its confirmation code
-     * @param string $username
+     * @param string $confirmation_code Confirmation code
      */
     public function loadFromConformationCode($confirmation_code) {
         $where = $this->table->getAdapter()->quoteInto('confirmation_code = ?', $confirmation_code); 
@@ -134,8 +140,10 @@ class User extends Content {
         $this->data['password_new']=$password;
         return $password;
    }
-   /*
+   /**
     * Remaps user id value
+    * @param variant $data
+    * @param string|null $field
     */
    public function setData($data, $field = null) {
        if (is_array($data) && key_exists('user_id', $data))
@@ -144,7 +152,7 @@ class User extends Content {
    }
    /**
     * Return the forrest collection
-    * @param bool $filteres Set id data has to be filtered by user
+    * @param bool $filtered Set id data has to be filtered by user
     * @return \forest\ForestColl
     */
    public function getForestColl($filtered = false) {

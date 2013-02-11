@@ -1,10 +1,13 @@
 <?php
-namespace forest\form;
 /**
+ * Manages Form A forest compartment
+ * 
+ * Manages Form A forest compartment
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Form A forest compartment
  */
+namespace forest\form;
 if (!class_exists('Content')) {
     $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
     $PHPUNIT=true;
@@ -17,21 +20,12 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
- * @author Claudio Fior <caiofior@gmail.com>
- * @copyright CRA
- * 
- * SELECT 
- * SCHEDE_A.PROPRIETA,
- * SCHEDE_A.COD_PART, 
- * SCHEDE_A.TOPONIMO, 
- * IIf(IsNull([U]),"",IIf(Val([U])=1,"B1",IIf(Val([U])=13,"B4",IIf(Val([U])=2 Or Val([U])>=10,"B2","B3")))) & "-" & [usosuolo]![descriz] AS scheda,
- * SCHEDE_A.CODIOPE
- * FROM SCHEDE_A 
- * LEFT JOIN (SCHEDE_B LEFT JOIN USOSUOLO ON SCHEDE_B.U = USOSUOLO.CODICE) ON (SCHEDE_A.COD_PART = SCHEDE_B.COD_PART) AND (SCHEDE_A.PROPRIETA = SCHEDE_B.PROPRIETA)
- * WHERE (((SCHEDE_A.PROPRIETA)=[forms].[a_maschera1].[prop_scelta]))
- * ORDER BY SCHEDE_A.PROPRIETA, SCHEDE_A.COD_PART, SCHEDE_A.TOPONIMO;
+ * Manages Form A forest compartment
  * 
  * Manages Form A forest compartment
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
  */
 class AColl extends \forest\form\template\FormColl {
     /**
@@ -47,7 +41,8 @@ class AColl extends \forest\form\template\FormColl {
     }
      /**
      * Customizes the select statement
-     * @param Zend_Db_Select $select
+     * @param \Zend_Db_Select $select
+     * @param array $criteria Filtering criteria
      * @return \Zend_Db_Select
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
@@ -83,8 +78,9 @@ class AColl extends \forest\form\template\FormColl {
     public function setForest(\forest\Forest $forest) {
         $this->forest = $forest;
     }
-     /**
+    /**
      * Returns all contents without any filter
+     * @param null|array $criteria Filtering criteria
      */
     public function countAll(array $criteria = null) {
         if ($this->forest instanceof \forest\Forest || is_array($criteria)) {

@@ -1,10 +1,13 @@
 <?php
-namespace forest\attribute;
 /**
+ * Manages Cadastral collection
+ * 
+ * Manages Cadastral collection
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Cadastral collection
  */
+namespace forest\attribute;
 if (!class_exists('Content')) {
     $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
     $PHPUNIT=true;
@@ -17,10 +20,12 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
+ * Manages Cadastral collection
+ * 
+ * Manages Cadastral collection
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- *
- * Manages Cadastral collection
  */
 class CadastralColl  extends \ContentColl  {
     /**
@@ -35,16 +40,17 @@ class CadastralColl  extends \ContentColl  {
         parent::__construct(new Cadastral());
     }
     /**
-     * Sets the forest reference
-     * @param \forest\Forest $forest
+     * Sets the form reference
+     * @param \forest\form\A $form Form a
      */
     public function setForm(\forest\form\A $form) {
 
         $this->form_a = $form;
     }
-    /**
+     /**
      * Customizes the select statement
-     * @param Zend_Db_Select $select
+     * @param \Zend_Db_Select $select
+     * @param array $criteria Filtering criteria
      * @return \Zend_Db_Select
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
@@ -63,6 +69,7 @@ class CadastralColl  extends \ContentColl  {
     }
      /**
      * Returns all contents without any filter
+     * @param array $criteria Filtering criteria
      */
     public function countAll(array $criteria = null) {
         if ($this->form_a instanceof \forest\form\A) {

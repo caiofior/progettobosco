@@ -1,10 +1,13 @@
 <?php
-namespace forest;
 /**
+ * Manages Region collection
+ * 
+ * Manages Region collection
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Region collection
  */
+namespace forest;
 if (!class_exists('Content')) {
     $file = array(basename(__FILE__));
     $PHPUNIT=true;
@@ -16,9 +19,12 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
+ * Manages Region collection
+ * 
+ * Manages Region collection
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Region collection
  */
 class RegionColl extends \ContentColl {
     /**
@@ -27,9 +33,10 @@ class RegionColl extends \ContentColl {
     public function __construct() {
         parent::__construct(new Region());
     }
-    /**
+      /**
      * Customizes the select statement
-     * @param Zend_Db_Select $select
+     * @param \Zend_Db_Select $select
+     * @param array $criteria Filtering criteria
      * @return \Zend_Db_Select
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {

@@ -1,10 +1,13 @@
 <?php 
-namespace forest\form\control;
 /**
+ * Manages Form control forest compartment collection
+ * 
+ * Manages Form control forest compartment collection
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Form control forest compartment collection
  */
+namespace forest\form\control;
 if (!class_exists('Content')) {
     $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
     $PHPUNIT=true;
@@ -18,9 +21,12 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
+ * Manages Form control forest compartment collection
+ * 
+ * Manages Form control forest compartment collection
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Form control forest compartment collection
  */
 class ItemColl extends \ContentColl {
     /**

@@ -1,15 +1,19 @@
 <?php
 /**
+ * Manages templates
+ * 
+ * Manages templates
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages templates
  */
 /**
- * Description of template
- *
+ * Manages templates
+ * 
+ * Manages templates
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages templates
  */
 class Template extends Zend_View {
     /**

@@ -1,10 +1,13 @@
 <?php
-namespace forest\form;
 /**
+ * Manages Form A forest compartment
+ * 
+ * Manages Form A forest compartment
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Form A forest compartment
  */
+namespace forest\form;
 if (!class_exists('Content')) {
     $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
     $PHPUNIT=true;
@@ -17,9 +20,12 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
+ * Manages Form A forest compartment
+ * 
+ * Manages Form A forest compartment
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Form A forest compartment
  */
 class A extends \forest\form\template\Form {
      /**
@@ -38,7 +44,8 @@ class A extends \forest\form\template\Form {
     }
     /**
      * Loads form a data form foreat and parcel code
-     * @param integer $id
+     * @param string $proprieta Proprietà code
+     * @param string $cod_part Forest compartment code
      */
     public function loadFromCodePart($proprieta,$cod_part) {
         $where = $this->table->getAdapter()->quoteInto('proprieta = ?', $proprieta).' AND ';

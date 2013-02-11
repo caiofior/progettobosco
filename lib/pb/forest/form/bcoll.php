@@ -1,10 +1,13 @@
 <?php
-namespace forest\form;
 /**
+ * Manages Form B forest compartment Collection
+ * 
+ * Manages Form B forest compartment Collection
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Form B forest compartment
  */
+namespace forest\form;
 if (!class_exists('Content')) {
     $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
     $PHPUNIT=true;
@@ -17,10 +20,12 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
+ * Manages Form B forest compartment Collection
+ * 
+ * Manages Form B forest compartment Collection
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * 
- * Manages Form B forest compartment
  */
 class BColl extends \forest\form\template\FormColl {
     /**
@@ -43,7 +48,8 @@ class BColl extends \forest\form\template\FormColl {
     }
      /**
      * Customizes the select statement
-     * @param Zend_Db_Select $select
+     * @param \Zend_Db_Select $select
+     * @param array $criteria Filtering criteria
      * @return \Zend_Db_Select
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
@@ -57,6 +63,7 @@ class BColl extends \forest\form\template\FormColl {
     }
      /**
      * Returns all contents without any filter
+     * @param null|array $criteria Filtering criteria
      */
     public function countAll(array $criteria = null) {
             parent::countAll();

@@ -1,10 +1,13 @@
 <?php
-namespace forest\attribute;
 /**
+ * Manages Structure attribute
+ * 
+ * Manages Structure attribute
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Structure attribute
  */
+namespace forest\attribute;
 if (!class_exists('Content')) {
     $file = 'attribute'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
     $PHPUNIT=true;
@@ -17,9 +20,12 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
+ * Manages Structure attribute
+ * 
+ * Manages Structure attribute
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Structure attribute
  */
 class Structure extends \Content implements template\Attribute {
      /**
@@ -29,8 +35,8 @@ class Structure extends \Content implements template\Attribute {
         parent::__construct('struttu');
     }
     /**
-     * Load data from codice
-     * @param string $codice
+     * Load data from code
+     * @param string $code Structure code
      */
     public function loadFromCode($code) {
         if ($code == '')

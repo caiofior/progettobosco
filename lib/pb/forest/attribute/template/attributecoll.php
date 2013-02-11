@@ -1,10 +1,13 @@
 <?php
-namespace forest\attribute\template;
 /**
+ * Manages Forest Attribute Collection
+ * 
+ * Manages Forest Attribute Collection
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Forest Attribute Collection
  */
+namespace forest\attribute\template;
 if (!class_exists('Content')) {
     $file = 'attribute'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
     $PHPUNIT=true;
@@ -17,9 +20,12 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
+ * Manages Forest Attribute Collection
+ * 
+ * Manages Forest Attribute Collection
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Forest  Attribute Collection
  */
 interface AttributeColl {
     /**

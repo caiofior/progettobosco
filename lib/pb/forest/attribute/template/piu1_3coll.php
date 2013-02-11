@@ -1,10 +1,13 @@
 <?php
-namespace forest\attribute\template;
 /**
+ * Manages Manages Piu 1/3  collection
+ * 
+ * Manages Manages Piu 1/3  collection
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Manages Piu 1/3  collection
- */
+*/
+namespace forest\attribute\template;
 if (!class_exists('Content')) {
     $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
     $PHPUNIT=true;
@@ -17,11 +20,13 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
+ * Manages Manages Piu 1/3  collection
+ * 
+ * Manages Manages Piu 1/3  collection
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- *
- * Manages Manages Piu 1/3  collection
- */
+*/
 abstract class Piu1_3Coll  extends \ContentColl implements AttributeColl {
     /**
      * Forest Reference
@@ -35,9 +40,10 @@ abstract class Piu1_3Coll  extends \ContentColl implements AttributeColl {
     public function setForest(\forest\Forest $forest) {
         $this->forest = $forest;
     }
-    /**
+     /**
      * Customizes the select statement
-     * @param Zend_Db_Select $select
+     * @param \Zend_Db_Select $select
+     * @param array $criteria Filtering criteria
      * @return \Zend_Db_Select
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {

@@ -1,10 +1,13 @@
 <?php
-namespace forest\attribute;
 /**
+ * Manages Note collection
+ * 
+ * Manages Note collection
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Note collection
  */
+namespace forest\attribute;
 if (!class_exists('Content')) {
     $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
     $PHPUNIT=true;
@@ -17,10 +20,12 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
+ * Manages Note collection
+ * 
+ * Manages Note collection
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- *
- * Manages Note collection
  */
 class NoteTemplateColl  extends \ContentColl  {
     /**
@@ -29,9 +34,10 @@ class NoteTemplateColl  extends \ContentColl  {
     public function __construct() {
         parent::__construct(new NoteTemplate());
     }
-    /**
+      /**
      * Customizes the select statement
-     * @param Zend_Db_Select $select
+     * @param \Zend_Db_Select $select
+     * @param array $criteria Filtering criteria
      * @return \Zend_Db_Select
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {

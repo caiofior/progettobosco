@@ -1,13 +1,19 @@
 <?php
 /**
+ * Logs user data
+ * 
+ * Logs user data
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Logs user data
  */
 /**
+ * Logs user data
+ * 
+ * Logs user data
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Logs user data
  */
 class Log extends Content {
     const CLEANUP_LOG =  " creation_datetime < NOW() - INTERVAL '1 month'";

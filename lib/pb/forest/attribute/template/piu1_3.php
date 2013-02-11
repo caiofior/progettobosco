@@ -1,10 +1,12 @@
 <?php
-namespace forest\attribute\template;
 /**
+ * Manages Piu 1/3 attribute
+ * 
+ * Manages Piu 1/3 attribute
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Piu 1/3 attribute
  */
+namespace forest\attribute\template;
 if (!class_exists('Content')) {
     $file = 'attribute'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
     $PHPUNIT=true;
@@ -17,9 +19,11 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
+ * Manages Piu 1/3 attribute
+ * 
+ * Manages Piu 1/3 attribute
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Piu 1/3 attribute
  */
 abstract class Piu1_3 extends \Content implements Attribute {
      /**

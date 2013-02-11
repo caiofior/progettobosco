@@ -1,13 +1,19 @@
 <?php
 /**
+ * Content object
+ * 
+ * Content object
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Content object
  */
 /**
+ * Content object
+ * 
+ * Content object
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Content object
  */
 abstract class Content {
      /**
@@ -53,6 +59,7 @@ abstract class Content {
     }
      /**
      * Gets the data
+     * @param null|sring $field field data of interest
      * @return array
      */
     public function getData($field = null) {
@@ -65,6 +72,7 @@ abstract class Content {
     }
      /**
      * Gets the raw data
+     * @param null|sring $field field data of interest
      * @return array
      */
     public function getRawData($field = null) {

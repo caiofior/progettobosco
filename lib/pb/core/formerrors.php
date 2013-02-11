@@ -1,13 +1,19 @@
 <?php
 /**
+ * Manages form errors
+ * 
+ * Manages form errors
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages form errors
  */
 /**
+ * Manages form errors
+ * 
+ * Manages form errors
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages form errors
  */
 class FormErrors {
     /**

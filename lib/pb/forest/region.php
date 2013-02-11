@@ -1,10 +1,13 @@
 <?php
-namespace forest;
 /**
+ * Manages Region
+ * 
+ * Manages Region
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Region
  */
+namespace forest;
 if (!class_exists('Content')) {
     $file = array(basename(__FILE__));
     $PHPUNIT=true;
@@ -16,9 +19,12 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
+ * Manages Region
+ * 
+ * Manages Region
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Region
  */
 class Region extends \Content {
      /**
@@ -36,9 +42,11 @@ class Region extends \Content {
         if (is_null($this->data))
             throw new \Exception('Unable to find the region',1301221541);
     }
-    /*
-    * Remaps regione codice 
-    */
+    /**
+     * Remaps region codice
+     * @param variant $data
+     * @param string|null $field
+     */
    public function setData($data, $field = null) {
        if (is_array($data) && key_exists('regione_codice', $data))
                $data['codice']=$data['regione_codice'];

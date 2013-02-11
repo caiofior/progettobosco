@@ -1,10 +1,13 @@
 <?php
-namespace forest\form\template;
 /**
+ * Manages Form forest compartment
+ * 
+ * Manages Form forest compartment
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Form forest compartment
  */
+namespace forest\form\template;
 if (!class_exists('Content')) {
     $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
     $PHPUNIT=true;
@@ -18,18 +21,22 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
+ * Manages Form forest compartment
+ * 
+ * Manages Form forest compartment
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages Form forest compartment
  */
 abstract class Form extends \Content {
     /**
-     * All atrivute data
+     * All attribute data
      * @var array
      */
     protected $all_attributes_data=array();
      /**
      * Instantiates the table
+     * @param string $table
      */
     public function __construct($table = null) {
         parent::__construct($table);

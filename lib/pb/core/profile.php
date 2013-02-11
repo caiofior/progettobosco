@@ -1,13 +1,19 @@
 <?php
 /**
+ * Manages User profile
+ * 
+ * Manages User profile
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages User profile
  */
 /**
+ * Manages User profile
+ * 
+ * Manages User profile
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Manages User profile
  */
 class Profile extends Content {
     /**

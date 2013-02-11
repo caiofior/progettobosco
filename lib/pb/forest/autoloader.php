@@ -1,8 +1,10 @@
 <?php
 /**
+ * Autoloading forest files
+ * 
+ * Autoloading forest files
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Autoloading forest files
  */
 namespace forest;
 if (!class_exists('Forest')) {

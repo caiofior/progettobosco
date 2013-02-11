@@ -1,8 +1,11 @@
 <?php
 /**
+ * Autoloading files
+ * 
+ * Autoloading files
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Autoloading files
  */
 if (!class_exists('Zend_Loader')) {
     require('FirePHPCore'.DIRECTORY_SEPARATOR.'fb.php');
