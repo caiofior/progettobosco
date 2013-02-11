@@ -76,4 +76,13 @@ class B1 extends \forest\form\template\Form {
             $this->table->delete($where);
         }
     }
+     /**
+     * Gets associated Structure
+     * @return \forest\attribute\ForestType
+     */
+    public function getStructure () {
+        $structure = new \forest\attribute\Structure();
+        $structure->loadFromCode($this->data['s']);
+        return $structure;
+    }
 } 

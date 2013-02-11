@@ -70,6 +70,25 @@ switch ($_REQUEST['action']) {
             $response[]=$data;
         }
     break;
+    case 's':
+        if (!key_exists('codice', $_REQUEST))
+                $_REQUEST['codice']=null;
+        $scoll = new forest\attribute\StructureColl();
+        $scoll->loadAll(array(
+            'start'=>0,
+            'length'=>10,
+            'search'=>$_REQUEST['term'],
+            'codice_bosco'=>$_REQUEST['codice']
+            ));
+            lastQuery();
+        foreach($scoll->getItems() as $s) {
+            $data = array(
+                'id'=>$s->getData('codice'),
+                'value'=>$s->getData('descriz')
+            );
+            $response[]=$data;
+        }
+    break;
 }
 header('Content-type: application/json');
 echo Zend_Json::encode($response);

@@ -31,7 +31,7 @@ document.getElementById("tabrelatedcss").href="css/formb1.css";
             <h3 >Schede B per descrivere una formazione arborea</h3>
         </div>
         <div id="u_container">
-            <label for="u">Tipo: formazione arborea</label>
+            <label class="double" for="u">Tipo: formazione arborea</label>
             <input type="checkbox" id="u" name="u" <?php echo ( $b->getData('u') == 1 ? 'checked="checked"' : ''); ?>>
         </div>
         <div id="t_container">
@@ -40,9 +40,69 @@ document.getElementById("tabrelatedcss").href="css/formb1.css";
             <input data-old-descriz="<?php echo $b->getForestType()->getData('descriz'); ?>" id="t_descriz" name="t_descriz" value="<?php echo $b->getForestType()->getData('descriz');?>">
         </div>
         <div id="cod_part_container">
-            <label for="cod_part">Particella / sottoparticella</label>
+            <label class="double" for="cod_part">Particella / sottoparticella</label>
             <input readonly="readonly" id="cod_part" name="cod_part" value="<?php echo $a->getData('cod_part');?>">
         </div>
+        <div id="s_container">
+            <label for="s" class="double">Struttura e sviluppo</label>
+            <input type="hidden" id="s" name="s" value="<?php echo $b1->getData('s');?>">
+            <input data-old-descriz="<?php echo $b1->getStructure()->getData('descriz'); ?>" id="s_descriz" name="s_descriz" value="<?php echo $b1->getStructure()->getData('descriz');?>">
+        </div>
+        <div id="c1_container">
+            <label for="c1">Età prevalente accertata</label>
+            <input id="c1" name="c1" value="<?php echo $b1->getData('c1');?>">
+        </div>
+        </fieldset>
+        <fieldset id="mcontainer" >
+        <legend>Matricinatura</legend>
+        <?php
+        foreach($b1->getControl('m')->getItems() as $item) :
+        $checked = '';
+        if ($item->getRawData('codice') == $b1->getData('m'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="m" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"><span class="m_descr"><?php echo $item->getData('descriz'); ?></span>
+        <?php endforeach;?>
+        </fieldset>
+        <fieldset id="ocontainer" >
+        <legend>Origine del bosco</legend>
+        <?php
+        $labels=array(
+          1=> 'dissem. naturale',
+          2=> 'artificiale',
+          3=> 'agamica o<br/>ceduo in conver.',
+          4=> 'incerta',
+          5=> 'bosco di<br/> neoformazione'
+        );
+        foreach($b1->getControl('o')->getItems() as $item) :
+        if ($item->getRawData('codice') == 4)
+            continue;
+        $checked = '';
+        if ($item->getRawData('codice') == $b1->getData('o'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="o" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"><span class="o_descr"><?php echo $labels[$item->getRawData('codice')]; ?></span>
+        <?php endforeach;?>
+        </fieldset>
+        <fieldset id="vigcontainer" >
+        <legend>Vigoria</legend>
+        <?php
+        $labels=array(
+          1=> 'dissem. naturale',
+          2=> 'artificiale',
+          3=> 'agamica o<br/>ceduo in conver.',
+          4=> 'incerta',
+          5=> 'bosco di<br/> neoformazione'
+        );
+        foreach($b1->getControl('vig')->getItems() as $item) :
+        if ($item->getRawData('codice') == 4)
+            continue;
+        $checked = '';
+        if ($item->getRawData('codice') == $b1->getData('vig'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="vig" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"><span class="vig_descr"><?php echo $item->getData('descriz'); ?></span>
+        <?php endforeach;?>
         </fieldset>
     </form>
 </div>
