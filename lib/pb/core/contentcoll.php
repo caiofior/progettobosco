@@ -111,4 +111,15 @@ abstract class ContentColl {
     public function addItem() {
         return  clone $this->content;
     }
+    /**
+     * Return the first item of the collection
+     * @return \Content
+     */
+    public function getFirst() {
+        $this->loadAll(array(
+            'start'=>0,
+            'length'=>1
+        ));
+        return $this->items[0];
+    }
 }

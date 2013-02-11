@@ -50,7 +50,7 @@ class CollectorColl  extends \ContentColl implements template\AttributeColl {
         $select->setIntegrityCheck(false)
         ->from($this->content->getTable()->info('name'));
         if (key_exists('search', $criteria) && $criteria['search'] != '') {
-            $select->where('descriz LIKE ? ','%'.$criteria['search'].'%');
+            $select->where('LOWER(descriz) LIKE LOWER(?) ','%'.$criteria['search'].'%');
         }
         if ($this->forest instanceof \forest\Forest) {
             $select->where(new \Zend_Db_Expr(' rilevato.codice IN (SELECT schede_a.codiope FROM schede_a WHERE schede_a.proprieta =  ? )'),$this->forest->getData('codice'));        

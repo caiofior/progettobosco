@@ -53,7 +53,7 @@ class MunicipalityColl  extends \ContentColl implements template\AttributeColl {
             'province_code'=>new \Zend_Db_Expr('( SELECT sigla FROM province WHERE province.provincia=comuni.provincia)')
             ));
         if (key_exists('search', $criteria) && $criteria['search'] != '') {
-            $select->where('descriz LIKE ? ','%'.$criteria['search'].'%');
+            $select->where('LOWER(descr)iz LIKE LOWER(?) ','%'.$criteria['search'].'%');
         }
         if (key_exists('codice_bosco', $criteria) && $criteria['codice_bosco'] != '') {
             $select->where(new \Zend_Db_Expr('regione = ( SELECT regione FROM propriet WHERE codice=\''.intval($criteria['codice_bosco']).'\')'));

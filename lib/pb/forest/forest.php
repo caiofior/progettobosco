@@ -149,4 +149,13 @@ class Forest extends \Content {
             return $itemcoll;
         }
     }
+    /**
+     * get the associated region
+     * @return \forest\Region
+     */
+    public function getRegion () {
+        $region = new \forest\Region();
+        $region->loadFromId($this->data['regione']);
+        return $region;
+    }
 }

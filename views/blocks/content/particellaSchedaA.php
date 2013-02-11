@@ -17,6 +17,10 @@ document.getElementById("tabrelatedcss").href="css/forma.css";
         <fieldset id="general">
             <input type="hidden" id="codice_bosco" name="codice_bosco" value="<?php echo $forest->getData('codice');?>"/>
             <input type="hidden" id="objectid" name="objectid" value="<?php echo $a->getData('objectid');?>"/>
+        <div id="regione_container">
+            <p class="no-border">Regione <?php echo $forest->getRegion()->getData('descriz');?><br/>
+            Sistema informativo per l'assestamento forestale</p>     
+        </div>
         <div id="bosco_container">
             <label for="bosco">Bosco</label>
             <input readonly="readonly" id="bosco" name="bosco" value="<?php echo $forest->getData('descrizion');?>">

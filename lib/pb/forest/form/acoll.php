@@ -108,7 +108,8 @@ class AColl extends \forest\form\template\FormColl {
 
     }
     /**
-     * Adds a form to the colelction
+     * Adds new item to the form
+     * @return \forest\form\A
      */
     public function addItem() {
         $a = parent::addItem();

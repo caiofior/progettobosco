@@ -140,4 +140,13 @@ class A extends \forest\form\template\Form {
             $this->table->delete($where);
         }
     }
+    /**
+     * Return the associated B Collection
+     * @return \forest\form\BColl
+     */
+    public function getBColl () {
+        $bcoll = new \forest\form\BColl();
+        $bcoll->setFormA($this);
+        return $bcoll;
+    }
 } 

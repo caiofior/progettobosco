@@ -33,12 +33,18 @@ if (!class_exists('Forest')) {
         'attribute'.DIRECTORY_SEPARATOR.'notetemplatecoll.php',
         'attribute'.DIRECTORY_SEPARATOR.'cadastral.php',
         'attribute'.DIRECTORY_SEPARATOR.'cadastralcoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'foresttype.php',
+        'attribute'.DIRECTORY_SEPARATOR.'foresttypecoll.php',
         'form'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'form.php',
         'form'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'formcoll.php',
         'form'.DIRECTORY_SEPARATOR.'control'.DIRECTORY_SEPARATOR.'item.php',
         'form'.DIRECTORY_SEPARATOR.'control'.DIRECTORY_SEPARATOR.'itemcoll.php',
         'form'.DIRECTORY_SEPARATOR.'a.php',
-        'form'.DIRECTORY_SEPARATOR.'acoll.php'
+        'form'.DIRECTORY_SEPARATOR.'acoll.php',
+        'form'.DIRECTORY_SEPARATOR.'b.php',
+        'form'.DIRECTORY_SEPARATOR.'bcoll.php',
+        'form'.DIRECTORY_SEPARATOR.'b1.php',
+        'form'.DIRECTORY_SEPARATOR.'b1coll.php'
         );
     if (!isset($file)) $file = array();
     $files = array_diff($files, $file);
