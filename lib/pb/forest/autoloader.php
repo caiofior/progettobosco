@@ -39,6 +39,8 @@ if (!class_exists('Forest')) {
         'attribute'.DIRECTORY_SEPARATOR.'foresttypecoll.php',
         'attribute'.DIRECTORY_SEPARATOR.'structure.php',
         'attribute'.DIRECTORY_SEPARATOR.'structurecoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'forestcovercomposition.php',
+        'attribute'.DIRECTORY_SEPARATOR.'forestcovercompositioncoll.php',
         'form'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'form.php',
         'form'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'formcoll.php',
         'form'.DIRECTORY_SEPARATOR.'control'.DIRECTORY_SEPARATOR.'item.php',

@@ -92,4 +92,13 @@ class B1 extends \forest\form\template\Form {
         $structure->loadFromCode($this->data['s']);
         return $structure;
     }
+    /**
+     * Gets the associated Forest Cover Composition
+     * @return \forest\attribute\ForestCoverCompositionColl
+     */
+    public function getForestCoverComposition() {
+        $forestcovercomposition = new \forest\attribute\ForestCoverCompositionColl();
+        $forestcovercomposition->setForm($this);
+        return $forestcovercomposition;
+    }
 } 

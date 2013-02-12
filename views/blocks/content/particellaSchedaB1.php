@@ -104,6 +104,10 @@ document.getElementById("tabrelatedcss").href="css/formb1.css";
         <input type="radio" name="vig" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"><span class="vig_descr"><?php echo $item->getData('descriz'); ?></span>
         <?php endforeach;?>
         </fieldset>
+        <fieldset id="arboreecontainer" >
+        <legend>Composizione strato arboreo</legend>
+        <?php require (__DIR__.DIRECTORY_SEPARATOR.'schedab'.DIRECTORY_SEPARATOR.'arboree.php');?>
+        </fieldset>
     </form>
 </div>
 <script type="text/javascript" src="js/formb1.js" defer></script>

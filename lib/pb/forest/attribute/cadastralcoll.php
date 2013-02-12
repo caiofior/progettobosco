@@ -30,7 +30,7 @@ if (!class_exists('Content')) {
 class CadastralColl  extends \ContentColl  {
     /**
      * Forest Reference
-     * @var \forest\Forest 
+     * @var \forest\form\A 
      */
     protected $form_a=null;
     /**
@@ -58,7 +58,9 @@ class CadastralColl  extends \ContentColl  {
         ->from($this->content->getTable()->info('name'));
         if ($this->form_a instanceof \forest\form\A) {
             $select->where(' cod_part = ? ',$this->form_a->getData('cod_part'))
-            ->where(' proprieta = ? ',$this->form_a->getData('proprieta'));
+            ->where(' proprieta = ? ',$this->form_a->getData('proprieta'))
+            ->where(' cod_fo = ? ',$this->form_b1->getData('cod_fo'))
+            ;
             
         }
         if (key_exists('search', $criteria) && $criteria['search'] != '') {
@@ -75,7 +77,9 @@ class CadastralColl  extends \ContentColl  {
         if ($this->form_a instanceof \forest\form\A) {
             $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
             $select->where(' cod_part = ? ',$this->form_a->getData('cod_part'))
-            ->where(' proprieta = ? ',$this->form_a->getData('proprieta'));
+            ->where(' proprieta = ? ',$this->form_a->getData('proprieta'))
+            ->where(' cod_fo = ? ',$this->form_b1->getData('cod_fo'))
+            ;
             return intval($this->content->getTable()->getAdapter()->fetchOne($select));
         }
         else 
