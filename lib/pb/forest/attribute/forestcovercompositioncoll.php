@@ -73,7 +73,7 @@ class ForestCoverCompositionColl  extends \ContentColl  {
         if (key_exists('search', $criteria) && $criteria['search'] != '') {
             $select->where(' particella LIKE ? OR foglio LIKE ?', '%'.$criteria['search'].'%');   
         }
-        //$select->order('foglio')->order('particella');
+        $select->order('ordine_inser')->order('cod_coltu');
         return $select;
     }
      /**

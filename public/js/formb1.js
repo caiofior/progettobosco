@@ -35,4 +35,79 @@ $("#s_descriz").autocomplete({
 }).focus(function() {
     $(this).val("").autocomplete("search","")
 });
-
+$("#arboreecontainer").prepend("<a id=\"arboree_list_update\" style=\"display:none;\" href=\""+$("#formB1").attr("action")+"\" data-update=\"content_schedab_arboree\"></a>");
+/**
+ * Manages autocomplete arboree cod coltu
+ **/
+function autocompleteCodeNote () {
+        $("#cod_coltu_descr, #content_schedab_arboree input").autocomplete({
+        minLength: 0,
+        source: "bosco.php?task=autocomplete&action=cod_coltu",
+        select: function( event, ui ) {
+            $("#cod_coltu").val(ui.item.id )
+        },
+        change: function( event, ui ) {
+                if ( !ui.item ) {
+                      $("#cod_coltu_descr").val("");
+                }
+                el = $(this);
+                old = el.data("old-value");
+                if (typeof old == "string" && el.val() != "" && el.val() != old) {
+                    arboree_id = $(this).data("arboree-id");
+                    $("#cod_coper_"+arboree_id).trigger("change");
+                }
+        }
+    }).focus(function() {
+        $(this).val("").autocomplete("search","")
+    }).blur(function () {
+        el = $(this);
+        old = el.data("old-value");
+        if (typeof old == "string" && el.val() == "") {
+            el.val(old);
+        }
+    });
+}
+autocompleteCodeNote ();
+$(document).ajaxComplete(function() {
+    autocompleteCodeNote ();
+});
+/**
+ * Manages edit arboree cod_coper
+ **/
+$(document).on("change","#content_schedab_arboree select", function() {
+    el = $("#newarboree .addnew").parent("a");
+    arboree_id = $(this).data("arboree-id");
+    data = {
+        "xhr":1,
+        "arboree_id":arboree_id,
+        "cod_coltu" : $("#cod_coltu_"+arboree_id).val(),
+        "cod_coper" : $("#cod_coper_"+arboree_id).val()
+    };
+    $.ajax({
+            type: "POST",
+            async: false,
+            url: el.attr("href"),
+            data: data,
+            dataType: "json",
+            success: function(response) {
+                if (response == true) {
+                    $("#arboree_list_update").trigger("click");
+                    status = true;
+                }
+                else {
+                    $.each(response["names"], function(id,val) {
+                        $("#"+val).addClass("error");
+                    });
+                    //$(messages_selector).html(response["messages"]).show();  
+                    $("#ajaxloader").hide();
+                }
+                
+            },
+            error: function(jqXHR , textStatus,  errorThrown) {
+                $("#ajaxloader").hide();
+            }
+        });
+     
+        return status;
+    
+});

@@ -619,19 +619,18 @@ document.getElementById("tabrelatedcss").href="css/forma.css";
                 </div>
             <div>
                 <span>
-                <input type="hidden" id="cod_nota" name="cod_nota" value=""/>
-                <input id="cod_nota_descr" name="cod_nota_descr" value=""/>
+                    <input type="hidden" id="cod_nota" name="cod_nota" value=""/>
+                    <input id="cod_nota_descr" name="cod_nota_descr" value=""/>
                 </span>
 
-            <span>
-                <textarea id="text_nota" name="text_nota" rows="2" cols="30"></textarea>
-            </span>
-        
-        <span>
-            <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=forma&action=editnote&id=<?php echo $a->getData('objectid');?>" data-update="content_schedaa_note">
-                <img class="actions addnew" src="images/empty.png" title="Aggiungi una nota"/>
-            </a>
-        </span>
+                <span>
+                    <textarea id="text_nota" name="text_nota" rows="2" cols="30"></textarea>
+                </span>
+                <span>
+                    <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=forma&action=editnote&id=<?php echo $a->getData('objectid');?>" data-update="content_schedaa_note">
+                        <img class="actions addnew" src="images/empty.png" title="Aggiungi una nota"/>
+                    </a>
+                </span>
             </div>
         </div>
         <?php

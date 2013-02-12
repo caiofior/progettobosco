@@ -35,12 +35,17 @@ label.double {
 label.triple {
     height: 60px;
 }
+select {
+   margin: 0!important;
+   padding: 0!important;
+   height: 17px;
+   width: 80%;
+}
 input:not([type='radio']) {
    width: 80%;
    font-size: 10px;
    margin: 0;
-padding: 0;
-space: 0;
+   padding: 0;
 }
 input[type='radio'] {
    background: transparent;
@@ -136,4 +141,49 @@ input[type='radio'] {
     top: -300px;
     width: 260px;
     height: 200px;
+}
+#newarboree {
+    top: 24px;
+    left: 4px;
+    width: 250px;
+}
+#content_schedab_arboree {
+    top: 74px;
+    left: 4px;
+    width: 250px;
+}
+#content_schedab_arboree  div{
+    position: relative;
+    clear: both;
+}
+#content_schedab_arboree  div span{
+    float:left;
+    width: 80px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#newarboree  div{
+    position: relative;
+    clear: both;
+}
+
+#newarboree div span{
+    float:left;
+    width: 80px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#scrollcontrols span input{
+    display: inline;
+    width: 50px;
+}
+#scrollcontrols img {
+    margin-top: 5px;
+    vertical-align:top;
 }

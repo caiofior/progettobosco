@@ -41,7 +41,7 @@ $(document).on("change","#sup",function(){
 $("#sup").trigger("change");
 $("#notescontainer").prepend("<a id=\"notes_list_update\" style=\"display:none;\" href=\""+$("#formA").attr("action")+"\" data-update=\"content_schedaa_note\"></a>");
 /**
- * Manages autocomplete noe code
+ * Manages autocomplete note code
  **/
 function autocompleteCodeNote () {
         $("#cod_nota_descr, #content_schedaa_note input").autocomplete({

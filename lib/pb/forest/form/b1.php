@@ -39,7 +39,11 @@ class B1 extends \forest\form\template\Form {
      * @param integer $id
      */
     public function loadFromId($id) {
-        parent::loadFromId($id);
+        $where = $this->table->getAdapter()->quoteInto('objectid = ?', $id);
+        $data = $this->table->fetchRow($where);
+        if (is_null($data))
+            throw new \Exception('Unable to find the cod part',1302081202);
+        $this->data = $data->toArray();
         $this->calculatedVariables();
     }
     /**

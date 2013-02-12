@@ -106,6 +106,41 @@ document.getElementById("tabrelatedcss").href="css/formb1.css";
         </fieldset>
         <fieldset id="arboreecontainer" >
         <legend>Composizione strato arboreo</legend>
+        <div id="newarboree">
+                <div>
+                    <span>
+                        <div>Specie</div>
+                    </span>
+                    <span>
+                        <div>Copertura</div>
+                    </span>
+                    <span>
+                        <div>Azioni</div>
+                    </span>
+                </div>
+            <div>
+            <span>
+                <input type="hidden" id="cod_coltu" name="cod_coltu" value=""/>
+                <input id="cod_coltu_descr" name="cod_coltu_descr" value=""/>
+            </span>
+
+            <span>
+                <select id="cod_coper" name="cod_coper">
+                    <option value="">Scegli un valore di copertura</option>
+                    <?php
+                    $forestcovercomposition = new \forest\attribute\ForestCoverComposition();
+                    foreach($forestcovercomposition->getControl('cod_coper')->getItems() as $item) : ?>
+                    <option value="<?php echo $item->getData('codice'); ?>"><?php echo $item->getData('descriz'); ?></option>
+                    <?php endforeach;?>
+                </select>
+            </span>
+            <span>
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb1&action=editarboree&id=<?php echo $b1->getData('objectid');?>" data-update="content_schedab_arboree">
+                    <img class="actions addnew" src="images/empty.png" title="Aggiungi una specie arborea"/>
+                </a>
+            </span>
+            </div>
+        </div>
         <?php require (__DIR__.DIRECTORY_SEPARATOR.'schedab'.DIRECTORY_SEPARATOR.'arboree.php');?>
         </fieldset>
     </form>

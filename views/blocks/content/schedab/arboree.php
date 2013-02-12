@@ -17,24 +17,35 @@
         'start'=>$_GET['start'],
         'length'=>$items_in_page
     ));
+    $forestcovercomposition = new \forest\attribute\ForestCoverComposition();
+    $cod_coper_coll = $forestcovercomposition->getControl('cod_coper');
     foreach ($forestcovercompositioncoll->getItems() as $forestcovercomposition) :
     ?>
     <div>
         <span>
             <div>
                 <input type="hidden" id="cod_coltu_<?php echo $forestcovercomposition->getData('objectid');?>" name="cod_coltu_<?php echo $forestcovercomposition->getData('objectid');?>" value="<?php echo $forestcovercomposition->getRawData('cod_coltu');?>"/>
-                <input id="cod_coltu_descr_<?php echo $forestcovercomposition->getData('objectid');?>" data-codecoltu-id="<?php echo $forestcovercomposition->getData('objectid');?>" name="cod_coltu_descr_<?php echo $forestcovercomposition->getData('objectid');?>" value="<?php echo $forestcovercomposition->getRawData('cod_colt_descriz');?>" data-old-value="<?php echo $forestcovercomposition->getRawData('cod_colt_descriz');?>">
+                <input id="cod_coltu_descr_<?php echo $forestcovercomposition->getData('objectid');?>" data-arboree-id="<?php echo $forestcovercomposition->getData('objectid');?>" name="cod_coltu_descr_<?php echo $forestcovercomposition->getData('objectid');?>" value="<?php echo $forestcovercomposition->getRawData('cod_colt_descriz');?>" data-old-value="<?php echo $forestcovercomposition->getRawData('cod_colt_descriz');?>">
             </div>
         </span>
         <span>
             <div>
-                <input type="hidden" id="cod_coper_<?php echo $forestcovercomposition->getData('objectid');?>" name="cod_coper_<?php echo $forestcovercomposition->getData('objectid');?>" value="<?php echo $forestcovercomposition->getRawData('cod_coper');?>"/>
-                <input id="cod_coper_descr_<?php echo $forestcovercomposition->getData('objectid');?>" data-codecoper-id="<?php echo $forestcovercomposition->getData('objectid');?>" name="cod_coper_descr_<?php echo $forestcovercomposition->getData('objectid');?>" value="<?php echo $forestcovercomposition->getRawData('cod_coper_descriz');?>" data-old-value="<?php echo $forestcovercomposition->getRawData('cod_coper_descriz');?>">
+                <select id="cod_coper_<?php echo $forestcovercomposition->getData('objectid');?>" name="cod_coper_<?php echo $forestcovercomposition->getData('objectid');?>" data-arboree-id="<?php echo $forestcovercomposition->getData('objectid');?>">
+                    <option value="">Scegli un valore di copertura</option>
+                    <?php
+                    foreach($cod_coper_coll->getItems() as $item) :
+                    $selected = '';
+                    if ($item->getRawData('codice') == $forestcovercomposition->getData('cod_coper'))
+                        $selected = 'selected="selected"';
+                    ?>
+                    <option <?php echo $selected; ?> value="<?php echo $item->getData('codice'); ?>"><?php echo $item->getData('descriz'); ?></option>
+                    <?php endforeach;?>
+                </select>
             </div>
         </span>
         <span>
             <div>
-                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=forma&id=<?php echo $b1->getData('objectid');?>&deletenote=<?php echo $forestcovercomposition->getData('objectid');?>"  >
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb1&id=<?php echo $b1->getData('objectid');?>&deletearboree=<?php echo $forestcovercomposition->getData('objectid');?>"  >
                     <img class="actions delete" src="images/empty.png" title="Cancella"/>
                 </a>
             </div>
@@ -101,7 +112,7 @@
         </a>
         </span>
         <span>
-            Nota <input id="current" name="current" value="<?php echo $start; ?>" type="text"  /> di <?php echo $countall; ?></span>
+            Specie <input id="current" name="current" value="<?php echo $start; ?>" type="text"  /> di <?php echo $countall; ?></span>
         <a href="#" style="display: none;" id="confirm_move">
             <img class="actions confirm" src="images/empty.png" title="Vai">
         </a>
