@@ -103,7 +103,7 @@
         );
     }
     ?>
-    <div id="scrollcontrols">
+    <div class="scrollcontrols">
         <span>
         <a <?php echo $actions['first']['url'];?> <?php echo $actions['first']['data-update'];?> >
             <img class="actions first" src="images/empty.png" title="Primo">

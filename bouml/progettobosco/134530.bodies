@@ -1,0 +1,20 @@
+class B1Coll
+!!!150530.php!!!	__construct()
+        parent::__construct(new B1());
+!!!150658.php!!!	customSelect(inout select : \Zend_Db_Select, inout criteria : array) : \Zend_Db_Select
+        $select->setIntegrityCheck(false);
+        if ($this->b instanceof \forest\form\B) {
+            $select->where('sched_b1.proprieta = ?', $this->b->getData('proprieta'))
+                   ->where('sched_b1.cod_part = ?', $this->b->getData('cod_part'))
+                   ->where('sched_b1.cod_fo = ?', $this->b->getData('cod_fo'));
+        }
+        return $select;
+!!!150786.php!!!	setFormB(inout b : \forest\form\B)
+        $this->b = $b;
+!!!150914.php!!!	countAll(inout criteria : null|array = null)
+            parent::countAll();
+
+!!!151042.php!!!	addItem() : \forest\form\B1
+        $b1 = parent::addItem();
+        $b1->setData($this->forest->getData('codice'),'proprieta');
+        return $b1;

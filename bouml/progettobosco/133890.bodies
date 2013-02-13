@@ -1,0 +1,71 @@
+class A
+!!!146306.php!!!	__construct()
+        parent::__construct('schede_a');
+!!!146434.php!!!	loadFromId(inout id : integer)
+        parent::loadFromId($id);
+        $this->calculatedVariables();
+!!!146562.php!!!	loadFromCodePart(inout proprieta : string, inout cod_part : string)
+        $where = $this->table->getAdapter()->quoteInto('proprieta = ?', $proprieta).' AND ';
+        $where .= $this->table->getAdapter()->quoteInto('cod_part = ?', $cod_part);
+        $data = $this->table->fetchRow($where);
+        if (is_null($data))
+            throw new \Exception('Unable to find the cod part',1302081202);
+        $this->data = $data->toArray();
+        $this->calculatedVariables();
+!!!146690.php!!!	getForest() : \forest\Forest
+        $bosco = new \forest\Forest();
+        $bosco->loadFromCode($this->data['proprieta']);
+        return $bosco;
+!!!146818.php!!!	calculatedVariables()
+        /**
+         * calcolo improduttivi
+         */
+        $this->rawData['improduttivi_calcolo']=0;
+        if ($this->data['i1'] > 0 )
+            $this->rawData['improduttivi_calcolo']=$this->data['i1'];
+        else if ($this->data['i2'] > 0 )
+            $this->rawData['improduttivi_calcolo']=$this->data['sup_tot']*$this->data['i2']/100;
+        /**
+         * calcolo produttivi non boscati
+         */
+        $this->rawData['prod_non_bosc_calcolo']=0;
+        if ($this->data['i21'] > 0 )
+            $this->rawData['prod_non_bosc_calcolo']=$this->data['i21'];
+        else if ($this->data['i22'] > 0 )
+            $this->rawData['prod_non_bosc_calcolo']=$this->data['sup_tot']*$this->data['i22']/100;
+        /**
+         * calcolo superficie boscata
+         */
+        $this->rawData['boscata_calcolo']=$this->data['sup_tot']-$this->rawData['improduttivi_calcolo']-$this->rawData['prod_non_bosc_calcolo'];
+!!!146946.php!!!	getMunicipality() : \forest\attribute\Municipality
+        $municipality = new \forest\attribute\Municipality();
+        $municipality->loadFromCode($this->data['comune']);
+        return $municipality;
+!!!147074.php!!!	getCollector() : \forest\attribute\Collector
+        $collector = new \forest\attribute\Collector();
+        $collector->loadFromId($this->data['codiope']);
+        return $collector;
+!!!147202.php!!!	getNotes() : \forest\attribute\NoteAColl
+        $notes = new \forest\attribute\NoteAColl();
+        $notes->setForm($this);
+        return $notes;
+!!!147330.php!!!	getCadastalColl() : \forest\attribute\CadastralColl
+        $cadastralcoll = new \forest\attribute\CadastralColl();
+        $cadastralcoll->setForm($this);
+        return $cadastralcoll;
+!!!147458.php!!!	update()
+        if (!key_exists('objectid', $this->data)) 
+            throw new Exception('Unable to update object without objectid',1301251130);
+        foreach($this->data as $key=>$value)
+            if ($value=='') $this->data[$key]=null;
+        $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
+        $this->table->update($this->data, $where);
+!!!147586.php!!!	delete()
+        if (key_exists('objectid', $this->data)) {
+            $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
+            $this->table->delete($where);
+        }
+!!!147714.php!!!	getBColl() : \forest\form\BColl
+        $bcoll = new \forest\form\BColl();
+        $bcoll->setFormA($this);
+        return $bcoll;

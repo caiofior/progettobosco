@@ -1,0 +1,8 @@
+class Item
+!!!151810.php!!!	__construct(inout table : type = null)
+        parent::__construct($table);
+!!!151938.php!!!	getData(inout field : string = null)
+        $data=parent::getData($field);
+        if ($field == 'descriz' && $data == '')
+            $data=parent::getData('valore');
+        return $data;

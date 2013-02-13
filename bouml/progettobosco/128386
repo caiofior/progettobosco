@@ -1,0 +1,822 @@
+format 74
+"forest" // pb::forest
+  revision 1
+  modified_by 2 "caiofior"
+  // class settings
+  //class diagram settings
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  //use case diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default class_drawing_mode default shadow default show_stereotype_properties default
+  //sequence diagram settings
+  show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+  //collaboration diagram settings
+  show_full_operations_definition default show_hierarchical_rank default write_horizontally default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+  //object diagram settings
+   write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+  //component diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //deployment diagram settings
+  package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //state diagram settings
+  package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+  show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+  //activity diagram settings
+  package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+  show_infonote default drawing_language default show_stereotype_properties default
+  
+  deploymentview 128258 "forest"
+    //deployment diagram settings
+    package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+    draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+    artifact 129154 "autoloader"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Autoloading forest files
+ * 
+ * Autoloading forest files
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest;
+if (!class_exists('Forest')) {
+    if (!class_exists('Content'))
+        require (__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'autoloader.php');
+    $files = array(
+        'forest.php',
+        'forestcoll.php',
+        'region.php',
+        'regioncoll.php',
+        'form'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'form.php',
+        'form'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'formcoll.php',
+        'form'.DIRECTORY_SEPARATOR.'control'.DIRECTORY_SEPARATOR.'item.php',
+        'form'.DIRECTORY_SEPARATOR.'control'.DIRECTORY_SEPARATOR.'itemcoll.php',
+        'form'.DIRECTORY_SEPARATOR.'a.php',
+        'form'.DIRECTORY_SEPARATOR.'acoll.php',
+        'form'.DIRECTORY_SEPARATOR.'b.php',
+        'form'.DIRECTORY_SEPARATOR.'bcoll.php',
+        'form'.DIRECTORY_SEPARATOR.'b1.php',
+        'form'.DIRECTORY_SEPARATOR.'b1coll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'attribute.php',
+        'attribute'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'attributecoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'piu1_3.php',
+        'attribute'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'piu1_3coll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'piu2_3.php',
+        'attribute'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'piu2_3coll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'soiluse.php',
+        'attribute'.DIRECTORY_SEPARATOR.'soilusecoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'collector.php',
+        'attribute'.DIRECTORY_SEPARATOR.'collectorcoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'municipality.php',
+        'attribute'.DIRECTORY_SEPARATOR.'municipalitycoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'province.php',
+        'attribute'.DIRECTORY_SEPARATOR.'provincecoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'notea.php',
+        'attribute'.DIRECTORY_SEPARATOR.'noteacoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'notetemplate.php',
+        'attribute'.DIRECTORY_SEPARATOR.'notetemplatecoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'cadastral.php',
+        'attribute'.DIRECTORY_SEPARATOR.'cadastralcoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'foresttype.php',
+        'attribute'.DIRECTORY_SEPARATOR.'foresttypecoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'structure.php',
+        'attribute'.DIRECTORY_SEPARATOR.'structurecoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'forestcovercomposition.php',
+        'attribute'.DIRECTORY_SEPARATOR.'forestcovercompositioncoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'arboreal.php',
+        'attribute'.DIRECTORY_SEPARATOR.'arborealcoll.php',
+        );
+    if (!isset($file)) $file = array();
+    $files = array_diff($files, $file);
+    foreach ($files as $file) {
+        require (__DIR__.DIRECTORY_SEPARATOR.$file);
+    }
+}
+"
+      associated_classes
+      end
+    end
+
+    artifact 129282 "forest"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Forest
+ * 
+ * Manages Forest
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest;
+
+if (!class_exists('Content')) {
+    $file = array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 129154 // Forest
+      end
+    end
+
+    artifact 129410 "forestcoll"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Forest collection
+ * 
+ * Manages Forest collection
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest;
+if (!class_exists('Content')) {
+    $file = array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 129410 // ForestColl
+      end
+    end
+
+    artifact 129538 "region"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Region
+ * 
+ * Manages Region
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest;
+if (!class_exists('Content')) {
+    $file = array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 129666 // Region
+      end
+    end
+
+    artifact 129666 "regioncoll"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Region collection
+ * 
+ * Manages Region collection
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest;
+if (!class_exists('Content')) {
+    $file = array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 129794 // RegionColl
+      end
+    end
+  end
+
+  classview 128258 "forest"
+    //class diagram settings
+    draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+    //collaboration diagram settings
+    show_full_operations_definition default show_hierarchical_rank default write_horizontally default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+    //object diagram settings
+     write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+    //sequence diagram settings
+    show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+    //state diagram settings
+    package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+    show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+    //class settings
+    //activity diagram settings
+    package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+    show_infonote default drawing_language default show_stereotype_properties default
+    class 129154 "Forest"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Forest
+
+Manages Forest
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 128642 // <generalisation>
+	relation 128642 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 128642 // <generalisation>
+	  b parent class_ref 129282 // \Content
+      end
+
+      operation 134146 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+
+      operation 134274 "loadFromId"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "id" explicit_type "int"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Loads forest from its id
+@param ${t0} ${p0}
+"
+      end
+
+      operation 134402 "loadFromCode"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "code" explicit_type "string"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Loads forest from its code
+@param ${t0} ${p0}
+"
+      end
+
+      operation 134530 "setData"
+	public explicit_return_type ""
+	nparams 2
+	  param inout name "data" explicit_type "variant"
+	  param inout name "field" explicit_type "string|null"
+	    defaultvalue "null"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${p0}${v0}, ${p1}${v1}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Remaps propriet codice
+@param ${t0} ${p0}
+@param ${t1} ${p1}
+"
+      end
+
+      operation 134658 "addOwner"
+	public explicit_return_type ""
+	nparams 2
+	  param inout name "user" explicit_type "\\User"
+	  param inout name "write" explicit_type "int"
+	    defaultvalue "0"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}, ${p1}${v1}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Adds user owner
+@param ${t0} ${p0}
+@param ${t1} ${p1} Write support enabled or not
+"
+      end
+
+      operation 134786 "removeOwner"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "user" explicit_type "\\User"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Removes a forest user
+@param ${t0} ${p0}
+"
+      end
+
+      operation 134914 "update"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Updates data
+"
+      end
+
+      operation 135042 "delete"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Deletes data
+"
+      end
+
+      operation 135170 "addForestCompartmentCount"
+	private explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Add the count of forest compartments
+"
+      end
+
+      operation 135298 "getForestCompartmentColl"
+	public explicit_return_type "\\forest\\form\\AColl"
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Gets the form a collection of the forest
+@return ${type}
+"
+      end
+
+      operation 135426 "getAttributeColl"
+	public explicit_return_type "\\forest\\attribute\\template\\AttributeColl"
+	nparams 1
+	  param inout name "attributecoll" explicit_type "\\forest\\attribute\\template\\AttributeColl"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Returns attribute collection available in this forest
+@param ${t0} ${p0}
+@return ${type}
+"
+      end
+
+      operation 135554 "getControl"
+	public explicit_return_type "boolean"
+	nparams 1
+	  param inout name "attribute" explicit_type "string"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Returns the associated control
+@param ${t0} ${p0}
+@return ${type}
+"
+      end
+
+      operation 135682 "getRegion"
+	public explicit_return_type "\\forest\\Region"
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+get the associated region
+@return ${type}
+"
+      end
+    end
+
+    class 129410 "ForestColl"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Forest collection
+
+Manages Forest collection
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 128770 // <generalisation>
+	relation 128770 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 128770 // <generalisation>
+	  b parent class_ref 129538 // \ContentColl
+      end
+
+      attribute 130434 "user"
+	private explicit_type "\\User"
+	cpp_decl ""
+	java_decl ""
+	php_decl "  ${comment}${visibility}${const}${static}${var}${name}${value};
+"
+	python_decl ""
+	idl_decl ""
+	comment "
+User reference
+@var ${type}
+"
+      end
+
+      attribute 130562 "filterByUser"
+	private explicit_type "bool"
+	init_value "false"
+	cpp_decl ""
+	java_decl ""
+	php_decl "  ${comment}${visibility}${const}${static}${var}${name}${value};
+"
+	python_decl ""
+	idl_decl ""
+	comment "
+Filters or not the forest by teh user
+@var ${type}
+"
+      end
+
+      operation 135810 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+
+      operation 135938 "customSelect"
+	protected explicit_return_type "\\Zend_Db_Select"
+	nparams 2
+	  param inout name "select" explicit_type "\\Zend_Db_Select"
+	  param inout name "criteria" explicit_type "array"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}, array ${p1}${v1}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Customizes the select statement
+@param ${t0} ${p0}
+@param ${t1} ${p1} Filtering criteria
+@return ${type}
+"
+      end
+
+      operation 136066 "countAll"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "criteria" explicit_type "null|array"
+	    defaultvalue "null"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}array ${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Returns all contents without any filter
+@param ${t0} ${p0} Filtering criteria
+"
+      end
+
+      operation 136194 "getRegionColl"
+	public explicit_return_type "\\forest\\RegionColl"
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Return a collection of regions
+@return ${type}
+"
+      end
+
+      operation 136322 "setUserForests"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "user" explicit_type "\\User"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Set the user forest owner
+@param ${t0} ${p0}
+"
+      end
+
+      operation 136450 "setFilterByUser"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "filtered" explicit_type "bool"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Filters or not the forest by the user
+@param ${t0} ${p0}
+"
+      end
+    end
+
+    class 129666 "Region"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Region
+
+Manages Region
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 128898 // <generalisation>
+	relation 128898 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 128898 // <generalisation>
+	  b parent class_ref 129282 // \Content
+      end
+
+      operation 136578 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+
+      operation 136706 "loadFromId"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "id" explicit_type "int"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Loads forest from its id
+@param ${t0} ${p0}
+"
+      end
+
+      operation 136834 "setData"
+	public explicit_return_type ""
+	nparams 2
+	  param inout name "data" explicit_type "variant"
+	  param inout name "field" explicit_type "string|null"
+	    defaultvalue "null"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${p0}${v0}, ${p1}${v1}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Remaps region codice
+@param ${t0} ${p0}
+@param ${t1} ${p1}
+"
+      end
+    end
+
+    class 129794 "RegionColl"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Region collection
+
+Manages Region collection
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 129026 // <generalisation>
+	relation 129026 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 129026 // <generalisation>
+	  b parent class_ref 129538 // \ContentColl
+      end
+
+      operation 136962 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+
+      operation 137090 "customSelect"
+	protected explicit_return_type "\\Zend_Db_Select"
+	nparams 2
+	  param inout name "select" explicit_type "\\Zend_Db_Select"
+	  param inout name "criteria" explicit_type "array"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}, array ${p1}${v1}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Customizes the select statement
+@param ${t0} ${p0}
+@param ${t1} ${p1} Filtering criteria
+@return ${type}
+"
+      end
+    end
+  end
+
+  package_ref 128514 // attribute
+
+  package_ref 128770 // form
+end

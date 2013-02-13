@@ -1,0 +1,8 @@
+class ProvinceColl
+!!!143874.php!!!	__construct()
+        parent::__construct(new Province());
+!!!144002.php!!!	setForest(inout forest : \forest\Forest)
+        $this->forest = $forest;
+!!!144130.php!!!	customSelect(inout select : \Zend_Db_Select, inout criteria : array) : \Zend_Db_Select
+        $select->order('descriz');
+        return $select;

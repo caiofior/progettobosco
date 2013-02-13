@@ -1,0 +1,13 @@
+class NoteA
+!!!142210.php!!!	__construct()
+        parent::__construct('note_a');
+!!!142338.php!!!	update()
+        if (!key_exists('objectid', $this->data)) 
+            throw new Exception('Unable to update object without objectid',1302061037);
+        $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
+        $this->table->update($this->data, $where);
+!!!142466.php!!!	delete()
+        if (key_exists('objectid', $this->data)) {
+            $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
+            $this->table->delete($where);
+        }

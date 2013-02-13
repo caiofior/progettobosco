@@ -1,0 +1,11 @@
+class Structure
+!!!144770.php!!!	__construct()
+        parent::__construct('struttu');
+!!!144898.php!!!	loadFromCode(inout code : string)
+        if ($code == '')
+            return;
+        $where = $this->table->getAdapter()->quoteInto('codice = ?', $code);
+        $data = $this->table->fetchRow($where);
+        if (is_null($data))
+            throw new \Exception('Unable to find the structure',1302111415);
+        $this->data = $data->toArray();

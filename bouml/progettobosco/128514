@@ -1,0 +1,2718 @@
+format 74
+"attribute" // pb::forest::attribute
+  revision 1
+  modified_by 2 "caiofior"
+  // class settings
+  //class diagram settings
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  //use case diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default class_drawing_mode default shadow default show_stereotype_properties default
+  //sequence diagram settings
+  show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+  //collaboration diagram settings
+  show_full_operations_definition default show_hierarchical_rank default write_horizontally default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+  //object diagram settings
+   write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+  //component diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //deployment diagram settings
+  package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //state diagram settings
+  package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+  show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+  //activity diagram settings
+  package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+  show_infonote default drawing_language default show_stereotype_properties default
+  
+  deploymentview 128386 "attribute"
+    //deployment diagram settings
+    package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+    draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+    artifact 129794 "arboreal"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Arboreal attribute
+ * 
+ * Manages Arboreal attribute
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest\\attribute;
+if (!class_exists('Content')) {
+    $file = 'attribute'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 129922 // Arboreal
+      end
+    end
+
+    artifact 129922 "arborealcoll"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Arboreal collection
+ * 
+ * Manages Arboreal collection
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest\\attribute;
+if (!class_exists('Content')) {
+    $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 130050 // ArborealColl
+      end
+    end
+
+    artifact 130050 "cadastral"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Cadastral attribute
+ * 
+ * Manages Cadastral attribute
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest\\attribute;
+if (!class_exists('Content')) {
+    $file = 'attribute'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 130178 // Cadastral
+      end
+    end
+
+    artifact 130178 "cadastralcoll"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Cadastral collection
+ * 
+ * Manages Cadastral collection
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest\\attribute;
+if (!class_exists('Content')) {
+    $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 130306 // CadastralColl
+      end
+    end
+
+    artifact 130306 "collector"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Data collector attribute
+ * 
+ * Manages Data collector attribute
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest\\attribute;
+if (!class_exists('Content')) {
+    $file = 'attribute'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 130434 // Collector
+      end
+    end
+
+    artifact 130434 "collectorcoll"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Data collector collection
+ * 
+ * Manages Data collector collection
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest\\attribute;
+if (!class_exists('Content')) {
+    $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 130690 // CollectorColl
+      end
+    end
+
+    artifact 130562 "forestcovercomposition"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Forest Cover Composition attribute
+ * 
+ * Manages Forest Cover Composition attribute
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest\\attribute;
+if (!class_exists('Content')) {
+    $file = 'attribute'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 130946 // ForestCoverComposition
+      end
+    end
+
+    artifact 130690 "forestcovercompositioncoll"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Forest Cover Composition collection
+ * 
+ * Manages Forest Cover Composition collection
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest\\attribute;
+if (!class_exists('Content')) {
+    $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 131202 // ForestCoverCompositionColl
+      end
+    end
+
+    artifact 130818 "foresttype"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Forest Type attribute
+ * 
+ * Manages Forest Type attribute
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest\\attribute;
+if (!class_exists('Content')) {
+    $file = 'attribute'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 131330 // ForestType
+      end
+    end
+
+    artifact 130946 "foresttypecoll"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Forest Type collection
+ * 
+ * Manages Forest Type collection
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest\\attribute;
+if (!class_exists('Content')) {
+    $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 131458 // ForestTypeColl
+      end
+    end
+
+    artifact 131074 "municipality"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Municipality attribute
+ * 
+ * Manages Municipality attribute
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest\\attribute;
+if (!class_exists('Content')) {
+    $file = 'attribute'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 131586 // Municipality
+      end
+    end
+
+    artifact 131202 "municipalitycoll"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Municipality collection
+ * 
+ * Manages Municipality collection
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest\\attribute;
+if (!class_exists('Content')) {
+    $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 131714 // MunicipalityColl
+      end
+    end
+
+    artifact 131330 "notea"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Note attribute
+ * 
+ * Manages Note attribute
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest\\attribute;
+if (!class_exists('Content')) {
+    $file = 'attribute'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 131842 // NoteA
+      end
+    end
+
+    artifact 131458 "noteacoll"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Note collection
+ * 
+ * Manages Note collection
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest\\attribute;
+if (!class_exists('Content')) {
+    $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 131970 // NoteAColl
+      end
+    end
+
+    artifact 131586 "notetemplate"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Note attribute
+ * 
+ * Manages Note attribute
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest\\attribute;
+if (!class_exists('Content')) {
+    $file = 'attribute'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 132098 // NoteTemplate
+      end
+    end
+
+    artifact 131714 "notetemplatecoll"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Note collection
+ * 
+ * Manages Note collection
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest\\attribute;
+if (!class_exists('Content')) {
+    $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 132226 // NoteTemplateColl
+      end
+    end
+
+    artifact 131842 "province"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Province attribute
+ * 
+ * Manages Province attribute
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest\\attribute;
+if (!class_exists('Content')) {
+    $file = 'attribute'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 132354 // Province
+      end
+    end
+
+    artifact 131970 "provincecoll"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Province collection
+ * 
+ * Manages Province collection
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest\\attribute;
+if (!class_exists('Content')) {
+    $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 132482 // ProvinceColl
+      end
+    end
+
+    artifact 132098 "soiluse"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Soil use attribute
+ * 
+ * Manages Soil use attribute
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest\\attribute;
+if (!class_exists('Content')) {
+    $file = 'attribute'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 132610 // SoilUse
+      end
+    end
+
+    artifact 132226 "soilusecoll"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Soil use attribute collection
+ * 
+ * Manages Soil use attribute collection
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest\\attribute;
+if (!class_exists('Content')) {
+    $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 132738 // SoilUseColl
+      end
+    end
+
+    artifact 132354 "structure"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Structure attribute
+ * 
+ * Manages Structure attribute
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest\\attribute;
+if (!class_exists('Content')) {
+    $file = 'attribute'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 132866 // Structure
+      end
+    end
+
+    artifact 132482 "structurecoll"
+      stereotype "source"
+      php_src "<?php
+/**
+ * Manages Stucture collection
+ * 
+ * Manages Stucture collection
+ * 
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
+ */
+namespace forest\\attribute;
+if (!class_exists('Content')) {
+    $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
+    $PHPUNIT=true;
+    require (__DIR__.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'..'.
+                DIRECTORY_SEPARATOR.'include'.
+                DIRECTORY_SEPARATOR.'pageboot.php');
+}
+
+${definition}
+
+"
+      associated_classes
+	class_ref 132994 // StructureColl
+      end
+    end
+  end
+
+  classview 128386 "attribute"
+    //class diagram settings
+    draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+    //collaboration diagram settings
+    show_full_operations_definition default show_hierarchical_rank default write_horizontally default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+    //object diagram settings
+     write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+    //sequence diagram settings
+    show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+    //state diagram settings
+    package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+    show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+    //class settings
+    //activity diagram settings
+    package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+    show_infonote default drawing_language default show_stereotype_properties default
+    class 129922 "Arboreal"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Arboreal attribute
+
+Manages Arboreal attribute
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 129154 // <generalisation>
+	relation 129154 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 129154 // <generalisation>
+	  b parent class_ref 129282 // \Content
+      end
+
+      operation 137218 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+
+      operation 137346 "update"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Updates data
+"
+      end
+
+      operation 137474 "delete"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Deletes data
+"
+      end
+    end
+
+    class 130050 "ArborealColl"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Arboreal collection
+
+Manages Arboreal collection
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 129282 // <generalisation>
+	relation 129282 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 129282 // <generalisation>
+	  b parent class_ref 129538 // \ContentColl
+      end
+
+      operation 137602 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+
+      operation 137730 "customSelect"
+	protected explicit_return_type "\\Zend_Db_Select"
+	nparams 2
+	  param inout name "select" explicit_type "\\Zend_Db_Select"
+	  param inout name "criteria" explicit_type "array"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}, array ${p1}${v1}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Customizes the select statement
+@param ${t0} ${p0}
+@param ${t1} ${p1} Filtering criteria
+@return ${type}
+"
+      end
+    end
+
+    class 130178 "Cadastral"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Cadastral attribute
+
+Manages Cadastral attribute
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 129410 // <generalisation>
+	relation 129410 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 129410 // <generalisation>
+	  b parent class_ref 129282 // \Content
+      end
+
+      operation 137858 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+
+      operation 137986 "update"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Updates data
+"
+      end
+
+      operation 138114 "delete"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Deletes data
+"
+      end
+    end
+
+    class 130306 "CadastralColl"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Cadastral collection
+
+Manages Cadastral collection
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 129538 // <generalisation>
+	relation 129538 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 129538 // <generalisation>
+	  b parent class_ref 129538 // \ContentColl
+      end
+
+      attribute 130690 "form_a"
+	protected explicit_type "\\forest\\form\\A"
+	init_value "null"
+	cpp_decl ""
+	java_decl ""
+	php_decl "  ${comment}${visibility}${const}${static}${var}${name}${value};
+"
+	python_decl ""
+	idl_decl ""
+	comment "
+Forest Reference
+@var ${type} 
+"
+      end
+
+      operation 138242 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+
+      operation 138370 "setForm"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "form" explicit_type "\\forest\\form\\A"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Sets the form reference
+@param ${t0} ${p0} Form a
+"
+      end
+
+      operation 138498 "customSelect"
+	protected explicit_return_type "\\Zend_Db_Select"
+	nparams 2
+	  param inout name "select" explicit_type "\\Zend_Db_Select"
+	  param inout name "criteria" explicit_type "array"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}, array ${p1}${v1}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Customizes the select statement
+@param ${t0} ${p0}
+@param ${t1} ${p1} Filtering criteria
+@return ${type}
+"
+      end
+
+      operation 138626 "countAll"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "criteria" explicit_type "array"
+	    defaultvalue "null"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}array ${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Returns all contents without any filter
+@param ${t0} ${p0} Filtering criteria
+"
+      end
+
+      operation 138754 "addItem"
+	public explicit_return_type "Cadastral"
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Adds new cadastra to form a
+@return ${type}
+"
+      end
+
+      operation 138882 "getSummary"
+	public explicit_return_type "array"
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Returns a cummary of cadastral data
+@return ${type}
+"
+      end
+    end
+
+    class 130434 "Collector"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Data collector attribute
+
+Manages Data collector attribute
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 129666 // <generalisation>
+	relation 129666 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 129666 // <generalisation>
+	  b parent class_ref 129282 // \Content
+      end
+
+      classrelation 129794 // <realization>
+	relation 129794 -_-|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 129794 // <realization>
+	  b parent class_ref 130562 // template\Attribute
+      end
+
+      operation 139010 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+    end
+
+    class 130690 "CollectorColl"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Data collector collection
+
+Manages Data collector collection
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 129922 // <generalisation>
+	relation 129922 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 129922 // <generalisation>
+	  b parent class_ref 129538 // \ContentColl
+      end
+
+      classrelation 130050 // <realization>
+	relation 130050 -_-|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 130050 // <realization>
+	  b parent class_ref 130818 // template\AttributeColl
+      end
+
+      attribute 130818 "forest"
+	protected explicit_type "\\forest\\Forest"
+	cpp_decl ""
+	java_decl ""
+	php_decl "  ${comment}${visibility}${const}${static}${var}${name}${value};
+"
+	python_decl ""
+	idl_decl ""
+	comment "
+Forest Reference
+@var ${type} 
+"
+      end
+
+      operation 139138 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+
+      operation 139266 "setForest"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "forest" explicit_type "\\forest\\Forest"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Sets the forest reference
+@param ${t0} ${p0}
+"
+      end
+
+      operation 139394 "customSelect"
+	protected explicit_return_type "\\Zend_Db_Select"
+	nparams 2
+	  param inout name "select" explicit_type "\\Zend_Db_Select"
+	  param inout name "criteria" explicit_type "array"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}, array ${p1}${v1}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Customizes the select statement
+@param ${t0} ${p0}
+@param ${t1} ${p1} Filtering criteria
+@return ${type}
+"
+      end
+    end
+
+    class 130946 "ForestCoverComposition"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Forest Cover Composition attribute
+
+Manages Forest Cover Composition attribute
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 130178 // <generalisation>
+	relation 130178 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 130178 // <generalisation>
+	  b parent class_ref 131074 // \forest\form\template\Form
+      end
+
+      operation 139522 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+
+      operation 139650 "loadFromId"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "id" explicit_type "integer"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Loads form a data
+@param ${t0} ${p0}
+"
+      end
+
+      operation 139778 "update"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Updates data
+"
+      end
+
+      operation 139906 "delete"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Deletes data
+"
+      end
+
+      operation 140034 "getControl"
+	public explicit_return_type "boolean"
+	nparams 1
+	  param inout name "attribute" explicit_type "string"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Returns the associated control
+@param ${t0} ${p0}
+@return ${type}
+"
+      end
+    end
+
+    class 131202 "ForestCoverCompositionColl"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Forest Cover Composition collection
+
+Manages Forest Cover Composition collection
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 130306 // <generalisation>
+	relation 130306 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 130306 // <generalisation>
+	  b parent class_ref 129538 // \ContentColl
+      end
+
+      attribute 130946 "form_b1"
+	protected explicit_type "\\forest\\form\\B1"
+	init_value "null"
+	cpp_decl ""
+	java_decl ""
+	php_decl "  ${comment}${visibility}${const}${static}${var}${name}${value};
+"
+	python_decl ""
+	idl_decl ""
+	comment "
+Forest Reference
+@var ${type}
+"
+      end
+
+      operation 140162 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+
+      operation 140290 "setForm"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "form" explicit_type "\\forest\\form\\B1"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Sets the form reference
+@param ${t0} ${p0} Form b1
+"
+      end
+
+      operation 140418 "customSelect"
+	protected explicit_return_type "\\Zend_Db_Select"
+	nparams 2
+	  param inout name "select" explicit_type "\\Zend_Db_Select"
+	  param inout name "criteria" explicit_type "array"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}, array ${p1}${v1}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Customizes the select statement
+@param ${t0} ${p0}
+@param ${t1} ${p1} Filtering criteria
+@return ${type}
+"
+      end
+
+      operation 140546 "countAll"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "criteria" explicit_type "array"
+	    defaultvalue "null"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}array ${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Returns all contents without any filter
+@param ${t0} ${p0} Filtering criteria
+"
+      end
+
+      operation 140674 "addItem"
+	public explicit_return_type "ForestCoverComposition"
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Adds new forest composition 
+@return ${type}
+"
+      end
+    end
+
+    class 131330 "ForestType"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Forest Type attribute
+
+Manages Forest Type attribute
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 130434 // <generalisation>
+	relation 130434 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 130434 // <generalisation>
+	  b parent class_ref 129282 // \Content
+      end
+
+      classrelation 130562 // <realization>
+	relation 130562 -_-|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 130562 // <realization>
+	  b parent class_ref 130562 // template\Attribute
+      end
+
+      operation 140802 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+
+      operation 140930 "loadFromCode"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "code" explicit_type "string"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Load data from code
+@param ${t0} ${p0} Forest type code
+"
+      end
+    end
+
+    class 131458 "ForestTypeColl"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Forest Type collection
+
+Manages Forest Type collection
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 130690 // <generalisation>
+	relation 130690 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 130690 // <generalisation>
+	  b parent class_ref 129538 // \ContentColl
+      end
+
+      classrelation 130818 // <realization>
+	relation 130818 -_-|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 130818 // <realization>
+	  b parent class_ref 130818 // template\AttributeColl
+      end
+
+      attribute 131074 "forest"
+	protected explicit_type "\\forest\\Forest"
+	cpp_decl ""
+	java_decl ""
+	php_decl "  ${comment}${visibility}${const}${static}${var}${name}${value};
+"
+	python_decl ""
+	idl_decl ""
+	comment "
+Forest Reference
+@var ${type} 
+"
+      end
+
+      operation 141058 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+
+      operation 141186 "setForest"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "forest" explicit_type "\\forest\\Forest"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Sets the forest reference
+@param ${t0} ${p0}
+"
+      end
+
+      operation 141314 "customSelect"
+	protected explicit_return_type "\\Zend_Db_Select"
+	nparams 2
+	  param inout name "select" explicit_type "\\Zend_Db_Select"
+	  param inout name "criteria" explicit_type "array"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}, array ${p1}${v1}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Customizes the select statement
+@param ${t0} ${p0}
+@param ${t1} ${p1} Filtering criteria
+@return ${type}
+"
+      end
+    end
+
+    class 131586 "Municipality"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Municipality attribute
+
+Manages Municipality attribute
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 130946 // <generalisation>
+	relation 130946 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 130946 // <generalisation>
+	  b parent class_ref 129282 // \Content
+      end
+
+      classrelation 131074 // <realization>
+	relation 131074 -_-|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 131074 // <realization>
+	  b parent class_ref 130562 // template\Attribute
+      end
+
+      operation 141442 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+
+      operation 141570 "loadFromCode"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "code" explicit_type "string"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Load data from code
+@param ${t0} ${p0} Municipality code
+"
+      end
+
+      operation 141698 "calculatedVariables"
+	private explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Sets the calculated values
+"
+      end
+    end
+
+    class 131714 "MunicipalityColl"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Municipality collection
+
+Manages Municipality collection
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 131202 // <generalisation>
+	relation 131202 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 131202 // <generalisation>
+	  b parent class_ref 129538 // \ContentColl
+      end
+
+      classrelation 131330 // <realization>
+	relation 131330 -_-|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 131330 // <realization>
+	  b parent class_ref 130818 // template\AttributeColl
+      end
+
+      attribute 131202 "forest"
+	protected explicit_type "\\forest\\Forest"
+	cpp_decl ""
+	java_decl ""
+	php_decl "  ${comment}${visibility}${const}${static}${var}${name}${value};
+"
+	python_decl ""
+	idl_decl ""
+	comment "
+Forest Reference
+@var ${type} 
+"
+      end
+
+      operation 141826 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+
+      operation 141954 "setForest"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "forest" explicit_type "\\forest\\Forest"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Sets the forest reference
+@param ${t0} ${p0}
+"
+      end
+
+      operation 142082 "customSelect"
+	protected explicit_return_type "\\Zend_Db_Select"
+	nparams 2
+	  param inout name "select" explicit_type "\\Zend_Db_Select"
+	  param inout name "criteria" explicit_type "array"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}, array ${p1}${v1}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Customizes the select statement
+@param ${t0} ${p0}
+@param ${t1} ${p1} Filtering criteria
+@return ${type}
+"
+      end
+    end
+
+    class 131842 "NoteA"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Note attribute
+
+Manages Note attribute
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 131458 // <generalisation>
+	relation 131458 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 131458 // <generalisation>
+	  b parent class_ref 129282 // \Content
+      end
+
+      operation 142210 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+
+      operation 142338 "update"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Updates data
+"
+      end
+
+      operation 142466 "delete"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Deletes data
+"
+      end
+    end
+
+    class 131970 "NoteAColl"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Note collection
+
+Manages Note collection
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 131586 // <generalisation>
+	relation 131586 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 131586 // <generalisation>
+	  b parent class_ref 129538 // \ContentColl
+      end
+
+      attribute 131330 "form_a"
+	protected explicit_type "\\forest\\Forest"
+	init_value "null"
+	cpp_decl ""
+	java_decl ""
+	php_decl "  ${comment}${visibility}${const}${static}${var}${name}${value};
+"
+	python_decl ""
+	idl_decl ""
+	comment "
+Forest Reference
+@var ${type} 
+"
+      end
+
+      operation 142594 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+
+      operation 142722 "setForm"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "form" explicit_type "\\forest\\form\\A"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Sets the form reference
+@param ${t0} ${p0}
+"
+      end
+
+      operation 142850 "customSelect"
+	protected explicit_return_type "\\Zend_Db_Select"
+	nparams 2
+	  param inout name "select" explicit_type "\\Zend_Db_Select"
+	  param inout name "criteria" explicit_type "array"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}, array ${p1}${v1}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Customizes the select statement
+@param ${t0} ${p0}
+@param ${t1} ${p1} Filtering criteria
+@return ${type}
+"
+      end
+
+      operation 142978 "countAll"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "criteria" explicit_type "array"
+	    defaultvalue "null"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}array ${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Returns all contents without any filter
+@param ${t0} ${p0} Filtering criteria
+"
+      end
+
+      operation 143106 "addItem"
+	public explicit_return_type "NoteA"
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Adds new note to form a
+@return ${type}
+"
+      end
+    end
+
+    class 132098 "NoteTemplate"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Note attribute
+
+Manages Note attribute
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 131714 // <generalisation>
+	relation 131714 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 131714 // <generalisation>
+	  b parent class_ref 129282 // \Content
+      end
+
+      operation 143234 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+    end
+
+    class 132226 "NoteTemplateColl"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Note collection
+
+Manages Note collection
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 131842 // <generalisation>
+	relation 131842 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 131842 // <generalisation>
+	  b parent class_ref 129538 // \ContentColl
+      end
+
+      operation 143362 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+
+      operation 143490 "customSelect"
+	protected explicit_return_type "\\Zend_Db_Select"
+	nparams 2
+	  param inout name "select" explicit_type "\\Zend_Db_Select"
+	  param inout name "criteria" explicit_type "array"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}, array ${p1}${v1}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Customizes the select statement
+@param ${t0} ${p0}
+@param ${t1} ${p1} Filtering criteria
+@return ${type}
+"
+      end
+    end
+
+    class 132354 "Province"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Province attribute
+
+Manages Province attribute
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 131970 // <generalisation>
+	relation 131970 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 131970 // <generalisation>
+	  b parent class_ref 129282 // \Content
+      end
+
+      classrelation 132098 // <realization>
+	relation 132098 -_-|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 132098 // <realization>
+	  b parent class_ref 130562 // template\Attribute
+      end
+
+      operation 143618 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+
+      operation 143746 "loadFromCode"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "code" explicit_type "string"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Load data from code
+@param ${t0} ${p0} Province code
+"
+      end
+    end
+
+    class 132482 "ProvinceColl"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Province collection
+
+Manages Province collection
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 132226 // <generalisation>
+	relation 132226 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 132226 // <generalisation>
+	  b parent class_ref 129538 // \ContentColl
+      end
+
+      classrelation 132354 // <realization>
+	relation 132354 -_-|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 132354 // <realization>
+	  b parent class_ref 130818 // template\AttributeColl
+      end
+
+      attribute 131458 "forest"
+	protected explicit_type "\\forest\\Forest"
+	cpp_decl ""
+	java_decl ""
+	php_decl "  ${comment}${visibility}${const}${static}${var}${name}${value};
+"
+	python_decl ""
+	idl_decl ""
+	comment "
+Forest Reference
+@var ${type} 
+"
+      end
+
+      operation 143874 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+
+      operation 144002 "setForest"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "forest" explicit_type "\\forest\\Forest"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Sets the forest reference
+@param ${t0} ${p0}
+"
+      end
+
+      operation 144130 "customSelect"
+	protected explicit_return_type "\\Zend_Db_Select"
+	nparams 2
+	  param inout name "select" explicit_type "\\Zend_Db_Select"
+	  param inout name "criteria" explicit_type "array"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}, array ${p1}${v1}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Customizes the select statement
+@param ${t0} ${p0}
+@param ${t1} ${p1} Filtering criteria
+@return ${type}
+"
+      end
+    end
+
+    class 132610 "SoilUse"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Soil use attribute
+
+Manages Soil use attribute
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 132482 // <generalisation>
+	relation 132482 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 132482 // <generalisation>
+	  b parent class_ref 129282 // \Content
+      end
+
+      classrelation 132610 // <realization>
+	relation 132610 -_-|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 132610 // <realization>
+	  b parent class_ref 130562 // template\Attribute
+      end
+
+      operation 144258 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+    end
+
+    class 132738 "SoilUseColl"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Soil use attribute collection
+
+Manages Soil use attribute collection
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 132738 // <generalisation>
+	relation 132738 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 132738 // <generalisation>
+	  b parent class_ref 129538 // \ContentColl
+      end
+
+      classrelation 132866 // <realization>
+	relation 132866 -_-|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 132866 // <realization>
+	  b parent class_ref 130818 // template\AttributeColl
+      end
+
+      attribute 131586 "forest"
+	protected explicit_type "\\forest\\Forest"
+	cpp_decl ""
+	java_decl ""
+	php_decl "  ${comment}${visibility}${const}${static}${var}${name}${value};
+"
+	python_decl ""
+	idl_decl ""
+	comment "
+Forest Reference
+@var ${type} 
+"
+      end
+
+      operation 144386 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+
+      operation 144514 "setForest"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "forest" explicit_type "\\forest\\Forest"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Sets the forest reference
+@param ${t0} ${p0}
+"
+      end
+
+      operation 144642 "customSelect"
+	protected explicit_return_type "\\Zend_Db_Select"
+	nparams 2
+	  param inout name "select" explicit_type "\\Zend_Db_Select"
+	  param inout name "criteria" explicit_type "array"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}, array ${p1}${v1}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Customizes the select statement
+@param ${t0} ${p0}
+@param ${t1} ${p1} Filtering criteria
+@return ${type}
+"
+      end
+    end
+
+    class 132866 "Structure"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Structure attribute
+
+Manages Structure attribute
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 132994 // <generalisation>
+	relation 132994 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 132994 // <generalisation>
+	  b parent class_ref 129282 // \Content
+      end
+
+      classrelation 133122 // <realization>
+	relation 133122 -_-|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 133122 // <realization>
+	  b parent class_ref 130562 // template\Attribute
+      end
+
+      operation 144770 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+
+      operation 144898 "loadFromCode"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "code" explicit_type "string"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Load data from code
+@param ${t0} ${p0} Structure code
+"
+      end
+    end
+
+    class 132994 "StructureColl"
+      visibility package 
+      cpp_decl ""
+      java_decl ""
+      php_decl "${comment}${final}${visibility}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "
+Manages Stucture collection
+
+Manages Stucture collection
+
+@author Claudio Fior <caiofior@gmail.com>
+@copyright CRA
+"
+      classrelation 133250 // <generalisation>
+	relation 133250 ---|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 133250 // <generalisation>
+	  b parent class_ref 129538 // \ContentColl
+      end
+
+      classrelation 133378 // <realization>
+	relation 133378 -_-|>
+	  a public
+	    php "${type}"
+	    classrelation_ref 133378 // <realization>
+	  b parent class_ref 130818 // template\AttributeColl
+      end
+
+      attribute 131714 "forest"
+	protected explicit_type "\\forest\\Forest"
+	cpp_decl ""
+	java_decl ""
+	php_decl "  ${comment}${visibility}${const}${static}${var}${name}${value};
+"
+	python_decl ""
+	idl_decl ""
+	comment "
+Forest Reference
+@var ${type} 
+"
+      end
+
+      operation 145026 "__construct"
+	public explicit_return_type ""
+	nparams 0
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${visibility}function ${name}${(}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Instantiates the table
+"
+      end
+
+      operation 145154 "setForest"
+	public explicit_return_type ""
+	nparams 1
+	  param inout name "forest" explicit_type "\\forest\\Forest"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Sets the forest reference
+@param ${t0} ${p0}
+"
+      end
+
+      operation 145282 "customSelect"
+	protected explicit_return_type "\\Zend_Db_Select"
+	nparams 2
+	  param inout name "select" explicit_type "\\Zend_Db_Select"
+	  param inout name "criteria" explicit_type "array"
+	
+	
+	preserve_php_body_indent php_def "  ${comment}${final}${visibility}${abstract}${static}function ${name}${(}${t0} ${p0}${v0}, array ${p1}${v1}${)}
+{
+  ${body}}
+"
+	
+	
+	comment "
+Customizes the select statement
+@param ${t0} ${p0}
+@param ${t1} ${p1} Filtering criteria
+@return ${type}
+"
+      end
+    end
+  end
+
+  package_ref 128642 // template
+end

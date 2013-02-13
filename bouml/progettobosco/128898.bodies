@@ -1,0 +1,93 @@
+class User
+!!!132098.php!!!	__construct()
+        parent::__construct('user');
+        $this->empty_entity['password_new']=null;
+!!!132226.php!!!	loadFromId(inout id : int)
+        $where = $this->table->getAdapter()->quoteInto('id = ?', $id); 
+        $updated = $this->table->update(array('lastlogin_datetime'=>'NOW()'), $where);
+        if ($updated <> 1)
+            throw new Exception('User not found',1301130904);
+        parent::loadFromId($id);
+!!!132354.php!!!	loadFromUsername(inout username : string)
+        $where = $this->table->getAdapter()->quoteInto('username = ?', $username); 
+        $updated = $this->table->update(array('lastlogin_datetime'=>'NOW()'), $where);
+        if ($updated <> 1)
+            throw new Exception('User not found',1301130908);
+        $this->data = $this->table->fetchRow($where)->toArray();
+!!!132482.php!!!	loadFromConformationCode(inout confirmation_code : string)
+        $where = $this->table->getAdapter()->quoteInto('confirmation_code = ?', $confirmation_code); 
+        $updated = $this->table->update(array('lastlogin_datetime'=>'NOW()'), $where);
+        if ($updated <> 1)
+            throw new Exception('User not found',1301130908);
+        $this->data = $this->table->fetchRow($where)->toArray();
+!!!132610.php!!!	insert()
+        if (!key_exists('username', $this->data) || $this->data['username'] == '')
+          throw new Exception ('username is required ',130113906);
+        if (!key_exists('password_new', $this->data) || $this->data['password_new'] == '')
+          throw new Exception ('password_new is required ',130113907);
+        $rows = $this->table->fetchAll($this->table->select()->where('username = ?', $this->data['username']));
+        if (sizeof($rows) <> 0)
+            throw new Exception ('User with username '.$this->data['username'].' already present',130113905);
+        $this->data['password']=md5($this->data['password_new']);
+        unset($this->data['password_new']);
+        $this->data['confirmation_code']=md5(serialize($GLOBALS));
+        $this->data['creation_datetime']='NOW()';
+        $profile = new Profile();
+        $profile->setData($this->data['username'],'email');
+        $profile->insert();
+        $this->data['profile_id']=$profile->getData('id');
+        parent::insert();
+!!!132738.php!!!	update()
+        $rows = $this->table->fetchAll($this->table->select()->where('username = ?', $this->data['username']));
+        if (sizeof($rows) <> 1)
+            throw new Exception ('User with username '.$this->data['username'].' not present',130113905);
+        if (key_exists('password_new', $this->data)) {
+            $this->data['password']=md5($this->data['password_new']);
+            unset($this->data['password_new']);
+        }
+        parent::update();
+!!!132866.php!!!	getProfile() : Profile
+        $profile = new Profile();
+        try{
+            $profile->loadFromId($this->data['id']);
+        } catch (Exception $e) {
+            $profile->insert();
+            $this->data['profile_id']=$profile->getData('id');
+            $this->update();
+        }
+        return $profile;
+!!!132994.php!!!	getAuthAdapter() : \Zend_Auth_Adapter_DbTable
+        return new Zend_Auth_Adapter_DbTable(
+    Zend_Db_Table::getDefaultAdapter(),
+    'user',
+    'username',
+    'password',
+    'MD5(?) AND "active" AND "confirmed"'
+);
+!!!133122.php!!!	checkPassword(inout new_password : string) : bool
+        return md5($new_password) != $this->data['password'];
+!!!133250.php!!!	generatePassword(inout n : int = null) : string
+        if (is_null($n))  $n = 6;
+        
+        $password = '';
+        for ($c  = 0; $c < 6 ; $c++)
+                $password .= ((rand(1,4) != 1) ? chr(rand(97, 122)) : rand(0, 9));
+        $this->data['password_new']=$password;
+        return $password;
+!!!133378.php!!!	setData(inout data : variant, inout field : string|null = null)
+       if (is_array($data) && key_exists('user_id', $data))
+               $data['id']=$data['user_id'];
+       parent::setData($data, $field);
+!!!133506.php!!!	getForestColl(inout filtered : bool = false) : \forest\ForestColl
+       $forestcoll = new \forest\ForestColl();
+       $forestcoll->setUserForests($this);
+       $forestcoll->setFilterByUser($filtered);
+       return $forestcoll;
+!!!133634.php!!!	isUserForestAdmin(inout forest : forest\Forest) : boolean
+       if ($this->data['is_admin'] == 't')
+           return true;
+       if (!is_array($forest->getRawData()) || !$forest->getRawData('write_users'))
+           return false;
+       return in_array($this->data['id'],$forest->getRawData('write_users'));
+!!!133762.php!!!	isAdmin() : bool
+       return $this->data['is_admin'] == 't';

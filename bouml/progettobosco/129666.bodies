@@ -1,0 +1,11 @@
+class Region
+!!!136578.php!!!	__construct()
+        parent::__construct('diz_regioni');
+!!!136706.php!!!	loadFromId(inout id : int)
+        parent::loadFromId($id);
+        if (is_null($this->data))
+            throw new \Exception('Unable to find the region',1301221541);
+!!!136834.php!!!	setData(inout data : variant, inout field : string|null = null)
+       if (is_array($data) && key_exists('regione_codice', $data))
+               $data['codice']=$data['regione_codice'];
+       parent::setData($data, $field);

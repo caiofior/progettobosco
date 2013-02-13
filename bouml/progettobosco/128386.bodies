@@ -1,0 +1,11 @@
+class Log
+!!!131074.php!!!	__construct()
+        parent::__construct('log');
+        $this->table->delete(self::CLEANUP_LOG);
+!!!131202.php!!!	loadFromId(inout id : int)
+        parent::loadFromId($id);
+        if (is_null($this->data))
+            throw new Exception('Unable to find the log',1301151428);
+!!!131330.php!!!	insert()
+        $this->data['creation_datetime']='NOW()';
+        parent::insert();

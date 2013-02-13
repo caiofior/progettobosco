@@ -1,0 +1,9 @@
+class Province
+!!!143618.php!!!	__construct()
+        parent::__construct('province');
+!!!143746.php!!!	loadFromCode(inout code : string)
+        $where = $this->table->getAdapter()->quoteInto('provincia = ?', $code);
+        $data = $this->table->fetchRow($where);
+        if (is_null($data))
+            throw new \Exception('Unable to find the province',1301301513);
+        $this->data = $data->toArray();

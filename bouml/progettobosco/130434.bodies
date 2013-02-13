@@ -1,0 +1,3 @@
+class Collector
+!!!139010.php!!!	__construct()
+        parent::__construct('rilevato');

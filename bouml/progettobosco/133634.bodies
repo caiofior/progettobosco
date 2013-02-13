@@ -1,0 +1,3 @@
+class Piu2_3
+!!!145922.php!!!	__construct()
+        parent::__construct('piu2_3');

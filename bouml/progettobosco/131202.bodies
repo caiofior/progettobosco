@@ -1,0 +1,46 @@
+class ForestCoverCompositionColl
+!!!140162.php!!!	__construct()
+        parent::__construct(new ForestCoverComposition());
+!!!140290.php!!!	setForm(inout form : \forest\form\B1)
+
+        $this->form_b1 = $form;
+!!!140418.php!!!	customSelect(inout select : \Zend_Db_Select, inout criteria : array) : \Zend_Db_Select
+        $select->setIntegrityCheck(false)
+        ->from('arboree',array(
+            '*',
+            'cod_colt_descriz'=>new \Zend_Db_Expr(
+                '( SELECT diz_arbo.nome_itali || \' | \' || diz_arbo.nome_scien FROM diz_arbo WHERE diz_arbo.cod_coltu=arboree.cod_coltu) '
+             ),
+            'cod_coper_descriz'=>new \Zend_Db_Expr(
+                '( SELECT per_arbo.descriz FROM per_arbo WHERE per_arbo.codice=arboree.cod_coper) '
+             )
+        ));
+        if ($this->form_b1 instanceof \forest\form\B1) {
+            $select->where(' cod_part = ? ',$this->form_b1->getData('cod_part'))
+            ->where(' proprieta = ? ',$this->form_b1->getData('proprieta'))
+            ->where(' cod_fo = ? ',$this->form_b1->getData('cod_fo'));
+            
+        }
+        if (key_exists('search', $criteria) && $criteria['search'] != '') {
+            $select->where(' particella LIKE ? OR foglio LIKE ?', '%'.$criteria['search'].'%');   
+        }
+        $select->order('ordine_inser')->order('cod_coltu');
+        return $select;
+!!!140546.php!!!	countAll(inout criteria : array = null)
+        if ($this->form_b1 instanceof \forest\form\B1) {
+            $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
+            $select->where(' cod_part = ? ',$this->form_b1->getData('cod_part'))
+            ->where(' proprieta = ? ',$this->form_b1->getData('proprieta'))
+            ->where(' cod_fo = ? ',$this->form_b1->getData('cod_fo'))
+            ;
+            return intval($this->content->getTable()->getAdapter()->fetchOne($select));
+        }
+        else 
+            parent::countAll();
+
+!!!140674.php!!!	addItem() : ForestCoverComposition
+        $forestcovercomposition = parent::addItem();
+        $forestcovercomposition->setData($this->form_b1->getData('cod_fo'),'cod_fo');
+        $forestcovercomposition->setData($this->form_b1->getData('cod_part'),'cod_part');
+        $forestcovercomposition->setData($this->form_b1->getData('proprieta'),'proprieta');
+        return $forestcovercomposition;

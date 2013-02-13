@@ -1,0 +1,36 @@
+class B
+!!!148482.php!!!	__construct()
+        parent::__construct('schede_b');
+!!!148610.php!!!	loadFromId(inout id : integer)
+        parent::loadFromId($id);
+        $this->calculatedVariables();
+!!!148738.php!!!	loadFromCodePart(inout proprieta : string, inout cod_part : string)
+        $where = $this->table->getAdapter()->quoteInto('proprieta = ?', $proprieta).' AND ';
+        $where .= $this->table->getAdapter()->quoteInto('cod_part = ?', $cod_part);
+        $data = $this->table->fetchRow($where);
+        if (is_null($data))
+            throw new \Exception('Unable to find the cod part',1302081202);
+        $this->data = $data->toArray();
+        $this->calculatedVariables();
+!!!148866.php!!!	calculatedVariables()
+       
+!!!148994.php!!!	update()
+        if (!key_exists('objectid', $this->data)) 
+            throw new Exception('Unable to update object without objectid',1301251130);
+        foreach($this->data as $key=>$value)
+            if ($value=='') $this->data[$key]=null;
+        $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
+        $this->table->update($this->data, $where);
+!!!149122.php!!!	delete()
+        if (key_exists('objectid', $this->data)) {
+            $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
+            $this->table->delete($where);
+        }
+!!!149250.php!!!	getB1Coll() : \forest\form\B1Coll
+        $b1coll = new \forest\form\B1Coll();
+        $b1coll->setFormB($this);
+        return $b1coll;
+!!!149378.php!!!	getForestType() : \forest\attribute\ForestType
+        $foresttype = new \forest\attribute\ForestType();
+        $foresttype->loadFromCode($this->data['t']);
+        return $foresttype;

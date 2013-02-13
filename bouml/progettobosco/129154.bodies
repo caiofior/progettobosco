@@ -1,0 +1,76 @@
+class Forest
+!!!134146.php!!!	__construct()
+        parent::__construct('propriet');
+!!!134274.php!!!	loadFromId(inout id : int)
+        $where = $this->table->getAdapter()->quoteInto('objectid = ?', $id);
+        $data = $this->table->fetchRow($where);
+        if (is_null($data))
+            throw new \Exception('Unable to find the forest',1301251115);
+        $this->data = $this->table->fetchRow($where)->toArray();
+        $this->addForestCompartmentCount();
+!!!134402.php!!!	loadFromCode(inout code : string)
+        $where = $this->table->getAdapter()->quoteInto('codice = ?', $code);
+        $data = $this->table->fetchRow($where);
+        if (is_null($data))
+            throw new \Exception('Unable to find the forest',1301251056);
+        $this->data = $data->toArray();
+        $this->addForestCompartmentCount();
+!!!134530.php!!!	setData(inout data : variant, inout field : string|null = null)
+       if (is_array($data) && key_exists('propriet_codice_raw', $data))
+               $data['codice']=$data['propriet_codice_raw'];
+       if (is_array($data) && key_exists('propriet_objectid_raw', $data))
+               $data['objectid']=$data['propriet_objectid_raw'];
+       parent::setData($data, $field);
+       if (key_exists('read_users', $this->rawData) && $this->rawData['read_users'] != '')
+           $this->rawData['read_users']= explode('|', $this->rawData['read_users']);
+       if (key_exists('write_users', $this->rawData) &&$this->rawData['write_users'] != '')
+           $this->rawData['write_users']= explode('|', $this->rawData['write_users']);
+!!!134658.php!!!	addOwner(inout user : \User, inout write : int = 0)
+    $table = new \Zend_Db_Table('user_propriet');
+    $this->removeOwner($user);
+    $data = array(
+        'user_id' => $user->getData('id'),
+        'propriet_codice' => $this->data['codice'],
+        'write' => $write
+    );
+    $table->insert($data);
+!!!134786.php!!!	removeOwner(inout user : \User)
+        $table = new \Zend_Db_Table('user_propriet');
+        $where = $table->getAdapter()->quoteInto('user_id = ?', $user->getData('id')).
+        $table->getAdapter()->quoteInto(' AND propriet_codice = ?', $this->data['codice']);
+        $table->delete($where); 
+!!!134914.php!!!	update()
+        if (!key_exists('objectid', $this->data)) 
+            throw new Exception('Unable to update object without objectid',1301251130);
+        $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
+        $this->table->update($this->data, $where);
+!!!135042.php!!!	delete()
+        if (key_exists('objectid', $this->data)) {
+            $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
+            $this->table->delete($where);
+        }
+!!!135170.php!!!	addForestCompartmentCount()
+        $select = $this->table->getAdapter()->select()->from('schede_a','COUNT(*)')->where('proprieta = ? ',$this->data['codice']);
+        $this->rawData['forest_compartment_cont']=intval($this->table->getAdapter()->fetchOne($select));
+!!!135298.php!!!	getForestCompartmentColl() : \forest\form\AColl
+        $acoll = new form\AColl();
+        $acoll->setForest($this);
+        return $acoll;
+!!!135426.php!!!	getAttributeColl(inout attributecoll : \forest\attribute\template\AttributeColl) : \forest\attribute\template\AttributeColl
+        $attributecoll->setForest($this);
+        return $attributecoll;
+!!!135554.php!!!	getControl(inout attribute : string) : boolean
+        if (!key_exists($this->table->info('name'),$this->all_attributes_data))
+                return false;
+        if (!key_exists($attribute, $this->all_attributes_data[$this->table->info('name')]))
+                return false;
+        $attribute = $this->all_attributes_data[$this->table->info('name')][$attribute];
+        if (key_exists('dizionario', $attribute)) {
+            $itemcoll = new \forest\form\control\Itemcoll( $attribute['dizionario']);
+            $itemcoll->loadAll();
+            return $itemcoll;
+        }
+!!!135682.php!!!	getRegion() : \forest\Region
+        $region = new \forest\Region();
+        $region->loadFromId($this->data['regione']);
+        return $region;

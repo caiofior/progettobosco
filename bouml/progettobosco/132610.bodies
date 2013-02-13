@@ -1,0 +1,3 @@
+class SoilUse
+!!!144258.php!!!	__construct()
+        parent::__construct('usosuolo');

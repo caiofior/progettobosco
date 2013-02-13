@@ -105,6 +105,11 @@ input[type='radio'] {
     top:490px;
     left: 164px; 
 }
+#spe_nov_container {
+    width: 150px;
+    top:1110px;
+    left: 600px; 
+}
 /**
 * M container
 */
@@ -184,11 +189,11 @@ input[type='radio'] {
     border-top-width: 1px;
     border-top-color: #000000;
 }
-#scrollcontrols span input{
+#arboreecontainer .scrollcontrols span input{
     display: inline;
     width: 50px;
 }
-#scrollcontrols img {
+#arboreecontainer .scrollcontrols img {
     margin-top: 5px;
     vertical-align:top;
 }
@@ -256,23 +261,23 @@ input[type='radio'] {
     top: -493px;
     left: 308px;
     width: 260px;
-    height: 150px;
+    height: 200px;
 }
-#newarboree {
-    top: 24px;
+#newarbustive {
+    top: 44px;
     left: 4px;
     width: 250px;
 }
-#content_schedab_arboree {
-    top: 74px;
+#content_schedab_arbustive {
+    top: 104px;
     left: 4px;
     width: 250px;
 }
-#content_schedab_arboree  div{
+#content_schedab_arbustive  div{
     position: relative;
     clear: both;
 }
-#content_schedab_arboree  div span{
+#content_schedab_arbustive  div span{
     float:left;
     width: 80px;
     text-align: center;
@@ -281,12 +286,12 @@ input[type='radio'] {
     border-top-width: 1px;
     border-top-color: #000000;
 }
-#newarboree  div{
+#newarbustive  div{
     position: relative;
     clear: both;
 }
 
-#newarboree div span{
+#newarbustive div span{
     float:left;
     width: 80px;
     text-align: center;
@@ -295,11 +300,128 @@ input[type='radio'] {
     border-top-width: 1px;
     border-top-color: #000000;
 }
-#scrollcontrols span input{
+#arbustivecontainer .scrollcontrols span input{
     display: inline;
     width: 50px;
 }
-#scrollcontrols img {
+#arbustivecontainer .scrollcontrols img {
     margin-top: 5px;
     vertical-align:top;
+}
+/**
+* SE container
+**/
+#secontainer {
+    top: -483px;
+    left: 4px;
+    width: 270px;
+}
+/**
+* Erbacee container
+*/
+#erbaceecontainer {
+    top: -543px;
+    left: 308px;
+    width: 260px;
+    height: 200px;
+}
+#newerbacee {
+    top: 44px;
+    left: 4px;
+    width: 250px;
+}
+#content_schedab_erbacee {
+    top: 104px;
+    left: 4px;
+    width: 250px;
+}
+#content_schedab_erbacee  div{
+    position: relative;
+    clear: both;
+}
+#content_schedab_erbacee  div span{
+    float:left;
+    width: 80px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#newerbacee  div{
+    position: relative;
+    clear: both;
+}
+
+#newerbacee div span{
+    float:left;
+    width: 80px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#erbaceecontainer .scrollcontrols span input{
+    display: inline;
+    width: 50px;
+}
+#erbaceecontainer .scrollcontrols img {
+    margin-top: 5px;
+    vertical-align:top;
+}
+/**
+* N1 container
+**/
+#n1container {
+    top: -523px;
+    left: 4px;
+    width: 200px;
+}
+#n1arrow_right {
+    top: -573px;
+    left: 225px;
+    width: 10px;
+    height: 43px;
+    border-style: none;
+    background: transparent url('../images/arrow-right.png') no-repeat;
+}
+/**
+* N2 container
+**/
+#n2container {
+    top: -630px;
+    left: 246px;
+    width: 140px;
+}
+#n2container input,.n2_descr {
+    float:left;      
+}
+.n2_descr {
+    display: block;
+    width: 50px;
+}
+/**
+* N3 container
+**/
+#n3container {
+    top: -696px;
+    left: 406px;
+    width: 140px;
+}
+#n3container input,.n3_descr {
+    float:left;      
+}
+.n3_descr {
+    display: block;
+    width: 50px;
+    word-break: break-all;
+}
+#n3arrow_right {
+    top: -756px;
+    left: 570px;
+    width: 10px;
+    height: 43px;
+    border-style: none;
+    background: transparent url('../images/arrow-right.png') no-repeat;
 }

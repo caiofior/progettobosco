@@ -1,0 +1,47 @@
+class Content
+!!!128002.php!!!	__construct(inout table : string = null)
+        if (is_null($table))
+            return;
+        $this->table = new Zend_Db_Table($table);
+        $cols = $this->table->info('cols');
+        $cols = array_combine($cols, array_fill ( 0 , sizeof($cols) , null ));
+        $this->empty_entity = $cols;
+!!!128130.php!!!	loadFromId(inout id : int)
+        $data = $this->table->find($id)->toArray();
+        $this->data = array_shift($data);
+!!!128258.php!!!	getData(inout field : null|sring = null) : array
+        if (!is_array($this->data))
+            return;
+        if (is_null($field))
+            return $this->data;
+        if (key_exists($field, $this->data))
+            return $this->data[$field];
+!!!128386.php!!!	getRawData(inout field : null|sring = null) : array
+        if (is_null($field))
+            return $this->rawData;
+        if (key_exists($field, $this->rawData))
+            return $this->rawData[$field];
+!!!128514.php!!!	setData(inout data : variant, inout field : string|null = null)
+        if (is_array($data)) {
+            $this->data = array_merge($this->data,  array_intersect_key($data,$this->empty_entity));
+            $this->rawData = array_merge($this->data, $data);
+         }
+        else if (!is_null($field) ) {
+            if (array_key_exists($field,$this->empty_entity))
+                $this->data[$field] = $data;
+            $this->rawData[$field] = $data;
+        }
+!!!128642.php!!!	insert()
+        $this->data['id']=$this->table->insert($this->data);
+!!!128770.php!!!	delete()
+        if (key_exists('id', $this->data)) {
+            $where = $this->table->getAdapter()->quoteInto('id = ?', $this->data['id']);
+            $this->table->delete($where);
+        }
+!!!128898.php!!!	update()
+        if (!key_exists('id', $this->data)) 
+            throw new Exception('Unable to update object without id',1301251051);
+        $where = $this->table->getAdapter()->quoteInto('id = ?', $this->data['id']);
+        $this->table->update($this->data, $where);
+!!!129026.php!!!	getTable() : Zend_Db_Table
+        return $this->table;

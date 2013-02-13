@@ -1,0 +1,13 @@
+class NoteTemplateColl
+!!!143362.php!!!	__construct()
+        parent::__construct(new NoteTemplate());
+!!!143490.php!!!	customSelect(inout select : \Zend_Db_Select, inout criteria : array) : \Zend_Db_Select
+        $select->setIntegrityCheck(false);
+        if (key_exists('search', $criteria) && $criteria['search'] != '') {
+            $select->where('intesta LIKE ?', '%'.$criteria['search'].'%');   
+        }
+        if (key_exists('archivio', $criteria) && $criteria['archivio'] != '') {
+            $select->where('archivio = ?', $criteria['archivio']);   
+        }
+        $select->order('intesta');
+        return $select;

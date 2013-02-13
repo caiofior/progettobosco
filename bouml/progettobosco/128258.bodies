@@ -1,0 +1,58 @@
+class FormErrors
+!!!130306.php!!!	addError(inout kind : int, inout name : string, inout message : string = null, inout sex : string = 'm')
+        if ($sex != 'f') $sex != 'm';
+        if (!key_exists($kind, $this->errors) || !is_array($this->errors[$kind])) $this->errors[$kind] = array();
+        $this->errors[$kind][]=array('name'=>$name,'message'=>$message,'sex'=>$sex);
+!!!130434.php!!!	count() : int
+        $count = 0;
+        foreach ($this->errors as $error_kind) {
+            $count += sizeof($error_kind);
+        }
+        return $count;
+!!!130562.php!!!	getMessages() : array[]
+        if ($this->count() == 0) return true;
+        $messages = array();
+        $names= array();
+        for ($c = 1; $c < 8; $c++) {
+            if (!key_exists($c,$this->errors) || !is_array($this->errors[$c])) continue;
+
+            if (sizeof($this->errors[$c]) == 1) $plu = 1;
+            else $plu = 2;
+            $sex = 'f';
+
+            $message = '';
+            foreach($this->errors[$c] as $prog=>$error_item) {
+                if ($prog == 0) $error_item['message'] = ucfirst ($error_item['message']);
+                $names[] =$error_item['name'];
+                $message .= $error_item['message'];
+                if (sizeof($this->errors[$c])-2 == $prog) $message.=' e ';
+                elseif (sizeof($this->errors[$c])-2 > $prog) $message.=', ';
+                if ($error_item['sex'] == 'm') $sex = 'm';
+            }
+            $messages[] = $message.$this->default_messages[$c][$plu][$sex].'.';
+        }
+        if (key_exists(0,$this->errors) && is_array($this->errors[0])) {
+            foreach($this->errors[0] as $error_item) {
+                $names[] =$error_item['name'];
+                if (!is_null($error_item['message']))
+                    $messages[] = $error_item['message'];
+            }
+        }
+        array_unique($names);
+        return array(
+                'names'=>$names,
+                'messages'=>$messages
+            );
+!!!130690.php!!!	getJsonError()
+        header('Content-type: application/json');
+        $response = $this->okMessage;
+        if ($this->count()>0)
+            $response = $this->getMessages();
+        echo Zend_Json::encode($response);
+        exit;
+!!!130818.php!!!	getHtmlError()
+        $messages = $this->getMessages();
+        if (is_array($messages))
+                foreach($messages['messages'] as $error_item) echo '<p>'.$error_item.'</p>';
+!!!130946.php!!!	setOkMessage(inout okmessage : variant)
+        $this->okMessage = $okmessage;

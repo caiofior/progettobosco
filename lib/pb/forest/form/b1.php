@@ -97,12 +97,39 @@ class B1 extends \forest\form\template\Form {
         return $structure;
     }
     /**
-     * Gets the associated Forest Cover Composition
+     * Gets the associated Forest Cover Composition Collection
      * @return \forest\attribute\ForestCoverCompositionColl
      */
     public function getForestCoverCompositionColl() {
-        $forestcovercomposition = new \forest\attribute\ForestCoverCompositionColl();
-        $forestcovercomposition->setForm($this);
-        return $forestcovercomposition;
+        $forestcovercompositioncoll = new \forest\attribute\ForestCoverCompositionColl();
+        $forestcovercompositioncoll->setForm($this);
+        return $forestcovercompositioncoll;
+    }
+     /**
+     * Gets the associated Shrub Composition Collection
+     * @return \forest\attribute\ShrubCompositionColl
+     */
+    public function getShrubCompositionColl() {
+        $shrubcoll = new \forest\attribute\ShrubCompositionColl();
+        $shrubcoll->setForm($this);
+        return $shrubcoll;
+    }
+     /**
+     * Gets the associated Herbaceus Composition Collection
+     * @return \forest\attribute\HerbaceusCompositionColl
+     */
+    public function getHerbaceusCompositionColl() {
+        $herbaceuscoll = new \forest\attribute\HerbaceusCompositionColl();
+        $herbaceuscoll->setForm($this);
+        return $herbaceuscoll;
+    }
+    /**
+     * Gets the assoiated rennovatio specie
+     * @return \forest\attribute\Arboreal
+     */
+    public function getRennovationSpecie() {
+        $rennovationspecie = new \forest\attribute\Arboreal();
+        $rennovationspecie->loadFromId($this->data['spe_nov']);
+        return $rennovationspecie;
     }
 } 

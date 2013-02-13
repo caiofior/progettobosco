@@ -46,7 +46,16 @@ class ArborealColl  extends \ContentColl  {
         if (key_exists('search', $criteria) && $criteria['search'] != '') {
             $select->where(' LOWER(nome_itali) LIKE LOWER(?) OR LOWER(nome_scien) LIKE LOWER(?) ', '%'.$criteria['search'].'%');   
         }
-        if (key_exists('b1_objectid', $criteria) && $criteria['b1_objectid'] != '') {
+        if (key_exists('b1_objectid', $criteria) && $criteria['b1_objectid'] != '' && key_exists('shrub', $criteria)) {
+            $select->where(new \Zend_Db_Expr(' NOT cod_coltu IN ( 
+                SELECT cod_coltu FROM arbusti 
+                    LEFT JOIN sched_b1 ON
+                    arbusti.proprieta=sched_b1.proprieta AND
+                    arbusti.cod_part=sched_b1.cod_part AND
+                    arbusti.cod_fo=sched_b1.cod_fo
+                WHERE sched_b1.objectid=\''.intval($criteria['b1_objectid']).'\'
+            )'));
+        } else if (key_exists('b1_objectid', $criteria) && $criteria['b1_objectid'] != '') {
             $select->where(new \Zend_Db_Expr(' NOT cod_coltu IN ( 
                 SELECT cod_coltu FROM arboree 
                     LEFT JOIN sched_b1 ON

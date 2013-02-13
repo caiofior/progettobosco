@@ -1,0 +1,54 @@
+class AColl
+!!!147842.php!!!	__construct()
+        parent::__construct(new A());
+!!!147970.php!!!	customSelect(inout select : \Zend_Db_Select, inout criteria : array) : \Zend_Db_Select
+        $select->setIntegrityCheck(false)
+        ->from('schede_a', array(
+            '*',
+            'usosuolo' =>new \Zend_Db_Expr('( SELECT usosuolo.descriz FROM usosuolo 
+            LEFT JOIN schede_b ON schede_b.u=usosuolo.codice
+            WHERE schede_b.proprieta=schede_a.proprieta AND schede_b.cod_part=schede_a.cod_part)'),
+            'rilevato' => new \Zend_Db_Expr(' (SELECT rilevato.descriz FROM rilevato
+             WHERE rilevato.codice=schede_a.codiope) ')
+            )
+        )
+        ;
+        if (key_exists('usosuolo', $criteria) && $criteria['usosuolo'] != '') {
+           $select->where(new \Zend_Db_Expr('(SELECT schede_b.u FROM schede_b  WHERE schede_b.proprieta=schede_a.proprieta AND schede_b.cod_part=schede_a.cod_part) = \''.$criteria['usosuolo'].'\''));
+        }
+        if (key_exists('codiope', $criteria) && $criteria['codiope'] != '') {
+            $select->where('schede_a.codiope = ? ',$criteria['codiope']);
+        }
+        if (key_exists('search', $criteria) && $criteria['search'] != '') {
+            $select->where('(schede_a.cod_part LIKE ? OR schede_a.toponimo  LIKE ? )','%'.$criteria['search'].'%');
+        }
+        if ($this->forest instanceof \forest\Forest) {
+            $select->where('schede_a.proprieta = ?', $this->forest->getData('codice'));
+        }
+        return $select;
+!!!148098.php!!!	setForest(inout forest : \forest\Forest)
+        $this->forest = $forest;
+!!!148226.php!!!	countAll(inout criteria : null|array = null)
+        if ($this->forest instanceof \forest\Forest || is_array($criteria)) {
+            $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
+             if (key_exists('usosuolo', $criteria) && $criteria['usosuolo'] != '') {
+                $select->where(new \Zend_Db_Expr('(SELECT schede_b.u FROM schede_b  WHERE schede_b.proprieta=schede_a.proprieta AND schede_b.cod_part=schede_a.cod_part) = \''.$criteria['usosuolo'].'\''));
+             }
+             if (key_exists('codiope', $criteria) && $criteria['codiope'] != '') {
+                 $select->where('schede_a.codiope = ? ',$criteria['codiope']);
+             }
+             if (key_exists('search', $criteria) && $criteria['search'] != '') {
+                 $select->where('(schede_a.cod_part LIKE ? OR schede_a.toponimo  LIKE ? )','%'.$criteria['search'].'%');
+             }
+             if ($this->forest instanceof \forest\Forest) {
+                 $select->where('schede_a.proprieta = ?', $this->forest->getData('codice'));
+             }
+            return intval($this->content->getTable()->getAdapter()->fetchOne($select));
+        }
+        else 
+            parent::countAll();
+
+!!!148354.php!!!	addItem() : \forest\form\A
+        $a = parent::addItem();
+        $a->setData($this->forest->getData('codice'),'proprieta');
+        return $a;

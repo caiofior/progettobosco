@@ -1,0 +1,5 @@
+class Piu1_3Coll
+!!!145666.php!!!	setForest(inout forest : \forest\Forest)
+        $this->forest = $forest;
+!!!145794.php!!!	customSelect(inout select : \Zend_Db_Select, inout criteria : array) : \Zend_Db_Select
+        return $select;

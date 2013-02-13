@@ -10,7 +10,7 @@
 <?php $this->renderBlock('HEADERS'); ?>
 <link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="css/two_col.css" />
-<link rel="stylesheet" type="text/css" media="screen" href="js/jquery-ui/css/smoothness/jquery-ui-1.9.2.custom.css"  />
+<link rel="stylesheet" type="text/css" media="screen" href="js/jquery-ui/css/smoothness/jquery-ui-1.10.0.custom.css"  />
 <?php echo (isset($GLOBALS['DEBUG']) && $GLOBALS['DEBUG'] ? '<script type="text/javascript" >var DEBUG=true;</script>' : '') ;?>
 </head>
 
@@ -47,8 +47,8 @@
 	</div>	
 <!-- /wrap -->
 </div> 
-        <script type="text/javascript" src="js/jquery-ui/js/jquery-1.8.3.js"></script>
-        <script type="text/javascript" src="js/jquery-ui/js/jquery-ui-1.9.2.custom.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui/js/jquery-1.9.0.js"></script>
+        <script type="text/javascript" src="js/jquery-ui/js/jquery-ui-1.10.0.custom.min.js"></script>
         <script type="text/javascript" src="js/general.js"></script>
         <?php $this->renderBlock('FOOTER'); ?>	
 

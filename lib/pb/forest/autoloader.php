@@ -53,6 +53,13 @@ if (!class_exists('Forest')) {
         'attribute'.DIRECTORY_SEPARATOR.'forestcovercompositioncoll.php',
         'attribute'.DIRECTORY_SEPARATOR.'arboreal.php',
         'attribute'.DIRECTORY_SEPARATOR.'arborealcoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'shrubcomposition.php',
+        'attribute'.DIRECTORY_SEPARATOR.'shrubcompositioncoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'herbaceuscomposition.php',
+        'attribute'.DIRECTORY_SEPARATOR.'herbaceuscompositioncoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'herbacea.php',
+        'attribute'.DIRECTORY_SEPARATOR.'herbaceacoll.php',
+
         );
     if (!isset($file)) $file = array();
     $files = array_diff($files, $file);
