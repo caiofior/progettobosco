@@ -24,6 +24,8 @@ if (isset($DEBUG) && $DEBUG) {
     if (!(isset($PHPUNIT) && $PHPUNIT)) {
         require_once('FirePHPCore/FirePHP.class.php');
         ini_set('html_errors',1);
+        ini_set('xdebug.show_local_vars', 1);
+        
     }
 }
 /**

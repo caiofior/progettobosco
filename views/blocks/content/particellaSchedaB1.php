@@ -52,6 +52,10 @@ document.getElementById("tabrelatedcss").href="css/formb1.css";
             <label for="c1">Età prevalente accertata</label>
             <input id="c1" name="c1" value="<?php echo $b1->getData('c1');?>">
         </div>
+        <div id="ce_container">
+            <label for="ce">Grado di copertura (%)</label>
+            <input id="ce" name="ce" value="<?php echo $b1->getData('ce');?>">
+        </div>
         </fieldset>
         <fieldset id="mcontainer" >
         <legend>Matricinatura</legend>
@@ -87,13 +91,6 @@ document.getElementById("tabrelatedcss").href="css/formb1.css";
         <fieldset id="vigcontainer" >
         <legend>Vigoria</legend>
         <?php
-        $labels=array(
-          1=> 'dissem. naturale',
-          2=> 'artificiale',
-          3=> 'agamica o<br/>ceduo in conver.',
-          4=> 'incerta',
-          5=> 'bosco di<br/> neoformazione'
-        );
         foreach($b1->getControl('vig')->getItems() as $item) :
         if ($item->getRawData('codice') == 4)
             continue;
@@ -143,6 +140,112 @@ document.getElementById("tabrelatedcss").href="css/formb1.css";
             </div>
         </div>
         <?php require (__DIR__.DIRECTORY_SEPARATOR.'schedab'.DIRECTORY_SEPARATOR.'arboree.php');?>
+        </fieldset>
+        <fieldset id="prep_terrcontainer" >
+        <legend>Preparazione terreno</legend>
+        <?php
+        foreach($b1->getControl('prep_terr')->getItems() as $item) :
+        $checked = '';
+        if ($item->getRawData('codice') == $b1->getData('prep_terr'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="prep_terr" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"><span class="prep_terr_descr"><?php echo $item->getData('descriz'); ?></span>
+        <?php endforeach;?>
+        </fieldset>
+        <fieldset id="vcontainer" >
+        <legend>Vuoti - lacune</legend>
+        <?php
+        foreach($b1->getControl('v')->getItems() as $item) :
+        $checked = '';
+        if ($item->getRawData('codice') == $b1->getData('v'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="v" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"><span class="v_descr"><?php echo $item->getData('descriz'); ?></span>
+        <?php endforeach;?>
+        </fieldset>
+        <fieldset id="dcontainer" >
+        <legend>Densità d'impianto</legend>
+        <?php
+        $labels=array(
+            2=>'Scarsa',
+            3=>'Adeguata',
+            4=>'Eccessiva'
+        );
+        foreach($b1->getControl('d')->getItems() as $item) :
+        if (!key_exists($item->getRawData('codice'), $labels))
+                continue;
+        $checked = '';
+        if ($item->getRawData('codice') == $b1->getData('d'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="d" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"><span class="d_descr"><?php echo $labels[$item->getRaWData('codice')]; ?></span>
+        <?php endforeach;?>
+        </fieldset>
+        <fieldset id="sestocontainer" >
+        <legend>Sesto d'impianto</legend>
+        <div id="sesto_imp_tra_file_container">
+            <label for="sesto_imp_tra_file">tra file/gradoni (m)</label>
+            <input id="sesto_imp_tra_file" name="sesto_imp_tra_file" value="<?php echo $b1->getData('sesto_imp_tra_file');?>">
+        </div>
+        <div id="sesto_imp_su_file_container">
+            <label for="sesto_imp_su_file">sulla fila/gradone (m)</label>
+            <input id="sesto_imp_su_file" name="sesto_imp_su_file" value="<?php echo $b1->getData('sesto_imp_su_file');?>">
+        </div>
+        <div id="buche_container">
+            <label for="buche">buche (n/ha)</label>
+            <input id="buche" name="buche" value="<?php echo $b1->getData('buche');?>">
+        </div>
+        </fieldset>
+        <fieldset id="srcontainer" >
+        <legend>Strato arbustivo: diffusione</legend>
+        <?php
+        foreach($b1->getControl('sr')->getItems() as $item) :
+        $checked = '';
+        if ($item->getRawData('codice') == $b1->getData('sr'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="sr" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"><span class="sr_descr"><?php echo $item->getData('descriz'); ?></span>
+        <?php endforeach;?>
+        </fieldset>
+        <fieldset id="arbustivecontainer" >
+        <legend>Specie significative strato arbustivo</legend>
+        <div id="newarbustive">
+                <div>
+                    <span>
+                        <div>Specie</div>
+                    </span>
+                    <span>
+                        <div>Copertura</div>
+                    </span>
+                    <span>
+                        <div>Azioni</div>
+                    </span>
+                </div>
+            <div>
+            <span>
+                <input type="hidden" id="cod_coltu" name="cod_coltu" value=""/>
+                <input id="cod_coltu_descr" name="cod_coltu_descr" value=""/>
+            </span>
+
+            <span>
+                <select id="cod_coper" name="cod_coper">
+                    <option value="">Scegli un valore di copertura</option>
+                    <?php
+                    $forestcovercomposition = new \forest\attribute\ForestCoverComposition();
+                    $cod_coper_coll= $forestcovercomposition->getControl('cod_coper');
+                    foreach($cod_coper_coll->getItems() as $item) : ?>
+                    <option value="<?php echo $item->getData('codice'); ?>"><?php echo $item->getData('descriz'); ?></option>
+                    <?php endforeach;?>
+                </select>
+            </span>
+            <span>
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb1&action=editarboree&id=<?php echo $b1->getData('objectid');?>" data-update="content_schedab_arboree">
+                    <img class="actions addnew" src="images/empty.png" title="Aggiungi una specie arborea"/>
+                </a>
+            </span>
+            </div>
+        </div>
+        <?php require (__DIR__.DIRECTORY_SEPARATOR.'schedab'.DIRECTORY_SEPARATOR.'arbustive.php');?>
         </fieldset>
     </form>
 </div>

@@ -97,8 +97,13 @@ input[type='radio'] {
 }
 #c1_container {
     width: 150px;
-    top:370px;
+    top:420px;
     left: 4px; 
+}
+#ce_container {
+    width: 150px;
+    top:490px;
+    left: 164px; 
 }
 /**
 * M container
@@ -116,7 +121,7 @@ input[type='radio'] {
     left: 4px;
     top: -96px;
     width: 525px;
-    height: 50px;
+    height: 90px;
 }
 #ocontainer input,.o_descr {
     float:left;      
@@ -138,9 +143,120 @@ input[type='radio'] {
 */
 #arboreecontainer {
     left: 550px;
-    top: -300px;
+    top: -328px;
     width: 260px;
-    height: 200px;
+    height: 150px;
+}
+#newarboree {
+    top: 24px;
+    left: 4px;
+    width: 250px;
+}
+#content_schedab_arboree {
+    top: 74px;
+    left: 4px;
+    width: 250px;
+}
+#content_schedab_arboree  div{
+    position: relative;
+    clear: both;
+}
+#content_schedab_arboree  div span{
+    float:left;
+    width: 80px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#newarboree  div{
+    position: relative;
+    clear: both;
+}
+
+#newarboree div span{
+    float:left;
+    width: 80px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#scrollcontrols span input{
+    display: inline;
+    width: 50px;
+}
+#scrollcontrols img {
+    margin-top: 5px;
+    vertical-align:top;
+}
+/**
+* Prep terr container
+*/
+#prep_terrcontainer {
+    left: 550px;
+    top: -320px;
+    width: 225px;
+    height: 50px;
+}
+/**
+* V container
+**/
+#vcontainer {
+    top: -305px;
+    left: 4px;
+    width: 135px;
+}
+/**
+* D container
+**/
+#dcontainer {
+    top: -380px;
+    left: 320px;
+    width: 210px;
+}
+/**
+* Sesto container
+*/
+#sestocontainer {
+    top: -442px;
+    left: 550px;
+    width: 230px;
+    height: 140px;
+}
+#sesto_imp_tra_file_container {
+    width: 110px;
+    top: 22px;
+    left: 4px;
+}
+#sesto_imp_su_file_container {
+    width: 110px;
+    top: 22px;
+    left: 118px;
+}
+#buche_container {
+    width: 110px;
+    top: 108px;
+    left: 4px;
+}
+/**
+* SR container
+**/
+#srcontainer {
+    top: -433px;
+    left: 4px;
+    width: 270px;
+}
+/**
+* Arboree container
+*/
+#arbustivecontainer {
+    top: -493px;
+    left: 308px;
+    width: 260px;
+    height: 150px;
 }
 #newarboree {
     top: 24px;

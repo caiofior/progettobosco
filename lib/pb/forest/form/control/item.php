@@ -36,4 +36,14 @@ class Item extends \Content {
     public function __construct($table = null) {
         parent::__construct($table);
     }
+    /**
+     * Fized different field names
+     * @param string $field
+     */
+    public function getData($field = null) {
+        $data=parent::getData($field);
+        if ($field == 'descriz' && $data == '')
+            $data=parent::getData('valore');
+        return $data;
+    }
 }
