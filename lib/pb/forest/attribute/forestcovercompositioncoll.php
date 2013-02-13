@@ -94,33 +94,14 @@ class ForestCoverCompositionColl  extends \ContentColl  {
 
     }
     /**
-     * Adds new cadastra to form a
-     * @return Cadastral
+     * Adds new forest composition 
+     * @return ForestCoverComposition
      */
     public function addItem() {
-        $cadastral = parent::addItem();
-        $cadastral->setData($this->form_a->getData('cod_part'),'cod_part');
-        $cadastral->setData($this->form_a->getData('proprieta'),'proprieta');
-        $cadastral->setData(0,'foglio');
-        $cadastral->setData(0,'particella');
-        return $cadastral;
+        $forestcovercomposition = parent::addItem();
+        $forestcovercomposition->setData($this->form_b1->getData('cod_fo'),'cod_fo');
+        $forestcovercomposition->setData($this->form_b1->getData('cod_part'),'cod_part');
+        $forestcovercomposition->setData($this->form_b1->getData('proprieta'),'proprieta');
+        return $forestcovercomposition;
     }
-    /**
-     * Returns a cummary of cadastral data
-     * @return array
-     */
-    public function getSummary() {
-         $select = $this->content->getTable()->select()
-                 ->from($this->content->getTable()->info('name'),array(
-                     'sum_sup_tot_cat'=>'SUM(sup_tot_cat)',
-                     'sum_sup_tot'=>'SUM(sup_tot)',
-                     'sum_sup_bosc'=>'SUM(sup_bosc)'
-                     ));
-         if ($this->form_a instanceof \forest\form\A) {
-            $select->where(' cod_part = ? ',$this->form_a->getData('cod_part'))
-            ->where(' proprieta = ? ',$this->form_a->getData('proprieta'));
-        }
-        return $this->content->getTable()->getAdapter()->fetchRow($select);
-        
-    }
-}
+ }

@@ -6,8 +6,10 @@
         $forest = $a->getForest();
         $b = $a->getBColl()->getFirst();
         $b1 = $b->getB1Coll()->getFirst();
+        $forestcovercomposition = new \forest\attribute\ForestCoverComposition();
+        $cod_coper_coll = $forestcovercomposition->getControl('cod_coper');
     }
-    $forestcovercompositioncoll = $b1->getForestCoverComposition();
+    $forestcovercompositioncoll = $b1->getForestCoverCompositionColl();
     
     if (!key_exists('start', $_GET))
             $_GET['start']=0;
@@ -17,8 +19,7 @@
         'start'=>$_GET['start'],
         'length'=>$items_in_page
     ));
-    $forestcovercomposition = new \forest\attribute\ForestCoverComposition();
-    $cod_coper_coll = $forestcovercomposition->getControl('cod_coper');
+
     foreach ($forestcovercompositioncoll->getItems() as $forestcovercomposition) :
     ?>
     <div>
@@ -82,11 +83,11 @@
     if ($start>0) {
         $actions['prev']=array(
             'url'=>'href="?'.$baseurl.'&start='.max($start-$items_in_page,0).'"',
-            'data-update'=>'data-update="content_schedaa_note"'
+            'data-update'=>'data-update="content_schedab_arboree"'
         );
         $actions['first']=array(
             'url'=>'href="?'.$baseurl.'&start=0"',
-            'data-update'=>'data-update="content_schedaa_note"'
+            'data-update'=>'data-update="content_schedab_arboree"'
         );
     }
 
@@ -94,11 +95,11 @@
 
         $actions['next']=array(
             'url'=>'href="?'.$baseurl.'&start='.min($start+$items_in_page,$last_page).'"',
-            'data-update'=>'data-update="content_schedaa_note"'
+            'data-update'=>'data-update="content_schedab_arboree"'
         );
          $actions['last']=array(
             'url'=>'href="?'.$baseurl.'&start='.$last_page .'"',
-            'data-update'=>'data-update="content_schedaa_note"'
+            'data-update'=>'data-update="content_schedab_arboree"'
         );
     }
     ?>

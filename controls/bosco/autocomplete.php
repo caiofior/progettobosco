@@ -88,18 +88,18 @@ switch ($_REQUEST['action']) {
         }
     break;
     case 'cod_coltu':
-        if (!key_exists('codice', $_REQUEST))
-                $_REQUEST['codice']=null;
+        if (!key_exists('objectid', $_REQUEST))
+                $_REQUEST['objectid']=null;
         $arborealcoll = new forest\attribute\ArborealColl();
         $arborealcoll->loadAll(array(
             'start'=>0,
             'length'=>10,
             'search'=>$_REQUEST['term'],
-            'codice_bosco'=>$_REQUEST['codice']
+            'b1_objectid'=>$_REQUEST['objectid']
             ));
         foreach($arborealcoll->getItems() as $arboreal) {
             $data = array(
-                'id'=>$arboreal->getData('codice'),
+                'id'=>$arboreal->getData('cod_coltu'),
                 'value'=>$arboreal->getData('nome_itali').' | '.$arboreal->getData('nome_scien')
             );
             $response[]=$data;

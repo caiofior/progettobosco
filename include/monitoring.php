@@ -10,15 +10,38 @@ $script_start_time=  microtime(true);
  * Resource usage monitoring
  */
 function server_resource_monitoring() {
+    $error_codes = array(
+        1=>'E_ERROR',
+        2=>'E_WARNING',
+        4=>'E_PARSE',
+        8=>'E_NOTICE',   
+        16=>'E_CORE_ERROR',
+        32=>'E_CORE_WARNING',   
+        64=>'E_COMPILE_ERROR',
+        128=>'E_COMPILE_WARNING',   
+        256=>'E_USER_ERROR',
+        512=>'E_USER_WARNING',
+        1024=>'E_USER_NOTICE',
+        2048=>'E_STRICT',
+        4096=>'E_RECOVERABLE_ERROR',
+        8192=>'E_DEPRECATED',
+        16384=>'E_USER_DEPRECATED',
+        32767=>'E_ALL'
 
+    );
     $error = error_get_last();
     $error_message = '';
     if ($error['type'] != 2 &&
             $error['type'] != 8 &&
             $error['type'] != 32 &&
+            $error['type'] != 128 &&
+            $error['type'] != 512 &&
+            $error['type'] != 1024 &&
             $error['type'] != 2048 &&
             $error['type'] != 8192 &&
+            $error['type'] != 16384 &&
             $error['type'] != '') {
+        $error["type"] = $error_codes[$error["type"]];
         $error_message = "type\t" . $error["type"] . PHP_EOL;
         $error_message .= "message\t" . $error["message"] . PHP_EOL;
         $error_message .= "file\t" . $error["file"] . PHP_EOL;
@@ -39,6 +62,9 @@ function server_resource_monitoring() {
     }
     else
         $error = '';
+    if (!(isset($PHPUNIT) && $PHPUNIT) && !headers_sent()) {
+        $GLOBALS['firephp']->error($error);
+    }
     $resource_log_db = new SQLite3(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'log' . DIRECTORY_SEPARATOR . 'script_performance.db');
     $resource_log_db->exec('CREATE TABLE IF NOT EXISTS  resources (
                 url TEXT,
@@ -52,6 +78,7 @@ function server_resource_monitoring() {
                 error TEXT
                 );');
     $resource_log_db->exec('DELETE FROM resources WHERE datetime < DATETIME("now","-1 hour");');
+  
     $resource_log_db->exec('INSERT INTO resources (
                     url,
                     site,
@@ -71,7 +98,7 @@ function server_resource_monitoring() {
             '"' . addslashes(microtime(true) - $_SERVER['REQUEST_TIME']) . '",' .
             '"' . addslashes(microtime(true) - $GLOBALS['script_start_time']) . '",' .
             '"' . addslashes(number_format(memory_get_peak_usage() / (1024 * 1024), 2)) . '",' .
-            '"' . addslashes($error_message) . '"' .
+            '"' . htmlentities ($error_message) . '"' .
             ');');
     if (rand(1, 100) == 100)
         $resource_log_db->exec('VACUUM;');

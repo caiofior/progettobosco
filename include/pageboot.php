@@ -17,20 +17,13 @@ ini_set('session.gc_probability',0);
 if (isset($DEBUG) && $DEBUG) {
     error_reporting(E_ALL | E_STRICT);
     ini_set('display_errors', 1);
-    if (isset($PHPUNIT) && $PHPUNIT) {
-        ini_set('html_errors', 0);
-        ini_set('xdebug.collect_vars', 0);
-        ini_set('xdebug.dump_globals', 0);
-        ini_set('xdebug.show_local_vars', 0);
-    }
-    else {
+    ini_set('xdebug.collect_vars', 0);
+    ini_set('xdebug.collect_params', 0);
+    ini_set('xdebug.dump_globals', 0);
+    ini_set('xdebug.show_local_vars', 0);
+    if (!(isset($PHPUNIT) && $PHPUNIT)) {
         require_once('FirePHPCore/FirePHP.class.php');
-        ini_set('html_errors', 1);
-        ini_set('xdebug.collect_vars', 1);
-        ini_set('xdebug.collect_params', 4);
-        ini_set('xdebug.dump_globals', 1);
-        ini_set('xdebug.dump.SERVER', 'REQUEST_URI');
-        ini_set('xdebug.show_local_vars', 1);
+        ini_set('html_errors',1);
     }
 }
 /**

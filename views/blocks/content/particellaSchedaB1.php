@@ -129,7 +129,8 @@ document.getElementById("tabrelatedcss").href="css/formb1.css";
                     <option value="">Scegli un valore di copertura</option>
                     <?php
                     $forestcovercomposition = new \forest\attribute\ForestCoverComposition();
-                    foreach($forestcovercomposition->getControl('cod_coper')->getItems() as $item) : ?>
+                    $cod_coper_coll= $forestcovercomposition->getControl('cod_coper');
+                    foreach($cod_coper_coll->getItems() as $item) : ?>
                     <option value="<?php echo $item->getData('codice'); ?>"><?php echo $item->getData('descriz'); ?></option>
                     <?php endforeach;?>
                 </select>

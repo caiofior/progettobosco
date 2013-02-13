@@ -109,7 +109,7 @@ function defaultInputValue (selector,value) {
         success: function(response) {
             $("#ajaxloader").hide();
             $.each(response, function(key,value) {
-              if (el.data("destination") != "")
+              if (typeof el.data("destination") != "undefined" && el.data("destination") != "")
                 key=el.data("destination");
               $("#"+key).replaceWith(value);  
             });

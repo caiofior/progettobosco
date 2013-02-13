@@ -102,7 +102,6 @@ $(document).on("change","#content_schedaa_note textarea", function() {
                     $.each(response["names"], function(id,val) {
                         $("#"+val).addClass("error");
                     });
-                    //$(messages_selector).html(response["messages"]).show();  
                     $("#ajaxloader").hide();
                 }
                 
@@ -143,7 +142,6 @@ $(document).on("click","#newnote .addnew",function(){
                     $.each(response["names"], function(id,val) {
                         $("#"+val).addClass("error");
                     });
-                    //$(messages_selector).html(response["messages"]).show();  
                     $("#ajaxloader").hide();
                 }
                 

@@ -100,7 +100,7 @@ class B1 extends \forest\form\template\Form {
      * Gets the associated Forest Cover Composition
      * @return \forest\attribute\ForestCoverCompositionColl
      */
-    public function getForestCoverComposition() {
+    public function getForestCoverCompositionColl() {
         $forestcovercomposition = new \forest\attribute\ForestCoverCompositionColl();
         $forestcovercomposition->setForm($this);
         return $forestcovercomposition;
