@@ -21,6 +21,15 @@ legend {
     margin-left: 20px;
     font-weight: bold;
 }
+h4 {
+    position: relative;
+    color: #010080!important;
+    background-color: #ffffff;
+    font-size: 12px!important;
+    margin: 0px!important;
+    padding: 0px;
+    
+}
 fieldset > div {
     position:absolute;
 }
@@ -109,6 +118,81 @@ input[type='radio'] {
     width: 150px;
     top:1110px;
     left: 600px; 
+}
+#int2_container {
+    width: 150px;
+    top:1200px;
+    left: 4px; 
+}
+#int3_container {
+    width: 150px;
+    top:1200px;
+    left: 158px; 
+}
+#f_container {
+    width: 150px;
+    top:1260px;
+    left: 4px; 
+}
+#p2_container {
+    width: 150px;
+    top:1510px;
+    left: 4px; 
+}
+#p3_container {
+    width: 150px;
+    top:1510px;
+    left: 158px; 
+}
+#p4_container {
+    width: 150px;
+    top:1510px;
+    left: 316px; 
+}
+#label_dendro_1 {
+    top:1700px;
+    left: 4px; 
+    width: 180px;
+}
+#d1_container {
+    width: 100px;
+    top:1750px;
+    left: 4px; 
+}
+#d3_container {
+    width: 100px;
+    top:1750px;
+    left: 108px; 
+}
+#d5_container {
+    width: 100px;
+    top:1750px;
+    left: 216px; 
+}
+#label_dendro_2 {
+    top:1680px;
+    left: 200px; 
+    width: 70px;
+}
+#d14_container {
+    width: 100px;
+    top:1750px;
+    left: 416px; 
+}
+#d15_container {
+    width: 100px;
+    top:1750px;
+    left: 520px; 
+}
+#d16_container {
+    width: 100px;
+    top:1750px;
+    left: 624px; 
+}
+#label_dendro_3 {
+    top:1660px;
+    left: 600px; 
+    width: 70px;
 }
 /**
 * M container
@@ -424,4 +508,103 @@ input[type='radio'] {
     height: 43px;
     border-style: none;
     background: transparent url('../images/arrow-right.png') no-repeat;
+}
+/**
+* G container
+**/
+#gcontainer {
+    top: -630px;
+    left: 4px;
+    width: 500px;
+}
+#gcontainer > span {
+    display: block;
+}
+#gcontainer input,.g_descr {
+    float:left;      
+}
+.g_descr {
+    display: block;
+    width: 110px;
+    word-break: break-all;
+}
+/**
+* G1 container
+**/
+#g1container {
+    top: -530px;
+    left: 4px;
+    width: 600px;
+}
+#g1container input,.g1_descr {
+    float:left;      
+    margin-top: 30px;
+}
+.g1_descr {
+    display: block;
+    width: 70px;
+    word-break: break-all;
+}
+#g1arrow_right {
+    top: 50px;
+    left: 350px;
+    width: 10px;
+    height: 43px;
+    border-style: none;
+    background: transparent url('../images/arrow-right.png') no-repeat;
+}
+#g1container .sub_viab_descr {
+    float:left;      
+    display: block;
+    width: 30px;
+    margin-top: 30px;
+}
+#g1container .spacer_descr {
+    float:left;      
+    display: block;
+    width: 70px;    
+}
+#sub_viab_label {
+    position: relative;
+    top: -10px;
+    left: -100px;
+}
+/**
+* Specific D container
+**/
+#d_spec_container {
+    top: -400px;
+    left: 4px;
+    width: 800px;
+    height: 250px;
+}
+#d21_container {
+    width: 150px;
+    top:25px;
+    left: 4px; 
+}
+#d22_container {
+    width: 150px;
+    top:25px;
+    left: 158px; 
+}
+#d23_container {
+    width: 150px;
+    top:95px;
+    left: 4px; 
+}
+#d24_container {
+    width: 150px;
+    top:95px;
+    left: 158px; 
+}
+#d26_container {
+    width: 150px;
+    top:165px;
+    left: 4px; 
+}
+#d25_container {
+    width: 150px;
+    top:165px;
+    left: 158px; 
 }
