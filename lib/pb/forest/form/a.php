@@ -110,7 +110,7 @@ class A extends \forest\form\template\Form {
         return $collector;
     }
     /**
-     * Retunr the associated note collection
+     * Return the associated note collection
      * @return \forest\attribute\NoteAColl
      */
     public function getNotes () {

@@ -37,10 +37,18 @@ switch ($_REQUEST['action']) {
     break;
     case 'cod_nota':
         $notacoll = new \forest\attribute\NoteTemplateColl();
+        $archivio = 'SCHEDE_A';
+        if (key_exists('archivio',$_REQUEST)) {
+            switch ($_REQUEST['archivio']) {
+                case 'schedab':
+                    $archivio='SCHEDE_B';
+                break;
+            }
+        }
         $notacoll->loadAll(array(
             'start'=>0,
             'length'=>10,
-            'archivio'=>'SCHEDE_A',
+            'archivio'=>$archivio,
             'search'=>$_REQUEST['term']
             ));
         foreach($notacoll->getItems() as $nota) {

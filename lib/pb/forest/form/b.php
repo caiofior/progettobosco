@@ -46,10 +46,12 @@ class B extends \forest\form\template\Form {
      * Loads form a data form foreat and parcel code
      * @param string $proprieta Proprietà code
      * @param string $cod_part Forest compartment code
+     * @param string $cod_fo Forest compartment code
      */
-    public function loadFromCodePart($proprieta,$cod_part) {
-        $where = $this->table->getAdapter()->quoteInto('proprieta = ?', $proprieta).' AND ';
-        $where .= $this->table->getAdapter()->quoteInto('cod_part = ?', $cod_part);
+    public function loadFromCodePart($proprieta,$cod_part,$cod_fo) {
+        $where = $this->table->getAdapter()->quoteInto('proprieta = ? AND ', $proprieta);
+        $where .= $this->table->getAdapter()->quoteInto('cod_part = ? AND ', $cod_part);
+        $where .= $this->table->getAdapter()->quoteInto('cod_fo = ?', $cod_fo);
         $data = $this->table->fetchRow($where);
         if (is_null($data))
             throw new \Exception('Unable to find the cod part',1302081202);
@@ -70,7 +72,10 @@ class B extends \forest\form\template\Form {
             throw new Exception('Unable to update object without objectid',1301251130);
         foreach($this->data as $key=>$value)
             if ($value=='') $this->data[$key]=null;
-        $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
+        $where = $this->table->getAdapter()->quoteInto('objectid = ? AND ', $this->data['objectid']);
+        $where .= $this->table->getAdapter()->quoteInto('proprieta = ? AND ', $this->data['proprieta']);
+        $where .= $this->table->getAdapter()->quoteInto('cod_part = ? AND ', $this->data['cod_part']);
+        $where .= $this->table->getAdapter()->quoteInto('cod_fo = ? ', $this->data['cod_fo']);
         $this->table->update($this->data, $where);
     }
     /**
@@ -78,7 +83,10 @@ class B extends \forest\form\template\Form {
      */
     public function delete() {
         if (key_exists('objectid', $this->data)) {
-            $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
+            $where = $this->table->getAdapter()->quoteInto('objectid = ? AND ', $this->data['objectid']);
+            $where .= $this->table->getAdapter()->quoteInto('proprieta = ? AND ', $this->data['proprieta']);
+            $where .= $this->table->getAdapter()->quoteInto('cod_part = ? AND ', $this->data['cod_part']);
+            $where .= $this->table->getAdapter()->quoteInto('cod_fo = ? ', $this->data['cod_fo']);
             $this->table->delete($where);
         }
     }
@@ -97,7 +105,8 @@ class B extends \forest\form\template\Form {
      */
     public function getForestType () {
         $foresttype = new \forest\attribute\ForestType();
-        $foresttype->loadFromCode($this->data['t']);
+        if (key_exists('t', $this->data))
+            $foresttype->loadFromCode($this->data['t']);
         return $foresttype;
     }
 } 

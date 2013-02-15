@@ -46,7 +46,7 @@ $("#notescontainer").prepend("<a id=\"notes_list_update\" style=\"display:none;\
 function autocompleteCodeNote () {
         $("#cod_nota_descr, #content_schedaa_note input").autocomplete({
         minLength: 0,
-        source: "bosco.php?task=autocomplete&action=cod_nota",
+        source: "bosco.php?task=autocomplete&action=cod_nota&archivio=schedaa",
         select: function( event, ui ) {
             $("#cod_nota").val(ui.item.id )
         },

@@ -1,8 +1,8 @@
 <?php
 /**
- * Manages Note collection
+ * Manages Note A collection
  * 
- * Manages Note collection
+ * Manages Note A collection
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
@@ -20,17 +20,17 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
- * Manages Note collection
+ * Manages Note A collection
  * 
- * Manages Note collection
+ * Manages Note A collection
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
 class NoteAColl  extends \ContentColl  {
     /**
-     * Forest Reference
-     * @var \forest\Forest 
+     * Form A Reference
+     * @var \forest\form\A 
      */
     protected $form_a=null;
     /**
@@ -106,6 +106,7 @@ class NoteAColl  extends \ContentColl  {
         $note = parent::addItem();
         $note->setData($this->form_a->getData('cod_part'),'cod_part');
         $note->setData($this->form_a->getData('proprieta'),'proprieta');
+        $note->setData($this->form_a->getData('cod_fo'),'cod_fo');
         return $note;
     }
 }

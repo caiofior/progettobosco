@@ -62,6 +62,7 @@ function server_resource_monitoring() {
     }
     else
         $error = '';
+    $GLOBALS['CACHE']->clean();
     if (!(isset($PHPUNIT) && $PHPUNIT) && !headers_sent()) {
         $GLOBALS['firephp']->error($error);
     }

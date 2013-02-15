@@ -74,9 +74,11 @@ class BColl extends \forest\form\template\FormColl {
      * @return \forest\form\B1
      */
     public function addItem() {
-        $b1 = parent::addItem();
-        $b1->setData($this->forest->getData('codice'),'proprieta');
-        return $b1;
+        $b = parent::addItem();
+        $b->setData($this->a->getData('proprieta'),'proprieta');
+        $b->setData($this->a->getData('cod_part'),'cod_part');
+        $b->setData($this->a->getData('cod_fo'),'cod_fo');
+        return $b;
     }
 
 }

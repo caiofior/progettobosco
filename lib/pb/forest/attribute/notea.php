@@ -1,8 +1,8 @@
 <?php
 /**
- * Manages Note attribute
+ * Manages Note A attribute
  * 
- * Manages Note attribute
+ * Manages Note A attribute
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
@@ -20,9 +20,9 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
- * Manages Note attribute
+ * Manages Note A attribute
  * 
- * Manages Note attribute
+ * Manages Note A attribute
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA

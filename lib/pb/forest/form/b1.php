@@ -75,7 +75,12 @@ class B1 extends \forest\form\template\Form {
             throw new Exception('Unable to update object without objectid',1301251130);
         foreach($this->data as $key=>$value)
             if ($value=='') $this->data[$key]=null;
-        $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
+        $b = $this->getFormB();
+        $b->setData($this->rawData);
+        $b->update();
+        $where = $this->table->getAdapter()->quoteInto('proprieta = ? AND ', $this->data['proprieta']);
+        $where .= $this->table->getAdapter()->quoteInto('cod_part = ? AND ', $this->data['cod_part']);
+        $where .= $this->table->getAdapter()->quoteInto('cod_fo = ? ', $this->data['cod_fo']);
         $this->table->update($this->data, $where);
     }
     /**
@@ -83,7 +88,11 @@ class B1 extends \forest\form\template\Form {
      */
     public function delete() {
         if (key_exists('objectid', $this->data)) {
-            $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
+            $b = $this->getFormB();
+            $b->delete();
+            $where = $this->table->getAdapter()->quoteInto('proprieta = ? AND ', $this->data['proprieta']);
+            $where .= $this->table->getAdapter()->quoteInto('cod_part = ? AND ', $this->data['cod_part']);
+            $where .= $this->table->getAdapter()->quoteInto('cod_fo = ? ', $this->data['cod_fo']);
             $this->table->delete($where);
         }
     }
@@ -93,7 +102,8 @@ class B1 extends \forest\form\template\Form {
      */
     public function getStructure () {
         $structure = new \forest\attribute\Structure();
-        $structure->loadFromCode($this->data['s']);
+        if (key_exists('s', $this->data))
+            $structure->loadFromCode($this->data['s']);
         return $structure;
     }
     /**
@@ -129,7 +139,8 @@ class B1 extends \forest\form\template\Form {
      */
     public function getRennovationSpecie() {
         $rennovationspecie = new \forest\attribute\Arboreal();
-        $rennovationspecie->loadFromId($this->data['spe_nov']);
+        if (key_exists('spe_nov', $this->data))
+            $rennovationspecie->loadFromId($this->data['spe_nov']);
         return $rennovationspecie;
     }
      /**
@@ -140,5 +151,23 @@ class B1 extends \forest\form\template\Form {
         $forestmassesteemcoll = new \forest\attribute\ForestMassEsteemColl();
         $forestmassesteemcoll->setForm($this);
         return $forestmassesteemcoll;
+    }
+     /**
+     * Return the associated note collection
+     * @return \forest\attribute\NoteBColl
+     */
+    public function getNotes () {
+        $notes = new \forest\attribute\NoteBColl();
+        $notes->setForm($this);
+        return $notes;
+    }
+    /**
+     * Return the associated B fomr
+     * @return \forest\form\B
+     */
+    private function getFormB() {
+        $b = new \forest\form\B();
+        $b->loadFromCodePart($this->data['proprieta'],$this->data['cod_part'],$this->data['cod_fo']);
+        return $b;
     }
 } 

@@ -125,6 +125,8 @@ abstract class ContentColl {
      * @return \Content
      */
     public function getFirst() {
+        if (!key_exists(0, $this->items))
+            return $this->addItem ();
         $this->loadAll(array(
             'start'=>0,
             'length'=>1

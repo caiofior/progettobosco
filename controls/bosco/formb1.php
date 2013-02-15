@@ -83,6 +83,159 @@ if (key_exists('action', $_REQUEST)) {
                 else
                     $forestmassesteem->insert();
         break;
+        case 'editnote' :
+            $notatemplate = new forest\attribute\NoteTemplate();
+            if ($_REQUEST['cod_nota'] == '')
+                $formErrors->addError(FormErrors::required,'cod_nota','l\'intestazione','f');
+            else {
+                $notatemplate->loadFromId($_REQUEST['cod_nota']);
+                if(is_null($notatemplate->getData()))
+                    $formErrors->addError(FormErrors::wrong,'cod_nota','l\'intestazione','f');
+            }
+            if ($_REQUEST['text_nota'] == '') {
+                $formErrors->addError(FormErrors::required,'text_nota','testo');
+            }
+            
+            if ($formErrors->count() == 0) {
+                if (key_exists('note_id', $_REQUEST)) {
+                   $note = new forest\attribute\NoteB();
+                   $note->loadFromId($_REQUEST['note_id']);
+                } else {
+                    $notes = $b1->getNotes();
+                    $note = $notes->addItem();
+                }
+                $note->setData($notatemplate->getData('nomecampo'),'cod_nota');
+                $note->setData($_REQUEST['text_nota'],'nota');
+                if (key_exists('note_id', $_REQUEST))
+                    $note->update();
+                else
+                    $note->insert();
+            }
+            if (key_exists('xhr', $_REQUEST)) {
+                $formErrors->getJsonError ();
+                exit;
+            }
+        break;
+        case 'update':
+            
+            if($_REQUEST['codice_bosco']== '')
+                $formErrors->addError(FormErrors::required,'codice_bosco','bosco');
+            if($_REQUEST['c1'] != '' && !is_numeric($_REQUEST['c1']))
+                $formErrors->addError(FormErrors::valid_float,'c1','età prevalente','f');
+            
+            if($_REQUEST['ce'] != '' ) {
+                if (!is_numeric($_REQUEST['ce']))
+                    $formErrors->addError(FormErrors::valid_float,'ce','grado di copertura');
+                else if($_REQUEST['ce']< 1 || $_REQUEST['ce']> 100)
+                    $formErrors->addError(FormErrors::custom,'ce','il grado di copertura deve essere compreso tra 1 e 100');
+            }
+            
+            if($_REQUEST['d1'] != '' ) {
+                if (!is_numeric($_REQUEST['d1']))
+                    $formErrors->addError(FormErrors::valid_float,'d1','diametro prevalente');
+                else if($_REQUEST['d1']< 1 )
+                    $formErrors->addError(FormErrors::custom,'d1','il diametro prevalente deve essere maggiore di 1');
+            }
+            
+            if($_REQUEST['d3'] != '' ) {
+                if (!is_numeric($_REQUEST['d3']))
+                    $formErrors->addError(FormErrors::valid_float,'d3','altezza prevalente');
+                else if($_REQUEST['d3']< 1 )
+                    $formErrors->addError(FormErrors::custom,'d3','l\'altezza prevalente deve essere maggiore di 1');
+            }
+            
+            if($_REQUEST['d5'] != '' ) {
+                if (!is_numeric($_REQUEST['d5']) || intval($_REQUEST['d5']) != floatval($_REQUEST['d5']) )
+                    $formErrors->addError(FormErrors::valid_int,'d5','n°\alberi/ha');
+                else if($_REQUEST['d5']< 1 )
+                    $formErrors->addError(FormErrors::custom,'d5','il n°\alberi/ha deve essere maggiore di 1');
+            }
+            
+            if($_REQUEST['d14'] != '' ) {
+                if (!is_numeric($_REQUEST['d14']))
+                    $formErrors->addError(FormErrors::valid_float,'d14','diametro prevalente');
+                else if($_REQUEST['d14']< 1 )
+                    $formErrors->addError(FormErrors::custom,'d14','il diametro prevalente deve essere maggiore di 1');
+            }
+            
+            if($_REQUEST['d15'] != '' ) {
+                if (!is_numeric($_REQUEST['d15']))
+                    $formErrors->addError(FormErrors::valid_float,'d15','altezza prevalente');
+                else if($_REQUEST['d15']< 1 )
+                    $formErrors->addError(FormErrors::custom,'d15','l\'altezza prevalente deve essere maggiore di 1');
+            }
+            
+            if($_REQUEST['sesto_imp_tra_file'] != '' ) {
+                if (!is_numeric($_REQUEST['sesto_imp_tra_file']))
+                    $formErrors->addError(FormErrors::valid_float,'sesto_imp_tra_file','sesto d\'impianto tra file');
+                else if($_REQUEST['sesto_imp_tra_file']< 1 )
+                    $formErrors->addError(FormErrors::custom,'sesto_imp_tra_file','il sesto d\'impianto tra file deve essere maggiore di 1');
+            }
+            
+            if($_REQUEST['sesto_imp_su_file'] != '' ) {
+                if (!is_numeric($_REQUEST['sesto_imp_su_file']))
+                    $formErrors->addError(FormErrors::valid_float,'sesto_imp_su_file','sesto d\'impianto sulla fila');
+                else if($_REQUEST['sesto_imp_su_file']< 1 )
+                    $formErrors->addError(FormErrors::custom,'sesto_imp_su_file','il sesto d\'impianto sulla fila deve essere maggiore di 1');
+            }
+            
+            if($_REQUEST['buche'] != '' ) {
+                if (!is_numeric($_REQUEST['buche']))
+                    $formErrors->addError(FormErrors::valid_float,'buche','buche');
+                else if($_REQUEST['buche']< 1 )
+                    $formErrors->addError(FormErrors::custom,'buche','le buche devono essere maggiori di 1');
+            }
+            
+            if($_REQUEST['d21'] != '' ) {
+                if (!is_numeric($_REQUEST['d21']))
+                    $formErrors->addError(FormErrors::valid_float,'d21','provvigione reale','f');
+                else if($_REQUEST['d21']< 1 )
+                    $formErrors->addError(FormErrors::custom,'d21','la provvigione reale essere maggiore di 1');
+            }
+            
+            if($_REQUEST['d22'] != '' ) {
+                if (!is_numeric($_REQUEST['d22']))
+                    $formErrors->addError(FormErrors::valid_float,'d22','provvigione reale','f');
+                else if($_REQUEST['d22']< 1 )
+                    $formErrors->addError(FormErrors::custom,'d22','la provvigione reale essere maggiore di 1');
+            }
+            
+            if($_REQUEST['d23'] != '' ) {
+                if (!is_numeric($_REQUEST['d23']))
+                    $formErrors->addError(FormErrors::valid_float,'d23','incremento corrente');
+                else if($_REQUEST['d23']< 1 )
+                    $formErrors->addError(FormErrors::custom,'d23','l\'incremento corrente essere maggiore di 1');
+            }
+            
+            if($_REQUEST['d24'] != '' ) {
+                if (!is_numeric($_REQUEST['d24']))
+                    $formErrors->addError(FormErrors::valid_float,'d24','incremento corrente');
+                else if($_REQUEST['d24']< 1 )
+                    $formErrors->addError(FormErrors::custom,'d24','l\'incremento corrente essere maggiore di 1');
+            }
+            
+            if($_REQUEST['d25'] != '' ) {
+                if (!is_numeric($_REQUEST['d25']))
+                    $formErrors->addError(FormErrors::valid_float,'d25','provvigione normale','f');
+                else if($_REQUEST['d25']< 1 )
+                    $formErrors->addError(FormErrors::custom,'d25','la provvigione normale essere maggiore di 1');
+            }
+            
+            if($_REQUEST['d26'] != '' ) {
+                if (!is_numeric($_REQUEST['d26']) || intval($_REQUEST['d26']) != floatval($_REQUEST['d26']) )
+                    $formErrors->addError(FormErrors::valid_int,'d26','classe di feacità', 'f');
+                else if($_REQUEST['d5']< 1 )
+                    $formErrors->addError(FormErrors::custom,'d26','la classe di feacità deve essere maggiore di 1');
+            }
+            
+            $formErrors->setOkMessage(' I dati sono stati salvati alle '.  strftime('%k:%M:%S del %d %b'));
+            if ($formErrors->count() == 0) {
+                $b1->setData($_REQUEST);
+                $b1->update();
+            }
+            $formErrors->getJsonError ();
+            exit;
+        break;
     }
 }
 if (key_exists('deletearboree', $_REQUEST)) {
@@ -101,5 +254,9 @@ if (key_exists('deletearboree', $_REQUEST)) {
     $forestmassesteem = new \forest\attribute\ForestMassEsteem();
     $forestmassesteem->loadFromId($_REQUEST['deletemassesteem']);
     $forestmassesteem->delete();
+} else if (key_exists('deletenote', $_REQUEST)) {
+    $notab = new \forest\attribute\NoteB();
+    $notab->loadFromId($_REQUEST['deletenote']);
+    $notab->delete();
 }
 

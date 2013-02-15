@@ -68,7 +68,6 @@ class ForestCoverCompositionColl  extends \ContentColl  {
             $select->where(' cod_part = ? ',$this->form_b1->getData('cod_part'))
             ->where(' proprieta = ? ',$this->form_b1->getData('proprieta'))
             ->where(' cod_fo = ? ',$this->form_b1->getData('cod_fo'));
-            
         }
         $select->order('ordine_inser')->order('cod_coltu');
         return $select;

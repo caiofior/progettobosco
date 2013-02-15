@@ -44,3 +44,14 @@ $("#formtab a").click(function(){
     $("#formtab > span").removeClass("active");
     $(this).parent("span").addClass("active");
 });
+$().ready(function () {
+    $("input:not([type='radio'])").css({
+        width: "80%",
+        margin: "0px",
+        padding: "0px"
+    });
+    $(".scrollcontrols input:not([type='radio'])").css({
+        width: "20%"
+    });
+    
+})

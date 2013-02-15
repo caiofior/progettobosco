@@ -38,12 +38,13 @@ label.double {
 label.triple {
     height: 60px;
 }
-input:not([type='radio']) {
-   width: 80%;
-   font-size: 10px;
-   margin: 0;
-padding: 0;
-space: 0;
+input:not([type='radio']){
+        width: 80%;
+        margin: 0px;
+        padding: 0px;
+}
+.scrollcontrols input:not([type='radio']) {
+        width: 20%;
 }
 input[type='radio'] {
    background: transparent;
@@ -668,7 +669,6 @@ input[type='radio'] {
 }
 #scrollcontrols span input{
     display: inline;
-    width: 50px;
 }
 #scrollcontrols img {
     margin-top: 5px;

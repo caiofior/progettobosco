@@ -75,7 +75,9 @@ class B1Coll extends \forest\form\template\FormColl {
      */
     public function addItem() {
         $b1 = parent::addItem();
-        $b1->setData($this->forest->getData('codice'),'proprieta');
+        $b1->setData($this->b->getData('proprieta'),'proprieta');
+        $b1->setData($this->b->getData('cod_part'),'cod_part');
+        $b1->setData($this->b->getData('cod_fo'),'cod_fo');
         return $b1;
     }
 

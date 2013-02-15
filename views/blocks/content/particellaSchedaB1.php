@@ -15,7 +15,7 @@ document.getElementById("tabrelatedcss").href="css/formb1.css";
 </script>
     <div id="tabContent">
     <form id="formB1" action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb1&action=update&id=<?php echo $a->getData('objectid');?>">
-        <div class="form_messages forma_errors" style="display: none;"></div>
+        <div class="form_messages formb1_errors" style="display: none;"></div>
         <fieldset id="general">
             <input type="hidden" id="codice_bosco" name="codice_bosco" value="<?php echo $forest->getData('codice');?>"/>
             <input type="hidden" id="objectid" name="objectid" value="<?php echo $a->getData('objectid');?>"/>
@@ -516,6 +516,44 @@ document.getElementById("tabrelatedcss").href="css/formb1.css";
             </div>
         </div>
         <?php require (__DIR__.DIRECTORY_SEPARATOR.'schedab'.DIRECTORY_SEPARATOR.'dspecieexitimation.php');?>
+        </fieldset>
+        <fieldset id="notescontainer">
+        <legend>Note alle singole voci</legend>
+        <div id="newnote">
+                <div>
+                    <span>
+                        <div>Parametro</div>
+                    </span>
+                    <span>
+                        <div>Nota</div>
+                    </span>
+                    <span>
+                        <div>Azioni</div>
+                    </span>
+                </div>
+            <div>
+                <span>
+                    <input type="hidden" id="cod_nota" name="cod_nota" value=""/>
+                    <input id="cod_nota_descr" name="cod_nota_descr" value=""/>
+                </span>
+
+                <span>
+                    <textarea id="text_nota" name="text_nota" rows="2" cols="30"></textarea>
+                </span>
+                <span>
+                    <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb1&action=editnote&id=<?php echo $b1->getData('objectid');?>" data-update="content_schedab_note">
+                        <img class="actions addnew" src="images/empty.png" title="Aggiungi una nota"/>
+                    </a>
+                </span>
+            </div>
+        </div>
+        <?php
+        require __DIR__.DIRECTORY_SEPARATOR.'schedab'.DIRECTORY_SEPARATOR.'note.php';
+        ?>
+        </fieldset>
+        <fieldset id="forestnotecontainer">
+            <legend>Note</legend>
+            <textarea id="note" name="note" rows="16" cols="106"><?php echo $b1->getData('note');?></textarea>
         </fieldset>
     </form>
 </div>

@@ -45,18 +45,17 @@ label.triple {
     height: 60px;
 }
 select {
-   margin: 0!important;
-   padding: 0!important;
+   margin: 0px !important;
+   padding: 0px !important;
    height: 17px;
    width: 80%;
 }
 input:not([type='radio']) {
    width: 80%;
-   font-size: 10px;
-   margin: 0;
-   padding: 0;
+   margin: 0px ;
+   padding: 0px;
 }
-input[type='radio'] {
+input[type='radio'],input[type='checkbox'] {
    background: transparent;
    border: 0;
 }
@@ -101,96 +100,110 @@ input[type='radio'] {
 }
 #s_container {
     width: 200px;
-    top:232px;
+    top:252px;
     left: 4px; 
 }
 #c1_container {
     width: 150px;
-    top:420px;
+    top:490px;
+    *top:420px;
     left: 4px; 
 }
 #ce_container {
     width: 150px;
-    top:490px;
+    top:590px;
+    *top:510px;
     left: 164px; 
 }
 #spe_nov_container {
     width: 150px;
-    top:1110px;
+    top:1210px;
     left: 600px; 
 }
 #int2_container {
     width: 150px;
-    top:1200px;
+    top:1300px;
     left: 4px; 
 }
 #int3_container {
     width: 150px;
-    top:1200px;
+    top:1300px;
     left: 158px; 
 }
 #f_container {
     width: 150px;
-    top:1260px;
+    top:1360px;
     left: 4px; 
 }
 #p2_container {
     width: 150px;
-    top:1510px;
+    top:1610px;
+    *top:1630px;
     left: 4px; 
 }
 #p3_container {
     width: 150px;
-    top:1510px;
+    top:1610px;
+    *top:1630px;
     left: 158px; 
 }
 #p4_container {
     width: 150px;
-    top:1510px;
+    top:1610px;
+    *top:1630px;
     left: 316px; 
 }
 #label_dendro_1 {
-    top:1700px;
+    top:1800px;
+    *top:1840px;
     left: 4px; 
     width: 180px;
 }
 #d1_container {
     width: 100px;
-    top:1750px;
+    top:1850px;
+    *top:1890px;
     left: 4px; 
 }
 #d3_container {
     width: 100px;
-    top:1750px;
+    top:1850px;
+    *top:1890px;
     left: 108px; 
 }
 #d5_container {
     width: 100px;
-    top:1750px;
+    top:1850px;
+    *top:1890px;
     left: 216px; 
 }
 #label_dendro_2 {
-    top:1680px;
+    top:1780px;
+    *top:1820px;
     left: 200px; 
     width: 70px;
 }
 #d14_container {
     width: 100px;
-    top:1750px;
+    top:1850px;
+    *top:1890px;
     left: 416px; 
 }
 #d15_container {
     width: 100px;
-    top:1750px;
+    top:1850px;
+    *top:1890px;
     left: 520px; 
 }
 #d16_container {
     width: 100px;
-    top:1750px;
+    top:1850px;
+    *top:1890px;
     left: 624px; 
 }
 #label_dendro_3 {
-    top:1660px;
+    top:1760px;
+    *top:1800px;
     left: 600px; 
     width: 70px;
 }
@@ -199,7 +212,7 @@ input[type='radio'] {
 */
 #mcontainer {
     left: 208px;
-    top: -100px;
+    top: -60px;
     width: 320px;
     height: 50px;
 }
@@ -208,7 +221,7 @@ input[type='radio'] {
 */
 #ocontainer {
     left: 4px;
-    top: -96px;
+    top: -30px;
     width: 525px;
     height: 90px;
 }
@@ -223,7 +236,7 @@ input[type='radio'] {
 */
 #vigcontainer {
     left: 160px;
-    top: -90px;
+    top: -20px;
     width: 370px;
     height: 50px;
 }
@@ -232,7 +245,7 @@ input[type='radio'] {
 */
 #arboreecontainer {
     left: 550px;
-    top: -328px;
+    top: -260px;
     width: 260px;
     height: 150px;
 }
@@ -275,7 +288,6 @@ input[type='radio'] {
 }
 #arboreecontainer .scrollcontrols span input{
     display: inline;
-    width: 50px;
 }
 #arboreecontainer .scrollcontrols img {
     margin-top: 5px;
@@ -286,7 +298,8 @@ input[type='radio'] {
 */
 #prep_terrcontainer {
     left: 550px;
-    top: -320px;
+    top: -240px;
+    *top: -160px;
     width: 225px;
     height: 50px;
 }
@@ -294,7 +307,7 @@ input[type='radio'] {
 * V container
 **/
 #vcontainer {
-    top: -305px;
+    top: -200px;
     left: 4px;
     width: 135px;
 }
@@ -302,7 +315,7 @@ input[type='radio'] {
 * D container
 **/
 #dcontainer {
-    top: -380px;
+    top: -250px;
     left: 320px;
     width: 210px;
 }
@@ -310,10 +323,12 @@ input[type='radio'] {
 * Sesto container
 */
 #sestocontainer {
-    top: -442px;
+    top: -350px;
+    *top: -280px;
     left: 550px;
     width: 230px;
     height: 140px;
+    *height: 170px;
 }
 #sesto_imp_tra_file_container {
     width: 110px;
@@ -334,15 +349,17 @@ input[type='radio'] {
 * SR container
 **/
 #srcontainer {
-    top: -433px;
+    top: -340px;
+    *top: -250px;
     left: 4px;
     width: 270px;
 }
 /**
-* Arboree container
+* Arbustive container
 */
 #arbustivecontainer {
-    top: -493px;
+    top: -400px;
+    *top: -320px;
     left: 308px;
     width: 260px;
     height: 200px;
@@ -386,7 +403,6 @@ input[type='radio'] {
 }
 #arbustivecontainer .scrollcontrols span input{
     display: inline;
-    width: 50px;
 }
 #arbustivecontainer .scrollcontrols img {
     margin-top: 5px;
@@ -396,7 +412,8 @@ input[type='radio'] {
 * SE container
 **/
 #secontainer {
-    top: -483px;
+    top: -393px;
+    *top: -310px;
     left: 4px;
     width: 270px;
 }
@@ -404,7 +421,8 @@ input[type='radio'] {
 * Erbacee container
 */
 #erbaceecontainer {
-    top: -543px;
+    top: -450px;
+    *top: -380px;
     left: 308px;
     width: 260px;
     height: 200px;
@@ -448,7 +466,6 @@ input[type='radio'] {
 }
 #erbaceecontainer .scrollcontrols span input{
     display: inline;
-    width: 50px;
 }
 #erbaceecontainer .scrollcontrols img {
     margin-top: 5px;
@@ -458,12 +475,14 @@ input[type='radio'] {
 * N1 container
 **/
 #n1container {
-    top: -523px;
+    top: -423px;
+    *top: -373px;
     left: 4px;
     width: 200px;
 }
 #n1arrow_right {
-    top: -573px;
+    top: -473px;
+    *top: -420px;
     left: 225px;
     width: 10px;
     height: 43px;
@@ -474,7 +493,8 @@ input[type='radio'] {
 * N2 container
 **/
 #n2container {
-    top: -630px;
+    top: -530px;
+    *top: -480px;
     left: 246px;
     width: 140px;
 }
@@ -489,7 +509,8 @@ input[type='radio'] {
 * N3 container
 **/
 #n3container {
-    top: -696px;
+    top: -596px;
+    *top: -536px;
     left: 406px;
     width: 140px;
 }
@@ -502,7 +523,8 @@ input[type='radio'] {
     word-break: break-all;
 }
 #n3arrow_right {
-    top: -756px;
+    top: -656px;
+    *top: -576px;
     left: 570px;
     width: 10px;
     height: 43px;
@@ -513,7 +535,8 @@ input[type='radio'] {
 * G container
 **/
 #gcontainer {
-    top: -630px;
+    top: -520px;
+    *top: -420px;
     left: 4px;
     width: 500px;
 }
@@ -532,7 +555,8 @@ input[type='radio'] {
 * G1 container
 **/
 #g1container {
-    top: -530px;
+    top: -430px;
+    *top: -330px;
     left: 4px;
     width: 600px;
 }
@@ -573,7 +597,8 @@ input[type='radio'] {
 * Specific D container
 **/
 #d_spec_container {
-    top: -400px;
+    top: -300px;
+    *top: -150px;
     left: 4px;
     width: 800px;
     height: 250px;
@@ -647,9 +672,73 @@ input[type='radio'] {
 }
 #content_schedab_dspecieexitimation .scrollcontrols span input{
     display: inline;
-    width: 50px;
 }
 #content_schedab_dspecieexitimation .scrollcontrols img {
     margin-top: 5px;
     vertical-align:top;
+}
+/**
+* notes container
+*/
+#notescontainer {
+    top: -280px;
+    *top: -130px;
+    left: 4px;
+    width: 800px;
+    height: 310px;
+}
+
+#newnote {
+    top: 24px;
+    left: 70px;
+    width: 700px;
+}
+#content_schedab_note {
+    top: 124px;
+    left: 70px;
+    width: 700px;
+}
+#content_schedab_note  div{
+    position: relative;
+    clear: both;
+}
+#content_schedab_note div span{
+    float:left;
+    width: 220px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#newnote  div{
+    position: relative;
+    clear: both;
+}
+
+#newnote div span{
+    float:left;
+    width: 220px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#scrollcontrols span input{
+    display: inline;
+}
+#scrollcontrols img {
+    margin-top: 5px;
+    vertical-align:top;
+}
+/**
+* forest notes container
+*/
+#forestnotecontainer {
+    top: -260px;
+    *top: -80px;
+    left: 4px;
+    width: 800px;
+    height: 310px;
 }

@@ -41,6 +41,8 @@ if (!class_exists('Forest')) {
         'attribute'.DIRECTORY_SEPARATOR.'provincecoll.php',
         'attribute'.DIRECTORY_SEPARATOR.'notea.php',
         'attribute'.DIRECTORY_SEPARATOR.'noteacoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'noteb.php',
+        'attribute'.DIRECTORY_SEPARATOR.'notebcoll.php',
         'attribute'.DIRECTORY_SEPARATOR.'notetemplate.php',
         'attribute'.DIRECTORY_SEPARATOR.'notetemplatecoll.php',
         'attribute'.DIRECTORY_SEPARATOR.'cadastral.php',
