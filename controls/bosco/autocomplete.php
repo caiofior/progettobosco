@@ -142,6 +142,25 @@ switch ($_REQUEST['action']) {
             $response[]=$data;
         }
     break;
+    case 'cod_coltu_d':
+        if (!key_exists('objectid', $_REQUEST))
+                $_REQUEST['objectid']=null;
+        $arborealcoll = new forest\attribute\ArborealColl();
+        $arborealcoll->loadAll(array(
+            'start'=>0,
+            'length'=>10,
+            'mass_esteem'=>true,
+            'search'=>$_REQUEST['term'],
+            'b1_objectid'=>$_REQUEST['objectid']
+            ));
+        foreach($arborealcoll->getItems() as $arboreal) {
+            $data = array(
+                'id'=>$arboreal->getData('cod_coltu'),
+                'value'=>$arboreal->getData('nome_itali').' | '.$arboreal->getData('nome_scien')
+            );
+            $response[]=$data;
+        }
+    break;
 }
 header('Content-type: application/json');
 echo Zend_Json::encode($response);

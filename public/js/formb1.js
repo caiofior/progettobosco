@@ -367,3 +367,136 @@ autocompleteRennovationSpecie ();
 $(document).ajaxComplete(function() {
     autocompleteRennovationSpecie ();
 });
+$("#d_spec_container").prepend("<a id=\"d_spec_list_update\" style=\"display:none;\" href=\""+$("#formB1").attr("action")+"\" data-update=\"content_schedab_dspecieexitimation\"></a>");
+/**
+ * Manages autocomplete d spec cod coltu
+ **/
+function autocompleteColtuD () {
+        $("#cod_coltu_d_descr, #content_schedab_dspecieexitimation input.arboree").autocomplete({
+        minLength: 0,
+        source: "bosco.php?task=autocomplete&action=cod_coltu_d&objectid="+$("#objectid").val(),
+        select: function( event, ui ) {
+            $("#cod_coltu_d").val(ui.item.id )
+        },
+        change: function( event, ui ) {
+                if ( !ui.item ) {
+                      $("#cod_coltu_d_descr").val("");
+                }
+                el = $(this);
+                old = el.data("old-value");
+                if (typeof old == "string" && el.val() != "" && el.val() != old) {
+                    arboree_id = $(this).data("arboree-id");
+                    $("#cod_coper_d_"+arboree_id).trigger("change");
+                }
+        }
+    }).focus(function() {
+        $(this).val("").autocomplete("search","")
+    }).blur(function () {
+        el = $(this);
+        old = el.data("old-value");
+        if (typeof old == "string" && el.val() == "") {
+            el.val(old);
+        }
+    });
+}
+autocompleteColtuD ();
+$(document).ajaxComplete(function() {
+    autocompleteColtuD ();
+});
+/**
+ * Manages edit arboree cod_coper
+ **/
+$(document).on("change","#content_schedab_dspecieexitimation input,select", function() {
+    el = $("#newdspecieexitimation .addnew").parent("a");
+    arboree_id = $(this).data("arboree-id");
+    data = {
+        "xhr":1,
+        "arboree_id":arboree_id,
+        "cod_coltu" : $("#cod_coltu_d_"+arboree_id).val(),
+        "cod_coper" : $("#cod_coper_d_"+arboree_id).val(),
+        "massa_tot" : $("#massa_tot_"+arboree_id).val()
+    };
+    $.ajax({
+            type: "POST",
+            async: false,
+            url: el.attr("href"),
+            data: data,
+            dataType: "json",
+            success: function(response) {
+                if (response == true) {
+                    $("#d_spec_container").trigger("click");
+                    status = true;
+                }
+                else {
+                    $.each(response["names"], function(id,val) {
+                        $("#"+val).addClass("error");
+                    });
+                    $("#ajaxloader").hide();
+                }
+                
+            },
+            error: function(jqXHR , textStatus,  errorThrown) {
+                $("#ajaxloader").hide();
+            }
+        });
+     
+        return status;
+    
+});
+/**
+ * Manages add new forest cover
+ */
+$(document).on("click","#newdspecieexitimation .addnew",function(){
+    status = false;
+    el = $(this).parent("a");
+    data = {
+        "xhr":1,
+        "cod_coltu" : $("#cod_coltu_d").val(),
+        "cod_coper" : $("#cod_coper_d").val(),
+        "massa_tot" : $("#massa_tot").val()
+    };
+    $.ajax({
+            type: "POST",
+            async: false,
+            url: el.attr("href"),
+            data: data,
+            dataType: "json",
+            success: function(response) {
+                if (response == true) {
+                     $("#cod_coltu_d_descr").val("");
+                     $("#cod_coltu_d").val("");
+                     $("#massa_tot").val("");
+                     $("#cod_coper_d option").removeAttr("selected");
+                    status = true;
+                }
+                else {
+                    $.each(response["names"], function(id,val) {
+                        $("#"+val).addClass("error");
+                    });
+                    $("#ajaxloader").hide();
+                }
+                
+            },
+            error: function(jqXHR , textStatus,  errorThrown) {
+                $("#ajaxloader").hide();
+            }
+        });
+     
+        return status;  
+    
+});
+/**
+ * Manages delete forest cover
+ **/
+$(document).on("click","#content_schedab_dspecieexitimation .delete",function(){
+    el = $(this).parent("a");
+    $.colorbox({
+        "html"  :   "Vuoi cancellare la specie selezionata ?"+
+                    " <a id=\"codcover_delete_confirm\"href=\""+el.attr("href")+"\" data-update=\"content_schedab_dspecieexitimation\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
+                    " <a id=\"codcover_delete_cancel\"href=\"#\"><img src=\"images/empty.png\" title=\"Annulla cancellazione\" class=\"actions cancel\"/> </a>",
+        "onLoad": function() {
+            $('#cboxClose').remove();
+        }
+    });
+   return false;
+});

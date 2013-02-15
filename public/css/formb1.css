@@ -608,3 +608,48 @@ input[type='radio'] {
     top:165px;
     left: 158px; 
 }
+#newdspecieexitimation {
+    top: 44px;
+    left: 350px;
+    width: 450px;
+}
+#content_schedab_dspecieexitimation {
+    top: 104px;
+    left: 350px;
+    width: 450px;
+}
+#content_schedab_dspecieexitimation  div{
+    position: relative;
+    clear: both;
+}
+#content_schedab_dspecieexitimation  div span{
+    float:left;
+    width: 100px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#newdspecieexitimation  div{
+    position: relative;
+    clear: both;
+}
+
+#newdspecieexitimation div span{
+    float:left;
+    width: 100px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#content_schedab_dspecieexitimation .scrollcontrols span input{
+    display: inline;
+    width: 50px;
+}
+#content_schedab_dspecieexitimation .scrollcontrols img {
+    margin-top: 5px;
+    vertical-align:top;
+}

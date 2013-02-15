@@ -55,6 +55,15 @@ class ArborealColl  extends \ContentColl  {
                     arbusti.cod_fo=sched_b1.cod_fo
                 WHERE sched_b1.objectid=\''.intval($criteria['b1_objectid']).'\'
             )'));
+        } else if (key_exists('b1_objectid', $criteria) && $criteria['b1_objectid'] != '' && key_exists('mass_esteem', $criteria)) {
+            $select->where(new \Zend_Db_Expr(' NOT cod_coltu IN ( 
+                SELECT cod_coltu FROM stime_b1 
+                    LEFT JOIN sched_b1 ON
+                    stime_b1.proprieta=sched_b1.proprieta AND
+                    stime_b1.cod_part=sched_b1.cod_part AND
+                    stime_b1.cod_fo=sched_b1.cod_fo
+                WHERE sched_b1.objectid=\''.intval($criteria['b1_objectid']).'\'
+            )'));
         } else if (key_exists('b1_objectid', $criteria) && $criteria['b1_objectid'] != '') {
             $select->where(new \Zend_Db_Expr(' NOT cod_coltu IN ( 
                 SELECT cod_coltu FROM arboree 

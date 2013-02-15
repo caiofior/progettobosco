@@ -474,6 +474,48 @@ document.getElementById("tabrelatedcss").href="css/formb1.css";
             <label for="d25">Provvigione normale (m3/ha)</label>
             <input id="d25" name="d25" value="<?php echo $b1->getData('d25');?>">
         </div>
+               <div id="newdspecieexitimation">
+                <div>
+                    <span>
+                        <div>Specie</div>
+                    </span>
+                    <span>
+                        <div>% Specie</div>
+                    </span>
+                    <span>
+                        <div>Massa totale</div>
+                    </span>
+                    <span>
+                        <div>Azioni</div>
+                    </span>
+                </div>
+            <div>
+            <span>
+                <input type="hidden" id="cod_coltu_d" name="cod_coltu_d" value=""/>
+                <input id="cod_coltu_d_descr" name="cod_coltu_d_descr" value=""/>
+            </span>
+            <span>
+                <select id="cod_coper_d" name="cod_coper_d">
+                    <option value="">Scegli un valore di copertura</option>
+                    <?php
+                    $forestmassesteem = new \forest\attribute\ForestMassEsteem();
+                    $cod_coper_coll= $forestmassesteem->getControl('cod_coper');
+                    foreach($cod_coper_coll->getItems() as $item) : ?>
+                    <option value="<?php echo $item->getData('codice'); ?>"><?php echo $item->getData('descriz'); ?></option>
+                    <?php endforeach;?>
+                </select>
+            </span>
+            <span>
+                <input id="massa_tot" name="massa_tot" value=""/>
+            </span>
+            <span>
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb1&action=editdesteem&id=<?php echo $b1->getData('objectid');?>" data-update="content_schedab_dspecieexitimation">
+                    <img class="actions addnew" src="images/empty.png" title="Aggiungi una stima di massa legnosa"/>
+                </a>
+            </span>
+            </div>
+        </div>
+        <?php require (__DIR__.DIRECTORY_SEPARATOR.'schedab'.DIRECTORY_SEPARATOR.'dspecieexitimation.php');?>
         </fieldset>
     </form>
 </div>

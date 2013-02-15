@@ -132,4 +132,13 @@ class B1 extends \forest\form\template\Form {
         $rennovationspecie->loadFromId($this->data['spe_nov']);
         return $rennovationspecie;
     }
+     /**
+     * Gets the associated Forest Mass Esteem Collection
+     * @return \forest\attribute\ForestMassEsteemColl
+     */
+    public function getForestMassEsteemColl() {
+        $forestmassesteemcoll = new \forest\attribute\ForestMassEsteemColl();
+        $forestmassesteemcoll->setForm($this);
+        return $forestmassesteemcoll;
+    }
 } 

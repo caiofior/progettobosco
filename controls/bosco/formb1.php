@@ -60,6 +60,29 @@ if (key_exists('action', $_REQUEST)) {
             else
                 $herbaceuscomposition->insert();
         break;
+        case 'editdesteem':
+            if (key_exists('arboree_id', $_REQUEST)) {
+                $forestmassesteem = new \forest\attribute\ForestMassEsteem();
+                $forestmassesteem->loadFromId($_REQUEST['arboree_id']);
+            }
+            else {
+                $forestmassesteemcoll = $b1->getForestMassEsteemColl();
+                $forestmassesteem = $forestmassesteemcoll->addItem();
+            }
+            if ($_REQUEST['cod_coltu'] == '')
+                $formErrors->addError(FormErrors::required,'cod_coltu','la specie','f');
+            if ($_REQUEST['cod_coper'] == '')
+                $formErrors->addError(FormErrors::required,'cod_coper','la copertura','f');
+            if ($_REQUEST['massa_tot'] == '')
+                $formErrors->addError(FormErrors::required,'massa_tot','la massa totale','f');            
+            $forestmassesteem->setData($_REQUEST['cod_coltu'],'cod_coltu');
+            $forestmassesteem->setData(substr($_REQUEST['cod_coper'],0,1),'cod_coper');
+            $forestmassesteem->setData($_REQUEST['massa_tot'],'massa_tot');
+                if (key_exists('arboree_id', $_REQUEST))
+                    $forestmassesteem->update();
+                else
+                    $forestmassesteem->insert();
+        break;
     }
 }
 if (key_exists('deletearboree', $_REQUEST)) {
@@ -74,5 +97,9 @@ if (key_exists('deletearboree', $_REQUEST)) {
     $herbaceuscomposition = new \forest\attribute\HerbaceusComposition();
     $herbaceuscomposition->loadFromId($_REQUEST['deleteerbacee']);
     $herbaceuscomposition->delete();
+} else if (key_exists('deletemassesteem', $_REQUEST)) {
+    $forestmassesteem = new \forest\attribute\ForestMassEsteem();
+    $forestmassesteem->loadFromId($_REQUEST['deletemassesteem']);
+    $forestmassesteem->delete();
 }
 

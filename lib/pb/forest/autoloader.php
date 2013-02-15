@@ -59,6 +59,8 @@ if (!class_exists('Forest')) {
         'attribute'.DIRECTORY_SEPARATOR.'herbaceuscompositioncoll.php',
         'attribute'.DIRECTORY_SEPARATOR.'herbacea.php',
         'attribute'.DIRECTORY_SEPARATOR.'herbaceacoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'forestmassesteem.php',
+        'attribute'.DIRECTORY_SEPARATOR.'forestmassesteemcoll.php',
 
         );
     if (!isset($file)) $file = array();
