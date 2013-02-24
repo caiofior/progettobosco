@@ -117,95 +117,163 @@ input[type='radio'],input[type='checkbox'] {
 }
 #spe_nov_container {
     width: 150px;
-    top:1210px;
+    top:1230px;
     left: 600px; 
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    #spe_nov_container { 
+        top: 1180px; 
+    }
 }
 #int2_container {
     width: 150px;
     top:1300px;
     left: 4px; 
 }
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    #int2_container { 
+        top: 1250px; 
+    }
+}
 #int3_container {
     width: 150px;
     top:1300px;
     left: 158px; 
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    #int3_container { 
+        top: 1250px; 
+    }
 }
 #f_container {
     width: 150px;
     top:1360px;
     left: 4px; 
 }
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    #f_container { 
+        top: 1310px; 
+    }
+}
 #p2_container {
     width: 150px;
-    top:1610px;
-    *top:1630px;
+    top:1630px;
     left: 4px; 
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    #p2_container { 
+        top: 1560px; 
+    }
 }
 #p3_container {
     width: 150px;
-    top:1610px;
-    *top:1630px;
+    top:1630px;
     left: 158px; 
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    #p3_container { 
+        top: 1560px; 
+    }
 }
 #p4_container {
     width: 150px;
-    top:1610px;
-    *top:1630px;
+    top:1630px;
     left: 316px; 
 }
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    #p4_container { 
+        top: 1560px; 
+    }
+}
 #label_dendro_1 {
-    top:1800px;
-    *top:1840px;
+    top:1840px;
     left: 4px; 
     width: 180px;
 }
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    #label_dendro_1 { 
+        top: 1740px; 
+    }
+}
 #d1_container {
     width: 100px;
-    top:1850px;
-    *top:1890px;
+    top:1890px;
     left: 4px; 
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    #d1_container { 
+        top: 1790px; 
+    }
 }
 #d3_container {
     width: 100px;
-    top:1850px;
-    *top:1890px;
+    top:1890px;
     left: 108px; 
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    #d3_container { 
+        top: 1790px; 
+    }
 }
 #d5_container {
     width: 100px;
-    top:1850px;
-    *top:1890px;
+    top:1890px;
     left: 216px; 
 }
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    #d5_container { 
+        top: 1790px; 
+    }
+}
 #label_dendro_2 {
-    top:1780px;
-    *top:1820px;
+    top:1820px;
     left: 200px; 
     width: 70px;
 }
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    #label_dendro_2{ 
+        top: 1720px; 
+    }
+}
 #d14_container {
     width: 100px;
-    top:1850px;
-    *top:1890px;
+    top:1890px;
     left: 416px; 
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    #d14_container{ 
+        top: 1790px; 
+    }
 }
 #d15_container {
     width: 100px;
-    top:1850px;
-    *top:1890px;
+    top:1890px;
     left: 520px; 
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    #d15_container{ 
+        top: 1790px; 
+    }
 }
 #d16_container {
     width: 100px;
-    top:1850px;
-    *top:1890px;
+    top:1890px;
     left: 624px; 
 }
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    #d16_container{ 
+        top: 1790px; 
+    }
+}
 #label_dendro_3 {
-    top:1760px;
-    *top:1800px;
+    top:1800px;
     left: 600px; 
     width: 70px;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    #label_dendro_3{ 
+        top: 1700px; 
+    }
 }
 /**
 * M container

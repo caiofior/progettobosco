@@ -7,7 +7,7 @@
  * Forest List management
  */
 $("#forest_list").prepend("<a id=\"forest_list_update\" style=\"display:none;\" data-basehref=\""+$("#forest_list").attr("action")+"\" data-update=\"content_boscoForestlist\"></a>");
-$("#descrizion").keyup(function(){
+$("#descrizion_search").keyup(function(){
    el = $("#forest_list_update"); 
    search = $("#descrizion_search");
    regione = $("#regione");

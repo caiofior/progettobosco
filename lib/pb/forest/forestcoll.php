@@ -82,7 +82,7 @@ class ForestColl extends \ContentColl {
         }
         
         if (key_exists('search', $criteria) && $criteria['search'] != '') {
-            $select->where('descrizion LIKE ?', '%'.$criteria['search'].'%');   
+            $select->where('LOWER(descrizion) LIKE LOWER(?)', '%'.$criteria['search'].'%');   
         }
         if (key_exists('regione', $criteria) && $criteria['regione'] != '') {
             $select->where('regione = ?', $criteria['regione']); 
