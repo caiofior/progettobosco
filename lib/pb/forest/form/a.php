@@ -154,6 +154,7 @@ class A extends \forest\form\template\Form {
     public function getBColl () {
         $bcoll = new \forest\form\BColl();
         $bcoll->setFormA($this);
+        $bcoll->loadAll();
         return $bcoll;
     }
 } 

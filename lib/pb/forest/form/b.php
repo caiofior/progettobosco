@@ -97,6 +97,7 @@ class B extends \forest\form\template\Form {
     public function getB1Coll () {
         $b1coll = new \forest\form\B1Coll();
         $b1coll->setFormB($this);
+        $b1coll->loadAll();
         return $b1coll;
     }
     /**

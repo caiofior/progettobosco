@@ -54,7 +54,8 @@ if (isset($DEBUG) && $DEBUG) {
     $profiler->setEnabled(true);
     $firephp = FirePHP::getInstance(true);
     function lastQuery(){
-        $GLOBALS['firephp']->log($GLOBALS['profiler']->getLastQueryProfile());
+        $query_profile = $GLOBALS['profiler']->getLastQueryProfile();
+        $GLOBALS['firephp']->log($query_profile);
     }
 } else {
     function lastQuery(){}

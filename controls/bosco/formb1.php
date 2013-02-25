@@ -233,7 +233,7 @@ if (key_exists('action', $_REQUEST)) {
                 $b1->setData($_REQUEST);
                 $b1->update();
             }
-            $formErrors->getJsonError ();
+            $formErrors->getJsonError();
             exit;
         break;
     }
