@@ -45,7 +45,7 @@ $("#formtab a").click(function(){
     $(this).parent("span").addClass("active");
 });
 $().ready(function () {
-    $("input:not([type='radio']):not(.large)").css({
+    $("input:not([type='radio']):not(.float_width)").css({
         width: "80%",
         margin: "0px",
         padding: "0px"

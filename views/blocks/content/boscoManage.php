@@ -27,11 +27,11 @@
                                         </p>
                                         <p >	
                                             <label for="descrizion">Descrizione</label>
-                                            <input class="large" id="descrizion" name="descrizion" value="<?php echo $this->forest->getData('descrizion');?>" type="text" tabindex="2" />
+                                            <input class="large float_width" id="descrizion" name="descrizion" value="<?php echo $this->forest->getData('descrizion');?>" type="text" tabindex="2" />
                                         </p>
                                         <p >	
                                             <label for="codice">Codice<span id="prefissocodice"><?php echo $this->forest->getData('regione'); ?></span></label>
-                                            <input class="large" id="codice" name="codice" value="<?php echo substr($this->forest->getData('codice'),2);?>" type="text" tabindex="3" />
+                                            <input class="large float_width" id="codice" name="codice" value="<?php echo substr($this->forest->getData('codice'),2);?>" type="text" tabindex="3" />
                                         </p>
                                         <p class="no-border">
                                                 <input class="button" name="update" type="submit" value="Aggiorna" tabindex="4" />         		
@@ -66,7 +66,7 @@
                                                                 </select><br />
 
 								<label for="search">Codice / Toponimo</label>
-								<input class="large" id="search" name="search" value="" type="text" tabindex="3" />
+								<input class="large float_width" id="search" name="search" value="" type="text" tabindex="3" />
                                                         <?php 
                                                         $_GET['forest_codice']=$this->forest->getData('codice');
                                                         require __DIR__.DIRECTORY_SEPARATOR.'boscoForestCompartmentlist.php'; 

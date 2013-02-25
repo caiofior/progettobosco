@@ -157,7 +157,7 @@ input[type='radio'],input[type='checkbox'] {
 }
 #p2_container {
     width: 150px;
-    top:1630px;
+    top:1600px;
     left: 4px; 
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) { 
@@ -167,7 +167,7 @@ input[type='radio'],input[type='checkbox'] {
 }
 #p3_container {
     width: 150px;
-    top:1630px;
+    top:1600px;
     left: 158px; 
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) { 
@@ -177,7 +177,7 @@ input[type='radio'],input[type='checkbox'] {
 }
 #p4_container {
     width: 150px;
-    top:1630px;
+    top:1600px;
     left: 316px; 
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) { 
@@ -186,7 +186,7 @@ input[type='radio'],input[type='checkbox'] {
     }
 }
 #label_dendro_1 {
-    top:1840px;
+    top:1800px;
     left: 4px; 
     width: 180px;
 }
@@ -197,7 +197,7 @@ input[type='radio'],input[type='checkbox'] {
 }
 #d1_container {
     width: 100px;
-    top:1890px;
+    top:1850px;
     left: 4px; 
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) { 
@@ -207,7 +207,7 @@ input[type='radio'],input[type='checkbox'] {
 }
 #d3_container {
     width: 100px;
-    top:1890px;
+    top:1850px;
     left: 108px; 
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) { 
@@ -217,7 +217,7 @@ input[type='radio'],input[type='checkbox'] {
 }
 #d5_container {
     width: 100px;
-    top:1890px;
+    top:1850px;
     left: 216px; 
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) { 
@@ -226,7 +226,7 @@ input[type='radio'],input[type='checkbox'] {
     }
 }
 #label_dendro_2 {
-    top:1820px;
+    top:1780px;
     left: 200px; 
     width: 70px;
 }
@@ -237,7 +237,7 @@ input[type='radio'],input[type='checkbox'] {
 }
 #d14_container {
     width: 100px;
-    top:1890px;
+    top:1840px;
     left: 416px; 
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) { 
@@ -247,7 +247,7 @@ input[type='radio'],input[type='checkbox'] {
 }
 #d15_container {
     width: 100px;
-    top:1890px;
+    top:1840px;
     left: 520px; 
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) { 
@@ -257,7 +257,7 @@ input[type='radio'],input[type='checkbox'] {
 }
 #d16_container {
     width: 100px;
-    top:1890px;
+    top:1840px;
     left: 624px; 
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) { 
@@ -266,7 +266,7 @@ input[type='radio'],input[type='checkbox'] {
     }
 }
 #label_dendro_3 {
-    top:1800px;
+    top:1750px;
     left: 600px; 
     width: 70px;
 }

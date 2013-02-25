@@ -82,6 +82,7 @@ class B1 extends \forest\form\template\Form {
         $where .= $this->table->getAdapter()->quoteInto('cod_part = ? AND ', $this->data['cod_part']);
         $where .= $this->table->getAdapter()->quoteInto('cod_fo = ? ', $this->data['cod_fo']);
         $this->table->update($this->data, $where);
+        lastQuery();
     }
     /**
      * Deletes data
