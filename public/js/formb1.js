@@ -8,7 +8,8 @@ $("#t_descriz").autocomplete({
     minLength: 0,
     source: "bosco.php?task=autocomplete&action=t&codice="+$("#codice_bosco").val(),
     select: function( event, ui ) {
-        $("#t").val(ui.item.id )
+        $("#t").val(ui.item.id );
+        $("#formB1").trigger("submit");
     },
     change: function( event, ui ) {
             if ( !ui.item ) {
@@ -25,7 +26,8 @@ $("#s_descriz").autocomplete({
     minLength: 0,
     source: "bosco.php?task=autocomplete&action=s&codice="+$("#codice_bosco").val(),
     select: function( event, ui ) {
-        $("#s").val(ui.item.id )
+        $("#s").val(ui.item.id );
+        $("#formB1").trigger("submit");
     },
     change: function( event, ui ) {
             if ( !ui.item ) {
@@ -44,7 +46,7 @@ function autocompleteColtu () {
         minLength: 0,
         source: "bosco.php?task=autocomplete&action=cod_coltu&objectid="+$("#objectid").val(),
         select: function( event, ui ) {
-            $("#cod_coltu").val(ui.item.id )
+            $("#cod_coltu").val(ui.item.id );
         },
         change: function( event, ui ) {
                 if ( !ui.item ) {
@@ -346,7 +348,8 @@ function autocompleteRennovationSpecie () {
         minLength: 0,
         source: "bosco.php?task=autocomplete&action=cod_coltu&objectid="+$("#objectid").val(),
         select: function( event, ui ) {
-            $("#spe_nov").val(ui.item.id )
+            $("#spe_nov").val(ui.item.id );
+            $("#formB1").trigger("submit");
         },
         change: function( event, ui ) {
                 if ( !ui.item ) {
@@ -406,7 +409,7 @@ $(document).ajaxComplete(function() {
 /**
  * Manages edit arboree cod_coper
  **/
-$(document).on("change","#content_schedab_dspecieexitimation input,select", function() {
+$(document).on("change","#content_schedab_dspecieexitimation input,#content_schedab_dspecieexitimation select", function() {
     el = $("#newdspecieexitimation .addnew").parent("a");
     arboree_id = $(this).data("arboree-id");
     data = {
@@ -623,7 +626,7 @@ $(document).on("click","#content_schedab_note .delete",function(){
     el = $(this).parent("a");
     $.colorbox({
         "html"  :   "Vuoi cancellare la nota selezionata ?"+
-                    " <a id=\"note_delete_confirm\"href=\""+el.attr("href")+"\" data-update=\"content_schedaa_note\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
+                    " <a id=\"note_delete_confirm\"href=\""+el.attr("href")+"\" data-update=\"content_schedab_note\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
                     " <a id=\"note_delete_cancel\"href=\"#\"><img src=\"images/empty.png\" title=\"Annulla cancellazione\" class=\"actions cancel\"/> </a>",
         "onLoad": function() {
             $('#cboxClose').remove();
@@ -639,7 +642,7 @@ $(document).on("click","#note_delete_cancel",function(){
    return false;
 });
 formAjax("#formB1",".formb1_errors");
-$("fieldset > div > input").change(function () {
+$("fieldset > div > input,fieldset > input,fieldset > div > select").change(function () {
    $("#formB1").trigger("submit");
 });
 $("fieldset > div > input").dblclick(function () {

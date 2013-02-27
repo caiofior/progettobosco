@@ -72,8 +72,8 @@ class B extends \forest\form\template\Form {
             throw new Exception('Unable to update object without objectid',1301251130);
         foreach($this->data as $key=>$value)
             if ($value=='') $this->data[$key]=null;
-        $where = $this->table->getAdapter()->quoteInto('objectid = ? AND ', $this->data['objectid']);
-        $where .= $this->table->getAdapter()->quoteInto('proprieta = ? AND ', $this->data['proprieta']);
+        unset($this->data['objectid']);
+        $where = $this->table->getAdapter()->quoteInto('proprieta = ? AND ', $this->data['proprieta']);
         $where .= $this->table->getAdapter()->quoteInto('cod_part = ? AND ', $this->data['cod_part']);
         $where .= $this->table->getAdapter()->quoteInto('cod_fo = ? ', $this->data['cod_fo']);
         $this->table->update($this->data, $where);
@@ -83,8 +83,7 @@ class B extends \forest\form\template\Form {
      */
     public function delete() {
         if (key_exists('objectid', $this->data)) {
-            $where = $this->table->getAdapter()->quoteInto('objectid = ? AND ', $this->data['objectid']);
-            $where .= $this->table->getAdapter()->quoteInto('proprieta = ? AND ', $this->data['proprieta']);
+            $where = $this->table->getAdapter()->quoteInto('proprieta = ? AND ', $this->data['proprieta']);
             $where .= $this->table->getAdapter()->quoteInto('cod_part = ? AND ', $this->data['cod_part']);
             $where .= $this->table->getAdapter()->quoteInto('cod_fo = ? ', $this->data['cod_fo']);
             $this->table->delete($where);

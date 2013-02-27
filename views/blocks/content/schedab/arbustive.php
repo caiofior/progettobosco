@@ -1,12 +1,8 @@
 <div id="content_schedab_arbustive">
     <?php
-    if (!isset($a)) {
-        $a = new forest\form\A();
-        $a->loadFromId($_REQUEST['id']);
-        $forest = $a->getForest();
-        $b = $a->getBColl()->getFirst();
-        $b1 = $b->getB1Coll()->getFirst();
-        $shrubcomposition = new \forest\attribute\ShrubComposition();
+    if (!isset($b1)) {
+        $b1 = new \forest\form\B1();
+        $b1->loadFromId($_REQUEST['id']);
     }
     $shrubcompositioncoll = $b1->getShrubCompositionColl();
     

@@ -1,25 +1,22 @@
 <div id="content_schedab_arboree">
     <?php
-    if (!isset($a)) {
-        $a = new forest\form\A();
-        $a->loadFromId($_REQUEST['id']);
-        $forest = $a->getForest();
-        $b = $a->getBColl()->getFirst();
-        $b1 = $b->getB1Coll()->getFirst();
-        $forestcovercomposition = new \forest\attribute\ForestCoverComposition();
-        $cod_coper_coll = $forestcovercomposition->getControl('cod_coper');
+    if (!isset($b1)) {
+        $b1 = new \forest\form\B1();
+        $b1->loadFromId($_REQUEST['id']);
     }
+    $forestcovercomposition = new \forest\attribute\ForestCoverComposition();
+    $cod_coper_coll = $forestcovercomposition->getControl('cod_coper');
     $forestcovercompositioncoll = $b1->getForestCoverCompositionColl();
     
+    
     if (!key_exists('start', $_GET))
-            $_GET['start']=0;
+        $_GET['start']=0;
     $items_in_page =2;
     
     $forestcovercompositioncoll->loadAll(array(
         'start'=>$_GET['start'],
         'length'=>$items_in_page
     ));
-
     foreach ($forestcovercompositioncoll->getItems() as $forestcovercomposition) :
     ?>
     <div>

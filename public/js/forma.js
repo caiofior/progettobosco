@@ -230,7 +230,6 @@ oTable = $("#cadastral").dataTable( {
             surf = $(".surfacerecalc");
             if (surf.length > 0)
                 $("#cadastral_length").append(" ").append(surf.remove().show());
-            console.log($("#cadastral_wrapper").width());
             $(".dataTables_scrollHead").css("left","-239px");
             $("#cadastralsummary").show();
             $.get(
@@ -323,7 +322,7 @@ $(document).on("click","#cadastral_recalc_cancel",function(){
    return false;
 });
 formAjax("#formA",".forma_errors");
-$("fieldset > div > input").change(function () {
+$("fieldset > div > input,fieldset > input,fieldset > div > div > span > input").change(function () {
    $("#formA").trigger("submit");
 });
 $("fieldset > div > input").dblclick(function () {

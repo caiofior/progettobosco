@@ -117,7 +117,6 @@ if (key_exists('action', $_REQUEST)) {
             }
         break;
         case 'update':
-            
             if($_REQUEST['codice_bosco']== '')
                 $formErrors->addError(FormErrors::required,'codice_bosco','bosco');
             if($_REQUEST['c1'] != '' && !is_numeric($_REQUEST['c1']))

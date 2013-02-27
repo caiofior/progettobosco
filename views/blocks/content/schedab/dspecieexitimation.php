@@ -1,14 +1,11 @@
 <div id="content_schedab_dspecieexitimation">
     <?php
-    if (!isset($a)) {
-        $a = new forest\form\A();
-        $a->loadFromId($_REQUEST['id']);
-        $forest = $a->getForest();
-        $b = $a->getBColl()->getFirst();
-        $b1 = $b->getB1Coll()->getFirst();
-        $forestmassesteem = new \forest\attribute\ForestMassEsteem();
-        $cod_coper_coll= $forestmassesteem->getControl('cod_coper');
+    if (!isset($b1)) {
+        $b1 = new \forest\form\B1();
+        $b1->loadFromId($_REQUEST['id']);
     }
+    $forestmassesteem = new \forest\attribute\ForestMassEsteem();
+    $cod_coper_coll= $forestmassesteem->getControl('cod_coper');
     $forestmassesteemcoll = $b1->getForestMassEsteemColl();
     
     if (!key_exists('start', $_GET))
