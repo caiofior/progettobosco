@@ -78,6 +78,7 @@ class BColl extends \forest\form\template\FormColl {
         $b->setData($this->a->getData('proprieta'),'proprieta');
         $b->setData($this->a->getData('cod_part'),'cod_part');
         $b->setData($this->a->getData('cod_fo'),'cod_fo');
+        $b->setData(0,'u');
         return $b;
     }
 

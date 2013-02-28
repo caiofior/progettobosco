@@ -113,7 +113,7 @@
                                                             <a <?php echo $actions['last']['url'];?> <?php echo $actions['last']['data-update'];?> >
                                                                 <img class="actions last" src="images/empty.png" title="Ultimo">
                                                             </a>
-                                                            <a href="bosco.php?action=createforestcompartment&forest_codice=<?php echo $_GET['forest_codice'];?>" >
+                                                            <a href="bosco.php?action=createforestcompartment&forest_codice=<?php echo $a->getData('proprieta'); ?>" >
                                                                 <img class="actions addnew" src="images/empty.png" title="Aggiungi una nuova particella"/>
                                                             </a>
                                                         </div>

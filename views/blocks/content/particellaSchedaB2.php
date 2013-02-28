@@ -23,6 +23,13 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
             <p class="no-border">Regione <?php echo $forest->getRegion()->getData('descriz');?><br/>
             Sistema informativo per l'assestamento forestale</p>     
         </div>
+                    <div id="bosco_container">
+            <label for="bosco">Bosco</label>
+            <input readonly="readonly" id="bosco" name="bosco" value="<?php echo $forest->getData('descrizion');?>">
+        </div>
+        <div id="note_1">
+            <h3 >Schede B2 per descrivere una formazione specializzata per produzioni non legnose od impianti per arboricoltura da legno</h3>
+        </div>
         </fieldset>
     </form>
 </div>

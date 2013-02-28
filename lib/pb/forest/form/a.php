@@ -143,6 +143,14 @@ class A extends \forest\form\template\Form {
      */
     public function delete() {
         if (key_exists('objectid', $this->data)) {
+            $bcoll = $this->getBColl();
+            foreach ($bcoll as $b) {
+                $b1coll = $b->getB1Coll();
+                foreach ($b1coll as $b1) {
+                    $b1->delete();
+                }
+                $b->delete();
+            }
             $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
             $this->table->delete($where);
         }

@@ -1,6 +1,25 @@
 <?php
 $b1 = new \forest\form\B1();
+try{
 $b1->loadFromId($_REQUEST['id']);
+} catch (Exception $e) {
+    $a = new \forest\form\A();
+    $a->loadFromId($_REQUEST['id']);
+    $bcoll = $a->getBColl();
+    if ($bcoll->count() == 0) {
+        $b = $bcoll->addItem ();
+        $b->insert();
+        $bcoll = $a->getBColl();
+    }
+    $b = $bcoll->getFirst();
+    $b1coll = $b->getB1Coll();
+    if($b1coll->count() == 0) {
+        $b1 = $b1coll->addItem ();
+        $b1->insert();
+        $b1coll = $b->getB1Coll();
+    }
+    $b1 = $b1coll->getFirst();
+}
 if (key_exists('action', $_REQUEST)) {
     switch ($_REQUEST['action']) {
         case 'editarboree':
@@ -119,6 +138,11 @@ if (key_exists('action', $_REQUEST)) {
         case 'update':
             if($_REQUEST['codice_bosco']== '')
                 $formErrors->addError(FormErrors::required,'codice_bosco','bosco');
+            if(!key_exists('u', $_REQUEST) || $_REQUEST['u']== '')
+                $_REQUEST['u']='0';
+            if(!key_exists('objectid', $_REQUEST) || $_REQUEST['objectid']== '') {
+                $_REQUEST['objectid']=new \Zend_Db_Expr('DEFAULT');
+            }
             if($_REQUEST['c1'] != '' && !is_numeric($_REQUEST['c1']))
                 $formErrors->addError(FormErrors::valid_float,'c1','età prevalente','f');
             

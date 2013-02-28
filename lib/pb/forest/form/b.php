@@ -68,8 +68,11 @@ class B extends \forest\form\template\Form {
      * Updates data
      */
     public function update() {
-        if (!key_exists('objectid', $this->data)) 
-            throw new Exception('Unable to update object without objectid',1301251130);
+        if (!key_exists('proprieta', $this->data) ||
+            !key_exists('cod_part', $this->data) ||
+            !key_exists('cod_fo', $this->data)
+            ) 
+            throw new \Exception('Unable to update object without proprieta,cod_part and cod_fo',1301251130);
         foreach($this->data as $key=>$value)
             if ($value=='') $this->data[$key]=null;
         unset($this->data['objectid']);
