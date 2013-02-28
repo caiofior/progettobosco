@@ -255,6 +255,12 @@ if (key_exists('action', $_REQUEST)) {
             if ($formErrors->count() == 0) {
                 $b1->setData($_REQUEST);
                 $b1->update();
+                $log->setData(array(
+                    'user_id'=>$user->getData('id'),
+                    'username'=>$user->getData('username'),
+                    'description'=>'Modifica della Scheda B1 '.$b1->getData('proprieta').' '.$b1->getData('cod_part'),
+                    'objectid'=>$b1->getData('objectid'),
+                ));
             }
             $formErrors->getJsonError();
             exit;

@@ -129,6 +129,12 @@ if (key_exists('action', $_REQUEST)) {
             if ($formErrors->count() == 0) {
                 $a->setData($_REQUEST);
                 $a->update();
+                $log->setData(array(
+                            'user_id'=>$user->getData('id'),
+                            'username'=>$user->getData('username'),
+                            'description'=>'Modifica della Scheda A '.$a->getData('proprieta').' '.$a->getData('cod_part'),
+                            'objectid'=>$a->getData('objectid'),
+                        ));
             }
             $formErrors->getJsonError ();
             exit;

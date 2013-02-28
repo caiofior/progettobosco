@@ -43,7 +43,14 @@ if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
             if (key_exists('delete', $_REQUEST)) {
                 $forest = new forest\Forest();
                 $forest->loadFromId($_REQUEST['id']);
+                $descrizion = $forest->getData('descrizion');
                 $forest->delete();
+                        $log->setData(array(
+                            'user_id'=>$user->getData('id'),
+                            'username'=>$user->getData('username'),
+                            'description'=>'Cancellazione del bosco '.$descrizion,
+                            'objectid'=>$_REQUEST['id'],
+                        ));
             } else if (key_exists('deleteforestcompartment', $_REQUEST)) {
                 $a = new \forest\form\A();
                 $a->loadFromId($_REQUEST['id']);
@@ -134,7 +141,15 @@ else if (key_exists('action', $_REQUEST)) {
                     $acoll = $view->forest->getForestCompartmentColl();
                     $a = $acoll->addItem();
                     $a->setData($_REQUEST['cod_part'],'cod_part');
-                    try{$a->insert();}
+                    try{
+                        $a->insert();
+                        $log->setData(array(
+                            'user_id'=>$user->getData('id'),
+                            'username'=>$user->getData('username'),
+                            'description'=>'Aggiunta scheda A al bosco '.$_REQUEST['forest_codice'],
+                            'objectid'=>$view->forest->getData('id'),
+                        ));
+                    }
                     catch (Exception $e) {}
                 }
                 else {

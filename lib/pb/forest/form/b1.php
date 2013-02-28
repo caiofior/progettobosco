@@ -90,14 +90,10 @@ class B1 extends \forest\form\template\Form {
      * Deletes data
      */
     public function delete() {
-        if (key_exists('objectid', $this->data)) {
-            $b = $this->getFormB();
-            $b->delete();
             $where = $this->table->getAdapter()->quoteInto('proprieta = ? AND ', $this->data['proprieta']);
             $where .= $this->table->getAdapter()->quoteInto('cod_part = ? AND ', $this->data['cod_part']);
             $where .= $this->table->getAdapter()->quoteInto('cod_fo = ? ', $this->data['cod_fo']);
             $this->table->delete($where);
-        }
     }
      /**
      * Gets associated Structure

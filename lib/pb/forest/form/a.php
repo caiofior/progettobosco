@@ -144,9 +144,9 @@ class A extends \forest\form\template\Form {
     public function delete() {
         if (key_exists('objectid', $this->data)) {
             $bcoll = $this->getBColl();
-            foreach ($bcoll as $b) {
+            foreach ($bcoll->getItems() as $b) {
                 $b1coll = $b->getB1Coll();
-                foreach ($b1coll as $b1) {
+                foreach ($b1coll->getItems() as $b1) {
                     $b1->delete();
                 }
                 $b->delete();
