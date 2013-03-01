@@ -1,8 +1,8 @@
 <?php
 /**
- * Manages Form B forest compartment
+ * Manages Form B2 forest compartment
  * 
- * Manages Form B forest compartment
+ * Manages Form B2 forest compartment
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
@@ -20,38 +20,40 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
- * Manages Form B forest compartment
+ * Manages Form B2 forest compartment
  * 
- * Manages Form B forest compartment
+ * Manages Form B2 forest compartment
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class B extends \forest\form\template\Form {
+class B2 extends \forest\form\template\Form {
      /**
      * Instantiates the table
      */
     public function __construct() {
-        parent::__construct('schede_b');
+        parent::__construct('sched_b2');
     }
     /**
      * Loads form a data
      * @param integer $id
      */
     public function loadFromId($id) {
-        parent::loadFromId($id);
+        $where = $this->table->getAdapter()->quoteInto('objectid = ?', $id);
+        $data = $this->table->fetchRow($where);
+        if (is_null($data))
+            throw new \Exception('Unable to find the cod part',1302081202);
+        $this->data = $data->toArray();
         $this->calculatedVariables();
     }
     /**
      * Loads form a data form foreat and parcel code
      * @param string $proprieta Proprietà code
      * @param string $cod_part Forest compartment code
-     * @param string $cod_fo Forest compartment code
      */
-    public function loadFromCodePart($proprieta,$cod_part,$cod_fo) {
-        $where = $this->table->getAdapter()->quoteInto('proprieta = ? AND ', $proprieta);
-        $where .= $this->table->getAdapter()->quoteInto('cod_part = ? AND ', $cod_part);
-        $where .= $this->table->getAdapter()->quoteInto('cod_fo = ?', $cod_fo);
+    public function loadFromCodePart($proprieta,$cod_part) {
+        $where = $this->table->getAdapter()->quoteInto('proprieta = ?', $proprieta).' AND ';
+        $where .= $this->table->getAdapter()->quoteInto('cod_part = ?', $cod_part);
         $data = $this->table->fetchRow($where);
         if (is_null($data))
             throw new \Exception('Unable to find the cod part',1302081202);
@@ -64,6 +66,7 @@ class B extends \forest\form\template\Form {
     private function calculatedVariables () {
        
     }
+
      /**
      * Updates data
      */
@@ -75,7 +78,9 @@ class B extends \forest\form\template\Form {
             throw new \Exception('Unable to update object without proprieta,cod_part and cod_fo',1301251130);
         foreach($this->data as $key=>$value)
             if ($value=='') $this->data[$key]=null;
-        unset($this->data['objectid']);
+        $b = $this->getFormB();
+        $b->setData($this->rawData);
+        $b->update();
         $where = $this->table->getAdapter()->quoteInto('proprieta = ? AND ', $this->data['proprieta']);
         $where .= $this->table->getAdapter()->quoteInto('cod_part = ? AND ', $this->data['cod_part']);
         $where .= $this->table->getAdapter()->quoteInto('cod_fo = ? ', $this->data['cod_fo']);
@@ -90,34 +95,27 @@ class B extends \forest\form\template\Form {
             $where .= $this->table->getAdapter()->quoteInto('cod_fo = ? ', $this->data['cod_fo']);
             $this->table->delete($where);
     }
-    /**
-     * Return the associated B1 Collection
-     * @return \forest\form\B1Coll
-     */
-    public function getB1Coll () {
-        $b1coll = new \forest\form\B1Coll();
-        $b1coll->setFormB($this);
-        $b1coll->loadAll();
-        return $b1coll;
-    }
-    /**
-     * Gets associated Forest Type
-     * @return \forest\attribute\ForestType
-     */
-    public function getForestType () {
-        $foresttype = new \forest\attribute\ForestType();
-        if (key_exists('t', $this->data))
-            $foresttype->loadFromCode($this->data['t']);
-        return $foresttype;
-    }
      /**
-     * Return the associated B2 Collection
-     * @return \forest\form\B1Coll
+     * Return the associated note collection
+     * @return \forest\attribute\NoteBColl
      */
-    public function getB2Coll () {
-        $b2coll = new \forest\form\B2Coll();
-        $b2coll->setFormB($this);
-        $b2coll->loadAll();
-        return $b2coll;
+    public function getNotes () {
+        $notes = new \forest\attribute\NoteBColl();
+        $notes->setForm($this);
+        return $notes;
+    }
+    /**
+     * Return the associated B fomr
+     * @return \forest\form\B
+     */
+    private function getFormB() {
+        $b = new \forest\form\B();
+        if (
+                key_exists('proprieta',$this->data) &&
+                key_exists('cod_part',$this->data) &&
+                key_exists('cod_fo',$this->data)
+            )
+        $b->loadFromCodePart($this->data['proprieta'],$this->data['cod_part'],$this->data['cod_fo']);
+        return $b;
     }
 } 

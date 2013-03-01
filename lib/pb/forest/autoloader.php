@@ -25,6 +25,8 @@ if (!class_exists('Forest')) {
         'form'.DIRECTORY_SEPARATOR.'bcoll.php',
         'form'.DIRECTORY_SEPARATOR.'b1.php',
         'form'.DIRECTORY_SEPARATOR.'b1coll.php',
+        'form'.DIRECTORY_SEPARATOR.'b2.php',
+        'form'.DIRECTORY_SEPARATOR.'b2coll.php',
         'attribute'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'attribute.php',
         'attribute'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'attributecoll.php',
         'attribute'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'piu1_3.php',
