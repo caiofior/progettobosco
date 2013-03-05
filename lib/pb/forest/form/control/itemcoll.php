@@ -43,7 +43,7 @@ class ItemColl extends \ContentColl {
     public function loadAll(array $criteria = null) {
         $table =$this->content->getTable();
         if(is_null($table))
-            throw new \Exception('Unable to find the attribite in thhis form',1303041646);
+            throw new \Exception('Unable to find the attribite in this form',1303041646);
         $dbname = $table->getAdapter()->getConfig();
         $dbname = $dbname['dbname'];
         $items = $GLOBALS['CACHE']->load($dbname.'_'.$this->content->getTable()->info('name'));

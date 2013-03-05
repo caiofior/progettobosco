@@ -113,11 +113,361 @@ input[type='radio'],input[type='checkbox'] {
     word-break: break-all;
 }
 /**
-* Container of TAb1 blocks
+* Label TAb1 blocks
 **/
+#tab1note {
+    width: 100px;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #ffffff;
+}
+#tipocontainer {
+    top: -80px;
+    left: 120px;
+    width: 300px;
+    height: 80px;
+}
+#tipocontainer input {
+    float:left;
+    display: block;
+}
+#tipocontainer .tipo_descr {
+    display: block;
+    float:left;
+    width: 80px;
+    word-break: break-all;
+}
+/**
+* Tab 1 container
+*/
 #tab1container {
-    left: 0px;
-    top: 10px;
+    border-style: none;
+}
+#anno_imp_container {
+    top: -150px;
+    left: 450px;
+}
+#anno_dest_container {
+    top: -150px;
+    left: 620px;
+}
+#cod_coltup_container {
+    top: -50px;
+    left: 300px;
+}
+#cod_coltus_container {
+    top: -60px;
+    left: 600px;
+}
+#dist_container {
+    top: 50px;
+     width: 150px;
+}
+#dist_princ_container {
+    top: 50px;
+    left: 172px;
+    width: 150px;
+}
+#fall_container {
+    top: 150px;
+    left: 650px;
+    width: 150px;
+}
+/**
+*Com Spec container
+**/
+#com_specontainer {
+    top: -80px;
+    height: 40px;
+    width: 280px;
+}
+#com_specontainer input {
+    float:left;
+    display: block;
+}
+#com_specontainer .com_spe_descr {
+    display: block;
+    float:left;
+    width: 80px;
+    word-break: break-all;
+}
+/**
+*Com Spec container
+**/
+#sesto_imp_arbcontainer {
+    top: -50px;
+    left: 350px;
+    height: 40px;
     width: 400px;
-    height: 250px;
+}
+#sesto_imp_arbcontainer input {
+    float:left;
+    display: block;
+}
+#sesto_imp_arbcontainer .sesto_imp_arb_descr {
+    float:left;
+    width: 80px;
+    word-break: break-all;
+}
+/**
+*Com Spec container
+**/
+#sesto_imp_sp_princ_arbcontainer {
+    top: -50px;
+    left: 350px;
+    height: 40px;
+    width: 400px;
+}
+#sesto_imp_sp_princ_arbcontainer input {
+    float:left;
+    display: block;
+}
+#sesto_imp_sp_princ_arbcontainer .sesto_imp_sp_princ_descr {
+    float:left;
+    width: 80px;
+    word-break: break-all;
+}
+/**
+*Vig Arb Princ container
+**/
+#vig_arb_princcontainer {
+    top: -40px;
+    left: 0px;
+    height: 40px;
+    width: 300px;
+}
+#vig_arb_princcontainer input {
+    float:left;
+    display: block;
+}
+#vig_arb_princcontainer .vig_arb_princ_descr {
+    float:left;
+    width: 80px;
+    word-break: break-all;
+}
+/**
+*Vig Arb Sec container
+**/
+#vig_arb_seccontainer {
+    top: -100px;
+    left: 330px;
+    height: 40px;
+    width: 300px;
+}
+#vig_arb_seccontainer input {
+    float:left;
+    display: block;
+}
+#vig_arb_seccontainer .vig_arb_sec_descr {
+    float:left;
+    width: 80px;
+    word-break: break-all;
+}
+/**
+*Qual pri container
+**/
+#qual_pricontainer {
+    top: -80px;
+    left: 0px;
+    height: 40px;
+    width: 300px;
+}
+#qual_pricontainer input {
+    float:left;
+    display: block;
+}
+#qual_pricontainer .qual_pri_descr {
+    float:left;
+    width: 80px;
+    word-break: break-all;
+}
+/**
+* Tab 1 lines
+*/
+#line1tab1 {
+    position: relative;
+    top: -70px;
+    width: 450px;
+    border-top-style: solid;
+    border-top-width: 3px;
+    border-top-color: #0063DC;
+}
+#line2tab1 {
+    position: relative;
+    left: 450px;
+    top: -73px;
+    width: 350px;
+    border-top-style: dashed;
+    border-top-width: 3px;
+    border-top-color: #0063DC;
+}
+/**
+* Tab 2
+*/
+#tab2note {
+    position: relative;
+    top: -50px;
+    width: 100px;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #ffffff;
+}
+/**
+*Col cast container
+**/
+#colt_castcontainer {
+    top: -120px;
+    left: 120px;
+    height: 80px;
+    width: 500px;
+}
+#colt_castcontainer input {
+    float:left;
+    display: block;
+}
+#colt_castcontainer .colt_cast_descr {
+    float:left;
+    width: 80px;
+    word-break: break-all;
+}
+/**
+*Vig cast container
+**/
+#vig_castcontainer {
+    top: -100px;
+    left: 0px;
+    height: 40px;
+    width: 300px;
+}
+#vig_castcontainer input {
+    float:left;
+    display: block;
+}
+#vig_castcontainer .vig_cast_descr {
+    float:left;
+    width: 80px;
+    word-break: break-all;
+}
+/**
+*Sesto imp cast container
+**/
+#sesto_imp_castcontainer {
+    top: -160px;
+    left: 350px;
+    height: 40px;
+    width: 400px;
+}
+#sesto_imp_castcontainer input {
+    float:left;
+    display: block;
+}
+#sesto_imp_castcontainer .sesto_imp_cast_descr {
+    float:left;
+    width: 80px;
+    word-break: break-all;
+}
+/**
+* Tab 2 lines
+*/
+#line1tab2 {
+    position: relative;
+    top: -120px;
+    width: 450px;
+    border-top-style: solid;
+    border-top-width: 3px;
+    border-top-color: #0063DC;
+}
+#line2tab2 {
+    position: relative;
+    left: 450px;
+    top: -123px;
+    width: 350px;
+    border-top-style: dashed;
+    border-top-width: 3px;
+    border-top-color: #0063DC;
+}
+/**
+* Tab 3
+*/
+#tab3note {
+    position: relative;
+    top: -100px;
+    width: 100px;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #ffffff;
+}
+#tab3container {
+    border-style: none;
+}
+#cod_coltub_container {
+    top: -160px;
+    left: 150px;
+}
+#cod_coltua_container {
+    top: -80px;
+    left: 0px;
+}
+#num_piante_container {
+    top: 30px;
+    left: 50px;
+}
+#piant_tart_container {
+    top: 30px;
+    left: 250px;
+}
+/**
+*Sesto imp tart container
+**/
+#sesto_imp_tartcontainer {
+    top: -50px;
+    left: 0px;
+    height: 40px;
+    width: 400px;
+}
+#sesto_imp_tartcontainer input {
+    float:left;
+    display: block;
+}
+#sesto_imp_tartcontainer .sesto_imp_tart_descr {
+    float:left;
+    width: 80px;
+    word-break: break-all;
+}
+/**
+* Tab 3 lines
+*/
+#line1tab3 {
+    position: relative;
+    top: 20px;
+    width: 450px;
+    border-top-style: solid;
+    border-top-width: 3px;
+    border-top-color: #0063DC;
+}
+#line2tab3 {
+    position: relative;
+    left: 450px;
+    top: 17px;
+    width: 350px;
+    border-top-style: dashed;
+    border-top-width: 3px;
+    border-top-color: #0063DC;
+}
+/**
+* Tab 4
+*/
+#tab4note {
+    position: relative;
+    top: 30px;
+    width: 100px;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #ffffff;
+}
+#tab4container {
+    border-style: none;
+}
+#s_container {
+    left:120px;
 }

@@ -46,7 +46,21 @@ class B2Coll extends \forest\form\template\FormColl {
      * @return \Zend_Db_Select
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
-        $select->setIntegrityCheck(false);
+        $select->setIntegrityCheck(false)->from('sched_b2', array(
+            '*',
+            'cod_coltus_descriz' =>new \Zend_Db_Expr(
+                '( SELECT diz_arbo.nome_itali || \' | \' || diz_arbo.nome_scien FROM diz_arbo WHERE diz_arbo.cod_coltu=sched_b2.cod_coltus) '
+             ),
+            'cod_coltup_descriz' =>new \Zend_Db_Expr(
+                '( SELECT diz_arbo.nome_itali || \' | \' || diz_arbo.nome_scien FROM diz_arbo WHERE diz_arbo.cod_coltu=sched_b2.cod_coltup) '
+             ),
+             'cod_coltua_descriz' =>new \Zend_Db_Expr(
+                '( SELECT diz_arbo.nome_itali || \' | \' || diz_arbo.nome_scien FROM diz_arbo WHERE diz_arbo.cod_coltu=sched_b2.cod_coltua) '
+             ),
+            'cod_coltub_descriz' =>new \Zend_Db_Expr(
+                '( SELECT diz_arbo.nome_itali || \' | \' || diz_arbo.nome_scien FROM diz_arbo WHERE diz_arbo.cod_coltu=sched_b2.cod_coltub) '
+             )
+        ));
         if ($this->b instanceof \forest\form\B) {
             $select->where('sched_b2.proprieta = ?', $this->b->getData('proprieta'))
                    ->where('sched_b2.cod_part = ?', $this->b->getData('cod_part'))
