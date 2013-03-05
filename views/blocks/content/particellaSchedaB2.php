@@ -23,7 +23,7 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
             <p class="no-border">Regione <?php echo $forest->getRegion()->getData('descriz');?><br/>
             Sistema informativo per l'assestamento forestale</p>     
         </div>
-                    <div id="bosco_container">
+        <div id="bosco_container">
             <label for="bosco">Bosco</label>
             <input readonly="readonly" id="bosco" name="bosco" value="<?php echo $forest->getData('descrizion');?>">
         </div>
@@ -34,19 +34,33 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
             <label class="double" for="cod_part">Particella / sottoparticella</label>
             <input readonly="readonly" id="cod_part" name="cod_part" value="<?php echo $a->getData('cod_part');?>">
         </div>
+        <div id="t_container">
+            <label for="t" class="double">Tipo forestale</label>
+            <input type="hidden" id="t" name="t" value="<?php echo $b->getData('t');?>">
+            <input data-old-descriz="<?php echo $b->getForestType()->getData('descriz'); ?>" id="t_descriz" name="t_descriz" value="<?php echo $b->getForestType()->getData('descriz');?>">
+        </div>
         </fieldset>
         <fieldset id="ucontainer" >
             <legend>Tipo</legend>
+            <div>
         <?php
-        foreach($b2->getControl('u')->getItems() as $item) :
+        $labels=array(
+          10=> 'arboricoltura specializzata da legno',
+          2=> 'castagneti da frutto',
+          11=> 'impianti specializzati per tartuficoltura',
+          12=> 'sugherete'
+        );
+        foreach($labels as $key=>$item) :
         $checked = '';
-        if ($item->getRawData('codice') == $b2->getData('u'))
+        if ($key == $b->getData('u'))
             $checked = 'checked="checked"';
         ?>
-        <input type="radio" name="u" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"><span class="m_descr"><?php echo $item->getData('descriz'); ?></span>
+        <input type="radio" name="u" <?php echo $checked; ?> value="<?php echo $key; ?>"><div class="u_descr"><?php echo $item; ?></div>
         <?php endforeach;?>
+            </div>
         </fieldset>
-
+        <fieldset id="tab1container" >
+        </fieldset>
     </form>
 </div>
 <script type="text/javascript" src="js/formb2.js" defer></script>

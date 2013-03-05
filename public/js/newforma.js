@@ -4,7 +4,7 @@
 $("#cod_part").focus(function() {
     $(".new_forma_error").hide();
 })
-.change(function() {
+.keyup(function() {
    $.ajax({
      url: $("#newcodepart").attr("action"),
      data: {

@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>phpDocumentor » \User</title>
+<title>phpDocumentor » \forest\form\B2</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -58,23 +58,23 @@
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
 <li class="method public "><a href="#method___construct" title="__construct :: Instantiates the table"><span class="description">Instantiates the table</span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#method_checkPassword" title="checkPassword :: Check password consistence"><span class="description">Check password consistence</span><pre>checkPassword()</pre></a></li>
-<li class="method public inherited"><a href="#method_delete" title="delete :: Deletes data"><span class="description">Deletes data</span><pre>delete()</pre></a></li>
-<li class="method public "><a href="#method_generatePassword" title="generatePassword :: Generates a new password"><span class="description">Generates a new password</span><pre>generatePassword()</pre></a></li>
-<li class="method public "><a href="#method_getAuthAdapter" title="getAuthAdapter :: Creates user auth class"><span class="description">Creates user auth class</span><pre>getAuthAdapter()</pre></a></li>
+<li class="method public "><a href="#method_delete" title="delete :: Deletes data"><span class="description">Deletes data</span><pre>delete()</pre></a></li>
+<li class="method public inherited"><a href="#method_getControl" title="getControl :: Returns the associated control"><span class="description">Returns the associated control</span><pre>getControl()</pre></a></li>
 <li class="method public inherited"><a href="#method_getData" title="getData :: Gets the data"><span class="description">Gets the data</span><pre>getData()</pre></a></li>
-<li class="method public "><a href="#method_getForestColl" title="getForestColl :: Return the forrest collection"><span class="description">Return the forrest collection</span><pre>getForestColl()</pre></a></li>
-<li class="method public "><a href="#method_getProfile" title="getProfile :: Gets associated profile to the user"><span class="description">Gets associated profile to the user</span><pre>getProfile()</pre></a></li>
+<li class="method public "><a href="#method_getNotes" title="getNotes :: Return the associated note collection"><span class="description">Return the associated note collection</span><pre>getNotes()</pre></a></li>
 <li class="method public inherited"><a href="#method_getRawData" title="getRawData :: Gets the raw data"><span class="description">Gets the raw data</span><pre>getRawData()</pre></a></li>
 <li class="method public inherited"><a href="#method_getTable" title="getTable :: Returns associated db table"><span class="description">Returns associated db table</span><pre>getTable()</pre></a></li>
-<li class="method public "><a href="#method_insert" title="insert :: Adds a new user, please save the password in clear in password_new"><span class="description">Adds a new user, please save the password in clear in password_new</span><pre>insert()</pre></a></li>
-<li class="method public "><a href="#method_isAdmin" title="isAdmin :: Check if user is admin"><span class="description">Check if user is admin</span><pre>isAdmin()</pre></a></li>
-<li class="method public "><a href="#method_isUserForestAdmin" title="isUserForestAdmin :: Check if a user manages a forest"><span class="description">Check if a user manages a forest</span><pre>isUserForestAdmin()</pre></a></li>
-<li class="method public "><a href="#method_loadFromConformationCode" title="loadFromConformationCode :: Loads user from its confirmation code"><span class="description">Loads user from its confirmation code</span><pre>loadFromConformationCode()</pre></a></li>
-<li class="method public "><a href="#method_loadFromId" title="loadFromId :: Loads user from its id"><span class="description">Loads user from its id</span><pre>loadFromId()</pre></a></li>
-<li class="method public "><a href="#method_loadFromUsername" title="loadFromUsername :: Loads user from its username"><span class="description">Loads user from its username</span><pre>loadFromUsername()</pre></a></li>
-<li class="method public "><a href="#method_setData" title="setData :: Remaps user id value"><span class="description">Remaps user id value</span><pre>setData()</pre></a></li>
-<li class="method public "><a href="#method_update" title="update :: Updates user data"><span class="description">Updates user data</span><pre>update()</pre></a></li>
+<li class="method public inherited"><a href="#method_insert" title="insert :: Adds a data"><span class="description">Adds a data</span><pre>insert()</pre></a></li>
+<li class="method public "><a href="#method_loadFromCodePart" title="loadFromCodePart :: Loads form a data form foreat and parcel code"><span class="description">Loads form a data form foreat and parcel code</span><pre>loadFromCodePart()</pre></a></li>
+<li class="method public "><a href="#method_loadFromId" title="loadFromId :: Loads form a data"><span class="description">Loads form a data</span><pre>loadFromId()</pre></a></li>
+<li class="method public inherited"><a href="#method_setData" title="setData :: Sets the data"><span class="description">Sets the data</span><pre>setData()</pre></a></li>
+<li class="method public "><a href="#method_update" title="update :: Updates data"><span class="description">Updates data</span><pre>update()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method_calculatedVariables" title="calculatedVariables :: Sets the calculated variables"><span class="description">Sets the calculated variables</span><pre>calculatedVariables()</pre></a></li>
+<li class="method private "><a href="#method_getFormB" title="getFormB :: Return the associated B fomr"><span class="description">Return the associated B fomr</span><pre>getFormB()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header">
@@ -83,6 +83,7 @@
 </li>
 <li class="nav-header protected">» Protected
                     <ul>
+<li class="property protected inherited"><a href="#property_all_attributes_data" title="$all_attributes_data :: All attribute data"><span class="description"></span><pre>$all_attributes_data</pre></a></li>
 <li class="property protected inherited"><a href="#property_data" title="$data :: Data used for insert and update"><span class="description"></span><pre>$data</pre></a></li>
 <li class="property protected inherited"><a href="#property_empty_entity" title="$empty_entity :: Columns available in database"><span class="description"></span><pre>$empty_entity</pre></a></li>
 <li class="property protected inherited"><a href="#property_rawData" title="$rawData :: Raw data, with cusom culoms"><span class="description"></span><pre>$rawData</pre></a></li>
@@ -92,19 +93,22 @@
 </ul>
 </div>
 <div class="span8">
-<a id="\User"></a><ul class="breadcrumb">
+<a id="\forest\form\B2"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
-<li><a href="../namespaces/global.html">global</a></li>
+<li><a href="../namespaces/forest.html">forest</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/forest.form.html">form</a>
+</li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/User.html">User</a>
+<span class="divider">\</span><a href="../classes/forest.form.B2.html">B2</a>
 </li>
 </ul>
 <div class="element class">
-<p class="short_description">Manages User account</p>
+<p class="short_description">Manages Form B2 forest compartment</p>
 <div class="details">
-<div class="long_description"><p>Manages User account</p></div>
+<div class="long_description"><p>Manages Form B2 forest compartment</p></div>
 <table class="table table-bordered">
 <tr>
 <th>author</th>
@@ -123,56 +127,29 @@
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a id="method_checkPassword"></a><div class="element clickable method public method_checkPassword" data-toggle="collapse" data-target=".method_checkPassword .collapse">
-<h2>Check password consistence</h2>
-<pre>checkPassword(string $new_password) : bool</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$new_password</h4>
-<code>string</code>
-</div>
-<h3>Returns</h3>
-<div class="subelement response"><code>bool</code></div>
-</div></div>
-</div>
 <a id="method_delete"></a><div class="element clickable method public method_delete" data-toggle="collapse" data-target=".method_delete .collapse">
 <h2>Deletes data</h2>
 <pre>delete() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getControl"></a><div class="element clickable method public method_getControl" data-toggle="collapse" data-target=".method_getControl .collapse">
+<h2>Returns the associated control</h2>
+<pre>getControl(string $attribute) : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
-<td>\Content::delete()</td>
+<td>\forest\form\template\Form::getControl()</td>
 </tr></table>
-</div></div>
-</div>
-<a id="method_generatePassword"></a><div class="element clickable method public method_generatePassword" data-toggle="collapse" data-target=".method_generatePassword .collapse">
-<h2>Generates a new password</h2>
-<pre>generatePassword(int $n) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
-<h4>$n</h4>
-<code>int</code><p>number of charcaters</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>password</div>
-</div></div>
+<h4>$attribute</h4>
+<code>string</code>
 </div>
-<a id="method_getAuthAdapter"></a><div class="element clickable method public method_getAuthAdapter" data-toggle="collapse" data-target=".method_getAuthAdapter .collapse">
-<h2>Creates user auth class</h2>
-<pre>getAuthAdapter() : \Zend_Auth_Adapter_DbTable</pre>
-<div class="labels"><span class="label">Static</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
 <h3>Returns</h3>
-<div class="subelement response"><code>\Zend_Auth_Adapter_DbTable</code></div>
+<div class="subelement response"><code>boolean</code></div>
 </div></div>
 </div>
 <a id="method_getData"></a><div class="element clickable method public method_getData" data-toggle="collapse" data-target=".method_getData .collapse">
@@ -181,10 +158,16 @@
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\Content::getData()</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\Form::getData()</td>
+</tr>
+</table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$field</h4>
@@ -193,28 +176,14 @@
 <div class="subelement response"><code>array</code></div>
 </div></div>
 </div>
-<a id="method_getForestColl"></a><div class="element clickable method public method_getForestColl" data-toggle="collapse" data-target=".method_getForestColl .collapse">
-<h2>Return the forrest collection</h2>
-<pre>getForestColl(bool $filtered) : <a href="../classes/forest.ForestColl.html">\forest\ForestColl</a></pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$filtered</h4>
-<code>bool</code><p>Set id data has to be filtered by user</p></div>
-<h3>Returns</h3>
-<div class="subelement response"><code><a href="../classes/forest.ForestColl.html">\forest\ForestColl</a></code></div>
-</div></div>
-</div>
-<a id="method_getProfile"></a><div class="element clickable method public method_getProfile" data-toggle="collapse" data-target=".method_getProfile .collapse">
-<h2>Gets associated profile to the user</h2>
-<pre>getProfile() : <a href="../classes/Profile.html">\Profile</a></pre>
+<a id="method_getNotes"></a><div class="element clickable method public method_getNotes" data-toggle="collapse" data-target=".method_getNotes .collapse">
+<h2>Return the associated note collection</h2>
+<pre>getNotes() : <a href="../classes/forest.attribute.NoteBColl.html">\forest\attribute\NoteBColl</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Returns</h3>
-<div class="subelement response"><code><a href="../classes/Profile.html">\Profile</a></code></div>
+<div class="subelement response"><code><a href="../classes/forest.attribute.NoteBColl.html">\forest\attribute\NoteBColl</a></code></div>
 </div></div>
 </div>
 <a id="method_getRawData"></a><div class="element clickable method public method_getRawData" data-toggle="collapse" data-target=".method_getRawData .collapse">
@@ -223,10 +192,16 @@
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\Content::getRawData()</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\Form::getRawData()</td>
+</tr>
+</table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$field</h4>
@@ -241,89 +216,83 @@
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\Content::getTable()</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\Form::getTable()</td>
+</tr>
+</table>
 <h3>Returns</h3>
 <div class="subelement response"><code>\Zend_Db_Table</code></div>
 </div></div>
 </div>
 <a id="method_insert"></a><div class="element clickable method public method_insert" data-toggle="collapse" data-target=".method_insert .collapse">
-<h2>Adds a new user, please save the password in clear in password_new</h2>
+<h2>Adds a data</h2>
 <pre>insert() </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
-</div>
-<a id="method_isAdmin"></a><div class="element clickable method public method_isAdmin" data-toggle="collapse" data-target=".method_isAdmin .collapse">
-<h2>Check if user is admin</h2>
-<pre>isAdmin() : bool</pre>
-<div class="labels"></div>
+<div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<h3>Returns</h3>
-<div class="subelement response"><code>bool</code></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Content::insert()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\Form::insert()</td>
+</tr>
+</table>
 </div></div>
 </div>
-<a id="method_isUserForestAdmin"></a><div class="element clickable method public method_isUserForestAdmin" data-toggle="collapse" data-target=".method_isUserForestAdmin .collapse">
-<h2>Check if a user manages a forest</h2>
-<pre>isUserForestAdmin(\forest\Forest $forest) : boolean</pre>
+<a id="method_loadFromCodePart"></a><div class="element clickable method public method_loadFromCodePart" data-toggle="collapse" data-target=".method_loadFromCodePart .collapse">
+<h2>Loads form a data form foreat and parcel code</h2>
+<pre>loadFromCodePart(string $proprieta, string $cod_part) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
-<h4>$forest</h4>
-<code><a href="../classes/forest.Forest.html">\forest\Forest</a></code>
+<h4>$proprieta</h4>
+<code>string</code><p>Proprietà code</p>
 </div>
-<h3>Returns</h3>
-<div class="subelement response"><code>boolean</code></div>
-</div></div>
-</div>
-<a id="method_loadFromConformationCode"></a><div class="element clickable method public method_loadFromConformationCode" data-toggle="collapse" data-target=".method_loadFromConformationCode .collapse">
-<h2>Loads user from its confirmation code</h2>
-<pre>loadFromConformationCode(string $confirmation_code) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
 <div class="subelement argument">
-<h4>$confirmation_code</h4>
-<code>string</code><p>Confirmation code</p></div>
+<h4>$cod_part</h4>
+<code>string</code><p>Forest compartment code</p></div>
 </div></div>
 </div>
 <a id="method_loadFromId"></a><div class="element clickable method public method_loadFromId" data-toggle="collapse" data-target=".method_loadFromId .collapse">
-<h2>Loads user from its id</h2>
-<pre>loadFromId(int $id) </pre>
+<h2>Loads form a data</h2>
+<pre>loadFromId(integer $id) </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$id</h4>
-<code>int</code>
-</div>
-</div></div>
-</div>
-<a id="method_loadFromUsername"></a><div class="element clickable method public method_loadFromUsername" data-toggle="collapse" data-target=".method_loadFromUsername .collapse">
-<h2>Loads user from its username</h2>
-<pre>loadFromUsername(string $username) </pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$username</h4>
-<code>string</code>
+<code>integer</code>
 </div>
 </div></div>
 </div>
 <a id="method_setData"></a><div class="element clickable method public method_setData" data-toggle="collapse" data-target=".method_setData .collapse">
-<h2>Remaps user id value</h2>
+<h2>Sets the data</h2>
 <pre>setData(\variant $data, string | null $field) </pre>
-<div class="labels"></div>
+<div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Content::setData()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\Form::setData()</td>
+</tr>
+</table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$data</h4>
@@ -336,23 +305,57 @@
 </div></div>
 </div>
 <a id="method_update"></a><div class="element clickable method public method_update" data-toggle="collapse" data-target=".method_update .collapse">
-<h2>Updates user data</h2>
+<h2>Updates data</h2>
 <pre>update() </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="method_calculatedVariables"></a><div class="element clickable method private method_calculatedVariables" data-toggle="collapse" data-target=".method_calculatedVariables .collapse">
+<h2>Sets the calculated variables</h2>
+<pre>calculatedVariables() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getFormB"></a><div class="element clickable method private method_getFormB" data-toggle="collapse" data-target=".method_getFormB .collapse">
+<h2>Return the associated B fomr</h2>
+<pre>getFormB() : <a href="../classes/forest.form.B.html">\forest\form\B</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/forest.form.B.html">\forest\form\B</a></code></div>
+</div></div>
+</div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_all_attributes_data"> </a><div class="element clickable property protected property_all_attributes_data" data-toggle="collapse" data-target=".property_all_attributes_data .collapse">
+<h2></h2>
+<pre>$all_attributes_data : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\forest\form\template\Form::$$all_attributes_data</td>
+</tr></table>
+</div></div>
+</div>
 <a id="property_data"> </a><div class="element clickable property protected property_data" data-toggle="collapse" data-target=".property_data .collapse">
 <h2></h2>
 <pre>$data : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\Content::$$data</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\Form::$$data</td>
+</tr>
+</table>
 </div></div>
 </div>
 <a id="property_empty_entity"> </a><div class="element clickable property protected property_empty_entity" data-toggle="collapse" data-target=".property_empty_entity .collapse">
@@ -361,10 +364,16 @@
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\Content::$$empty_entity</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\Form::$$empty_entity</td>
+</tr>
+</table>
 </div></div>
 </div>
 <a id="property_rawData"> </a><div class="element clickable property protected property_rawData" data-toggle="collapse" data-target=".property_rawData .collapse">
@@ -373,10 +382,16 @@
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\Content::$$rawData</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\Form::$$rawData</td>
+</tr>
+</table>
 </div></div>
 </div>
 <a id="property_table"> </a><div class="element clickable property protected property_table" data-toggle="collapse" data-target=".property_table .collapse">
@@ -385,10 +400,16 @@
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\Content::$$table</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\Form::$$table</td>
+</tr>
+</table>
 </div></div>
 </div>
 </div>

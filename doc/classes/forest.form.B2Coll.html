@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 <meta charset="utf-8">
-<title>phpDocumentor » \forest\RegionColl</title>
+<title>phpDocumentor » \forest\form\B2Coll</title>
 <meta name="author" content="Mike van Riel">
 <meta name="description" content="">
 <link href="../css/template.css" rel="stylesheet" media="all">
@@ -58,13 +58,14 @@
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
 <li class="method public "><a href="#method___construct" title="__construct :: Instantiates the table"><span class="description">Instantiates the table</span><pre>__construct()</pre></a></li>
-<li class="method public inherited"><a href="#method_addItem" title="addItem :: Add new item to the collection"><span class="description">Add new item to the collection</span><pre>addItem()</pre></a></li>
+<li class="method public "><a href="#method_addItem" title="addItem :: Add new item to the collection"><span class="description">Add new item to the collection</span><pre>addItem()</pre></a></li>
 <li class="method public inherited"><a href="#method_count" title="count :: Returns the collection items"><span class="description">Returns the collection items</span><pre>count()</pre></a></li>
-<li class="method public inherited"><a href="#method_countAll" title="countAll :: Returns all contents without any filter"><span class="description">Returns all contents without any filter</span><pre>countAll()</pre></a></li>
+<li class="method public "><a href="#method_countAll" title="countAll :: Returns all contents without any filter"><span class="description">Returns all contents without any filter</span><pre>countAll()</pre></a></li>
 <li class="method public inherited"><a href="#method_getColumns" title="getColumns :: Return the colum names"><span class="description">Return the colum names</span><pre>getColumns()</pre></a></li>
 <li class="method public inherited"><a href="#method_getFirst" title="getFirst :: Return the first item of the collection"><span class="description">Return the first item of the collection</span><pre>getFirst()</pre></a></li>
 <li class="method public inherited"><a href="#method_getItems" title="getItems :: Returns the collection items"><span class="description">Returns the collection items</span><pre>getItems()</pre></a></li>
 <li class="method public inherited"><a href="#method_loadAll" title="loadAll :: Load all contents"><span class="description">Load all contents</span><pre>loadAll()</pre></a></li>
+<li class="method public "><a href="#method_setFormB" title="setFormB :: Set the form a"><span class="description">Set the form a</span><pre>setFormB()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header protected">» Protected
@@ -81,22 +82,28 @@
 <li class="property protected inherited"><a href="#property_items" title="$items :: Array of items"><span class="description"></span><pre>$items</pre></a></li>
 </ul>
 </li>
+<li class="nav-header private">» Private
+                    <ul><li class="property private "><a href="#property_b" title="$b :: Reference to form B"><span class="description"></span><pre>$b</pre></a></li></ul>
+</li>
 </ul>
 </div>
 <div class="span8">
-<a id="\forest\RegionColl"></a><ul class="breadcrumb">
+<a id="\forest\form\B2Coll"></a><ul class="breadcrumb">
 <li>
 <a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
 </li>
 <li><a href="../namespaces/forest.html">forest</a></li>
+<li>
+<span class="divider">\</span><a href="../namespaces/forest.form.html">form</a>
+</li>
 <li class="active">
-<span class="divider">\</span><a href="../classes/forest.RegionColl.html">RegionColl</a>
+<span class="divider">\</span><a href="../classes/forest.form.B2Coll.html">B2Coll</a>
 </li>
 </ul>
 <div class="element class">
-<p class="short_description">Manages Region collection</p>
+<p class="short_description">Manages Form B2 forest compartment collection</p>
 <div class="details">
-<div class="long_description"><p>Manages Region collection</p></div>
+<div class="long_description"><p>Manages Form B2 forest compartment collection</p></div>
 <table class="table table-bordered">
 <tr>
 <th>author</th>
@@ -117,16 +124,12 @@
 </div>
 <a id="method_addItem"></a><div class="element clickable method public method_addItem" data-toggle="collapse" data-target=".method_addItem .collapse">
 <h2>Add new item to the collection</h2>
-<pre>addItem() : <a href="../classes/Content.html">\Content</a></pre>
-<div class="labels"><span class="label">Inherited</span></div>
+<pre>addItem() : <a href="../classes/forest.form.B1.html">\forest\form\B1</a></pre>
+<div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\ContentColl::addItem()</td>
-</tr></table>
 <h3>Returns</h3>
-<div class="subelement response"><code><a href="../classes/Content.html">\Content</a></code></div>
+<div class="subelement response"><code><a href="../classes/forest.form.B1.html">\forest\form\B1</a></code></div>
 </div></div>
 </div>
 <a id="method_count"></a><div class="element clickable method public method_count" data-toggle="collapse" data-target=".method_count .collapse">
@@ -135,24 +138,30 @@
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\ContentColl::count()</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\FormColl::count()</td>
+</tr>
+</table>
 <h3>Returns</h3>
 <div class="subelement response"><code>array</code></div>
 </div></div>
 </div>
 <a id="method_countAll"></a><div class="element clickable method public method_countAll" data-toggle="collapse" data-target=".method_countAll .collapse">
 <h2>Returns all contents without any filter</h2>
-<pre>countAll() </pre>
-<div class="labels"><span class="label">Inherited</span></div>
+<pre>countAll(array $criteria) </pre>
+<div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\ContentColl::countAll()</td>
-</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$criteria</h4>
+<code>null</code><code>array</code><p>Filtering criteria</p></div>
 </div></div>
 </div>
 <a id="method_getColumns"></a><div class="element clickable method public method_getColumns" data-toggle="collapse" data-target=".method_getColumns .collapse">
@@ -161,10 +170,16 @@
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\ContentColl::getColumns()</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\FormColl::getColumns()</td>
+</tr>
+</table>
 </div></div>
 </div>
 <a id="method_getFirst"></a><div class="element clickable method public method_getFirst" data-toggle="collapse" data-target=".method_getFirst .collapse">
@@ -173,10 +188,16 @@
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\ContentColl::getFirst()</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\FormColl::getFirst()</td>
+</tr>
+</table>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/Content.html">\Content</a></code></div>
 </div></div>
@@ -187,10 +208,16 @@
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\ContentColl::getItems()</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\FormColl::getItems()</td>
+</tr>
+</table>
 <h3>Returns</h3>
 <div class="subelement response"><code>array</code></div>
 </div></div>
@@ -201,14 +228,33 @@
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\ContentColl::loadAll()</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\FormColl::loadAll()</td>
+</tr>
+</table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$criteria</h4>
 <code>array</code><p>Filtering criteria</p></div>
+</div></div>
+</div>
+<a id="method_setFormB"></a><div class="element clickable method public method_setFormB" data-toggle="collapse" data-target=".method_setFormB .collapse">
+<h2>Set the form a</h2>
+<pre>setFormB(\forest\form\B $b) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$b</h4>
+<code><a href="../classes/forest.form.B.html">\forest\form\B</a></code>
+</div>
 </div></div>
 </div>
 <a id="method_customSelect"></a><div class="element clickable method protected method_customSelect" data-toggle="collapse" data-target=".method_customSelect .collapse">
@@ -237,10 +283,16 @@
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\ContentColl::$$columns</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\FormColl::$$columns</td>
+</tr>
+</table>
 </div></div>
 </div>
 <a id="property_content"> </a><div class="element clickable property protected property_content" data-toggle="collapse" data-target=".property_content .collapse">
@@ -249,10 +301,16 @@
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\ContentColl::$$content</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\FormColl::$$content</td>
+</tr>
+</table>
 </div></div>
 </div>
 <a id="property_items"> </a><div class="element clickable property protected property_items" data-toggle="collapse" data-target=".property_items .collapse">
@@ -261,11 +319,23 @@
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\ContentColl::$$items</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\FormColl::$$items</td>
+</tr>
+</table>
 </div></div>
+</div>
+<a id="property_b"> </a><div class="element clickable property private property_b" data-toggle="collapse" data-target=".property_b .collapse">
+<h2></h2>
+<pre>$b : <a href="../classes/forest.form.B.html">\forest\form\B</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
 </div>
 </div>
@@ -274,7 +344,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-03-05T13:47:37+01:00.<br></footer></div>
+            generated on 2013-03-05T13:47:36+01:00.<br></footer></div>
 </div>
 </body>
 </html>
