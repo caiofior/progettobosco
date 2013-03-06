@@ -91,3 +91,140 @@ $("#cod_coltua_descr").autocomplete({
 }).focus(function() {
     $(this).val("").autocomplete("search","")
 });
+$("#arboree2container").prepend("<a id=\"arboree2_list_update\" style=\"display:none;\" href=\""+$("#formB2").attr("action")+"\" data-update=\"content_schedab2_arboree2\"></a>");
+/**
+ * Manages autocomplete arboree cod coltu
+ **/
+function autocompleteColtu () {
+        $("#cod_coltu2_descr, #content_schedab2_arboree2 input.cod_coltu2").autocomplete({
+        minLength: 0,
+        source: "bosco.php?task=autocomplete&action=cod_coltu&objectid="+$("#objectid").val(),
+        select: function( event, ui ) {
+            $("#cod_coltu").val(ui.item.id );
+        },
+        change: function( event, ui ) {
+                if ( !ui.item ) {
+                      $("#cod_coltu2_descr").val("");
+                }
+                el = $(this);
+                old = el.data("old-value");
+                if (typeof old == "string" && el.val() != "" && el.val() != old) {
+                    arboree_id = $(this).data("arboree-id");
+                    $("#cod_coper2_"+arboree_id).trigger("change");
+                }
+        }
+    }).focus(function() {
+        $(this).val("").autocomplete("search","")
+    }).blur(function () {
+        el = $(this);
+        old = el.data("old-value");
+        if (typeof old == "string" && el.val() == "") {
+            el.val(old);
+        }
+    });
+}
+autocompleteColtu ();
+$(document).ajaxComplete(function() {
+    autocompleteColtu ();
+});
+/**
+ * Manages edit arboree cod_coper
+ **/
+$(document).on("change","#content_schedab2_arboree2 select", function() {
+    el = $("#newarboree2 .addnew").parent("a");
+    arboree_id = $(this).data("arboree-id");
+    data = {
+        "xhr":1,
+        "arboree_id":arboree_id,
+        "cod_coltu" : $("#cod_coltu2_"+arboree_id).val(),
+        "cod_coper" : $("#cod_coper2_"+arboree_id).val()
+    };
+    $.ajax({
+            type: "POST",
+            async: false,
+            url: el.attr("href"),
+            data: data,
+            dataType: "json",
+            success: function(response) {
+                if (response == true) {
+                    $("#arboree2_list_update").trigger("click");
+                    status = true;
+                }
+                else {
+                    $.each(response["names"], function(id,val) {
+                        $("#"+val).addClass("error");
+                    });
+                    $("#ajaxloader").hide();
+                }
+                
+            },
+            error: function(jqXHR , textStatus,  errorThrown) {
+                $("#ajaxloader").hide();
+            }
+        });
+     
+        return status;
+    
+});
+/**
+ * Manages add new forest cover
+ */
+$(document).on("click","#newarboree2 .addnew",function(){
+    status = false;
+    el = $(this).parent("a");
+    data = {
+        "xhr":1,
+        "cod_coltu" : $("#cod_coltu").val(),
+        "cod_coper" : $("#cod_coper").val()
+    };
+    $.ajax({
+            type: "POST",
+            async: false,
+            url: el.attr("href"),
+            data: data,
+            dataType: "json",
+            success: function(response) {
+                if (response == true) {
+                     $("#cod_coltu_descr").val("");
+                     $("#cod_coltu").val("");
+                     $("#cod_coper option").removeAttr("selected");
+                    status = true;
+                }
+                else {
+                    $.each(response["names"], function(id,val) {
+                        $("#"+val).addClass("error");
+                    });
+                    $("#ajaxloader").hide();
+                }
+                
+            },
+            error: function(jqXHR , textStatus,  errorThrown) {
+                $("#ajaxloader").hide();
+            }
+        });
+     
+        return status;  
+    
+});
+/**
+ * Manages delete forest cover
+ **/
+$(document).on("click","#content_schedab2_arboree2 .delete",function(){
+    el = $(this).parent("a");
+    $.colorbox({
+        "html"  :   "Vuoi cancellare la specie selezionata ?"+
+                    " <a id=\"codcover_delete_confirm\"href=\""+el.attr("href")+"\" data-update=\"content_schedab_arboree\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
+                    " <a id=\"codcover_delete_cancel\"href=\"#\"><img src=\"images/empty.png\" title=\"Annulla cancellazione\" class=\"actions cancel\"/> </a>",
+        "onLoad": function() {
+            $('#cboxClose').remove();
+        }
+    });
+   return false;
+});
+$(document).on("click","#codcover_delete_confirm",function(){
+   $.colorbox.close();
+});
+$(document).on("click","#codcover_delete_cancel",function(){
+   $.colorbox.close();
+   return false;
+});

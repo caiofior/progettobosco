@@ -1,49 +1,39 @@
-<div id="content_schedab_arboree">
+<div id="content_schedab2_arboree2">
     <?php
     if (!isset($b2)) {
         $b2 = new \forest\form\B2();
         $b2->loadFromId($_REQUEST['id']);
     }
-    $forestcovercomposition = new \forest\attribute\ForestCoverComposition();
-    $cod_coper_coll = $forestcovercomposition->getControl('cod_coper');
-    $forestcovercompositioncoll = $b1->getForestCoverCompositionColl();
+    $corkcovercomposition = new \forest\attribute\CorkCoverComposition();
+    $cod_coper_coll = $corkcovercomposition->getControl('cod_coper');
+    $corkcovercompositioncoll = $b2->getCorkCoverCompositionColl();
     
     
     if (!key_exists('start', $_GET))
         $_GET['start']=0;
     $items_in_page =2;
     
-    $forestcovercompositioncoll->loadAll(array(
+    $corkcovercompositioncoll->loadAll(array(
         'start'=>$_GET['start'],
         'length'=>$items_in_page
     ));
-    foreach ($forestcovercompositioncoll->getItems() as $forestcovercomposition) :
+    foreach ($corkcovercompositioncoll->getItems() as $corkcovercomposition) :
     ?>
     <div>
         <span>
             <div>
-                <input type="hidden" id="cod_coltu2_<?php echo $forestcovercomposition->getData('objectid');?>" name="cod_coltu_<?php echo $forestcovercomposition->getData('objectid');?>" value="<?php echo $forestcovercomposition->getRawData('cod_coltu');?>"/>
-                <input id="cod_coltu2_descr_<?php echo $forestcovercomposition->getData('objectid');?>" data-arboree-id="<?php echo $forestcovercomposition->getData('objectid');?>" name="cod_coltu2_descr_<?php echo $forestcovercomposition->getData('objectid');?>" value="<?php echo $forestcovercomposition->getRawData('cod_colt2_descriz');?>" data-old-value="<?php echo $forestcovercomposition->getRawData('cod_colt2_descriz');?>">
+                <input type="hidden" id="cod_coltu2_<?php echo $corkcovercomposition->getData('objectid');?>" name="cod_coltu_<?php echo $corkcovercomposition->getData('objectid');?>" value="<?php echo $corkcovercomposition->getRawData('cod_coltu');?>"/>
+                <input class="cod_coltu2" id="cod_coltu2_descr_<?php echo $corkcovercomposition->getData('objectid');?>" data-arboree-id="<?php echo $corkcovercomposition->getData('objectid');?>" name="cod_coltu2_descr_<?php echo $corkcovercomposition->getData('objectid');?>" value="<?php echo $corkcovercomposition->getRawData('cod_colt2_descriz');?>" data-old-value="<?php echo $corkcovercomposition->getRawData('cod_colt2_descriz');?>">
             </div>
         </span>
         <span>
             <div>
-                <select id="cod_coper2_<?php echo $forestcovercomposition->getData('objectid');?>" name="cod_coper_<?php echo $forestcovercomposition->getData('objectid');?>" data-arboree-id="<?php echo $forestcovercomposition->getData('objectid');?>">
-                    <option value="">Scegli un valore di copertura</option>
-                    <?php
-                    foreach($cod_coper_coll->getItems() as $item) :
-                    $selected = '';
-                    if ($item->getRawData('codice') == $forestcovercomposition->getData('cod_coper'))
-                        $selected = 'selected="selected"';
-                    ?>
-                    <option <?php echo $selected; ?> value="<?php echo $item->getData('codice'); ?>"><?php echo $item->getData('descriz'); ?></option>
-                    <?php endforeach;?>
-                </select>
+                <input id="cod_coper2_<?php echo $corkcovercomposition->getData('objectid');?>" name="cod_coper2_<?php echo $corkcovercomposition->getData('objectid');?>" data-arboree-id="<?php echo $corkcovercomposition->getData('objectid');?>" value="<?php echo $corkcovercomposition->getData('cod_coper');?>" />
             </div>
         </span>
         <span>
             <div>
-                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb1&id=<?php echo $b1->getData('objectid');?>&deletearboree=<?php echo $forestcovercomposition->getData('objectid');?>"  >
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&id=<?php echo $b1->getData('objectid');?>&deletearboree=<?php echo $corkcovercomposition->getData('objectid');?>"  >
                     <img class="actions delete" src="images/empty.png" title="Cancella"/>
                 </a>
             </div>
@@ -74,17 +64,17 @@
             'data-update'=>''
         ),
     );
-    $countall =$forestcovercompositioncoll->countAll();
+    $countall =$corkcovercompositioncoll->countAll();
     $last_page = floor($countall/$items_in_page)*$items_in_page;
 
     if ($start>0) {
         $actions['prev']=array(
             'url'=>'href="?'.$baseurl.'&start='.max($start-$items_in_page,0).'"',
-            'data-update'=>'data-update="content_schedab_arboree"'
+            'data-update'=>'data-update="content_schedab2_arboree2"'
         );
         $actions['first']=array(
             'url'=>'href="?'.$baseurl.'&start=0"',
-            'data-update'=>'data-update="content_schedab_arboree"'
+            'data-update'=>'data-update="content_schedab2_arboree2"'
         );
     }
 
@@ -92,11 +82,11 @@
 
         $actions['next']=array(
             'url'=>'href="?'.$baseurl.'&start='.min($start+$items_in_page,$last_page).'"',
-            'data-update'=>'data-update="content_schedab_arboree"'
+            'data-update'=>'data-update="content_schedab2_arboree2"'
         );
          $actions['last']=array(
             'url'=>'href="?'.$baseurl.'&start='.$last_page .'"',
-            'data-update'=>'data-update="content_schedab_arboree"'
+            'data-update'=>'data-update="content_schedab2_arboree2"'
         );
     }
     ?>

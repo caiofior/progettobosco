@@ -471,3 +471,262 @@ input[type='radio'],input[type='checkbox'] {
 #s_container {
     left:120px;
 }
+/**
+*Fito bio container
+**/
+#fito_bio_container {
+    width: 100px;
+    top: 390px;
+    left: 220px;
+}
+/**
+*Fito bio spec container
+**/
+#fito_bio_spec_container {
+    width: 100px;
+    top: 450px;
+    left: 220px;
+}
+/**
+*Fito bio container
+**/
+#fito_abio_container {
+    width: 100px;
+    top: 390px;
+    left: 330px;
+}
+/**
+*Fito bio spec container
+**/
+#fito_abio_spec_container {
+    width: 100px;
+    top: 430px;
+    left: 330px;
+}
+/**
+*Fito bio spec container
+**/
+#spe_nov_container {
+    width: 100px;
+    top: 430px;
+    left: 330px;
+}
+/**
+* Arboree 2 container
+*/
+#arboree2container {
+    left: 0px;
+    top: 50px;
+    width: 260px;
+    height: 150px;
+}
+#newarboree2 {
+    top: 24px;
+    left: 4px;
+    width: 250px;
+}
+#content_schedab2_arboree2 {
+    top: 74px;
+    left: 4px;
+    width: 250px;
+}
+#content_schedab2_arboree2  div{
+    position: relative;
+    clear: both;
+}
+#content_schedab2_arboree2  div span{
+    float:left;
+    width: 80px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#newarboree2  div{
+    position: relative;
+    clear: both;
+}
+
+#newarboree2 div span{
+    float:left;
+    width: 80px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#arboree2container .scrollcontrols span input{
+    display: inline;
+}
+#arboree2container .scrollcontrols img {
+    margin-top: 5px;
+    vertical-align:top;
+}
+/**
+*O container
+**/
+#ocontainer {
+    top: 60px;
+    left: 0px;
+    height: 120px;
+    width: 260px;
+}
+#ocontainer input {
+    float:left;
+    display: block;
+}
+#ocontainer .o_descr {
+    float:left;
+    width: 50px;
+    word-break: break-all;
+}
+/**
+*Vig sug container
+**/
+#vig_sugcontainer {
+    top: -75px;
+    left: 280px;
+    height: 120px;
+    width: 150px;
+}
+#vig_sugcontainer input {
+    float:left;
+    display: block;
+}
+#vig_sugcontainer .vig_sug_descr {
+    float:left;
+    width: 35px;
+    word-break: break-all;
+}
+/**
+*Fito sug container
+**/
+#fito_sugcontainer {
+    top: -75px;
+    left: 0px;
+    height: 80px;
+    width: 200px;
+}
+#fito_sugcontainer input {
+    float:left;
+    display: block;
+}
+#fito_sugcontainer .fito_sug_descr {
+    float:left;
+    width: 47px;
+    word-break: break-all;
+}
+/**
+*V container
+**/
+#vcontainer {
+    top: -60px;
+    left: 0px;
+    height: 80px;
+    width: 130px;
+}
+#vcontainer input {
+    float:left;
+    display: block;
+}
+#vcontainer .v_descr {
+    float:left;
+    width: 50px;
+    word-break: break-all;
+}
+/**
+*D container
+**/
+#dcontainer {
+    top: -150px;
+    left: 150px;
+    height: 80px;
+    width: 230px;
+}
+#dcontainer input {
+    float:left;
+    display: block;
+}
+#dcontainer .d_descr {
+    float:left;
+    width: 55px;
+    word-break: break-all;
+}
+/**
+*N1 container
+**/
+#n1container {
+    top: -140px;
+    left: 0px;
+    height: 40px;
+    width: 210px;
+}
+#n1container input {
+    float:left;
+    display: block;
+}
+#n1container .n1_descr {
+    float:left;
+    width: 55px;
+    word-break: break-all;
+}
+/**
+* N1 arrow
+*/
+#n1arrow_right {
+    top: -190px;
+    left: 230px;
+    width: 10px;
+    height: 43px;
+    border-style: none;
+    background: transparent url('../images/arrow-right.png') no-repeat;
+}
+/**
+*N2 container
+**/
+#n2container {
+    top: -260px;
+    left: 250px;
+    height: 60px;
+    width: 170px;
+}
+#n2container input {
+    float:left;
+    display: block;
+}
+#n2container .n2_descr {
+    float:left;
+    width: 70px;
+    word-break: break-all;
+}
+/**
+*N3 container
+**/
+#n3container {
+    top: -260px;
+    left: 0px;
+    height: 40px;
+    width: 210px;
+}
+#n3container input {
+    float:left;
+    display: block;
+}
+#n3container .n3_descr {
+    float:left;
+    width: 75px;
+    word-break: break-all;
+}
+/**
+* N3 arrow
+*/
+#n3arrow_right {
+    top: -300px;
+    left: 230px;
+    width: 10px;
+    height: 43px;
+    border-style: none;
+    background: transparent url('../images/arrow-right.png') no-repeat;
+}

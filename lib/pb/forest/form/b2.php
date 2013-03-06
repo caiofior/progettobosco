@@ -118,4 +118,23 @@ class B2 extends \forest\form\template\Form {
         $b->loadFromCodePart($this->data['proprieta'],$this->data['cod_part'],$this->data['cod_fo']);
         return $b;
     }
+    /**
+     * Gets the associated Cork Cover Composition Collection
+     * @return \forest\attribute\CorkCoverCompositionColl
+     */
+    public function getCorkCoverCompositionColl() {
+        $corkcovercompositioncoll = new \forest\attribute\CorkCoverCompositionColl();
+        $corkcovercompositioncoll->setForm($this);
+        return $corkcovercompositioncoll;
+    }
+        /**
+     * Gets the assoiated rennovatio specie
+     * @return \forest\attribute\Arboreal
+     */
+    public function getRennovationSpecie() {
+        $rennovationspecie = new \forest\attribute\Arboreal();
+        if (key_exists('spe_nov', $this->data))
+            $rennovationspecie->loadFromId($this->data['spe_nov']);
+        return $rennovationspecie;
+    }
 } 

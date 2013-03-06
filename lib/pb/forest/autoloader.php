@@ -55,6 +55,8 @@ if (!class_exists('Forest')) {
         'attribute'.DIRECTORY_SEPARATOR.'structurecoll.php',
         'attribute'.DIRECTORY_SEPARATOR.'forestcovercomposition.php',
         'attribute'.DIRECTORY_SEPARATOR.'forestcovercompositioncoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'corkcovercomposition.php',
+        'attribute'.DIRECTORY_SEPARATOR.'corkcovercompositioncoll.php',
         'attribute'.DIRECTORY_SEPARATOR.'arboreal.php',
         'attribute'.DIRECTORY_SEPARATOR.'arborealcoll.php',
         'attribute'.DIRECTORY_SEPARATOR.'shrubcomposition.php',
