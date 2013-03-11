@@ -133,7 +133,7 @@ class B1 extends \forest\form\template\Form {
         return $herbaceuscoll;
     }
     /**
-     * Gets the assoiated rennovatio specie
+     * Gets the associated rennovation specie
      * @return \forest\attribute\Arboreal
      */
     public function getRennovationSpecie() {

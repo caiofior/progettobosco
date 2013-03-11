@@ -15,7 +15,7 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
 </script>
     <div id="tabContent">
     <form id="formB2" action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&action=update&id=<?php echo $a->getData('objectid');?>">
-        <div class="form_messages formb1_errors" style="display: none;"></div>
+        <div class="form_messages formb2_errors" style="display: none;"></div>
         <fieldset id="general">
             <input type="hidden" id="codice_bosco" name="codice_bosco" value="<?php echo $forest->getData('codice');?>"/>
             <input type="hidden" id="objectid" name="objectid" value="<?php echo $b2->getData('objectid');?>"/>
@@ -334,7 +334,7 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
             foreach($b2->getControl('s')->getItems() as $item) : ?>
             <option <?php echo ($item->getData('codice') == $b2->getData('s') ? 'selected="selected"' : '')?> value="<?php echo $item->getData('codice'); ?>"><?php echo $item->getData('descriz'); ?></option>
             <?php endforeach;?>
-                </select>
+        </select>
         </div>
         <div id="fito_bio_container">
             <label for="fito_bio">agenti biologici</label>
@@ -362,6 +362,34 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
             ?>
             <input type="hidden" id="spe_nov" name="spe_nov" value="<?php echo $b2->getData('spe_nov');?>"/>
             <input id="spe_nov_descr" name="spe_nov_descr" value="<?php echo $value; ?>" data-old-value="<?php echo $value; ?>">
+        </div>
+        <div id="tipo_int_sug_container">
+            <label for="tipo_int_sug">Categorie intervento per sugherete</label>
+            <select id="tipo_int_sug" name="tipo_int_sug">
+            <option value="">Scegli un tipo di intervento</option>
+            <?php
+            foreach($b2->getControl('tipo_int_sug')->getItems() as $item) : ?>
+            <option <?php echo ($item->getData('codice') == $b2->getData('tipo_int_sug') ? 'selected="selected"' : '')?> value="<?php echo $item->getData('codice'); ?>"><?php echo $item->getData('descriz'); ?></option>
+            <?php endforeach;?>
+            </select>
+        </div>
+        <div id="int2_container">
+            <label for="int2">Interventi recenti</label>
+            <select id="int2" name="int2">
+            <option value="">Scegli un tipo di intervento</option>
+            <?php
+            foreach($b2->getControl('int2')->getItems() as $item) : ?>
+            <option <?php echo ($item->getData('codice') == $b2->getData('int2') ? 'selected="selected"' : '')?> value="<?php echo $item->getData('codice'); ?>"><?php echo $item->getData('descriz'); ?></option>
+            <?php endforeach;?>
+            </select>
+        </div>
+        <div id="int3_container">
+            <label for="int3">Specifiche</label>
+            <input id="int3" name="int3"value ="<?php echo $b2->getData('int3') ; ?>">
+        </div>
+        <div id="estraz_passata_container">
+            <label for="estraz_passata">Anno estrazione sughero</label>
+            <input id="estraz_passata" name="estraz_passata"value ="<?php echo $b2->getData('estraz_passata') ; ?>">
         </div>
         </fieldset>
         <fieldset id="arboree2container" >
@@ -539,6 +567,229 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
         </div>
         </fieldset>
         <fieldset id="n3arrow_right"></fieldset>
+        <fieldset id="dsugcontainer">
+            <legend>Dati di orientamento dendrometrico</legend>
+            <div id="d5_container">
+                <label class="double" for="d5">n° alberi /ha</label>
+                <input id="d5" name="d5"value ="<?php echo $b2->getData('d5') ; ?>">
+            </div>
+            <div id="d10_container">
+                <label for="d10">n° alberi produttivi/ha</label>
+                <input id="d10" name="d10"value ="<?php echo $b2->getData('d10') ; ?>">
+            </div>
+            <div id="d11_container">
+                <label class="double" for="d11">n° polloni/ha</label>
+                <input id="d11" name="d11"value ="<?php echo $b2->getData('d11') ; ?>">
+            </div>
+            <div id="d12_container">
+                <label class="double" for="d12">n° monocauli/ha</label>
+                <input id="d12" name="d12"value ="<?php echo $b2->getData('d12') ; ?>">
+            </div>
+            <div id="d1_container">
+                <label for="d1">diametro preval.(cm)</label>
+                <input id="d1" name="d1"value ="<?php echo $b2->getData('d1') ; ?>">
+            </div>
+            <div id="d3_container">
+                <label for="d3">altezza preval.(cm)</label>
+                <input id="d3" name="d3"value ="<?php echo $b2->getData('d3') ; ?>">
+            </div>
+            <div id="d13_container">
+                <label class="double" for="d13">Produzione media (q)</label>
+                <input id="d13" name="d13"value ="<?php echo $b2->getData('d13') ; ?>">
+            </div>
+        </fieldset>
+        <div id="tab4verticalline"></div>
+        <fieldset id="tab5container">
+            <div id="c1_container">
+                <label for="c1">Età prevalente accertata</label>
+                <input id="c1" name="c1"value ="<?php echo $b2->getData('c1') ; ?>">
+            </div>
+            <div id="ce_container">
+                <label for="ce">Copertura</label>
+                <input id="ce" name="ce"value ="<?php echo $b2->getData('ce') ; ?>">
+            </div>
+            <div id="tipo_prescr_sug_container">
+                <label for="tipo_prescr_sug">Interventi recenti</label>
+                <select id="tipo_prescr_sug" name="tipo_prescr_sug">
+                <option value="">Scegli un tipo di intervento</option>
+                <?php
+                foreach($b2->getControl('tipo_prescr_sug')->getItems() as $item) : ?>
+                <option <?php echo ($item->getData('codice') == $b2->getData('tipo_prescr_sug') ? 'selected="selected"' : '')?> value="<?php echo $item->getData('codice'); ?>"><?php echo $item->getData('descriz'); ?></option>
+                <?php endforeach;?>
+                </select>
+            </div>
+            <div id="p2_container">
+                <label for="p2">Ipotesi di intervento</label>
+                <select id="p2" name="p2">
+                <option value="">Scegli un tipo di intervento</option>
+                <?php
+                foreach($b2->getControl('p2')->getItems() as $item) : ?>
+                <option <?php echo ($item->getData('codice') == $b2->getData('p2') ? 'selected="selected"' : '')?> value="<?php echo $item->getData('codice'); ?>"><?php echo $item->getData('descriz'); ?></option>
+                <?php endforeach;?>
+                </select>
+            </div>
+            <div id="estraz_futura_container">
+                <label for="estraz_futura">Anno previsto per estrazione sughero</label>
+                <input id="estraz_futura" name="estraz_futura"value ="<?php echo $b2->getData('estraz_futura') ; ?>">
+            </div>
+            <div id="p3_container">
+                <label for="p3">Ipotesi di intervento (secondaria)</label>
+                <select id="p3" name="p3">
+                <option value="">Scegli un tipo di intervento</option>
+                <?php
+                foreach($b2->getControl('p3')->getItems() as $item) : ?>
+                <option <?php echo ($item->getData('codice') == $b2->getData('p3') ? 'selected="selected"' : '')?> value="<?php echo $item->getData('codice'); ?>"><?php echo $item->getData('descriz'); ?></option>
+                <?php endforeach;?>
+                </select>
+            </div>
+            <div id="p4_container">
+                <label for="p4">Specifiche interventi di altro tipo</label>
+                <input id="p4" name="p4"value ="<?php echo $b2->getData('p4') ; ?>">
+            </div>
+        </fieldset>
+        <fieldset id="srcontainer" >
+        <legend>Strato arbustivo</legend>
+        <?php
+        foreach($b2->getControl('sr')->getItems() as $item) :
+        $checked = '';
+        if ($item->getRawData('codice') == $b2->getData('sr'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="sr" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"><span class="sr_descr"><?php echo $item->getData('descriz'); ?></span><br/>
+        <?php endforeach;?>
+        </fieldset>
+        <fieldset id="arbustivecontainer" >
+        <legend>Specie arbustive significative</legend>
+        <div id="newarbustive">
+                <div>
+                    <span>
+                        <div>Specie</div>
+                    </span>
+                    <span>
+                        <div>Azioni</div>
+                    </span>
+                </div>
+            <div>
+            <span>
+                <input type="hidden" id="cod_coltu_ar" name="cod_coltu_ar" value=""/>
+                <input id="cod_coltu_ar_descr" name="cod_coltu_ar_descr" value=""/>
+            </span>
+            <span>
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb1&action=editarbustive&id=<?php echo $b2->getData('objectid');?>" data-update="content_schedab2_arbustive">
+                    <img class="actions addnew" src="images/empty.png" title="Aggiungi una specie erbacea"/>
+                </a>
+            </span>
+            </div>
+        </div>
+        <?php require (__DIR__.DIRECTORY_SEPARATOR.'schedab2'.DIRECTORY_SEPARATOR.'arbustive.php');?>
+        </fieldset>
+        <fieldset id="secontainer" >
+        <legend>Strato erbaceo</legend>
+        <?php
+        foreach($b2->getControl('se')->getItems() as $item) :
+        $checked = '';
+        if ($item->getRawData('codice') == $b2->getData('se'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="se" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"><span class="se_descr"><?php echo $item->getData('descriz'); ?></span><br/>
+        <?php endforeach;?>
+        </fieldset>
+        <fieldset id="erbaceecontainer" >
+        <legend>Specie erbacee significative</legend>
+        <div id="newerbacee">
+                <div>
+                    <span>
+                        <div>Specie</div>
+                    </span>
+                    <span>
+                        <div>Azioni</div>
+                    </span>
+                </div>
+            <div>
+            <span>
+                <input type="hidden" id="cod_coltu_er" name="cod_coltu_er" value=""/>
+                <input id="cod_coltu_er_descr" name="cod_coltu_er_descr" value=""/>
+            </span>
+            <span>
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb1&action=editerbacee&id=<?php echo $b2->getData('objectid');?>" data-update="content_schedab2_erbacee">
+                    <img class="actions addnew" src="images/empty.png" title="Aggiungi una specie erbacea"/>
+                </a>
+            </span>
+            </div>
+        </div>
+        <?php require (__DIR__.DIRECTORY_SEPARATOR.'schedab2'.DIRECTORY_SEPARATOR.'erbacee.php');?>
+        </fieldset>
+        <fieldset id="g1container" >
+        <legend>Priorità e condizionamenti</legend>
+        <div >
+        <?php
+        $labels=array(
+          1=> 'immediata',
+          2=> 'entro primo periodo',
+          3=> 'entro secondo periodo',
+          4=> 'differibile'
+        );
+        foreach($labels as $key=>$item) :
+        $checked = '';
+        if ($key == $b->getData('g1'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="g1" <?php echo $checked; ?> value="<?php echo $key; ?>"><div class="g1_descr"><?php echo $item; ?></div>
+        <?php endforeach;?>
+        </div>
+        </fieldset>
+        <fieldset id="n5arrow_right"></fieldset>
+        <fieldset id="sub_viabcontainer" >
+        <legend>Subordinato alla viabilità</legend>
+        <div >
+        <?php
+        foreach($b2->getControl('sub_viab')->getItems() as $key=>$item) :
+        $checked = '';
+        if ($item->getData('codice') == $b->getData('sub_viab'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="sub_viab" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"><div class="sub_viab_descr"><?php echo $item->getData('descriz'); ?></div>
+        <?php endforeach;?>
+        </div>
+        </fieldset>
+        <fieldset id="forestnotecontainer">
+            <legend>Note</legend>
+            <textarea id="note" name="note" rows="16" cols="45"><?php echo $b2->getData('note');?></textarea>
+        </fieldset>
+        <fieldset id="notescontainer">
+        <legend>Note alle singole voci</legend>
+        <div id="newnote">
+                <div>
+                    <span>
+                        <div>Parametro</div>
+                    </span>
+                    <span>
+                        <div>Nota</div>
+                    </span>
+                    <span>
+                        <div>Azioni</div>
+                    </span>
+                </div>
+            <div>
+                <span>
+                    <input type="hidden" id="cod_nota" name="cod_nota" value=""/>
+                    <input id="cod_nota_descr" name="cod_nota_descr" value=""/>
+                </span>
+
+                <span>
+                    <textarea id="text_nota" name="text_nota" rows="2" cols="30"></textarea>
+                </span>
+                <span>
+                    <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&action=editnote&id=<?php echo $b2->getData('objectid');?>" data-update="content_schedab2_note">
+                        <img class="actions addnew" src="images/empty.png" title="Aggiungi una nota"/>
+                    </a>
+                </span>
+            </div>
+        </div>
+        <?php
+        require __DIR__.DIRECTORY_SEPARATOR.'schedab2'.DIRECTORY_SEPARATOR.'note.php';
+        ?>
+        </fieldset>
     </form>
 </div>
 <script type="text/javascript" src="js/formb2.js" defer></script>

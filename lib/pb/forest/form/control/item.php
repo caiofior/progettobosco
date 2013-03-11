@@ -44,6 +44,8 @@ class Item extends \Content {
         $data=parent::getData($field);
         if ($field == 'descriz' && $data == '')
             $data=parent::getData('valore');
+        if ($field == 'descriz' && $data == '')
+            $data=parent::getData('descrizion');
         return $data;
     }
 }

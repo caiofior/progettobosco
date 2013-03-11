@@ -58,6 +58,9 @@ input[type='radio'],input[type='checkbox'] {
    background: transparent;
    border: 0;
 }
+#formB2 {
+    height: 2900px;
+}
 /**
 * General part
 **/
@@ -504,12 +507,44 @@ input[type='radio'],input[type='checkbox'] {
     left: 330px;
 }
 /**
-*Fito bio spec container
+* Spe nov container
 **/
 #spe_nov_container {
-    width: 100px;
-    top: 430px;
-    left: 330px;
+    width: 200px;
+    top: 670px;
+    left: 250px;
+}
+/**
+* Tipo int sug container
+**/
+#tipo_int_sug_container {
+    width: 400px;
+    top: 750px;
+    left: 0px;
+}
+/**
+* Int2 container
+**/
+#int2_container {
+    width: 150px;
+    top: 800px;
+    left: 0px;
+}
+/**
+* Int3 container
+**/
+#int3_container {
+    width: 120px;
+    top: 800px;
+    left: 160px;
+}
+/**
+* Estraz passata container
+*/
+#estraz_passata_container {
+    width: 120px;
+    top: 800px;
+    left: 290px;
 }
 /**
 * Arboree 2 container
@@ -729,4 +764,360 @@ input[type='radio'],input[type='checkbox'] {
     height: 43px;
     border-style: none;
     background: transparent url('../images/arrow-right.png') no-repeat;
+}
+/**
+* D cork container
+**/
+#dsugcontainer {
+    top: -150px;
+    left: 0px;
+    height: 180px;
+    width: 400px;
+}
+/**
+* D5 cork container
+**/
+#d5_container {
+    width: 90px;
+}
+/**
+* D10 cork container
+**/
+#d10_container {
+    width: 90px;
+    left: 100px;
+}
+/**
+* D11 cork container
+**/
+#d11_container {
+    width: 90px;
+    left: 200px;
+}
+/**
+* D12 cork container
+**/
+#d12_container {
+    width: 90px;
+    left: 300px;
+}
+/**
+* D1 cork container
+**/
+#d1_container {
+    width: 120px;
+    top: 100px;
+}
+/**
+* D3 cork container
+**/
+#d3_container {
+    width: 120px;
+    top: 100px;
+    left: 130px;
+}
+/**
+* D13 cork container
+**/
+#d13_container {
+    width: 120px;
+    top: 100px;
+    left: 260px;
+}
+/**
+* Vertical line
+*/
+#tab4verticalline {
+    position: relative;
+    top: -1257px;
+    left: 450px;
+    width: 1px;
+    height: 1200px;
+    border-right-style: dashed;
+    border-right-width: 3px;
+    border-right-color: #0063DC;
+}
+/**
+* Tab 5 container
+*/
+#tab5container {
+    top: -2450px;
+    left: 460px;
+    width: 200px;
+    border-style: none;
+}
+/**
+* Ce container
+*/
+#ce_container {
+    left: 210px;
+}
+/**
+* Tipo prescr sug container
+**/
+#tipo_prescr_sug_container {
+    top: 520px;
+}
+/**
+* P2 container
+**/
+#p2_container {
+    top: 570px;
+}
+/**
+* Estraz futura container
+**/
+#estraz_futura_container {
+    top: 560px;
+    left: 220px;
+    width: 150px;
+}
+/**
+* P3 container
+**/
+#p3_container {
+    top: 620px;
+}
+/**
+* P4 container
+**/
+#p4_container {
+    top: 700px;
+}
+/**
+* SR container
+*/
+#srcontainer {
+    top: -2400px;
+    left: 460px;
+    width: 50px;
+}
+/**
+* Arbustive container
+*/
+#arbustivecontainer {
+    top: -2600px;
+    left: 580px;
+    width: 200px;
+    height: 200px;
+}
+#newarbustive {
+    top: 44px;
+    left: 4px;
+    width: 250px;
+}
+#content_schedab2_arbustive {
+    top: 104px;
+    left: 4px;
+    width: 250px;
+}
+#content_schedab2_arbustive  div{
+    position: relative;
+    clear: both;
+}
+#content_schedab2_arbustive  div span{
+    float:left;
+    width: 60px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#newarbustive  div{
+    position: relative;
+    clear: both;
+}
+
+#newarbustive div span{
+    float:left;
+    width: 60px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#arbustivecontainer .scrollcontrols span input{
+    display: inline;
+}
+#arbustivecontainer .scrollcontrols img {
+    margin-top: 5px;
+    vertical-align:top;
+}
+/**
+* SE container
+**/
+#secontainer {
+    top: -2580px;
+    left: 460px;
+    width: 50px;
+}
+/**
+* Erbacee container
+*/
+#erbaceecontainer {
+    top: -2750px;
+    left: 580px;
+    width: 200px;
+    height: 200px;
+}
+#newerbacee {
+    top: 44px;
+    left: 4px;
+    width: 250px;
+}
+#content_schedab2_erbacee {
+    top: 104px;
+    left: 4px;
+    width: 200px;
+}
+#content_schedab2_erbacee  div{
+    position: relative;
+    clear: both;
+}
+#content_schedab2_erbacee  div span{
+    float:left;
+    width: 60px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#newerbacee  div{
+    position: relative;
+    clear: both;
+}
+
+#newerbacee div span{
+    float:left;
+    width: 60px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#erbaceecontainer .scrollcontrols span input{
+    display: inline;
+}
+#erbaceecontainer .scrollcontrols img {
+    margin-top: 5px;
+    vertical-align:top;
+}
+/**
+* Container of G1 blocks
+**/
+#g1container{
+    top: -2500px;
+    left: 460px;
+    width: 220px;
+    height: 100px;
+}
+#g1container input {
+    float:left;
+    display: block;
+}
+#g1container .g1_descr {
+    display: block;
+    float:left;
+    width: 40px;
+    word-break: break-all;
+}
+/**
+* N1 arrow
+*/
+#n5arrow_right {
+    top: -2560px;
+    left: 710px;
+    width: 10px;
+    height: 43px;
+    border-style: none;
+    background: transparent url('../images/arrow-right.png') no-repeat;
+}
+/**
+* Container of Sub Viab blocks
+**/
+#sub_viabcontainer{
+    top: -2670px;
+    left: 730px;
+    width: 80px;
+    height: 100px;
+}
+#sub_viabcontainer legend{
+    margin-left: 0px;
+    word-break: break-all;
+}
+#sub_viabcontainer input {
+    float:left;
+    display: block;
+}
+#sub_viabcontainer .sub_viab_descr {
+    display: block;
+    float:left;
+    width: 25px;
+    word-break: break-all;
+}
+/**
+* Note container
+**/
+#forestnotecontainer {
+    top: -2670px;
+    left: 460px;
+    width: 350px;
+}
+/**
+* notes container
+*/
+#notescontainer {
+    top: -2600px;
+    left: 4px;
+    width: 800px;
+    height: 310px;
+}
+
+#newnote {
+    top: 24px;
+    left: 70px;
+    width: 700px;
+}
+#content_schedab2_note {
+    top: 124px;
+    left: 70px;
+    width: 700px;
+}
+#content_schedab2_note  div{
+    position: relative;
+    clear: both;
+}
+#content_schedab2_note div span{
+    float:left;
+    width: 220px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#newnote  div{
+    position: relative;
+    clear: both;
+}
+
+#newnote div span{
+    float:left;
+    width: 220px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#scrollcontrols span input{
+    display: inline;
+}
+#scrollcontrols img {
+    margin-top: 5px;
+    vertical-align:top;
 }

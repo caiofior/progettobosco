@@ -115,7 +115,7 @@ if (key_exists('action', $_REQUEST)) {
                 $formErrors->addError(FormErrors::valid_float,'sup_tot','superficie totale','f');
             if($_REQUEST['boscata_calcolo'] != '' && !is_numeric($_REQUEST['boscata_calcolo']))
                 $formErrors->addError(FormErrors::valid_float,'boscata_calcolo','superficie boscata','f');
-            if($_REQUEST['ap'] != '' && !is_numeric($_REQUEST['ap']))
+            if(!filter_var($_REQUEST['ap'],FILTER_VALIDATE_INT))
                 $formErrors->addError(FormErrors::valid_int,'ap','altitudine prevalente');
             if($_REQUEST['improduttivi_calcolo'] != '' && !is_numeric($_REQUEST['improduttivi_calcolo']))
                 $formErrors->addError(FormErrors::valid_float,'improduttivi_calcolo','superficie improduttiva','f');
@@ -123,7 +123,7 @@ if (key_exists('action', $_REQUEST)) {
                 $formErrors->addError(FormErrors::valid_float,'prod_non_bosc_calcolo','superficie produttiva non boscata','f');
             if($_REQUEST['pp'] != '' && !is_numeric($_REQUEST['pp']))
                 $formErrors->addError(FormErrors::valid_float,'pp','pendenza prevalente','f');
-            if($_REQUEST['sup'] != '' && !is_numeric($_REQUEST['sup']))
+            if(!filter_var($_REQUEST['sup'],FILTER_VALIDATE_INT))
                 $formErrors->addError(FormErrors::valid_int,'sup','Sottoparticella estesa su %','f');
             $formErrors->setOkMessage(' I dati sono stati salvati alle '.  strftime('%k:%M:%S del %d %b'));
             if ($formErrors->count() == 0) {

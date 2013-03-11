@@ -168,7 +168,7 @@ if (key_exists('action', $_REQUEST)) {
             }
             
             if($_REQUEST['d5'] != '' ) {
-                if (!is_numeric($_REQUEST['d5']) || intval($_REQUEST['d5']) != floatval($_REQUEST['d5']) )
+                if (!filter_var($_REQUEST['d5'],FILTER_VALIDATE_INT) )
                     $formErrors->addError(FormErrors::valid_int,'d5','n°\alberi/ha');
                 else if($_REQUEST['d5']< 1 )
                     $formErrors->addError(FormErrors::custom,'d5','il n°\alberi/ha deve essere maggiore di 1');
@@ -203,8 +203,8 @@ if (key_exists('action', $_REQUEST)) {
             }
             
             if($_REQUEST['buche'] != '' ) {
-                if (!is_numeric($_REQUEST['buche']))
-                    $formErrors->addError(FormErrors::valid_float,'buche','buche');
+                if (!filter_var($_REQUEST['buche'],FILTER_VALIDATE_INT))
+                    $formErrors->addError(FormErrors::valid_int,'buche','buche');
                 else if($_REQUEST['buche']< 1 )
                     $formErrors->addError(FormErrors::custom,'buche','le buche devono essere maggiori di 1');
             }

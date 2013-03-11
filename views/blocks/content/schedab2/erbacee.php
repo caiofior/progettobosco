@@ -1,10 +1,10 @@
-<div id="content_schedab_erbacee">
+<div id="content_schedab2_erbacee">
     <?php
-    if (!isset($b1)) {
-        $b1 = new \forest\form\B1();
-        $b1->loadFromId($_REQUEST['id']);
+    if (!isset($b2)) {
+        $b2 = new \forest\form\B2();
+        $b2->loadFromId($_REQUEST['id']);
     }
-    $herbaceuscompositioncoll = $b1->getHerbaceusCompositionColl();
+    $herbaceuscompositioncoll = $b2->getCorkHerbaceusCompositionColl();
     
     if (!key_exists('start', $_GET))
             $_GET['start']=0;
@@ -25,7 +25,7 @@
         </span>
         <span>
             <div>
-                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb1&id=<?php echo $b1->getData('objectid');?>&deleteerbacee=<?php echo $herbaceuscomposition->getData('objectid');?>"  >
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&id=<?php echo $b2->getData('objectid');?>&deleteerbacee=<?php echo $herbaceuscomposition->getData('objectid');?>"  >
                     <img class="actions delete" src="images/empty.png" title="Cancella"/>
                 </a>
             </div>
@@ -62,11 +62,11 @@
     if ($start>0) {
         $actions['prev']=array(
             'url'=>'href="?'.$baseurl.'&start='.max($start-$items_in_page,0).'"',
-            'data-update'=>'data-update="content_schedab_erbacee"'
+            'data-update'=>'data-update="content_schedab2_erbacee"'
         );
         $actions['first']=array(
             'url'=>'href="?'.$baseurl.'&start=0"',
-            'data-update'=>'data-update="content_schedab_erbacee"'
+            'data-update'=>'data-update="content_schedab2_erbacee"'
         );
     }
 
@@ -74,11 +74,11 @@
 
         $actions['next']=array(
             'url'=>'href="?'.$baseurl.'&start='.min($start+$items_in_page,$last_page).'"',
-            'data-update'=>'data-update="content_schedab_erbacee"'
+            'data-update'=>'data-update="content_schedab2_erbacee"'
         );
          $actions['last']=array(
             'url'=>'href="?'.$baseurl.'&start='.$last_page .'"',
-            'data-update'=>'data-update="content_schedab_erbacee"'
+            'data-update'=>'data-update="content_schedab2_erbacee"'
         );
     }
     ?>

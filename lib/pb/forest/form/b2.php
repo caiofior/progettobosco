@@ -97,10 +97,10 @@ class B2 extends \forest\form\template\Form {
     }
      /**
      * Return the associated note collection
-     * @return \forest\attribute\NoteBColl
+     * @return \forest\attribute\NoteB2Coll
      */
     public function getNotes () {
-        $notes = new \forest\attribute\NoteBColl();
+        $notes = new \forest\attribute\NoteB2Coll();
         $notes->setForm($this);
         return $notes;
     }
@@ -128,7 +128,7 @@ class B2 extends \forest\form\template\Form {
         return $corkcovercompositioncoll;
     }
         /**
-     * Gets the assoiated rennovatio specie
+     * Gets the associated rennovation specie
      * @return \forest\attribute\Arboreal
      */
     public function getRennovationSpecie() {
@@ -136,5 +136,23 @@ class B2 extends \forest\form\template\Form {
         if (key_exists('spe_nov', $this->data))
             $rennovationspecie->loadFromId($this->data['spe_nov']);
         return $rennovationspecie;
+    }
+         /**
+     * Gets the associated Cork Shrub Composition Collection
+     * @return \forest\attribute\CorkShrubCompositionColl
+     */
+    public function getCorkShrubCompositionColl() {
+        $shrubcoll = new \forest\attribute\CorkShrubCompositionColl();
+        $shrubcoll->setForm($this);
+        return $shrubcoll;
+    }
+    /**
+     * Gets the associated Cork Herbaceus Composition Collection
+     * @return \forest\attribute\CorkHerbaceusCompositionColl
+     */
+    public function getCorkHerbaceusCompositionColl() {
+        $herbaceuscoll = new \forest\attribute\CorkHerbaceusCompositionColl();
+        $herbaceuscoll->setForm($this);
+        return $herbaceuscoll;
     }
 } 

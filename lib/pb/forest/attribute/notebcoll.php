@@ -1,8 +1,8 @@
 <?php
 /**
- * Manages Note B1 collection
+ * Manages Note B collection
  * 
- * Manages Note B1 collection
+ * Manages Note B collection
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
