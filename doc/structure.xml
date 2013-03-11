@@ -1486,7 +1486,7 @@
         <full_name>__construct</full_name>
         <docblock line="32">
           <description>Instantiate the table by string name</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="32" name="param" description="" type="\forest\form\control\type" variable="$table">
             <type by_reference="false">\forest\form\control\type</type>
           </tag>
@@ -1502,7 +1502,7 @@
         <full_name>getData</full_name>
         <docblock line="39">
           <description>Fized different field names</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="39" name="param" description="" type="string" variable="$field">
             <type by_reference="false">string</type>
           </tag>
@@ -1876,7 +1876,7 @@
         <full_name>__construct</full_name>
         <docblock line="31">
           <description>Instantiates the table</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="forest\form" line="41" package="Default">
@@ -1884,14 +1884,14 @@
         <full_name>loadFromId</full_name>
         <docblock line="37">
           <description>Loads form a data</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="37" name="param" description="" type="integer" variable="$id">
             <type by_reference="false">integer</type>
           </tag>
         </docblock>
         <argument line="41">
           <name>$id</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1900,7 +1900,7 @@
         <full_name>loadFromCodePart</full_name>
         <docblock line="49">
           <description>Loads form a data form foreat and parcel code</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="49" name="param" description="Proprietà code" type="string" variable="$proprieta">
             <type by_reference="false">string</type>
           </tag>
@@ -1910,12 +1910,12 @@
         </docblock>
         <argument line="54">
           <name>$proprieta</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="54">
           <name>$cod_part</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -1924,7 +1924,7 @@
         <full_name>calculatedVariables</full_name>
         <docblock line="63">
           <description>Sets the calculated variables</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="forest\form" line="73" package="Default">
@@ -1932,7 +1932,7 @@
         <full_name>update</full_name>
         <docblock line="70">
           <description>Updates data</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="forest\form" line="92" package="Default">
@@ -1940,7 +1940,7 @@
         <full_name>delete</full_name>
         <docblock line="89">
           <description>Deletes data</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="forest\form" line="102" package="Default">
@@ -1948,7 +1948,7 @@
         <full_name>getStructure</full_name>
         <docblock line="98">
           <description>Gets associated Structure</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="98" name="return" description="" type="\forest\attribute\ForestType">
             <type by_reference="false">\forest\attribute\ForestType</type>
           </tag>
@@ -1959,7 +1959,7 @@
         <full_name>getForestCoverCompositionColl</full_name>
         <docblock line="108">
           <description>Gets the associated Forest Cover Composition Collection</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="108" name="return" description="" type="\forest\attribute\ForestCoverCompositionColl">
             <type by_reference="false">\forest\attribute\ForestCoverCompositionColl</type>
           </tag>
@@ -1970,7 +1970,7 @@
         <full_name>getShrubCompositionColl</full_name>
         <docblock line="117">
           <description>Gets the associated Shrub Composition Collection</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="117" name="return" description="" type="\forest\attribute\ShrubCompositionColl">
             <type by_reference="false">\forest\attribute\ShrubCompositionColl</type>
           </tag>
@@ -1981,7 +1981,7 @@
         <full_name>getHerbaceusCompositionColl</full_name>
         <docblock line="126">
           <description>Gets the associated Herbaceus Composition Collection</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="126" name="return" description="" type="\forest\attribute\HerbaceusCompositionColl">
             <type by_reference="false">\forest\attribute\HerbaceusCompositionColl</type>
           </tag>
@@ -1992,7 +1992,7 @@
         <full_name>getRennovationSpecie</full_name>
         <docblock line="135">
           <description>Gets the associated rennovation specie</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="135" name="return" description="" type="\forest\attribute\Arboreal">
             <type by_reference="false">\forest\attribute\Arboreal</type>
           </tag>
@@ -2003,7 +2003,7 @@
         <full_name>getForestMassEsteemColl</full_name>
         <docblock line="145">
           <description>Gets the associated Forest Mass Esteem Collection</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="145" name="return" description="" type="\forest\attribute\ForestMassEsteemColl">
             <type by_reference="false">\forest\attribute\ForestMassEsteemColl</type>
           </tag>
@@ -2014,7 +2014,7 @@
         <full_name>getNotes</full_name>
         <docblock line="154">
           <description>Return the associated note collection</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="154" name="return" description="" type="\forest\attribute\NoteBColl">
             <type by_reference="false">\forest\attribute\NoteBColl</type>
           </tag>
@@ -2025,7 +2025,7 @@
         <full_name>getFormB</full_name>
         <docblock line="163">
           <description>Return the associated B fomr</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="163" name="return" description="" type="\forest\form\B">
             <type by_reference="false">\forest\form\B</type>
           </tag>
@@ -2418,7 +2418,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/form/b2.php" hash="2c6a8e3537ec2d53d604d8d50bec05e0" package="Default">
+  <file path="forest/form/b2.php" hash="840bd67fe5f8147174f71e6fea4bb363" package="Default">
     <docblock line="2">
       <description>Manages Form B2 forest compartment</description>
       <long-description>&lt;p&gt;Manages Form B2 forest compartment&lt;/p&gt;</long-description>
@@ -2516,8 +2516,8 @@
         <docblock line="98">
           <description>Return the associated note collection</description>
           <long-description></long-description>
-          <tag line="98" name="return" description="" type="\forest\attribute\NoteBColl">
-            <type by_reference="false">\forest\attribute\NoteBColl</type>
+          <tag line="98" name="return" description="" type="\forest\attribute\NoteB2Coll">
+            <type by_reference="false">\forest\attribute\NoteB2Coll</type>
           </tag>
         </docblock>
       </method>
@@ -2951,6 +2951,52 @@
           <default/>
           <type/>
         </argument>
+      </method>
+    </class>
+  </file>
+  <file path="forest/attribute/noteb2.php" hash="1e42e7fa1290891d8a915a565507ce28" package="Default">
+    <docblock line="2">
+      <description>Manages Note B2 attribute</description>
+      <long-description>&lt;p&gt;Manages Note B2 attribute&lt;/p&gt;</long-description>
+      <tag line="2" name="author" description="Claudio Fior &lt;caiofior@gmail.com&gt;"/>
+      <tag line="2" name="copyright" description="CRA"/>
+    </docblock>
+    <include line="14" type="Require" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="forest\attribute" line="30" package="Default">
+      <extends>\Content</extends>
+      <name>NoteB2</name>
+      <full_name>\forest\attribute\NoteB2</full_name>
+      <docblock line="22">
+        <description>Manages Note B2 attribute</description>
+        <long-description>&lt;p&gt;Manages Note B2 attribute&lt;/p&gt;</long-description>
+        <tag line="22" name="author" description="Claudio Fior &lt;caiofior@gmail.com&gt;"/>
+        <tag line="22" name="copyright" description="CRA"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="34" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="31">
+          <description>Instantiates the table</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="40" package="Default">
+        <name>update</name>
+        <full_name>update</full_name>
+        <docblock line="37">
+          <description>Updates data</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="49" package="Default">
+        <name>delete</name>
+        <full_name>delete</full_name>
+        <docblock line="46">
+          <description>Deletes data</description>
+          <long-description></long-description>
+        </docblock>
       </method>
     </class>
   </file>
@@ -3412,6 +3458,117 @@
       </method>
     </class>
   </file>
+  <file path="forest/attribute/noteb2coll.php" hash="dc16a646debc0b502235209bca448370" package="Default">
+    <docblock line="2">
+      <description>Manages Note B2 collection</description>
+      <long-description>&lt;p&gt;Manages Note B2 collection&lt;/p&gt;</long-description>
+      <tag line="2" name="author" description="Claudio Fior &lt;caiofior@gmail.com&gt;"/>
+      <tag line="2" name="copyright" description="CRA"/>
+    </docblock>
+    <include line="14" type="Require" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="forest\attribute" line="30" package="Default">
+      <extends>\ContentColl</extends>
+      <name>NoteB2Coll</name>
+      <full_name>\forest\attribute\NoteB2Coll</full_name>
+      <docblock line="22">
+        <description>Manages Note B2 collection</description>
+        <long-description>&lt;p&gt;Manages Note B2 collection&lt;/p&gt;</long-description>
+        <tag line="22" name="author" description="Claudio Fior &lt;caiofior@gmail.com&gt;"/>
+        <tag line="22" name="copyright" description="CRA"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="35" namespace="forest\attribute" package="Default">
+        <name>$form_b2</name>
+        <default>null</default>
+        <docblock line="31">
+          <description>Form B1 Reference</description>
+          <long-description></long-description>
+          <tag line="31" name="var" description="" type="\forest\form\B2">
+            <type by_reference="false">\forest\form\B2</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="39" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="36">
+          <description>Instantiates the table</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="46" package="Default">
+        <name>setForm</name>
+        <full_name>setForm</full_name>
+        <docblock line="42">
+          <description>Sets the form reference</description>
+          <long-description></long-description>
+          <tag line="42" name="param" description="" type="\forest\form\B2" variable="$form">
+            <type by_reference="false">\forest\form\B2</type>
+          </tag>
+        </docblock>
+        <argument line="46">
+          <name>$form</name>
+          <default></default>
+          <type>\forest\form\B2</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="forest\attribute" line="56" package="Default">
+        <name>customSelect</name>
+        <full_name>customSelect</full_name>
+        <docblock line="50">
+          <description>Customizes the select statement</description>
+          <long-description></long-description>
+          <tag line="50" name="param" description="" type="\Zend_Db_Select" variable="$select">
+            <type by_reference="false">\Zend_Db_Select</type>
+          </tag>
+          <tag line="50" name="param" description="Filtering criteria" type="array" variable="$criteria">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="50" name="return" description="" type="\Zend_Db_Select">
+            <type by_reference="false">\Zend_Db_Select</type>
+          </tag>
+        </docblock>
+        <argument line="56">
+          <name>$select</name>
+          <default></default>
+          <type>\Zend_Db_Select</type>
+        </argument>
+        <argument line="56">
+          <name>$criteria</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="88" package="Default">
+        <name>countAll</name>
+        <full_name>countAll</full_name>
+        <docblock line="84">
+          <description>Returns all contents without any filter</description>
+          <long-description></long-description>
+          <tag line="84" name="param" description="Filtering criteria" type="array" variable="$criteria">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="88">
+          <name>$criteria</name>
+          <default>null</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="105" package="Default">
+        <name>addItem</name>
+        <full_name>addItem</full_name>
+        <docblock line="101">
+          <description>Adds new note to form a</description>
+          <long-description></long-description>
+          <tag line="101" name="return" description="" type="\forest\attribute\NoteA">
+            <type by_reference="false">\forest\attribute\NoteA</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
   <file path="forest/attribute/corkshrubcomposition.php" hash="d5d165d8a430924501dc0b876869d17b" package="Default">
     <docblock line="2">
       <description>Manages Cork Shrub Composition attribute</description>
@@ -3437,7 +3594,7 @@
         <full_name>__construct</full_name>
         <docblock line="31">
           <description>Instantiates the table</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="41" package="Default">
@@ -3445,14 +3602,14 @@
         <full_name>loadFromId</full_name>
         <docblock line="37">
           <description>Loads form a data</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="37" name="param" description="" type="integer" variable="$id">
             <type by_reference="false">integer</type>
           </tag>
         </docblock>
         <argument line="41">
           <name>$id</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -3461,7 +3618,7 @@
         <full_name>update</full_name>
         <docblock line="48">
           <description>Updates data</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="63" package="Default">
@@ -3469,7 +3626,7 @@
         <full_name>delete</full_name>
         <docblock line="60">
           <description>Deletes data</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="74" package="Default">
@@ -3477,7 +3634,7 @@
         <full_name>getControl</full_name>
         <docblock line="69">
           <description>Returns the associated control</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="69" name="param" description="" type="string" variable="$attribute">
             <type by_reference="false">string</type>
           </tag>
@@ -3487,7 +3644,7 @@
         </docblock>
         <argument line="74">
           <name>$attribute</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -3518,7 +3675,7 @@
         <full_name>__construct</full_name>
         <docblock line="31">
           <description>Instantiates the table</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="41" package="Default">
@@ -3526,14 +3683,14 @@
         <full_name>loadFromId</full_name>
         <docblock line="37">
           <description>Loads form a data</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="37" name="param" description="" type="integer" variable="$id">
             <type by_reference="false">integer</type>
           </tag>
         </docblock>
         <argument line="41">
           <name>$id</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -3542,7 +3699,7 @@
         <full_name>update</full_name>
         <docblock line="48">
           <description>Updates data</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="63" package="Default">
@@ -3550,7 +3707,7 @@
         <full_name>delete</full_name>
         <docblock line="60">
           <description>Deletes data</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="74" package="Default">
@@ -3558,7 +3715,7 @@
         <full_name>getControl</full_name>
         <docblock line="69">
           <description>Returns the associated control</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="69" name="param" description="" type="string" variable="$attribute">
             <type by_reference="false">string</type>
           </tag>
@@ -3568,7 +3725,7 @@
         </docblock>
         <argument line="74">
           <name>$attribute</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -4298,7 +4455,7 @@
         <full_name>__construct</full_name>
         <docblock line="31">
           <description>Instantiates the table</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="41" package="Default">
@@ -4306,14 +4463,14 @@
         <full_name>loadFromId</full_name>
         <docblock line="37">
           <description>Loads form a data</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="37" name="param" description="" type="integer" variable="$id">
             <type by_reference="false">integer</type>
           </tag>
         </docblock>
         <argument line="41">
           <name>$id</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -4322,7 +4479,7 @@
         <full_name>update</full_name>
         <docblock line="48">
           <description>Updates data</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="63" package="Default">
@@ -4330,7 +4487,7 @@
         <full_name>delete</full_name>
         <docblock line="60">
           <description>Deletes data</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
     </class>
@@ -4749,7 +4906,7 @@
         <default>null</default>
         <docblock line="31">
           <description>Forest Reference</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="31" name="var" description="" type="\forest\form\B2">
             <type by_reference="false">\forest\form\B2</type>
           </tag>
@@ -4760,7 +4917,7 @@
         <full_name>__construct</full_name>
         <docblock line="36">
           <description>Instantiates the table</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="46" package="Default">
@@ -4768,14 +4925,14 @@
         <full_name>setForm</full_name>
         <docblock line="42">
           <description>Sets the form reference</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="42" name="param" description="Form b2" type="\forest\form\B2" variable="$form">
             <type by_reference="false">\forest\form\B2</type>
           </tag>
         </docblock>
         <argument line="46">
           <name>$form</name>
-          <default></default>
+          <default/>
           <type>\forest\form\B2</type>
         </argument>
       </method>
@@ -4784,7 +4941,7 @@
         <full_name>customSelect</full_name>
         <docblock line="50">
           <description>Customizes the select statement</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="50" name="param" description="" type="\Zend_Db_Select" variable="$select">
             <type by_reference="false">\Zend_Db_Select</type>
           </tag>
@@ -4797,12 +4954,12 @@
         </docblock>
         <argument line="56">
           <name>$select</name>
-          <default></default>
+          <default/>
           <type>\Zend_Db_Select</type>
         </argument>
         <argument line="56">
           <name>$criteria</name>
-          <default></default>
+          <default/>
           <type>array</type>
         </argument>
       </method>
@@ -4811,7 +4968,7 @@
         <full_name>countAll</full_name>
         <docblock line="73">
           <description>Returns all contents without any filter</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="73" name="param" description="Filtering criteria" type="array" variable="$criteria">
             <type by_reference="false">array</type>
           </tag>
@@ -4827,7 +4984,7 @@
         <full_name>addItem</full_name>
         <docblock line="90">
           <description>Adds new forest composition</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="90" name="return" description="" type="\forest\attribute\ForestCoverComposition">
             <type by_reference="false">\forest\attribute\ForestCoverComposition</type>
           </tag>
@@ -4881,10 +5038,10 @@
       </method>
     </class>
   </file>
-  <file path="forest/attribute/notebcoll.php" hash="ac1c3d464ac3925e5dd044185e3d0423" package="Default">
+  <file path="forest/attribute/notebcoll.php" hash="8a25a2e77f294427860c0d686ee3faf5" package="Default">
     <docblock line="2">
-      <description>Manages Note B1 collection</description>
-      <long-description>&lt;p&gt;Manages Note B1 collection&lt;/p&gt;</long-description>
+      <description>Manages Note B collection</description>
+      <long-description>&lt;p&gt;Manages Note B collection&lt;/p&gt;</long-description>
       <tag line="2" name="author" description="Claudio Fior &lt;caiofior@gmail.com&gt;"/>
       <tag line="2" name="copyright" description="CRA"/>
     </docblock>
@@ -4906,7 +5063,7 @@
         <default>null</default>
         <docblock line="31">
           <description>Form B1 Reference</description>
-          <long-description/>
+          <long-description></long-description>
           <tag line="31" name="var" description="" type="\forest\form\B1">
             <type by_reference="false">\forest\form\B1</type>
           </tag>
@@ -4917,7 +5074,7 @@
         <full_name>__construct</full_name>
         <docblock line="36">
           <description>Instantiates the table</description>
-          <long-description/>
+          <long-description></long-description>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="46" package="Default">
@@ -4925,14 +5082,14 @@
         <full_name>setForm</full_name>
         <docblock line="42">
           <description>Sets the form reference</description>
-          <long-description/>
+          <long-description></long-description>
           <tag line="42" name="param" description="" type="\forest\form\B1" variable="$form">
             <type by_reference="false">\forest\form\B1</type>
           </tag>
         </docblock>
         <argument line="46">
           <name>$form</name>
-          <default/>
+          <default></default>
           <type>\forest\form\B1</type>
         </argument>
       </method>
@@ -4941,7 +5098,7 @@
         <full_name>customSelect</full_name>
         <docblock line="50">
           <description>Customizes the select statement</description>
-          <long-description/>
+          <long-description></long-description>
           <tag line="50" name="param" description="" type="\Zend_Db_Select" variable="$select">
             <type by_reference="false">\Zend_Db_Select</type>
           </tag>
@@ -4954,12 +5111,12 @@
         </docblock>
         <argument line="56">
           <name>$select</name>
-          <default/>
+          <default></default>
           <type>\Zend_Db_Select</type>
         </argument>
         <argument line="56">
           <name>$criteria</name>
-          <default/>
+          <default></default>
           <type>array</type>
         </argument>
       </method>
@@ -4968,7 +5125,7 @@
         <full_name>countAll</full_name>
         <docblock line="84">
           <description>Returns all contents without any filter</description>
-          <long-description/>
+          <long-description></long-description>
           <tag line="84" name="param" description="Filtering criteria" type="array" variable="$criteria">
             <type by_reference="false">array</type>
           </tag>
@@ -4984,7 +5141,7 @@
         <full_name>addItem</full_name>
         <docblock line="101">
           <description>Adds new note to form a</description>
-          <long-description/>
+          <long-description></long-description>
           <tag line="101" name="return" description="" type="\forest\attribute\NoteA">
             <type by_reference="false">\forest\attribute\NoteA</type>
           </tag>
@@ -5017,7 +5174,7 @@
         <default>null</default>
         <docblock line="31">
           <description>Forest Reference</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="31" name="var" description="" type="\forest\form\B2">
             <type by_reference="false">\forest\form\B2</type>
           </tag>
@@ -5028,7 +5185,7 @@
         <full_name>__construct</full_name>
         <docblock line="36">
           <description>Instantiates the table</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="46" package="Default">
@@ -5036,14 +5193,14 @@
         <full_name>setForm</full_name>
         <docblock line="42">
           <description>Sets the form reference</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="42" name="param" description="Form b1" type="\forest\form\B2" variable="$form">
             <type by_reference="false">\forest\form\B2</type>
           </tag>
         </docblock>
         <argument line="46">
           <name>$form</name>
-          <default></default>
+          <default/>
           <type>\forest\form\B2</type>
         </argument>
       </method>
@@ -5052,7 +5209,7 @@
         <full_name>customSelect</full_name>
         <docblock line="50">
           <description>Customizes the select statement</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="50" name="param" description="" type="\Zend_Db_Select" variable="$select">
             <type by_reference="false">\Zend_Db_Select</type>
           </tag>
@@ -5065,12 +5222,12 @@
         </docblock>
         <argument line="56">
           <name>$select</name>
-          <default></default>
+          <default/>
           <type>\Zend_Db_Select</type>
         </argument>
         <argument line="56">
           <name>$criteria</name>
-          <default></default>
+          <default/>
           <type>array</type>
         </argument>
       </method>
@@ -5079,7 +5236,7 @@
         <full_name>countAll</full_name>
         <docblock line="72">
           <description>Returns all contents without any filter</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="72" name="param" description="Filtering criteria" type="array" variable="$criteria">
             <type by_reference="false">array</type>
           </tag>
@@ -5095,7 +5252,7 @@
         <full_name>addItem</full_name>
         <docblock line="89">
           <description>Adds new forest composition</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="89" name="return" description="" type="\forest\attribute\ForestCoverComposition">
             <type by_reference="false">\forest\attribute\ForestCoverComposition</type>
           </tag>
@@ -5795,7 +5952,7 @@
         <default>null</default>
         <docblock line="31">
           <description>Forest Reference</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="31" name="var" description="" type="\forest\form\B2">
             <type by_reference="false">\forest\form\B2</type>
           </tag>
@@ -5806,7 +5963,7 @@
         <full_name>__construct</full_name>
         <docblock line="36">
           <description>Instantiates the table</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="46" package="Default">
@@ -5814,14 +5971,14 @@
         <full_name>setForm</full_name>
         <docblock line="42">
           <description>Sets the form reference</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="42" name="param" description="Form b2" type="\forest\form\B2" variable="$form">
             <type by_reference="false">\forest\form\B2</type>
           </tag>
         </docblock>
         <argument line="46">
           <name>$form</name>
-          <default></default>
+          <default/>
           <type>\forest\form\B2</type>
         </argument>
       </method>
@@ -5830,7 +5987,7 @@
         <full_name>customSelect</full_name>
         <docblock line="50">
           <description>Customizes the select statement</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="50" name="param" description="" type="\Zend_Db_Select" variable="$select">
             <type by_reference="false">\Zend_Db_Select</type>
           </tag>
@@ -5843,12 +6000,12 @@
         </docblock>
         <argument line="56">
           <name>$select</name>
-          <default></default>
+          <default/>
           <type>\Zend_Db_Select</type>
         </argument>
         <argument line="56">
           <name>$criteria</name>
-          <default></default>
+          <default/>
           <type>array</type>
         </argument>
       </method>
@@ -5857,7 +6014,7 @@
         <full_name>countAll</full_name>
         <docblock line="73">
           <description>Returns all contents without any filter</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="73" name="param" description="Filtering criteria" type="array" variable="$criteria">
             <type by_reference="false">array</type>
           </tag>
@@ -5873,7 +6030,7 @@
         <full_name>addItem</full_name>
         <docblock line="90">
           <description>Adds new forest composition</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="90" name="return" description="" type="\forest\attribute\ForestCoverComposition">
             <type by_reference="false">\forest\attribute\ForestCoverComposition</type>
           </tag>
@@ -5911,7 +6068,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/autoloader.php" hash="242521ebb82217b1dc60205733a716f3" package="Default">
+  <file path="forest/autoloader.php" hash="84b17759a8d24094f743531eb4a2dd56" package="Default">
     <docblock line="2">
       <description>Autoloading forest files</description>
       <long-description>&lt;p&gt;Autoloading forest files&lt;/p&gt;</long-description>
@@ -5921,7 +6078,7 @@
     <include line="12" type="Require" package="Default">
       <name/>
     </include>
-    <include line="79" type="Require" package="Default">
+    <include line="81" type="Require" package="Default">
       <name/>
     </include>
   </file>
