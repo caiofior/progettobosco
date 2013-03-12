@@ -4,7 +4,7 @@
         $b2 = new \forest\form\B2();
         $b2->loadFromId($_REQUEST['id']);
     }
-    $herbaceuscompositioncoll = $b2->getCorkHerbaceusCompositionColl();
+    $herbaceuscompositioncoll = $b2->getHerbaceusCompositionColl();
     
     if (!key_exists('start', $_GET))
             $_GET['start']=0;

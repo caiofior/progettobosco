@@ -1,8 +1,8 @@
 <?php
 /**
- * Manages Cork Shrub Composition collection
+ * Manages B1 Shrub Composition collection
  * 
- * Manages Cork Shrub Composition collection
+ * Manages B1 Shrub Composition collection
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
@@ -20,32 +20,32 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
- * Manages Cork Shrub Composition collection
+ * Manages B1 Shrub Composition collection
  * 
- * Manages Cork Shrub Composition collection
+ * Manages B1 Shrub Composition collection
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class CorkShrubCompositionColl  extends \ContentColl  {
+class B1CompositionColl  extends \ContentColl  {
     /**
      * Forest Reference
-     * @var \forest\form\B2
+     * @var \forest\form\B1
      */
-    protected $form_b2=null;
+    protected $form_b1=null;
     /**
      * Instantiates the table
      */
     public function __construct() {
-        parent::__construct(new CorkShrubComposition());
+        parent::__construct(new B1ShrubComposition());
     }
     /**
      * Sets the form reference
-     * @param \forest\form\B2 $form Form b2
+     * @param \forest\form\B1 $form Form b1
      */
-    public function setForm(\forest\form\B2 $form) {
+    public function setForm(\forest\form\B1 $form) {
 
-        $this->form_b2 = $form;
+        $this->form_b1 = $form;
     }
      /**
      * Customizes the select statement
@@ -55,16 +55,16 @@ class CorkShrubCompositionColl  extends \ContentColl  {
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
         $select->setIntegrityCheck(false)
-        ->from('arbusti2',array(
+        ->from('arbusti',array(
             '*',
             'cod_colt_descriz'=>new \Zend_Db_Expr(
-                '( SELECT diz_arbo.nome_itali || \' | \' || diz_arbo.nome_scien FROM diz_arbo WHERE diz_arbo.cod_coltu=arbusti2.cod_coltu) '
+                '( SELECT diz_arbo.nome_itali || \' | \' || diz_arbo.nome_scien FROM diz_arbo WHERE diz_arbo.cod_coltu=arbusti.cod_coltu) '
              )
         ));
-        if ($this->form_b2 instanceof \forest\form\B2) {
-            $select->where(' cod_part = ? ',$this->form_b2->getData('cod_part'))
-            ->where(' proprieta = ? ',$this->form_b2->getData('proprieta'))
-            ->where(' cod_fo = ? ',$this->form_b2->getData('cod_fo'));
+        if ($this->form_b1 instanceof \forest\form\B1) {
+            $select->where(' cod_part = ? ',$this->form_b1->getData('cod_part'))
+            ->where(' proprieta = ? ',$this->form_b1->getData('proprieta'))
+            ->where(' cod_fo = ? ',$this->form_b1->getData('cod_fo'));
             
         }
         $select->order('cod_coltu');
@@ -75,11 +75,11 @@ class CorkShrubCompositionColl  extends \ContentColl  {
      * @param array $criteria Filtering criteria
      */
     public function countAll(array $criteria = null) {
-        if ($this->form_b2 instanceof \forest\form\B2) {
+        if ($this->form_b1 instanceof \forest\form\B1) {
             $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
-            $select->where(' cod_part = ? ',$this->form_b2->getData('cod_part'))
-            ->where(' proprieta = ? ',$this->form_b2->getData('proprieta'))
-            ->where(' cod_fo = ? ',$this->form_b2->getData('cod_fo'))
+            $select->where(' cod_part = ? ',$this->form_b1->getData('cod_part'))
+            ->where(' proprieta = ? ',$this->form_b1->getData('proprieta'))
+            ->where(' cod_fo = ? ',$this->form_b1->getData('cod_fo'))
             ;
             return intval($this->content->getTable()->getAdapter()->fetchOne($select));
         }
@@ -89,13 +89,13 @@ class CorkShrubCompositionColl  extends \ContentColl  {
     }
     /**
      * Adds new forest composition 
-     * @return ForestCoverComposition
+     * @return B1CoverComposition
      */
     public function addItem() {
         $forestcovercomposition = parent::addItem();
-        $forestcovercomposition->setData($this->form_b2->getData('cod_fo'),'cod_fo');
-        $forestcovercomposition->setData($this->form_b2->getData('cod_part'),'cod_part');
-        $forestcovercomposition->setData($this->form_b2->getData('proprieta'),'proprieta');
+        $forestcovercomposition->setData($this->form_b1->getData('cod_fo'),'cod_fo');
+        $forestcovercomposition->setData($this->form_b1->getData('cod_part'),'cod_part');
+        $forestcovercomposition->setData($this->form_b1->getData('proprieta'),'proprieta');
         return $forestcovercomposition;
     }
  }

@@ -1,8 +1,8 @@
 <?php
 /**
- * Manages Herbaceus Composition attribute
+ * Manages B3 Herbaceus Composition attribute
  * 
- * Manages Herbaceus Composition attribute
+ * Manages B3 Herbaceus Composition attribute
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
@@ -20,19 +20,19 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
- * Manages Herbaceus Composition attribute
+ * Manages B3 Herbaceus Composition attribute
  * 
- * Manages Herbaceus Composition attribute
+ * Manages B3 Herbaceus Composition attribute
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class HerbaceusComposition  extends \forest\form\template\Form {
+class B3HerbaceusComposition  extends \forest\form\template\Form {
     /**
      * Instantiates the table
      */
     public function __construct() {
-        parent::__construct('erbacee');
+        parent::__construct('erbacee3');
     }
      /**
      * Loads form a data

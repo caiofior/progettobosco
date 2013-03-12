@@ -24,11 +24,11 @@ if (key_exists('action', $_REQUEST)) {
     switch ($_REQUEST['action']) {
         case 'editarboree':
             if (key_exists('arboree_id', $_REQUEST)) {
-                $forestcovercomposition = new \forest\attribute\ForestCoverComposition();
+                $forestcovercomposition = new \forest\attribute\B1CoverComposition();
                 $forestcovercomposition->loadFromId($_REQUEST['arboree_id']);
             }
             else {
-                $forestcovercompositioncoll = $b1->getForestCoverCompositionColl();
+                $forestcovercompositioncoll = $b1->getCoverCompositionColl();
                 $forestcovercomposition = $forestcovercompositioncoll->addItem();
             }
             if ($_REQUEST['cod_coltu'] == '')
@@ -45,7 +45,7 @@ if (key_exists('action', $_REQUEST)) {
         break;
         case 'editarbustive':
             if (key_exists('arbustive_id', $_REQUEST)) {
-                $shrubcomposition = new \forest\attribute\ShrubComposition();
+                $shrubcomposition = new \forest\attribute\B1ShrubComposition();
                 $shrubcomposition->loadFromId($_REQUEST['arbustive_id']);
             }
             else {
@@ -63,7 +63,7 @@ if (key_exists('action', $_REQUEST)) {
         break;
         case 'editerbacee':
             if (key_exists('erbacee_id', $_REQUEST)) {
-                $herbaceuscomposition = new \forest\attribute\HerbaceusComposition();
+                $herbaceuscomposition = new \forest\attribute\B1HerbaceusComposition();
                 $herbaceuscomposition->loadFromId($_REQUEST['erbacee_id']);
             }
             else {
@@ -268,15 +268,15 @@ if (key_exists('action', $_REQUEST)) {
     }
 }
 if (key_exists('deletearboree', $_REQUEST)) {
-    $forestcovercomposition = new \forest\attribute\ForestCoverComposition();
+    $forestcovercomposition = new \forest\attribute\B1CoverComposition();
     $forestcovercomposition->loadFromId($_REQUEST['deletearboree']);
     $forestcovercomposition->delete();
 } else if (key_exists('deletearbustive', $_REQUEST)) {
-    $shrubcomposition = new \forest\attribute\ShrubComposition();
+    $shrubcomposition = new \forest\attribute\B1ShrubComposition();
     $shrubcomposition->loadFromId($_REQUEST['deletearbustive']);
     $shrubcomposition->delete();
 } else if (key_exists('deleteerbacee', $_REQUEST)) {
-    $herbaceuscomposition = new \forest\attribute\HerbaceusComposition();
+    $herbaceuscomposition = new \forest\attribute\B1HerbaceusComposition();
     $herbaceuscomposition->loadFromId($_REQUEST['deleteerbacee']);
     $herbaceuscomposition->delete();
 } else if (key_exists('deletemassesteem', $_REQUEST)) {

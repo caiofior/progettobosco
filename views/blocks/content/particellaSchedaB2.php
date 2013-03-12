@@ -675,8 +675,8 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
                 <input id="cod_coltu_ar_descr" name="cod_coltu_ar_descr" value=""/>
             </span>
             <span>
-                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb1&action=editarbustive&id=<?php echo $b2->getData('objectid');?>" data-update="content_schedab2_arbustive">
-                    <img class="actions addnew" src="images/empty.png" title="Aggiungi una specie erbacea"/>
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&action=editarbustive&id=<?php echo $b2->getData('objectid');?>" data-update="content_schedab2_arbustive">
+                    <img class="actions addnew" src="images/empty.png" title="Aggiungi una specie arbustiva"/>
                 </a>
             </span>
             </div>
@@ -711,7 +711,7 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
                 <input id="cod_coltu_er_descr" name="cod_coltu_er_descr" value=""/>
             </span>
             <span>
-                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb1&action=editerbacee&id=<?php echo $b2->getData('objectid');?>" data-update="content_schedab2_erbacee">
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&action=editerbacee&id=<?php echo $b2->getData('objectid');?>" data-update="content_schedab2_erbacee">
                     <img class="actions addnew" src="images/empty.png" title="Aggiungi una specie erbacea"/>
                 </a>
             </span>

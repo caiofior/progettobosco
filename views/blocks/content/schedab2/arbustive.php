@@ -4,7 +4,7 @@
         $b2 = new \forest\form\B2();
         $b2->loadFromId($_REQUEST['id']);
     }
-    $shrubcompositioncoll = $b2->getCorkShrubCompositionColl();
+    $shrubcompositioncoll = $b2->getShrubCompositionColl();
     
     if (!key_exists('start', $_GET))
             $_GET['start']=0;

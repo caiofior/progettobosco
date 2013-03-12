@@ -1,8 +1,8 @@
 <?php
 /**
- * Manages Cork Cover Composition attribute
+ * Manages B3 Shrub Composition attribute
  * 
- * Manages Cork Cover Composition attribute
+ * Manages B3 Shrub Composition attribute
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
@@ -20,19 +20,19 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
- * Manages Cork Cover Composition attribute
+ * Manages B3 Shrub Composition attribute
  * 
- * Manages Cork Cover Composition attribute
+ * Manages B3 Shrub Composition attribute
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class CorkCoverComposition  extends \forest\form\template\Form {
+class B3ShrubComposition  extends \forest\form\template\Form {
     /**
      * Instantiates the table
      */
     public function __construct() {
-        parent::__construct('arboree2');
+        parent::__construct('arbusti3');
     }
      /**
      * Loads form a data

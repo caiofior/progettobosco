@@ -1,8 +1,8 @@
 <?php
 /**
- * Manages Forest Mass Esteem collection
+ * Manages B1 Herbaceus Composition collection
  * 
- * Manages Forest Mass Esteem collection
+ * Manages B1 Herbaceus Composition collection
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
@@ -20,14 +20,14 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
- * Manages Forest Mass Esteem collection
+ * Manages B1 Herbaceus Composition collection
  * 
- * Manages Forest Mass Esteem collection
+ * Manages B1 Herbaceus Composition collection
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class ForestMassEsteemColl  extends \ContentColl  {
+class B1HerbaceusCompositionColl  extends \ContentColl  {
     /**
      * Forest Reference
      * @var \forest\form\B1
@@ -37,7 +37,7 @@ class ForestMassEsteemColl  extends \ContentColl  {
      * Instantiates the table
      */
     public function __construct() {
-        parent::__construct(new ForestMassEsteem());
+        parent::__construct(new B1HerbaceusComposition());
     }
     /**
      * Sets the form reference
@@ -55,13 +55,10 @@ class ForestMassEsteemColl  extends \ContentColl  {
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
         $select->setIntegrityCheck(false)
-        ->from('stime_b1',array(
+        ->from('erbacee',array(
             '*',
             'cod_colt_descriz'=>new \Zend_Db_Expr(
-                '( SELECT diz_arbo.nome_itali || \' | \' || diz_arbo.nome_scien FROM diz_arbo WHERE diz_arbo.cod_coltu=stime_b1.cod_coltu) '
-             ),
-            'objectid'=>new \Zend_Db_Expr(
-                ' replace(\'-\' || proprieta || \'-\' || cod_part || \'-\' || cod_fo || \'-\' || cod_coltu, \' \', \'_\') '
+                '( SELECT diz_erba.nome FROM diz_erba WHERE diz_erba.cod_coltu=erbacee.cod_coltu) '
              )
         ));
         if ($this->form_b1 instanceof \forest\form\B1) {
@@ -78,6 +75,15 @@ class ForestMassEsteemColl  extends \ContentColl  {
      * @param array $criteria Filtering criteria
      */
     public function countAll(array $criteria = null) {
+        if ($this->form_b1 instanceof \forest\form\B1) {
+            $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
+            $select->where(' cod_part = ? ',$this->form_b1->getData('cod_part'))
+            ->where(' proprieta = ? ',$this->form_b1->getData('proprieta'))
+            ->where(' cod_fo = ? ',$this->form_b1->getData('cod_fo'))
+            ;
+            return intval($this->content->getTable()->getAdapter()->fetchOne($select));
+        }
+        else 
             parent::countAll();
 
     }

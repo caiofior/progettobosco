@@ -27,7 +27,7 @@ if (!class_exists('Content')) {
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class B1 extends \forest\form\template\Form {
+class B1 extends \forest\form\template\Form implements \forest\form\template\getCoverCompositionColl {
      /**
      * Instantiates the table
      */
@@ -107,28 +107,28 @@ class B1 extends \forest\form\template\Form {
     }
     /**
      * Gets the associated Forest Cover Composition Collection
-     * @return \forest\attribute\ForestCoverCompositionColl
+     * @return \forest\attribute\B1CoverCompositionColl
      */
-    public function getForestCoverCompositionColl() {
-        $forestcovercompositioncoll = new \forest\attribute\ForestCoverCompositionColl();
+    public function getCoverCompositionColl() {
+        $forestcovercompositioncoll = new \forest\attribute\B1CoverCompositionColl();
         $forestcovercompositioncoll->setForm($this);
         return $forestcovercompositioncoll;
     }
      /**
      * Gets the associated Shrub Composition Collection
-     * @return \forest\attribute\ShrubCompositionColl
+     * @return \forest\attribute\B1CompositionColl
      */
     public function getShrubCompositionColl() {
-        $shrubcoll = new \forest\attribute\ShrubCompositionColl();
+        $shrubcoll = new \forest\attribute\B1CompositionColl();
         $shrubcoll->setForm($this);
         return $shrubcoll;
     }
      /**
      * Gets the associated Herbaceus Composition Collection
-     * @return \forest\attribute\HerbaceusCompositionColl
+     * @return \forest\attribute\B1HerbaceusCompositionColl
      */
     public function getHerbaceusCompositionColl() {
-        $herbaceuscoll = new \forest\attribute\HerbaceusCompositionColl();
+        $herbaceuscoll = new \forest\attribute\B1HerbaceusCompositionColl();
         $herbaceuscoll->setForm($this);
         return $herbaceuscoll;
     }

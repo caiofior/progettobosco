@@ -1,8 +1,8 @@
 <?php
 /**
- * Manages Forest Cover Composition collection
+ * Manages B1 Cover Composition collection
  * 
- * Manages Forest Cover Composition collection
+ * Manages B1 Cover Composition collection
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
@@ -20,14 +20,14 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
- * Manages Forest Cover Composition collection
+ * Manages B1 Cover Composition collection
  * 
- * Manages Forest Cover Composition collection
+ * Manages B1 Cover Composition collection
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class ForestCoverCompositionColl  extends \ContentColl  {
+class B1CoverCompositionColl  extends \ContentColl  {
     /**
      * Forest Reference
      * @var \forest\form\B1
@@ -37,7 +37,7 @@ class ForestCoverCompositionColl  extends \ContentColl  {
      * Instantiates the table
      */
     public function __construct() {
-        parent::__construct(new ForestCoverComposition());
+        parent::__construct(new B1CoverComposition());
     }
     /**
      * Sets the form reference
@@ -91,7 +91,7 @@ class ForestCoverCompositionColl  extends \ContentColl  {
     }
     /**
      * Adds new forest composition 
-     * @return ForestCoverComposition
+     * @return B1CoverComposition
      */
     public function addItem() {
         $forestcovercomposition = parent::addItem();

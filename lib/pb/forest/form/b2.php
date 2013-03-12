@@ -27,7 +27,7 @@ if (!class_exists('Content')) {
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class B2 extends \forest\form\template\Form {
+class B2 extends \forest\form\template\Form implements \forest\form\template\getCoverCompositionColl {
      /**
      * Instantiates the table
      */
@@ -119,11 +119,11 @@ class B2 extends \forest\form\template\Form {
         return $b;
     }
     /**
-     * Gets the associated Cork Cover Composition Collection
-     * @return \forest\attribute\CorkCoverCompositionColl
+     * Gets the associated B2 Cover Composition Collection
+     * @return \forest\attribute\B2CoverCompositionColl
      */
-    public function getCorkCoverCompositionColl() {
-        $corkcovercompositioncoll = new \forest\attribute\CorkCoverCompositionColl();
+    public function getCoverCompositionColl() {
+        $corkcovercompositioncoll = new \forest\attribute\B2CoverCompositionColl();
         $corkcovercompositioncoll->setForm($this);
         return $corkcovercompositioncoll;
     }
@@ -137,21 +137,21 @@ class B2 extends \forest\form\template\Form {
             $rennovationspecie->loadFromId($this->data['spe_nov']);
         return $rennovationspecie;
     }
-         /**
-     * Gets the associated Cork Shrub Composition Collection
-     * @return \forest\attribute\CorkShrubCompositionColl
+     /**
+     * Gets the associated B2 Shrub Composition Collection
+     * @return \forest\attribute\B2ShrubCompositionColl
      */
-    public function getCorkShrubCompositionColl() {
-        $shrubcoll = new \forest\attribute\CorkShrubCompositionColl();
+    public function getShrubCompositionColl() {
+        $shrubcoll = new \forest\attribute\B2ShrubCompositionColl();
         $shrubcoll->setForm($this);
         return $shrubcoll;
     }
     /**
-     * Gets the associated Cork Herbaceus Composition Collection
-     * @return \forest\attribute\CorkHerbaceusCompositionColl
+     * Gets the associated B2 Herbaceus Composition Collection
+     * @return \forest\attribute\B2HerbaceusCompositionColl
      */
-    public function getCorkHerbaceusCompositionColl() {
-        $herbaceuscoll = new \forest\attribute\CorkHerbaceusCompositionColl();
+    public function getHerbaceusCompositionColl() {
+        $herbaceuscoll = new \forest\attribute\B2HerbaceusCompositionColl();
         $herbaceuscoll->setForm($this);
         return $herbaceuscoll;
     }

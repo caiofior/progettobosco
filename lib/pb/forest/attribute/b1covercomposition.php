@@ -1,8 +1,8 @@
 <?php
 /**
- * Manages Cork Herbaceus Composition attribute
+ * Manages B1 Cover Composition attribute
  * 
- * Manages Cork Herbaceus Composition attribute
+ * Manages B1 Cover Composition attribute
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
@@ -20,19 +20,19 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
- * Manages Cork Herbaceus Composition attribute
+ * Manages B1 Cover Composition attribute
  * 
- * Manages Cork Herbaceus Composition attribute
+ * Manages B1 Cover Composition attribute
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class CorkHerbaceusComposition  extends \forest\form\template\Form {
+class B1CoverComposition  extends \forest\form\template\Form {
     /**
      * Instantiates the table
      */
     public function __construct() {
-        parent::__construct('erbacee2');
+        parent::__construct('arboree');
     }
      /**
      * Loads form a data
@@ -66,6 +66,22 @@ class CorkHerbaceusComposition  extends \forest\form\template\Form {
             $this->table->delete($where);
         }
     }
-
+    /**
+     * Returns the associated control
+     * @param string $attribute
+     * @return boolean
+     */
+    public function getControl($attribute) {
+        if (!key_exists($this->table->info('name'),$this->all_attributes_data))
+                return false;
+        if (!key_exists($attribute, $this->all_attributes_data[$this->table->info('name')]))
+                return false;
+        $attribute = $this->all_attributes_data[$this->table->info('name')][$attribute];
+        if (key_exists('dizionario', $attribute)) {
+            $itemcoll = new \forest\form\control\Itemcoll( $attribute['dizionario']);
+            $itemcoll->loadAll();
+            return $itemcoll;
+        }
+    }
 }
 

@@ -85,14 +85,14 @@ class B2Coll extends \forest\form\template\FormColl {
     }
     /**
      * Add new item to the collection
-     * @return \forest\form\B1
+     * @return \forest\form\B2
      */
     public function addItem() {
-        $b1 = parent::addItem();
-        $b1->setData($this->b->getData('proprieta'),'proprieta');
-        $b1->setData($this->b->getData('cod_part'),'cod_part');
-        $b1->setData($this->b->getData('cod_fo'),'cod_fo');
-        return $b1;
+        $b2 = parent::addItem();
+        $b2->setData($this->b->getData('proprieta'),'proprieta');
+        $b2->setData($this->b->getData('cod_part'),'cod_part');
+        $b2->setData($this->b->getData('cod_fo'),'cod_fo');
+        return $b2;
     }
 
 }

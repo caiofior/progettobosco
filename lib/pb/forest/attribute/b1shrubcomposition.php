@@ -1,8 +1,8 @@
 <?php
 /**
- * Manages Shrub Composition attribute
+ * Manages B1 Shrub Composition attribute
  * 
- * Manages Shrub Composition attribute
+ * Manages B1 Shrub Composition attribute
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
@@ -20,14 +20,14 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
- * Manages Shrub Composition attribute
+ * Manages B1 Shrub Composition attribute
  * 
- * Manages Shrub Composition attribute
+ * Manages B1 Shrub Composition attribute
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class ShrubComposition  extends \forest\form\template\Form {
+class B1ShrubComposition  extends \forest\form\template\Form {
     /**
      * Instantiates the table
      */

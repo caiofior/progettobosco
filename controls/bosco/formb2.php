@@ -24,11 +24,11 @@ if (key_exists('action', $_REQUEST)) {
     switch ($_REQUEST['action']) {
         case 'editarboree':
             if (key_exists('arboree_id', $_REQUEST)) {
-                $corkcovercomposition = new \forest\attribute\ForestCoverComposition();
+                $corkcovercomposition = new \forest\attribute\B1CoverComposition();
                 $corkcovercomposition->loadFromId($_REQUEST['arboree_id']);
             }
             else {
-                $corkcovercompositioncoll = $b1->getForestCoverCompositionColl();
+                $corkcovercompositioncoll = $b2->getCoverCompositionColl();
                 $corkcovercomposition = $forestcovercompositioncoll->addItem();
             }
             if ($_REQUEST['cod_coltu'] == '')
@@ -45,11 +45,11 @@ if (key_exists('action', $_REQUEST)) {
         break;
         case 'editarbustive':
             if (key_exists('arbustive_id', $_REQUEST)) {
-                $shrubcomposition = new \forest\attribute\CorkShrubComposition();
+                $shrubcomposition = new \forest\attribute\B2ShrubComposition();
                 $shrubcomposition->loadFromId($_REQUEST['arbustive_id']);
             }
             else {
-                $shrubcompositioncoll = $b2->getCorkShrubCompositionColl();
+                $shrubcompositioncoll = $b2->getShrubCompositionColl();
                 $shrubcomposition = $shrubcompositioncoll->addItem();
             }
             if ($_REQUEST['cod_coltu_ar'] == '')
@@ -63,11 +63,11 @@ if (key_exists('action', $_REQUEST)) {
         break;
         case 'editerbacee':
             if (key_exists('erbacee_id', $_REQUEST)) {
-                $herbaceuscomposition = new \forest\attribute\CorkHerbaceusComposition();
+                $herbaceuscomposition = new \forest\attribute\B2HerbaceusComposition();
                 $herbaceuscomposition->loadFromId($_REQUEST['erbacee_id']);
             }
             else {
-                $herbaceuscompositioncoll = $b2->getCorkHerbaceusCompositionColl();
+                $herbaceuscompositioncoll = $b2->getHerbaceusCompositionColl();
                 $herbaceuscomposition = $herbaceuscompositioncoll->addItem();
             }
             if ($_REQUEST['cod_coltu_er'] == '')
@@ -231,15 +231,15 @@ if (key_exists('action', $_REQUEST)) {
     }
 }
 if (key_exists('deletearboree', $_REQUEST)) {
-    $corkcovercomposition = new \forest\attribute\CorkCoverComposition();
+    $corkcovercomposition = new \forest\attribute\B2CoverComposition();
     $corkcovercomposition->loadFromId($_REQUEST['deletearboree']);
     $corkcovercomposition->delete();
 } else if (key_exists('deletearbustive', $_REQUEST)) {
-    $shrubcomposition = new \forest\attribute\CorkShrubComposition();
+    $shrubcomposition = new \forest\attribute\B2ShrubComposition();
     $shrubcomposition->loadFromId($_REQUEST['deletearbustive']);
     $shrubcomposition->delete();
 } else if (key_exists('deleteerbacee', $_REQUEST)) {
-    $herbaceuscomposition = new \forest\attribute\CorkHerbaceusComposition();
+    $herbaceuscomposition = new \forest\attribute\B2HerbaceusComposition();
     $herbaceuscomposition->loadFromId($_REQUEST['deleteerbacee']);
     $herbaceuscomposition->delete();
 } else if (key_exists('deletenote', $_REQUEST)) {
