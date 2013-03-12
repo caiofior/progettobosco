@@ -76,6 +76,60 @@ if (key_exists('action', $_REQUEST)) {
             else
                 $herbaceuscomposition->insert();
         break;
+        case 'editarboree':
+            if (key_exists('arboree_id', $_REQUEST)) {
+                $b3covercomposition = new \forest\attribute\B3CoverComposition();
+                $b3covercomposition->loadFromId($_REQUEST['arboree_id']);
+            }
+            else {
+                $b3covercompositioncoll = $b3->getCoverCompositionColl();
+                $b3covercomposition = $forestcovercompositioncoll->addItem();
+            }
+            if ($_REQUEST['cod_coltu'] == '')
+                $formErrors->addError(FormErrors::required,'cod_coltu','la specie','f');
+            
+            $b3covercomposition->setData($_REQUEST['cod_coltu2'],'cod_coltu');
+                if (key_exists('arboree_id', $_REQUEST))
+                    $b3covercomposition->update();
+                else
+                    $b3covercomposition->insert();
+        break;
+        case 'editrinnovazione':
+            if (key_exists('arboree_id', $_REQUEST)) {
+                $b3covercomposition = new \forest\attribute\B3RenovationComposition();
+                $b3covercomposition->loadFromId($_REQUEST['arboree_id']);
+            }
+            else {
+                $b3covercompositioncoll = $b3->getRenovationCompositionColl();
+                $b3covercomposition = $forestcovercompositioncoll->addItem();
+            }
+            if ($_REQUEST['cod_coltu'] == '')
+                $formErrors->addError(FormErrors::required,'cod_coltu','la specie','f');
+            
+            $b3covercomposition->setData($_REQUEST['cod_coltu2'],'cod_coltur');
+                if (key_exists('arboree_id', $_REQUEST))
+                    $b3covercomposition->update();
+                else
+                    $b3covercomposition->insert();
+        break;
+        case 'editalberature':
+            if (key_exists('arboree_id', $_REQUEST)) {
+                $b3covercomposition = new \forest\attribute\B3TreeLineComposition();
+                $b3covercomposition->loadFromId($_REQUEST['arboree_id']);
+            }
+            else {
+                $b3covercompositioncoll = $b3->getTreeLineCompositionColl();
+                $b3covercomposition = $forestcovercompositioncoll->addItem();
+            }
+            if ($_REQUEST['cod_coltu'] == '')
+                $formErrors->addError(FormErrors::required,'cod_coltu','la specie','f');
+            
+            $b3covercomposition->setData($_REQUEST['cod_coltu2'],'cod_coltur');
+                if (key_exists('arboree_id', $_REQUEST))
+                    $b3covercomposition->update();
+                else
+                    $b3covercomposition->insert();
+        break;
          case 'update':
             if($_REQUEST['codice_bosco']== '')
                 $formErrors->addError(FormErrors::required,'codice_bosco','bosco');
@@ -97,7 +151,21 @@ if (key_exists('action', $_REQUEST)) {
             
             if($_REQUEST['duratapasc'] != '' ) {
                 if (!filter_var($_REQUEST['duratapasc'],FILTER_VALIDATE_INT))
-                    $formErrors->addError(FormErrors::valid_float,'duratapasc','durata pascolo');
+                    $formErrors->addError(FormErrors::valid_int,'duratapasc','durata pascolo');
+            }
+            
+            if($_REQUEST['n_capi'] != '' ) {
+                if (!filter_var($_REQUEST['n_capi'],FILTER_VALIDATE_FLOAT))
+                    $formErrors->addError(FormErrors::valid_float,'n_capi','UBA/ha');
+            }
+            
+            if($_REQUEST['n_abbevera'] != '' ) {
+                if (!filter_var($_REQUEST['n_abbevera'],FILTER_VALIDATE_FLOAT))
+                    $formErrors->addError(FormErrors::valid_float,'n_abbevera','numero abbeveratoi');
+            }
+            if($_REQUEST['cop_arbo'] != '' ) {
+                if (!filter_var($_REQUEST['cop_arbo'],FILTER_VALIDATE_INT))
+                    $formErrors->addError(FormErrors::valid_int,'cop_arbo','copertura arborea');
             }
             
             $formErrors->setOkMessage(' I dati sono stati salvati alle '.  strftime('%k:%M:%S del %d %b'));
@@ -127,4 +195,16 @@ if (key_exists('deletearbustive', $_REQUEST)) {
     $herbaceuscomposition = new \forest\attribute\PastureWeed();
     $herbaceuscomposition->loadFromId($_REQUEST['deleteinfestanti']);
     $herbaceuscomposition->delete();
-}
+} else if (key_exists('deletearboree', $_REQUEST)) {
+    $corkcovercomposition = new \forest\attribute\B3CoverComposition();
+    $corkcovercomposition->loadFromId($_REQUEST['deletearboree']);
+    $corkcovercomposition->delete();
+} else if (key_exists('deleterinnovazione', $_REQUEST)) {
+    $corkcovercomposition = new \forest\attribute\B3RenovationComposition();
+    $corkcovercomposition->loadFromId($_REQUEST['deletearboree']);
+    $corkcovercomposition->delete();
+} else if (key_exists('deletealberature', $_REQUEST)) {
+    $corkcovercomposition = new \forest\attribute\B3TreeLineComposition();
+    $corkcovercomposition->loadFromId($_REQUEST['deletearboree']);
+    $corkcovercomposition->delete();
+} 

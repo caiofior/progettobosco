@@ -27,7 +27,7 @@ if (!class_exists('Content')) {
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class B2 extends \forest\form\template\Form implements \forest\form\template\getCoverCompositionColl {
+class B2 extends \forest\form\template\Form implements \forest\form\template\FormBX {
      /**
      * Instantiates the table
      */
@@ -123,9 +123,9 @@ class B2 extends \forest\form\template\Form implements \forest\form\template\get
      * @return \forest\attribute\B2CoverCompositionColl
      */
     public function getCoverCompositionColl() {
-        $corkcovercompositioncoll = new \forest\attribute\B2CoverCompositionColl();
-        $corkcovercompositioncoll->setForm($this);
-        return $corkcovercompositioncoll;
+        $b2covercompositioncoll = new \forest\attribute\B2CoverCompositionColl();
+        $b2covercompositioncoll->setForm($this);
+        return $b2covercompositioncoll;
     }
         /**
      * Gets the associated rennovation specie

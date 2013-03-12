@@ -61,7 +61,7 @@ class B3HerbaceusCompositionColl  extends \ContentColl  {
                 '( SELECT diz_erba.nome FROM diz_erba WHERE diz_erba.cod_coltu=erbacee3.cod_coltu) '
              )
         ));
-        if ($this->form_b3 instanceof \forest\form\B2) {
+        if ($this->form_b3 instanceof \forest\form\B3) {
             $select->where(' cod_part = ? ',$this->form_b3->getData('cod_part'))
             ->where(' proprieta = ? ',$this->form_b3->getData('proprieta'))
             ->where(' cod_fo = ? ',$this->form_b3->getData('cod_fo'));

@@ -27,7 +27,7 @@ if (!class_exists('Content')) {
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class B3 extends \forest\form\template\Form {
+class B3 extends \forest\form\template\Form implements \forest\form\template\FormBX {
      /**
      * Instantiates the table
      */
@@ -97,10 +97,10 @@ class B3 extends \forest\form\template\Form {
     }
      /**
      * Return the associated note collection
-     * @return \forest\attribute\NoteB2Coll
+     * @return \forest\attribute\NoteB3Coll
      */
     public function getNotes () {
-        $notes = new \forest\attribute\NoteB2Coll();
+        $notes = new \forest\attribute\NoteB3Coll();
         $notes->setForm($this);
         return $notes;
     }
@@ -144,5 +144,53 @@ class B3 extends \forest\form\template\Form {
         $pastureweedcoll = new \forest\attribute\PastureWeedColl();
         $pastureweedcoll->setForm($this);
         return $pastureweedcoll;
+    }
+     /**
+     * Gets the associated B3 Cover Composition Collection
+     * @return \forest\attribute\B3CoverCompositionColl
+     */
+    public function getCoverCompositionColl() {
+        $b3covercompositioncoll = new \forest\attribute\B3CoverCompositionColl();
+        $b3covercompositioncoll->setForm($this);
+        return $b3covercompositioncoll;
+    }
+     /**
+     * Gets the associated B3 Renovation Composition Collection
+     * @return \forest\attribute\B3RenovationCompositionColl
+     */
+    public function getRenovationCompositionColl() {
+        $b3renovationcompositioncoll = new \forest\attribute\B3RenovationCompositionColl();
+        $b3renovationcompositioncoll->setForm($this);
+        return $b3renovationcompositioncoll;
+    }
+    /**
+     * Reassign u parameter to colt
+     * @param type $data
+     * @param string $field
+     */
+    public function setData($data, $field = null) {
+        if (is_array($data) && key_exists('colt', $data))
+            $data['u']=$data['colt'];
+        else if ($field == 'colt')
+            $field = 'u';
+        parent::setData($data, $field);
+    }
+    /**
+     * Reassign u parameter to colt
+     * @param string $field
+     */
+    public function getData($field = null) {
+        if ($field == 'colt')
+            $field = 'u';
+        return parent::getData($field);
+    }
+     /**
+     * Gets the associated B3 Tree Line Composition Collection
+     * @return \forest\attribute\B3TreeLineCompositionColl
+     */
+    public function getTreeLineCompositionColl() {
+        $b3treelinecompositioncoll = new \forest\attribute\B3TreeLineCompositionColl();
+        $b3treelinecompositioncoll->setForm($this);
+        return $b3treelinecompositioncoll;
     }
 } 

@@ -24,7 +24,7 @@ if (key_exists('action', $_REQUEST)) {
     switch ($_REQUEST['action']) {
         case 'editarboree':
             if (key_exists('arboree_id', $_REQUEST)) {
-                $corkcovercomposition = new \forest\attribute\B1CoverComposition();
+                $corkcovercomposition = new \forest\attribute\B2CoverComposition();
                 $corkcovercomposition->loadFromId($_REQUEST['arboree_id']);
             }
             else {

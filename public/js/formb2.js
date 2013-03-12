@@ -429,7 +429,7 @@ $("#notescontainer").prepend("<a id=\"notes_list_update\" style=\"display:none;\
  * Manages autocomplete note code
  **/
 function autocompleteCodeNote () {
-        $("#cod_nota_descr, #content_schedab_note input").autocomplete({
+        $("#cod_nota_descr, #content_schedab2_note input").autocomplete({
         minLength: 0,
         source: "bosco.php?task=autocomplete&action=cod_nota&archivio=schedab2",
         select: function( event, ui ) {

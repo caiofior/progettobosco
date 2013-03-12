@@ -65,6 +65,9 @@ input[type='radio'],input[type='checkbox'] {
     margin-top: 5px;
     vertical-align:top;
 }
+#formB3 {
+    height: 2800px;
+}
 /**
 * General part
 **/
@@ -226,7 +229,8 @@ input[type='radio'],input[type='checkbox'] {
     position: relative;
     clear: both;
 }
-#content_schedab3_erbacee  div span{
+#content_schedab3_erbacee  div span,
+#newerbacee div span {
     float:left;
     width: 60px;
     text-align: center;
@@ -239,17 +243,6 @@ input[type='radio'],input[type='checkbox'] {
     position: relative;
     clear: both;
 }
-
-#newerbacee div span{
-    float:left;
-    width: 60px;
-    text-align: center;
-    word-break: break-all;
-    border-top-style: solid;
-    border-top-width: 1px;
-    border-top-color: #000000;
-}
-
 /**
 * Tab 2 container
 */
@@ -282,12 +275,11 @@ input[type='radio'],input[type='checkbox'] {
 #tab3container {
     top: -220px;
     width: 350px;
-    height: 200px;
     border-width: 3px;
     border-color: #0063DC;
     border-left-style: none;
-    border-bottom-style: none;
     border-top-style: solid;
+    border-bottom-style: solid;
     border-right-style: dashed;
 }
 #tab3note {
@@ -349,7 +341,8 @@ input[type='radio'],input[type='checkbox'] {
     position: relative;
     clear: both;
 }
-#content_schedab3_infestanti  div span{
+#content_schedab3_infestanti  div span,
+#newinfestanti div span {
     float:left;
     width: 120px;
     text-align: center;
@@ -361,16 +354,6 @@ input[type='radio'],input[type='checkbox'] {
 #newinfestanti  div{
     position: relative;
     clear: both;
-}
-
-#newinfestanti div span{
-    float:left;
-    width: 120px;
-    text-align: center;
-    word-break: break-all;
-    border-top-style: solid;
-    border-top-width: 1px;
-    border-top-color: #000000;
 }
 #modalpascocontainer {
    top: 70px;
@@ -385,4 +368,378 @@ input[type='radio'],input[type='checkbox'] {
 #fruitoricontainer {
     top: 20px;
     left: 0px;
+}
+#caricopasccontainer {
+    top: 20px;
+    left: 0px;
+    width: 210px;
+}
+#n_capicontainer {
+    position: relative;
+    top: -30px;
+    left: 240px;
+    width: 100px;
+}
+#disph2ocontainer {
+    top: -10px;
+}
+#n_abbeveracontainer {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+}
+#stato_abbecontainer {
+    top: -60px;
+    left: 120px;
+    width: 200px;
+}
+#possmeccanecontainer {
+   top: -40px;
+   width: 310px;
+}
+#possmeccanecontainer input,
+#possmeccanecontainer span{
+    float:left;
+    display: block;
+}
+#possmeccanecontainer span {
+    width: 85px;
+    word-break: break-all;
+}
+#possmungitcontainer {
+   top: -30px;
+   width: 310px;
+}
+#possmungitcontainer input,
+#possmungitcontainer span{
+    float:left;
+    display: block;
+}
+#possmungitcontainer span {
+    width: 85px;
+    word-break: break-all;
+}
+#infr_pastcontainer {
+    top: -20px;
+}
+/**
+* Tab 4 container
+*/
+#tab4container {
+    top: -1444px;
+    left: 365px;
+    width: 380px;
+    border-width: 3px;
+    border-color: #0063DC;
+    border-left-style: none;
+    border-right-style: none;
+    border-top-style: dashed;
+    border-bottom-style: dashed;
+}
+#cop_arbocontainer {
+    position: relative;
+    top: -200px;
+    left: 280px;
+    width: 100px;
+}
+#n1container {
+   top: -30px;
+   width: 220px;
+}
+#n1container input,
+#n1container span{
+    float:left;
+    display: block;
+}
+#n1container span {
+    width: 58px;
+    word-break: break-all;
+}
+#n1arrow_right {
+    position: relative;
+    top: -80px;
+    left: 250px;
+    width: 10px;
+    height: 43px;
+    border-style: none;
+    background: transparent url('../images/arrow-right.png') no-repeat;
+}
+#n2container {
+   top: -140px;
+   left: 270px;
+   width: 150px;
+}
+#n2container input,
+#n2container span{
+    float:left;
+    display: block;
+}
+#n2container span {
+    width: 58px;
+    word-break: break-all;
+}
+#f_container {
+    position: relative;
+   top: -100px;
+}
+#f2_container {
+    position: relative;
+   top: -90px;
+}
+#p2_container {
+   position: relative;
+   top: -70px;
+}
+#p3_container {
+   position: relative;
+   top: -60px;
+}
+#p4_container {
+   position: relative;
+   top: -40px;
+}
+#g1container {
+   top: -20px;
+   width: 250px;
+}
+#g1container input,
+#g1container span{
+    float:left;
+    display: block;
+}
+#g1container span {
+    width: 42px;
+    word-break: break-all;
+}
+#g1arrow_right {
+    position: relative;
+    top: -80px;
+    left: 270px;
+    width: 10px;
+    height: 43px;
+    border-style: none;
+    background: transparent url('../images/arrow-right.png') no-repeat;
+}
+#sub_viabcontainer {
+   top: -170px;
+   left: 300px;
+   width: 100px;
+}
+#sub_viabcontainer input,
+#sub_viabcontainer span{
+    float:left;
+    display: block;
+}
+#sub_viabcontainer span {
+    width: 35px;
+    word-break: break-all;
+}
+/**
+* Arboree container
+*/
+#arboreecontainer {
+    height: 200px;
+    width: 250px;
+}
+#newarboree {
+    top: 44px;
+    left: 4px;
+    width: 250px;
+}
+#content_schedab3_arboree {
+    top: 104px;
+    left: 4px;
+    width: 250px;
+}
+#content_schedab3_arboree  div{
+    position: relative;
+    clear: both;
+}
+#content_schedab3_arboree  div span,
+#newarboree div span{
+    float:left;
+    width: 80px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#newarboree  div{
+    position: relative;
+    clear: both;
+}
+/**
+* Rinnovazione container
+*/
+#rinnovazionecontainer {
+    top: -120px;
+    height: 200px;
+    width: 250px;
+}
+#newrinnovazione {
+    top: 44px;
+    left: 4px;
+    width: 250px;
+}
+#content_schedab3_rinnovazione {
+    top: 104px;
+    left: 4px;
+    width: 250px;
+}
+#content_schedab3_rinnovazione  div{
+    position: relative;
+    clear: both;
+}
+#content_schedab3_rinnovazione  div span,
+#newrinnovazione div span{
+    float:left;
+    width: 80px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#newrinnovazione  div{
+    position: relative;
+    clear: both;
+}
+/**
+* Tab 5 container
+*/
+#tab5container {
+    top: -1330px;
+    border-style: none;
+}
+#tab5note {
+    position: relative;
+    top: -10px;
+    width: 180px;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #ffffff;
+}
+#coltcontainer {
+   width: 150px;
+}
+#coltcontainer input,
+#coltcontainer span{
+    float:left;
+    display: block;
+}
+#coltcontainer span {
+    width: 50px;
+    word-break: break-all;
+}
+#diffalbcolcontainer {
+   top: -80px;
+   left: 220px;
+   width: 300px;
+}
+#diffalbcolcontainer input,
+#diffalbcolcontainer span{
+    float:left;
+    display: block;
+}
+#diffalbcolcontainer span {
+    width: 40px;
+    word-break: break-all;
+}
+#tab5note2 {
+    position: relative;
+    top: -400px;
+    left: 600px;
+    width: 150px;
+    background-color: #010080;
+    color: #FFFFFF !important;
+    border-style: none;
+}
+#colarrow_up {
+    position: relative;
+    top: -600px;
+    left: 600px;
+    width: 43px;
+    height: 40px;
+    border-style: none;
+    background: transparent url('../images/arrow-up-big.png') no-repeat;
+}
+#forestnotecontainer {
+    top: -180px;
+}
+/**
+* Alberature container
+*/
+#alberaturecontainer {
+    top: -100px;
+    left: 250px;
+    height: 200px;
+    width: 250px;
+}
+#newalberature {
+    top: 44px;
+    left: 4px;
+    width: 250px;
+}
+#content_schedab3_alberature {
+    top: 104px;
+    left: 4px;
+    width: 250px;
+}
+#content_schedab3_alberature  div{
+    position: relative;
+    clear: both;
+}
+#content_schedab3_alberature  div span,
+#newalberature div span{
+    float:left;
+    width: 80px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#newalberature div{
+    position: relative;
+    clear: both;
+}
+/**
+* notes container
+*/
+#notescontainer {
+    top: -200px;
+    left: 4px;
+    width: 750px;
+    height: 310px;
+}
+
+#newnote {
+    top: 24px;
+    left: 70px;
+    width: 700px;
+}
+#content_schedab3_note {
+    top: 124px;
+    left: 70px;
+    width: 700px;
+}
+#content_schedab3_note  div{
+    position: relative;
+    clear: both;
+}
+#content_schedab3_note div span,
+#newnote div span {
+    float:left;
+    width: 220px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#newnote  div{
+    position: relative;
+    clear: both;
 }

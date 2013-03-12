@@ -16,7 +16,7 @@ namespace forest\form\template;
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-interface getCoverCompositionColl {
+interface FormBX {
      /**
      * Instantiates the table
      */

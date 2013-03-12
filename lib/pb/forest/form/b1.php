@@ -27,7 +27,7 @@ if (!class_exists('Content')) {
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class B1 extends \forest\form\template\Form implements \forest\form\template\getCoverCompositionColl {
+class B1 extends \forest\form\template\Form implements \forest\form\template\FormBX {
      /**
      * Instantiates the table
      */

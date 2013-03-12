@@ -29,7 +29,7 @@ if (!class_exists('Content')) {
  */
 class NoteB2Coll  extends \ContentColl  {
     /**
-     * Form B1 Reference
+     * Form B2 Reference
      * @var \forest\form\B2 
      */
     protected $form_b2=null;

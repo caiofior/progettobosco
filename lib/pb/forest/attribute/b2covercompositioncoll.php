@@ -32,7 +32,7 @@ class B2CoverCompositionColl  extends \ContentColl  {
      * Forest Reference
      * @var \forest\form\B2
      */
-    protected $form_b2=null;
+    protected $form_b3=null;
     /**
      * Instantiates the table
      */
