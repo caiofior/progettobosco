@@ -32,14 +32,13 @@ document.getElementById("tabrelatedcss").href="css/formb3.css";
         </div>
         <div id="cod_part_container">
             <label  for="cod_part">Particella / sottoparticella</label>
-            <input readonly="readonly" id="cod_part" name="cod_part" value="<?php echo $a->getData('cod_part');?>">
+            <input readonly="readonly" id="cod_part" name="cod_part" value="<?php echo $a->getData('cod_part');?>"/>
         </div>
         <div id="t_container">
             <label for="t" >Tipo forestale</label>
             <input type="hidden" id="t" name="t" value="<?php echo $b->getData('t');?>">
-            <input data-old-descriz="<?php echo $b->getForestType()->getData('descriz'); ?>" id="t_descriz" name="t_descriz" value="<?php echo $b->getForestType()->getData('descriz');?>">
+            <input data-old-descriz="<?php echo $b->getForestType()->getData('descriz'); ?>" id="t_descriz" name="t_descriz" value="<?php echo $b->getForestType()->getData('descriz');?>"/>
         </div>
-        </fieldset>
         <fieldset id="ucontainer" >
             <legend>Tipo</legend>
             <div>
@@ -57,22 +56,22 @@ document.getElementById("tabrelatedcss").href="css/formb3.css";
         if ($key == $b->getData('u'))
             $checked = 'checked="checked"';
         ?>
-        <input type="radio" name="u" <?php echo $checked; ?> value="<?php echo $key; ?>"><div class="u_descr"><?php echo $item; ?></div>
+        <input type="radio" name="u" <?php echo $checked; ?> value="<?php echo $key; ?>"/><div class="u_descr"><?php echo $item; ?></div>
         <?php endforeach;?>
             </div>
+        </fieldset>
         </fieldset>
         <p id="tab1note">Formazione arbustiva</p>
         <fieldset id="tab1container">
         <div id="hcontainer">
             <label for="h">Altezza media</label>
-            <input id="h" name="h" value="<?php echo $b3->getData('h');?>">
+            <input id="h" name="h" value="<?php echo $b3->getData('h');?>"/>
         </div>      
         <div id="cop_arbucontainer">
             <label for="cop_arbu">Copertura (%)</label>
-            <input id="cop_arbu" name="cop_arbu" value="<?php echo $b3->getData('cop_arbu');?>">
+            <input id="cop_arbu" name="cop_arbu" value="<?php echo $b3->getData('cop_arbu');?>"/>
         </div>
-        </fieldset>
-        <fieldset id="secontainer" >
+                    <fieldset id="secontainer" >
         <legend>Diffusione strato erbaceo</legend>
         <?php
         foreach($b3->getControl('se')->getItems() as $item) :
@@ -133,16 +132,104 @@ document.getElementById("tabrelatedcss").href="css/formb3.css";
         </div>
         <?php require (__DIR__.DIRECTORY_SEPARATOR.'schedab3'.DIRECTORY_SEPARATOR.'erbacee.php');?>
         </fieldset>
-        <p id="tab2note">Incolto erbaceo</p>
+        </fieldset>
         <fieldset id="tab2container">
+        <p id="tab2note">Incolto erbaceo</p>
         <div id="cop_erbacontainer">
             <label for="cop_erba">Copertura (%)</label>
-            <input id="cop_erba" name="cop_erba" value="<?php echo $b3->getData('cop_erba');?>">
+            <input id="cop_erba" name="cop_erba" value="<?php echo $b3->getData('cop_erba');?>"/>
         </div>      
         <div id="sr_perccontainer">
             <label for="sr_perc">Copertura  strato arbustivo % </label>
             <input id="sr_perc" name="sr_perc" value="<?php echo $b3->getData('sr_perc');?>">
         </div>
+        </fieldset>
+        <fieldset id="tab3container">
+        <p id="tab3note">Pascolo/Prato-pascolo</p>
+        <fieldset id="comp_coticontainer" >
+        <legend>Composizione cotico</legend>
+        <?php
+        foreach($b3->getControl('comp_coti')->getItems() as $item) :
+        $checked = '';
+        if ($item->getRawData('codice') == $b3->getData('comp_coti'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="comp_coti" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"/><span><?php echo $item->getData('descriz'); ?></span>
+        <?php endforeach;?>
+        </fieldset>
+        <fieldset id="dens_coticontainer" >
+        <legend>Densità cotico</legend>
+        <?php
+        foreach($b3->getControl('dens_coti')->getItems() as $item) :
+        $checked = '';
+        if ($item->getRawData('codice') == $b3->getData('dens_coti'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="dens_coti" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"/><span><?php echo $item->getData('descriz'); ?></span>
+        <?php endforeach;?>
+        </fieldset>
+        <fieldset id="infestanticontainer" >
+        <legend>Infestanti</legend>
+        <?php
+        foreach($b3->getControl('infestanti')->getItems() as $item) :
+        $checked = '';
+        if ($item->getRawData('codice') == $b3->getData('infestanti'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="infestanti" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"/><span><?php echo $item->getData('descriz'); ?></span>
+        <?php endforeach;?>
+        </fieldset>
+        <fieldset id="infestantisscontainer" >
+        <legend>Infestanti - specie significative</legend>
+        <div id="newinfestanti">
+                <div>
+                    <span>
+                        <div>Specie</div>
+                    </span>
+                    <span>
+                        <div>Azioni</div>
+                    </span>
+                </div>
+            <div>
+            <span>
+                <input type="hidden" id="infestanti_er" name="infestanti_er" value=""/>
+                <input id="infestanti_er_descr" name="infestanti_er_descr" value=""/>
+            </span>
+            <span>
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb3&action=editinfestanti&id=<?php echo $b3->getData('objectid');?>" data-update="content_schedab3_infestanti">
+                    <img class="actions addnew" src="images/empty.png" title="Aggiungi una specie infestante"/>
+                </a>
+            </span>
+            </div>
+        </div>
+        <?php require (__DIR__.DIRECTORY_SEPARATOR.'schedab3'.DIRECTORY_SEPARATOR.'infestanti.php');?>
+        </fieldset>
+        <fieldset id="modalpascocontainer" >
+        <legend>Modalità pascolo</legend>
+        <?php
+        foreach($b3->getControl('modalpasco')->getItems() as $item) :
+        $checked = '';
+        if ($item->getRawData('codice') == $b3->getData('modalpasco'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="modalpasco" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"/><span><?php echo $item->getData('descriz'); ?></span>
+        <?php endforeach;?>
+        </fieldset>
+        <div id="duratapasccontainer">
+            <label for="duratapasc">Durata (giorni)</label>
+            <input id="duratapasc" name="duratapasc" value="<?php echo $b3->getData('duratapasc');?>"/>
+        </div>
+        <fieldset id="fruitoricontainer" >
+        <legend>Specie pascolante</legend>
+        <?php
+        foreach($b3->getControl('fruitori')->getItems() as $item) :
+        $checked = '';
+        if ($item->getRawData('codice') == $b3->getData('fruitori'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="fruitori" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"/><span><?php echo $item->getData('descriz'); ?></span>
+        <?php endforeach;?>
+        </fieldset>
         </fieldset>
     </form>
 </div>

@@ -213,7 +213,7 @@ $(document).on("click","#content_schedab2_arboree2 .delete",function(){
     el = $(this).parent("a");
     $.colorbox({
         "html"  :   "Vuoi cancellare la specie selezionata ?"+
-                    " <a id=\"codcover_delete_confirm\"href=\""+el.attr("href")+"\" data-update=\"content_schedab_arboree\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
+                    " <a id=\"codcover_delete_confirm\"href=\""+el.attr("href")+"\" data-update=\"content_schedab2_arboree\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
                     " <a id=\"codcover_delete_cancel\"href=\"#\"><img src=\"images/empty.png\" title=\"Annulla cancellazione\" class=\"actions cancel\"/> </a>",
         "onLoad": function() {
             $('#cboxClose').remove();
@@ -333,7 +333,7 @@ $(document).on("click","#content_schedab2_arbustive .delete",function(){
     el = $(this).parent("a");
     $.colorbox({
         "html"  :   "Vuoi cancellare la specie selezionata ?"+
-                    " <a id=\"codcover_delete_confirm\"href=\""+el.attr("href")+"\" data-update=\"content_schedab_arbustive\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
+                    " <a id=\"codcover_delete_confirm\"href=\""+el.attr("href")+"\" data-update=\"content_schedab2_arbustive\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
                     " <a id=\"codcover_delete_cancel\"href=\"#\"><img src=\"images/empty.png\" title=\"Annulla cancellazione\" class=\"actions cancel\"/> </a>",
         "onLoad": function() {
             $('#cboxClose').remove();
@@ -416,7 +416,7 @@ $(document).on("click","#content_schedab2_erbacee .delete",function(){
     el = $(this).parent("a");
     $.colorbox({
         "html"  :   "Vuoi cancellare la specie selezionata ?"+
-                    " <a id=\"codcover_delete_confirm\"href=\""+el.attr("href")+"\" data-update=\"content_schedab_erbacee\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
+                    " <a id=\"codcover_delete_confirm\"href=\""+el.attr("href")+"\" data-update=\"content_schedab2_erbacee\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
                     " <a id=\"codcover_delete_cancel\"href=\"#\"><img src=\"images/empty.png\" title=\"Annulla cancellazione\" class=\"actions cancel\"/> </a>",
         "onLoad": function() {
             $('#cboxClose').remove();
@@ -547,7 +547,7 @@ $(document).on("click","#content_schedab2_note .delete",function(){
     el = $(this).parent("a");
     $.colorbox({
         "html"  :   "Vuoi cancellare la nota selezionata ?"+
-                    " <a id=\"note_delete_confirm\"href=\""+el.attr("href")+"\" data-update=\"content_schedab_note\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
+                    " <a id=\"note_delete_confirm\"href=\""+el.attr("href")+"\" data-update=\"content_schedab2_note\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
                     " <a id=\"note_delete_cancel\"href=\"#\"><img src=\"images/empty.png\" title=\"Annulla cancellazione\" class=\"actions cancel\"/> </a>",
         "onLoad": function() {
             $('#cboxClose').remove();

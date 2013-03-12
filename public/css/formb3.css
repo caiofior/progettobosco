@@ -118,19 +118,21 @@ input[type='radio'],input[type='checkbox'] {
     width: 39px;
     word-break: break-all;
 }
-#tab1note {
-    position: relative;
-    top: 50px;
-    width: 150px;
-    border-style: solid;
-    border-width: 1px;
-    background-color: #ffffff;
-}
+
 /**
 * Tab 1 container
 */
 #tab1container {
+    top: 150px;
     border-style: none;
+}
+#tab1note {
+    position: relative;
+    top: 180px;
+    width: 150px;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #ffffff;
 }
 #hcontainer {
     left: 180px;
@@ -247,20 +249,12 @@ input[type='radio'],input[type='checkbox'] {
     border-top-width: 1px;
     border-top-color: #000000;
 }
-#tab2note {
-    position: relative;
-    top: -350px;
-    left: 10px;
-    width: 150px;
-    border-style: solid;
-    border-width: 1px;
-    background-color: #ffffff;
-}
+
 /**
 * Tab 2 container
 */
 #tab2container {
-    top: -410px;
+    top: -220px;
     width: 200px;
     height: 200px;
     border-width: 3px;
@@ -270,9 +264,125 @@ input[type='radio'],input[type='checkbox'] {
     border-top-style: solid;
     border-right-style: dashed;
 }
+#tab2note {
+    width: 150px;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #ffffff;
+}
 #cop_erbacontainer {
     top: 70px;
 }
 #sr_perccontainer {
     top: 120px;
+}
+/**
+* Tab 3 container
+*/
+#tab3container {
+    top: -220px;
+    width: 350px;
+    height: 200px;
+    border-width: 3px;
+    border-color: #0063DC;
+    border-left-style: none;
+    border-bottom-style: none;
+    border-top-style: solid;
+    border-right-style: dashed;
+}
+#tab3note {
+    width: 180px;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #ffffff;
+}
+#comp_coticontainer {
+   top: 30px;
+   width: 310px;
+}
+#comp_coticontainer input,
+#comp_coticontainer span{
+    float:left;
+    display: block;
+}
+#comp_coticontainer span {
+    width: 60px;
+    word-break: break-all;
+}
+#dens_coticontainer {
+   top: 40px;
+   width: 310px;
+}
+#dens_coticontainer input,
+#dens_coticontainer span{
+    float:left;
+    display: block;
+}
+#dens_coticontainer span {
+    width: 85px;
+    word-break: break-all;
+}
+#infestanticontainer {
+   top: 50px;
+   width: 310px;
+}
+/**
+* Infestanti container
+*/
+#infestantisscontainer {
+   top: 60px;
+   width: 310px;
+    left: 0px;
+    height: 200px;
+}
+#newinfestanti {
+    top: 44px;
+    left: 4px;
+    width: 250px;
+}
+#content_schedab3_infestanti {
+    top: 104px;
+    left: 4px;
+    width: 250px;
+}
+#content_schedab3_infestanti  div{
+    position: relative;
+    clear: both;
+}
+#content_schedab3_infestanti  div span{
+    float:left;
+    width: 120px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#newinfestanti  div{
+    position: relative;
+    clear: both;
+}
+
+#newinfestanti div span{
+    float:left;
+    width: 120px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#modalpascocontainer {
+   top: 70px;
+   width: 150px;
+}
+#duratapasccontainer {
+    position: relative;
+    top: 10px;
+    left: 180px;
+    width: 100px;
+}
+#fruitoricontainer {
+    top: 20px;
+    left: 0px;
 }

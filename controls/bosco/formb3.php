@@ -40,6 +40,42 @@ if (key_exists('action', $_REQUEST)) {
             else
                 $shrubcomposition->insert();
         break;
+        case 'editerbacee':
+            if (key_exists('erbacee_id', $_REQUEST)) {
+                $herbaceuscomposition = new \forest\attribute\B3HerbaceusComposition();
+                $herbaceuscomposition->loadFromId($_REQUEST['erbacee_id']);
+            }
+            else {
+                $herbaceuscompositioncoll = $b3->getHerbaceusCompositionColl();
+                $herbaceuscomposition = $herbaceuscompositioncoll->addItem();
+            }
+            if ($_REQUEST['cod_coltu_er'] == '')
+                $formErrors->addError(FormErrors::required,'cod_coltu_er','la specie','f');
+           
+            $herbaceuscomposition->setData($_REQUEST['cod_coltu_er'],'cod_coltu');
+            if (key_exists('erbacee_id', $_REQUEST))
+                $herbaceuscomposition->update();
+            else
+                $herbaceuscomposition->insert();
+        break;
+        case 'editinfestanti':
+            if (key_exists('erbacee_id', $_REQUEST)) {
+                $herbaceuscomposition = new \forest\attribute\PastureWeed();
+                $herbaceuscomposition->loadFromId($_REQUEST['erbacee_id']);
+            }
+            else {
+                $herbaceuscompositioncoll = $b3->getPastureWeedColl();
+                $herbaceuscomposition = $herbaceuscompositioncoll->addItem();
+            }
+            if ($_REQUEST['cod_coltu_er'] == '')
+                $formErrors->addError(FormErrors::required,'infestanti_er','la specie','f');
+           
+            $herbaceuscomposition->setData($_REQUEST['infestanti_er'],'cod_coltu');
+            if (key_exists('infestanti_id', $_REQUEST))
+                $herbaceuscomposition->update();
+            else
+                $herbaceuscomposition->insert();
+        break;
          case 'update':
             if($_REQUEST['codice_bosco']== '')
                 $formErrors->addError(FormErrors::required,'codice_bosco','bosco');
@@ -59,6 +95,11 @@ if (key_exists('action', $_REQUEST)) {
                     $formErrors->addError(FormErrors::valid_float,'cop_arbu','copertura(%)');
             }
             
+            if($_REQUEST['duratapasc'] != '' ) {
+                if (!filter_var($_REQUEST['duratapasc'],FILTER_VALIDATE_INT))
+                    $formErrors->addError(FormErrors::valid_float,'duratapasc','durata pascolo');
+            }
+            
             $formErrors->setOkMessage(' I dati sono stati salvati alle '.  strftime('%k:%M:%S del %d %b'));
             if ($formErrors->count() == 0) {
                 $b3->setData($_REQUEST);
@@ -73,4 +114,17 @@ if (key_exists('action', $_REQUEST)) {
             $formErrors->getJsonError();
             exit;
     }
+}
+if (key_exists('deletearbustive', $_REQUEST)) {
+    $shrubcomposition = new \forest\attribute\B3ShrubComposition();
+    $shrubcomposition->loadFromId($_REQUEST['deletearbustive']);
+    $shrubcomposition->delete();
+} else if (key_exists('deleteerbacee', $_REQUEST)) {
+    $herbaceuscomposition = new \forest\attribute\B3HerbaceusComposition();
+    $herbaceuscomposition->loadFromId($_REQUEST['deleteerbacee']);
+    $herbaceuscomposition->delete();
+} else if (key_exists('deleteinfestanti', $_REQUEST)) {
+    $herbaceuscomposition = new \forest\attribute\PastureWeed();
+    $herbaceuscomposition->loadFromId($_REQUEST['deleteinfestanti']);
+    $herbaceuscomposition->delete();
 }

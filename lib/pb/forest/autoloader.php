@@ -80,6 +80,8 @@ if (!class_exists('Forest')) {
         'attribute'.DIRECTORY_SEPARATOR.'herbaceacoll.php',
         'attribute'.DIRECTORY_SEPARATOR.'forestmassesteem.php',
         'attribute'.DIRECTORY_SEPARATOR.'forestmassesteemcoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'pastureweed.php',
+        'attribute'.DIRECTORY_SEPARATOR.'pastureweedcoll.php',
 
         );
     if (!isset($file)) $file = array();

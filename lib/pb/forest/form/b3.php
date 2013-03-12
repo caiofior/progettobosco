@@ -136,4 +136,13 @@ class B3 extends \forest\form\template\Form {
         $herbaceuscoll->setForm($this);
         return $herbaceuscoll;
     }
+    /**
+     * Gets the associated pasture weed collection
+     * @return \forest\attribute\PastureWeedColl
+     */
+    public function getPastureWeedColl() {
+        $pastureweedcoll = new \forest\attribute\PastureWeedColl();
+        $pastureweedcoll->setForm($this);
+        return $pastureweedcoll;
+    }
 } 

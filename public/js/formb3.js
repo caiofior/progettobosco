@@ -76,7 +76,7 @@ $(document).on("click","#content_schedab3_arbustive .delete",function(){
     el = $(this).parent("a");
     $.colorbox({
         "html"  :   "Vuoi cancellare la specie selezionata ?"+
-                    " <a id=\"codcover_delete_confirm\"href=\""+el.attr("href")+"\" data-update=\"content_schedab_arbustive\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
+                    " <a id=\"codcover_delete_confirm\"href=\""+el.attr("href")+"\" data-update=\"content_schedab3_arbustive\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
                     " <a id=\"codcover_delete_cancel\"href=\"#\"><img src=\"images/empty.png\" title=\"Annulla cancellazione\" class=\"actions cancel\"/> </a>",
         "onLoad": function() {
             $('#cboxClose').remove();
@@ -159,7 +159,90 @@ $(document).on("click","#content_schedab3_erbacee .delete",function(){
     el = $(this).parent("a");
     $.colorbox({
         "html"  :   "Vuoi cancellare la specie selezionata ?"+
-                    " <a id=\"codcover_delete_confirm\"href=\""+el.attr("href")+"\" data-update=\"content_schedab_erbacee\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
+                    " <a id=\"codcover_delete_confirm\"href=\""+el.attr("href")+"\" data-update=\"content_schedab3_erbacee\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
+                    " <a id=\"codcover_delete_cancel\"href=\"#\"><img src=\"images/empty.png\" title=\"Annulla cancellazione\" class=\"actions cancel\"/> </a>",
+        "onLoad": function() {
+            $('#cboxClose').remove();
+        }
+    });
+   return false;
+});
+$("#infestatisscontainer").prepend("<a id=\"infestanti_list_update\" style=\"display:none;\" href=\""+$("#formB3").attr("action")+"\" data-update=\"content_schedab3_infestanti\"></a>");
+/**
+ * Manages autocomplete infestanti cod coltu
+ **/
+function autocompleteInfestanti () {
+        $("#infestanti_er_descr").autocomplete({
+        minLength: 0,
+        source: "bosco.php?task=autocomplete&action=cod_coltu_er&objectid="+$("#objectid").val(),
+        select: function( event, ui ) {
+            $("#infestanti_er_er").val(ui.item.id )
+        },
+        change: function( event, ui ) {
+                if ( !ui.item ) {
+                      $("#infestanti_er_descr").val("");
+                }
+        }
+    }).focus(function() {
+        $(this).val("").autocomplete("search","")
+    }).blur(function () {
+        el = $(this);
+        old = el.data("old-value");
+        if (typeof old == "string" && el.val() == "") {
+            el.val(old);
+        }
+    });
+}
+autocompleteInfestanti ();
+$(document).ajaxComplete(function() {
+    autocompleteInfestanti ();
+});
+/**
+ * Manages add new herbaceus
+ */
+$(document).on("click","#newinfestanti .addnew",function(){
+    status = false;
+    el = $(this).parent("a");
+    data = {
+        "xhr":1,
+        "cod_coltu_er" : $("#infestanti_er").val()
+    };
+    $.ajax({
+            type: "POST",
+            async: false,
+            url: el.attr("href"),
+            data: data,
+            dataType: "json",
+            success: function(response) {
+                if (response == true) {
+                     $("#infestanti_er_descr").val("");
+                     $("#infestanti_er").val("");
+                    status = true;
+                }
+                else {
+                    $.each(response["names"], function(id,val) {
+                        $("#"+val).addClass("error");
+                    });
+                    $("#ajaxloader").hide();
+                }
+                
+            },
+            error: function(jqXHR , textStatus,  errorThrown) {
+                $("#ajaxloader").hide();
+            }
+        });
+     
+        return status;  
+    
+});
+/**
+ * Manages delete infestanti
+ **/
+$(document).on("click","#content_schedab3_infestanti .delete",function(){
+    el = $(this).parent("a");
+    $.colorbox({
+        "html"  :   "Vuoi cancellare la specie selezionata ?"+
+                    " <a id=\"codcover_delete_confirm\"href=\""+el.attr("href")+"\" data-update=\"content_schedab3_infestanti\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
                     " <a id=\"codcover_delete_cancel\"href=\"#\"><img src=\"images/empty.png\" title=\"Annulla cancellazione\" class=\"actions cancel\"/> </a>",
         "onLoad": function() {
             $('#cboxClose').remove();
