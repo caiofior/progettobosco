@@ -20,7 +20,7 @@
         <span>
             <div>
                 <input type="hidden" id="cod_nota_<?php echo $note->getData('objectid');?>" name="cod_nota_<?php echo $note->getData('objectid');?>" value="<?php echo $note->getRawData('nota_objectid');?>"/>
-                <input id="cod_nota_descr_<?php echo $note->getData('objectid');?>" data-note-id="<?php echo $note->getData('objectid');?>" name="cod_nota_descr_<?php echo $note->getData('objectid');?>" value="<?php echo $note->getRawData('nota_descr');?>" data-old-value="<?php echo $note->getRawData('nota_descr');?>">
+                <input id="cod_nota_descr_<?php echo $note->getData('objectid');?>" data-note-id="<?php echo $note->getData('objectid');?>" name="cod_nota_descr_<?php echo $note->getData('objectid');?>" value="<?php echo $note->getRawData('nota_descr');?>" data-old-value="<?php echo $note->getRawData('nota_descr');?>"/>
             </div>
         </span>
         <span>
@@ -30,7 +30,7 @@
         </span>
         <span>
             <div>
-                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb1&id=<?php echo $b1->getData('objectid');?>&deletenote=<?php echo $note->getData('objectid');?>"  >
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb1&amp;id=<?php echo $b1->getData('objectid');?>&amp;deletenote=<?php echo $note->getData('objectid');?>"  >
                     <img class="actions delete" src="images/empty.png" title="Cancella"/>
                 </a>
             </div>
@@ -66,11 +66,11 @@
 
     if ($start>0) {
         $actions['prev']=array(
-            'url'=>'href="?'.$baseurl.'&start='.max($start-$items_in_page,0).'"',
+            'url'=>'href="?'.$baseurl.'&amp;start='.max($start-$items_in_page,0).'"',
             'data-update'=>'data-update="content_schedab2_note"'
         );
         $actions['first']=array(
-            'url'=>'href="?'.$baseurl.'&start=0"',
+            'url'=>'href="?'.$baseurl.'&amp;start=0"',
             'data-update'=>'data-update="content_schedab2_note"'
         );
     }
@@ -78,11 +78,11 @@
     if ($start<$countall-$items_in_page) {
 
         $actions['next']=array(
-            'url'=>'href="?'.$baseurl.'&start='.min($start+$items_in_page,$last_page).'"',
+            'url'=>'href="?'.$baseurl.'&amp;start='.min($start+$items_in_page,$last_page).'"',
             'data-update'=>'data-update="content_schedab2_note"'
         );
          $actions['last']=array(
-            'url'=>'href="?'.$baseurl.'&start='.$last_page .'"',
+            'url'=>'href="?'.$baseurl.'&amp;start='.$last_page .'"',
             'data-update'=>'data-update="content_schedab2_note"'
         );
     }
