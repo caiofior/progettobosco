@@ -1,4 +1,4 @@
-<div id="content_schedab2_arboree2">
+<div id="content_schedab2_arboree">
     <?php
     if (!isset($b2)) {
         $b2 = new \forest\form\B2();
@@ -22,18 +22,18 @@
     <div>
         <span>
             <div>
-                <input type="hidden" id="cod_coltu2_<?php echo $corkcovercomposition->getData('objectid');?>" name="cod_coltu_<?php echo $corkcovercomposition->getData('objectid');?>" value="<?php echo $corkcovercomposition->getRawData('cod_coltu');?>"/>
-                <input class="cod_coltu2" id="cod_coltu2_descr_<?php echo $corkcovercomposition->getData('objectid');?>" data-arboree-id="<?php echo $corkcovercomposition->getData('objectid');?>" name="cod_coltu2_descr_<?php echo $corkcovercomposition->getData('objectid');?>" value="<?php echo $corkcovercomposition->getRawData('cod_colt2_descriz');?>" data-old-value="<?php echo $corkcovercomposition->getRawData('cod_colt2_descriz');?>">
+                <input type="hidden" id="cod_coltu_<?php echo $corkcovercomposition->getData('objectid');?>" name="cod_coltu_<?php echo $corkcovercomposition->getData('objectid');?>" value="<?php echo $corkcovercomposition->getRawData('cod_coltu');?>"/>
+                <input class="cod_coltu" id="cod_coltu_descr_<?php echo $corkcovercomposition->getData('objectid');?>" data-arboree-id="<?php echo $corkcovercomposition->getData('objectid');?>" name="cod_coltu_descr_<?php echo $corkcovercomposition->getData('objectid');?>" value="<?php echo $corkcovercomposition->getRawData('cod_colt_descriz');?>" data-old-value="<?php echo $corkcovercomposition->getRawData('cod_colt_descriz');?>"/>
             </div>
         </span>
         <span>
             <div>
-                <input id="cod_coper2_<?php echo $corkcovercomposition->getData('objectid');?>" name="cod_coper2_<?php echo $corkcovercomposition->getData('objectid');?>" data-arboree-id="<?php echo $corkcovercomposition->getData('objectid');?>" value="<?php echo $corkcovercomposition->getData('cod_coper');?>" />
+                <input id="cod_coper_<?php echo $corkcovercomposition->getData('objectid');?>" name="cod_coper_<?php echo $corkcovercomposition->getData('objectid');?>" data-arboree-id="<?php echo $corkcovercomposition->getData('objectid');?>" value="<?php echo $corkcovercomposition->getData('cod_coper');?>" />
             </div>
         </span>
         <span>
             <div>
-                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&id=<?php echo $b1->getData('objectid');?>&deletearboree=<?php echo $corkcovercomposition->getData('objectid');?>"  >
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&amp;id=<?php echo $b1->getData('objectid');?>&amp;deletearboree=<?php echo $corkcovercomposition->getData('objectid');?>"  >
                     <img class="actions delete" src="images/empty.png" title="Cancella"/>
                 </a>
             </div>
@@ -69,24 +69,24 @@
 
     if ($start>0) {
         $actions['prev']=array(
-            'url'=>'href="?'.$baseurl.'&start='.max($start-$items_in_page,0).'"',
-            'data-update'=>'data-update="content_schedab2_arboree2"'
+            'url'=>'href="?'.$baseurl.'&amp;start='.max($start-$items_in_page,0).'"',
+            'data-update'=>'data-update="content_schedab2_arboree"'
         );
         $actions['first']=array(
-            'url'=>'href="?'.$baseurl.'&start=0"',
-            'data-update'=>'data-update="content_schedab2_arboree2"'
+            'url'=>'href="?'.$baseurl.'&amp;start=0"',
+            'data-update'=>'data-update="content_schedab2_arboree"'
         );
     }
 
     if ($start<$countall-$items_in_page) {
 
         $actions['next']=array(
-            'url'=>'href="?'.$baseurl.'&start='.min($start+$items_in_page,$last_page).'"',
-            'data-update'=>'data-update="content_schedab2_arboree2"'
+            'url'=>'href="?'.$baseurl.'&amp;start='.min($start+$items_in_page,$last_page).'"',
+            'data-update'=>'data-update="content_schedab2_arboree"'
         );
          $actions['last']=array(
-            'url'=>'href="?'.$baseurl.'&start='.$last_page .'"',
-            'data-update'=>'data-update="content_schedab2_arboree2"'
+            'url'=>'href="?'.$baseurl.'&amp;start='.$last_page .'"',
+            'data-update'=>'data-update="content_schedab2_arboree"'
         );
     }
     ?>

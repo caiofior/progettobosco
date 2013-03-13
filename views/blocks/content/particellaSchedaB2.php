@@ -14,7 +14,7 @@ $b2 = $b->getB2Coll()->getFirst();
 document.getElementById("tabrelatedcss").href="css/formb2.css";
 </script>
     <div id="tabContent">
-    <form id="formB2" action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&action=update&id=<?php echo $a->getData('objectid');?>">
+    <form id="formB2" action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&amp;action=update&amp;id=<?php echo $a->getData('objectid');?>">
         <div class="form_messages formb2_errors" style="display: none;"></div>
         <fieldset id="general">
             <input type="hidden" id="codice_bosco" name="codice_bosco" value="<?php echo $forest->getData('codice');?>"/>
@@ -32,14 +32,13 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
         </div>
         <div id="cod_part_container">
             <label class="double" for="cod_part">Particella / sottoparticella</label>
-            <input readonly="readonly" id="cod_part" name="cod_part" value="<?php echo $a->getData('cod_part');?>">
+            <input readonly="readonly" id="cod_part" name="cod_part" value="<?php echo $a->getData('cod_part');?>"/>
         </div>
         <div id="t_container">
             <label for="t" class="double">Tipo forestale</label>
-            <input type="hidden" id="t" name="t" value="<?php echo $b->getData('t');?>">
-            <input data-old-descriz="<?php echo $b->getForestType()->getData('descriz'); ?>" id="t_descriz" name="t_descriz" value="<?php echo $b->getForestType()->getData('descriz');?>">
+            <input type="hidden" id="t" name="t" value="<?php echo $b->getData('t');?>"/>
+            <input data-old-descriz="<?php echo $b->getForestType()->getData('descriz'); ?>" id="t_descriz" name="t_descriz" value="<?php echo $b->getForestType()->getData('descriz');?>"/>
         </div>
-        </fieldset>
         <fieldset id="ucontainer" >
             <legend>Tipo</legend>
             <div>
@@ -55,30 +54,28 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
         if ($key == $b->getData('u'))
             $checked = 'checked="checked"';
         ?>
-        <input type="radio" name="u" <?php echo $checked; ?> value="<?php echo $key; ?>"><div class="u_descr"><?php echo $item; ?></div>
+        <input type="radio" name="u" <?php echo $checked; ?> value="<?php echo $key; ?>"/><span><?php echo $item; ?></span>
         <?php endforeach;?>
             </div>
         </fieldset>
+        </fieldset>
+
+
+        <fieldset id="tab1container">
         <p id="tab1note">Arboricoltura specializzata da legno</p>
         <fieldset id="tipocontainer">
             <legend>Tipo di impianto</legend>
             <div>
         <?php
-        $labels=array(
-          1=> 'per biomasse',
-          2=> 'a ciclo corto',
-          3=> 'a ciclo medio lungo'
-        );
-        foreach($labels as $key=>$item) :
+        foreach($b2->getControl('tipo')->getItems() as $item) :
         $checked = '';
-        if ($key == $b2->getData('tipo'))
+        if ($item->getRawData('codice') == $b2->getData('tipo'))
             $checked = 'checked="checked"';
         ?>
-        <input type="radio" name="tipo" <?php echo $checked; ?> value="<?php echo $key; ?>"><div class="tipo_descr"><?php echo $item; ?></div>
+        <input type="radio" name="tipo" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"/><span><?php echo $item->getData('descriz'); ?></span>
         <?php endforeach;?>
         </div>
         </fieldset>
-        <fieldset id="tab1container">
         <div id="anno_imp_container">
             <label for="anno_imp">Anno d'impianto</label>
             <input id="anno_imp" name="anno_imp" value="<?php echo $b2->getData('anno_imp');?>">
@@ -87,6 +84,19 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
             <label for="anno_dest">Anno di possibile cambio di destinazione</label>
             <input id="anno_dest" name="anno_dest" value="<?php echo $b2->getData('anno_dest');?>">
         </div>
+        <fieldset id="comp_specontainer" >
+        <legend>Composizione specifica</legend>
+        <div>
+        <?php
+        foreach($b2->getControl('comp_spe')->getItems() as $item) :
+        $checked = '';
+        if ($item->getRawData('codice') == $b2->getData('comp_spe'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="comp_spe" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"/><span><?php echo $item->getData('descriz'); ?></span>
+        <?php endforeach;?>
+        </div>
+        </fieldset>
         <div id="cod_coltup_container">
             <label for="cod_coltup">Specie principale componente arborea</label>
             <input type="hidden" id="cod_coltup" name="cod_coltup" value="<?php echo $b2->getData('cod_coltup');?>"/>
@@ -99,51 +109,22 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
         </div>
         <div id="dist_container">
             <label for="dist">Distanza tra le piante</label>
-            <input id="dist" name="dist" value="<?php echo $b2->getData('dist');?>">
+            <input id="dist" name="dist" value="<?php echo $b2->getData('dist');?>"/>
         </div>
         <div id="dist_princ_container">
             <label for="dist_princ">Distanza tra le piante della specie principale</label>
-            <input id="dist_princ" name="dist_princ" value="<?php echo $b2->getData('dist_princ');?>">
+            <input id="dist_princ" name="dist_princ" value="<?php echo $b2->getData('dist_princ');?>"/>
         </div>
-        <div id="fall_container">
-            <label for="fall">Fallanze (%)</label>
-            <input id="fall" name="fall" value="<?php echo $b2->getData('fall');?>">
-        </div>
-        </fieldset>
-        <fieldset id="com_specontainer" >
-        <legend>Composizione specifica</legend>
-        <div>
-        <?php
-        $labels=array(
-          1=> 'puro',
-          2=> 'misto',
-          3=> 'consociato'
-        );
-        foreach($labels as $key=>$item) :
-        $checked = '';
-        if ($key == $b2->getData('com_spe'))
-            $checked = 'checked="checked"';
-        ?>
-        <input type="radio" name="com_spe" <?php echo $checked; ?> value="<?php echo $key; ?>"><div class="com_spe_descr"><?php echo $item; ?></div>
-        <?php endforeach;?>
-        </div>
-        </fieldset>
         <fieldset id="sesto_imp_arbcontainer" >
         <legend>Sesto d'impianto</legend>
         <div>
         <?php
-        $labels=array(
-          1=> 'quadrato',
-          2=> 'rettangolo',
-          3=> 'quinconce',
-          4=> 'settonce',
-        );
-        foreach($labels as $key=>$item) :
+        foreach($b2->getControl('sesto_imp_arb')->getItems() as $item) :
         $checked = '';
-        if ($key == $b2->getData('sesto_imp_arb'))
+        if ($item->getRawData('codice') == $b2->getData('sesto_imp_arb'))
             $checked = 'checked="checked"';
         ?>
-        <input type="radio" name="sesto_imp_arb" <?php echo $checked; ?> value="<?php echo $key; ?>"><div class="sesto_imp_arb_descr"><?php echo $item; ?></div>
+        <input type="radio" name="sesto_imp_arb" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"/><span><?php echo $item->getData('descriz'); ?></span>
         <?php endforeach;?>
         </div>
         </fieldset>
@@ -151,36 +132,25 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
         <legend>Sesto d'impianto specie principale</legend>
         <div>
         <?php
-        $labels=array(
-          1=> 'quadrato',
-          2=> 'rettangolo',
-          3=> 'quinconce',
-          4=> 'settonce',
-        );
-        foreach($labels as $key=>$item) :
+        foreach($b2->getControl('sesto_princ')->getItems() as $item) :
         $checked = '';
-        if ($key == $b2->getData('sesto_imp_sp_princ'))
+        if ($item->getRawData('codice') == $b2->getData('sesto_princ'))
             $checked = 'checked="checked"';
         ?>
-        <input type="radio" name="sesto_imp_sp_princ" <?php echo $checked; ?> value="<?php echo $key; ?>"><div class="sesto_imp_sp_princ_descr"><?php echo $item; ?></div>
+        <input type="radio" name="sesto_princ" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"/><span><?php echo $item->getData('descriz'); ?></span>
         <?php endforeach;?>
         </div>
         </fieldset>
-        <fieldset id="vig_arb_princcontainer" >
+                <fieldset id="vig_arb_princcontainer" >
         <legend>Vigoria specie principale</legend>
         <div>
         <?php
-        $labels=array(
-          1=> 'mediocre',
-          2=> 'buona',
-          3=> 'ottima'
-        );
-        foreach($labels as $key=>$item) :
+        foreach($b2->getControl('vig_arb_princ')->getItems() as $item) :
         $checked = '';
-        if ($key == $b2->getData('vig_arb_princ'))
+        if ($item->getRawData('codice') == $b2->getData('vig_arb_princ'))
             $checked = 'checked="checked"';
         ?>
-        <input type="radio" name="vig_arb_princ" <?php echo $checked; ?> value="<?php echo $key; ?>"><div class="vig_arb_princ_descr"><?php echo $item; ?></div>
+        <input type="radio" name="vig_arb_princ" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"/><span><?php echo $item->getData('descriz'); ?></span>
         <?php endforeach;?>
         </div>
         </fieldset>
@@ -188,58 +158,45 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
         <legend>Vigoria specie secondaria</legend>
         <div>
         <?php
-        $labels=array(
-          1=> 'mediocre',
-          2=> 'buona',
-          3=> 'ottima'
-        );
-        foreach($labels as $key=>$item) :
+        foreach($b2->getControl('vig_arb_sec')->getItems() as $item) :
         $checked = '';
-        if ($key == $b2->getData('vig_arb_sec'))
+        if ($item->getRawData('codice') == $b2->getData('vig_arb_sec'))
             $checked = 'checked="checked"';
         ?>
-        <input type="radio" name="vig_arb_sec" <?php echo $checked; ?> value="<?php echo $key; ?>"><div class="vig_arb_sec_descr"><?php echo $item; ?></div>
+        <input type="radio" name="vig_arb_sec" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"/><span><?php echo $item->getData('descriz'); ?></span>
         <?php endforeach;?>
         </div>
         </fieldset>
+        <div id="fall_container">
+            <label for="fall">Fallanze (%)</label>
+            <input id="fall" name="fall" value="<?php echo $b2->getData('fall');?>"/>
+        </div>
         <fieldset id="qual_pricontainer" >
         <legend>Qualità fusto specie principale</legend>
         <div>
         <?php
-        $labels=array(
-          1=> 'mediocre',
-          2=> 'buona',
-          3=> 'ottima'
-        );
-        foreach($labels as $key=>$item) :
+        foreach($b2->getControl('qual_pri')->getItems() as $item) :
         $checked = '';
-        if ($key == $b2->getData('qual_pri'))
+        if ($item->getRawData('codice') == $b2->getData('qual_pri'))
             $checked = 'checked="checked"';
         ?>
-        <input type="radio" name="qual_pri" <?php echo $checked; ?> value="<?php echo $key; ?>"><div class="qual_pri_descr"><?php echo $item; ?></div>
+        <input type="radio" name="qual_pri" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"/><span><?php echo $item->getData('descriz'); ?></span>
         <?php endforeach;?>
         </div>
         </fieldset>
-        <div id="line1tab1"></div>
-        <div id="line2tab1"></div>
+        </fieldset>
+        <fieldset id="tab2container">
         <p id="tab2note">Castagneto da frutto</p>
         <fieldset id="colt_castcontainer" >
         <legend>Stato</legend>
         <div>
         <?php
-        $labels=array(
-          1=> 'Coltivazione regolare',
-          2=> 'Coltivazione irregolare',
-          3=> 'Abbandonato',
-          4=> 'In fase d\'impianto',
-          5=> 'In fase di ricostruzione'
-        );
-        foreach($labels as $key=>$item) :
+        foreach($b2->getControl('colt_cast')->getItems() as $item) :
         $checked = '';
-        if ($key == $b2->getData('colt_cast'))
+        if ($item->getRawData('codice') == $b2->getData('colt_cast'))
             $checked = 'checked="checked"';
         ?>
-        <input type="radio" name="colt_cast" <?php echo $checked; ?> value="<?php echo $key; ?>"><div class="colt_cast_descr"><?php echo $item; ?></div>
+        <input type="radio" name="colt_cast" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"/><span><?php echo $item->getData('descriz'); ?></span>
         <?php endforeach;?>
         </div>
         </fieldset>
@@ -247,17 +204,12 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
         <legend>Vigoria</legend>
         <div>
         <?php
-        $labels=array(
-          1=> 'mediocre',
-          2=> 'buona',
-          3=> 'ottima'
-        );
-        foreach($labels as $key=>$item) :
+        foreach($b2->getControl('vig_cast')->getItems() as $item) :
         $checked = '';
-        if ($key == $b2->getData('vig_cast'))
+        if ($item->getRawData('codice') == $b2->getData('vig_cast'))
             $checked = 'checked="checked"';
         ?>
-        <input type="radio" name="vig_cast" <?php echo $checked; ?> value="<?php echo $key; ?>"><div class="vig_cast_descr"><?php echo $item; ?></div>
+        <input type="radio" name="vig_cast" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"/><span><?php echo $item->getData('descriz'); ?></span>
         <?php endforeach;?>
         </div>
         </fieldset>
@@ -265,25 +217,20 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
         <legend>Sesto d'impianto</legend>
         <div>
         <?php
-        $labels=array(
-          1=> 'quadrato',
-          2=> 'rettangolo',
-          3=> 'quinconce',
-          4=> 'settonce',
-        );
-        foreach($labels as $key=>$item) :
+        foreach($b2->getControl('sesto_imp_cast')->getItems() as $item) :
         $checked = '';
-        if ($key == $b2->getData('sesto_imp_cast'))
+        if ($item->getRawData('codice') == $b2->getData('sesto_imp_cast'))
             $checked = 'checked="checked"';
         ?>
-        <input type="radio" name="sesto_imp_cast" <?php echo $checked; ?> value="<?php echo $key; ?>"><div class="sesto_imp_cast_descr"><?php echo $item; ?></div>
+        <input type="radio" name="sesto_imp_cast" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"/><span><?php echo $item->getData('descriz'); ?></span>
         <?php endforeach;?>
         </div>
         </fieldset>
-        <div id="line1tab2"></div>
-        <div id="line2tab2"></div>
-        <p id="tab3note">Impianti speciali per la tartuficoltura</p>
+        </fieldset>
+
+        
         <fieldset id="tab3container">
+        <p id="tab3note">Impianti speciali per la tartuficoltura</p>
         <div id="cod_coltub_container">
             <label for="cod_coltub">Specie simbionte</label>
             <input type="hidden" id="cod_coltub" name="cod_coltub" value="<?php echo $b2->getData('cod_coltub');?>"/>
@@ -294,6 +241,33 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
             <input type="hidden" id="cod_coltua" name="cod_coltua" value="<?php echo $b2->getData('cod_coltua');?>"/>
             <input id="cod_coltua_descr" name="cod_coltua_descr" value="<?php echo $b2->getRawData('cod_coltua_descriz');?>"/>
         </div>
+        <div id="fungo_ospi_container">
+        <label for="fungo_ospi">Fungo ospite</label>
+        <select>
+        <option value="">Seleziona una specie</option>
+        <?php
+        foreach($b2->getControl('fungo_ospi')->getItems() as $item) :
+        $selected = '';
+        if ($item->getRawData('cod_coltu') == $b2->getData('fungo_ospi'))
+            $selected = 'selected="selected"';
+        ?>
+        <option name="fungo_ospi" <?php echo $selected; ?> value="<?php echo $item->getData('codice'); ?>"><?php echo $item->getData('nome'); ?></option>
+        <?php endforeach;?>
+        </select>
+        </div>
+        <fieldset id="sesto_imp_tartcontainer" >
+        <legend>Sesto d'impianto</legend>
+        <div>
+        <?php
+        foreach($b2->getControl('sesto_imp_tart')->getItems() as $item) :
+        $checked = '';
+        if ($item->getRawData('codice') == $b2->getData('sesto_imp_tart'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="sesto_imp_tart" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"/><span><?php echo $item->getData('descriz'); ?></span>
+        <?php endforeach;?>
+        </div>
+        </fieldset>
         <div id="num_piante_container">
             <label for="num_piante">N° totale piante (n/ha)</label>
             <input id="num_piante" name="num_piante" value="<?php echo $b2->getData('num_piante');?>">
@@ -303,29 +277,8 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
             <input id="piant_tart" name="piant_tart" value="<?php echo $b2->getData('piant_tart');?>">
         </div>
         </fieldset>
-        <fieldset id="sesto_imp_tartcontainer" >
-        <legend>Sesto d'impianto</legend>
-        <div>
-        <?php
-        $labels=array(
-          1=> 'quadrato',
-          2=> 'rettangolo',
-          3=> 'quinconce',
-          4=> 'settonce',
-        );
-        foreach($labels as $key=>$item) :
-        $checked = '';
-        if ($key == $b2->getData('sesto_imp_tart'))
-            $checked = 'checked="checked"';
-        ?>
-        <input type="radio" name="sesto_imp_tart" <?php echo $checked; ?> value="<?php echo $key; ?>"><div class="sesto_imp_tart_descr"><?php echo $item; ?></div>
-        <?php endforeach;?>
-        </div>
-        </fieldset>
-        <div id="line1tab3"></div>
-        <div id="line2tab3"></div>
-        <p id="tab4note">Sughereta</p>
         <fieldset id="tab4container">
+        <p id="tab4note">Sughereta</p>
         <div id="s_container">
         <label for="s">Struttura</label>
         <select id="s" name="s">
@@ -336,6 +289,92 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
             <?php endforeach;?>
         </select>
         </div>
+        <fieldset id="arboreecontainer" >
+        <legend>Composizione strato arboreo</legend>
+        <div id="newarboree">
+                <div>
+                    <span>
+                        <div>Specie</div>
+                    </span>
+                    <span>
+                        <div>Copertura</div>
+                    </span>
+                    <span>
+                        <div>Azioni</div>
+                    </span>
+                </div>
+            <div>
+            <span>
+                <input type="hidden" id="cod_coltu" name="cod_coltu" value=""/>
+                <input id="cod_coltu_descr" name="cod_coltu_descr" value=""/>
+            </span>
+            <span>
+                <input id="cod_coper2" name="cod_coper2" value=""/>
+            </span>
+            <span>
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&amp;action=editerbacee&amp;id=<?php echo $b2->getData('objectid');?>" data-update="content_schedab2_arboree">
+                    <img class="actions addnew" src="images/empty.png" title="Aggiungi una specie"/>
+                </a>
+            </span>
+            </div>
+        </div>
+        <?php require (__DIR__.DIRECTORY_SEPARATOR.'schedab2'.DIRECTORY_SEPARATOR.'arboree.php');?>
+        </fieldset>
+        <fieldset id="ocontainer" >
+        <legend>Origine</legend>
+        <div>
+        <?php
+        $labels=array(
+          1=> 'dissemin.',
+          2=> 'artificiale',
+          3=> 'agamica o ceduo in conver.',
+          4=> 'bosco di neoformazione',
+        );
+        foreach($labels as $key=>$item) :
+        $checked = '';
+        if ($key == $b2->getData('o'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="o" <?php echo $checked; ?> value="<?php echo $key; ?>"><span><?php echo $item; ?></span>
+        <?php endforeach;?>
+        </div>
+        </fieldset>
+                <fieldset id="vig_sugcontainer" >
+        <legend>Vigoria</legend>
+        <div>
+        <?php
+        $labels=array(
+          1=> 'poco vigoros',
+          2=> 'mediamente',
+          3=> 'molto vigoros'
+        );
+        foreach($labels as $key=>$item) :
+        $checked = '';
+        if ($key == $b2->getData('vig_sug'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="vig_sug" <?php echo $checked; ?> value="<?php echo $key; ?>"><div class="vig_sug_descr"><?php echo $item; ?></div>
+        <?php endforeach;?>
+        </div>
+        </fieldset>
+        <fieldset id="fito_sugcontainer" >
+        <legend>Stato fitosanitario</legend>
+        <div>
+        <?php
+        $labels=array(
+          1=> 'precario',
+          2=> 'medio',
+          3=> 'buono'
+        );
+        foreach($labels as $key=>$item) :
+        $checked = '';
+        if ($key == $b2->getData('fito_sug'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="fito_sug" <?php echo $checked; ?> value="<?php echo $key; ?>"><span><?php echo $item; ?></span>
+        <?php endforeach;?>
+        </div>
+        </fieldset>
         <div id="fito_bio_container">
             <label for="fito_bio">agenti biologici</label>
             <input type="checkbox" <?php echo ($b2->getData('fito_bio')==1 ? 'checked="checked"' : ''); ?> id="fito_bio" name="fito_bio"value ="1">
@@ -352,6 +391,62 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
             <label for="fito_abio_spec">Specifiche</label>
             <input id="fito_abio_spec" name="fito_abio_spec"value ="<?php echo $b2->getData('fito_abio_spec') ; ?>">
         </div>
+                <fieldset id="vcontainer" >
+        <legend>Vuoti -lacune</legend>
+        <div>
+        <?php
+        $labels=array(
+          1=> 'assenti',
+          2=> 'presenti'
+        );
+        foreach($labels as $key=>$item) :
+        $checked = '';
+        if ($key == $b2->getData('v'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="v" <?php echo $checked; ?> value="<?php echo $key; ?>"><span><?php echo $item; ?></span>
+        <?php endforeach;?>
+        </div>
+        </fieldset>
+        <fieldset id="dcontainer" >
+        <legend>Densità</legend>
+        <div>
+        <?php
+        foreach($b2->getControl('d')->getItems() as $item) :
+        $checked = '';
+        if ($item->getRawData('codice') == $b2->getData('d'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="d" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"/><span><?php echo $item->getData('descriz'); ?></span>
+        <?php endforeach;?>
+        </div>
+        </fieldset>
+                <fieldset id="n1container" >
+        <legend>Novellame</legend>
+        <div>
+        <?php
+        foreach($b2->getControl('n1')->getItems() as $item) :
+        $checked = '';
+        if ($item->getRawData('codice') == $b2->getData('n1'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="n1" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"/><span><?php echo $item->getData('descriz'); ?></span>
+        <?php endforeach;?>
+        </div>
+        </fieldset>
+        <fieldset id="n1arrow_right"></fieldset>
+        <fieldset id="n2container" >
+        <div>
+        <?php
+        foreach($b2->getControl('n2')->getItems() as $item) :
+        $checked = '';
+        if ($item->getRawData('codice') == $b2->getData('n2'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="radio" name="n2" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"/><span><?php echo $item->getData('descriz'); ?></span>
+        <?php endforeach;?>
+        </div>
+        </fieldset>
         <div id="spe_nov_container">
             <label for="spe_nov">Specie prevalente rinnovazione</label>
             <?php 
@@ -392,163 +487,12 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
             <input id="estraz_passata" name="estraz_passata"value ="<?php echo $b2->getData('estraz_passata') ; ?>">
         </div>
         </fieldset>
-        <fieldset id="arboree2container" >
-        <legend>Composizione strato arboreo</legend>
-        <div id="newarboree2">
-                <div>
-                    <span>
-                        <div>Specie</div>
-                    </span>
-                    <span>
-                        <div>Copertura</div>
-                    </span>
-                    <span>
-                        <div>Azioni</div>
-                    </span>
-                </div>
-            <div>
-            <span>
-                <input type="hidden" id="cod_coltu2" name="cod_coltu2" value=""/>
-                <input id="cod_coltu2_descr" name="cod_coltu2_descr" value=""/>
-            </span>
-            <span>
-                <input id="cod_coper2" name="cod_coper2" value=""/>
-            </span>
-            <span>
-                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&action=editerbacee&id=<?php echo $b2->getData('objectid');?>" data-update="content_schedab2_arboree2">
-                    <img class="actions addnew" src="images/empty.png" title="Aggiungi una specie"/>
-                </a>
-            </span>
-            </div>
-        </div>
-        <?php require (__DIR__.DIRECTORY_SEPARATOR.'schedab2'.DIRECTORY_SEPARATOR.'arboree2.php');?>
-        </fieldset>
-        <fieldset id="ocontainer" >
-        <legend>Origine</legend>
-        <div>
-        <?php
-        $labels=array(
-          1=> 'dissemin.',
-          2=> 'artificiale',
-          3=> 'agamica o ceduo in conver.',
-          4=> 'bosco di neoformazione',
-        );
-        foreach($labels as $key=>$item) :
-        $checked = '';
-        if ($key == $b2->getData('o'))
-            $checked = 'checked="checked"';
-        ?>
-        <input type="radio" name="o" <?php echo $checked; ?> value="<?php echo $key; ?>"><div class="o_descr"><?php echo $item; ?></div>
-        <?php endforeach;?>
-        </div>
-        </fieldset>
-        <fieldset id="vig_sugcontainer" >
-        <legend>Vigoria</legend>
-        <div>
-        <?php
-        $labels=array(
-          1=> 'poco vigoros',
-          2=> 'mediamente',
-          3=> 'molto vigoros'
-        );
-        foreach($labels as $key=>$item) :
-        $checked = '';
-        if ($key == $b2->getData('vig_sug'))
-            $checked = 'checked="checked"';
-        ?>
-        <input type="radio" name="vig_sug" <?php echo $checked; ?> value="<?php echo $key; ?>"><div class="vig_sug_descr"><?php echo $item; ?></div>
-        <?php endforeach;?>
-        </div>
-        </fieldset>
-        <fieldset id="fito_sugcontainer" >
-        <legend>Stato fitosanitario</legend>
-        <div>
-        <?php
-        $labels=array(
-          1=> 'precario',
-          2=> 'medio',
-          3=> 'buono'
-        );
-        foreach($labels as $key=>$item) :
-        $checked = '';
-        if ($key == $b2->getData('fito_sug'))
-            $checked = 'checked="checked"';
-        ?>
-        <input type="radio" name="fito_sug" <?php echo $checked; ?> value="<?php echo $key; ?>"><div class="fito_sug_descr"><?php echo $item; ?></div>
-        <?php endforeach;?>
-        </div>
-        </fieldset>
-        <fieldset id="vcontainer" >
-        <legend>Stato fitosanitario</legend>
-        <div>
-        <?php
-        $labels=array(
-          1=> 'assenti',
-          2=> 'presenti'
-        );
-        foreach($labels as $key=>$item) :
-        $checked = '';
-        if ($key == $b2->getData('v'))
-            $checked = 'checked="checked"';
-        ?>
-        <input type="radio" name="v" <?php echo $checked; ?> value="<?php echo $key; ?>"><div class="v_descr"><?php echo $item; ?></div>
-        <?php endforeach;?>
-        </div>
-        </fieldset>
-        <fieldset id="dcontainer" >
-        <legend>Densità</legend>
-        <div>
-        <?php
-        $labels=array(
-          1=> 'scarsa',
-          2=> 'adeguata',
-          3=> 'eccessiva'  
-        );
-        foreach($labels as $key=>$item) :
-        $checked = '';
-        if ($key == $b2->getData('d'))
-            $checked = 'checked="checked"';
-        ?>
-        <input type="radio" name="d" <?php echo $checked; ?> value="<?php echo $key; ?>"><div class="d_descr"><?php echo $item; ?></div>
-        <?php endforeach;?>
-        </div>
-        </fieldset>
-        <fieldset id="n1container" >
-        <legend>Novellame</legend>
-        <div>
-        <?php
-        $labels=array(
-          1=> 'assente',
-          2=> 'sporadico',
-          3=> 'diffuso'  
-        );
-        foreach($labels as $key=>$item) :
-        $checked = '';
-        if ($key == $b2->getData('n1'))
-            $checked = 'checked="checked"';
-        ?>
-        <input type="radio" name="n1" <?php echo $checked; ?> value="<?php echo $key; ?>"><div class="n1_descr"><?php echo $item; ?></div>
-        <?php endforeach;?>
-        </div>
-        </fieldset>
-        <fieldset id="n1arrow_right"></fieldset>
-        <fieldset id="n2container" >
-        <legend>Novellame</legend>
-        <div>
-        <?php
-        $labels=array(
-          1=> 'libero',
-          2=> 'sotto copertura'
-        );
-        foreach($labels as $key=>$item) :
-        $checked = '';
-        if ($key == $b2->getData('n2'))
-            $checked = 'checked="checked"';
-        ?>
-        <input type="radio" name="n2" <?php echo $checked; ?> value="<?php echo $key; ?>"><div class="n2_descr"><?php echo $item; ?></div>
-        <?php endforeach;?>
-        </div>
-        </fieldset>
+
+
+
+
+
+
         <fieldset id="n3container" >
         <legend>Rinnovazione</legend>
         <div>
@@ -675,7 +619,7 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
                 <input id="cod_coltu_ar_descr" name="cod_coltu_ar_descr" value=""/>
             </span>
             <span>
-                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&action=editarbustive&id=<?php echo $b2->getData('objectid');?>" data-update="content_schedab2_arbustive">
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&amp;action=editarbustive&amp;id=<?php echo $b2->getData('objectid');?>" data-update="content_schedab2_arbustive">
                     <img class="actions addnew" src="images/empty.png" title="Aggiungi una specie arbustiva"/>
                 </a>
             </span>
@@ -711,7 +655,7 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
                 <input id="cod_coltu_er_descr" name="cod_coltu_er_descr" value=""/>
             </span>
             <span>
-                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&action=editerbacee&id=<?php echo $b2->getData('objectid');?>" data-update="content_schedab2_erbacee">
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&amp;action=editerbacee&amp;id=<?php echo $b2->getData('objectid');?>" data-update="content_schedab2_erbacee">
                     <img class="actions addnew" src="images/empty.png" title="Aggiungi una specie erbacea"/>
                 </a>
             </span>
@@ -780,7 +724,7 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
                     <textarea id="text_nota" name="text_nota" rows="2" cols="30"></textarea>
                 </span>
                 <span>
-                    <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&action=editnote&id=<?php echo $b2->getData('objectid');?>" data-update="content_schedab2_note">
+                    <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&amp;action=editnote&amp;id=<?php echo $b2->getData('objectid');?>" data-update="content_schedab2_note">
                         <img class="actions addnew" src="images/empty.png" title="Aggiungi una nota"/>
                     </a>
                 </span>

@@ -58,6 +58,13 @@ input[type='radio'],input[type='checkbox'] {
    background: transparent;
    border: 0;
 }
+.scrollcontrols span input{
+    display: inline;
+}
+.scrollcontrols img {
+    margin-top: 5px;
+    vertical-align:top;
+}
 #formB2 {
     height: 2900px;
 }
@@ -88,12 +95,12 @@ input[type='radio'],input[type='checkbox'] {
 #cod_part_container {
     width: 200px;
     top:4px;
-    left: 412px; 
+    left: 612px; 
 }
 #t_container {
     width: 200px;
-    top:180px;
-    left: 412px; 
+    top:150px;
+    left: 612px; 
 }
 /**
 * Container of U blocks
@@ -109,10 +116,11 @@ input[type='radio'],input[type='checkbox'] {
     float:left;
     display: block;
 }
-#ucontainer .u_descr {
+#ucontainer span {
     display: block;
     float:left;
     width: 80px;
+    *width: 75px;
     word-break: break-all;
 }
 /**
@@ -134,107 +142,112 @@ input[type='radio'],input[type='checkbox'] {
     float:left;
     display: block;
 }
-#tipocontainer .tipo_descr {
+#tipocontainer span {
     display: block;
     float:left;
     width: 80px;
+    *width: 75px;
     word-break: break-all;
 }
 /**
 * Tab 1 container
 */
 #tab1container {
+    top: 200px;
     border-style: none;
 }
 #anno_imp_container {
-    top: -150px;
+    top: 4px;
     left: 450px;
 }
 #anno_dest_container {
-    top: -150px;
+    top: 4px;
     left: 620px;
 }
 #cod_coltup_container {
-    top: -50px;
-    left: 300px;
+    top: 114px;
+    left: 320px;
 }
 #cod_coltus_container {
-    top: -60px;
+    top: 94px;
     left: 600px;
 }
 #dist_container {
-    top: 50px;
-     width: 150px;
+    top: 170px;
+     width: 100px;
 }
 #dist_princ_container {
-    top: 50px;
-    left: 172px;
-    width: 150px;
+    top: 170px;
+    left: 122px;
+    width: 100px;
 }
 #fall_container {
-    top: 150px;
-    left: 650px;
+    top: 280px;
+    left: 670px;
     width: 150px;
 }
 /**
 *Com Spec container
 **/
-#com_specontainer {
+#comp_specontainer {
     top: -80px;
     height: 40px;
     width: 280px;
 }
-#com_specontainer input {
+#comp_specontainer input {
     float:left;
     display: block;
 }
-#com_specontainer .com_spe_descr {
+#comp_specontainer span {
     display: block;
     float:left;
     width: 80px;
+    *width: 75px;
     word-break: break-all;
 }
 /**
 *Com Spec container
 **/
 #sesto_imp_arbcontainer {
-    top: -50px;
-    left: 350px;
-    height: 40px;
-    width: 400px;
+    top: -70px;
+    left: 244px;
+    height: 60px;
+    width: 250px;
 }
 #sesto_imp_arbcontainer input {
     float:left;
     display: block;
 }
-#sesto_imp_arbcontainer .sesto_imp_arb_descr {
+#sesto_imp_arbcontainer span {
     float:left;
-    width: 80px;
+    width: 45px;
+    *width: 40px;
     word-break: break-all;
 }
 /**
 *Com Spec container
 **/
 #sesto_imp_sp_princ_arbcontainer {
-    top: -50px;
-    left: 350px;
-    height: 40px;
-    width: 400px;
+    top: -140px;
+    left: 520px;
+    height: 80px;
+    width: 250px;
 }
 #sesto_imp_sp_princ_arbcontainer input {
     float:left;
     display: block;
 }
-#sesto_imp_sp_princ_arbcontainer .sesto_imp_sp_princ_descr {
+#sesto_imp_sp_princ_arbcontainer span {
     float:left;
-    width: 80px;
+    width: 45px;
+    *width: 40px;
     word-break: break-all;
 }
 /**
 *Vig Arb Princ container
 **/
 #vig_arb_princcontainer {
-    top: -40px;
+    top: -140px;
     left: 0px;
     height: 40px;
     width: 300px;
@@ -243,16 +256,17 @@ input[type='radio'],input[type='checkbox'] {
     float:left;
     display: block;
 }
-#vig_arb_princcontainer .vig_arb_princ_descr {
+#vig_arb_princcontainer span {
     float:left;
     width: 80px;
+    *width: 75px;
     word-break: break-all;
 }
 /**
 *Vig Arb Sec container
 **/
 #vig_arb_seccontainer {
-    top: -100px;
+    top: -200px;
     left: 330px;
     height: 40px;
     width: 300px;
@@ -261,16 +275,17 @@ input[type='radio'],input[type='checkbox'] {
     float:left;
     display: block;
 }
-#vig_arb_seccontainer .vig_arb_sec_descr {
+#vig_arb_seccontainer span {
     float:left;
     width: 80px;
+    *width: 75px;
     word-break: break-all;
 }
 /**
 *Qual pri container
 **/
 #qual_pricontainer {
-    top: -80px;
+    top: -180px;
     left: 0px;
     height: 40px;
     width: 300px;
@@ -279,7 +294,7 @@ input[type='radio'],input[type='checkbox'] {
     float:left;
     display: block;
 }
-#qual_pricontainer .qual_pri_descr {
+#qual_pricontainer span {
     float:left;
     width: 80px;
     word-break: break-all;
@@ -307,9 +322,13 @@ input[type='radio'],input[type='checkbox'] {
 /**
 * Tab 2
 */
+#tab2container {
+    top: 50px;
+    border-style: none;
+}
 #tab2note {
     position: relative;
-    top: -50px;
+    top: 0px;
     width: 100px;
     border-style: solid;
     border-width: 1px;
@@ -319,7 +338,7 @@ input[type='radio'],input[type='checkbox'] {
 *Col cast container
 **/
 #colt_castcontainer {
-    top: -120px;
+    top: -80px;
     left: 120px;
     height: 80px;
     width: 500px;
@@ -328,7 +347,7 @@ input[type='radio'],input[type='checkbox'] {
     float:left;
     display: block;
 }
-#colt_castcontainer .colt_cast_descr {
+#colt_castcontainer span {
     float:left;
     width: 80px;
     word-break: break-all;
@@ -337,7 +356,7 @@ input[type='radio'],input[type='checkbox'] {
 *Vig cast container
 **/
 #vig_castcontainer {
-    top: -100px;
+    top: -80px;
     left: 0px;
     height: 40px;
     width: 300px;
@@ -346,7 +365,7 @@ input[type='radio'],input[type='checkbox'] {
     float:left;
     display: block;
 }
-#vig_castcontainer .vig_cast_descr {
+#vig_castcontainer span {
     float:left;
     width: 80px;
     word-break: break-all;
@@ -355,7 +374,7 @@ input[type='radio'],input[type='checkbox'] {
 *Sesto imp cast container
 **/
 #sesto_imp_castcontainer {
-    top: -160px;
+    top: -120px;
     left: 350px;
     height: 40px;
     width: 400px;
@@ -364,7 +383,7 @@ input[type='radio'],input[type='checkbox'] {
     float:left;
     display: block;
 }
-#sesto_imp_castcontainer .sesto_imp_cast_descr {
+#sesto_imp_castcontainer span {
     float:left;
     width: 80px;
     word-break: break-all;
@@ -401,29 +420,34 @@ input[type='radio'],input[type='checkbox'] {
     background-color: #ffffff;
 }
 #tab3container {
+    top: 50px;
     border-style: none;
 }
 #cod_coltub_container {
-    top: -160px;
+    top: -80px;
     left: 150px;
 }
 #cod_coltua_container {
-    top: -80px;
+    top: -10px;
+    left: 0px;
+}
+#fungo_ospi_container {
+    top: 40px;
     left: 0px;
 }
 #num_piante_container {
-    top: 30px;
+    top: 150px;
     left: 50px;
 }
 #piant_tart_container {
-    top: 30px;
+    top: 150px;
     left: 250px;
 }
 /**
 *Sesto imp tart container
 **/
 #sesto_imp_tartcontainer {
-    top: -50px;
+    top: 0px;
     left: 0px;
     height: 40px;
     width: 400px;
@@ -432,7 +456,7 @@ input[type='radio'],input[type='checkbox'] {
     float:left;
     display: block;
 }
-#sesto_imp_tartcontainer .sesto_imp_tart_descr {
+#sesto_imp_tartcontainer span {
     float:left;
     width: 80px;
     word-break: break-all;
@@ -469,17 +493,18 @@ input[type='radio'],input[type='checkbox'] {
     background-color: #ffffff;
 }
 #tab4container {
+    top: 70px;
     border-style: none;
 }
 #s_container {
-    left:120px;
+    left:140px;
 }
 /**
 *Fito bio container
 **/
 #fito_bio_container {
     width: 100px;
-    top: 390px;
+    top: 410px;
     left: 220px;
 }
 /**
@@ -487,7 +512,7 @@ input[type='radio'],input[type='checkbox'] {
 **/
 #fito_bio_spec_container {
     width: 100px;
-    top: 450px;
+    top: 470px;
     left: 220px;
 }
 /**
@@ -495,7 +520,7 @@ input[type='radio'],input[type='checkbox'] {
 **/
 #fito_abio_container {
     width: 100px;
-    top: 390px;
+    top: 410px;
     left: 330px;
 }
 /**
@@ -503,7 +528,7 @@ input[type='radio'],input[type='checkbox'] {
 **/
 #fito_abio_spec_container {
     width: 100px;
-    top: 430px;
+    top: 450px;
     left: 330px;
 }
 /**
@@ -549,27 +574,28 @@ input[type='radio'],input[type='checkbox'] {
 /**
 * Arboree 2 container
 */
-#arboree2container {
+#arboreecontainer {
     left: 0px;
     top: 50px;
     width: 260px;
     height: 150px;
 }
-#newarboree2 {
+#newarboree {
     top: 24px;
     left: 4px;
     width: 250px;
 }
-#content_schedab2_arboree2 {
+#content_schedab2_arboree {
     top: 74px;
     left: 4px;
     width: 250px;
 }
-#content_schedab2_arboree2  div{
+#content_schedab2_arboree  div{
     position: relative;
     clear: both;
 }
-#content_schedab2_arboree2  div span{
+#content_schedab2_arboree  div span,
+#newarboree div span{
     float:left;
     width: 80px;
     text-align: center;
@@ -578,26 +604,9 @@ input[type='radio'],input[type='checkbox'] {
     border-top-width: 1px;
     border-top-color: #000000;
 }
-#newarboree2  div{
+#newarboree  div{
     position: relative;
     clear: both;
-}
-
-#newarboree2 div span{
-    float:left;
-    width: 80px;
-    text-align: center;
-    word-break: break-all;
-    border-top-style: solid;
-    border-top-width: 1px;
-    border-top-color: #000000;
-}
-#arboree2container .scrollcontrols span input{
-    display: inline;
-}
-#arboree2container .scrollcontrols img {
-    margin-top: 5px;
-    vertical-align:top;
 }
 /**
 *O container
@@ -612,9 +621,10 @@ input[type='radio'],input[type='checkbox'] {
     float:left;
     display: block;
 }
-#ocontainer .o_descr {
+#ocontainer span {
     float:left;
     width: 50px;
+    *width: 45px;
     word-break: break-all;
 }
 /**
@@ -624,7 +634,7 @@ input[type='radio'],input[type='checkbox'] {
     top: -75px;
     left: 280px;
     height: 120px;
-    width: 150px;
+    width: 140px;
 }
 #vig_sugcontainer input {
     float:left;
@@ -632,7 +642,8 @@ input[type='radio'],input[type='checkbox'] {
 }
 #vig_sugcontainer .vig_sug_descr {
     float:left;
-    width: 35px;
+    width: 32px;
+    *width: 27px;
     word-break: break-all;
 }
 /**
@@ -641,14 +652,14 @@ input[type='radio'],input[type='checkbox'] {
 #fito_sugcontainer {
     top: -75px;
     left: 0px;
-    height: 80px;
+    height: 40px;
     width: 200px;
 }
 #fito_sugcontainer input {
     float:left;
     display: block;
 }
-#fito_sugcontainer .fito_sug_descr {
+#fito_sugcontainer span {
     float:left;
     width: 47px;
     word-break: break-all;
@@ -657,16 +668,16 @@ input[type='radio'],input[type='checkbox'] {
 *V container
 **/
 #vcontainer {
-    top: -60px;
+    top: -30px;
     left: 0px;
-    height: 80px;
+    height: 40px;
     width: 130px;
 }
 #vcontainer input {
     float:left;
     display: block;
 }
-#vcontainer .v_descr {
+#vcontainer span {
     float:left;
     width: 50px;
     word-break: break-all;
@@ -675,16 +686,16 @@ input[type='radio'],input[type='checkbox'] {
 *D container
 **/
 #dcontainer {
-    top: -150px;
+    top: -80px;
     left: 150px;
-    height: 80px;
+    height: 40px;
     width: 230px;
 }
 #dcontainer input {
     float:left;
     display: block;
 }
-#dcontainer .d_descr {
+#dcontainer span {
     float:left;
     width: 55px;
     word-break: break-all;
@@ -693,7 +704,7 @@ input[type='radio'],input[type='checkbox'] {
 *N1 container
 **/
 #n1container {
-    top: -140px;
+    top: -80px;
     left: 0px;
     height: 40px;
     width: 210px;
@@ -702,7 +713,7 @@ input[type='radio'],input[type='checkbox'] {
     float:left;
     display: block;
 }
-#n1container .n1_descr {
+#n1container span {
     float:left;
     width: 55px;
     word-break: break-all;
@@ -711,7 +722,7 @@ input[type='radio'],input[type='checkbox'] {
 * N1 arrow
 */
 #n1arrow_right {
-    top: -190px;
+    top: -130px;
     left: 230px;
     width: 10px;
     height: 43px;
@@ -722,16 +733,16 @@ input[type='radio'],input[type='checkbox'] {
 *N2 container
 **/
 #n2container {
-    top: -260px;
+    top: -190px;
     left: 250px;
-    height: 60px;
+    height: 40px;
     width: 170px;
 }
 #n2container input {
     float:left;
     display: block;
 }
-#n2container .n2_descr {
+#n2container span {
     float:left;
     width: 70px;
     word-break: break-all;

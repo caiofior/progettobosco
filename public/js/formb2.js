@@ -91,12 +91,12 @@ $("#cod_coltua_descr").autocomplete({
 }).focus(function() {
     $(this).val("").autocomplete("search","")
 });
-$("#arboree2container").prepend("<a id=\"arboree2_list_update\" style=\"display:none;\" href=\""+$("#formB2").attr("action")+"\" data-update=\"content_schedab2_arboree2\"></a>");
+$("#arboree2container").prepend("<a id=\"arboree_list_update\" style=\"display:none;\" href=\""+$("#formB2").attr("action")+"\" data-update=\"content_schedab2_arboree\"></a>");
 /**
  * Manages autocomplete arboree cod coltu
  **/
 function autocompleteColtu () {
-        $("#cod_coltu2_descr, #content_schedab2_arboree2 input.cod_coltu2").autocomplete({
+        $("#cod_coltu_descr, #content_schedab2_arboree input.cod_coltu2").autocomplete({
         minLength: 0,
         source: "bosco.php?task=autocomplete&action=cod_coltu&objectid="+$("#objectid").val(),
         select: function( event, ui ) {
@@ -104,13 +104,13 @@ function autocompleteColtu () {
         },
         change: function( event, ui ) {
                 if ( !ui.item ) {
-                      $("#cod_coltu2_descr").val("");
+                      $("#cod_coltu_descr").val("");
                 }
                 el = $(this);
                 old = el.data("old-value");
                 if (typeof old == "string" && el.val() != "" && el.val() != old) {
                     arboree_id = $(this).data("arboree-id");
-                    $("#cod_coper2_"+arboree_id).trigger("change");
+                    $("#cod_coper_"+arboree_id).trigger("change");
                 }
         }
     }).focus(function() {
@@ -130,14 +130,14 @@ $(document).ajaxComplete(function() {
 /**
  * Manages edit arboree cod_coper
  **/
-$(document).on("change","#content_schedab2_arboree2 select", function() {
-    el = $("#newarboree2 .addnew").parent("a");
+$(document).on("change","#content_schedab2_arboree select", function() {
+    el = $("#newarboree .addnew").parent("a");
     arboree_id = $(this).data("arboree-id");
     data = {
         "xhr":1,
         "arboree_id":arboree_id,
-        "cod_coltu" : $("#cod_coltu2_"+arboree_id).val(),
-        "cod_coper" : $("#cod_coper2_"+arboree_id).val()
+        "cod_coltu" : $("#cod_coltu_"+arboree_id).val(),
+        "cod_coper" : $("#cod_coper_"+arboree_id).val()
     };
     $.ajax({
             type: "POST",
@@ -147,7 +147,7 @@ $(document).on("change","#content_schedab2_arboree2 select", function() {
             dataType: "json",
             success: function(response) {
                 if (response == true) {
-                    $("#arboree2_list_update").trigger("click");
+                    $("#arboree_list_update").trigger("click");
                     status = true;
                 }
                 else {
@@ -169,7 +169,7 @@ $(document).on("change","#content_schedab2_arboree2 select", function() {
 /**
  * Manages add new forest cover
  */
-$(document).on("click","#newarboree2 .addnew",function(){
+$(document).on("click","#newarboree .addnew",function(){
     status = false;
     el = $(this).parent("a");
     data = {
@@ -209,7 +209,7 @@ $(document).on("click","#newarboree2 .addnew",function(){
 /**
  * Manages delete forest cover
  **/
-$(document).on("click","#content_schedab2_arboree2 .delete",function(){
+$(document).on("click","#content_schedab2_arboree .delete",function(){
     el = $(this).parent("a");
     $.colorbox({
         "html"  :   "Vuoi cancellare la specie selezionata ?"+

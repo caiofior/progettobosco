@@ -20,12 +20,12 @@
     <div>
         <span>
             <div>
-                <input readonly="readonly" id="infestanti_er_descr_<?php echo $pastureweed->getData('objectid');?>" data-erbacee-id="<?php echo $pastureweed->getData('objectid');?>" name="infestanti_er_descr_<?php echo $pastureweed->getData('objectid');?>" value="<?php echo $pastureweed->getRawData('cod_colt_descriz');?>" data-old-value="<?php echo $pastureweed->getRawData('cod_colt_descriz');?>">
+                <input readonly="readonly" id="infestanti_er_descr_<?php echo $pastureweed->getData('objectid');?>" data-erbacee-id="<?php echo $pastureweed->getData('objectid');?>" name="infestanti_er_descr_<?php echo $pastureweed->getData('objectid');?>" value="<?php echo $pastureweed->getRawData('cod_colt_descriz');?>" data-old-value="<?php echo $pastureweed->getRawData('cod_colt_descriz');?>"/>
             </div>
         </span>
         <span>
             <div>
-                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb3&id=<?php echo $b3->getData('objectid');?>&deleteinfestanti=<?php echo $pastureweed->getData('objectid');?>"  >
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb3&amp;id=<?php echo $b3->getData('objectid');?>&amp;deleteinfestanti=<?php echo $pastureweed->getData('objectid');?>"  >
                     <img class="actions delete" src="images/empty.png" title="Cancella"/>
                 </a>
             </div>
@@ -61,11 +61,11 @@
 
     if ($start>0) {
         $actions['prev']=array(
-            'url'=>'href="?'.$baseurl.'&start='.max($start-$items_in_page,0).'"',
+            'url'=>'href="?'.$baseurl.'&amp;start='.max($start-$items_in_page,0).'"',
             'data-update'=>'data-update="content_schedab3_infestanti"'
         );
         $actions['first']=array(
-            'url'=>'href="?'.$baseurl.'&start=0"',
+            'url'=>'href="?'.$baseurl.'&amp;start=0"',
             'data-update'=>'data-update="content_schedab3_infestanti"'
         );
     }
@@ -73,11 +73,11 @@
     if ($start<$countall-$items_in_page) {
 
         $actions['next']=array(
-            'url'=>'href="?'.$baseurl.'&start='.min($start+$items_in_page,$last_page).'"',
+            'url'=>'href="?'.$baseurl.'&amp;start='.min($start+$items_in_page,$last_page).'"',
             'data-update'=>'data-update="content_schedab3_infestanti"'
         );
          $actions['last']=array(
-            'url'=>'href="?'.$baseurl.'&start='.$last_page .'"',
+            'url'=>'href="?'.$baseurl.'&amp;start='.$last_page .'"',
             'data-update'=>'data-update="content_schedab3_infestanti"'
         );
     }

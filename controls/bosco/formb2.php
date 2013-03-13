@@ -36,8 +36,8 @@ if (key_exists('action', $_REQUEST)) {
             if ($_REQUEST['cod_coper'] == '')
                 $formErrors->addError(FormErrors::required,'cod_coper','la copertura','f');
             
-            $corkcovercomposition->setData($_REQUEST['cod_coltu2'],'cod_coltu');
-            $corkcovercomposition->setData($_REQUEST['cod_coper2'],'cod_coper');
+            $corkcovercomposition->setData($_REQUEST['cod_coltu'],'cod_coltu');
+            $corkcovercomposition->setData($_REQUEST['cod_coper'],'cod_coper');
                 if (key_exists('arboree_id', $_REQUEST))
                     $corkcovercomposition->update();
                 else

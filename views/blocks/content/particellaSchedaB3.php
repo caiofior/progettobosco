@@ -14,7 +14,7 @@ $b3 = $b->getB3Coll()->getFirst();
 document.getElementById("tabrelatedcss").href="css/formb3.css";
 </script>
     <div id="tabContent">
-    <form id="formB3" action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&action=update&id=<?php echo $a->getData('objectid');?>">
+    <form id="formB3" action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&amp;action=update&amp;id=<?php echo $a->getData('objectid');?>">
         <div class="form_messages formb3_errors" style="display: none;"></div>
         <fieldset id="general">
             <input type="hidden" id="codice_bosco" name="codice_bosco" value="<?php echo $forest->getData('codice');?>"/>
@@ -25,7 +25,7 @@ document.getElementById("tabrelatedcss").href="css/formb3.css";
         </div>
         <div id="bosco_container">
             <label for="bosco">Bosco</label>
-            <input readonly="readonly" id="bosco" name="bosco" value="<?php echo $forest->getData('descrizion');?>">
+            <input readonly="readonly" id="bosco" name="bosco" value="<?php echo $forest->getData('descrizion');?>"/>
         </div>
         <div id="note_1">
             <h3 >Schede B3 per descrivere una formazione arbustiva-erbacea-improduttiva privo vegetazione</h3>
@@ -36,7 +36,7 @@ document.getElementById("tabrelatedcss").href="css/formb3.css";
         </div>
         <div id="t_container">
             <label for="t" >Tipo forestale</label>
-            <input type="hidden" id="t" name="t" value="<?php echo $b->getData('t');?>">
+            <input type="hidden" id="t" name="t" value="<?php echo $b->getData('t');?>"/>
             <input data-old-descriz="<?php echo $b->getForestType()->getData('descriz'); ?>" id="t_descriz" name="t_descriz" value="<?php echo $b->getForestType()->getData('descriz');?>"/>
         </div>
         <fieldset id="ucontainer" >
@@ -71,19 +71,19 @@ document.getElementById("tabrelatedcss").href="css/formb3.css";
             <label for="cop_arbu">Copertura (%)</label>
             <input id="cop_arbu" name="cop_arbu" value="<?php echo $b3->getData('cop_arbu');?>"/>
         </div>
-                    <fieldset id="secontainer" >
-        <legend>Diffusione strato erbaceo</legend>
+        <fieldset id="secontainer" >
+        <legend>Diffusione strato erbacee</legend>
         <?php
         foreach($b3->getControl('se')->getItems() as $item) :
         $checked = '';
         if ($item->getRawData('codice') == $b3->getData('se'))
             $checked = 'checked="checked"';
         ?>
-        <input type="radio" name="se" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"><span><?php echo $item->getData('descriz'); ?></span>
+        <input type="radio" name="se" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"/><span><?php echo $item->getData('descriz'); ?></span>
         <?php endforeach;?>
         </fieldset>
         <fieldset id="arbustivecontainer" >
-        <legend>Strato arbustivo - specie significative</legend>
+        <legend><span>Strato arbustivo -<br/> specie significative</span></legend>
         <div id="newarbustive">
                 <div>
                     <span>
@@ -99,7 +99,7 @@ document.getElementById("tabrelatedcss").href="css/formb3.css";
                 <input id="cod_coltu_ar_descr" name="cod_coltu_ar_descr" value=""/>
             </span>
             <span>
-                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb3&action=editarbustive&id=<?php echo $b3->getData('objectid');?>" data-update="content_schedab3_arbustive">
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb3&amp;action=editarbustive&amp;id=<?php echo $b3->getData('objectid');?>" data-update="content_schedab3_arbustive">
                     <img class="actions addnew" src="images/empty.png" title="Aggiungi una specie arbustiva"/>
                 </a>
             </span>
@@ -108,7 +108,7 @@ document.getElementById("tabrelatedcss").href="css/formb3.css";
         <?php require (__DIR__.DIRECTORY_SEPARATOR.'schedab3'.DIRECTORY_SEPARATOR.'arbustive.php');?>
         </fieldset>
         <fieldset id="erbaceecontainer" >
-        <legend>Specie erbacee significative</legend>
+        <legend><span>Specie erbacee <br/>significative</span></legend>
         <div id="newerbacee">
                 <div>
                     <span>
@@ -124,7 +124,7 @@ document.getElementById("tabrelatedcss").href="css/formb3.css";
                 <input id="cod_coltu_er_descr" name="cod_coltu_er_descr" value=""/>
             </span>
             <span>
-                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb3&action=editerbacee&id=<?php echo $b3->getData('objectid');?>" data-update="content_schedab3_erbacee">
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb3&amp;action=editerbacee&amp;id=<?php echo $b3->getData('objectid');?>" data-update="content_schedab3_erbacee">
                     <img class="actions addnew" src="images/empty.png" title="Aggiungi una specie erbacea"/>
                 </a>
             </span>
@@ -141,7 +141,7 @@ document.getElementById("tabrelatedcss").href="css/formb3.css";
         </div>      
         <div id="sr_perccontainer">
             <label for="sr_perc">Copertura  strato arbustivo % </label>
-            <input id="sr_perc" name="sr_perc" value="<?php echo $b3->getData('sr_perc');?>">
+            <input id="sr_perc" name="sr_perc" value="<?php echo $b3->getData('sr_perc');?>"/>
         </div>
         </fieldset>
         <fieldset id="tab3container">
@@ -196,7 +196,7 @@ document.getElementById("tabrelatedcss").href="css/formb3.css";
                 <input id="infestanti_er_descr" name="infestanti_er_descr" value=""/>
             </span>
             <span>
-                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb3&action=editinfestanti&id=<?php echo $b3->getData('objectid');?>" data-update="content_schedab3_infestanti">
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb3&amp;action=editinfestanti&amp;id=<?php echo $b3->getData('objectid');?>" data-update="content_schedab3_infestanti">
                     <img class="actions addnew" src="images/empty.png" title="Aggiungi una specie infestante"/>
                 </a>
             </span>
@@ -324,7 +324,7 @@ document.getElementById("tabrelatedcss").href="css/formb3.css";
                 <input id="cod_coltu_descr" name="cod_coltu_descr" value=""/>
             </span>
             <span>
-                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb3&action=editarboree&id=<?php echo $b3->getData('objectid');?>" data-update="content_schedab3_arboree">
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb3&amp;action=editarboree&amp;id=<?php echo $b3->getData('objectid');?>" data-update="content_schedab3_arboree">
                     <img class="actions addnew" src="images/empty.png" title="Aggiungi una specie"/>
                 </a>
             </span>
@@ -375,7 +375,7 @@ document.getElementById("tabrelatedcss").href="css/formb3.css";
                 <input id="cod_coltur_descr" name="cod_coltur_descr" value=""/>
             </span>
             <span>
-                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb3&action=editrinnovazione&id=<?php echo $b3->getData('objectid');?>" data-update="content_schedab3_rinnovazione">
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb3&amp;action=editrinnovazione&amp;id=<?php echo $b3->getData('objectid');?>" data-update="content_schedab3_rinnovazione">
                     <img class="actions addnew" src="images/empty.png" title="Aggiungi una specie"/>
                 </a>
             </span>
@@ -440,7 +440,7 @@ document.getElementById("tabrelatedcss").href="css/formb3.css";
         </fieldset>
         <fieldset id="g1arrow_right"></fieldset>
         <fieldset id="sub_viabcontainer" >
-        <legend>Subordinato alla viabilità</legend>
+        <legend><span>Subordinato alla viabilità</span></legend>
         <?php
         foreach($b3->getControl('sub_viab')->getItems() as $item) :
         $checked = '';
@@ -484,7 +484,7 @@ document.getElementById("tabrelatedcss").href="css/formb3.css";
                 <input id="cod_coltut_descr" name="cod_coltut_descr" value=""/>
             </span>
             <span>
-                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb3&action=editalberature&id=<?php echo $b3->getData('objectid');?>" data-update="content_schedab3_alberature">
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb3&amp;action=editalberature&amp;id=<?php echo $b3->getData('objectid');?>" data-update="content_schedab3_alberature">
                     <img class="actions addnew" src="images/empty.png" title="Aggiungi una specie"/>
                 </a>
             </span>
