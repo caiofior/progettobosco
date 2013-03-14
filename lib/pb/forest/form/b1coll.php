@@ -66,7 +66,15 @@ class B1Coll extends \forest\form\template\FormColl {
      * @param null|array $criteria Filtering criteria
      */
     public function countAll(array $criteria = null) {
-            parent::countAll();
+        if ($this->b instanceof \forest\form\B) {
+            $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
+            $select->where('sched_b1.proprieta = ?', $this->b->getData('proprieta'))
+                   ->where('sched_b1.cod_part = ?', $this->b->getData('cod_part'))
+                   ->where('sched_b1.cod_fo = ?', $this->b->getData('cod_fo'));
+            return intval($this->content->getTable()->getAdapter()->fetchOne($select));
+        }
+        else
+            return parent::countAll();
 
     }
     /**

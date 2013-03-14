@@ -100,7 +100,7 @@ class AColl extends \forest\form\template\FormColl {
             return intval($this->content->getTable()->getAdapter()->fetchOne($select));
         }
         else 
-            parent::countAll();
+            return parent::countAll();
 
     }
     /**

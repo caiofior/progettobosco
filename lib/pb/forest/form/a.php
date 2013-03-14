@@ -165,4 +165,62 @@ class A extends \forest\form\template\Form {
         $bcoll->loadAll();
         return $bcoll;
     }
+    /**
+     * Gets available b forms for a fores compartment
+     * @return array
+     */
+    public function getBForms() {
+        $bcoll = $this->getBColl();
+        if ($bcoll->countAll() == 0)
+            return array(
+                'b1',
+                'b2',
+                'b3',
+                'b4'
+            );
+        $tabs = array();
+        $b = $bcoll->getFirst();
+        if ($b->getB1Coll()->countAll() > 0)
+            $tabs[]='b1';
+        if ($b->getB2Coll()->countAll() > 0)
+            $tabs[]='b2';
+        if ($b->getB3Coll()->countAll() > 0)
+            $tabs[]='b3';
+        if ($b->getB4Coll()->countAll() > 0)
+            $tabs[]='b4';
+        switch ($b->getData('u')) {
+            case 0:
+            case '':
+            break;
+            case 1:
+                $tabs[]='b1';
+            break;
+            case 2:
+            case 10:
+            case 11:
+            case 12:
+                $tabs[]='b2';
+            break;
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 9:
+                $tabs[]='b3';
+            break;
+            case 13:
+                $tabs[]='b4';
+            break;
+            default:
+                $tabs= array(
+                'b1',
+                'b2',
+                'b3',
+                'b4'
+            );
+            break;
+        }
+        return array_unique($tabs);
+    }
 } 

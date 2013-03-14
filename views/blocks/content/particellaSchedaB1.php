@@ -14,8 +14,12 @@ $b1 = $b->getB1Coll()->getFirst();
 document.getElementById("tabrelatedcss").href="css/formb1.css";
 </script>
     <div id="tabContent">
-    <form id="formB1" action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb1&action=update&id=<?php echo $a->getData('objectid');?>">
+        <form id="formB1" action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb1&action=update&id=<?php echo $a->getData('objectid');?>">
         <div class="form_messages formb1_errors" style="display: none;"></div>
+        <a class="deleteTab" href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=forest_compartment&action=manage&id=<?php echo $a->getData('objectid');?>" alt="Cancella Scheda">
+            <img class="actions delete" src="images/empty.png" title="Cancella"/>
+            Cancella scheda
+        </a>
         <fieldset id="general">
             <input type="hidden" id="codice_bosco" name="codice_bosco" value="<?php echo $forest->getData('codice');?>"/>
             <input type="hidden" id="objectid" name="objectid" value="<?php echo $b1->getData('objectid');?>"/>

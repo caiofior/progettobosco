@@ -16,6 +16,10 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
     <div id="tabContent">
     <form id="formB2" action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&amp;action=update&amp;id=<?php echo $a->getData('objectid');?>">
         <div class="form_messages formb2_errors" style="display: none;"></div>
+        <a class="deleteTab" href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=forest_compartment&action=manage&id=<?php echo $a->getData('objectid');?>" alt="Cancella Scheda">
+            <img class="actions delete" src="images/empty.png" title="Cancella"/>
+            Cancella scheda
+        </a>
         <fieldset id="general">
             <input type="hidden" id="codice_bosco" name="codice_bosco" value="<?php echo $forest->getData('codice');?>"/>
             <input type="hidden" id="objectid" name="objectid" value="<?php echo $b2->getData('objectid');?>"/>

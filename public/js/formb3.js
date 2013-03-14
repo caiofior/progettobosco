@@ -2,6 +2,27 @@
  * Form b3 controls
  */
 /**
+ * Delete B3 form
+ */
+$(document).on("click",".deleteTab",function(){
+    $.colorbox({
+        "html"  :   "Vuoi cancellare la scheda selezionata ?"+
+                    " <a id=\"deleteTab_confirm\"href=\""+$(this).attr("href")+"&deleteTab3=1\" ><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
+                    " <a id=\"deleteTab_cancel\"href=\"#\"><img src=\"images/empty.png\" title=\"Annulla cancellazione\" class=\"actions cancel\"/> </a>",
+        "onLoad": function() {
+            $('#cboxClose').remove();
+        }
+    });
+   return false;
+});
+$(document).on("click","#deleteTab_confirm",function(){
+   $.colorbox.close();
+});
+$(document).on("click","#deleteTab_cancel",function(){
+   $.colorbox.close();
+   return false;
+});
+/**
  * Manages forest type description
  **/
 $("#t_descriz").autocomplete({

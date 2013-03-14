@@ -86,7 +86,6 @@ else if (key_exists('action', $_REQUEST)) {
             if (key_exists('id', $_REQUEST)) {
                 $view->forest->loadFromId($_REQUEST['id']);
             }
-                    
             $content = 'content'.DIRECTORY_SEPARATOR.'boscoManage.php';
             if (key_exists('update', $_REQUEST)) {
                 $is_new = false;

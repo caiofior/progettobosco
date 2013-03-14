@@ -66,8 +66,15 @@ class BColl extends \forest\form\template\FormColl {
      * @param null|array $criteria Filtering criteria
      */
     public function countAll(array $criteria = null) {
-            parent::countAll();
-
+        if ($this->a instanceof \forest\form\A)  {
+            $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
+            $select->where('schede_b.proprieta = ?', $this->a->getData('proprieta'))
+                   ->where('schede_b.cod_part = ?', $this->a->getData('cod_part'))
+                   ->where('schede_b.cod_fo = ?', $this->a->getData('cod_fo'));
+            return intval($this->content->getTable()->getAdapter()->fetchOne($select));
+        }
+        else
+            return parent::countAll();
     }
     /**
      * Add new item to the collection
