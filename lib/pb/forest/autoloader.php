@@ -11,15 +11,15 @@ if (!class_exists('Forest')) {
     if (!class_exists('Content'))
         require (__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'autoloader.php');
     $files = array(
-        'forest.php',
-        'forestcoll.php',
-        'region.php',
-        'regioncoll.php',
         'form'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'form.php',
         'form'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'formbx.php',
         'form'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'formcoll.php',
         'form'.DIRECTORY_SEPARATOR.'control'.DIRECTORY_SEPARATOR.'item.php',
         'form'.DIRECTORY_SEPARATOR.'control'.DIRECTORY_SEPARATOR.'itemcoll.php',
+        'forest.php',
+        'forestcoll.php',
+        'region.php',
+        'regioncoll.php',
         'form'.DIRECTORY_SEPARATOR.'a.php',
         'form'.DIRECTORY_SEPARATOR.'acoll.php',
         'form'.DIRECTORY_SEPARATOR.'b.php',

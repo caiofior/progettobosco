@@ -9,6 +9,8 @@
                                                                     $_GET['search']=null;
                                                                 if (!key_exists('usosuolo', $_GET))
                                                                     $_GET['usosuolo']=null;
+                                                                if (!key_exists('t', $_GET))
+                                                                    $_GET['t']=null;
                                                                 if (!key_exists('codiope', $_GET))
                                                                     $_GET['codiope']=null;
                                                                 unset($_GET['delete']);
@@ -19,6 +21,7 @@
                                                                     'length'=>$items_in_page,
                                                                     'search'=>$_GET['search'],
                                                                     'usosuolo'=>$_GET['usosuolo'],
+                                                                    't'=>$_GET['t'],
                                                                     'codiope'=>$_GET['codiope']
                                                                 )
                                                                 );

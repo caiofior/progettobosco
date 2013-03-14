@@ -34,8 +34,13 @@
                                             <input class="large float_width" id="codice" name="codice" value="<?php echo substr($this->forest->getData('codice'),2);?>" type="text" tabindex="3" />
                                         </p>
                                         <p class="no-border">
-                                                <input class="button" name="update" type="submit" value="Aggiorna" tabindex="4" />         		
+                                                <input class="float_width button" name="update" type="submit" value="Aggiorna" tabindex="4" />         		
                                         </p>
+                                        <?php if ($this->forest->getData('codice') != '') : ?>
+                                        <p class="no-border">
+                                                <a class="button" href="<?php echo $GLOBALS['BASE_URL'];?>daticat.php?id=<?php echo $this->forest->getData('objectid'); ?>">Dati Catastali</a>         		
+                                        </p>
+                                        <?php endif; ?>
                                         </form>	
                                         <?php if ($this->forest->getData('codice') != '') : ?>
                                         <h2>Particelle forestali</h2>

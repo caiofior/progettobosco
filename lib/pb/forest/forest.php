@@ -27,7 +27,25 @@ if (!class_exists('Content')) {
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class Forest extends \Content {
+class Forest extends \forest\form\template\Form {
+    /**
+     * Forest type codes
+     * @var array
+     */
+    private static $u_codes=array(
+                1 => 'Formazione arborea',
+                2 => 'Castagneti da frutto',
+                3 => 'Formazione arbustiva',
+                4 => 'Incolto erbaceo',
+                5 => 'Pascolo',
+                6 => 'Prato pascolo',
+                7 => 'Coltivo',
+                9 => 'Improduttivo privo veget.',
+                10=> 'Arboricoltura specializzata da legno',
+                11=> 'Impianti specializzati per tartuficoltura',
+                12=> 'Sugherete',
+                12=> 'Formazione macchia mediterranea',
+                );
      /**
      * Instantiates the table
      */
@@ -142,23 +160,16 @@ class Forest extends \Content {
         $attributecoll->setForest($this);
         return $attributecoll;
     }
-     /**
-     * Returns the associated control
-     * @param string $attribute
-     * @return boolean
+    /**
+     * Returns an array of forest types present in the forest
+     * @return array
      */
-    public function getControl($attribute) {
-        if (!key_exists($this->table->info('name'),$this->all_attributes_data))
-                return false;
-        if (!key_exists($attribute, $this->all_attributes_data[$this->table->info('name')]))
-                return false;
-        $attribute = $this->all_attributes_data[$this->table->info('name')][$attribute];
-        if (key_exists('dizionario', $attribute)) {
-            $itemcoll = new \forest\form\control\Itemcoll( $attribute['dizionario']);
-            $itemcoll->loadAll();
-            return $itemcoll;
-        }
+    public function getTColl () {
+        $data = array_flip($this->getTable()->getAdapter()->fetchCol('SELECT DISTINCT u FROM schede_b WHERE proprieta=\''.$this->data['codice'].'\''));
+        $data = array_intersect_key(self::$u_codes, $data);
+        return $data;
     }
+    
     /**
      * get the associated region
      * @return \forest\Region
