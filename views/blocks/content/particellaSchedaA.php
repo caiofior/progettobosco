@@ -724,5 +724,5 @@ document.getElementById("tabrelatedcss").href="css/forma.css";
         </fieldset>
     </form>
 </div>
-<script type="text/javascript" src="js/forma.js" defer></script>
+<script type="text/javascript" src="js/forma.js" defer="defer"></script>
 </div>

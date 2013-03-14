@@ -61,7 +61,7 @@ class B3ShrubCompositionColl  extends \ContentColl  {
                 '( SELECT diz_arbo.nome_itali || \' | \' || diz_arbo.nome_scien FROM diz_arbo WHERE diz_arbo.cod_coltu=arbusti3.cod_coltu) '
              )
         ));
-        if ($this->form_b3 instanceof \forest\form\B2) {
+        if ($this->form_b3 instanceof \forest\form\B3) {
             $select->where(' cod_part = ? ',$this->form_b3->getData('cod_part'))
             ->where(' proprieta = ? ',$this->form_b3->getData('proprieta'))
             ->where(' cod_fo = ? ',$this->form_b3->getData('cod_fo'));
@@ -75,7 +75,7 @@ class B3ShrubCompositionColl  extends \ContentColl  {
      * @param array $criteria Filtering criteria
      */
     public function countAll(array $criteria = null) {
-        if ($this->form_b3 instanceof \forest\form\B2) {
+        if ($this->form_b3 instanceof \forest\form\B3) {
             $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
             $select->where(' cod_part = ? ',$this->form_b3->getData('cod_part'))
             ->where(' proprieta = ? ',$this->form_b3->getData('proprieta'))

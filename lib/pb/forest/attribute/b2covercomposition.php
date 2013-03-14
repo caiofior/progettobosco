@@ -69,9 +69,10 @@ class B2CoverComposition  extends \forest\form\template\Form {
     /**
      * Returns the associated control
      * @param string $attribute
+     * @param null|array $criteria
      * @return boolean
      */
-    public function getControl($attribute) {
+    public function getControl($attribute,$criteria=null) {
         if (!key_exists($this->table->info('name'),$this->all_attributes_data))
                 return false;
         if (!key_exists($attribute, $this->all_attributes_data[$this->table->info('name')]))

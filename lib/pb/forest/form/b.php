@@ -130,4 +130,14 @@ class B extends \forest\form\template\Form {
         $b3coll->loadAll();
         return $b3coll;
     }
+     /**
+     * Return the associated B4 Collection
+     * @return \forest\form\B4Coll
+     */
+    public function getB4Coll () {
+        $b4coll = new \forest\form\B4Coll();
+        $b4coll->setFormB($this);
+        $b4coll->loadAll();
+        return $b4coll;
+    }
 } 

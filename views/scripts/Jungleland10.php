@@ -1,12 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it" lang="it">
 
 <head>
 
 
-<meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
-<meta name="author" content="Erwin Aligam - styleshout.com" />
+<meta charset="UTF-8">
+<meta name="author" content="Claudio Fior" />
 <?php $this->renderBlock('HEADERS'); ?>
 <link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" />
 <link rel="stylesheet" type="text/css" media="screen" href="css/two_col.css" />
@@ -16,7 +15,7 @@
 
 <body>
 <div id="ajaxloader" style="display: none;">
-    <div>Caricamento in corso...<br/><img src="images/ajax-loader.gif"/></div>
+    <div>Caricamento in corso...<br/><img src="images/ajax-loader.gif" alt="Caricamento"/></div>
 </div>
 <!-- wrap -->
 <div id="wrap">
@@ -24,9 +23,9 @@
 	<!-- header -->
 	<div id="header">			
 	
-		<a name="top"></a>
+		<a id="top"></a>
 		
-		<h1 id="logo-text"><a href="<?php echo $GLOBALS['BASE_URL'];?>" title=""><img src="images/progettobosco.png" alt="progettobosco" width="352px" height="77px"/></a></h1>		
+		<h1 id="logo-text"><a href="<?php echo $GLOBALS['BASE_URL'];?>" title=""><img src="images/progettobosco.png" alt="progettobosco" width="352" height="77"/></a></h1>		
 		<p id="slogan">pianificazione forestale a portata di mouse ... </p>					
 		
 

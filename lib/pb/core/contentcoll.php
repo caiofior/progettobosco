@@ -90,6 +90,7 @@ abstract class ContentColl {
      * @return array
      */
     public function getItems() {
+        $this->items = array_values($this->items);
         return $this->items;
     }
      /**
@@ -132,5 +133,13 @@ abstract class ContentColl {
             'length'=>1
         ));
         return $this->items[0];
+    }
+    /**
+     * Removes a conte by its id
+     * @param type $key int
+     */
+    public function deleteByKey($key) {
+        if (key_exists($key, $this->items))
+            unset ($this->items[$key]);
     }
 }

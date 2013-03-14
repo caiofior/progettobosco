@@ -14,7 +14,7 @@ $b3 = $b->getB3Coll()->getFirst();
 document.getElementById("tabrelatedcss").href="css/formb3.css";
 </script>
     <div id="tabContent">
-    <form id="formB3" action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&amp;action=update&amp;id=<?php echo $a->getData('objectid');?>">
+    <form id="formB3" action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb3&amp;action=update&amp;id=<?php echo $a->getData('objectid');?>">
         <div class="form_messages formb3_errors" style="display: none;"></div>
         <fieldset id="general">
             <input type="hidden" id="codice_bosco" name="codice_bosco" value="<?php echo $forest->getData('codice');?>"/>
@@ -56,7 +56,7 @@ document.getElementById("tabrelatedcss").href="css/formb3.css";
         if ($key == $b->getData('u'))
             $checked = 'checked="checked"';
         ?>
-        <input type="radio" name="u" <?php echo $checked; ?> value="<?php echo $key; ?>"/><div class="u_descr"><?php echo $item; ?></div>
+        <input type="checkbox" name="u" <?php echo $checked; ?> value="<?php echo $key; ?>"/><span><?php echo $item; ?></span>
         <?php endforeach;?>
             </div>
         </fieldset>
@@ -529,7 +529,7 @@ document.getElementById("tabrelatedcss").href="css/formb3.css";
                     <textarea id="text_nota" name="text_nota" rows="2" cols="30"></textarea>
                 </span>
                 <span>
-                    <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb3&action=editnote&id=<?php echo $b3->getData('objectid');?>" data-update="content_schedab3_note">
+                    <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb3&amp;action=editnote&amp;id=<?php echo $b3->getData('objectid');?>" data-update="content_schedab3_note">
                         <img class="actions addnew" src="images/empty.png" title="Aggiungi una nota"/>
                     </a>
                 </span>
@@ -547,5 +547,5 @@ document.getElementById("tabrelatedcss").href="css/formb3.css";
         
     </form>
 </div>
-<script type="text/javascript" src="js/formb3.js" defer></script>
+<script type="text/javascript" src="js/formb3.js" defer="defer"></script>
 </div>

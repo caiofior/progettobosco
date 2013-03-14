@@ -732,5 +732,5 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
         </fieldset>
     </form>
 </div>
-<script type="text/javascript" src="js/formb2.js" defer></script>
+<script type="text/javascript" src="js/formb2.js" defer="defer"></script>
 </div>

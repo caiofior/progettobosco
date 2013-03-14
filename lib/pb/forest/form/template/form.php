@@ -57,9 +57,10 @@ abstract class Form extends \Content {
     /**
      * Returns the associated control
      * @param string $attribute
+     * @param null|array $criteria function used to filter the data tha returns true for filtered values
      * @return boolean
      */
-    public function getControl($attribute) {
+    public function getControl($attribute,$criteria=null) {
         if (!key_exists($this->table->info('name'),$this->all_attributes_data))
                 return false;
         if (!key_exists($attribute, $this->all_attributes_data[$this->table->info('name')]))
@@ -68,6 +69,12 @@ abstract class Form extends \Content {
         if (key_exists('dizionario', $attribute)) {
             $itemcoll = new \forest\form\control\Itemcoll($attribute['dizionario']);
             $itemcoll->loadAll();
+            if (is_callable($criteria)) {
+                foreach ($itemcoll->getItems() as $key=>$item) {
+                    if (!$criteria($item))
+                        $itemcoll->deleteByKey ($key);
+                }
+            }
             return $itemcoll;
         }
     }

@@ -62,15 +62,12 @@ input[type='radio'],input[type='checkbox'] {
    background: transparent;
    border: 0;
 }
-.scrollcontrols span input{
-    display: inline;
-}
 .scrollcontrols img {
     margin-top: 5px;
     vertical-align:top;
 }
 #formB3 {
-    height: 2800px;
+    height: 3000px;
 }
 /**
 * General part
@@ -119,7 +116,7 @@ input[type='radio'],input[type='checkbox'] {
     float:left;
     display: block;
 }
-#ucontainer .u_descr {
+#ucontainer span {
     display: block;
     float:left;
     width: 39px;
@@ -186,24 +183,12 @@ input[type='radio'],input[type='checkbox'] {
     left: 4px;
     width: 200px;
 }
-#content_schedab3_arbustive  div{
-    position: relative;
-    clear: both;
-}
-#content_schedab3_arbustive  div span{
-    float:left;
-    width: 100px;
-    text-align: center;
-    word-break: break-all;
-    border-top-style: solid;
-    border-top-width: 1px;
-    border-top-color: #000000;
-}
+#content_schedab3_arbustive  div,
 #newarbustive  div{
     position: relative;
     clear: both;
 }
-
+#content_schedab3_arbustive  div span,
 #newarbustive div span{
     float:left;
     width: 100px;
@@ -213,7 +198,9 @@ input[type='radio'],input[type='checkbox'] {
     border-top-width: 1px;
     border-top-color: #000000;
 }
-
+#arbustivecontainer .scrollcontrols span{
+    width: 65px;
+}
 /**
 * Erbacee container
 */
@@ -233,7 +220,8 @@ input[type='radio'],input[type='checkbox'] {
     left: 4px;
     width: 200px;
 }
-#content_schedab3_erbacee  div{
+#content_schedab3_erbacee  div,
+#newerbacee  div{
     position: relative;
     clear: both;
 }
@@ -247,9 +235,8 @@ input[type='radio'],input[type='checkbox'] {
     border-top-width: 1px;
     border-top-color: #000000;
 }
-#newerbacee  div{
-    position: relative;
-    clear: both;
+#erbaceecontainer .scrollcontrols span{
+    width: 65px;
 }
 /**
 * Tab 2 container
@@ -566,7 +553,8 @@ input[type='radio'],input[type='checkbox'] {
     left: 4px;
     width: 250px;
 }
-#content_schedab3_arboree  div{
+#content_schedab3_arboree  div,
+#newarboree  div{
     position: relative;
     clear: both;
 }
@@ -580,9 +568,8 @@ input[type='radio'],input[type='checkbox'] {
     border-top-width: 1px;
     border-top-color: #000000;
 }
-#newarboree  div{
-    position: relative;
-    clear: both;
+#arboreecontainer .scrollcontrols span{
+    width: 65px;
 }
 /**
 * Rinnovazione container
@@ -602,7 +589,8 @@ input[type='radio'],input[type='checkbox'] {
     left: 4px;
     width: 250px;
 }
-#content_schedab3_rinnovazione  div{
+#content_schedab3_rinnovazione  div,
+#newrinnovazione  div{
     position: relative;
     clear: both;
 }
@@ -616,9 +604,8 @@ input[type='radio'],input[type='checkbox'] {
     border-top-width: 1px;
     border-top-color: #000000;
 }
-#newrinnovazione  div{
-    position: relative;
-    clear: both;
+#rinnovazionecontainer .scrollcontrols span{
+    width: 65px;
 }
 /**
 * Tab 5 container
@@ -701,7 +688,8 @@ input[type='radio'],input[type='checkbox'] {
     left: 4px;
     width: 250px;
 }
-#content_schedab3_alberature  div{
+#content_schedab3_alberature  div,
+#newalberature div{
     position: relative;
     clear: both;
 }
@@ -715,9 +703,8 @@ input[type='radio'],input[type='checkbox'] {
     border-top-width: 1px;
     border-top-color: #000000;
 }
-#newalberature div{
-    position: relative;
-    clear: both;
+#alberaturecontainer .scrollcontrols span{
+    width: 65px;
 }
 /**
 * notes container
@@ -739,7 +726,8 @@ input[type='radio'],input[type='checkbox'] {
     left: 70px;
     width: 700px;
 }
-#content_schedab3_note  div{
+#content_schedab3_note  div,
+#newnote  div{
     position: relative;
     clear: both;
 }
@@ -753,7 +741,6 @@ input[type='radio'],input[type='checkbox'] {
     border-top-width: 1px;
     border-top-color: #000000;
 }
-#newnote  div{
-    position: relative;
-    clear: both;
+#notescontainer .scrollcontrols span{
+    width: 65px;
 }

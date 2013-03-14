@@ -49,6 +49,9 @@ switch ($_REQUEST['action']) {
                 case 'schedab3':
                     $archivio='SCHED_B3';
                 break;
+                case 'schedab4':
+                    $archivio='SCHED_B4';
+                break;
             }
         }
         $notacoll->loadAll(array(

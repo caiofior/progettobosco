@@ -46,7 +46,7 @@ class NoteTemplateColl  extends \ContentColl  {
             $select->where('intesta LIKE ?', '%'.$criteria['search'].'%');   
         }
         if (key_exists('archivio', $criteria) && $criteria['archivio'] != '') {
-            $select->where('archivio = ?', $criteria['archivio']);   
+            $select->where('LOWER(archivio) = LOWER(?)', $criteria['archivio']);   
         }
         $select->order('intesta');
         return $select;

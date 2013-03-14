@@ -24,7 +24,7 @@
 			
 			<div class="footer-list">
 				<ul>			
-                                        <li><a href="http://sito.entecra.it/	"><img src="images/cra.jpg"></a></li>
+                                        <li><a href="http://sito.entecra.it/	"><img src="images/cra.jpg" alt="Logo CRA"/></a></li>
 					<li><a href="http://mpf.entecra.it/">CRA-MPF</a></li>
 					<li><a href="http://www.selvicoltura.eu/">CRA-ISS</a></li>
 					<li><a href="https://github.com/caiofior/progettobosco">GitHub</a></li>
@@ -53,7 +53,7 @@
 			<h3>Dubbi e suggerimenti</h3>			
 			
 			<p>
-			<a href="index.html"><img src="https://secure.gravatar.com/avatar/2e8d2d37da66c6874a65f69879f8e590?s=140&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="40" height="40" alt="Programmazione e sviluppo" class="float-left" /></a>
+			<a href="index.html"><img src="https://secure.gravatar.com/avatar/2e8d2d37da66c6874a65f69879f8e590?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="40" height="40" alt="Programmazione e sviluppo" class="float-left" /></a>
 			Per dubbi e suggerimenti puoi contattare chi ha realizzato queste pagine su  <a href="https://github.com/caiofior">Github</a></p>			
 			
 		</div>		
