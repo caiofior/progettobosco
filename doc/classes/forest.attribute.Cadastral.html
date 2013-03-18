@@ -32,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">0</span></a></li>
+                <span class="label label-info">1</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -64,9 +64,13 @@
 <li class="method public inherited"><a href="#method_getTable" title="getTable :: Returns associated db table"><span class="description">Returns associated db table</span><pre>getTable()</pre></a></li>
 <li class="method public inherited"><a href="#method_insert" title="insert :: Adds a data"><span class="description">Adds a data</span><pre>insert()</pre></a></li>
 <li class="method public inherited"><a href="#method_loadFromId" title="loadFromId :: Loads data from its id"><span class="description">Loads data from its id</span><pre>loadFromId()</pre></a></li>
-<li class="method public inherited"><a href="#method_setData" title="setData :: Sets the data"><span class="description">Sets the data</span><pre>setData()</pre></a></li>
+<li class="method public "><a href="#method_setData" title="setData :: Rediclared set data"><span class="description">Rediclared set data</span><pre>setData()</pre></a></li>
 <li class="method public "><a href="#method_update" title="update :: Updates data"><span class="description">Updates data</span><pre>update()</pre></a></li>
 </ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul><li class="method private "><a href="#method_getFormA" title="getFormA :: "><span class="description">getFormA()
+        </span><pre>getFormA()</pre></a></li></ul>
 </li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties
@@ -79,6 +83,9 @@
 <li class="property protected inherited"><a href="#property_rawData" title="$rawData :: Raw data, with cusom culoms"><span class="description"></span><pre>$rawData</pre></a></li>
 <li class="property protected inherited"><a href="#property_table" title="$table :: Zend Data table"><span class="description"></span><pre>$table</pre></a></li>
 </ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul><li class="property private "><a href="#property_update_forma" title="$update_forma :: Form a has to be updated"><span class="description"></span><pre>$update_forma</pre></a></li></ul>
 </li>
 </ul>
 </div>
@@ -203,29 +210,32 @@
 </div></div>
 </div>
 <a id="method_setData"></a><div class="element clickable method public method_setData" data-toggle="collapse" data-target=".method_setData .collapse">
-<h2>Sets the data</h2>
-<pre>setData(\variant $data, string | null $field) </pre>
-<div class="labels"><span class="label">Inherited</span></div>
+<h2>Rediclared set data</h2>
+<pre>setData(\forest\attribute\type $data, \forest\attribute\type $field) </pre>
+<div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
-<th>inherited_from</th>
-<td>\Content::setData()</td>
-</tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$data</h4>
-<code>\variant</code>
+<code>\forest\attribute\type</code>
 </div>
 <div class="subelement argument">
 <h4>$field</h4>
-<code>string</code><code>null</code>
+<code>\forest\attribute\type</code>
 </div>
 </div></div>
 </div>
 <a id="method_update"></a><div class="element clickable method public method_update" data-toggle="collapse" data-target=".method_update .collapse">
 <h2>Updates data</h2>
 <pre>update() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_getFormA"></a><div class="element clickable method private method_getFormA" data-toggle="collapse" data-target=".method_getFormA .collapse">
+<h2>getFormA()
+        </h2>
+<pre>getFormA() </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
@@ -279,6 +289,12 @@
 </tr></table>
 </div></div>
 </div>
+<a id="property_update_forma"> </a><div class="element clickable property private property_update_forma" data-toggle="collapse" data-target=".property_update_forma .collapse">
+<h2></h2>
+<pre>$update_forma : bool</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 </div>
 </div>
 </div>
@@ -286,7 +302,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-03-14T14:55:42+01:00.<br></footer></div>
+            generated on 2013-03-18T16:51:19+01:00.<br></footer></div>
 </div>
 </body>
 </html>

@@ -27,14 +27,29 @@ if (!class_exists('Content')) {
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class Cadastral  extends \Content {
+class Cadastral  extends \Content implements \forest\attribute\template\Attribute {
+    /**
+     * Form a has to be updated
+     * @var bool
+     */
+    private $update_forma=false;
     /**
      * Instantiates the table
      */
     public function __construct() {
         parent::__construct('catasto');
     }
-     /**
+    /**
+     * Rediclared set data
+     * @param type $data
+     * @param type $field
+     */
+    public function setData($data, $field = null) {
+        if (!key_exists($field, $this->empty_entity))
+            $this->update_forma = true;
+        parent::setData($data, $field);
+    }
+    /**
      * Updates data
      */
     public function update() {
@@ -42,6 +57,16 @@ class Cadastral  extends \Content {
             throw new Exception('Unable to update object without objectid',1302061037);
         $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
         $this->table->update($this->data, $where);
+        if ($this->update_forma) {
+            $form_a = $this->getFormA();
+            $form_a->setData($this->rawData);
+            $form_a->update();
+        }
+    }
+    private function getFormA() {
+        $form_a = new \forest\form\A();
+        $form_a->loadFromCodePart($this->data['proprieta'], $this->data['cod_part']);
+        return $form_a;
     }
     /**
      * Deletes data

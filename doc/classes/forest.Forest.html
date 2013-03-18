@@ -32,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">0</span></a></li>
+                <span class="label label-info">1</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -61,11 +61,12 @@
 <li class="method public "><a href="#method_addOwner" title="addOwner :: Adds user owner"><span class="description">Adds user owner</span><pre>addOwner()</pre></a></li>
 <li class="method public "><a href="#method_delete" title="delete :: Deletes data"><span class="description">Deletes data</span><pre>delete()</pre></a></li>
 <li class="method public "><a href="#method_getAttributeColl" title="getAttributeColl :: Returns attribute collection available in this forest"><span class="description">Returns attribute collection available in this forest</span><pre>getAttributeColl()</pre></a></li>
-<li class="method public "><a href="#method_getControl" title="getControl :: Returns the associated control"><span class="description">Returns the associated control</span><pre>getControl()</pre></a></li>
+<li class="method public inherited"><a href="#method_getControl" title="getControl :: Returns the associated control"><span class="description">Returns the associated control</span><pre>getControl()</pre></a></li>
 <li class="method public inherited"><a href="#method_getData" title="getData :: Gets the data"><span class="description">Gets the data</span><pre>getData()</pre></a></li>
 <li class="method public "><a href="#method_getForestCompartmentColl" title="getForestCompartmentColl :: Gets the form a collection of the forest"><span class="description">Gets the form a collection of the forest</span><pre>getForestCompartmentColl()</pre></a></li>
 <li class="method public inherited"><a href="#method_getRawData" title="getRawData :: Gets the raw data"><span class="description">Gets the raw data</span><pre>getRawData()</pre></a></li>
 <li class="method public "><a href="#method_getRegion" title="getRegion :: get the associated region"><span class="description">get the associated region</span><pre>getRegion()</pre></a></li>
+<li class="method public "><a href="#method_getTColl" title="getTColl :: Returns an array of forest types present in the forest"><span class="description">Returns an array of forest types present in the forest</span><pre>getTColl()</pre></a></li>
 <li class="method public inherited"><a href="#method_getTable" title="getTable :: Returns associated db table"><span class="description">Returns associated db table</span><pre>getTable()</pre></a></li>
 <li class="method public inherited"><a href="#method_insert" title="insert :: Adds a data"><span class="description">Adds a data</span><pre>insert()</pre></a></li>
 <li class="method public "><a href="#method_loadFromCode" title="loadFromCode :: Loads forest from its code"><span class="description">Loads forest from its code</span><pre>loadFromCode()</pre></a></li>
@@ -84,6 +85,7 @@
 </li>
 <li class="nav-header protected">» Protected
                     <ul>
+<li class="property protected inherited"><a href="#property_all_attributes_data" title="$all_attributes_data :: All attribute data"><span class="description"></span><pre>$all_attributes_data</pre></a></li>
 <li class="property protected inherited"><a href="#property_data" title="$data :: Data used for insert and update"><span class="description"></span><pre>$data</pre></a></li>
 <li class="property protected inherited"><a href="#property_empty_entity" title="$empty_entity :: Columns available in database"><span class="description"></span><pre>$empty_entity</pre></a></li>
 <li class="property protected inherited"><a href="#property_rawData" title="$rawData :: Raw data, with cusom culoms"><span class="description"></span><pre>$rawData</pre></a></li>
@@ -163,15 +165,22 @@
 </div>
 <a id="method_getControl"></a><div class="element clickable method public method_getControl" data-toggle="collapse" data-target=".method_getControl .collapse">
 <h2>Returns the associated control</h2>
-<pre>getControl(string $attribute) : boolean</pre>
-<div class="labels"></div>
+<pre>getControl(string $attribute, null | array $criteria) : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\forest\form\template\Form::getControl()</td>
+</tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$attribute</h4>
 <code>string</code>
 </div>
+<div class="subelement argument">
+<h4>$criteria</h4>
+<code>null</code><code>array</code><p>function used to filter the data tha returns true for filtered values</p></div>
 <h3>Returns</h3>
 <div class="subelement response"><code>boolean</code></div>
 </div></div>
@@ -182,10 +191,16 @@
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\Content::getData()</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\Form::getData()</td>
+</tr>
+</table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$field</h4>
@@ -210,10 +225,16 @@
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\Content::getRawData()</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\Form::getRawData()</td>
+</tr>
+</table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$field</h4>
@@ -232,16 +253,32 @@
 <div class="subelement response"><code><a href="../classes/forest.Region.html">\forest\Region</a></code></div>
 </div></div>
 </div>
+<a id="method_getTColl"></a><div class="element clickable method public method_getTColl" data-toggle="collapse" data-target=".method_getTColl .collapse">
+<h2>Returns an array of forest types present in the forest</h2>
+<pre>getTColl() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
 <a id="method_getTable"></a><div class="element clickable method public method_getTable" data-toggle="collapse" data-target=".method_getTable .collapse">
 <h2>Returns associated db table</h2>
 <pre>getTable() : \Zend_Db_Table</pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\Content::getTable()</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\Form::getTable()</td>
+</tr>
+</table>
 <h3>Returns</h3>
 <div class="subelement response"><code>\Zend_Db_Table</code></div>
 </div></div>
@@ -252,10 +289,16 @@
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\Content::insert()</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\Form::insert()</td>
+</tr>
+</table>
 </div></div>
 </div>
 <a id="method_loadFromCode"></a><div class="element clickable method public method_loadFromCode" data-toggle="collapse" data-target=".method_loadFromCode .collapse">
@@ -328,16 +371,34 @@
 </div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_all_attributes_data"> </a><div class="element clickable property protected property_all_attributes_data" data-toggle="collapse" data-target=".property_all_attributes_data .collapse">
+<h2></h2>
+<pre>$all_attributes_data : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\forest\form\template\Form::$$all_attributes_data</td>
+</tr></table>
+</div></div>
+</div>
 <a id="property_data"> </a><div class="element clickable property protected property_data" data-toggle="collapse" data-target=".property_data .collapse">
 <h2></h2>
 <pre>$data : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\Content::$$data</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\Form::$$data</td>
+</tr>
+</table>
 </div></div>
 </div>
 <a id="property_empty_entity"> </a><div class="element clickable property protected property_empty_entity" data-toggle="collapse" data-target=".property_empty_entity .collapse">
@@ -346,10 +407,16 @@
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\Content::$$empty_entity</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\Form::$$empty_entity</td>
+</tr>
+</table>
 </div></div>
 </div>
 <a id="property_rawData"> </a><div class="element clickable property protected property_rawData" data-toggle="collapse" data-target=".property_rawData .collapse">
@@ -358,10 +425,16 @@
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\Content::$$rawData</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\Form::$$rawData</td>
+</tr>
+</table>
 </div></div>
 </div>
 <a id="property_table"> </a><div class="element clickable property protected property_table" data-toggle="collapse" data-target=".property_table .collapse">
@@ -370,10 +443,16 @@
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
-<table class="table table-bordered"><tr>
+<table class="table table-bordered">
+<tr>
 <th>inherited_from</th>
 <td>\Content::$$table</td>
-</tr></table>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\Form::$$table</td>
+</tr>
+</table>
 </div></div>
 </div>
 </div>
@@ -383,7 +462,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-03-14T14:55:41+01:00.<br></footer></div>
+            generated on 2013-03-18T16:51:18+01:00.<br></footer></div>
 </div>
 </body>
 </html>

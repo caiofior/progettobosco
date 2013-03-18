@@ -28,24 +28,6 @@ if (!class_exists('Content')) {
  * @copyright CRA
  */
 class Forest extends \forest\form\template\Form {
-    /**
-     * Forest type codes
-     * @var array
-     */
-    private static $u_codes=array(
-                1 => 'Formazione arborea',
-                2 => 'Castagneti da frutto',
-                3 => 'Formazione arbustiva',
-                4 => 'Incolto erbaceo',
-                5 => 'Pascolo',
-                6 => 'Prato pascolo',
-                7 => 'Coltivo',
-                9 => 'Improduttivo privo veget.',
-                10=> 'Arboricoltura specializzata da legno',
-                11=> 'Impianti specializzati per tartuficoltura',
-                12=> 'Sugherete',
-                12=> 'Formazione macchia mediterranea',
-                );
      /**
      * Instantiates the table
      */
@@ -165,8 +147,9 @@ class Forest extends \forest\form\template\Form {
      * @return array
      */
     public function getTColl () {
-        $data = array_flip($this->getTable()->getAdapter()->fetchCol('SELECT DISTINCT u FROM schede_b WHERE proprieta=\''.$this->data['codice'].'\''));
-        $data = array_intersect_key(self::$u_codes, $data);
+        $data = array_flip($this->getTable()->getAdapter()->fetchAssoc('SELECT DISTINCT usosuolo.codice,usosuolo.descriz FROM schede_b 
+LEFT JOIN usosuolo ON usosuolo.codice=schede_b.u
+WHERE usosuolo.codice <> \'\' AND proprieta=\''.$this->data['codice'].'\''));
         return $data;
     }
     
