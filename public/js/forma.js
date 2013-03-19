@@ -230,7 +230,7 @@ oTable = $("#cadastral").dataTable( {
             surf = $(".surfacerecalc");
             if (surf.length > 0)
                 $("#cadastral_length").append(" ").append(surf.remove().show());
-            $(".dataTables_scrollHead").css("left","-239px");
+            $(".dataTables_scrollHead").css("left","-323px");
             $("#cadastralsummary").show();
             $.get(
                 "bosco.php?task=forma&action=cadastratablesummary"

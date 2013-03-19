@@ -91,7 +91,7 @@ class CadastralColl  extends \ContentColl implements \forest\attribute\template\
                     ')
                 
             ))->setIntegrityCheck(false)
-            ->joinLeft(
+            ->joinRight(
                     'catasto',
                     'catasto.proprieta=schede_a.proprieta AND catasto.cod_part=schede_a.cod_part',
                     array(

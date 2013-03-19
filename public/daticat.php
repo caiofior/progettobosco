@@ -19,14 +19,58 @@ $forest = new forest\Forest();
 $forest->loadFromId($_REQUEST['id']);
 if (key_exists('action', $_REQUEST)) {
     switch ($_REQUEST['action']) {
+        case 'vercalc' :
+            var_dump($_REQUEST);
+            die();
+            require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.
+                    'blocks'.DIRECTORY_SEPARATOR.'content'.DIRECTORY_SEPARATOR.
+                    'daticat'.DIRECTORY_SEPARATOR.'vercalc.php';
+            exit;
+        break;
+        case 'surfacerecalc' :
+            if (key_exists('confirmed', $_REQUEST))
+                $forest->surfaceRecalc();
+            exit;
+        break;
+        case 'autocomplete_code_part' :
+            $response=array();
+            $acoll = $forest->getForestCompartmentColl();
+             $acoll->loadAll(array(
+            'start'=>0,
+            'length'=>10,
+            'search'=>$_REQUEST['term']
+            ));
+            foreach($acoll->getItems() as $a) {
+                $data = array(
+                    'id'=>$a->getData('cod_part'),
+                    'value'=>$a->getData('cod_part')
+                );
+                $response[]=$data;
+            }
+            header('Content-type: application/json');
+            echo Zend_Json::encode($response);
+            exit;
+        break;
+        case 'cadastratabledelete':
+            $cadrastal = new \forest\attribute\Cadastral();
+            $cadrastal->loadFromId($_REQUEST['elementid']);
+            $cadrastal->delete();
+        exit;
+        break;
         case 'cadastratableedit':
             $cadrastal = new \forest\attribute\Cadastral();
             if (is_numeric($_REQUEST['elementid'])) {
                 $cadrastal->loadFromId($_REQUEST['elementid']);
                 $cadrastal->setData($_REQUEST['value'],$_REQUEST['field']);
                 $cadrastal->update();
+            } else {
+                $acoll = $forest->getForestCompartmentColl();
+                $acoll->loadAll();
+                $cadastralcoll = $acoll->getFirst()->getCadastalColl();
+                $cadastral = $cadastralcoll->addItem();
+                $cadastral->insert();
+
             }
-            var_dump($cadrastal->getData());
             exit;
         break;
         case 'cadastraltable':
@@ -40,7 +84,6 @@ if (key_exists('action', $_REQUEST)) {
                 'aaData'=>array()
             );
             foreach($cadastralcoll->getItems() as $cadastral) {
-                $GLOBALS['firephp']->log($cadastral->getRawData());
                 $datarow = array();
                 $datarow[]=intval($cadastral->getData('objectid'));
                 $datarow[]=$cadastral->getData('foglio');
@@ -52,29 +95,32 @@ if (key_exists('action', $_REQUEST)) {
                 $datarow[] = floatval($cadastral->getRawData('sum_sup_non_bosc'));
                 $datarow[] = floatval($cadastral->getRawData('porz_perc'));
                 $datarow[] = $cadastral->getRawData('note');
-                $datarow[] = $cadastral->getRawData('cod_part');
+                ob_start(); ?>
+<input class="code_part" name="code_part" value="<?php echo $cadastral->getRawData('cod_part');?>"/>                
+                <?php 
+                $datarow[] = ob_get_clean();
                 $datarow[] = floatval($cadastral->getRawData('schede_a_sup_tot'));
                 $datarow[] = $cadastral->getRawData('calcolo');
                 $datarow[] = $cadastral->getRawData('i1');
                 $datarow[] = $cadastral->getRawData('i2');
                 ob_start(); ?>
-<input type="checkbox" <?php echo ($cadastral->getRawData('i3') != 'f' ? 'checked="checked"' : '') ?> id="i3" name="i3" value="1"/>
+<input type="checkbox" <?php echo ($cadastral->getRawData('i3') != 'f' ? 'checked="checked"' : '') ?>  name="i3" value="1"/>
 <?php 
                 $datarow[] = ob_get_clean();
                 ob_start(); ?>
-<input type="checkbox" <?php echo ($cadastral->getRawData('i4') != 'f' ? 'checked="checked"' : '') ?> id="i4" name="i4" value="1"/>
+<input type="checkbox" <?php echo ($cadastral->getRawData('i4') != 'f' ? 'checked="checked"' : '') ?> name="i4" value="1"/>
 <?php 
                 $datarow[] = ob_get_clean();
                 ob_start(); ?>
-<input type="checkbox" <?php echo ($cadastral->getRawData('i5') != 'f' ? 'checked="checked"' : '') ?> id="i5" name="i5" value="1"/>
+<input type="checkbox" <?php echo ($cadastral->getRawData('i5') != 'f' ? 'checked="checked"' : '') ?> name="i5" value="1"/>
 <?php 
                 $datarow[] = ob_get_clean();
                 ob_start(); ?>
-<input type="checkbox" <?php echo ($cadastral->getRawData('i6') != 'f' ? 'checked="checked"' : '') ?> id="i6" name="i6" value="1"/>
+<input type="checkbox" <?php echo ($cadastral->getRawData('i6') != 'f' ? 'checked="checked"' : '') ?> name="i6" value="1"/>
 <?php 
                 $datarow[] = ob_get_clean();
                 ob_start(); ?>
-<input type="checkbox" <?php echo ($cadastral->getRawData('i7') != 'f' ? 'checked="checked"' : '') ?> id="i7" name="i7" value="1"/>
+<input type="checkbox" <?php echo ($cadastral->getRawData('i7') != 'f' ? 'checked="checked"' : '') ?> name="i7" value="1"/>
 <?php 
                 $datarow[] = ob_get_clean();
                 $datarow[] = $cadastral->getRawData('i8');
@@ -83,7 +129,7 @@ if (key_exists('action', $_REQUEST)) {
                 ob_start();
                 ?>
         <div class="table_actions">
-            <a href="daticat.php?action=cadastratabledelete&id=<?php echo $cadastral->getData('objectid');?>"><img class="actions delete" src="images/empty.png" title="Cancella"/></a>
+            <a href="daticat.php?action=cadastratabledelete&id=<?php echo $forest->getData('objectid');?>&elementid=<?php echo $cadastral->getData('objectid');?>"><img class="actions delete" src="images/empty.png" title="Cancella"/></a>
         </div>
                 <?php $datarow[]=  ob_get_clean();
                 $response['aaData'][]=$datarow;

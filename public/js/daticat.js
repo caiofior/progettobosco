@@ -44,7 +44,7 @@ oTable = $("#cadastral").dataTable( {
                     async:false,
                     url: url,
                     data:{
-                        id: $("#objectid").val(),
+                        id: $("#cadastral").data("objectid"),
                         value:value
                     }
                 });
@@ -59,27 +59,65 @@ oTable = $("#cadastral").dataTable( {
                 },
                 "height": "8px"
             } );
+            $("#cadastral tbody td input[type=checkbox]").change(function(){
+                value="f";
+                if (typeof $(this).attr("checked") == "undefined")
+                    value="";
+                id = oTable.fnGetData(oTable.fnGetPosition( $(this).parent("td")[0] )[0])[0];
+                field = oTable.fnSettings().aoColumns[oTable.fnGetPosition($(this).parent("td")[0] )[2]].sName;
+                url = "daticat.php?action=cadastratableedit&elementid="+id+"&field="+field;
+                 $.ajax({
+                    async:false,
+                    url: url,
+                    data:{
+                        id: $("#cadastral").data("objectid"),
+                        value:value
+                    }
+                });
+                oTable.fnDraw();
+            })
+            $(".code_part").autocomplete({
+                minLength: 0,
+                source: "daticat.php?action=autocomplete_code_part&id="+$("#cadastral").data("objectid"),
+                change: function( event, ui ) {
+                        if ( ui.item ) {
+                            value="f";
+                            if (typeof $(this).attr("checked") == "undefined")
+                                value="";
+                            id = oTable.fnGetData(oTable.fnGetPosition( $(this).parent("td")[0] )[0])[0];
+                            field = oTable.fnSettings().aoColumns[oTable.fnGetPosition($(this).parent("td")[0] )[2]].sName;
+                            url = "daticat.php?action=cadastratableedit&elementid="+id+"&field="+field;
+                             $.ajax({
+                                async:false,
+                                url: url,
+                                data:{
+                                    id: $("#cadastral").data("objectid"),
+                                    value:$(this).val()
+                                }
+                            });
+                            oTable.fnDraw();
+                        }
+                }
+            }).focus(function() {
+                $(this).val("").autocomplete("search","")
+            });
             add = $(".addcadastral");
             if (add.length > 0)
                 $("#cadastral_length").append(" ").append(add.remove().show());
-            $(".dataTables_scrollFoot th").each(function(id,el) {
-                $("#cadastralsummary th").eq(id).width($(el).width());
-            });
-
             
         },
         "bStateSave": true,
         "bProcessing": true,
         "bServerSide": true,
-        "sAjaxSource": "daticat.php?action=cadastraltable&id="+$("#objectid").val()
+        "sAjaxSource": "daticat.php?action=cadastraltable&id="+$("#cadastral").data("objectid")
 });
 $(document).on("click",".addcadastral",function (e) {
-    url = "bosco.php?task=forma&action=cadastratableedit&elementid=new";
+    url = "daticat.php?action=cadastratableedit&elementid=new";
                 $.ajax({
                     async:false,
                     url: url,
                     data:{
-                        id: $("#objectid").val()
+                        id: $("#cadastral").data("objectid")
                     }
                 });
     oTable.fnDraw();
@@ -110,5 +148,34 @@ $(document).on("click","#cadastral_delete_cancel",function(){
    $.colorbox.close();
    return false;
 });
-
-
+$(document).on("click",".surfacerecalc",function() {
+    $.colorbox({
+        "html"  :   
+                    "Vuoi aggiornare la superficie forestale ?"+
+                    " <a id=\"surfacerecalc_confirm\"href=\""+$(this).attr("href")+"&confirmed=1\" ><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
+                    " <a id=\"cadastral_delete_cancel\"href=\"#\"><img src=\"images/empty.png\" title=\"Annulla cancellazione\" class=\"actions cancel\"/> </a>",
+        "onLoad": function() {
+            $('#cboxClose').remove();
+        }
+    });
+   return false;
+});
+$(document).on("click","#surfacerecalc_confirm",function(){
+     $.ajax({
+        async:false,
+        url: $(this).attr("href")
+    });
+   oTable.fnDraw();
+   $.colorbox.close();
+   return false;
+});
+$(document).on("click",".vercalc",function() {
+    $.colorbox({
+        "href"  : $(this).attr("href") ,
+        "width" : 600,
+        "onLoad": function() {
+            $('#cboxClose').remove();
+        }
+    });
+   return false;
+});

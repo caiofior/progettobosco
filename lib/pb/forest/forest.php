@@ -162,4 +162,17 @@ WHERE usosuolo.codice <> \'\' AND proprieta=\''.$this->data['codice'].'\''));
         $region->loadFromId($this->data['regione']);
         return $region;
     }
+    /**
+     * Recalculates surface of forest compartments
+     */
+    public function surfaceRecalc() {
+        $this->table->getAdapter()->query("
+            UPDATE schede_a SET sup_tot = (
+	SELECT SUM(catasto.sup_tot) FROM catasto WHERE 
+	catasto.cod_part=schede_a.cod_part AND
+	catasto.proprieta=schede_a.proprieta
+	) WHERE schede_a.proprieta= ?
+            ",$this->data['codice']
+        );
+    }
 }

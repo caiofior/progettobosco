@@ -24,7 +24,7 @@
                                             <br />
                                             <span><a href="#">Scheda N</a></span>
                                         </div>
-                                        <?php require __DIR__.DIRECTORY_SEPARATOR.'particellaSchedaB3.php';?>
+                                        <?php require __DIR__.DIRECTORY_SEPARATOR.'particellaSchedaA.php';?>
 				<!-- /post -->	
 				</div>	
 
