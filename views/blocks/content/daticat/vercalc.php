@@ -37,8 +37,9 @@
 <p>
      Alla voce "Sup. totale afferente alla particella (ha)"  è stata inserita:
 </p>
-<form method="post" action="<?php echo $GLOBALS['BASE_URL']; ?>daticat.php?action=vercalc&id=<?php echo $forest->getData('objectid');?>">
-    <select name="method">
+<form method="post" id="vercalcform" action="<?php echo $GLOBALS['BASE_URL']; ?>daticat.php?action=vercalc&id=<?php echo $forest->getData('objectid');?>&confirmed=1">
+    <div id="vercalcerror" style="display: none;"></div>
+    <select id="method" name="method">
         <option value=""></option>
         <option value="1">Sup afferente alla particella forestale</option>
         <option value="2">Sup totale particella catastale</option>

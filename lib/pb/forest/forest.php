@@ -175,4 +175,129 @@ WHERE usosuolo.codice <> \'\' AND proprieta=\''.$this->data['codice'].'\''));
             ",$this->data['codice']
         );
     }
+    /**
+     * Cechs the cadastral data
+     * @param int $method
+     * @return array
+     */
+    public function surfaceVerifyCalc($method) {
+        $messages = array();
+        $this->table->getAdapter()->query("
+            UPDATE catasto SET 
+            porz_perc = (
+	SELECT c1.sup_tot / c1.sup_tot_cat *100 FROM catasto AS c1 WHERE 
+	c1.objectid=catasto.objectid
+	) WHERE 
+        ( porz_perc = 0 OR porz_perc IS NULL ) AND
+        ( catasto.sup_tot > 0 ) AND
+        ( catasto.sup_tot_cat > 0 ) AND
+        catasto.proprieta= ?
+            ",$this->data['codice']
+        );
+        if ($method == 1)
+        $this->table->getAdapter()->query("
+            UPDATE catasto SET 
+            sup_tot_cat = (
+	SELECT c1.sup_tot / c1.porz_perc * 100 FROM catasto AS c1 WHERE 
+	c1.objectid=catasto.objectid
+	) WHERE 
+        ( porz_perc > 0 ) AND
+        ( catasto.sup_tot > 0 ) AND
+        ( catasto.sup_tot_cat = 0 OR catasto.sup_tot_cat IS NULL ) AND
+        catasto.proprieta= ?
+            ",$this->data['codice']
+        );
+        else if ($method == 2)
+        $this->table->getAdapter()->query("
+            UPDATE catasto SET 
+            sup_tot_cat = (
+	SELECT c1.sup_tot FROM catasto as c1 WHERE 
+	c1.objectid=catasto.objectid
+	),
+            sup_tot =(
+	SELECT c2.sup_tot_cat / c2.porz_perc * 100 FROM catasto as c2 WHERE 
+	c2.objectid=catasto.objectid
+	) WHERE 
+        ( porz_perc > 0 ) AND
+        ( catasto.sup_tot > 0 ) AND
+        ( catasto.sup_tot_cat = 0 OR catasto.sup_tot_cat IS NULL ) AND
+        catasto.proprieta= ?
+            ",$this->data['codice']
+        );
+        $res = $this->table->getAdapter()->query("
+        SELECT cod_part,foglio,particella FROM catasto 
+        WHERE sup_tot = 0 OR sup_tot IS NULL AND catasto.proprieta= ?
+        ",$this->data['codice']);
+        while($row = $res->fetch() )
+            $messages[$row['cod_part']][] = 'Per i dati catastali non è stata inserita la SUPERFICIE TOTALE: foglio'.$row['foglio'].' particella catastale '.$row['particella'].' particella forestale'.$row['cod_part'];
+        
+        $res = $this->table->getAdapter()->query("
+        SELECT cod_part,foglio,particella FROM catasto 
+        WHERE sup_tot_cat = 0 OR sup_tot_cat IS NULL AND catasto.proprieta= ?
+        ",$this->data['codice']);
+        while($row = $res->fetch() )
+            $messages[$row['cod_part']][] = 'Per i dati catastali non è stata inserita la SUPERFICIE AFFERENTE: foglio'.$row['foglio'].' particella catastale '.$row['particella'].' particella forestale'.$row['cod_part'];
+        
+        $res = $this->table->getAdapter()->query("
+        SELECT cod_part,foglio,particella FROM catasto WHERE
+        sup_bosc = 0 OR sup_bosc IS NULL AND catasto.proprieta= ?
+        ",$this->data['codice']);
+        while($row = $res->fetch() )
+            $messages[$row['cod_part']][] = 'Per i dati catastali non è stata inserita la SUPERFICIE BOSCATA: foglio'.$row['foglio'].' particella catastale '.$row['particella'].' particella forestale'.$row['cod_part'];
+        
+        $res = $this->table->getAdapter()->query("
+            SELECT cod_part FROM schede_a WHERE 
+            schede_a.sup_tot IS NULL OR schede_a.sup_tot=0
+             AND schede_a.proprieta= ?
+        ",$this->data['codice']);
+        
+        while($row = $res->fetch() )
+            $messages[$row['cod_part']][] = 'In Scheda A non è stata inserita la superficie per le seguenti particelle: particella forestale'.$row['cod_part'];
+        
+        $res = $this->table->getAdapter()->query("
+            SELECT cod_part FROM schede_a WHERE 
+            ROUND(CAST(schede_a.sup_tot AS numeric),4) <> (SELECT ROUND(CAST (SUM(catasto.sup_tot) AS numeric),4) FROM catasto
+                WHERE catasto.proprieta=schede_a.proprieta AND
+                catasto.cod_part=schede_a.cod_part
+            ) AND schede_a.proprieta= ?
+        ",$this->data['codice']);
+        
+        while($row = $res->fetch() )
+            $messages[$row['cod_part']][] = 'In Scheda A non è stata inserita la superficie per le seguenti particelle: particella forestale'.$row['cod_part'];
+
+        $res = $this->table->getAdapter()->query("
+        SELECT cod_part,foglio,particella FROM catasto WHERE
+        sup_tot IS NOT NULL AND
+        sup_tot_cat IS NOT NULL AND
+        sup_tot > sup_tot_cat AND
+        catasto.proprieta= ?
+        ",$this->data['codice']);
+        while($row = $res->fetch() )
+            $messages[$row['cod_part']][] = 'Per i dati catastali è stata inserita una superficie afferente maggiore della superficie totale per la seguente particella: foglio'.$row['foglio'].' particella catastale '.$row['particella'].' particella forestale'.$row['cod_part'];
+        
+        $res = $this->table->getAdapter()->query("
+        SELECT cod_part,foglio,particella FROM catasto WHERE
+        sup_tot IS NOT NULL AND
+        sup_bosc IS NOT NULL AND
+        sup_bosc > sup_tot AND
+        catasto.proprieta= ?
+        ",$this->data['codice']);
+        while($row = $res->fetch() )
+            $messages[$row['cod_part']][] = 'Per i dati catastali è stata inserita una superficie boscata maggiore della superficie afferente per la seguente particella: foglio'.$row['foglio'].' particella catastale '.$row['particella'].' particella forestale'.$row['cod_part'];
+        
+        $this->table->getAdapter()->query("
+        UPDATE catasto SET 
+            sum_sup_non_bosc = (
+	SELECT c1.sup_tot - c1.sup_bosc FROM catasto as c1 WHERE 
+	c1.objectid=catasto.objectid
+	) WHERE 
+        sup_tot IS NOT NULL AND
+        sup_bosc IS NOT NULL AND
+        catasto.proprieta= ?
+            ",$this->data['codice']
+        );
+        
+        return $messages;
+
+    }
 }

@@ -20,9 +20,15 @@ $forest->loadFromId($_REQUEST['id']);
 if (key_exists('action', $_REQUEST)) {
     switch ($_REQUEST['action']) {
         case 'vercalc' :
-            var_dump($_REQUEST);
-            die();
-            require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.
+            if (key_exists('confirmed',$_REQUEST) && 
+                    key_exists('method',$_REQUEST) &&
+                    is_numeric($_REQUEST['method'])
+                    ) {
+                header('Content-type: application/json');
+                echo Zend_Json::encode($forest->surfaceVerifyCalc($_REQUEST['method']));
+            }
+            else
+                require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.
                     'blocks'.DIRECTORY_SEPARATOR.'content'.DIRECTORY_SEPARATOR.
                     'daticat'.DIRECTORY_SEPARATOR.'vercalc.php';
             exit;

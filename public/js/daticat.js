@@ -179,3 +179,33 @@ $(document).on("click",".vercalc",function() {
     });
    return false;
 });
+$(document).on("submit","#vercalcform",function() {
+    $("#vercalcerror").text("").hide();
+    if ($("#method").val() == "") {
+        $("#vercalcerror").text("Scegli uno dei due metodi di elaborazione").show();
+        return false;
+    }
+    $.ajax({
+        async:false,
+        url: $(this).attr("action"),
+        data: $(this).serializeArray(),
+        dataType: "json",
+        success: function (response) {
+            
+            if($.makeArray(response).length >0 ) {
+                html = "";
+                $.each(response,function (key, part){
+                    html += "<strong>Particella "+key+"</strong><br/>";
+                    $.each(part,function(key,value){
+                        html += "Particella "+value+"<br/>";
+                    });
+                }) 
+                $("#vercalcerror").html(html).show();
+            }
+            else
+                 $('#cboxClose').remove();
+        }
+    });
+   oTable.fnDraw();
+   return false;
+})

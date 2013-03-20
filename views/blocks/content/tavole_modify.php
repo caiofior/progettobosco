@@ -1,130 +1,111 @@
-<?php  
-if( isset($_GET['scheda']) ) 	{
-
-$tavola = $_GET['tavola'];
-$elenco = null ;
-
-$arr['codice'] = "" ;
-$arr['descriz'] = "" ;
-$arr['autore'] = "" ;
-$arr['note'] = "" ;
-$arr['tipo'] = "" ;
-$arr['forma'] = "" ;
-$arr['biomassa'] = "" ;
-$arr['assortimenti'] = "" ;
-$arr['d_min'] = "" ;
-$arr['d_max'] = "" ;
-$arr['h_min'] = "" ;
-$arr['h_max'] = "" ;
-$arr['classe_d'] = "" ;
-$arr['classe_h'] = "" ;
-$arr['funzione'] = "" ;
-if( isset($_POST['inserisci_dati']) or isset($_POST['modifica_dati'])) {
+<!-- main -->
+			<div id="main">	
+                            <div id="breadcrumb"><a href="<?php echo $GLOBALS['BASE_URL'];?>">Home</a>&gt;<a href="<?php echo $GLOBALS['BASE_URL'];?>tavole.php">Tavole di cubatura</a></div>
+				<div class="post">
+					<h2>Tavola: <?php echo $this->table->getData('descriz');?></h2>
+                                        <form action="<?php echo $GLOBALS['BASE_URL'];?>tavole.php?<?php echo http_build_query($_GET);?>" method="post" id="tavola">		
+                                        <fieldset id="general">
+                                        <div id="codice_container">
+                                            <label for="codice">Codice</label>
+                                            <input id="codice" name="codice" value="<?php echo $this->table->getData('codice');?>"/>
+                                        </div>
+                                        <div id="descriz_container">
+                                            <label for="descriz">Descrizione</label>
+                                            <input id="descriz" name="descriz" value="<?php echo $this->table->getData('descriz');?>"/>
+                                        </div>
+                                        <div id="autore_container">
+                                            <label for="autore">Autore e anno</label>
+                                            <input id="autore" name="autore" value="<?php echo $this->table->getData('autore');?>"/>
+                                        </div>
+                                        <div id="note_container">
+                                            <label for="note">Note</label>
+                                            <textarea id="note" name="note" rows="5" cols="15"><?php echo $this->table->getData('note');?></textarea>
+                                        </div>
+                                            <fieldset id="tipo_container">
+                                                <legend>Tipo</legend>    
+                                                <?php
+                                                $tabletypecoll = new \forest\attribute\TableTypeColl();
+                                                $tabletypecoll->loadAll();
+                                                foreach($tabletypecoll->getItems() as $tabletype) : 
+                                                $checked = '';
+                                                if ($tabletype->getData('codice') ==$this->table->getData('tipo'))
+                                                        $checked = 'checked="checked"';
+                                                ?>
+                                                <input type="checkbox" <?php echo $checked;?> name="tipo" value="<?php echo $tabletype->getData('codice');?>"/>
+                                                <?php echo $tabletype->getData('tipo_tavola');?><br/>
+                                                <?php endforeach; ?>
+                                            </fieldset>
+                                            <fieldset id="forma_container">
+                                                <legend>Forma</legend>    
+                                                <?php
+                                                $formacoll = array(
+                                                    1=>'Tabellare',
+                                                    2=>'Funzione',
+                                                );
+                                                foreach($formacoll as $key=>$value) : 
+                                                $checked = '';
+                                                if ($key ==$this->table->getData('forma'))
+                                                        $checked = 'checked="checked"';
+                                                ?>
+                                                <input type="checkbox" <?php echo $checked;?> name="forma" value="<?php echo $key;?>"/>
+                                                <?php echo $value;?><br/>
+                                                <?php endforeach; ?>
+                                            </fieldset>
+                                            <div id="biomassa_container">
+                                                <label for="biomassa"><span>Modello prev. biomassa</span></label>
+                                                <input type="checkbox" name="biomassa" id="biomassa" <?php echo ( $tabletype->getData('biomassa') =='f'? '': 'checked="checked"' ) ;?> value="1"/>
+                                            </div>
+                                            <div id="assortimenti_container">
+                                                <label for="assortimenti">Assortimentale</label>
+                                                <input name="assortimenti" id="assortimenti" type="checkbox" <?php echo ( $tabletype->getData('assortimenti') =='f'? '': 'checked="checked"' ) ;?> value="1"/>
+                                            </div>
+                                            <div id="n_tariffa_container">
+                                                <label for="n_tariffa">N° tariffe</label>
+                                                <input id="n_tariffa" name="n_tariffa" value="<?php echo $this->table->getData('n_tariffa');?>"/>
+                                            </div>
+                                            <div>Campi di variazione</div>
+                                            <fieldset id="var1_container">
+                                                <div>Diametri cm</div>
+                                                <div id="d_min_container">
+                                                    <label for="d_min">min</label>
+                                                    <input id="d_min" name="d_min" value="<?php echo $this->table->getData('d_min');?>"/>
+                                                </div>
+                                                <div id="d_max_container">
+                                                    <label for="d_max">max</label>
+                                                    <input id="d_max" name="d_max" value="<?php echo $this->table->getData('d_max');?>"/>
+                                                </div>
+                                                <div id="classe_d_container">
+                                                    <label for="classe_d">Ampiezza classe</label>
+                                                    <input id="classe_d" name="classe_d" value="<?php echo $this->table->getData('classe_d');?>"/>
+                                                </div>
+                                            </fieldset>
+                                            <fieldset id="var2_container" >                                       
+                                                <div >Altezze m</div>
+                                                <div id="h_min_container">
+                                                    <label for="h_min">min</label>
+                                                    <input id="h_min" name="h_min" value="<?php echo $this->table->getData('h_min');?>"/>
+                                                </div>
+                                                <div id="h_max_container">
+                                                    <label for="h_max">max</label>
+                                                    <input id="h_max" name="h_max" value="<?php echo $this->table->getData('h_max');?>"/>
+                                                </div>
+                                                <div id="classe_h_container">
+                                                    <label for="classe_h">Ampiezza classe</label>
+                                                    <input id="classe_h" name="classe_h" value="<?php echo $this->table->getData('classe_h');?>"/>
+                                                </div>
+                                            </fieldset>
+                                            <div id="funzione_container">
+                                                <label for="funzione">Funzione</label>
+                                                <textarea id="funzione" name="funzione" rows="10" cols="30"><?php echo $this->table->getData('funzione');?></textarea>
+                                            </div>
+                                        </fieldset>
+                                        
+                                        </form>	
 	
-	foreach( array_keys($arr) as $key ) {
-		if( $key == 'biomassa' or $key == 'assortimenti' ) 	$val = (isset($_POST[$key]))? 'true' : 'false';
-		else 							$val = $_POST[$key] ;
-		$arr[$key] = $val ;
-	}
-	$elenco = array_to_object($arr) ;
-//	print_r($elenco);
-	saveInfoTavole($elenco) ;
-	unset($_GET['new']) ;
-}
+				<!-- /post -->	
+				</div>	
+                            
 
-if( isset($_GET['new']) ) {
-	$arr['codice'] = $tavola ;
-	$elenco = array_to_object($arr) ;
-}
-else {
-	$elenco = getInfoTavole($tavola);
-}
-?>
-<div id='home' class='bosco'>
-  <div class='b_title'>Tavole di cubatura</div>
-    
-    <form name='tavole1_form' action='#' method='post'>
-    <div id='tavole1_top'>
-	    <div class='tavole'>
-		    <table>
-			<tr><td class='bold'>Codice</td>
-			    <td class='td_320'><input type='text' name='codice' value='<?=$elenco->codice ?>' /></td></tr>
-			<tr><td class='bold'>Descrizione</td>
-			    <td class='td_320'><input type="text" name=descriz value="<?echo $elenco->descriz?>" /></td></tr>
-			<tr><td class='bold'>Autore</td>
-			    <td class='td_320'><input type="text" name=autore value="<?echo $elenco->autore?>" /></td></tr>
-		    </table>
-	    </div>
-	    <div class='tavole'>
-		    <table>
-			<tr><td class='bold'>Note</td><td><input id='nota_tavole' type='text' name='note' value="<?echo $elenco->note ?>" /></td></tr>
-		    </table>
-	    </div>
-
-    </div>
-      
-    <div id='tavole1_center' >
-
-	      <div class='tavole'>
-		      <table>
-			  <caption>Tipo</caption> 
-			  <tr><td><input type="radio" name="tipo" value="1"<? if($elenco->tipo == 1):echo "checked"; endif; ?> /> Doppia entrata</td></tr>
-			  <tr><td><input type="radio" name="tipo" value="2"<? if($elenco->tipo == 2):echo "checked"; endif; ?> /> Una entrata</td></tr>
-			  <tr><td><input type="radio" name="tipo" value="3"<? if($elenco->tipo == 3):echo "checked"; endif; ?> /> Tariffe</td></tr>
-			  <tr><td><input type="radio" name="tipo" value="4"<? if($elenco->tipo == 4):echo "checked"; endif; ?> /> Popolamento</td></tr>
-			</table>
-	      </div>
-	  <div id='contenitore2div' class='tavole'>
-	      <div class='tavole'>
-			<table>
-			    <caption>Forma</caption>
-			    <tr><td><input type="radio" name="forma" value="1"<? if($elenco->forma == 1):echo "checked"; endif; ?> />Tabellare</td></tr>
-			    <tr><td><input type="radio" name="forma" value="2"<? if($elenco->forma == 2):echo "checked"; endif; ?> />Funzione</td></tr>
-		      </table>
-	      </div>
-
-	      <div class='tavole'>
-			<table>
-			    <tr><td><input type="checkbox" name="biomassa" <?=($elenco->biomassa == 't' )?"checked":""?> />Modello per biomassa</td></tr>
-			    <tr><td><input type="checkbox" name="assortimenti" <?=($elenco->assortimenti == 't' )?"checked":""?> />Assortimento</td></tr>
-		      </table>
-	      </div>
-
-	 </div>  <!--box contenete 2 div con le loro tabelle-->
-  
-    </div> <!--box largo 800px-->
-
-    <div id='tavole1_center1' >
-	      <div class='tavole'>
-		      <table>
-			    <caption>Campi di variazione</caption>
-			  <tr><td colspan="2" class='bold'>Diametri cm</td><td colspan="2" class='bold'>Altezze m</td></tr>
-			  <tr><td class="colonna1">min</td><td class="colonna2"><input type="text" name="d_min" value="<?echo $elenco->d_min?>"></td>
-			      <td class="colonna1">min</td><td class="colonna2"><input type="text" name="h_min" value="<?echo $elenco->h_min?>"></td></tr>
-			  <tr><td>max</td><td><input type="text" name="d_max" value="<?echo $elenco->d_max?>"></td>
-			      <td>max</td><td><input type="text" name="h_max" value="<?echo $elenco->h_max?>"></td></tr>
-			  <tr><td>Ampiezza classe</td><td><input type="text" name="classe_d" value="<?echo $elenco->classe_d?>"></td>
-			      <td>Ampiezza classe</td><td><input type="text" name="classe_h" value="<?echo $elenco->classe_h?>"></td></tr>
-		      </table>
-	      </div>
-    </div>
-
-    <div id='tavole1_center2' >
-	      <div class='tavole'>
-		      <table>
-			  <caption>Funzione</caption>
-			  <tr><td class='td_800'><input type="text" name="funzione" value="<?echo $elenco->funzione?>"></td></tr>
-		      </table>
-	      </div>
-    </div>
-<?php
-    if( isset($_GET['new']) )
-	    echo "<input type='submit' name='inserisci_dati' value='inserisci dati' />" ;
-    else
-	    echo "<input type='submit' name='modifica_dati' value='modifica dati' />" ;
-?>
-    </form>
-</div>
-<?php
-}
-?>
+                            
+			<!-- /main -->	
+			</div>

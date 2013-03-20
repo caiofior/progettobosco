@@ -12,6 +12,7 @@
                                             <li><a class="user_admin" href='<?php echo $GLOBALS['BASE_URL'];?>user.php'>Amministra utenti</a></li>
                                             <?php endif; ?>
                                             <li><a class="bosco" href='<?php echo $GLOBALS['BASE_URL'];?>bosco.php'>Bosco</a></li>
+                                            <li><a class="cubatura" href='<?php echo $GLOBALS['BASE_URL'];?>tavole.php'>Tavole di cubatura</a></li>
                                         </ul>
 				<!-- /post -->	
 				</div>	

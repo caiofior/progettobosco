@@ -100,7 +100,10 @@ if (!class_exists('Forest')) {
         'attribute'.DIRECTORY_SEPARATOR.'forestmassesteemcoll.php',
         'attribute'.DIRECTORY_SEPARATOR.'pastureweed.php',
         'attribute'.DIRECTORY_SEPARATOR.'pastureweedcoll.php',
-
+        'attribute'.DIRECTORY_SEPARATOR.'tabletype.php',
+        'attribute'.DIRECTORY_SEPARATOR.'tabletypecoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'table.php',
+        'attribute'.DIRECTORY_SEPARATOR.'tablecoll.php',
         );
     if (!isset($file)) $file = array();
     $files = array_diff($files, $file);
