@@ -36,6 +36,11 @@ abstract class Content {
      * @var array
      */
     protected $empty_entity=array();
+    /**
+     * Primary key
+     * @var string
+     */
+    protected $primary;
 
     /**
      * Instantiates the table
@@ -45,6 +50,9 @@ abstract class Content {
         if (is_null($table))
             return;
         $this->table = new Zend_Db_Table($table);
+        $primary = $this->table->info('primary');
+        if (is_array($primary) && sizeof($primary) == 1)
+            $this->primary = array_shift ($primary);
         $cols = $this->table->info('cols');
         $cols = array_combine($cols, array_fill ( 0 , sizeof($cols) , null ));
         $this->empty_entity = $cols;
@@ -101,13 +109,13 @@ abstract class Content {
      * Adds a data
      */
     public function insert() {
-        $this->data['id']=$this->table->insert($this->data);
+        $this->data[$this->primary]=$this->table->insert($this->data);
     }
      /**
      * Deletes data
      */
     public function delete() {
-        if (key_exists('id', $this->data)) {
+        if (key_exists($this->primary, $this->data)) {
             $where = $this->table->getAdapter()->quoteInto('id = ?', $this->data['id']);
             $this->table->delete($where);
         }
@@ -116,7 +124,7 @@ abstract class Content {
      * Updates data
      */
     public function update() {
-        if (!key_exists('id', $this->data)) 
+        if (!key_exists($this->primary, $this->data)) 
             throw new Exception('Unable to update object without id',1301251051);
         $where = $this->table->getAdapter()->quoteInto('id = ?', $this->data['id']);
         $this->table->update($this->data, $where);
@@ -127,5 +135,12 @@ abstract class Content {
      */
     public function getTable() {
         return $this->table;
+    }
+    /**
+     * Is the Content empty
+     * @return bool
+     */
+    public function isEmpty () {
+        return sizeof($this->data) ==0;
     }
 }

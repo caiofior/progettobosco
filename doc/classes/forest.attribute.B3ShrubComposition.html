@@ -32,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">1</span></a></li>
+                <span class="label label-info">3</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -61,9 +61,12 @@
 <li class="method public "><a href="#method_delete" title="delete :: Deletes data"><span class="description">Deletes data</span><pre>delete()</pre></a></li>
 <li class="method public "><a href="#method_getControl" title="getControl :: Returns the associated control"><span class="description">Returns the associated control</span><pre>getControl()</pre></a></li>
 <li class="method public inherited"><a href="#method_getData" title="getData :: Gets the data"><span class="description">Gets the data</span><pre>getData()</pre></a></li>
+<li class="method public inherited"><a href="#method_getFields" title="getFields :: "><span class="description">getFields()
+        </span><pre>getFields()</pre></a></li>
 <li class="method public inherited"><a href="#method_getRawData" title="getRawData :: Gets the raw data"><span class="description">Gets the raw data</span><pre>getRawData()</pre></a></li>
 <li class="method public inherited"><a href="#method_getTable" title="getTable :: Returns associated db table"><span class="description">Returns associated db table</span><pre>getTable()</pre></a></li>
 <li class="method public inherited"><a href="#method_insert" title="insert :: Adds a data"><span class="description">Adds a data</span><pre>insert()</pre></a></li>
+<li class="method public inherited"><a href="#method_isEmpty" title="isEmpty :: Is the Content empty"><span class="description">Is the Content empty</span><pre>isEmpty()</pre></a></li>
 <li class="method public "><a href="#method_loadFromId" title="loadFromId :: Loads form a data"><span class="description">Loads form a data</span><pre>loadFromId()</pre></a></li>
 <li class="method public inherited"><a href="#method_setData" title="setData :: Sets the data"><span class="description">Sets the data</span><pre>setData()</pre></a></li>
 <li class="method public "><a href="#method_update" title="update :: Updates data"><span class="description">Updates data</span><pre>update()</pre></a></li>
@@ -78,6 +81,7 @@
 <li class="property protected inherited"><a href="#property_all_attributes_data" title="$all_attributes_data :: All attribute data"><span class="description"></span><pre>$all_attributes_data</pre></a></li>
 <li class="property protected inherited"><a href="#property_data" title="$data :: Data used for insert and update"><span class="description"></span><pre>$data</pre></a></li>
 <li class="property protected inherited"><a href="#property_empty_entity" title="$empty_entity :: Columns available in database"><span class="description"></span><pre>$empty_entity</pre></a></li>
+<li class="property protected inherited"><a href="#property_primary" title="$primary :: Primary key"><span class="description"></span><pre>$primary</pre></a></li>
 <li class="property protected inherited"><a href="#property_rawData" title="$rawData :: Raw data, with cusom culoms"><span class="description"></span><pre>$rawData</pre></a></li>
 <li class="property protected inherited"><a href="#property_table" title="$table :: Zend Data table"><span class="description"></span><pre>$table</pre></a></li>
 </ul>
@@ -168,6 +172,19 @@
 <div class="subelement response"><code>array</code></div>
 </div></div>
 </div>
+<a id="method_getFields"></a><div class="element clickable method public method_getFields" data-toggle="collapse" data-target=".method_getFields .collapse">
+<h2>getFields()
+        </h2>
+<pre>getFields() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\forest\form\template\Form::getFields()</td>
+</tr></table>
+</div></div>
+</div>
 <a id="method_getRawData"></a><div class="element clickable method public method_getRawData" data-toggle="collapse" data-target=".method_getRawData .collapse">
 <h2>Gets the raw data</h2>
 <pre>getRawData(null | \sring $field) : array</pre>
@@ -228,6 +245,26 @@
 <td>\forest\form\template\Form::insert()</td>
 </tr>
 </table>
+</div></div>
+</div>
+<a id="method_isEmpty"></a><div class="element clickable method public method_isEmpty" data-toggle="collapse" data-target=".method_isEmpty .collapse">
+<h2>Is the Content empty</h2>
+<pre>isEmpty() : bool</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Content::isEmpty()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\Form::isEmpty()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>bool</code></div>
 </div></div>
 </div>
 <a id="method_loadFromId"></a><div class="element clickable method public method_loadFromId" data-toggle="collapse" data-target=".method_loadFromId .collapse">
@@ -326,6 +363,24 @@
 </table>
 </div></div>
 </div>
+<a id="property_primary"> </a><div class="element clickable property protected property_primary" data-toggle="collapse" data-target=".property_primary .collapse">
+<h2></h2>
+<pre>$primary : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\Content::$$primary</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\forest\form\template\Form::$$primary</td>
+</tr>
+</table>
+</div></div>
+</div>
 <a id="property_rawData"> </a><div class="element clickable property protected property_rawData" data-toggle="collapse" data-target=".property_rawData .collapse">
 <h2></h2>
 <pre>$rawData : array</pre>
@@ -369,7 +424,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-03-20T17:16:41+01:00.<br></footer></div>
+            generated on 2013-03-21T15:27:14+01:00.<br></footer></div>
 </div>
 </body>
 </html>

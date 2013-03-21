@@ -55,14 +55,13 @@ function server_resource_monitoring() {
             $mail->setSubject('Error in ' . $_SERVER['SERVER_NAME']);
             try {
                 $mail->send(new Zend_Mail_Transport_Smtp($GLOBALS['MAIL_ADMIN_CONFIG']['server'], $GLOBALS['MAIL_ADMIN_CONFIG']));
-            } catch (Exception $e) {
-                
-            }
+            } catch (Exception $e) {}
         }
+        $GLOBALS['CACHE']->clean();
     }
     else
         $error = '';
-    $GLOBALS['CACHE']->clean();
+    
     if (!(isset($PHPUNIT) && $PHPUNIT) && !headers_sent()) {
         $GLOBALS['firephp']->error($error);
     }

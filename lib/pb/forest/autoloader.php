@@ -104,6 +104,8 @@ if (!class_exists('Forest')) {
         'attribute'.DIRECTORY_SEPARATOR.'tabletypecoll.php',
         'attribute'.DIRECTORY_SEPARATOR.'table.php',
         'attribute'.DIRECTORY_SEPARATOR.'tablecoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'table'.DIRECTORY_SEPARATOR.'table4.php',
+        'attribute'.DIRECTORY_SEPARATOR.'table'.DIRECTORY_SEPARATOR.'table5.php',
         );
     if (!isset($file)) $file = array();
     $files = array_diff($files, $file);

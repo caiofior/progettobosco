@@ -35,7 +35,7 @@ if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
 }
 if (isset( $_REQUEST['codice'] ) )  {
     $table->loadFromId($_REQUEST['codice']);
-    $content = 'content'.DIRECTORY_SEPARATOR.'tavole_modify.php';
+    $content = 'content'.DIRECTORY_SEPARATOR.'tavoleManage.php';
 }
 $view = new Template(array(
     'basePath' => __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'views'

@@ -78,4 +78,9 @@ abstract class Form extends \Content {
             return $itemcoll;
         }
     }
+    public function getFields () {
+        if (!key_exists($this->table->info('name'),$this->all_attributes_data))
+                return false;
+        return $this->all_attributes_data[$this->table->info('name')];
+    }
 }
