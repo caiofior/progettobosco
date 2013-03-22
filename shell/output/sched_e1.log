@@ -1,0 +1,24 @@
+COPY error on lines 
+COPY error: syntax error at or near "'sched_e1'"
+LINE 1: COPY 'sched_e1' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on lines 
+COPY error: syntax error at or near "'sched_e1'"
+LINE 1: COPY 'sched_e1' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on lines 
+COPY error: syntax error at or near "'sched_e1'"
+LINE 1: COPY 'sched_e1' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on lines 
+COPY error: syntax error at or near "'sched_e1'"
+LINE 1: COPY 'sched_e1' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+

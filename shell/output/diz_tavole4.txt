@@ -1,0 +1,1 @@
+"ISS01",,,,,,,,,,,,,,"1.3868+0.03875*(diametro^2)*altezza+0","0.9568+0.034354*(diametro^2)*altezza-0.000037628*(diametro^2)*altezza^2",1

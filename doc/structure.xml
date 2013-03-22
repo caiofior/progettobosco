@@ -237,10 +237,10 @@
       </docblock>
       <property final="false" static="false" visibility="protected" line="23" namespace="global" package="Default">
         <name>$table</name>
-        <default></default>
+        <default/>
         <docblock line="19">
           <description>Zend Data table</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="19" name="var" description="" type="\Zend_Db_Table">
             <type by_reference="false">\Zend_Db_Table</type>
           </tag>
@@ -251,7 +251,7 @@
         <default>array()</default>
         <docblock line="24">
           <description>Data used for insert and update</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="24" name="var" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -262,7 +262,7 @@
         <default>array()</default>
         <docblock line="29">
           <description>Raw data, with cusom culoms</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="29" name="var" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -273,7 +273,7 @@
         <default>array()</default>
         <docblock line="34">
           <description>Columns available in database</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="34" name="var" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -281,10 +281,10 @@
       </property>
       <property final="false" static="false" visibility="protected" line="43" namespace="global" package="Default">
         <name>$primary</name>
-        <default></default>
+        <default/>
         <docblock line="39">
           <description>Primary key</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="39" name="var" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
@@ -295,7 +295,7 @@
         <full_name>__construct</full_name>
         <docblock line="45">
           <description>Instantiates the table</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="45" name="param" description="" type="string" variable="$table">
             <type by_reference="false">string</type>
           </tag>
@@ -311,14 +311,14 @@
         <full_name>loadFromId</full_name>
         <docblock line="60">
           <description>Loads data from its id</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="60" name="param" description="" type="int" variable="$id">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
         <argument line="64">
           <name>$id</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -327,7 +327,7 @@
         <full_name>getData</full_name>
         <docblock line="68">
           <description>Gets the data</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="68" name="param" description="field data of interest" type="null|\sring" variable="$field">
             <type by_reference="false">null</type>
             <type by_reference="false">\sring</type>
@@ -347,7 +347,7 @@
         <full_name>getRawData</full_name>
         <docblock line="81">
           <description>Gets the raw data</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="81" name="param" description="field data of interest" type="null|\sring" variable="$field">
             <type by_reference="false">null</type>
             <type by_reference="false">\sring</type>
@@ -367,7 +367,7 @@
         <full_name>setData</full_name>
         <docblock line="92">
           <description>Sets the data</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="92" name="param" description="" type="\variant" variable="$data">
             <type by_reference="false">\variant</type>
           </tag>
@@ -378,7 +378,7 @@
         </docblock>
         <argument line="97">
           <name>$data</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="97">
@@ -392,7 +392,7 @@
         <full_name>insert</full_name>
         <docblock line="108">
           <description>Adds a data</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="117" package="Default">
@@ -400,7 +400,7 @@
         <full_name>delete</full_name>
         <docblock line="114">
           <description>Deletes data</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="126" package="Default">
@@ -408,7 +408,7 @@
         <full_name>update</full_name>
         <docblock line="123">
           <description>Updates data</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="136" package="Default">
@@ -416,7 +416,7 @@
         <full_name>getTable</full_name>
         <docblock line="132">
           <description>Returns associated db table</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="132" name="return" description="" type="\Zend_Db_Table">
             <type by_reference="false">\Zend_Db_Table</type>
           </tag>
@@ -427,7 +427,7 @@
         <full_name>isEmpty</full_name>
         <docblock line="139">
           <description>Is the Content empty</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="139" name="return" description="" type="bool">
             <type by_reference="false">bool</type>
           </tag>
@@ -1057,7 +1057,7 @@
       </method>
     </class>
   </file>
-  <file path="autoloader.php" hash="cb23b1aef349e480e53f479ab1574448" package="Default">
+  <file path="autoloader.php" hash="36bad74025dfad2b9f88169b6641e0ab" package="Default">
     <docblock line="2">
       <description>Autoloading files</description>
       <long-description>&lt;p&gt;Autoloading files&lt;/p&gt;</long-description>
@@ -1068,12 +1068,6 @@
       <name/>
     </include>
     <include line="12" type="Require" package="Default">
-      <name/>
-    </include>
-    <include line="28" type="Require" package="Default">
-      <name/>
-    </include>
-    <include line="29" type="Require" package="Default">
       <name/>
     </include>
     <include line="30" type="Require" package="Default">
@@ -1092,6 +1086,12 @@
       <name/>
     </include>
     <include line="35" type="Require" package="Default">
+      <name/>
+    </include>
+    <include line="36" type="Require" package="Default">
+      <name/>
+    </include>
+    <include line="37" type="Require" package="Default">
       <name/>
     </include>
   </file>
@@ -2966,7 +2966,7 @@
         <default>array()</default>
         <docblock line="32">
           <description>All attribute data</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="32" name="var" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
@@ -2977,7 +2977,7 @@
         <full_name>__construct</full_name>
         <docblock line="37">
           <description>Instantiates the table</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="37" name="param" description="" type="string" variable="$table">
             <type by_reference="false">string</type>
           </tag>
@@ -2993,7 +2993,7 @@
         <full_name>getControl</full_name>
         <docblock line="57">
           <description>Returns the associated control</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="57" name="param" description="" type="string" variable="$attribute">
             <type by_reference="false">string</type>
           </tag>
@@ -3007,7 +3007,7 @@
         </docblock>
         <argument line="63">
           <name>$attribute</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
         <argument line="63">
@@ -6083,7 +6083,148 @@
         <full_name>__construct</full_name>
         <docblock line="32">
           <description>Instantiates the table</description>
+          <long-description/>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="forest/attribute/table/table2.php" hash="325698f96bc4641d8a86674af4db9c05" package="Default">
+    <docblock line="2">
+      <description>Manages Table2 attribute</description>
+      <long-description>&lt;p&gt;Manages Table2 attribute&lt;/p&gt;</long-description>
+      <tag line="2" name="author" description="Claudio Fior &lt;caiofior@gmail.com&gt;"/>
+      <tag line="2" name="copyright" description="CRA"/>
+    </docblock>
+    <include line="14" type="Require" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="forest\attribute\table" line="31" package="Default">
+      <extends>\forest\form\template\Form</extends>
+      <name>Table2</name>
+      <full_name>\forest\attribute\table\Table2</full_name>
+      <docblock line="23">
+        <description>Manages Table2 attribute</description>
+        <long-description>&lt;p&gt;Manages Table2 attribute&lt;/p&gt;</long-description>
+        <tag line="23" name="author" description="Claudio Fior &lt;caiofior@gmail.com&gt;"/>
+        <tag line="23" name="copyright" description="CRA"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute\table" line="35" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="32">
+          <description>Instantiates the table</description>
           <long-description></long-description>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="forest/attribute/table/table2coll.php" hash="d8c6730ba5e2b8f34b3ceeed108b2db0" package="Default">
+    <docblock line="2">
+      <description>Manages Table2 collection</description>
+      <long-description>&lt;p&gt;Manages Table2 collection&lt;/p&gt;</long-description>
+      <tag line="2" name="author" description="Claudio Fior &lt;caiofior@gmail.com&gt;"/>
+      <tag line="2" name="copyright" description="CRA"/>
+    </docblock>
+    <include line="14" type="Require" package="Default">
+      <name/>
+    </include>
+    <class final="false" abstract="false" namespace="forest\attribute\table" line="31" package="Default">
+      <extends>\ContentColl</extends>
+      <name>Table2Coll</name>
+      <full_name>\forest\attribute\table\Table2Coll</full_name>
+      <docblock line="23">
+        <description>Manages Table2 collection collection</description>
+        <long-description>&lt;p&gt;Manages Table2 collection collection&lt;/p&gt;</long-description>
+        <tag line="23" name="author" description="Claudio Fior &lt;caiofior@gmail.com&gt;"/>
+        <tag line="23" name="copyright" description="CRA"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="36" namespace="forest\attribute\table" package="Default">
+        <name>$table</name>
+        <default>null</default>
+        <docblock line="32">
+          <description>Forest Reference</description>
+          <long-description></long-description>
+          <tag line="32" name="var" description="" type="\forest\attribute\Table">
+            <type by_reference="false">\forest\attribute\Table</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute\table" line="40" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="37">
+          <description>Instantiates the table</description>
+          <long-description></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute\table" line="47" package="Default">
+        <name>setTable</name>
+        <full_name>setTable</full_name>
+        <docblock line="43">
+          <description>Sets the form reference</description>
+          <long-description></long-description>
+          <tag line="43" name="param" description="Table" type="\forest\attribute\Table" variable="$table">
+            <type by_reference="false">\forest\attribute\Table</type>
+          </tag>
+        </docblock>
+        <argument line="47">
+          <name>$table</name>
+          <default></default>
+          <type>\forest\attribute\Table</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="protected" namespace="forest\attribute\table" line="57" package="Default">
+        <name>customSelect</name>
+        <full_name>customSelect</full_name>
+        <docblock line="51">
+          <description>Customizes the select statement</description>
+          <long-description></long-description>
+          <tag line="51" name="param" description="" type="\Zend_Db_Select" variable="$select">
+            <type by_reference="false">\Zend_Db_Select</type>
+          </tag>
+          <tag line="51" name="param" description="Filtering criteria" type="array" variable="$criteria">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="51" name="return" description="" type="\Zend_Db_Select">
+            <type by_reference="false">\Zend_Db_Select</type>
+          </tag>
+        </docblock>
+        <argument line="57">
+          <name>$select</name>
+          <default></default>
+          <type>\Zend_Db_Select</type>
+        </argument>
+        <argument line="57">
+          <name>$criteria</name>
+          <default></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute\table" line="65" package="Default">
+        <name>countAll</name>
+        <full_name>countAll</full_name>
+        <docblock line="61">
+          <description>Returns all contents without any filter</description>
+          <long-description></long-description>
+          <tag line="61" name="param" description="Filtering criteria" type="array" variable="$criteria">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="65">
+          <name>$criteria</name>
+          <default>null</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute\table" line="72" package="Default">
+        <name>addItem</name>
+        <full_name>addItem</full_name>
+        <docblock line="68">
+          <description>Adds new forest composition</description>
+          <long-description></long-description>
+          <tag line="68" name="return" description="" type="\forest\attribute\Table2">
+            <type by_reference="false">\forest\attribute\Table2</type>
+          </tag>
         </docblock>
       </method>
     </class>
@@ -6113,12 +6254,12 @@
         <full_name>__construct</full_name>
         <docblock line="32">
           <description>Instantiates the table</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
     </class>
   </file>
-  <file path="forest/attribute/table.php" hash="0ca8795c005d0a4492a6e607af3d07ec" package="Default">
+  <file path="forest/attribute/table.php" hash="ab25edfb451dd2d1b34cbd4b77900d3b" package="Default">
     <docblock line="2">
       <description>Manages Table attribute</description>
       <long-description>&lt;p&gt;Manages Table attribute&lt;/p&gt;</long-description>
@@ -6150,41 +6291,52 @@
           <long-description></long-description>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="46" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="47" package="Default">
         <name>loadFromId</name>
         <full_name>loadFromId</full_name>
-        <docblock line="42">
+        <docblock line="43">
           <description>Redifines load data with specific types</description>
           <long-description></long-description>
-          <tag line="42" name="param" description="" type="int" variable="$id">
+          <tag line="43" name="param" description="" type="int" variable="$id">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
-        <argument line="46">
+        <argument line="47">
           <name>$id</name>
           <default></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="57" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="62" package="Default">
         <name>getTable4</name>
         <full_name>getTable4</full_name>
-        <docblock line="53">
+        <docblock line="58">
           <description>Return Table4 object</description>
           <long-description></long-description>
-          <tag line="53" name="return" description="" type="\forest\attribute\table\Table4">
+          <tag line="58" name="return" description="" type="\forest\attribute\table\Table4">
             <type by_reference="false">\forest\attribute\table\Table4</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="64" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="69" package="Default">
         <name>getTable5</name>
         <full_name>getTable5</full_name>
-        <docblock line="60">
+        <docblock line="65">
           <description>Return Table5 object</description>
           <long-description></long-description>
-          <tag line="60" name="return" description="" type="\forest\attribute\table\Table5">
+          <tag line="65" name="return" description="" type="\forest\attribute\table\Table5">
             <type by_reference="false">\forest\attribute\table\Table5</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="76" package="Default">
+        <name>getTable2Coll</name>
+        <full_name>getTable2Coll</full_name>
+        <docblock line="72">
+          <description>Returns a Table2Coll</description>
+          <long-description></long-description>
+          <tag line="72" name="return" description="" type="\forest\attribute\table\Table2Coll">
+            <type by_reference="false">\forest\attribute\table\Table2Coll</type>
           </tag>
         </docblock>
       </method>
@@ -9333,7 +9485,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/autoloader.php" hash="96dea328b57c6fc57a8ebfd62a304ddd" package="Default">
+  <file path="forest/autoloader.php" hash="39a2df87ae226e8a49ef0f6962f224cc" package="Default">
     <docblock line="2">
       <description>Autoloading forest files</description>
       <long-description>&lt;p&gt;Autoloading forest files&lt;/p&gt;</long-description>
@@ -9343,7 +9495,7 @@
     <include line="12" type="Require" package="Default">
       <name/>
     </include>
-    <include line="113" type="Require" package="Default">
+    <include line="115" type="Require" package="Default">
       <name/>
     </include>
   </file>

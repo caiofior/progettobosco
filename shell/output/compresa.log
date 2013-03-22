@@ -1,0 +1,42 @@
+COPY error on lines 
+COPY error: syntax error at or near "'compresa'"
+LINE 1: COPY 'compresa' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on lines 
+COPY error: syntax error at or near "'compresa'"
+LINE 1: COPY 'compresa' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on lines 
+COPY error: syntax error at or near "'compresa'"
+LINE 1: COPY 'compresa' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on lines 
+COPY error: syntax error at or near "'compresa'"
+LINE 1: COPY 'compresa' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on lines 
+COPY error: syntax error at or near "'compresa'"
+LINE 1: COPY 'compresa' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on lines 
+COPY error: syntax error at or near "'compresa'"
+LINE 1: COPY 'compresa' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on lines 
+COPY error: syntax error at or near "'compresa'"
+LINE 1: COPY 'compresa' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+

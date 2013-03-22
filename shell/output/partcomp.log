@@ -1,0 +1,378 @@
+COPY error on liness 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on liness 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83
+COPY error: syntax error at or near "'partcomp'"
+LINE 1: COPY 'partcomp' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+

@@ -1,0 +1,7 @@
+"03111","A","Fustaia di produzione",,,,,,,,2,"03A"
+"03111","B","Fustaia di produzione",,,,,,,,3,"03B"
+"03111","H","Fustaia di protezione",,,,,,,,4,"03H"
+"03111","IP","Inclto produttivo",,,,,,,,7,"03IP"
+"03111","IS","Incolto sterile",,,,,,,,8,"03IS"
+"03111","L","Ceduo di protezione",,,,,,,,5,"03L"
+"03111","P","Pascolo",,,,,,,,6,"03P"

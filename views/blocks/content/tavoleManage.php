@@ -117,7 +117,7 @@
                                         </fieldset>
                                         <?php endif; ?>
                                         <?php $table4 = $this->table->getTable4();
-                                        if( !$table4->isEmpty() || true) : ?>
+                                        if( !$table4->isEmpty() ) : ?>
                                         <fieldset id="funzioni_assortimenti_selector_container">
                                             <legend>Inserire il testo delle funzioni relative a ciascun assortimento:</legend>
                                             <?php
@@ -151,6 +151,35 @@
                                             endforeach; ?>
                                         </fieldset>
                                         <?php endif; ?>
+                                            <fieldset>
+                                                <table cellpadding="0" cellspacing="0" border="0" class="display" data-codice="<?php echo $this->table->getData('codice');?>" id="table2" >
+                                                    <thead>
+                                                        <tr>
+                                                            <th >Id</th>
+                                                            <th >Tariffa</th>
+                                                            <th >Diametro</th>
+                                                            <th >Altezza</th>
+                                                            <th >Volume</th>
+                                                            <th> Azioni</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td colspan="24" class="dataTables_empty">Caricamento dei dati</td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th >Id</th>
+                                                            <th >Tariffa</th>
+                                                            <th >Diametro</th>
+                                                            <th >Altezza</th>
+                                                            <th >Volume</th>
+                                                            <th> Azioni</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </fieldset>
                                         </form>	
 	
 				<!-- /post -->	

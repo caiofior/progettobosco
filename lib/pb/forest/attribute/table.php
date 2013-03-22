@@ -35,6 +35,7 @@ class Table  extends \Content {
     public function __construct() {
         parent::__construct('diz_tavole');
         $this->tables=array(
+            'table2coll' => null,
             'table4' =>new \forest\attribute\table\Table4(),
             'table5' =>new \forest\attribute\table\Table5()
         );
@@ -48,6 +49,10 @@ class Table  extends \Content {
         if ($this->data['biomassa'] == 't') {
             $this->tables['table4']->loadFromId($this->data['codice']);
             $this->tables['table5']->loadFromId($this->data['codice']);
+        }
+        if ($this->data['forma'] == 1) {
+            $this->tables['table2coll'] = new \forest\attribute\table\Table2Coll();
+            $this->tables['table2coll']->setTable($this);
         }
     }
     /**
@@ -63,5 +68,12 @@ class Table  extends \Content {
      */
     public function getTable5() {
         return $this->tables['table5'];
+    }
+    /**
+     * Returns a Table2Coll
+     * @return \forest\attribute\table\Table2Coll
+     */
+    public function getTable2Coll() {
+        return $this->tables['table2coll'];
     }
 }

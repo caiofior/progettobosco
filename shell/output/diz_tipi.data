@@ -1,0 +1,1024 @@
+01,AB10A,abetina eutrofica - var. con picea,0,1025
+01,AB10B,abetina eutrofica - var con latifoglie miste,0,1026
+01,AB10C,abetina eutrofica - var. con faggio,0,1027
+01,AB10X,abetina eutrofica,0,1028
+01,AB13X,abetina eutrofica - st. asciutto con sorbo montano,0,1029
+01,AB20A,abetina mesotrofica mesalpica - var. con larice,0,1030
+01,AB20B,abetina mesotrofica mesalpica - var. con faggio,0,1031
+01,AB20C,abetina mesotrofica mesalpica - var. con picea,0,1032
+01,AB20D,abetina mesotrofica mesalpica - var. con latifoglie miste,0,1033
+01,AB20X,abetina mesotrofica mesalpica,0,1034
+01,AB30A,abetina oligotrofica mesalpica - var. con larice,0,1035
+01,AB30B,abetina oligotrofica mesalpica - var. con picea,0,1036
+01,AB30C,abetina oligotrofica mesalpica - var. con faggio,0,1037
+01,AB30D,abetina oligotrofica mesalpica - var. con latifoglie miste,0,1038
+01,AB30X,abetina oligotrofica mesalpica,0,1039
+01,AB40A,abetina altimontana a megaforbie - var. con picea,0,1040
+01,AB40B,abetina altimontana a megaforbie - var. con larice,0,1041
+01,AB40C,abetina altimontana a megaforbie - var. con latifoglie miste,0,1042
+01,AB40X,abetina altimontana a megaforbie,0,1043
+01,AB51A,abetina endalpica - st. inferiore - var. con picea,0,1044
+01,AB51B,abetina endalpica - st. inferiore - var. con larice,0,1045
+01,AB51X,abetina endalpica - st. inferiore,0,1046
+01,AB52A,abetina endalpica - st. superiore - var. con pino cembro,0,1047
+01,AB52B,abetina endalpica - st. superiore - var. con larice,0,1048
+01,AB52X,abetina endalpica - st. superiore,0,1049
+01,AF40A,acero-tiglio-frassineto di forra - var. immatura con ontano bianco,0,1050
+01,AF40B,acero-tiglio-frassineto di forra - var. con olmo montano,0,1051
+01,AF40C,acero-tiglio-frassineto di forra - var. ad acero di monte,0,1052
+01,AF40D,acero-tiglio-frassineto di forra - var. a tiglio cordato,0,1053
+01,AF40X,acero-tiglio-frassineto di forra,0,1054
+01,AF41X,acero-tiglio-frassineto di forra - st. pedemontano con ontano nero e/o farnia,0,1055
+01,AF42X,acero-tiglio-frassineto di forra - st. dei canaloni di valanga con maggiociondolo alpino,0,1056
+01,AF50A,acero-tiglio-frassineto d'invasione - var. a tiglio cordato,0,1057
+01,AF50B,acero-tiglio-frassineto d'invasione - var. a frassino maggiore,0,1058
+01,AF50C,acero-tiglio-frassineto d'invasione - var. ad acero di monte,0,1059
+01,AF50D,acero-tiglio-frassineto d'invasione - var. con faggio,0,1060
+01,AF50E,acero-tiglio-frassineto d'invasione - var. con castagno,0,1061
+01,AF50X,acero-tiglio-frassineto d'invasione,0,1062
+01,AF60X,tilieto di tiglio a grandi foglie,0,1063
+01,AF61X,tilieto di tiglio a grandi foglie - st. ad acer opulifolium del piemonte meridionale,0,1064
+01,AN11A,alneto di ontano nero - st. umido - var. con ontano bianco,0,1065
+01,AN11B,alneto di ontano nero - st. umido - var. con frassino maggiore,0,1066
+01,AN11X,alneto di ontano nero - st. umido,0,1067
+01,AN12A,alneto di ontano nero - st. paludoso - var. con frassino maggiore,0,1068
+01,AN12X,alneto di ontano nero - st. paludoso,0,1069
+01,AN21A,alneto di ontano bianco - st. di versante - var. con acero di monte e frassino maggiore,0,1070
+01,AN21X,alneto di ontano bianco - st. di versante,0,1071
+01,AN22A,alneto di ontano bianco - st. ripario - var. con acero di monte e frassino maggiore,0,1072
+01,AN22X,alneto di ontano bianco - st. ripario,0,1073
+01,AS10A,arbusteto montano xerofilo di prunus sp.pl/berberis vulgaris - var. termofila con p. mahaleb e colutea arborescens,0,1074
+01,AS10B,arbusteto montano xerofilo di prunus sp.pl/berberis vulgaris - var. con orniello,0,1075
+01,AS10C,arbusteto montano xerofilo di prunus sp.pl/berberis vulgaris - var. con latifoglie miste,0,1076
+01,AS10D,arbusteto montano xerofilo di prunus sp.pl/berberis vulgaris - var. con conifere,0,1077
+01,AS10X,arbusteto montano xerofilo di prunus sp.pl/berberis vulgaris,0,1078
+01,AS20X,arbusteto rupestre di amelanchier ovalis,0,1079
+01,AS22X,arbusteto rupestre di amelanchier ovalis - st. con juniper phoenicea,0,1080
+01,AS50X,arbusteto montano xerofilo di genista cinerea,0,1081
+01,AS60X,arbusteto montano di buxus sempervirens,0,1082
+01,AS70A,arbusteto mesoxerofilo di prunus spinosa e cornus sanguinea - var. arborata,0,1083
+01,AS70X,arbusteto mesoxerofilo di prunus spinosa e cornus sanguinea,0,1084
+01,AS90A,arbusteto di spartium junceum - var. arborata,0,1085
+01,AS90B,arbusteto di spartium junceum - var. xero-termofila di calanco con scotano e terebinto,0,1086
+01,AS90X,arbusteto di spartium junceum,0,1087
+01,BE31B,boscaglie d?invasione - st. planiziale e collinare - var. a sclerofille esotiche,0,1088
+01,BS10X,betuleto planiziale di brughiera,0,1089
+01,BS20A,betuleto montano - var. con larice,0,1090
+01,BS20B,betuleto montano - var. con rovere,0,1091
+01,BS20X,betuleto montano,0,1092
+01,BS31A,boscaglie d?invasione - st. planiziale e collinare - var. ad olmo e/o acero campestre,0,1093
+01,BS31C,boscaglie d?invasione - st. planiziale e collinare - var. ad ailanto,0,1094
+01,BS31D,boscaglie d?invasione - st. planiziale e collinare - var. a ciliegio,0,1095
+01,BS31X,boscaglie d?invasione - st. planiziale e collinare,0,1096
+01,BS32A,boscaglie d?invasione - st. montano - var. a sorbo degli uccellatori,0,1097
+01,BS32B,boscaglie d?invasione - st. montano - var. a sorbo montano,0,1098
+01,BS32C,boscaglie d?invasione - st. montano - var. a maggiociondoli,0,1099
+01,BS32D,boscaglie d?invasione - st. montano - var. a saliconi,0,1100
+01,BS32E,boscaglie d?invasione - st. montano - var. con picea,0,1101
+01,BS32F,boscaglie d?invasione - st. montano - var. a ciliegio,0,1102
+01,BS32G,boscaglie d?invasione - st. montano - var. con larice,0,1103
+01,BS32X,boscaglie d?invasione - st. montano,0,1104
+01,BS40A,corileto d'invasione - var. con latifoglie varie,0,1105
+01,BS40X,corileto d'invasione,0,1106
+01,BS50X,pioppeto d'invasione a pioppo tremolo,0,1107
+01,BS70X,saliceto paludoso di salix cinerea,0,1108
+01,BS80A,boscaglia rupestre pioniera - var. a bagolaro,0,1109
+01,BS80B,boscaglia rupestre pioniera - var. a betulla,0,1110
+01,BS80C,boscaglia rupestre pioniera - var. a nocciolo,0,1111
+01,BS80X,boscaglia rupestre pioniera,0,1112
+01,CA10X,castagneto da frutto,0,1113
+01,CA20A,castagneto mesoneutrofilo a salvia glutinosa delle alpi  - var. con robinia,0,1114
+01,CA20B,castagneto mesoneutrofilo a salvia glutinosa delle alpi  - var. con latifoglie miste,0,1115
+01,CA20C,castagneto mesoneutrofilo a salvia glutinosa delle alpi  - var. con faggio,0,1116
+01,CA20D,castagneto mesoneutrofilo a salvia glutinosa delle alpi  - var. con rovere e/o roverella,0,1117
+01,CA20H,castagneto mesoneutrofilo a salvia glutinosa delle alpi  - var. con larice e/o pino silvestre,0,1118
+01,CA20I,castagneto mesoneutrofilo a salvia glutinosa delle alpi  - var. con abete bianco e/o picea,0,1119
+01,CA20M,castagneto mesoneutrofilo a salvia glutinosa delle alpi  - var. con tiglio cordato,0,1120
+01,CA20X,castagneto mesoneutrofilo a salvia glutinosa delle alpi,0,1121
+01,CA30A,castagneto acidofilo a teucrium scorodonia delle alpi - var. con betulla,0,1122
+01,CA30B,castagneto acidofilo a teucrium scorodonia delle alpi - var. con pino silvestre,0,1123
+01,CA30C,castagneto acidofilo a teucrium scorodonia delle alpi - var. con rovere e /o roverella,0,1124
+01,CA30D,castagneto acidofilo a teucrium scorodonia delle alpi - var. con pino strobo naturalizzato,0,1125
+01,CA30E,castagneto acidofilo a teucrium scorodonia delle alpi - var. con larice,0,1126
+01,CA30F,castagneto acidofilo a teucrium scorodonia delle alpi - var. con faggio,0,1127
+01,CA30G,castagneto acidofilo a teucrium scorodonia delle alpi - var. con tiglio cordato,0,1128
+01,CA30H,castagneto acidofilo a teucrium scorodonia delle alpi - var. con picea,0,1129
+01,CA30X,castagneto acidofilo a teucrium scorodonia delle alpi,0,1130
+01,CA40A,castagneto acidofilo a physospermun cornubiense dell?appennino e dei rilievi collinari interni - var. con rovere,0,1131
+01,CA40C,castagneto acidofilo a physospermun cornubiense dell?appennino e dei rilievi collinari interni - var. con sorbo montano,0,1132
+01,CA40D,castagneto acidofilo a physospermun cornubiense dell?appennino e dei rilievi collinari interni - var. con faggio,0,1133
+01,CA40E,castagneto acidofilo a physospermun cornubiense dell?appennino e dei rilievi collinari interni - var. con robinia,0,1134
+01,CA40G,castagneto acidofilo a physospermun cornubiense dell?appennino e dei rilievi collinari interni - var. con pino silvestre,0,1135
+01,CA40H,castagneto acidofilo a physospermun cornubiense dell?appennino e dei rilievi collinari interni - var. con pino marittimo,0,1136
+01,CA40X,castagneto acidofilo a physospermun cornubiense dell?appennino e dei rilievi collinari interni,0,1137
+01,CA50A,castagneto neutrofilo dell?appennino e dei rilievi collinari interni - var. con pino silvestre,0,1138
+01,CA50B,castagneto neutrofilo dell?appennino e dei rilievi collinari interni - var. con carpino nero,0,1139
+01,CA50C,castagneto neutrofilo dell?appennino e dei rilievi collinari interni - var. con querce,0,1140
+01,CA50D,castagneto neutrofilo dell?appennino e dei rilievi collinari interni - var. con latifoglie miste,0,1141
+01,CA50E,castagneto neutrofilo dell?appennino e dei rilievi collinari interni - var. con pino marittimo,0,1142
+01,CA50X,castagneto neutrofilo dell?appennino e dei rilievi collinari interni,0,1143
+01,CA60X,castagneto termofilo ad erica arborea,0,1144
+01,CE10A,cerreta mesofila - var. con castagno,0,1145
+01,CE10B,cerreta mesofila - var. con latifoglie miste,0,1146
+01,CE10X,cerreta mesofila,0,1147
+01,CE20A,cerreta mesoxerofila - var. con carpino nero,0,1148
+01,CE20B,cerreta mesoxerofila - var. con roverella,0,1149
+01,CE20C,cerreta mesoxerofila - var. con castagno,0,1150
+01,CE20D,cerreta mesoxerofila - var. con orniello,0,1151
+01,CE20F,cerreta mesoxerofila - var. con pino silvestre,0,1152
+01,CE20X,cerreta mesoxerofila,0,1153
+01,CE21X,cerreta mesoxerofila - st. delle alpi,0,1154
+01,CE30A,cerreta acidofila - var. con betulla,0,1155
+01,CE30B,cerreta acidofila - var. con castagno,0,1156
+01,CE30C,cerreta acidofila - var. con rovere,0,1157
+01,CE30X,cerreta acidofila,0,1158
+01,CE32A,cerreta acidofila - st. mesoxerofilo a luzula pedemontana del piemonte meridionale - var. con castagno,0,1159
+01,CE32X,cerreta acidofila - st. mesoxerofilo a luzula pedemontana del piemonte meridionale,0,1160
+01,CE40A,cerreta mista appenninica a sesleria cylindrica - var. con carpino nero,0,1161
+01,CE40B,cerreta mista appenninica a sesleria cylindrica - var. con orniello,0,1162
+01,CE40C,cerreta mista appenninica a sesleria cylindrica - var. con castagno,0,1163
+01,CE40X,cerreta mista appenninica a sesleria cylindrica,0,1164
+01,FA10A,faggeta appenninica a physospermum cornubiense - var. con rovere,0,1165
+01,FA10B,faggeta appenninica a physospermum cornubiense - var. con cerro,0,1166
+01,FA10C,faggeta appenninica a physospermum cornubiense - var. con castagno,0,1167
+01,FA10X,faggeta appenninica a physospermum cornubiense,0,1168
+01,FA21A,faggeta eutrofica appenninica - st. superiore ad adenostyles australis - var. con maggiociondoli,0,1169
+01,FA21X,faggeta eutrofica appenninica - st. superiore ad adenostyles australis,0,1170
+01,FA22A,faggeta eutrofica appenninica  - st. inferiore con acero opalo - var. con carpino nero,0,1171
+01,FA22B,faggeta eutrofica appenninica  - st. inferiore con acero opalo - var. con latifoglie miste,0,1172
+01,FA22X,faggeta eutrofica appenninica  - st. inferiore con acero opalo,0,1173
+01,FA30A,faggeta mesoxerofila - var. con roverella,0,1174
+01,FA30B,faggeta mesoxerofila - var. con pino silvestre,0,1175
+01,FA30C,faggeta mesoxerofila - var. con acero opulifolium,0,1176
+01,FA30X,faggeta mesoxerofila,0,1177
+01,FA40A,faggeta eutrofica delle alpi - var. con abete bianco,0,1178
+01,FA40C,faggeta eutrofica delle alpi - var. con latifoglie miste,0,1179
+01,FA40X,faggeta eutrofica delle alpi,0,1180
+01,FA41A,faggeta eutrofica delle alpi - var. con latifoglie miste,0,1181
+01,FA41B,faggeta eutrofica delle alpi - var. con bosso,0,1182
+01,FA41X,faggeta eutrofica delle alpi - st. inferiore delle alpi cuneesi ad acer opulifolium,0,1183
+01,FA50A,faggeta mesotrofica - var. con abete bianco,0,1184
+01,FA50B,faggeta mesotrofica - var. con latifoglie mesofile,0,1185
+01,FA50C,faggeta mesotrofica - var. con larice,0,1186
+01,FA50D,faggeta mesotrofica - var. con picea,0,1187
+01,FA50X,faggeta mesotrofica,0,1188
+01,FA60A,faggeta oligotrofica - var. con abete bianco,0,1189
+01,FA60B,faggeta oligotrofica - var. con larice,0,1190
+01,FA60C,faggeta oligotrofica - var. con castagno,0,1191
+01,FA60D,faggeta oligotrofica - var. con pino silvestre,0,1192
+01,FA60E,faggeta oligotrofica - var. con picea,0,1193
+01,FA60F,faggeta oligotrofica - var. con latifoglie miste su suoli superficiali,0,1194
+01,FA60G,faggeta oligotrofica - var. con rovere,0,1195
+01,FA60H,faggeta oligotrofica - var. con betulla,0,1196
+01,FA60X,faggeta oligotrofica,0,1197
+01,FA70A,faggeta altimontana a megaforbie - var. con acero di monte,0,1198
+01,FA70X,faggeta altimontana a megaforbie,0,1199
+01,FA81X,faggeta basifila pioniera st. a bosso,0,1200
+01,FA82X,faggeta basifila pioniera st. ad astragalus sempervirens,0,1201
+01,LC10X,lariceto pascolivo,0,1202
+01,LC20A,lariceto montano - var. con latifoglie miste,0,1203
+01,LC20B,lariceto montano - var. con faggio e/o abete bianco,0,1204
+01,LC20C,lariceto montano - var. con picea,0,1205
+01,LC20E,lariceto montano - var. con pino silvestre,0,1206
+01,LC20X,lariceto montano,0,1207
+01,LC31A,lariceto mesoxerofilo subalpino - st. basifilo - var. con pino silvestre,0,1208
+01,LC31B,lariceto mesoxerofilo subalpino - st. basifilo - var. con pino uncinato,0,1209
+01,LC31X,lariceto mesoxerofilo subalpino - st. basifilo,0,1210
+01,LC32A,lariceto mesoxerofilo subalpino - st. acidofilo - var. con pino silvestre,0,1211
+01,LC32B,lariceto mesoxerofilo subalpino - st. acidofilo - var. con pecea,0,1212
+01,LC32C,lariceto mesoxerofilo subalpino - st. acidofilo - var.con cembro,0,1213
+01,LC32X,lariceto mesoxerofilo subalpino - st. acidofilo,0,1214
+01,LC33A,lariceto mesoxerofilo subalpino - st. steppico a ginepro sabino - var. con picea,0,1215
+01,LC33X,lariceto mesoxerofilo subalpino - st. steppico a ginepro sabino,0,1216
+01,LC40A,lariceto a megaforbie - var. con abete bianco,0,1217
+01,LC40X,lariceto a megaforbie,0,1218
+01,LC41X,lariceto a megaforbie - st. ad innevamento prolungato con ontano verde,0,1219
+01,LC51A,larici-cembreto su rodoreto-vaccinieto - st. inferiore - var. con abete bianco,0,1220
+01,LC51B,larici-cembreto su rodoreto-vaccinieto - st. inferiore - var. con picea,0,1221
+01,LC51E,larici-cembreto su rodoreto-vaccinieto - st. inferiore - var. a larice,0,1222
+01,LC51X,larici-cembreto su rodoreto-vaccinieto - st. inferiore,0,1223
+01,LC52A,larici-cembreto su rodoreto-vaccinieto - st. superiore - var. con pino uncinato,0,1224
+01,LC52B,larici-cembreto su rodoreto-vaccinieto - st. superiore - var. a larice,0,1225
+01,LC52C,larici-cembreto su rodoreto-vaccinieto - st. superiore - var. a cembro,0,1226
+01,LC52X,larici-cembreto su rodoreto-vaccinieto - st. superiore,0,1227
+01,LC60A,lariceto dei campi di massi - var. con picea,0,1228
+01,LC60X,lariceto dei campi di massi,0,1229
+01,LC70A,cembreta xero-acidofila - var. con larice e/o pino uncinato,0,1230
+01,LC70X,cembreta xero-acidofila,0,1231
+01,LC80A,lariceto di greto - var. con betulla,0,1232
+01,LC80B,lariceto di greto - var. con pino silvestre,0,1233
+01,LC80X,lariceto di greto,0,1234
+01,OS10A,orno-ostrieto dell?appennino calcareo-marnoso a knautia drymeia - var. con querce,0,1235
+01,OS10B,orno-ostrieto dell?appennino calcareo-marnoso a knautia drymeia - var. con faggio,0,1236
+01,OS10C,orno-ostrieto dell?appennino calcareo-marnoso a knautia drymeia - var. con acero opalo,0,1237
+01,OS10D,orno-ostrieto dell?appennino calcareo-marnoso a knautia drymeia - var. con castagno,0,1238
+01,OS10F,orno-ostrieto dell?appennino calcareo-marnoso a knautia drymeia - var. d?invasione con latifoglie miste,0,1239
+01,OS10X,orno-ostrieto dell?appennino calcareo-marnoso a knautia drymeia,0,1240
+01,OS11X,orno-ostrieto dell?appennino calcareo-marnoso a knautia drymeia - st. pioniero,0,1241
+01,OS20B,orno-ostrieto delle alpi liguri e marittime - var. con castagno,0,1242
+01,OS20D,orno-ostrieto delle alpi liguri e marittime - var. con pino silvestre,0,1243
+01,OS20E,orno-ostrieto delle alpi liguri e marittime - var. con acero opalo,0,1244
+01,OS20F,orno-ostrieto delle alpi liguri e marittime - var. con faggio,0,1245
+01,OS20G,orno-ostrieto delle alpi liguri e marittime - var. d?invasione ad orniello,0,1246
+01,OS20X,orno-ostrieto delle alpi liguri e marittime,0,1247
+01,OS23X,orno-ostrieto delle alpi liguri e marittime - st. termofilo con leccio,0,1248
+01,OS30A,orno-ostrieto dei rilievi collinari marnoso-arenacei - var. con robinia,0,1249
+01,OS30B,orno-ostrieto dei rilievi collinari marnoso-arenacei - var. con castagno,0,1250
+01,OS30C,orno-ostrieto dei rilievi collinari marnoso-arenacei - var. con querce,0,1251
+01,OS30D,orno-ostrieto dei rilievi collinari marnoso-arenacei - var. con pino silvestre,0,1252
+01,OS30F,orno-ostrieto dei rilievi collinari marnoso-arenacei - var. con faggio e/o carpino bianco,0,1253
+01,OS30G,orno-ostrieto dei rilievi collinari marnoso-arenacei - var. d?invasione ad orniello,0,1254
+01,OS30X,orno-ostrieto dei rilievi collinari marnoso-arenacei,0,1255
+01,OV31X,alneto di ontano verde - st. primario,0,1256
+01,OV32A,alneto di ontano verde - st. d'invasione - var. con larice,0,1257
+01,OV32X,alneto di ontano verde - st. d'invasione,0,1258
+01,PE10A,pecceta montana mesalpica - var. con larice,0,1259
+01,PE10B,pecceta montana mesalpica - var. con pino silvestre,0,1260
+01,PE10C,pecceta montana mesalpica - var. con latifoglie miste,0,1261
+01,PE10D,pecceta montana mesalpica - var. con abete bianco e/o faggio,0,1262
+01,PE10X,pecceta montana mesalpica,0,1263
+01,PE11X,pecceta montana mesalpica - st. di forra,0,1264
+01,PE12A,pecceta montana mesalpica - st. altimontano delle alpi marittime - var. con abete bianco,0,1265
+01,PE12X,pecceta montana mesalpica - st. altimontano delle alpi marittime,0,1266
+01,PE30B,pecceta montana endalpica - var. con latifoglie miste,0,1267
+01,PE30C,pecceta montana endalpica - var. con abete bianco,0,1268
+01,PE30D,pecceta montana endalpica - var. con larice,0,1269
+01,PE30X,pecceta montana endalpica,0,1270
+01,PE32A,pecceta montana endalpica - st. asciutto a viburnum lantana - var. con pino silvestre,0,1271
+01,PE32X,pecceta montana endalpica - st. asciutto a viburnum lantana,0,1272
+01,PE33A,pecceta montana endalpica - st. acidofilo a mirtilli - var. con pino silvestre,0,1273
+01,PE33X,pecceta montana endalpica - st. acidofilo a mirtilli,0,1274
+01,PE40A,pecceta subalpina - var. con larice,0,1275
+01,PE40B,pecceta subalpina - var. con cembro,0,1276
+01,PE40X,pecceta subalpina,0,1277
+01,PE50A,pecceta mesoxerofila - var. con larice,0,1278
+01,PE50B,pecceta mesoxerofila - var. con pino silvestre,0,1279
+01,PE50X,pecceta mesoxerofila,0,1280
+01,PE70A,pecceta a megaforbie - var. con larice,0,1281
+01,PE70X,pecceta a megaforbie,0,1282
+01,PM11X,pineta di pino marittimo - st. rupicolo,0,1283
+01,PM12A,pineta di pino marittimo - st. d'invasione - var. con querce,0,1284
+01,PM12B,pineta di pino marittimo - st. d'invasione - var. con pino silvestre,0,1285
+01,PM12C,pineta di pino marittimo - st. d'invasione - var. con latifoglie miste,0,1286
+01,PM12X,pineta di pino marittimo - st. d'invasione,0,1287
+01,PN11A,pineta di pino uncinato eretto  - st acidofilo a rhododendron ferrugineum - var. con larice,0,1288
+01,PN11B,pineta di pino uncinato eretto  - st acidofilo a rhododendron ferrugineum - var. con pino silvestre,0,1289
+01,PN11C,pineta di pino uncinato eretto  - st acidofilo a rhododendron ferrugineum - var. con picea,0,1290
+01,PN11X,pineta di pino uncinato eretto  - st acidofilo a rhododendron ferrugineum,0,1291
+01,PN12X,pineta di pino uncinato eretto  - st. basifilo superiore a globularia cordifolia,0,1292
+01,PN13A,pineta di pino uncinato eretto  - st. basifilo inferiore a cytisus sessifolius - var con pino silvestre,0,1293
+01,PN13X,pineta di pino uncinato eretto  - st. basifilo inferiore a cytisus sessifolius,0,1294
+01,PN21X,pineta di pino montano prostrato - st. basifilo,0,1295
+01,PN23X,pineta di pino montano prostrato - st. acidofilo,0,1296
+01,PS10A,pineta di brughiera su morene e terrazzi fluvio-glaciali - var. con p. strobo e/o p. rigida naturalizzati,0,1297
+01,PS10X,pineta di brughiera su morene e terrazzi fluvio-glaciali,0,1298
+01,PS20A,pineta endalpica basifila di pino silvestre - var. con roverella,0,1299
+01,PS20C,pineta endalpica basifila di pino silvestre - var. con picea,0,1300
+01,PS20X,pineta endalpica basifila di pino silvestre,0,1301
+01,PS30A,pineta endalpica acidofila di pino silvestre - var. con larice,0,1302
+01,PS30B,pineta endalpica acidofila di pino silvestre - var. con pino uncinato,0,1303
+01,PS30X,pineta endalpica acidofila di pino silvestre,0,1304
+01,PS31A,pineta endalpica acidofila di pino silvestre - st. mesoxerofilo - var con picea,0,1305
+01,PS31X,pineta endalpica acidofila di pino silvestre - st. mesoxerofilo,0,1306
+01,PS40A,pineta endalpica di greto di pino silvestre - var. con ontano bianco,0,1307
+01,PS40X,pineta endalpica di greto di pino silvestre,0,1308
+01,PS50A,pineta endalpica mesoxerofila di pino silvestre - var. con larice e/o picea,0,1309
+01,PS50B,pineta endalpica mesoxerofila di pino silvestre - var. con castagno e/o roverella,0,1310
+01,PS50C,pineta endalpica mesoxerofila di pino silvestre - var. con latifoglie miste,0,1311
+01,PS50X,pineta endalpica mesoxerofila di pino silvestre,0,1312
+01,PS60A,pineta mesalpica acidofila di pino silvestre - var. con faggio e/ o abete bianco,0,1313
+01,PS60B,pineta mesalpica acidofila di pino silvestre - var. con rovere e/ o roverella,0,1314
+01,PS60C,pineta mesalpica acidofila di pino silvestre - var. con castagno,0,1315
+01,PS60D,pineta mesalpica acidofila di pino silvestre - var. con larice,0,1316
+01,PS60E,pineta mesalpica acidofila di pino silvestre - var. con pino uncinato,0,1317
+01,PS60F,pineta mesalpica acidofila di pino silvestre - var. con latifoglie miste,0,1318
+01,PS60X,pineta mesalpica acidofila di pino silvestre,0,1319
+01,PS70B,pineta mesalpica basifila di pino silvestre - var. con lat. miste,0,1320
+01,PS70X,pineta mesalpica basifila di pino silvestre,0,1321
+01,PS71X,pineta mesalpica basifila di pino silvestre - st. xerofilo ad achnaterum calamagrostis,0,1322
+01,PS90A,pineta di pineta silvestre dei rilievi collinari interni - var. con querce,0,1323
+01,PS90B,pineta di pineta silvestre dei rilievi collinari interni - var. con orniello,0,1324
+01,PS90C,pineta di pineta silvestre dei rilievi collinari interni - var. con carpino nero,0,1325
+01,PS90D,pineta di pineta silvestre dei rilievi collinari interni - var. con latifoglie miste,0,1326
+01,PS90E,pineta di pineta silvestre dei rilievi collinari interni - var. con cerro,0,1327
+01,PS90X,pineta di pineta silvestre dei rilievi collinari interni,0,1328
+01,PS91X,pineta di pineta silvestre dei rilievi collinari interni - st. acidofilo ad erica arborea,0,1329
+01,QC10A,querco-carpineto della bassa pianura - var. con nocciolo,0,1330
+01,QC10B,querco-carpineto della bassa pianura - var. con/a latifoglie mesofile,0,1331
+01,QC10C,querco-carpineto della bassa pianura - var. con quercia rossa,0,1332
+01,QC10D,querco-carpineto della bassa pianura - var. a carpino bianco,0,1333
+01,QC10F,querco-carpineto della bassa pianura - var. con pioppi,0,1334
+01,QC10H,querco-carpineto della bassa pianura - var. con robinia,0,1335
+01,QC10X,querco-carpineto della bassa pianura,0,1336
+01,QC12X,querco-carpineto della bassa pianura - st. golenale,0,1337
+01,QC20A,querco-carpineto d'alta pianura ad elevate precipitazioni - var. con roverella e sorbo montano,0,1338
+01,QC20B,querco-carpineto d'alta pianura ad elevate precipitazioni - var. con rovere,0,1339
+01,QC20C,querco-carpineto d'alta pianura ad elevate precipitazioni - var. con cerro e orniello,0,1340
+01,QC20D,querco-carpineto d'alta pianura ad elevate precipitazioni - var. d'invasione a frassino maggiore,0,1341
+01,QC20E,querco-carpineto d'alta pianura ad elevate precipitazioni - var. d'invasione pura a farnia,0,1342
+01,QC20F,querco-carpineto d'alta pianura ad elevate precipitazioni - var. con nocciolo,0,1343
+01,QC20H,querco-carpineto d'alta pianura ad elevate precipitazioni - var. con robinia,0,1344
+01,QC20I,querco-carpineto d'alta pianura ad elevate precipitazioni - var. con castagno,0,1345
+01,QC20X,querco-carpineto d'alta pianura ad elevate precipitazioni,0,1346
+01,QC22A,querco-carpineto d'alta pianura ad elevate precipitazioni - st. idromorfo a molinia arundinacea - var. con pioppo tremolo e/o,0,1347
+01,QC22B,querco-carpineto d'alta pianura ad elevate precipitazioni - st. idromorfo a molinia arundinacea - var. con/a pino strobo natu,0,1348
+01,QC22X,querco-carpineto d'alta pianura ad elevate precipitazioni - st. idromorfo a molinia arundinacea,0,1349
+01,QC30A,querco-carpineto d'alta pianura a basse precipitazioni - var. con cerro,0,1350
+01,QC30B,querco-carpineto d'alta pianura a basse precipitazioni - var. con robinia,0,1351
+01,QC30C,querco-carpineto d'alta pianura a basse precipitazioni - var. con castagno,0,1352
+01,QC30X,querco-carpineto d'alta pianura a basse precipitazioni,0,1353
+01,QC40A,querceto misto d'impluvio dei rilievi collinari interni - var. con robinia,0,1354
+01,QC40B,querceto misto d'impluvio dei rilievi collinari interni - var. con castagno,0,1355
+01,QC40C,querceto misto d'impluvio dei rilievi collinari interni - var. a carpino bianco,0,1356
+01,QC40X,querceto misto d'impluvio dei rilievi collinari interni,0,1357
+01,QC41A,querceto misto d'impluvio dei rilievi collinari interni st. su marne ed arenarie delle langhe - var. con robinia,0,1358
+01,QC41B,querceto misto d'impluvio dei rilievi collinari interni st. su marne ed arenarie delle langhe - var. con castagno,0,1359
+01,QC41C,querceto misto d'impluvio dei rilievi collinari interni st. su marne ed arenarie delle langhe - var. con latifoglie miste,0,1360
+01,QC41X,querceto misto d'impluvio dei rilievi collinari interni st. su marne ed arenarie delle langhe,0,1361
+01,QC42A,querceto misto d'impluvio dei rilievi collinari interni st. su sabbie astiane - var. con castagno,0,1362
+01,QC42B,querceto misto d'impluvio dei rilievi collinari interni st. su sabbie astiane - var. con robinia,0,1363
+01,QC42C,querceto misto d'impluvio dei rilievi collinari interni st. su sabbie astiane - var. con latifoglie miste,0,1364
+01,QC42X,querceto misto d'impluvio dei rilievi collinari interni st. su sabbie astiane,0,1365
+01,QC60A,querco-carpineto mesoxerofilo del monferrato e/o colline del po - var. con castagno,0,1366
+01,QC60B,querco-carpineto mesoxerofilo del monferrato e/o colline del po - var. con robinia,0,1367
+01,QC60C,querco-carpineto mesoxerofilo del monferrato e/o colline del po - var. con roverella,0,1368
+01,QC60X,querco-carpineto mesoxerofilo del monferrato e/o colline del po,0,1369
+01,QR10B,orno-querceto di roverella - var. con carpino nero,0,1370
+01,QR10C,orno-querceto di roverella - var. con pino silvestre,0,1371
+01,QR10D,orno-querceto di roverella - var. d?invasione ad orniello,0,1372
+01,QR10X,orno-querceto di roverella,0,1373
+01,QR11A,orno-querceto di roverella - st. delle delle colline del po - var. con pino silvestre,0,1374
+01,QR11B,orno-querceto di roverella - st. delle delle colline del po - var. d'invasione ad orniello,0,1375
+01,QR11X,orno-querceto di roverella - st. delle colline del po,0,1376
+01,QR12A,orno-querceto di roverella - st. delle alpi liguri e marittime - var. con carpino nero,0,1377
+01,QR12B,orno-querceto di roverella - st. delle alpi liguri e marittime - var. con castagno,0,1378
+01,QR12X,orno-querceto di roverella - st. delle alpi liguri e marittime,0,1379
+01,QR13X,orno-querceto di roverella - st. mesofilo con betulla,0,1380
+01,QR20A,querceto mesoxerofilo di roverella dei rilievi collinari interni e dell?appennino - var. con robinia,0,1381
+01,QR20B,querceto mesoxerofilo di roverella dei rilievi collinari interni e dell?appennino - var. con pioppo bianco e/o nero,0,1382
+01,QR20D,querceto mesoxerofilo di roverella dei rilievi collinari interni e dell?appennino - var. con cerro,0,1383
+01,QR20E,querceto mesoxerofilo di roverella dei rilievi collinari interni e dell?appennino - var. con carpino nero,0,1384
+01,QR20F,querceto mesoxerofilo di roverella dei rilievi collinari interni e dell?appennino - var. castagno,0,1385
+01,QR20G,querceto mesoxerofilo di roverella dei rilievi collinari interni e dell?appennino - var. con pino silvestre,0,1386
+01,QR20X,querceto mesoxerofilo di roverella dei rilievi collinari interni e dell?appennino,0,1387
+01,QR30A,querceto xero-acidofilo di roverella con erica arborea - var. con castagno,0,1388
+01,QR30B,querceto xero-acidofilo di roverella con erica arborea - var. con pino silvestre,0,1389
+01,QR30C,querceto xero-acidofilo di roverella con erica arborea - var. con cerro,0,1390
+01,QR30X,querceto xero-acidofilo di roverella con erica arborea,0,1391
+01,QR40A,querceto xero-basifilo di roverella delle alpi - var. con pino silvestre,0,1392
+01,QR40B,querceto xero-basifilo di roverella delle alpi - var. con robinia,0,1393
+01,QR40C,querceto xero-basifilo di roverella delle alpi - var. con olmo campestre,0,1394
+01,QR40X,querceto xero-basifilo di roverella delle alpi,0,1395
+01,QR50A,querceto mesoxerofilo di roverella delle alpi - var. con castagno,0,1396
+01,QR50B,querceto mesoxerofilo di roverella delle alpi - var. con latifoglie miste,0,1397
+01,QR50C,querceto mesoxerofilo di roverella delle alpi - var. con pino silvestre,0,1398
+01,QR50E,querceto mesoxerofilo di roverella delle alpi - var. con robinia,0,1399
+01,QR50X,querceto mesoxerofilo di roverella delle alpi,0,1400
+01,QR52B,querceto mesoxerofilo di roverella delle alpi - st. con bosso delle valli cuneesi - var. con latifoglie miste,0,1401
+01,QR52C,querceto mesoxerofilo di roverella delle alpi - st. con bosso delle valli cuneesi - var. con pino silvestre,0,1402
+01,QR52D,querceto mesoxerofilo di roverella delle alpi - st. con bosso delle valli cuneesi - var. con cerro,0,1403
+01,QR52X,querceto mesoxerofilo di roverella delle alpi - st. con bosso delle valli cuneesi,0,1404
+01,QR70A,querceto xero-acidofilo di roverella delle alpi - var. con latifoglie miste,0,1405
+01,QR70B,querceto xero-acidofilo di roverella delle alpi - var. con castagno,0,1406
+01,QR70C,querceto xero-acidofilo di roverella delle alpi - var. con pino silvestre,0,1407
+01,QR70X,querceto xero-acidofilo di roverella delle alpi,0,1408
+01,QR71X,querceto xero-acidofilo di roverella delle alpi - st. steppico,0,1409
+01,QV10A,querceto di rovere a teucrium scorodonia - var. con faggio,0,1410
+01,QV10B,querceto di rovere a teucrium scorodonia - var. con pino silvestre,0,1411
+01,QV10C,querceto di rovere a teucrium scorodonia - var. con castagno,0,1412
+01,QV10D,querceto di rovere a teucrium scorodonia - var. con betulla,0,1413
+01,QV10E,querceto di rovere a teucrium scorodonia - var. con latifoglie miste,0,1414
+01,QV10F,querceto di rovere a teucrium scorodonia - var. con robinia,0,1415
+01,QV10X,querceto di rovere a teucrium scorodonia,0,1416
+01,QV11X,querceto di rovere a teucrium scorodonia - st. mesoxerofilo con roverella,0,1417
+01,QV20A,querco-tiglieto - var. con castagno,0,1418
+01,QV20B,querco-tiglieto - var. con acero di monte,0,1419
+01,QV20C,querco-tiglieto - var. a tiglio cordato,0,1420
+01,QV20D,querco-tiglieto - var. con picea,0,1421
+01,QV20X,querco-tiglieto,0,1422
+01,QV30X,querceto di rovere/roverella con orniello ed erica cinerea,0,1423
+01,QV51A,querceto di rovere a physospermun cornubiense dei rilievi collinari interni - st. delle sabbie astiane - var. con castagno,0,1424
+01,QV51B,querceto di rovere a physospermun cornubiense dei rilievi collinari interni - st. delle sabbie astiane - var. con pino silves,0,1425
+01,QV51C,querceto di rovere a physospermun cornubiense dei rilievi collinari interni - st. delle sabbie astiane - var. con robinia,0,1426
+01,QV51E,querceto di rovere a physospermun cornubiense dei rilievi collinari interni - st. delle sabbie astiane - var. con roverella,0,1427
+01,QV51X,querceto di rovere a physospermun cornubiense dei rilievi collinari interni - st. delle sabbie astiane,0,1428
+01,QV52A,querceto di rovere a physospermun cornubiense dei rilievi collinari interni - st. dei substrati misti della collina di torine,0,1429
+01,QV52B,querceto di rovere a physospermun cornubiense dei rilievi collinari interni - st. dei substrati misti della collina di torine,0,1430
+01,QV52C,querceto di rovere a physospermun cornubiense dei rilievi collinari interni - st. dei substrati misti della collina di torine,0,1431
+01,QV52D,querceto di rovere a physospermun cornubiense dei rilievi collinari interni - st. dei substrati misti della collina di torine,0,1432
+01,QV52E,querceto di rovere a physospermun cornubiense dei rilievi collinari interni - st. dei substrati misti della collina di torine,0,1433
+01,QV52X,querceto di rovere a physospermun cornubiense dei rilievi collinari interni - st. dei substrati misti della collina di torine,0,1434
+01,QV53A,querceto di rovere a physospermun cornubiense dei rilievi collinari interni - st. dei paleosuoli dell'alessandrino - var. con,0,1435
+01,QV53B,querceto di rovere a physospermun cornubiense dei rilievi collinari interni - st. dei paleosuoli dell'alessandrino - var. con,0,1436
+01,QV53X,querceto di rovere a physospermun cornubiense dei rilievi collinari interni - st. dei paleosuoli dell'alessandrino,0,1437
+01,QV60A,querceto di rovere a physospermun cornubiense dei substrati silicatici dell?appennino - var. con castagno,0,1438
+01,QV60B,querceto di rovere a physospermun cornubiense dei substrati silicatici dell?appennino - var. con robinia,0,1439
+01,QV60C,querceto di rovere a physospermun cornubiense dei substrati silicatici dell?appennino - var. con pino silvestre,0,1440
+01,QV60D,querceto di rovere a physospermun cornubiense dei substrati silicatici dell?appennino - var. con pino marittimo,0,1441
+01,QV60E,querceto di rovere a physospermun cornubiense dei substrati silicatici dell?appennino - var. con roverella,0,1442
+01,QV60X,querceto di rovere a physospermun cornubiense dei substrati silicatici dell?appennino,0,1443
+01,QV61A,querceto di rovere a physospermun cornubiense dei substrati silicatici dell?appennino - st. mesofilo - var. con carpino bianc,0,1444
+01,QV61B,querceto di rovere a physospermun cornubiense dei substrati silicatici dell?appennino - st. mesofilo - var. con faggio,0,1445
+01,QV61X,querceto di rovere a physospermun cornubiense dei substrati silicatici dell?appennino - st. mesofilo,0,1446
+01,QV70B,querceto di rovere a potentilla alba - var. con latifoglie mesofile,0,1447
+01,QV70C,querceto di rovere a potentilla alba - var. con betulla e/o pioppo tremolo,0,1448
+01,QV70D,querceto di rovere a potentilla alba - var. con pino nero naturalizzato,0,1449
+01,QV70E,querceto di rovere a potentilla alba - var. con quercia rossa,0,1450
+01,QV70G,querceto di rovere a potentilla alba - var. con castagno,0,1451
+01,QV70X,querceto di rovere a potentilla alba,0,1452
+01,RB10B,robinieto - var. con latifoglie mesofile,0,1453
+01,RB10C,robinieto - var. con castagno,0,1454
+01,RB10D,robinieto - var. con ailanto,0,1455
+01,RB10E,robinieto - var. con sclerofille esotiche,0,1456
+01,RB10F,robinieto - var. con prunus serotina,0,1457
+01,RB10X,robinieto,0,1458
+01,RB13X,robinieto - st. di greto,0,1459
+01,RB14X,robinieto - st. steppico,0,1460
+01,RI10A,rimboschimento dei piani planiziale e collinare - var. con latifoglie codominanti d?invasione,0,1461
+01,RI10B,rimboschimento dei piani planiziale e collinare - var. a pino strobo,0,1462
+01,RI10C,rimboschimento dei piani planiziale e collinare - var. a quercia rossa,0,1463
+01,RI10D,rimboschimento dei piani planiziale e collinare - var. a latifoglie autoctone,0,1464
+01,RI10E,rimboschimento dei piani planiziale e collinare - var. con pino eccelso,0,1465
+01,RI10F,rimboschimento dei piani planiziale e collinare - var. con pino nero,0,1466
+01,RI10G,rimboschimento dei piani planiziale e collinare - var. con pino silvestre,0,1467
+01,RI10X,rimboschimento dei piani planiziale e collinare,0,1468
+01,RI20A,rimboschimento del piano montano - var. con latifoglie codominanti d?invasione,0,1469
+01,RI20B,rimboschimento del piano montano - var. a pino nero,0,1470
+01,RI20C,rimboschimento del piano montano - var. a larice europeo,0,1471
+01,RI20D,rimboschimento del piano montano - var. a picea,0,1472
+01,RI20E,rimboschimento del piano montano - var. a pino marittimo,0,1473
+01,RI20F,rimboschimento del piano montano - var. a pino silvestre,0,1474
+01,RI20G,rimboschimento del piano montano - var. a douglasia,0,1475
+01,RI20H,rimboschimento del piano montano - var. a conifere miste,0,1476
+01,RI20X,rimboschimento del piano montano,0,1477
+01,RI30A,rimboschimento del piano subalpino - var. a larice,0,1478
+01,RI30B,rimboschimento del piano subalpino - var. a picea,0,1479
+01,RI30C,rimboschimento del piano subalpino - var. a pino uncinato,0,1480
+01,RI30X,rimboschimento del piano subalpino,0,1481
+01,SP10A,saliceto arbustivo ripario - var. ad amorpha fruticosa,0,1482
+01,SP10B,saliceto arbustivo ripario - var. a salix daphnoides,0,1483
+01,SP10C,saliceto arbustivo ripario - var. con/a buddleja davidii,0,1484
+01,SP10D,saliceto arbustivo ripario - var. con pioppo nero e/o pippo bianco,0,1485
+01,SP10X,saliceto arbustivo ripario,0,1486
+01,SP20X,saliceto di salice bianco,0,1487
+01,SP21X,saliceto di salice bianco - st. paludoso con ontano nero,0,1488
+01,SP30A,pioppeto di pioppo nero - var. con pioppo bianco,0,1489
+01,SP30B,pioppeto di pioppo nero - var. con pino silvestre e/o larice,0,1490
+01,SP30C,pioppeto di pioppo nero - var. con latifoglie miste,0,1491
+01,SP30X,pioppeto di pioppo nero,0,1492
+01,SP31X,pioppeto di pioppo nero - st. mesoxerofilo di greto e di conoide,0,1493
+01,SP40A,pioppeto di pioppo bianco - var. con pioppo nero,0,1494
+01,SP40B,pioppeto di pioppo bianco - var. con salice bianco,0,1495
+01,SP40C,pioppeto di pioppo bianco - var. con robinia,0,1496
+01,SP40X,pioppeto di pioppo bianco,0,1497
+03,01, querco-carpineto della bassa pianura,0,1498
+03,02, querco-carpineto dell'alta pianura,0,1499
+03,0201,querco-carpineto dell’alta pianura var. alluvionale,0,1500
+03,03, querco-carpineto collinare di rovere e/o farnia,0,1501
+03,04, carpineto con ostria,0,1502
+03,0401,carpineto con ostria var. con cerro,0,1503
+03,05, querceto primitivo di rovere su falda detritica,0,1504
+03,06, querceto di rovere e/o farnia delle cerchie moreniche occidentali,0,1505
+03,07, querceto di rovere e/o farnia del pianalto,0,1506
+03,08, querceto di farnia dei dossi sabbiosi,0,1507
+03,09, querceto di farnia dei greti ciottolosi,0,1508
+03,10, querceto di farnia con olmo,0,1509
+03,1001,querceto di farnia con olmo var. ad arbusti del mantello,0,1510
+03,1002,querceto di farnia con olmo var. con ontano nero,0,1511
+03,11, lecceta primitiva,0,1512
+03,12, querceto primitivo di roverella a scotano,0,1513
+03,1201,querceto primitivo di roverella a scotano var. a bosso,0,1514
+03,13, querceto di roverella dei substrati carbonatici,0,1515
+03,1301,querceto di roverella dei substrati carbonatici var. a erica arborea,0,1516
+03,1302,querceto di roverella dei substrati carbonatici var. con castagno,0,1517
+03,1303,querceto di roverella dei substrati carbonatici var. con cerro,0,1518
+03,1304,querceto di roverella dei substrati carbonatici var. con faggio,0,1519
+03,14, querceto di rovere dei substrati carbonatici dei suoli mesici,0,1520
+03,1401,querceto di rovere dei substrati carbonatici dei suoli mesici var. con castagno,0,1521
+03,15, cerreta,0,1522
+03,16, querceto di rovere dei substrati silicatici dei suoli xerici,0,1523
+03,1601,querceto di rovere dei sub. silicatici dei suoli xerici var. a erica arborea,0,1524
+03,1602,querceto di rovere dei sub. silicatici dei suoli xerici var. con pino silvestre,0,1525
+03,1603,querceto di rovere dei substrati silicatici dei suoli xerici var. con bagolaro,0,1526
+03,1604,querceto di rovere dei substrati silicatici dei suoli xerici var. con betulla,0,1527
+03,1605,querceto di rovere dei substrati silicatici dei suoli xerici var. con castagno,0,1528
+03,1606,querceto di rovere dei substrati silicatici dei suoli xerici var. con faggio,0,1529
+03,1607,querceto di rovere dei substrati silicatici dei suoli xerici var. con ostria,0,1530
+03,17, querceto di rovere dei substrati silicatici dei suoli mesici,0,1531
+03,1701,querceto di rovere dei substrati silicatici dei suoli mesici var. con tigli,0,1532
+03,18, castagneto di falda detritica,0,1533
+03,19, castagneto delle cerchie moreniche occidentali,0,1534
+03,20, castagneto dei substrati carbonatici dei suoli xerici,0,1535
+03,21, castagneto dei substrati carbonatici dei suoli mesoxerici,0,1536
+03,22, castagneto dei substrati carbonatici dei suoli mesici,0,1537
+03,23, castagneto dei substrati silicatici dei suoli xerici,0,1538
+03,24, castagneto dei substrati silicatici dei suoli mesoxerici,0,1539
+03,2401,castagneto dei substrati silicatici dei suoli mesoxerici var. con larice,0,1540
+03,2402,castagneto dei substrati silicatici dei suoli mesoxerici var. con rovere,0,1541
+03,2403,castagneto dei substrati silicatici dei suoli mesoxerici var. con tigli,0,1542
+03,25, castagneto dei substrati silicatici dei suoli mesici,0,1543
+03,2501,castagneto dei substrati silicatici dei suoli mesici var. con larice,0,1544
+03,2502,castagneto dei substrati silicatici dei suoli mesici var. con tigli,0,1545
+03,26, orno-ostrieto primitivo di forra,0,1546
+03,27, orno-ostrieto primitivo di rupe,0,1547
+03,28, orno-ostrieto primitivo di falda detritica,0,1548
+03,29, orno-ostrieto tipico,0,1549
+03,2901,orno-ostrieto tipico var. con carpino bianco,0,1550
+03,2902,orno-ostrieto tipico var. con cerro,0,1551
+03,2903,orno-ostrieto tipico var. con faggio,0,1552
+03,2904,orno-ostrieto tipico var. con pino silvestre,0,1553
+03,2905,orno-ostrieto tipico var. con tigli,0,1554
+03,30, aceri-frassineto con ostria,0,1555
+03,31, aceri-frassineto tipico,0,1556
+03,3101,aceri frassineto tipico con ontano nero,0,1557
+03,3102,aceri frassineto tipico con tigli,0,1558
+03,3103,aceri frassineto tipico var. ad agrifoglio,0,1559
+03,32, aceri-frassineto con faggio,0,1560
+03,33, aceri-frassineto con ontano bianco,0,1561
+03,34, aceri-tiglieto,0,1562
+03,35, betuleto primitivo,0,1563
+03,36, betuleto secondario,0,1564
+03,37, corileto,0,1565
+03,3701,corileto var. dei suoli xerici,0,1566
+03,38, faggeta primitiva,0,1567
+03,39, faggeta submontana dei substrati carbonatici,0,1568
+03,3901,faggeta submontana dei substrati carbonatici var. con cerro,0,1569
+03,3902,faggeta submontana dei substrati carbonatici var. con pino silvestre,0,1570
+03,40, faggeta submontana dei substrati silicatici,0,1571
+03,4001,faggeta submontana dei substrati silicatici var. con castagno,0,1572
+03,41, faggeta montana dei substrati carbonatici dei suoli xerici,0,1573
+03,42, faggeta montana dei substrati carbonatici tipica,0,1574
+03,4201,faggeta montana dei substrati carbonatici tipica var. con abete rosso,0,1575
+03,43, faggeta montana dei substrati silicatici dei suoli mesici,0,1576
+03,4301,faggeta montana dei substrati silicatici dei suoli mesici var. con abete rosso,0,1577
+03,4302,faggeta montana dei substrati silicatici dei suoli mesici var. sub serpentinosi,0,1578
+03,44, faggeta montana dei substrati silicatici dei suoli acidi,0,1579
+03,4401,faggeta montana dei substrati silicatici dei suoli acidi var. con pino silvestre,0,1580
+03,45, faggeta altimontana dei substrati carbonatici,0,1581
+03,4501,faggeta altimontana dei substrati carbonatici var. con larice,0,1582
+03,4502,faggeta altimontana dei substrati carbonatici var. subalpina,0,1583
+03,46, faggeta altimontana dei substrati silicatici,0,1584
+03,47, mugheta macroterma,0,1585
+03,48, mugheta mesoterma,0,1586
+03,4801,mugheta mesoterma var. esomesalpica,0,1587
+03,4802,mugheta mesoterma var. mesoendalpica,0,1588
+03,49, mugheta microterma dei substrati carbonatici,0,1589
+03,50, mugheta microterma dei substrati silicatici,0,1590
+03,51, pineta di pino silvestre primitiva di rupe,0,1591
+03,52, pineta di pino silvestre primitiva di falda detritica,0,1592
+03,53, pineta di pino silvestre dei substrati carbonatici,0,1593
+03,54, pineta di pino silvestre dei substrati silicatici submontana,0,1594
+03,55, pineta di pino silvestre dei substrati silicatici montana,0,1595
+03,5501,pineta di pino silvestre dei substrati silicatici montana var. altimontana,0,1596
+03,5502,pineta di pino silvestre dei substrati silicatici montana var. con abete rosso,0,1597
+03,56, pineta di pino silvestre planiziale,0,1598
+03,57, piceo-faggeto dei substrati carbonatici,0,1599
+03,5701,piceo-faggeto dei substrati carbonatici var. con larice,0,1600
+03,5702,piceo-faggeto dei substrati carbonatici var. dei suoli xerici,0,1601
+03,58, piceo-faggeto dei substrati silicatici,0,1602
+03,5801,piceo-faggeto dei substrati silicatici var. con abete bianco,0,1603
+03,5802,piceo-faggeto dei substrati silicatici var. con larice,0,1604
+03,5803,piceo-faggeto dei substrati silicatici var. dei suoli xerici,0,1605
+03,59, abieteto esalpico,0,1606
+03,60, abieteto dei substrati carbonatici,0,1607
+03,61, abieteto dei suoli mesici,0,1608
+03,62, abieteto dei substrati silicatici tipico,0,1609
+03,63, abieteto dei substrati silicatici con faggio,0,1610
+03,64, pecceta altimontana dei substrati carbonatici,0,1611
+03,6401,pecceta altimontana dei substrati carbonatici var. subalpina,0,1612
+03,65, pecceta montana dei substrati silicatici dei suoli xerici,0,1613
+03,6501,pecceta mont. dei sub. silicatici dei suoli xerici var. con pino silvestre,0,1614
+03,66, pecceta montana dei substrati silicatici dei suoli mesici,0,1615
+03,67, pecceta altimontana e subalpina substrati silicatici dei suoli xerici,0,1616
+03,68, pecceta altimontana e subalpina substrati silicatici dei suoli mesici,0,1617
+03,6801,pecceta altimont. e subalp. dei sub. silicatici dei suoli mesici var. con cembro,0,1618
+03,69, pecceta azonale su alluvioni,0,1619
+03,70, pecceta secondaria montana,0,1620
+03,7001,pecceta secondaria montana var. altimontana,0,1621
+03,701,querceto di rovere e/o farnia del pianalto var. con carpino bianco,0,1622
+03,71, pecceta di sostituzione,0,1623
+03,7101,pecceta di sostituzione var. con ostria,0,1624
+03,7102,pecceta di sostituzione var. dei suoli acidi,0,1625
+03,72, lariceto primitivo,0,1626
+03,73, lariceto tipico,0,1627
+03,7301,lariceto tipico var. con abete bianco,0,1628
+03,7302,lariceto tipico var. montana,0,1629
+03,74, lariceto in successione con pecceta,0,1630
+03,75, larici-cembreto primitivo,0,1631
+03,76, larici-cembreto tipico,0,1632
+03,7601,larici-cembreto tipico var. con ontano verde,0,1633
+03,7602,larici-cembreto tipico var. mesalpica,0,1634
+03,77, larici-cembreto con abete rosso,0,1635
+03,78, cembreta,0,1636
+03,79, alneto di ontano nero d'impluvio,0,1637
+03,80, alneto di ontano nero tipico,0,1638
+03,81, alneto di ontano nero perilacustre,0,1639
+03,82, alneto di ontano bianco,0,1640
+03,83, alneto di ontano verde,0,1641
+03,84, robinieto puro,0,1642
+03,85, robinieto misto,0,1643
+03,86, formazioni di ciliegio tardivo,0,1644
+03,87,formazione di maggiociondolo alpino,0,1645
+03,88,formazioni di pioppo bianco,0,1646
+03,89,formazioni di pioppo tremulo,0,1647
+03,90,formazioni di sorbo degli uccellatori,0,1648
+03,91,formazioni non riconducibili ai tipi forestali,0,1649
+03,92,saliceto a salix caprea,0,1650
+03,93,saliceto di greto,0,1651
+03,94,saliceto di ripa,0,1652
+07,AB,abetine di abete bianco  ,0,1653
+07,AB10X,abetina mesoneutrofila  ,0,1654
+07,AB11A,abetina mesoneutrofila st. delle alpi liguri var con faggio ,0,1655
+07,AB11X,abetina mesoneutrofila st. delle alpi liguri  ,0,1656
+07,AB12A,abetina mesoneutrofila st. appenninico var con faggio ,0,1657
+07,AB12X,abetina mesoneutrofila st. appenninico  ,0,1658
+07,AM,arbusteti collinari\, montani e subalpini  ,0,1659
+07,AM10X,arbusteto di spartium junceum  ,0,1660
+07,AM20X,arbusteto a genista cinerea  ,0,1661
+07,AM30X,arbusteto a cytisus scoparius  ,0,1662
+07,AM40A,arbusteto interno a erica arborea var con pino marittimo (anche rinnovazione),0,1663
+07,AM40X,arbusteto interno a erica arborea  ,0,1664
+07,AM50X,arbusteto a ginepro comune  ,0,1665
+07,AM60A,arbusteto a rosacee e sanguinello var con latifoglie varie ,0,1666
+07,AM60B,arbusteto a rosacee e sanguinello var con conifere varie ,0,1667
+07,AM60X,arbusteto a rosacee e sanguinello  ,0,1668
+07,AM70A,alneto di ontano verde var con acero di monte e sorbi ,0,1669
+07,AM70X,alneto di ontano verde  ,0,1670
+07,BS,boscaglie pioniere e d'invasione  ,0,1671
+07,BS10A,robinieto var con latifoglie varie ,0,1672
+07,BS10X,robinieto  ,0,1673
+07,BS11X,robinieto st termofilo ,0,1674
+07,BS20A,corileto d'invasione var con latifoglie varie ,0,1675
+07,BS20X,corileto d'invasione  ,0,1676
+07,BS30A,boscaglie d'invasione var a saliconi ,0,1677
+07,BS30B,boscaglie d'invasione var a betulla ,0,1678
+07,BS30C,boscaglie d'invasione var a pioppo tremolo e/o gatterino ,0,1679
+07,BS30D,boscaglie d'invasione var a sorbi e maggiociondoli ,0,1680
+07,BS30E,boscaglie d'invasione var a ontano bianco ,0,1681
+07,BS30F,boscaglie d'invasione var a ciliegio ,0,1682
+07,BS30G,boscaglie d'invasione var a orniello ,0,1683
+07,BS30X,boscaglie d'invasione  ,0,1684
+07,BS40A,boscaglie rupestre pioniera var a leccio e ginepri a foglie cupressoidi ,0,1685
+07,BS40X,boscaglie rupestre pioniera  ,0,1686
+07,CA,castagneti  ,0,1687
+07,CA10X,castagneto da frutto  ,0,1688
+07,CA20A,castagneto termofilo var con pino marittimo ,0,1689
+07,CA20B,castagneto termofilo var con carpino nero ,0,1690
+07,CA20X,castagneto termofilo  ,0,1691
+07,CA30A,castagneto acidofilo var con rovere e/o roverella ,0,1692
+07,CA30B,castagneto acidofilo var con pino silvestre e/o altre conifere ,0,1693
+07,CA30C,castagneto acidofilo var con faggio ,0,1694
+07,CA30D,castagneto acidofilo var con cerro ,0,1695
+07,CA30X,castagneto acidofilo  ,0,1696
+07,CA40A,castagneto neutrofilo var con carpino nero ,0,1697
+07,CA40B,castagneto neutrofilo var con pino silvestre e/o altre conifere ,0,1698
+07,CA40X,castagneto neutrofilo  ,0,1699
+07,CE,cerrete  ,0,1700
+07,CE10A,cerreta acidofila  var con castagno,0,1701
+07,CE10B,cerreta acidofila  var con rovere e/o roverella,0,1702
+07,CE10X,cerreta acidofila  ,0,1703
+07,CE11A,cerreta acidofila st termofilo var con castagno,0,1704
+07,CE11B,cerreta acidofila st termofilo var con roverella,0,1705
+07,CE11X,cerreta acidofila st termofilo ,0,1706
+07,CE20X,cerreta neutrofila  ,0,1707
+07,CE21X,cerreta neutrofila st mesofilo ,0,1708
+07,CP,cespuglieti  ,0,1709
+07,CP10A,gariga a cisti var con rinnovazione di pino d’aleppo e/o marittimo ,0,1710
+07,CP10X,gariga a cisti  ,0,1711
+07,CP20X,cespuglieto a specie spinose e/o bosso su ofioliti  ,0,1712
+07,CP30X,cespuglieto a genista radiata  ,0,1713
+07,CP40X,rodoreto-vaccinieto  ,0,1714
+07,CP50X,ginepreto di ginepro nano  ,0,1715
+07,FA,faggete  ,0,1716
+07,FA10A,faggeta oligotrofica var con castagno ,0,1717
+07,FA10B,faggeta oligotrofica var con rovere ,0,1718
+07,FA10C,faggeta oligotrofica var con pino silvestre e/o altre conifere ,0,1719
+07,FA10X,faggeta oligotrofica  ,0,1720
+07,FA20A,faggeta mesotrofica var con abete bianco ,0,1721
+07,FA20B,faggeta mesotrofica var con castagno ,0,1722
+07,FA20X,faggeta mesotrofica  ,0,1723
+07,FA30X,faggeta eutrofica  ,0,1724
+07,FA31A,faggeta eutrofica st submontano var con carpino nero,0,1725
+07,FA31B,faggeta eutrofica st submontano var con pino silvestre e/o altre conifere,0,1726
+07,FA31X,faggeta eutrofica st submontano ,0,1727
+07,FA40A,faggeta mesoxerofila calcifila var con pino silvestre ,0,1728
+07,FA40X,faggeta mesoxerofila calcifila  ,0,1729
+07,FR,formazioni riparie  ,0,1730
+07,FR10X,saliceto arbustivo ripario  ,0,1731
+07,FR30A,pioppeto ripario var a pioppo nero ,0,1732
+07,FR30B,pioppeto ripario var a pioppo bianco ,0,1733
+07,FR30X,pioppeto ripario  ,0,1734
+07,FR40A,alneto di ontano nero var con altre latifoglie ,0,1735
+07,FR40X,alneto di ontano nero  ,0,1736
+07,FR50X,alneto di ontano bianco  ,0,1737
+07,LC,lariceti  ,0,1738
+07,LC10X,lariceto pascolivo  ,0,1739
+07,LC11X,lecceta xerofila st dei substrati silicatici ,0,1740
+07,LC20A,lariceto montano var con abete bianco ,0,1741
+07,LC20B,lariceto montano var con pino silvestre ,0,1742
+07,LC20C,lariceto montano var con latifoglie varie ,0,1743
+07,LC20X,lariceto montano  ,0,1744
+07,LC30X,lariceto su rodoreto-vaccinieto  ,0,1745
+07,LC31X,lariceto su rodoreto-vaccinieto st mesoxerofilo a juniperus nana ,0,1746
+07,LE,leccete e sugherete  ,0,1747
+07,LE10A,lecceta xerofila var con pino d’aleppo e/o pino marittimo ,0,1748
+07,LE10X,lecceta xerofila  ,0,1749
+07,LE11A,lecceta xerofila var con sughera ,0,1750
+07,LE11B,lecceta xerofila var con pino marittimo ,0,1751
+07,LE20A,lecceta mesoxerofila var con carpino nero ,0,1752
+07,LE20B,lecceta mesoxerofila var con castagno ,0,1753
+07,LE20C,lecceta mesoxerofila var con roverella ,0,1754
+07,LE20X,lecceta mesoxerofila  ,0,1755
+07,LE30X,querceto di sughera  ,0,1756
+07,LM,boschi di latifoglie mesofile  ,0,1757
+07,LM10A,carpineto misto submontano var con frassino maggiore ,0,1758
+07,LM10X,carpineto misto submontano  ,0,1759
+07,LM20X,acero-tiglio-frassineto di forra  ,0,1760
+07,LM21X,acero-tiglio-frassineto di forra st rupicolo a tiglio a grandi foglie ,0,1761
+07,LM30A,acero-frassineto d'invasione var a frassino maggiore ,0,1762
+07,LM30B,acero-frassineto d'invasione var ad acero di monte ,0,1763
+07,LM30X,acero-frassineto d'invasione  ,0,1764
+07,MM,arbusteti e macchie mediterranee  ,0,1765
+07,MM10A,macchia alta a corbezzolo e eriche var pino marittimo (anche rinnovazione),0,1766
+07,MM10X,macchia alta a corbezzolo e eriche  ,0,1767
+07,MM20A,macchia termomediterranea costiera var con pino d’aleppo (anche rinnovazione),0,1768
+07,MM20X,macchia termomediterranea costiera  ,0,1769
+07,MM30X,arbusteto a coriaria myrtifolia  ,0,1770
+07,MM40X,arbusteto a scotano e/o terebinto  ,0,1771
+07,MM50A,arbusteto a calicotome spinosa var pino marittimo (anche rinnovazione),0,1772
+07,MM50X,arbusteto a calicotome spinosa  ,0,1773
+07,MM60A,arbusteto a ulex europaeus var pino marittimo (anche rinnovazione),0,1774
+07,MM60X,arbusteto a ulex europaeus  ,0,1775
+07,OS,orno-ostrieti  ,0,1776
+07,OS10X,orno-ostrieto pioniero  ,0,1777
+07,OS20A,ostrieto termofilo var con leccio ,0,1778
+07,OS20B,ostrieto termofilo var con castagno ,0,1779
+07,OS20C,ostrieto termofilo var con pino marittimo ,0,1780
+07,OS20D,ostrieto termofilo var con roverella ,0,1781
+07,OS20X,ostrieto termofilo  ,0,1782
+07,OS30A,ostrieto mesoxerofilo var con pino silvestre ,0,1783
+07,OS30B,ostrieto mesoxerofilo var con faggio ,0,1784
+07,OS30C,ostrieto mesoxerofilo var con querce varie ,0,1785
+07,OS30X,ostrieto mesoxerofilo  ,0,1786
+07,OS31A,ostrieto mesoxerofilo st dei substrati silicatici var con castagno,0,1787
+07,OS31X,ostrieto mesoxerofilo st dei substrati silicatici ,0,1788
+07,OS40X,ostrieto mesofilo  ,0,1789
+07,PC,pinete costiere e mediterranee  ,0,1790
+07,PC10A,pineta costiera di pino d'aleppo var con leccio ,0,1791
+07,PC10X,pineta costiera di pino d'aleppo  ,0,1792
+07,PC11X,pineta costiera di pino d'aleppo st rupestre ,0,1793
+07,PC20A,pineta interna su ofioliti di pino marittimo var con roverella ,0,1794
+07,PC20B,pineta interna su ofioliti di pino marittimo var con pino silvestre ,0,1795
+07,PC20C,pineta interna su ofioliti di pino marittimo var con castagno ,0,1796
+07,PC20X,pineta interna su ofioliti di pino marittimo  ,0,1797
+07,PC30A,pineta costiera di pino marittimo var con leccio ,0,1798
+07,PC30X,pineta costiera di pino marittimo  ,0,1799
+07,PC31A,pineta costiera di pino marittimo var con castagno ,0,1800
+07,PC31X,pineta costiera di pino marittimo st mesoxerofilo ,0,1801
+07,PM,pinete montane  ,0,1802
+07,PM10A,pineta calcifila di pino silvestre var con roverella ,0,1803
+07,PM10B,pineta calcifila di pino silvestre var con carpino nero ,0,1804
+07,PM10X,pineta calcifila di pino silvestre  ,0,1805
+07,PM11X,pineta calcifila di pino silvestre st superiore aperto ,0,1806
+07,PM20A,pineta acidofila di pino silvestre var con castagno ,0,1807
+07,PM20B,pineta acidofila di pino silvestre var con rovere e/o roverella ,0,1808
+07,PM20X,pineta acidofila di pino silvestre  ,0,1809
+07,PM30X,pineta calcifila di pino uncinato  ,0,1810
+07,QU,querceti di rovere e roverella  ,0,1811
+07,QU10A,querceto di rovere a physospermum cornubiense var con cerro ,0,1812
+07,QU10B,querceto di rovere a physospermum cornubiense var con faggio ,0,1813
+07,QU10C,querceto di rovere a physospermum cornubiense var con pino silvestre ,0,1814
+07,QU10X,querceto di rovere a physospermum cornubiense  ,0,1815
+07,QU20A,querceto acidofilo di roverella a erica arborea var con pino marittimo ,0,1816
+07,QU20B,querceto acidofilo di roverella a erica arborea var con pino silvestre ,0,1817
+07,QU20X,querceto acidofilo di roverella a erica arborea  ,0,1818
+07,QU21A,querceto acidofilo di roverella a erica arborea var con pino marittimo ,0,1819
+07,QU21X,querceto acidofilo di roverella a erica arborea st termofilo costiero ,0,1820
+07,QU30A,querceto neutro-calcifilo di roverella var con carpino nero ,0,1821
+07,QU30X,querceto neutro-calcifilo di roverella  ,0,1822
+07,QU31A,querceto neutro-calcifilo di roverella st termofilo costiero var con orniello,0,1823
+07,QU31B,querceto neutro-calcifilo di roverella st termofilo costiero var con conifere varie,0,1824
+07,QU31X,querceto neutro-calcifilo di roverella st termofilo costiero ,0,1825
+07,RI,rimboschimenti  ,0,1826
+07,RI10A,rimboschimenti mediterranei delle zone costiere var a pino marittimo ,0,1827
+07,RI10B,rimboschimenti mediterranei delle zone costiere var a pino d’aleppo ,0,1828
+07,RI10C,rimboschimenti mediterranei delle zone costiere var a cedri ,0,1829
+07,RI10X,rimboschimenti mediterranei delle zone costiere  ,0,1830
+07,RI20A,rimboschimenti collinari e montani interni var a pino nero ,0,1831
+07,RI20B,rimboschimenti collinari e montani interni var ad abete rosso ,0,1832
+07,RI20C,rimboschimenti collinari e montani interni var a larice ,0,1833
+07,RI20D,rimboschimenti collinari e montani interni var a douglasia ,0,1834
+07,RI20E,rimboschimenti collinari e montani interni var a pino silvestre ,0,1835
+07,RI20F,rimboschimenti collinari e montani interni var a pino strobo e/o eccelso ,0,1836
+07,RI20G,rimboschimenti collinari e montani interni var a quercia rossa ,0,1837
+07,RI20X,rimboschimenti collinari e montani interni  ,0,1838
+10,0301,abetina,0,1839
+10,0302,bosco a prevalenza di abete bianco con latifoglie ,0,1840
+10,0303,bosco a prevalenza di abete bianco con conifere montane,0,1841
+10,0401,pineta di pino silvestre,0,1842
+10,0402,bosco a prevalenza di pino silvestre con latifoglie,0,1843
+10,0403,bosco a prevalenza di pino silvestre con conifere montane,0,1844
+10,0501,pineta di pino nero,0,1845
+10,0502,bosco a prevalenza di pino nero con latifoglie decidue,0,1846
+10,0503,bosco a prevalenza di pino nero con latifoglie sempreverdi,0,1847
+10,0504,bosco a prevalenza di pino nero con conifere mediterranee,0,1848
+10,0505,bosco a prevalenza di pino nero con altre conifere montane,0,1849
+10,0601,pineta di pino d'aleppo,0,1850
+10,0602,bosco a prevalenza di pino d'aleppo con latifoglie decidue,0,1851
+10,0603,bosco a prevalenza di pino d'aleppo con latifoglie sempreverdi,0,1852
+10,0604,bosco a prevalenza di pino d'aleppo con altre conifere mediterranee,0,1853
+10,0605,bosco a prevalenza di pino d'aleppo con conifere montane,0,1854
+10,0606,pineta di pino domestico,0,1855
+10,0607,bosco a prevalenza di pino domestico con latifoglie decidue,0,1856
+10,0608,bosco a prevalenza di pino domestico con latifoglie sempreverdi,0,1857
+10,0609,bosco a prevalenza di pino domestico con altre conifere mediterranee,0,1858
+10,0610,bosco a prevalenza di pino domestico con conifere montane,0,1859
+10,0611,pineta di pino marittimo,0,1860
+10,0612,bosco a prevalenza di pino marittimo con latifoglie decidue,0,1861
+10,0613,bosco a prevalenza di pino marittimo con latifoglie sempreverdi,0,1862
+10,0614,bosco a prevalenza di pino marittimo con altre conifere mediterranee,0,1863
+10,0615,bosco a prevalenza di pino marittimo con conifere montane,0,1864
+10,0616,bosco di conifere mediterranne,0,1865
+10,0617,bosco di conifere mediterranee con latifoglie decidue,0,1866
+10,0618,bosco di conifere mediterranee con latifoglie sempreverdi,0,1867
+10,0619,bosco di conifere mediterranee con conifere montane,0,1868
+10,0620,bosco adi conifere mediterranee con latifoglie,0,1869
+10,0701,cipresseta,0,1870
+10,0702,bosco a prevalenza di cipresso comune  con latifoglie decidue,0,1871
+10,0703,bosco a prevalenza di cipresso comune  con latifoglie sempreverdi,0,1872
+10,0704,bosco a prevalenza di cipresso comune  con altre conifere mediterranee,0,1873
+10,0705,bosco a prevalenza di cipresso comune  con conifere montane,0,1874
+10,0706,bosco di cedri,0,1875
+10,0707,bosco a prevalenza di cedri con latifoglie decidue,0,1876
+10,0708,bosco a prevalenza di cedri con latifoglie sempreverdi,0,1877
+10,0709,bosco a prevalenza di cedri con altre conifere mediterranee,0,1878
+10,0710,bosco a prevalenza di cedri con conifere montane,0,1879
+10,0711,bosco di conifere montane,0,1880
+10,0712,bosco di conifere montane con latifoglie decidue,0,1881
+10,0713,bosco di conifere montane con latifoglie sempreverdi,0,1882
+10,0714,bosco di conifere montane con conifere mediterranee,0,1883
+10,0715,bosco di conifere montane con latifoglie,0,1884
+10,0716,bosco misto di conifere,0,1885
+10,0717,bosco misto di conifere con latifoglie decidue,0,1886
+10,0718,bosco misto di conifere con latifoglie sempreverdi,0,1887
+10,0801,faggeta,0,1888
+10,0802,faggeta con agrifoglio e/o tasso,0,1889
+10,0803,faggeta cacuminale di rupe,0,1890
+10,0804,faggeta con latifoglie decidue,0,1891
+10,0805,faggeta con conifere montane,0,1892
+10,0901,querceto di roverella,0,1893
+10,0902,querceto di roverella con altre latifoglie decidue,0,1894
+10,0903,querceto di roverella con sempreverdi,0,1895
+10,0904,querceto di roverella con conifere montane,0,1896
+10,0905,querceto di roverella con conifere mediterranee,0,1897
+10,0906,querceto di farnia,0,1898
+10,0907,querceto di farnia con altre latifoglie decidue,0,1899
+10,0908,querceto di farnia con latifoglie sempreverdi,0,1900
+10,0909,querceto di farnia con conifere montane,0,1901
+10,0910,querceto di farnia con conifere mediterranee,0,1902
+10,0911,queceto di rovere,0,1903
+10,0912,querceto di rovere con altre latifoglie decidue,0,1904
+10,0913,querceto di rovere con latifoglie sempreverdi,0,1905
+10,0914,querceto di rovere con conifere montane,0,1906
+10,0915,querceto di rovere con conifere mediterranee,0,1907
+10,1001,cerreta,0,1908
+10,1002,cerreta con altre latifoglie decidue,0,1909
+10,1003,cerreta con latifoglie sempreverdi,0,1910
+10,1004,cerreta con conifere montane,0,1911
+10,1005,cerreta con conifere mediterranee,0,1912
+10,1006,bosco di farnetto,0,1913
+10,1007,bosco di farnetto con altre latifoglie decidue,0,1914
+10,1008,bosco di farnetto con latifoglie sempreverdi,0,1915
+10,1009,bosco di farnetto con conifere montane,0,1916
+10,1010,bosco di farnetto con conifere mediterranee,0,1917
+10,1101,castagneto,0,1918
+10,1102,castagneto da frutto,0,1919
+10,1103,bosco di castagno con altre latifoglie decidue,0,1920
+10,1104,bosco di castagno con latifoglie sempreverdi,0,1921
+10,1105,bosco di castagno con conifere montane,0,1922
+10,1106,bosco di castagno con conifere mediterranee,0,1923
+10,1201,orno ostrieti,0,1924
+10,1202,bosco a prevalenza di carpino nero o orientale,0,1925
+10,1203,bosco a prevalenza di carpino nero o orientale con altre latifoglie decidue,0,1926
+10,1204,bosco a prevalenza di carpino nero o orientale con latifoglie sempreverdi,0,1927
+10,1205,bosco a prevalenza di carpino nero o orientale con conifere montane,0,1928
+10,1206,bosco a prevalenza di carpino nero o orientale con conifere mediterranee,0,1929
+10,1301,bosco di pioppo (bianco o nero),0,1930
+10,1302,bosco a prevalenza di pioppo (bianco o nero) con altre latifoglie decidue,0,1931
+10,1303,bosco a prevalenza di pioppo (bianco o nero) con latifoglie sempreverdi,0,1932
+10,1304,bosco a prevalenza di pioppo (bianco o nero) con conifere montane,0,1933
+10,1305,bosco a prevalenza di pioppo (bianco o nero) con conifere mediterranee,0,1934
+10,1306,bosco misto di latifoglie igrofile,0,1935
+10,1401,bosco misto di querce decidue con altre latifoglie decidue,0,1936
+10,1402,bosco misto di querce decidue con sempreverdi,0,1937
+10,1403,bosco misto di querce decidue con conifere montane,0,1938
+10,1404,bosco misto di querce decidue con conifere mediterranee,0,1939
+10,1405,bosco misto di querce decidue ,0,1940
+10,1406,bosco a prevalenza di latifoglie xerofile minori (orniello\, cercis\, acero minore),0,1941
+10,1407,bosco misto a prevalenza di latifoglie mesofile (tiglio\, sorbo\, frassino\, acero),0,1942
+10,1408,bosco misto di latifoglie decidue con latifoglie sempreverdi,0,1943
+10,1409,bosco misto di latifoglie decidue con conifere montane,0,1944
+10,1410,bosco misto di latifoglie decidue con conifere mediterranee,0,1945
+10,1411,bosco misto di latifoglie decidue,0,1946
+10,1412,bosco misto di latifoglie con conifere montane,0,1947
+10,1413,bosco misto di latifoglie con conifere mediterranee,0,1948
+10,1414,bosco misto di latifoglie ,0,1949
+10,1415,formazioni antropogene ,0,1950
+10,1416,formazione a prevalenza di specie antropogene con altre latifoglie decidue ,0,1951
+10,1417,formazione a prevalenza di specie antropogene con latifoglie sempreverdi,0,1952
+10,1418,formazione a prevalenza di specie antropogene con conifere montane,0,1953
+10,1419,formazione a prevalenza di specie antropogene con conifere mediterranee,0,1954
+10,1501,lecceta,0,1955
+10,1502,lecceta con latifoglie decidue,0,1956
+10,1503,lecceta con altre sempreverdi,0,1957
+10,1504,lecceta con conifere montane,0,1958
+10,1505,lecceta con conifere mediterranee,0,1959
+10,1506,bosco misto di latifoglie sempreverdi con latifoglie decidue,0,1960
+10,1507,bosco misto di latifoglie sempreverdi con conifere montane,0,1961
+10,1508,bosco misto di latifoglie sempreverdi con conifere mediterranee,0,1962
+10,1509,bosco misto di latifoglie sempreverdi,0,1963
+13,01,lecceta rupicola,0,1964
+13,02,lecceta xero-termofila,0,1965
+13,03,lecceta mesoxerofila,0,1966
+13,04,querceto di roverella pioniero,0,1967
+13,05,querceto di roverella tipico,0,1968
+13,06,querceto di roverella mesoxerofilo,0,1969
+13,07,cerreta planiziale mesofila,0,1970
+13,08,cerreta submontana mesoxerofila,0,1971
+13,09,cerreta mesofila,0,1972
+13,10,ostrio-cerreta,0,1973
+13,11,orno-ostrieto pioniero,0,1974
+13,12,ostrieto submontano mesoxerofilo,0,1975
+13,13,ostrieto mesofilo,0,1976
+13,14,castagneto da frutto,0,1977
+13,15,castagneto neutrofilo,0,1978
+13,16,castagneto acidofilo,0,1979
+13,17,faggeta altomontana mesoxerofila,0,1980
+13,18,faggeta submontana mesofila,0,1981
+13,19,faggeta montana eutrofica,0,1982
+13,20,faggeta montana mesoneutrofila,0,1983
+13,21,faggeta montana acidofila,0,1984
+13,22,pioppeto-saliceto ripariale,0,1985
+13,23,alneto di ontano nero,0,1986
+13,24,formazione a tamerici,0,1987
+13,25,robinieto-ailanteto,0,1988
+13,26,latifoglie di invasione e varie,0,1989
+13,27,acero-frassineto di forra,0,1990
+13,28,pioppeto di pioppo tremolo,0,1991
+13,29,boscaglia calanchiva pioniera,0,1992
+13,30,rimboschimento di pini mediterranei,0,1993
+13,31,pinete di pino nero,0,1994
+13,32,rimboschimento di pino nero,0,1995
+13,33,rimboschimento di conifere della fascia dei boschi,0,1996
+13,34,rimboschimento di conifere della fascia del faggio,0,1997
+13,35,piantagione di latifoglie,0,1998
+13,36,pioppeto artificiale,0,1999
+13,37,piantagione di conifere,0,2000
+13,38,arbusteto a specie della macchia,0,2001
+13,39,gariga submediterranea,0,2002
+13,40,arbusteto a rose\, rovo e prugnolo,0,2003
+13,41,corileto,0,2004
+13,42,arbusteto a ginestre,0,2005
+13,43,arbusteto a ginepri mesoxerofili,0,2006
+13,44,arbusteto a ginepri della fascia del faggio,0,2007
+13,45,mugheta appenninica,0,2008
+13,46,arbusteto oromediterraneo,0,2009
+14,100,robinieto ailanteto,0,2010
+14,11,lecceta primitiva,0,2011
+14,12,lecceta termofila,0,2012
+14,120,latifoglie di invasione miste e varie,0,2013
+14,121,pioppeto di pioppo tremulo,0,2014
+14,122,boscaglia pioniera calanchiva,0,2015
+14,13,lecceta mesoxerofila,0,2016
+14,131,rimboschimento basale di conifere,0,2017
+14,132,rimboschimento submontano di conifere,1,2018
+14,133,rimboschimento montano di conifere,0,2019
+14,134,eucalipteti,1,2020
+14,141,macchia mediterranea a fillirea,0,2021
+14,142,arbusteto a rose prugnolo e rovo,0,2022
+14,143,arbusteto a ginepro comune e agazzino,0,2023
+14,144,arbusteto altomontano a ginepro nano,0,2024
+14,145,arbusteto a ginestre ,0,2025
+14,150,abetina pura autoctona,0,2026
+14,21,querceto a roverella secondario,0,2027
+14,22,querceto a roverella termofilo,0,2028
+14,221,querceto a roverella termofilo var. carpinella,0,2029
+14,23,querceto a roverella mesoxerofilo,0,2030
+14,231,querceto a roverella mesoxerofilo var. carpinella,0,2031
+14,31,cerreta mesoxerofila,0,2032
+14,311,cerreta mesoxerofila var. farnetto,0,2033
+14,32,cerreta mesofila,0,2034
+14,321,cerreta mesofila var. farnetto,0,2035
+14,322,cerreta mesofila var. abete bianco,0,2036
+14,51,acero tiglieti primitivi,0,2037
+14,61,orno ostrieto primitivo,0,2038
+14,62,orno ostrieto secondario,0,2039
+14,63,ostrieto mesoxerofilo,0,2040
+14,631,ostrieto mesoxerofilo var. carpinella,0,2041
+14,64,ostrieto mesofilo,0,2042
+14,70,castagneto,0,2043
+14,81,faggeta submontana,0,2044
+14,811,faggeta submontana var. abete bianco,0,2045
+14,82,faggeta montana,0,2046
+14,83,faggeta altomontana,0,2047
+14,90,pioppo saliceto ripariale,0,2048
