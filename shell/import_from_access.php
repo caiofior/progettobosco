@@ -122,3 +122,4 @@ EOL;
 }
 file_put_contents('pgloader.conf', $config);
 exec('pgloader');
+unlink('pgloader.conf');

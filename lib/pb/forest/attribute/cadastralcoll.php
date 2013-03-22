@@ -132,7 +132,7 @@ class CadastralColl  extends \ContentColl implements \forest\attribute\template\
             return intval($this->content->getTable()->getAdapter()->fetchOne($select));
         }
         else 
-            parent::countAll();
+            return parent::countAll();
 
     }
     /**

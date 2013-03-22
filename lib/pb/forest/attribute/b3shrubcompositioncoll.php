@@ -84,7 +84,7 @@ class B3ShrubCompositionColl  extends \ContentColl  {
             return intval($this->content->getTable()->getAdapter()->fetchOne($select));
         }
         else 
-            parent::countAll();
+            return parent::countAll();
 
     }
     /**

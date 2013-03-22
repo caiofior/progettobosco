@@ -78,7 +78,7 @@ class ForestMassEsteemColl  extends \ContentColl  {
      * @param array $criteria Filtering criteria
      */
     public function countAll(array $criteria = null) {
-            parent::countAll();
+            return parent::countAll();
 
     }
     /**

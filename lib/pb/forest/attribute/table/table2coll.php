@@ -55,7 +55,9 @@ class Table2Coll  extends \ContentColl  {
      * @return \Zend_Db_Select
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
-
+        if ($this->table instanceof \forest\attribute\Table) {
+            $select->where('codice = ?',$this->table->getData('codice'));
+        }
         return $select;
     }
      /**
@@ -63,7 +65,12 @@ class Table2Coll  extends \ContentColl  {
      * @param array $criteria Filtering criteria
      */
     public function countAll(array $criteria = null) {
-            parent::countAll();
+            if ($this->table instanceof \forest\attribute\Table) {
+                $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
+                $select = $this->customSelect($select,array());
+                return intval($this->content->getTable()->getAdapter()->fetchOne($select));
+            }
+            return parent::countAll();
     }
     /**
      * Adds new forest composition 

@@ -1,252 +1,138 @@
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 1 [row 1]: found 1 columns
 
+Error parsing columns on line 2 [row 2]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 3 [row 3]: found 1 columns
 
+Error parsing columns on line 4 [row 4]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 5 [row 5]: found 1 columns
 
+Error parsing columns on line 6 [row 6]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 7 [row 7]: found 1 columns
 
+Error parsing columns on line 8 [row 8]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 9 [row 9]: found 1 columns
 
+Error parsing columns on line 10 [row 10]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 11 [row 11]: found 1 columns
 
+Error parsing columns on line 12 [row 12]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 13 [row 13]: found 1 columns
 
+Error parsing columns on line 14 [row 14]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 15 [row 15]: found 1 columns
 
+Error parsing columns on line 16 [row 16]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 17 [row 17]: found 1 columns
 
+Error parsing columns on line 18 [row 18]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 19 [row 19]: found 1 columns
 
+Error parsing columns on line 20 [row 20]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 21 [row 21]: found 1 columns
 
+Error parsing columns on line 22 [row 22]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 23 [row 23]: found 1 columns
 
+Error parsing columns on line 24 [row 24]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 25 [row 25]: found 1 columns
 
+Error parsing columns on line 26 [row 26]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 27 [row 27]: found 1 columns
 
+Error parsing columns on line 28 [row 28]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 29 [row 29]: found 1 columns
 
+Error parsing columns on line 30 [row 30]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 31 [row 31]: found 1 columns
 
+Error parsing columns on line 32 [row 32]: found 2 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 33 [row 33]: found 1 columns
 
+Error parsing columns on line 34 [row 34]: found 4 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 35 [row 35]: found 1 columns
 
+Error parsing columns on line 36 [row 36]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 37 [row 37]: found 1 columns
 
+Error parsing columns on line 38 [row 38]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 39 [row 39]: found 1 columns
 
+Error parsing columns on line 40 [row 40]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 41 [row 41]: found 1 columns
 
+Error parsing columns on line 42 [row 42]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 43 [row 43]: found 1 columns
 
+Error parsing columns on line 44 [row 44]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 45 [row 45]: found 1 columns
 
+Error parsing columns on line 46 [row 46]: found 5 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 47 [row 47]: found 1 columns
 
+Error parsing columns on line 48 [row 48]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 49 [row 49]: found 2 columns
 
+Error parsing columns on line 50 [row 50]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 51 [row 51]: found 1 columns
 
+Error parsing columns on line 52 [row 52]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 53 [row 53]: found 1 columns
 
+Error parsing columns on line 54 [row 54]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 55 [row 55]: found 1 columns
 
+Error parsing columns on line 56 [row 56]: found 2 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 57 [row 57]: found 1 columns
 
+Error parsing columns on line 58 [row 58]: found 3 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 59 [row 59]: found 1 columns
 
+Error parsing columns on line 60 [row 60]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 61 [row 61]: found 1 columns
 
+Error parsing columns on line 62 [row 62]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 63 [row 63]: found 1 columns
 
+Error parsing columns on line 64 [row 64]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 65 [row 65]: found 1 columns
 
+Error parsing columns on line 66 [row 66]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
+Error parsing columns on line 67 [row 67]: found 1 columns
 
+Error parsing columns on line 68 [row 68]: found 1 columns
 
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
-
-
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
-
-
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
-
-
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
-
-
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
-
-
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
-
-
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
-
-
-COPY error on lines 
-COPY error: syntax error at or near "'sched_b1'"
-LINE 1: COPY 'sched_b1' ()  FROM STDOUT WITH DELIMITER ','
-             ^
-
+Error parsing columns on line 69 [row 69]: found 1 columns
 

@@ -4220,7 +4220,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/attribute/noteacoll.php" hash="c0c2c5c8f24ed0577a8c726cc243ac18" package="Default">
+  <file path="forest/attribute/noteacoll.php" hash="ee3ce4af62730bb9c092fdc75fa0f9fe" package="Default">
     <docblock line="2">
       <description>Manages Note A collection</description>
       <long-description>&lt;p&gt;Manages Note A collection&lt;/p&gt;</long-description>
@@ -4331,7 +4331,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/attribute/b3renovationcompositioncoll.php" hash="cd9761cbdb73b489b6f5038600a4d99f" package="Default">
+  <file path="forest/attribute/b3renovationcompositioncoll.php" hash="81ad315a415c29096cd250256a84bd3b" package="Default">
     <docblock line="2">
       <description>Manages B3 Renovation Composition collection</description>
       <long-description>&lt;p&gt;Manages B3 Renovation Composition collection&lt;/p&gt;</long-description>
@@ -4442,7 +4442,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/attribute/pastureweedcoll.php" hash="9abdd955d6630d6d7636ca83837ea2ed" package="Default">
+  <file path="forest/attribute/pastureweedcoll.php" hash="c0b8e1b4356cac8275d00e8437cbfeb7" package="Default">
     <docblock line="2">
       <description>Manages Pasture Weed collection</description>
       <long-description>&lt;p&gt;Manages Pasture Weed collection&lt;/p&gt;</long-description>
@@ -4600,7 +4600,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/attribute/b2shrubcompositioncoll.php" hash="314e5552fad819ff152f02da6d9b576b" package="Default">
+  <file path="forest/attribute/b2shrubcompositioncoll.php" hash="2b43b0765d7bd66130926a6707d563c5" package="Default">
     <docblock line="2">
       <description>Manages B2 Shrub Composition collection</description>
       <long-description>&lt;p&gt;Manages B2 Shrub Composition collection&lt;/p&gt;</long-description>
@@ -4886,7 +4886,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/attribute/noteb2coll.php" hash="f937e33d05e05beb413e03071e746e3c" package="Default">
+  <file path="forest/attribute/noteb2coll.php" hash="336c5a03c26d31be3c0cf9e743c57c8c" package="Default">
     <docblock line="2">
       <description>Manages Note B2 collection</description>
       <long-description>&lt;p&gt;Manages Note B2 collection&lt;/p&gt;</long-description>
@@ -5027,7 +5027,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/attribute/b4shrubcompositioncoll.php" hash="e0445683b389a4b75ce8ebbd1540723d" package="Default">
+  <file path="forest/attribute/b4shrubcompositioncoll.php" hash="09f88987808ae5b619c90e9a1c268e50" package="Default">
     <docblock line="2">
       <description>Manages B4 Shrub Composition collection</description>
       <long-description>&lt;p&gt;Manages B4 Shrub Composition collection&lt;/p&gt;</long-description>
@@ -5138,7 +5138,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/attribute/noteb4coll.php" hash="122b1e281a48ca566ca00017602814d5" package="Default">
+  <file path="forest/attribute/noteb4coll.php" hash="6ba348e28aa46528020d8b8886e20df9" package="Default">
     <docblock line="2">
       <description>Manages Note B4 collection</description>
       <long-description>&lt;p&gt;Manages Note B4 collection&lt;/p&gt;</long-description>
@@ -5249,7 +5249,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/attribute/b1covercompositioncoll.php" hash="4d7c9b73dd6ae35e26a0b14d87f78223" package="Default">
+  <file path="forest/attribute/b1covercompositioncoll.php" hash="f2c67b642d8e05584375301825f21f8d" package="Default">
     <docblock line="2">
       <description>Manages B1 Cover Composition collection</description>
       <long-description>&lt;p&gt;Manages B1 Cover Composition collection&lt;/p&gt;</long-description>
@@ -5836,7 +5836,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/attribute/b3herbaceuscompositioncoll.php" hash="c258ebe2bffdcfb564c1996a18daec3f" package="Default">
+  <file path="forest/attribute/b3herbaceuscompositioncoll.php" hash="496e419faef19821e4caa9f4ada37891" package="Default">
     <docblock line="2">
       <description>Manages B3 Herbaceus Composition collection</description>
       <long-description>&lt;p&gt;Manages B3 Herbaceus Composition collection&lt;/p&gt;</long-description>
@@ -5947,7 +5947,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/attribute/b4herbaceuscompositioncoll.php" hash="4ac9608b072cfdde0bb3ff631aa4847d" package="Default">
+  <file path="forest/attribute/b4herbaceuscompositioncoll.php" hash="efeaa4144997cfb07769ce4e66ade693" package="Default">
     <docblock line="2">
       <description>Manages B4 Herbaceus Composition collection</description>
       <long-description>&lt;p&gt;Manages B4 Herbaceus Composition collection&lt;/p&gt;</long-description>
@@ -6113,12 +6113,12 @@
         <full_name>__construct</full_name>
         <docblock line="32">
           <description>Instantiates the table</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
     </class>
   </file>
-  <file path="forest/attribute/table/table2coll.php" hash="d8c6730ba5e2b8f34b3ceeed108b2db0" package="Default">
+  <file path="forest/attribute/table/table2coll.php" hash="bce99cd657a20e06d76564ce65473686" package="Default">
     <docblock line="2">
       <description>Manages Table2 collection</description>
       <long-description>&lt;p&gt;Manages Table2 collection&lt;/p&gt;</long-description>
@@ -6143,7 +6143,7 @@
         <default>null</default>
         <docblock line="32">
           <description>Forest Reference</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="32" name="var" description="" type="\forest\attribute\Table">
             <type by_reference="false">\forest\attribute\Table</type>
           </tag>
@@ -6154,7 +6154,7 @@
         <full_name>__construct</full_name>
         <docblock line="37">
           <description>Instantiates the table</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute\table" line="47" package="Default">
@@ -6162,14 +6162,14 @@
         <full_name>setTable</full_name>
         <docblock line="43">
           <description>Sets the form reference</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="43" name="param" description="Table" type="\forest\attribute\Table" variable="$table">
             <type by_reference="false">\forest\attribute\Table</type>
           </tag>
         </docblock>
         <argument line="47">
           <name>$table</name>
-          <default></default>
+          <default/>
           <type>\forest\attribute\Table</type>
         </argument>
       </method>
@@ -6178,7 +6178,7 @@
         <full_name>customSelect</full_name>
         <docblock line="51">
           <description>Customizes the select statement</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="51" name="param" description="" type="\Zend_Db_Select" variable="$select">
             <type by_reference="false">\Zend_Db_Select</type>
           </tag>
@@ -6191,38 +6191,38 @@
         </docblock>
         <argument line="57">
           <name>$select</name>
-          <default></default>
+          <default/>
           <type>\Zend_Db_Select</type>
         </argument>
         <argument line="57">
           <name>$criteria</name>
-          <default></default>
+          <default/>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute\table" line="65" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute\table" line="67" package="Default">
         <name>countAll</name>
         <full_name>countAll</full_name>
-        <docblock line="61">
+        <docblock line="63">
           <description>Returns all contents without any filter</description>
-          <long-description></long-description>
-          <tag line="61" name="param" description="Filtering criteria" type="array" variable="$criteria">
+          <long-description/>
+          <tag line="63" name="param" description="Filtering criteria" type="array" variable="$criteria">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="65">
+        <argument line="67">
           <name>$criteria</name>
           <default>null</default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute\table" line="72" package="Default">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute\table" line="79" package="Default">
         <name>addItem</name>
         <full_name>addItem</full_name>
-        <docblock line="68">
+        <docblock line="75">
           <description>Adds new forest composition</description>
-          <long-description></long-description>
-          <tag line="68" name="return" description="" type="\forest\attribute\Table2">
+          <long-description/>
+          <tag line="75" name="return" description="" type="\forest\attribute\Table2">
             <type by_reference="false">\forest\attribute\Table2</type>
           </tag>
         </docblock>
@@ -6281,14 +6281,14 @@
       </docblock>
       <property final="false" static="false" visibility="private" line="31" namespace="forest\attribute" package="Default">
         <name>$tables</name>
-        <default></default>
+        <default/>
       </property>
       <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="35" package="Default">
         <name>__construct</name>
         <full_name>__construct</full_name>
         <docblock line="32">
           <description>Instantiates the table</description>
-          <long-description></long-description>
+          <long-description/>
         </docblock>
       </method>
       <method final="false" abstract="false" static="false" visibility="public" namespace="forest\attribute" line="47" package="Default">
@@ -6296,14 +6296,14 @@
         <full_name>loadFromId</full_name>
         <docblock line="43">
           <description>Redifines load data with specific types</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="43" name="param" description="" type="int" variable="$id">
             <type by_reference="false">int</type>
           </tag>
         </docblock>
         <argument line="47">
           <name>$id</name>
-          <default></default>
+          <default/>
           <type/>
         </argument>
       </method>
@@ -6312,7 +6312,7 @@
         <full_name>getTable4</full_name>
         <docblock line="58">
           <description>Return Table4 object</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="58" name="return" description="" type="\forest\attribute\table\Table4">
             <type by_reference="false">\forest\attribute\table\Table4</type>
           </tag>
@@ -6323,7 +6323,7 @@
         <full_name>getTable5</full_name>
         <docblock line="65">
           <description>Return Table5 object</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="65" name="return" description="" type="\forest\attribute\table\Table5">
             <type by_reference="false">\forest\attribute\table\Table5</type>
           </tag>
@@ -6334,7 +6334,7 @@
         <full_name>getTable2Coll</full_name>
         <docblock line="72">
           <description>Returns a Table2Coll</description>
-          <long-description></long-description>
+          <long-description/>
           <tag line="72" name="return" description="" type="\forest\attribute\table\Table2Coll">
             <type by_reference="false">\forest\attribute\table\Table2Coll</type>
           </tag>
@@ -6629,7 +6629,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/attribute/cadastralcoll.php" hash="452165f2effd96f1ac8ad3d9a4940ab4" package="Default">
+  <file path="forest/attribute/cadastralcoll.php" hash="3f9eec83775a890f27451d9dcce01ad3" package="Default">
     <docblock line="2">
       <description>Manages Cadastral collection</description>
       <long-description>&lt;p&gt;Manages Cadastral collection&lt;/p&gt;</long-description>
@@ -6836,7 +6836,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/attribute/b2herbaceuscompositioncoll.php" hash="5d393403858f04e30f962e9950636583" package="Default">
+  <file path="forest/attribute/b2herbaceuscompositioncoll.php" hash="b579a3d61ec99be3a85605a1f7fd7346" package="Default">
     <docblock line="2">
       <description>Manages B2 Herbaceus Composition collection</description>
       <long-description>&lt;p&gt;Manages B2 Herbaceus Composition collection&lt;/p&gt;</long-description>
@@ -7078,7 +7078,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/attribute/noteb3coll.php" hash="86824f44638c2aeed12d4d33c275585c" package="Default">
+  <file path="forest/attribute/noteb3coll.php" hash="82fc56e8d465ab68c54d3f7973e75972" package="Default">
     <docblock line="2">
       <description>Manages Note B3 collection</description>
       <long-description>&lt;p&gt;Manages Note B3 collection&lt;/p&gt;</long-description>
@@ -7381,7 +7381,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/attribute/b1herbaceuscompositioncoll.php" hash="e42cef5fae7c222b5ee0652ae7a9ada9" package="Default">
+  <file path="forest/attribute/b1herbaceuscompositioncoll.php" hash="96b09c5f716935fa373f599715f73265" package="Default">
     <docblock line="2">
       <description>Manages B1 Herbaceus Composition collection</description>
       <long-description>&lt;p&gt;Manages B1 Herbaceus Composition collection&lt;/p&gt;</long-description>
@@ -7492,7 +7492,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/attribute/b2covercompositioncoll.php" hash="6a711ce300b5db3d2c582d56f205b0f5" package="Default">
+  <file path="forest/attribute/b2covercompositioncoll.php" hash="8a8d8cef79c103076137ce5095587d87" package="Default">
     <docblock line="2">
       <description>Manages B2 Cover Composition collection</description>
       <long-description>&lt;p&gt;Manages B2 Cover Composition collection&lt;/p&gt;</long-description>
@@ -7825,7 +7825,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/attribute/b1shrubcompositioncoll.php" hash="63174f5057318e9a30fcb97f42b50289" package="Default">
+  <file path="forest/attribute/b1shrubcompositioncoll.php" hash="84ca0a1e4f60be958c85feb770bd0791" package="Default">
     <docblock line="2">
       <description>Manages B1 Shrub Composition collection</description>
       <long-description>&lt;p&gt;Manages B1 Shrub Composition collection&lt;/p&gt;</long-description>
@@ -7936,7 +7936,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/attribute/notebcoll.php" hash="8a25a2e77f294427860c0d686ee3faf5" package="Default">
+  <file path="forest/attribute/notebcoll.php" hash="6736f8cd66d9ff44524667e671227fc4" package="Default">
     <docblock line="2">
       <description>Manages Note B collection</description>
       <long-description>&lt;p&gt;Manages Note B collection&lt;/p&gt;</long-description>
@@ -8406,7 +8406,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/attribute/forestmassesteemcoll.php" hash="2c8903667a79a32ba8d233f5dc68cbb3" package="Default">
+  <file path="forest/attribute/forestmassesteemcoll.php" hash="2db683f05909f8c97d6cbf9d283ed066" package="Default">
     <docblock line="2">
       <description>Manages Forest Mass Esteem collection</description>
       <long-description>&lt;p&gt;Manages Forest Mass Esteem collection&lt;/p&gt;</long-description>
@@ -8517,7 +8517,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/attribute/b3shrubcompositioncoll.php" hash="6d6997434b8feb0f06ca650f22875a90" package="Default">
+  <file path="forest/attribute/b3shrubcompositioncoll.php" hash="f18a111b7ac91d18357c8bed0c3a1aae" package="Default">
     <docblock line="2">
       <description>Manages B3 Shrub Composition collection</description>
       <long-description>&lt;p&gt;Manages B3 Shrub Composition collection&lt;/p&gt;</long-description>
@@ -8795,7 +8795,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/attribute/b4covercompositioncoll.php" hash="17c2cd497860343d473b8bf2c8a59c02" package="Default">
+  <file path="forest/attribute/b4covercompositioncoll.php" hash="2b7b00d50d08819a27647f9496e1634a" package="Default">
     <docblock line="2">
       <description>Manages B4 Cover Composition collection</description>
       <long-description>&lt;p&gt;Manages B4 Cover Composition collection&lt;/p&gt;</long-description>
@@ -8996,7 +8996,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/attribute/b3covercompositioncoll.php" hash="7169e28b20ae0c7780c085a21e9aff70" package="Default">
+  <file path="forest/attribute/b3covercompositioncoll.php" hash="f056b9d8441d57bc36b648ee2e34df3e" package="Default">
     <docblock line="2">
       <description>Manages B3 Cover Composition collection</description>
       <long-description>&lt;p&gt;Manages B3 Cover Composition collection&lt;/p&gt;</long-description>
@@ -9192,7 +9192,7 @@
       </method>
     </class>
   </file>
-  <file path="forest/attribute/b3treelinecompositioncoll.php" hash="0769e35c6b40384318a9888fcefb9b3b" package="Default">
+  <file path="forest/attribute/b3treelinecompositioncoll.php" hash="280e59143d2ecbe3a9adfe3e605f2cf4" package="Default">
     <docblock line="2">
       <description>Manages B3 Tree line Composition collection</description>
       <long-description>&lt;p&gt;Manages B3 Tree line Composition collection&lt;/p&gt;</long-description>

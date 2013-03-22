@@ -1,0 +1,1 @@
+php import_from_pgsql.php $1

@@ -37,6 +37,41 @@ if (isset( $_REQUEST['codice'] ) )  {
     $table->loadFromId($_REQUEST['codice']);
     $content = 'content'.DIRECTORY_SEPARATOR.'tavoleManage.php';
 }
+if (key_exists('action', $_REQUEST)) {
+    switch ($_REQUEST['action']) {
+        case 'table2data':
+            $response =array();
+            $table2coll = $table->getTable2Coll();
+            $table2coll->loadAll($_REQUEST);
+            
+            $response =array(
+                'sEcho'=>  intval($_REQUEST['sEcho']),
+                'iTotalRecords'=>$table2coll->countAll(),
+                'iTotalDisplayRecords'=>$table2coll->count(),
+                'sColumns'=>  implode(',',$table2coll->getColumns()),
+                'aaData'=>array()
+            );
+            foreach($table2coll->getItems() as $table2) {
+                $datarow = array();
+                $datarow[] = intval($table2->getData('objectid'));
+                $datarow[] = $table2->getData('tariffa');
+                $datarow[] = $table2->getData('d');
+                $datarow[] = floatval($table2->getData('h'));
+                $datarow[] = floatval($table2->getRawData('v'));
+                ob_start(); ?>
+        <div class="table_actions">
+            <a href="daticat.php?action=cadastratabledelete&id=<?php echo $table->getData('objectid');?>&elementid=<?php echo $table2->getData('objectid');?>"><img class="actions delete" src="images/empty.png" title="Cancella"/></a>
+        </div>
+                <?php $datarow[]=  ob_get_clean();
+                $response['aaData'][]=$datarow;
+            }
+            header('Content-type: application/json');
+            echo Zend_Json::encode($response);
+            exit;
+        break;
+    }
+    
+}
 $view = new Template(array(
     'basePath' => __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'views'
 
