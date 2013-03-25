@@ -1,6 +1,8 @@
 <?php
 
 namespace forest\form;
+use forest\entity\AColl;
+
 $PHPUNIT = true;
 require (__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'include' . DIRECTORY_SEPARATOR . 'pageboot.php');
 require ('PHPUnit/Autoload.php');

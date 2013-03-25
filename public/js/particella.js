@@ -6,7 +6,7 @@
 /**
  * Forest Compartment list management
  */
-$("#forestcompartment_list").prepend("<a id=\"forestcompartment_list_update\" style=\"display:none;\" data-basehref=\""+$("#forestcompartment_list").attr("action")+"\" data-update=\"content_boscoForestCompartmentlist\"></a>");
+$("#forestcompartment_list").prepend("<a id=\"forestcompartment_list_update\" style=\"display:none;\" data-basehref=\""+$("#forestcompartment_list").attr("action")+"\" data-update=\"content_bosco_forestcompartmentlist\"></a>");
 $("#search").keyup(function(){
    el = $("#forestcompartment_list_update"); 
    search = $("#search");
@@ -18,11 +18,11 @@ $("#search").keyup(function(){
 $("#usosuolo, #codiope").change(function() {
    $("#search").val("").trigger("keyup");
 });
-$(document).on("click","#content_boscoForestCompartmentlist .delete",function(){
+$(document).on("click","#content_bosco_forestcompartmentlist .delete",function(){
     el = $(this).parent("a");
     $.colorbox({
         "html"  :   "Vuoi cancellare la particella selezionata ?"+
-                    " <a id=\"bosco_delete_confirm\"href=\""+el.attr("href")+"\" data-update=\"content_boscoForestCompartmentlist\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
+                    " <a id=\"bosco_delete_confirm\"href=\""+el.attr("href")+"\" data-update=\"content_bosco_forestcompartmentlist\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
                     " <a id=\"bosco_delete_cancel\"href=\"#\"><img src=\"images/empty.png\" title=\"Annulla cancellazione\" class=\"actions cancel\"/> </a>",
         "onLoad": function() {
             $('#cboxClose').remove();
@@ -30,7 +30,7 @@ $(document).on("click","#content_boscoForestCompartmentlist .delete",function(){
     });
    return false;
 });
-$(document).on("click","#content_boscoForestCompartmentlist .addnew",function(){
+$(document).on("click","#content_bosco_forestcompartmentlist .addnew",function(){
     el = $(this).parent("a");
     $.colorbox({
         "href"  :   el.attr("href"),

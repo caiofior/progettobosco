@@ -2,7 +2,7 @@
 $header = 'header'.DIRECTORY_SEPARATOR.'particella.php';
 $content = 'content'.DIRECTORY_SEPARATOR.'particella.php';
 $sidebar = 'general'.DIRECTORY_SEPARATOR.'sidebar.php';
-$a = new forest\form\A();
+$a = new \forest\entity\A();
 $a->loadFromId($_REQUEST['id']);
 if (key_exists('deleteTab1', $_REQUEST)) {
     $bcoll = $a->getBColl();

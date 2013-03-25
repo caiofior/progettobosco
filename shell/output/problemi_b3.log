@@ -1,0 +1,48 @@
+COPY error on lines 
+COPY error: syntax error at or near "'problemi_b3'"
+LINE 1: COPY 'problemi_b3' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on lines 
+COPY error: syntax error at or near "'problemi_b3'"
+LINE 1: COPY 'problemi_b3' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on lines 
+COPY error: syntax error at or near "'problemi_b3'"
+LINE 1: COPY 'problemi_b3' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on lines 
+COPY error: syntax error at or near "'problemi_b3'"
+LINE 1: COPY 'problemi_b3' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on lines 
+COPY error: syntax error at or near "'problemi_b3'"
+LINE 1: COPY 'problemi_b3' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on lines 
+COPY error: syntax error at or near "'problemi_b3'"
+LINE 1: COPY 'problemi_b3' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on lines 
+COPY error: syntax error at or near "'problemi_b3'"
+LINE 1: COPY 'problemi_b3' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+
+COPY error on lines 
+COPY error: syntax error at or near "'problemi_b3'"
+LINE 1: COPY 'problemi_b3' ()  FROM STDOUT WITH DELIMITER ','
+             ^
+
+

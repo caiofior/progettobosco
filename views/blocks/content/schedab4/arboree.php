@@ -1,7 +1,7 @@
 <div id="content_schedab4_arboree">
     <?php
     if (!isset($b4)) {
-        $b4 = new \forest\form\B4();
+        $b4 = new \forest\entity\B4();
         $b4->loadFromId($_REQUEST['id']);
     }
     $b4covercomposition = new \forest\attribute\covercomposition\B3();

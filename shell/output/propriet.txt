@@ -1,8 +1,1 @@
-14003	PIETRABBONDANTE	14	1
-05111	Valdagno	05	3
-14888	uuuuu	14	11
-04222	Trento	04	4
-03999	Milano	03	5
-15222	angri	15	15
-1800	fuiytdf	18	24
-16888	iutrw9	16	25
+"20","Grighine","20",1

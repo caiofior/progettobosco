@@ -1,0 +1,29 @@
+20, 601b, 1,B4,P2,ipotesi intervento non inserita,13,\N
+20, 602b, 1,B4,INT2,interventi recenti non inserito,2,\N
+20, 602b, 1,B4,P2,ipotesi intervento non inserita,9,\N
+20, 602b, 1,B4,SPE_ERBA,specie erbacee non inserite,1,\N
+20, 603a, 1,B4,G1,priorità non inserita,12,\N
+20, 603a, 1,B4,INT2,interventi recenti non inserito,3,\N
+20, 603a, 1,B4,P2,ipotesi intervento non inserita,11,\N
+20, 605a, 1,B4,G1,priorità non inserita,10,\N
+20, 605a, 1,B4,INT2,interventi recenti non inserito,4,\N
+20, 606a, 1,B4,G,Orientamento selvicolturale non inserito,6,\N
+20, 606a, 1,B4,G1,priorità non inserita,14,\N
+20, 606a, 1,B4,INT2,interventi recenti non inserito,5,\N
+20, 606b, 1,B4,INT2,interventi recenti non inserito,7,\N
+20, 606b, 1,B4,P2,ipotesi intervento non inserita,8,\N
+20,3000 , 1,B4,CE_MAG2,copertura piano dominante non inserita,20,\N
+20,3000 , 1,B4,CE_MIN2,copertura piano dominato non inserita,17,\N
+20,3000 , 1,B4,F,funzione non inserita,26,\N
+20,3000 , 1,B4,G,Orientamento selvicolturale non inserito,27,\N
+20,3000 , 1,B4,G1,priorità non inserita,29,\N
+20,3000 , 1,B4,H_MAG2,altezza media piano dominante non inserita,21,\N
+20,3000 , 1,B4,H_MIN2,altezza media piano dominato non inserita,18,\N
+20,3000 , 1,B4,INT2,interventi recenti non inserito,25,\N
+20,3000 , 1,B4,MOTIVO1,motivo che ha determinato macchia non inserito,15,\N
+20,3000 , 1,B4,P2,ipotesi intervento non inserita,28,\N
+20,3000 , 1,B4,SE,copertura specie erbacee non inserito,24,\N
+20,3000 , 1,B4,SPE_ARBOMAG2,specie arboree piano dominante non inserite,22,\N
+20,3000 , 1,B4,SPE_ARBOMIN2,specie arboree piano dominato non inserite,19,\N
+20,3000 , 1,B4,SPE_ERBA,specie erbacee non inserite,23,\N
+20,3000 , 1,B4,VERT,caratteristiche struttura verticale non inserite,16,\N

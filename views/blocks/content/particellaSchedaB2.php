@@ -2,7 +2,7 @@
 if (isset($this))
     $a = $this->a;
 else {
-    $a = new forest\form\A();
+    $a = new \forest\entity\A();
     $a->loadFromId($_REQUEST['id']);
 }
 $forest = $a->getForest();

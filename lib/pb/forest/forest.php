@@ -126,10 +126,10 @@ class Forest extends template\Entity {
     }
     /**
      * Gets the form a collection of the forest
-     * @return \forest\form\AColl
+     * @return \forest\entity\AColl
      */
     public function getForestCompartmentColl () {
-        $acoll = new form\AColl();
+        $acoll = new entity\AColl();
         $acoll->setForest($this);
         return $acoll;
     }

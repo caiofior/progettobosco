@@ -1,7 +1,7 @@
 <div id="content_schedab3_alberature">
     <?php
     if (!isset($b3)) {
-        $b3 = new \forest\form\B3();
+        $b3 = new \forest\entity\B3();
         $b3->loadFromId($_REQUEST['id']);
     }
     $b3treelinecomposition = new \forest\attribute\B3TreeLineComposition();

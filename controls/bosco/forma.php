@@ -1,5 +1,5 @@
 <?php
-$a = new \forest\form\A();
+$a = new \forest\entity\A();
 $a->loadFromId($_REQUEST['id']);
 if (key_exists('action', $_REQUEST)) {
     switch ($_REQUEST['action']) {

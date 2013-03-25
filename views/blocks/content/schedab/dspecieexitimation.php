@@ -1,7 +1,7 @@
 <div id="content_schedab_dspecieexitimation">
     <?php
     if (!isset($b1)) {
-        $b1 = new \forest\form\B1();
+        $b1 = new \forest\entity\B1();
         $b1->loadFromId($_REQUEST['id']);
     }
     $forestmassesteem = new \forest\attribute\ForestMassEsteem();

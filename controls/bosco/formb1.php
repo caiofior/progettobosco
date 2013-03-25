@@ -1,9 +1,9 @@
 <?php
-$b1 = new \forest\form\B1();
+$b1 = new \forest\entity\B1();
 try{
 $b1->loadFromId($_REQUEST['id']);
 } catch (Exception $e) {
-    $a = new \forest\form\A();
+    $a = new \forest\entity\A();
     $a->loadFromId($_REQUEST['id']);
     $bcoll = $a->getBColl();
     if ($bcoll->count() == 0) {

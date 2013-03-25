@@ -74,7 +74,7 @@
 								<input class="large float_width" id="search" name="search" value="" type="text" tabindex="3" />
                                                         <?php 
                                                         $_GET['forest_codice']=$this->forest->getData('codice');
-                                                        require __DIR__.DIRECTORY_SEPARATOR.'boscoForestCompartmentlist.php'; 
+                                                        require __DIR__.DIRECTORY_SEPARATOR.'bosco'.DIRECTORY_SEPARATOR.'forestcompartmentlist.php'; 
                                                         ?>
                                         
                                         </form>	

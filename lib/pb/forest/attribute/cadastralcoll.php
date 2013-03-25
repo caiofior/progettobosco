@@ -35,7 +35,7 @@ class CadastralColl  extends \ContentColl implements \forest\attribute\template\
     protected $forest;
     /**
      * Entity a Reference
-     * @var \forest\form\A 
+     * @var \forest\entity\A
      */
     protected $form_a=null;
     /**
@@ -53,9 +53,9 @@ class CadastralColl  extends \ContentColl implements \forest\attribute\template\
     }
     /**
      * Sets the form reference
-     * @param \forest\form\A $form Entity a
+     * @param \forest\entity\A $form Entity a
      */
-    public function setForm(\forest\form\A $form) {
+    public function setForm(\forest\entity\A $form) {
 
         $this->form_a = $form;
     }
@@ -69,7 +69,7 @@ class CadastralColl  extends \ContentColl implements \forest\attribute\template\
         $select->setIntegrityCheck(false)
         ->from($this->content->getTable()->info('name'));
         if ($this->forest instanceof \forest\Forest) {
-            $forma = new \forest\form\A();
+            $forma = new \forest\entity\A();
             $select = $forma->getTable()->select()->from('schede_a',array(
                 '*',
                 'schede_a_sup_tot'=>'sup_tot',
@@ -101,7 +101,7 @@ class CadastralColl  extends \ContentColl implements \forest\attribute\template\
                         )
                     )
             ->where(' schede_a.proprieta = ? ',$this->forest->getData('codice'));
-        }else if ($this->form_a instanceof \forest\form\A) {
+        }else if ($this->form_a instanceof \forest\entity\A) {
             $select->where(' cod_part = ? ',$this->form_a->getData('cod_part'))
             ->where(' proprieta = ? ',$this->form_a->getData('proprieta'))
             ->where(' cod_fo = ? ',$this->form_a->getData('cod_fo'))
@@ -123,7 +123,7 @@ class CadastralColl  extends \ContentColl implements \forest\attribute\template\
             $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
             $select->where(' proprieta = ? ',$this->forest->getData('codice'));
             return intval($this->content->getTable()->getAdapter()->fetchOne($select));
-        } else if ($this->form_a instanceof \forest\form\A) {
+        } else if ($this->form_a instanceof \forest\entity\A) {
             $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
             $select->where(' cod_part = ? ',$this->form_a->getData('cod_part'))
             ->where(' proprieta = ? ',$this->form_a->getData('proprieta'))
@@ -158,7 +158,7 @@ class CadastralColl  extends \ContentColl implements \forest\attribute\template\
                      'sum_sup_tot'=>'SUM(sup_tot)',
                      'sum_sup_bosc'=>'SUM(sup_bosc)'
                      ));
-         if ($this->form_a instanceof \forest\form\A) {
+         if ($this->form_a instanceof \forest\entity\A) {
             $select->where(' cod_part = ? ',$this->form_a->getData('cod_part'))
             ->where(' proprieta = ? ',$this->form_a->getData('proprieta'));
         }

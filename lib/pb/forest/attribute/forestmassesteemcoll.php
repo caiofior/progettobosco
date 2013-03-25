@@ -32,7 +32,7 @@ if (!class_exists('Content')) {
 class ForestMassEsteemColl  extends \ContentColl  {
     /**
      * Forest Reference
-     * @var \forest\form\B1
+     * @var \forest\entity\B1
      */
     protected $form_b1=null;
     /**
@@ -43,9 +43,9 @@ class ForestMassEsteemColl  extends \ContentColl  {
     }
     /**
      * Sets the form reference
-     * @param \forest\form\B1 $form Entity b1
+     * @param \forest\entity\B1 $form Entity b1
      */
-    public function setForm(\forest\form\B1 $form) {
+    public function setForm(\forest\entity\B1 $form) {
 
         $this->form_b1 = $form;
     }
@@ -66,7 +66,7 @@ class ForestMassEsteemColl  extends \ContentColl  {
                 ' replace(\'-\' || proprieta || \'-\' || cod_part || \'-\' || cod_fo || \'-\' || cod_coltu, \' \', \'_\') '
              )
         ));
-        if ($this->form_b1 instanceof \forest\form\B1) {
+        if ($this->form_b1 instanceof \forest\entity\B1) {
             $select->where(' cod_part = ? ',$this->form_b1->getData('cod_part'))
             ->where(' proprieta = ? ',$this->form_b1->getData('proprieta'))
             ->where(' cod_fo = ? ',$this->form_b1->getData('cod_fo'));

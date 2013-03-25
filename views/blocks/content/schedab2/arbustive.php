@@ -1,7 +1,7 @@
 <div id="content_schedab2_arbustive">
     <?php
     if (!isset($b2)) {
-        $b2 = new \forest\form\B2();
+        $b2 = new \forest\entity\B2();
         $b2->loadFromId($_REQUEST['id']);
     }
     $shrubcompositioncoll = $b2->getShrubCompositionColl();

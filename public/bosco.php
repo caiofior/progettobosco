@@ -36,6 +36,9 @@ if (key_exists('task', $_REQUEST)) {
         case 'formb3':
             require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'controls'.DIRECTORY_SEPARATOR.'bosco'.DIRECTORY_SEPARATOR.'formb3.php';
         break;
+        case 'formx':
+            require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'controls'.DIRECTORY_SEPARATOR.'bosco'.DIRECTORY_SEPARATOR.'formx.php';
+        break;
         case 'autocomplete':
             require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'controls'.DIRECTORY_SEPARATOR.'bosco'.DIRECTORY_SEPARATOR.'autocomplete.php';
         break;
@@ -58,7 +61,7 @@ if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
                             'objectid'=>$_REQUEST['id'],
                         ));
             } else if (key_exists('deleteforestcompartment', $_REQUEST)) {
-                $a = new \forest\form\A();
+                $a = new \forest\entity\A();
                 $a->loadFromId($_REQUEST['id']);
                 $forest = $a->getForest();
                 $a->delete();
@@ -158,7 +161,7 @@ else if (key_exists('action', $_REQUEST)) {
                     catch (Exception $e) {}
                 }
                 else {
-                    $a = new \forest\form\A();
+                    $a = new \forest\entity\A();
                     $response = false;
                     try{
                         $a->loadFromCodePart($_REQUEST['forest_codice'],$_REQUEST['cod_part']);

@@ -20,7 +20,7 @@
 								<label for="descrizion_search">Denominazione</label>
 								<input class="large float_width" id="descrizion_search" name="descrizion_search" value="" type="text" tabindex="2" />
                                                         <?php 
-                                                        require __DIR__.DIRECTORY_SEPARATOR.'boscoForestlist.php'; 
+                                                        require __DIR__.DIRECTORY_SEPARATOR.'bosco'.DIRECTORY_SEPARATOR.'forestlist.php'; 
                                                         ?>
                                         
                                         </form>	

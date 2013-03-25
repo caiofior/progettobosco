@@ -32,7 +32,7 @@ if (!class_exists('Content')) {
 class PastureWeedColl  extends \ContentColl  {
     /**
      * Forest Reference
-     * @var \forest\form\B3
+     * @var \forest\entity\B3
      */
     protected $form_b3=null;
     /**
@@ -43,9 +43,9 @@ class PastureWeedColl  extends \ContentColl  {
     }
     /**
      * Sets the form reference
-     * @param \forest\form\B3 $form Entity b3
+     * @param \forest\entity\B3 $form Entity b3
      */
-    public function setForm(\forest\form\B3 $form) {
+    public function setForm(\forest\entity\B3 $form) {
 
         $this->form_b3 = $form;
     }
@@ -63,7 +63,7 @@ class PastureWeedColl  extends \ContentColl  {
                 '( SELECT diz_erba.nome FROM diz_erba WHERE diz_erba.cod_coltu=infestan.cod_coltu) '
              )
         ));
-        if ($this->form_b3 instanceof \forest\form\B2) {
+        if ($this->form_b3 instanceof \forest\entity\B2) {
             $select->where(' cod_part = ? ',$this->form_b3->getData('cod_part'))
             ->where(' proprieta = ? ',$this->form_b3->getData('proprieta'))
             ->where(' cod_fo = ? ',$this->form_b3->getData('cod_fo'));
@@ -77,7 +77,7 @@ class PastureWeedColl  extends \ContentColl  {
      * @param array $criteria Filtering criteria
      */
     public function countAll(array $criteria = null) {
-        if ($this->form_b3 instanceof \forest\form\B3) {
+        if ($this->form_b3 instanceof \forest\entity\B3) {
             $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
             $select->where(' cod_part = ? ',$this->form_b3->getData('cod_part'))
             ->where(' proprieta = ? ',$this->form_b3->getData('proprieta'))

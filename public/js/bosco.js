@@ -6,7 +6,7 @@
 /**
  * Forest List management
  */
-$("#forest_list").prepend("<a id=\"forest_list_update\" style=\"display:none;\" data-basehref=\""+$("#forest_list").attr("action")+"\" data-update=\"content_boscoForestlist\"></a>");
+$("#forest_list").prepend("<a id=\"forest_list_update\" style=\"display:none;\" data-basehref=\""+$("#forest_list").attr("action")+"\" data-update=\"content_bosco_forestlist\"></a>");
 $("#descrizion_search").keyup(function(){
    el = $("#forest_list_update"); 
    search = $("#descrizion_search");
@@ -36,11 +36,11 @@ $("#confirm_move").on("click",$("#confirm_move"),function() {
    el.attr("href",el.data("basehref")+"&regione="+regione.val()+"&search="+search.val()+"&start="+current.val());
    el.trigger("click");
 });
-$(document).on("click","#content_boscoForestlist .delete",function(){
+$(document).on("click","#content_bosco_forestlist .delete",function(){
     el = $(this).parent("a");
     $.colorbox({
         "html"  :   "Vuoi cancellare il bosco selezionato ?"+
-                    " <a id=\"bosco_delete_confirm\"href=\""+el.attr("href")+"\" data-update=\"content_boscoForestlist\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
+                    " <a id=\"bosco_delete_confirm\"href=\""+el.attr("href")+"\" data-update=\"content_bosco_forestlist\"><img src=\"images/empty.png\" title=\"Conferma cancellazione\" class=\"actions confirm\" /> </a>"+
                     " <a id=\"bosco_delete_cancel\"href=\"#\"><img src=\"images/empty.png\" title=\"Annulla cancellazione\" class=\"actions cancel\"/> </a>",
         "onLoad": function() {
             $('#cboxClose').remove();
