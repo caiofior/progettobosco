@@ -5,7 +5,7 @@ if (key_exists('action', $_REQUEST)) {
     switch ($_REQUEST['action']) {
         case 'editnote' :
             
-            $notatemplate = new forest\attribute\NoteTemplate();
+            $notatemplate = new \forest\attribute\note\Template();
             if ($_REQUEST['cod_nota'] == '')
                 $formErrors->addError(FormErrors::required,'cod_nota','l\'intestazione','f');
             else {
@@ -19,7 +19,7 @@ if (key_exists('action', $_REQUEST)) {
             
             if ($formErrors->count() == 0) {
                 if (key_exists('note_id', $_REQUEST)) {
-                   $note = new forest\attribute\NoteA();
+                   $note = new \forest\attribute\note\A();
                    $note->loadFromId($_REQUEST['note_id']);
                 } else {
                     $notes = $a->getNotes();
@@ -143,7 +143,7 @@ if (key_exists('action', $_REQUEST)) {
     }
 }
 if (key_exists('deletenote', $_REQUEST)) {
-    $notaa = new \forest\attribute\NoteA();
+    $notaa = new \forest\attribute\note\A();
     $notaa->loadFromId($_REQUEST['deletenote']);
     $notaa->delete();
 }

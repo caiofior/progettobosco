@@ -24,7 +24,7 @@ if (key_exists('action', $_REQUEST)) {
     switch ($_REQUEST['action']) {
                 case 'editarbustive':
             if (key_exists('arbustive_id', $_REQUEST)) {
-                $shrubcomposition = new \forest\attribute\B3ShrubComposition();
+                $shrubcomposition = new \forest\attribute\shrubcomposition\B3();
                 $shrubcomposition->loadFromId($_REQUEST['arbustive_id']);
             }
             else {
@@ -42,7 +42,7 @@ if (key_exists('action', $_REQUEST)) {
         break;
         case 'editerbacee':
             if (key_exists('erbacee_id', $_REQUEST)) {
-                $herbaceuscomposition = new \forest\attribute\B3HerbaceusComposition();
+                $herbaceuscomposition = new \forest\attribute\herbaceuscomposition\B3();
                 $herbaceuscomposition->loadFromId($_REQUEST['erbacee_id']);
             }
             else {
@@ -60,7 +60,7 @@ if (key_exists('action', $_REQUEST)) {
         break;
         case 'editarboree':
             if (key_exists('arboree_id', $_REQUEST)) {
-                $b4covercomposition = new \forest\attribute\B3CoverComposition();
+                $b4covercomposition = new \forest\attribute\covercomposition\B3();
                 $b4covercomposition->loadFromId($_REQUEST['arboree_id']);
             }
             else {
@@ -121,15 +121,15 @@ if (key_exists('action', $_REQUEST)) {
     }
 }
 if (key_exists('deletearbustive', $_REQUEST)) {
-    $shrubcomposition = new \forest\attribute\B3ShrubComposition();
+    $shrubcomposition = new \forest\attribute\shrubcomposition\B3();
     $shrubcomposition->loadFromId($_REQUEST['deletearbustive']);
     $shrubcomposition->delete();
 } else if (key_exists('deleteerbacee', $_REQUEST)) {
-    $herbaceuscomposition = new \forest\attribute\B3HerbaceusComposition();
+    $herbaceuscomposition = new \forest\attribute\herbaceuscomposition\B3();
     $herbaceuscomposition->loadFromId($_REQUEST['deleteerbacee']);
     $herbaceuscomposition->delete();
 } else if (key_exists('deletearboree', $_REQUEST)) {
-    $corkcovercomposition = new \forest\attribute\B3CoverComposition();
+    $corkcovercomposition = new \forest\attribute\covercomposition\B3();
     $corkcovercomposition->loadFromId($_REQUEST['deletearboree']);
     $corkcovercomposition->delete();
 } 

@@ -28,7 +28,7 @@ if (!class_exists('Content')) {
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class Table4 extends \forest\form\template\Form {
+class Table4 extends \forest\template\Entity {
     /**
      * Instantiates the table
      */

@@ -1,8 +1,8 @@
 <?php
 /**
- * Manages Form A forest compartment
+ * Manages Entity A forest compartment
  * 
- * Manages Form A forest compartment
+ * Manages Entity A forest compartment
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
@@ -20,14 +20,14 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
- * Manages Form A forest compartment
+ * Manages Entity A forest compartment
  * 
- * Manages Form A forest compartment
+ * Manages Entity A forest compartment
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class A extends \forest\form\template\Form {
+class A extends \forest\template\Entity {
      /**
      * Instantiates the table
      */
@@ -111,10 +111,10 @@ class A extends \forest\form\template\Form {
     }
     /**
      * Return the associated note collection
-     * @return \forest\attribute\NoteAColl
+     * @return \forest\attribute\note\AColl
      */
     public function getNotes () {
-        $notes = new \forest\attribute\NoteAColl();
+        $notes = new \forest\attribute\note\AColl();
         $notes->setForm($this);
         return $notes;
     }

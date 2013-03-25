@@ -1,8 +1,8 @@
 <?php
 /**
- * Manages Form B1 forest compartment collection
+ * Manages Entity B1 forest compartment collection
  * 
- * Manages Form B1 forest compartment collection
+ * Manages Entity B1 forest compartment collection
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
@@ -20,14 +20,14 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
- * Manages Form B1 forest compartment collection
+ * Manages Entity B1 forest compartment collection
  * 
- * Manages Form B1 forest compartment collection
+ * Manages Entity B1 forest compartment collection
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class B1Coll extends \forest\form\template\FormColl {
+class B1Coll extends \forest\template\EntityColl {
      /**
      * Reference to form B
      * @var \forest\form\B

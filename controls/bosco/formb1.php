@@ -24,7 +24,7 @@ if (key_exists('action', $_REQUEST)) {
     switch ($_REQUEST['action']) {
         case 'editarboree':
             if (key_exists('arboree_id', $_REQUEST)) {
-                $forestcovercomposition = new \forest\attribute\B1CoverComposition();
+                $forestcovercomposition = new \forest\attribute\covercomposition\B1();
                 $forestcovercomposition->loadFromId($_REQUEST['arboree_id']);
             }
             else {
@@ -45,7 +45,7 @@ if (key_exists('action', $_REQUEST)) {
         break;
         case 'editarbustive':
             if (key_exists('arbustive_id', $_REQUEST)) {
-                $shrubcomposition = new \forest\attribute\B1ShrubComposition();
+                $shrubcomposition = new \forest\attribute\shrubcomposition\B1();
                 $shrubcomposition->loadFromId($_REQUEST['arbustive_id']);
             }
             else {
@@ -63,7 +63,7 @@ if (key_exists('action', $_REQUEST)) {
         break;
         case 'editerbacee':
             if (key_exists('erbacee_id', $_REQUEST)) {
-                $herbaceuscomposition = new \forest\attribute\B1HerbaceusComposition();
+                $herbaceuscomposition = new \forest\attribute\herbaceuscomposition\B1();
                 $herbaceuscomposition->loadFromId($_REQUEST['erbacee_id']);
             }
             else {
@@ -103,7 +103,7 @@ if (key_exists('action', $_REQUEST)) {
                     $forestmassesteem->insert();
         break;
         case 'editnote' :
-            $notatemplate = new forest\attribute\NoteTemplate();
+            $notatemplate = new \forest\attribute\note\Template();
             if ($_REQUEST['cod_nota'] == '')
                 $formErrors->addError(FormErrors::required,'cod_nota','l\'intestazione','f');
             else {
@@ -117,7 +117,7 @@ if (key_exists('action', $_REQUEST)) {
             
             if ($formErrors->count() == 0) {
                 if (key_exists('note_id', $_REQUEST)) {
-                   $note = new forest\attribute\NoteB();
+                   $note = new \forest\attribute\note\B();
                    $note->loadFromId($_REQUEST['note_id']);
                 } else {
                     $notes = $b1->getNotes();
@@ -268,15 +268,15 @@ if (key_exists('action', $_REQUEST)) {
     }
 }
 if (key_exists('deletearboree', $_REQUEST)) {
-    $forestcovercomposition = new \forest\attribute\B1CoverComposition();
+    $forestcovercomposition = new \forest\attribute\covercomposition\B1();
     $forestcovercomposition->loadFromId($_REQUEST['deletearboree']);
     $forestcovercomposition->delete();
 } else if (key_exists('deletearbustive', $_REQUEST)) {
-    $shrubcomposition = new \forest\attribute\B1ShrubComposition();
+    $shrubcomposition = new \forest\attribute\shrubcomposition\B1();
     $shrubcomposition->loadFromId($_REQUEST['deletearbustive']);
     $shrubcomposition->delete();
 } else if (key_exists('deleteerbacee', $_REQUEST)) {
-    $herbaceuscomposition = new \forest\attribute\B1HerbaceusComposition();
+    $herbaceuscomposition = new \forest\attribute\herbaceuscomposition\B1();
     $herbaceuscomposition->loadFromId($_REQUEST['deleteerbacee']);
     $herbaceuscomposition->delete();
 } else if (key_exists('deletemassesteem', $_REQUEST)) {
@@ -284,7 +284,7 @@ if (key_exists('deletearboree', $_REQUEST)) {
     $forestmassesteem->loadFromId($_REQUEST['deletemassesteem']);
     $forestmassesteem->delete();
 } else if (key_exists('deletenote', $_REQUEST)) {
-    $notab = new \forest\attribute\NoteB();
+    $notab = new \forest\attribute\note\B();
     $notab->loadFromId($_REQUEST['deletenote']);
     $notab->delete();
 }

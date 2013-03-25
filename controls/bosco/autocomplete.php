@@ -36,7 +36,7 @@ switch ($_REQUEST['action']) {
         }
     break;
     case 'cod_nota':
-        $notacoll = new \forest\attribute\NoteTemplateColl();
+        $notacoll = new \forest\attribute\note\TemplateColl();
         $archivio = 'SCHEDE_A';
         if (key_exists('archivio',$_REQUEST)) {
             switch ($_REQUEST['archivio']) {

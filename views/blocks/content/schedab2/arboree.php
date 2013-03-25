@@ -4,7 +4,7 @@
         $b2 = new \forest\form\B2();
         $b2->loadFromId($_REQUEST['id']);
     }
-    $corkcovercomposition = new \forest\attribute\B2CoverComposition();
+    $corkcovercomposition = new \forest\attribute\covercomposition\B2();
     $cod_coper_coll = $corkcovercomposition->getControl('cod_coper');
     $corkcovercompositioncoll = $b2->getCoverCompositionColl();
     

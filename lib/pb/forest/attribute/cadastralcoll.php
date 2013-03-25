@@ -34,7 +34,7 @@ class CadastralColl  extends \ContentColl implements \forest\attribute\template\
      */
     protected $forest;
     /**
-     * Form a Reference
+     * Entity a Reference
      * @var \forest\form\A 
      */
     protected $form_a=null;
@@ -53,7 +53,7 @@ class CadastralColl  extends \ContentColl implements \forest\attribute\template\
     }
     /**
      * Sets the form reference
-     * @param \forest\form\A $form Form a
+     * @param \forest\form\A $form Entity a
      */
     public function setForm(\forest\form\A $form) {
 

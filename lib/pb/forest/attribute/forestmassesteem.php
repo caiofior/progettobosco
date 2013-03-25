@@ -27,7 +27,7 @@ if (!class_exists('Content')) {
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class ForestMassEsteem  extends \forest\form\template\Form {
+class ForestMassEsteem  extends \forest\template\Entity {
     /**
      * Instantiates the table
      */

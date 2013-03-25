@@ -27,7 +27,7 @@ if (!class_exists('Content')) {
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class PastureWeed  extends \forest\form\template\Form {
+class PastureWeed  extends \forest\template\Entity {
     /**
      * Instantiates the table
      */

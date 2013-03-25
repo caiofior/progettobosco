@@ -1,8 +1,8 @@
 <?php
 /**
- * Manages Form B4 forest compartment
+ * Manages Entity B4 forest compartment
  * 
- * Manages Form B4 forest compartment
+ * Manages Entity B4 forest compartment
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
@@ -20,14 +20,14 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
- * Manages Form B4 forest compartment
+ * Manages Entity B4 forest compartment
  * 
- * Manages Form B4 forest compartment
+ * Manages Entity B4 forest compartment
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class B4 extends \forest\form\template\Form implements \forest\form\template\FormBX {
+class B4 extends \forest\template\Entity implements \forest\form\template\FormBX {
      /**
      * Instantiates the table
      */
@@ -97,10 +97,10 @@ class B4 extends \forest\form\template\Form implements \forest\form\template\For
     }
      /**
      * Return the associated note collection
-     * @return \forest\attribute\NoteB4Coll
+     * @return \forest\attribute\note\B4Coll
      */
     public function getNotes () {
-        $notes = new \forest\attribute\NoteB4Coll();
+        $notes = new \forest\attribute\note\B4Coll();
         $notes->setForm($this);
         return $notes;
     }
@@ -120,28 +120,28 @@ class B4 extends \forest\form\template\Form implements \forest\form\template\For
     }
      /**
      * Gets the associated B4 Shrub Composition Collection
-     * @return \forest\attribute\B4ShrubCompositionColl
+     * @return \forest\attribute\shrubcomposition\B4Coll
      */
     public function getShrubCompositionColl() {
-        $shrubcoll = new \forest\attribute\B4ShrubCompositionColl();
+        $shrubcoll = new \forest\attribute\shrubcomposition\B4Coll();
         $shrubcoll->setForm($this);
         return $shrubcoll;
     }
      /**
      * Gets the associated B4 Herbaceus Composition Collection
-     * @return \forest\attribute\B4HerbaceusCompositionColl
+     * @return \forest\attribute\herbaceuscomposition\B4Coll
      */
     public function getHerbaceusCompositionColl() {
-        $herbaceuscoll = new \forest\attribute\B4HerbaceusCompositionColl();
+        $herbaceuscoll = new \forest\attribute\herbaceuscomposition\B4Coll();
         $herbaceuscoll->setForm($this);
         return $herbaceuscoll;
     }
      /**
      * Gets the associated B4 Cover Composition Collection
-     * @return \forest\attribute\B4CoverCompositionColl
+     * @return \forest\attribute\covercomposition\B4Coll
      */
     public function getCoverCompositionColl() {
-        $b3covercompositioncoll = new \forest\attribute\B4CoverCompositionColl();
+        $b3covercompositioncoll = new \forest\attribute\covercomposition\B4Coll();
         $b3covercompositioncoll->setForm($this);
         return $b3covercompositioncoll;
     }

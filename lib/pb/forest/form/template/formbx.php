@@ -1,17 +1,17 @@
 <?php
 /**
- * Manages Form bx forest compartment
+ * Manages Entity bx forest compartment
  * 
- * Manages Form bx forest compartment
+ * Manages Entity bx forest compartment
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
 namespace forest\form\template;
 /**
- * Manages Form bx forest compartment
+ * Manages Entity bx forest compartment
  * 
- * Manages Form bx forest compartment
+ * Manages Entity bx forest compartment
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA

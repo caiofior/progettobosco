@@ -371,7 +371,7 @@ a.button {
     line-height: 50px;
 }
 /**
- * Form message errors
+ * Entity message errors
  */
 .form_messages {
     background-image: url(../images/silk/exclamation.png);

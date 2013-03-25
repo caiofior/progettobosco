@@ -32,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">3</span></a></li>
+                <span class="label label-info">2</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
@@ -62,8 +62,7 @@
 <li class="method public inherited"><a href="#method_getControl" title="getControl :: Returns the associated control"><span class="description">Returns the associated control</span><pre>getControl()</pre></a></li>
 <li class="method public "><a href="#method_getCoverCompositionColl" title="getCoverCompositionColl :: Gets the associated Forest Cover Composition Collection"><span class="description">Gets the associated Forest Cover Composition Collection</span><pre>getCoverCompositionColl()</pre></a></li>
 <li class="method public inherited"><a href="#method_getData" title="getData :: Gets the data"><span class="description">Gets the data</span><pre>getData()</pre></a></li>
-<li class="method public inherited"><a href="#method_getFields" title="getFields :: "><span class="description">getFields()
-        </span><pre>getFields()</pre></a></li>
+<li class="method public inherited"><a href="#method_getFields" title="getFields :: Return the fieelds associated to an entity"><span class="description">Return the fieelds associated to an entity</span><pre>getFields()</pre></a></li>
 <li class="method public "><a href="#method_getForestMassEsteemColl" title="getForestMassEsteemColl :: Gets the associated Forest Mass Esteem Collection"><span class="description">Gets the associated Forest Mass Esteem Collection</span><pre>getForestMassEsteemColl()</pre></a></li>
 <li class="method public "><a href="#method_getHerbaceusCompositionColl" title="getHerbaceusCompositionColl :: Gets the associated Herbaceus Composition Collection"><span class="description">Gets the associated Herbaceus Composition Collection</span><pre>getHerbaceusCompositionColl()</pre></a></li>
 <li class="method public "><a href="#method_getNotes" title="getNotes :: Return the associated note collection"><span class="description">Return the associated note collection</span><pre>getNotes()</pre></a></li>
@@ -116,9 +115,9 @@
 </li>
 </ul>
 <div class="element class">
-<p class="short_description">Manages Form B1 forest compartment</p>
+<p class="short_description">Manages Entity B1 forest compartment</p>
 <div class="details">
-<div class="long_description"><p>Manages Form B1 forest compartment</p></div>
+<div class="long_description"><p>Manages Entity B1 forest compartment</p></div>
 <table class="table table-bordered">
 <tr>
 <th>author</th>
@@ -151,7 +150,7 @@
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
-<td>\forest\form\template\Form::getControl()</td>
+<td>\forest\template\Entity::getControl()</td>
 </tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -167,12 +166,12 @@
 </div>
 <a id="method_getCoverCompositionColl"></a><div class="element clickable method public method_getCoverCompositionColl" data-toggle="collapse" data-target=".method_getCoverCompositionColl .collapse">
 <h2>Gets the associated Forest Cover Composition Collection</h2>
-<pre>getCoverCompositionColl() : <a href="../classes/forest.attribute.B1CoverCompositionColl.html">\forest\attribute\B1CoverCompositionColl</a></pre>
+<pre>getCoverCompositionColl() : <a href="../classes/forest.attribute.covercomposition.B1Coll.html">\forest\attribute\covercomposition\B1Coll</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Returns</h3>
-<div class="subelement response"><code><a href="../classes/forest.attribute.B1CoverCompositionColl.html">\forest\attribute\B1CoverCompositionColl</a></code></div>
+<div class="subelement response"><code><a href="../classes/forest.attribute.covercomposition.B1Coll.html">\forest\attribute\covercomposition\B1Coll</a></code></div>
 </div></div>
 </div>
 <a id="method_getData"></a><div class="element clickable method public method_getData" data-toggle="collapse" data-target=".method_getData .collapse">
@@ -188,7 +187,7 @@
 </tr>
 <tr>
 <th>inherited_from</th>
-<td>\forest\form\template\Form::getData()</td>
+<td>\forest\template\Entity::getData()</td>
 </tr>
 </table>
 <h3>Parameters</h3>
@@ -200,16 +199,19 @@
 </div></div>
 </div>
 <a id="method_getFields"></a><div class="element clickable method public method_getFields" data-toggle="collapse" data-target=".method_getFields .collapse">
-<h2>getFields()
-        </h2>
-<pre>getFields() </pre>
+<h2>Return the fieelds associated to an entity</h2>
+<pre>getFields() : boolean | array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
-<td>\forest\form\template\Form::getFields()</td>
+<td>\forest\template\Entity::getFields()</td>
 </tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code><code>array</code>
+</div>
 </div></div>
 </div>
 <a id="method_getForestMassEsteemColl"></a><div class="element clickable method public method_getForestMassEsteemColl" data-toggle="collapse" data-target=".method_getForestMassEsteemColl .collapse">
@@ -224,22 +226,22 @@
 </div>
 <a id="method_getHerbaceusCompositionColl"></a><div class="element clickable method public method_getHerbaceusCompositionColl" data-toggle="collapse" data-target=".method_getHerbaceusCompositionColl .collapse">
 <h2>Gets the associated Herbaceus Composition Collection</h2>
-<pre>getHerbaceusCompositionColl() : <a href="../classes/forest.attribute.B1HerbaceusCompositionColl.html">\forest\attribute\B1HerbaceusCompositionColl</a></pre>
+<pre>getHerbaceusCompositionColl() : <a href="../classes/forest.attribute.herbaceuscomposition.B1Coll.html">\forest\attribute\herbaceuscomposition\B1Coll</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Returns</h3>
-<div class="subelement response"><code><a href="../classes/forest.attribute.B1HerbaceusCompositionColl.html">\forest\attribute\B1HerbaceusCompositionColl</a></code></div>
+<div class="subelement response"><code><a href="../classes/forest.attribute.herbaceuscomposition.B1Coll.html">\forest\attribute\herbaceuscomposition\B1Coll</a></code></div>
 </div></div>
 </div>
 <a id="method_getNotes"></a><div class="element clickable method public method_getNotes" data-toggle="collapse" data-target=".method_getNotes .collapse">
 <h2>Return the associated note collection</h2>
-<pre>getNotes() : <a href="../classes/forest.attribute.NoteBColl.html">\forest\attribute\NoteBColl</a></pre>
+<pre>getNotes() : <a href="../classes/forest.attribute.note.BColl.html">\forest\attribute\note\BColl</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Returns</h3>
-<div class="subelement response"><code><a href="../classes/forest.attribute.NoteBColl.html">\forest\attribute\NoteBColl</a></code></div>
+<div class="subelement response"><code><a href="../classes/forest.attribute.note.BColl.html">\forest\attribute\note\BColl</a></code></div>
 </div></div>
 </div>
 <a id="method_getRawData"></a><div class="element clickable method public method_getRawData" data-toggle="collapse" data-target=".method_getRawData .collapse">
@@ -255,7 +257,7 @@
 </tr>
 <tr>
 <th>inherited_from</th>
-<td>\forest\form\template\Form::getRawData()</td>
+<td>\forest\template\Entity::getRawData()</td>
 </tr>
 </table>
 <h3>Parameters</h3>
@@ -278,12 +280,12 @@
 </div>
 <a id="method_getShrubCompositionColl"></a><div class="element clickable method public method_getShrubCompositionColl" data-toggle="collapse" data-target=".method_getShrubCompositionColl .collapse">
 <h2>Gets the associated Shrub Composition Collection</h2>
-<pre>getShrubCompositionColl() : <a href="../classes/forest.attribute.B1CompositionColl.html">\forest\attribute\B1CompositionColl</a></pre>
+<pre>getShrubCompositionColl() : <a href="../classes/forest.attribute.shrubcomposition.B1Coll.html">\forest\attribute\shrubcomposition\B1Coll</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
 <h3>Returns</h3>
-<div class="subelement response"><code><a href="../classes/forest.attribute.B1CompositionColl.html">\forest\attribute\B1CompositionColl</a></code></div>
+<div class="subelement response"><code><a href="../classes/forest.attribute.shrubcomposition.B1Coll.html">\forest\attribute\shrubcomposition\B1Coll</a></code></div>
 </div></div>
 </div>
 <a id="method_getStructure"></a><div class="element clickable method public method_getStructure" data-toggle="collapse" data-target=".method_getStructure .collapse">
@@ -309,7 +311,7 @@
 </tr>
 <tr>
 <th>inherited_from</th>
-<td>\forest\form\template\Form::getTable()</td>
+<td>\forest\template\Entity::getTable()</td>
 </tr>
 </table>
 <h3>Returns</h3>
@@ -329,7 +331,7 @@
 </tr>
 <tr>
 <th>inherited_from</th>
-<td>\forest\form\template\Form::insert()</td>
+<td>\forest\template\Entity::insert()</td>
 </tr>
 </table>
 </div></div>
@@ -347,7 +349,7 @@
 </tr>
 <tr>
 <th>inherited_from</th>
-<td>\forest\form\template\Form::isEmpty()</td>
+<td>\forest\template\Entity::isEmpty()</td>
 </tr>
 </table>
 <h3>Returns</h3>
@@ -396,7 +398,7 @@
 </tr>
 <tr>
 <th>inherited_from</th>
-<td>\forest\form\template\Form::setData()</td>
+<td>\forest\template\Entity::setData()</td>
 </tr>
 </table>
 <h3>Parameters</h3>
@@ -442,7 +444,7 @@
 <div class="long_description"></div>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
-<td>\forest\form\template\Form::$$all_attributes_data</td>
+<td>\forest\template\Entity::$$all_attributes_data</td>
 </tr></table>
 </div></div>
 </div>
@@ -459,7 +461,7 @@
 </tr>
 <tr>
 <th>inherited_from</th>
-<td>\forest\form\template\Form::$$data</td>
+<td>\forest\template\Entity::$$data</td>
 </tr>
 </table>
 </div></div>
@@ -477,7 +479,7 @@
 </tr>
 <tr>
 <th>inherited_from</th>
-<td>\forest\form\template\Form::$$empty_entity</td>
+<td>\forest\template\Entity::$$empty_entity</td>
 </tr>
 </table>
 </div></div>
@@ -495,7 +497,7 @@
 </tr>
 <tr>
 <th>inherited_from</th>
-<td>\forest\form\template\Form::$$primary</td>
+<td>\forest\template\Entity::$$primary</td>
 </tr>
 </table>
 </div></div>
@@ -513,7 +515,7 @@
 </tr>
 <tr>
 <th>inherited_from</th>
-<td>\forest\form\template\Form::$$rawData</td>
+<td>\forest\template\Entity::$$rawData</td>
 </tr>
 </table>
 </div></div>
@@ -531,7 +533,7 @@
 </tr>
 <tr>
 <th>inherited_from</th>
-<td>\forest\form\template\Form::$$table</td>
+<td>\forest\template\Entity::$$table</td>
 </tr>
 </table>
 </div></div>
@@ -543,7 +545,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a12</a> and<br>
-            generated on 2013-03-22T15:53:51+01:00.<br></footer></div>
+            generated on 2013-03-25T12:48:04+01:00.<br></footer></div>
 </div>
 </body>
 </html>

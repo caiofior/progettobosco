@@ -8,6 +8,8 @@
  * @copyright CRA
  */
 namespace forest\attribute;
+use forest\attribute\covercomposition\B1;
+
 if (!class_exists('Content')) {
     $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
     $PHPUNIT=true;
@@ -41,7 +43,7 @@ class ForestMassEsteemColl  extends \ContentColl  {
     }
     /**
      * Sets the form reference
-     * @param \forest\form\B1 $form Form b1
+     * @param \forest\form\B1 $form Entity b1
      */
     public function setForm(\forest\form\B1 $form) {
 
@@ -83,7 +85,7 @@ class ForestMassEsteemColl  extends \ContentColl  {
     }
     /**
      * Adds new forest composition 
-     * @return B1CoverComposition
+     * @return B1
      */
     public function addItem() {
         $forestcovercomposition = parent::addItem();

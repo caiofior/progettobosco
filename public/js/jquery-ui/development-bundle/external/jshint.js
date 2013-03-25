@@ -157,7 +157,7 @@
  CustomAnimation, Class, Control, ComplexityCount, Chain, Color, Cookie, Core, DataView, Date,
  Debug, Draggable, Draggables, Droppables, Document, DomReady, DOMEvent, DOMReady, DOMParser,
  Drag, E, Enumerator, Enumerable, Element, Elements, Error, Effect, EvalError, Event,
- Events, FadeAnimation, Field, Flash, Float32Array, Float64Array, Form,
+ Events, FadeAnimation, Field, Flash, Float32Array, Float64Array, Entity,
  FormField, Frame, FormData, Function, Fx, GetObject, Group, Hash, HotKey,
  HTMLElement, HTMLAnchorElement, HTMLBaseElement, HTMLBlockquoteElement,
  HTMLBodyElement, HTMLBRElement, HTMLButtonElement, HTMLCanvasElement, HTMLDirectoryElement,

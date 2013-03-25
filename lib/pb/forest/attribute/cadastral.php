@@ -29,7 +29,7 @@ if (!class_exists('Content')) {
  */
 class Cadastral  extends \Content implements \forest\attribute\template\Attribute {
     /**
-     * Form a has to be updated
+     * Entity a has to be updated
      * @var bool
      */
     private $update_forma=false;

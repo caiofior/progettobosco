@@ -1,8 +1,8 @@
 <?php
 /**
- * Manages Form A forest compartment
+ * Manages Entity A forest compartment
  * 
- * Manages Form A forest compartment
+ * Manages Entity A forest compartment
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
@@ -20,14 +20,14 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
- * Manages Form A forest compartment
+ * Manages Entity A forest compartment
  * 
- * Manages Form A forest compartment
+ * Manages Entity A forest compartment
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class AColl extends \forest\form\template\FormColl {
+class AColl extends \forest\template\EntityColl {
     /**
      * Forest object
      * @var \forest\Forest

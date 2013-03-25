@@ -8,6 +8,8 @@
  * @copyright CRA
  */
 namespace forest\attribute;
+use forest\attribute\covercomposition\B1;
+
 if (!class_exists('Content')) {
     $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
     $PHPUNIT=true;
@@ -41,7 +43,7 @@ class B3TreeLineCompositionColl  extends \ContentColl  {
     }
     /**
      * Sets the form reference
-     * @param \forest\form\B3 $form Form b3
+     * @param \forest\form\B3 $form Entity b3
      */
     public function setForm(\forest\form\B3 $form) {
 
@@ -88,7 +90,7 @@ class B3TreeLineCompositionColl  extends \ContentColl  {
     }
     /**
      * Adds new forest composition 
-     * @return B1CoverComposition
+     * @return B1
      */
     public function addItem() {
         $forestcovercomposition = parent::addItem();

@@ -1,8 +1,8 @@
 <?php
 /**
- * Manages Form B3 forest compartment
+ * Manages Entity B3 forest compartment
  * 
- * Manages Form B3 forest compartment
+ * Manages Entity B3 forest compartment
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
@@ -20,14 +20,14 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
- * Manages Form B3 forest compartment
+ * Manages Entity B3 forest compartment
  * 
- * Manages Form B3 forest compartment
+ * Manages Entity B3 forest compartment
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class B3 extends \forest\form\template\Form implements \forest\form\template\FormBX {
+class B3 extends \forest\template\Entity implements \forest\form\template\FormBX {
      /**
      * Instantiates the table
      */
@@ -97,10 +97,10 @@ class B3 extends \forest\form\template\Form implements \forest\form\template\For
     }
      /**
      * Return the associated note collection
-     * @return \forest\attribute\NoteB3Coll
+     * @return \forest\attribute\note\B3Coll
      */
     public function getNotes () {
-        $notes = new \forest\attribute\NoteB3Coll();
+        $notes = new \forest\attribute\note\B3Coll();
         $notes->setForm($this);
         return $notes;
     }
@@ -120,19 +120,19 @@ class B3 extends \forest\form\template\Form implements \forest\form\template\For
     }
      /**
      * Gets the associated B3 Shrub Composition Collection
-     * @return \forest\attribute\B3ShrubCompositionColl
+     * @return \forest\attribute\shrubcomposition\B3Coll
      */
     public function getShrubCompositionColl() {
-        $shrubcoll = new \forest\attribute\B3ShrubCompositionColl();
+        $shrubcoll = new \forest\attribute\shrubcomposition\B3Coll();
         $shrubcoll->setForm($this);
         return $shrubcoll;
     }
      /**
      * Gets the associated B3 Herbaceus Composition Collection
-     * @return \forest\attribute\B3HerbaceusCompositionColl
+     * @return \forest\attribute\herbaceuscomposition\B3Coll
      */
     public function getHerbaceusCompositionColl() {
-        $herbaceuscoll = new \forest\attribute\B3HerbaceusCompositionColl();
+        $herbaceuscoll = new \forest\attribute\herbaceuscomposition\B3Coll();
         $herbaceuscoll->setForm($this);
         return $herbaceuscoll;
     }
@@ -147,10 +147,10 @@ class B3 extends \forest\form\template\Form implements \forest\form\template\For
     }
      /**
      * Gets the associated B3 Cover Composition Collection
-     * @return \forest\attribute\B3CoverCompositionColl
+     * @return \forest\attribute\covercomposition\B3Coll
      */
     public function getCoverCompositionColl() {
-        $b3covercompositioncoll = new \forest\attribute\B3CoverCompositionColl();
+        $b3covercompositioncoll = new \forest\attribute\covercomposition\B3Coll();
         $b3covercompositioncoll->setForm($this);
         return $b3covercompositioncoll;
     }
