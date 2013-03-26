@@ -80,7 +80,7 @@ class B2  extends \forest\template\Entity {
                 return false;
         $attribute = $this->all_attributes_data[$this->table->info('name')][$attribute];
         if (key_exists('dizionario', $attribute)) {
-            $itemcoll = new \forest\form\control\Itemcoll( $attribute['dizionario']);
+            $itemcoll = new \forest\template\ControlColl( $attribute['dizionario']);
             $itemcoll->loadAll();
             return $itemcoll;
         }

@@ -27,7 +27,7 @@ if (!class_exists('Content')) {
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class Cadastral  extends \Content implements \forest\attribute\template\Attribute {
+class Cadastral  extends \Content implements \forest\template\Attribute {
     /**
      * Entity a has to be updated
      * @var bool

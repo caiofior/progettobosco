@@ -27,7 +27,7 @@ if (!class_exists('Content')) {
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
 */
-abstract class Piu1_3Coll  extends \ContentColl implements AttributeColl {
+abstract class Piu1_3Coll  extends \ContentColl implements \forest\template\AttributeColl {
     /**
      * Forest Reference
      * @var \forest\Forest 

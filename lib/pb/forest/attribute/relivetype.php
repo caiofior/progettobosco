@@ -27,7 +27,7 @@ if (!class_exists('Content')) {
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class ReliveType extends \Content implements template\Attribute {
+class ReliveType extends \Content implements \forest\template\Attribute {
      /**
      * Instantiates the table
      */

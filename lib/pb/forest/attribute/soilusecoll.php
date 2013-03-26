@@ -27,7 +27,7 @@ if (!class_exists('Content')) {
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class SoilUseColl  extends \ContentColl implements template\AttributeColl {
+class SoilUseColl  extends \ContentColl implements \forest\template\AttributeColl {
     /**
      * Forest Reference
      * @var \forest\Forest 

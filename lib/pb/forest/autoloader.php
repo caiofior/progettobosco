@@ -13,7 +13,8 @@ if (!class_exists('Forest')) {
     $files = array(
         'template'.DIRECTORY_SEPARATOR.'entity.php',
         'template'.DIRECTORY_SEPARATOR.'entitycoll.php',
-
+        'template'.DIRECTORY_SEPARATOR.'control.php',
+        'template'.DIRECTORY_SEPARATOR.'controlcoll.php',
         'template'.DIRECTORY_SEPARATOR.'attribute.php',
         'template'.DIRECTORY_SEPARATOR.'attributecoll.php',
         'forest.php',
@@ -35,8 +36,6 @@ if (!class_exists('Forest')) {
         'entity'.DIRECTORY_SEPARATOR.'b4coll.php',
         'entity'.DIRECTORY_SEPARATOR.'x.php',
         'entity'.DIRECTORY_SEPARATOR.'xcoll.php',
-        'attribute'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'attribute.php',
-        'attribute'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'attributecoll.php',
         'attribute'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'piu1_3.php',
         'attribute'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'piu1_3coll.php',
         'attribute'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'piu2_3.php',

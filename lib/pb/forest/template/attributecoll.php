@@ -1,19 +1,17 @@
-<?php 
+<?php
 /**
- * Manages Entity control forest compartment collection
+ * Manages Forest Control Collection
  * 
- * Manages Entity control forest compartment collection
+ * Manages Forest Control Collection
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
 namespace forest\template;
-
 if (!class_exists('Content')) {
-    $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
+    $file = 'attribute'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
     $PHPUNIT=true;
     require (__DIR__.
-                DIRECTORY_SEPARATOR.'..'.
                 DIRECTORY_SEPARATOR.'..'.
                 DIRECTORY_SEPARATOR.'..'.
                 DIRECTORY_SEPARATOR.'..'.
@@ -22,47 +20,17 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
- * Manages Entity control forest compartment collection
+ * Manages Forest Control Collection
  * 
- * Manages Entity control forest compartment collection
+ * Manages Forest Control Collection
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class AttributeColl extends \ContentColl {
+interface AttributeColl {
     /**
-     * Initalizes the table
-     * @param string $tablename
+     * Set forest filter
+     * @param \forest\Forest $forest
      */
-    public function __construct($tablename) {
-        parent::__construct(new \forest\template\Attribute($tablename));
-    }
-    /**
-     * Loads all data
-     * @param array $criteria
-     */
-    public function loadAll(array $criteria = null) {
-        $table =$this->content->getTable();
-        if(is_null($table))
-            throw new \Exception('Unable to find the attribite in this form',1303041646);
-        $dbname = $table->getAdapter()->getConfig();
-        $dbname = $dbname['dbname'];
-        $items = $GLOBALS['CACHE']->load($dbname.'_'.$this->content->getTable()->info('name'));
-        if (is_array($items))
-            $this->items = $items;
-        else {
-            parent::loadAll();
-            $GLOBALS['CACHE']->save($this->items,$dbname.'_'.$this->content->getTable()->info('name'));
-        }
-    }
-    /**
-     * Customizes the selct
-     * @param \Zend_Db_Select $select
-     * @param array $criteria
-     * @return \Zend_Db_Select
-     */
-    public function customSelect(\Zend_Db_Select $select, array $criteria) {
-        return $select;
-    }
-    
+    public function setForest (\forest\Forest $forest);
 }

@@ -8,6 +8,7 @@
  * @copyright CRA
  */
 namespace forest\attribute\template;
+
 if (!class_exists('Content')) {
     $file = 'attribute'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
     $PHPUNIT=true;
@@ -27,7 +28,7 @@ if (!class_exists('Content')) {
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-abstract class Piu2_3 extends \Content implements Attribute {
+abstract class Piu2_3 extends \Content implements \forest\template\Attribute {
      /**
      * Instantiates the table
      */

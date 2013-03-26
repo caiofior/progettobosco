@@ -67,7 +67,7 @@ abstract class Entity extends \Content {
                 return false;
         $attribute = $this->all_attributes_data[$this->table->info('name')][$attribute];
         if (key_exists('dizionario', $attribute)) {
-            $itemcoll = new \forest\template\AttributeColl($attribute['dizionario']);
+            $itemcoll = new \forest\template\ControlColl($attribute['dizionario']);
             $itemcoll->loadAll();
             if (is_callable($criteria)) {
                 foreach ($itemcoll->getItems() as $key=>$item) {

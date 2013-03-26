@@ -135,10 +135,10 @@ class Forest extends template\Entity {
     }
     /**
      * Returns attribute collection available in this forest
-     * @param \forest\attribute\template\AttributeColl $attributecoll
-     * @return \forest\attribute\template\AttributeColl
+     * @param \forest\template\AttributeColl $attributecoll
+     * @return \forest\template\AttributeColl
      */
-    public function getAttributeColl (\forest\attribute\template\AttributeColl $attributecoll) {
+    public function getAttributeColl (template\AttributeColl $attributecoll) {
         $attributecoll->setForest($this);
         return $attributecoll;
     }

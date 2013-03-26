@@ -25,7 +25,7 @@ if (!class_exists('Content')) {
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class Municipality extends \Content implements template\Attribute {
+class Municipality extends \Content implements \forest\template\Attribute {
      /**
      * Instantiates the table
      */
