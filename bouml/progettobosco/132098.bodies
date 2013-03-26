@@ -1,3 +1,0 @@
-class NoteTemplate
-!!!143234.php!!!	__construct()
-        parent::__construct('leg_note');
