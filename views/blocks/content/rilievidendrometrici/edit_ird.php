@@ -39,10 +39,29 @@ else
     <?php endforeach; ?>
 </div>
 <div id="rag_container">
-    <label for="rag">Raggio/Lato1</label>
+    <label for="rag">Raggio/Lato 1</label>
     <input id="rag" name="rag" value="<?php echo $d->getData('rag');?>">
 </div>
 <div id="rag2_container">
-    <label for="rag2">Lato2</label>
+    <label for="rag2">Lato 2</label>
     <input id="rag2" name="rag2" value="<?php echo $d->getData('rag2');?>">
+</div>
+<div id="f_container">
+    <label for="f">Fattore di numerazione relascopica</label>
+    <input id="f" name="f" value="<?php echo $d->getData('f');?>">
+</div>
+<p>Metodo di misurazione dell'Incremento</p>
+<p>Conteggio del numero degli anelli contenuti negli ultimi</p>
+<div id="c_anel_container">
+    <label for="c_anel">mm di raggio</label>
+    <input id="c_anel" name="c_anel" value="<?php echo $d->getData('c_anel');?>">
+</div>
+<p>misurazione in mm dello spessore delle ultime</p>
+<div id="m_anel_container">
+    <label for="m_anel">cerchie annuali</label>
+    <input id="m_anel" name="m_anel" value="<?php echo $d->getData('m_anel');?>">
+</div>
+<div id="note_container">
+    <label for="note">Note</label>
+    <textarea id="note" name="note" rows="5" cols="15"><?php echo $d->getData('note');?></textarea>
 </div>
