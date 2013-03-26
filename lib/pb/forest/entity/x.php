@@ -109,5 +109,14 @@ class X extends \forest\template\Entity {
         $a->loadFromCodePart($this->data['proprieta'],$this->data['cod_part'],$this->data['cod_fo']);
         return $a;
     }
+    /**
+     * Returns the associated D collection
+     * @return \forest\entity\x\DColl
+     */
+    public function getDColl() {
+        $dcoll = new \forest\entity\x\DColl();
+        $dcoll->setFormX($this);
+        return $dcoll;
+    }
     
 } 

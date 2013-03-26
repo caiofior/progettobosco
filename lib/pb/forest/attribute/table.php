@@ -28,6 +28,10 @@ if (!class_exists('Content')) {
  * @copyright CRA
  */
 class Table  extends \Content {
+    /**
+     * Reference of specific table types
+     * @var array
+     */
     private $tables;
     /**
      * Instantiates the table

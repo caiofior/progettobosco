@@ -63,6 +63,10 @@ class Cadastral  extends \Content implements \forest\template\Attribute {
             $form_a->update();
         }
     }
+    /**
+     * Returns the associated Form A
+     * @return \forest\entity\A
+     */
     private function getFormA() {
         $form_a = new \forest\entity\A();
         $form_a->loadFromCodePart($this->data['proprieta'], $this->data['cod_part']);

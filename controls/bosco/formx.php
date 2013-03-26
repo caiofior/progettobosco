@@ -1,6 +1,6 @@
 <?php
 $x = new \forest\entity\B4();
-if (key_exists('id', $_REQUEST)) {
+if (key_exists('id', $_REQUEST) && $_REQUEST['id'] != '') {
     $x->loadFromId($_REQUEST['id']);
     $a = $x->getFormA();
 } else if (key_exists('forma_id', $_REQUEST)) {
@@ -14,6 +14,8 @@ if (key_exists('id', $_REQUEST)) {
         $x = $xcoll->getFirst ();
     
 }
+$view->x = $x;
+$view->a = $a;
 if (key_exists('action', $_REQUEST)) {
     switch ($_REQUEST['action']) {
          case 'manage' :
@@ -63,4 +65,5 @@ if (key_exists('action', $_REQUEST)) {
             exit;
     }
 }
+if(key_exists('action', $_REQUEST) && $_REQUEST['action'] != 'xhr_update')
 unset ($_REQUEST['action']);

@@ -103,7 +103,7 @@ class A extends \forest\template\Entity {
         return $municipality;
     }
     /**
-     * Gets teh associated colelctor
+     * Gets the associated collector
      * @return \forest\attribute\Collector
      */
     public function getCollector() {
@@ -169,7 +169,7 @@ class A extends \forest\template\Entity {
     }
      /**
      * Return the associated X Collection
-     * @return \forest\form\BXColl
+     * @return \forest\form\XColl
      */
     public function getXColl () {
         $xcoll = new \forest\entity\XColl();

@@ -8,12 +8,11 @@ else {
 $forest = $a->getForest();
 $x = $a->getXColl()->getFirst();
 ?>
-<div id="forestcompartmentmaincontent">
 <script type="text/javascript" >
 document.getElementById("tabrelatedcss").href="css/rilievidendrometrici.css";
 </script>
         <div id="tabContent">
-    <form id="formX" action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formx&id=<?php echo $a->getData('objectid');?>">
+    <form id="formXList" action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formx&id=<?php echo $a->getData('objectid');?>">
         <div class="form_messages formx_errors" style="display: none;"></div>
         <fieldset id="selector">
         <div id="bosco_container">
