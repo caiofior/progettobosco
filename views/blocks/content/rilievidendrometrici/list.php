@@ -1,7 +1,9 @@
                                                         <fieldset id="content_rilievidendrometrici_list" >       
                                                         <ul >
                                                             <?php 
-                                                                $xcoll = $a->getXcoll();
+                                                                $b = $a->getBColl()->getFirst();
+                                                                $b1 = $b->getB1Coll()->getFirst();
+                                                                $xcoll = $b1->getXColl();
                                                                 if (!key_exists('start', $_GET))
                                                                     $_GET['start']=0;
                                                                 if (!key_exists('search', $_GET))
@@ -100,7 +102,7 @@
                                                             <a <?php echo $actions['last']['url'];?> <?php echo $actions['last']['data-update'];?> >
                                                                 <img class="actions last" src="images/empty.png" title="Ultimo">
                                                             </a>
-                                                            <a href="bosco.php?task=formx&action=manage&forma_id=<?php echo $a->getData('objectid');?>" data-update="content_rilievidendrometrici_list">
+                                                            <a href="bosco.php?task=formx&action=manage&forma_id=<?php echo $a->getData('objectid');?>" data-update="content_rilievidendrometrici_edit" data-destination="forestcompartmentmaincontent">
                                                                 <img class="actions addnew" src="images/empty.png" title="Aggiungi un nuovo rilievo"/>
                                                             </a>
                                                         </div>

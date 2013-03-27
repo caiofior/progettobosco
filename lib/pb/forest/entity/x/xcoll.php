@@ -7,7 +7,8 @@
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-namespace forest\entity;
+namespace forest\entity\x;
+
 if (!class_exists('Content')) {
     $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
     $PHPUNIT=true;
@@ -29,22 +30,22 @@ if (!class_exists('Content')) {
  */
 class XColl extends \forest\template\EntityColl {
     /**
-     * Reference to the A form
-     * @var \forest\entity\A
+     * Reference to the B1 form
+     * @var \forest\entity\B1
      */
-    private $a;
+    private $b1;
     /**
      * Instantiates the table
      */
     public function __construct() {
-        parent::__construct(new \forest\entity\X());
+        parent::__construct(new \forest\entity\x\X());
     }
     /**
      * Set the form a
-     * @param \forest\entity\A $a
+     * @param \forest\entity\B1 $b1
      */
-    public function setFormA(\forest\entity\A $a) {
-        $this->a = $a;
+    public function setFormB1(\forest\entity\B1 $b1) {
+        $this->b1 = $b1;
     }
      /**
      * Customizes the select statement
@@ -54,10 +55,10 @@ class XColl extends \forest\template\EntityColl {
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
         $select->setIntegrityCheck(false);
-        if ($this->a instanceof \forest\entity\A) {
-            $select->where('schede_x.proprieta = ?', $this->a->getData('proprieta'))
-                   ->where('schede_x.cod_part = ?', $this->a->getData('cod_part'))
-                   ->where('schede_x.cod_fo = ?', $this->a->getData('cod_fo'));
+        if ($this->b1 instanceof \forest\entity\B1) {
+            $select->where('schede_x.proprieta = ?', $this->b1->getData('proprieta'))
+                   ->where('schede_x.cod_part = ?', $this->b1->getData('cod_part'))
+                   ->where('schede_x.cod_fo = ?', $this->b1->getData('cod_fo'));
         }
         return $select;
     }
@@ -66,11 +67,11 @@ class XColl extends \forest\template\EntityColl {
      * @param null|array $criteria Filtering criteria
      */
     public function countAll(array $criteria = null) {
-        if ($this->a instanceof \forest\entity\A)  {
+        if ($this->b1 instanceof \forest\entity\B1)  {
             $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
-            $select->where('schede_x.proprieta = ?', $this->a->getData('proprieta'))
-                   ->where('schede_x.cod_part = ?', $this->a->getData('cod_part'))
-                   ->where('schede_x.cod_fo = ?', $this->a->getData('cod_fo'));
+            $select->where('schede_x.proprieta = ?', $this->b1->getData('proprieta'))
+                   ->where('schede_x.cod_part = ?', $this->b1->getData('cod_part'))
+                   ->where('schede_x.cod_fo = ?', $this->b1->getData('cod_fo'));
             return intval($this->content->getTable()->getAdapter()->fetchOne($select));
         }
         else
@@ -78,13 +79,13 @@ class XColl extends \forest\template\EntityColl {
     }
     /**
      * Add new item to the collection
-     * @return \forest\entity\X
+     * @return \forest\entity\x\X
      */
     public function addItem() {
         $x = parent::addItem();
-        $x->setData($this->a->getData('proprieta'),'proprieta');
-        $x->setData($this->a->getData('cod_part'),'cod_part');
-        $x->setData($this->a->getData('cod_fo'),'cod_fo');
+        $x->setData($this->b1->getData('proprieta'),'proprieta');
+        $x->setData($this->b1->getData('cod_part'),'cod_part');
+        $x->setData($this->b1->getData('cod_fo'),'cod_fo');
         $x->setData(0,'u');
         return $x;
     }

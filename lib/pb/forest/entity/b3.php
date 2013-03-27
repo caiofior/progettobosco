@@ -41,11 +41,7 @@ class B3 extends \forest\template\Entity implements template\FormBX {
      * @param integer $id
      */
     public function loadFromId($id) {
-        $where = $this->table->getAdapter()->quoteInto('objectid = ?', $id);
-        $data = $this->table->fetchRow($where);
-        if (is_null($data))
-            throw new \Exception('Unable to find the cod part',1302081202);
-        $this->data = $data->toArray();
+        parent::loadFromId($id);
         $this->calculatedVariables();
     }
     /**

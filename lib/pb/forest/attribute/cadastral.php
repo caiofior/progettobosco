@@ -72,13 +72,4 @@ class Cadastral  extends \Content implements \forest\template\Attribute {
         $form_a->loadFromCodePart($this->data['proprieta'], $this->data['cod_part']);
         return $form_a;
     }
-    /**
-     * Deletes data
-     */
-    public function delete() {
-        if (key_exists('objectid', $this->data)) {
-            $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
-            $this->table->delete($where);
-        }
-    }
 }

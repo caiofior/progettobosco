@@ -39,11 +39,7 @@ class Forest extends template\Entity {
      * @param int $id
      */
     public function loadFromId($id) {
-        $where = $this->table->getAdapter()->quoteInto('objectid = ?', $id);
-        $data = $this->table->fetchRow($where);
-        if (is_null($data))
-            throw new \Exception('Unable to find the forest',1301251115);
-        $this->data = $this->table->fetchRow($where)->toArray();
+        parent::loadFromId($id);
         $this->addForestCompartmentCount();
     }
      /**
@@ -100,27 +96,13 @@ class Forest extends template\Entity {
         $table->delete($where); 
    }
     /**
-     * Updates data
-     */
-    public function update() {
-        if (!key_exists('objectid', $this->data)) 
-            throw new Exception('Unable to update object without objectid',1301251130);
-        $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
-        $this->table->update($this->data, $where);
-    }
-    /**
-     * Deletes data
-     */
-    public function delete() {
-        if (key_exists('objectid', $this->data)) {
-            $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
-            $this->table->delete($where);
-        }
-    }
-    /**
      * Add the count of forest compartments
      */
     private function addForestCompartmentCount() {
+        if (
+                !is_array($this->data) ||
+                !is_numeric($this->data['codice'])
+                ) return;
         $select = $this->table->getAdapter()->select()->from('schede_a','COUNT(*)')->where('proprieta = ? ',$this->data['codice']);
         $this->rawData['forest_compartment_cont']=intval($this->table->getAdapter()->fetchOne($select));
     }

@@ -40,11 +40,7 @@ class D extends \forest\template\Entity {
      * @param integer $id
      */
     public function loadFromId($id) {
-        $where = $this->table->getAdapter()->quoteInto('objectid = ?', $id);
-        $data = $this->table->fetchRow($where);
-        if (is_null($data))
-            throw new \Exception('Unable to find the cod part',1302081202);
-        $this->data = $data->toArray();
+        parent::loadFromId($id);
         $this->calculatedVariables();
     }
     /**
@@ -98,10 +94,10 @@ class D extends \forest\template\Entity {
     }
     /**
      * Return the associated X form
-     * @return \forest\entity\X
+     * @return \forest\entity\x\X
      */
     private function getFormX() {
-        $x = new \forest\entity\X();
+        $x = new \forest\entity\x\X();
         if (
                 key_exists('proprieta',$this->data) &&
                 key_exists('cod_part',$this->data) &&

@@ -35,22 +35,4 @@ class B4  extends \Content {
     public function __construct() {
         parent::__construct('note_b4');
     }
-     /**
-     * Updates data
-     */
-    public function update() {
-        if (!key_exists('objectid', $this->data)) 
-            throw new Exception('Unable to update object without objectid',1302061037);
-        $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
-        $this->table->update($this->data, $where);
-    }
-    /**
-     * Deletes data
-     */
-    public function delete() {
-        if (key_exists('objectid', $this->data)) {
-            $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
-            $this->table->delete($where);
-        }
-    }
 }

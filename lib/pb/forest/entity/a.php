@@ -167,16 +167,6 @@ class A extends \forest\template\Entity {
         $bcoll->loadAll();
         return $bcoll;
     }
-     /**
-     * Return the associated X Collection
-     * @return \forest\form\XColl
-     */
-    public function getXColl () {
-        $xcoll = new \forest\entity\XColl();
-        $xcoll->setFormA($this);
-        $xcoll->loadAll();
-        return $xcoll;
-    }
     /**
      * Gets available b forms for a fores compartment
      * @return array

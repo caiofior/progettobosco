@@ -24,11 +24,11 @@
                                                             foreach($forestcoll->getItems() as $forest) :
                                                             ?>
                                                             <li >
-                                                                <a href="bosco.php?action=manage&id=<?php echo $forest->getData('objectid'); ?>" >
+                                                                <a href="bosco.php?action=manage&id=<?php echo $forest->getData('codice'); ?>" >
                                                                 <img class="actions edit" src="images/empty.png" title="Visualizza/Modifica"/>
                                                                 </a>
                                                                 <?php if ($user->isUserForestAdmin($forest)) : ?>
-                                                                <a href="bosco.php?<?php echo http_build_query($_GET); ?>&delete=1&id=<?php echo $forest->getData('objectid'); ?>" >
+                                                                <a href="bosco.php?<?php echo http_build_query($_GET); ?>&delete=1&id=<?php echo $forest->getData('codice'); ?>" >
                                                                 <img class="actions delete" src="images/empty.png" title="Cancella"/>
                                                                 </a>
                                                                 <?php endif; ?>

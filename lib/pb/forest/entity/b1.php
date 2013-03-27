@@ -39,11 +39,7 @@ class B1 extends \forest\template\Entity implements template\FormBX {
      * @param integer $id
      */
     public function loadFromId($id) {
-        $where = $this->table->getAdapter()->quoteInto('objectid = ?', $id);
-        $data = $this->table->fetchRow($where);
-        if (is_null($data))
-            throw new \Exception('Unable to find the cod part',1302081202);
-        $this->data = $data->toArray();
+        parent::loadFromId($id);
         $this->calculatedVariables();
     }
     /**
@@ -173,5 +169,15 @@ class B1 extends \forest\template\Entity implements template\FormBX {
             )
         $b->loadFromCodePart($this->data['proprieta'],$this->data['cod_part'],$this->data['cod_fo']);
         return $b;
+    }
+     /**
+     * Return the associated X Collection
+     * @return \forest\entity\x\XColl
+     */
+    public function getXColl () {
+        $xcoll = new \forest\entity\x\XColl();
+        $xcoll->setFormB1($this);
+        $xcoll->loadAll();
+        return $xcoll;
     }
 } 

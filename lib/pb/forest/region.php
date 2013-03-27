@@ -34,15 +34,6 @@ class Region extends \Content {
         parent::__construct('diz_regioni');
     }
     /**
-     * Loads forest from its id
-     * @param int $id
-     */
-    public function loadFromId($id) {
-        parent::loadFromId($id);
-        if (is_null($this->data))
-            throw new \Exception('Unable to find the region',1301221541);
-    }
-    /**
      * Remaps region codice
      * @param variant $data
      * @param string|null $field

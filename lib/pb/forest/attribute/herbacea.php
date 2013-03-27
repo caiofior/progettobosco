@@ -34,22 +34,4 @@ class Herbacea  extends \Content {
     public function __construct() {
         parent::__construct('diz_erba');
     }
-     /**
-     * Updates data
-     */
-    public function update() {
-        if (!key_exists('cod_coltu', $this->data)) 
-            throw new Exception('Unable to update object without objectid',1302061037);
-        $where = $this->table->getAdapter()->quoteInto('cod_coltu = ?', $this->data['cod_coltu']);
-        $this->table->update($this->data, $where);
-    }
-    /**
-     * Deletes data
-     */
-    public function delete() {
-        if (key_exists('cod_coltu', $this->data)) {
-            $where = $this->table->getAdapter()->quoteInto('cod_coltu = ?', $this->data['cod_coltu']);
-            $this->table->delete($where);
-        }
-    }
 }

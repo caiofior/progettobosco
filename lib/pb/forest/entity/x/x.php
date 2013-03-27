@@ -7,7 +7,7 @@
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-namespace forest\entity;
+namespace forest\entity\x;
 if (!class_exists('Content')) {
     $file = 'form'.DIRECTORY_SEPARATOR.array(basename(__FILE__));
     $PHPUNIT=true;
@@ -39,11 +39,7 @@ class X extends \forest\template\Entity {
      * @param integer $id
      */
     public function loadFromId($id) {
-        $where = $this->table->getAdapter()->quoteInto('objectid = ?', $id);
-        $data = $this->table->fetchRow($where);
-        if (is_null($data))
-            throw new \Exception('Unable to find the cod part',1302081202);
-        $this->data = $data->toArray();
+        parent::loadFromId($id);
         $this->calculatedVariables();
     }
     /**

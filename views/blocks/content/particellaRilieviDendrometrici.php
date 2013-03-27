@@ -6,8 +6,11 @@ else {
     $a->loadFromId($_REQUEST['id']);
 }
 $forest = $a->getForest();
-$x = $a->getXColl()->getFirst();
+$b = $a->getBColl()->getFirst();
+$b1 = $b->getB1Coll()->getFirst();
+$x = $b1->getXColl()->getFirst();
 ?>
+<div id="forestcompartmentmaincontent">
 <script type="text/javascript" >
 document.getElementById("tabrelatedcss").href="css/rilievidendrometrici.css";
 </script>
@@ -39,4 +42,5 @@ document.getElementById("tabrelatedcss").href="css/rilievidendrometrici.css";
         <?php require __DIR__.DIRECTORY_SEPARATOR.'rilievidendrometrici'.DIRECTORY_SEPARATOR.'list.php';?>
     </form>
         <script type="text/javascript" src="js/rilievidendrometrici.js" defer="defer"></script>
+</div>
 </div>

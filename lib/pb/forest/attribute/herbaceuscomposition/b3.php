@@ -36,17 +36,6 @@ class B3  extends \forest\template\Entity {
         parent::__construct('erbacee3');
     }
      /**
-     * Loads form a data
-     * @param integer $id
-     */
-    public function loadFromId($id) {
-        $where = $this->table->getAdapter()->quoteInto('objectid = ?', $id);
-        $data = $this->table->fetchRow($where);
-        if (is_null($data))
-            throw new \Exception('Unable to find the cod part',1302081202);
-        $this->data = $data->toArray();
-    }
-     /**
      * Updates data
      */
     public function update() {
@@ -57,15 +46,6 @@ class B3  extends \forest\template\Entity {
         $where .= $this->table->getAdapter()->quoteInto('cod_fo = ? AND ', $this->data['cod_fo']);
         $where .= $this->table->getAdapter()->quoteInto('cod_coltu = ?', $this->data['cod_coltu']);
         $this->table->update($this->data, $where);
-    }
-    /**
-     * Deletes data
-     */
-    public function delete() {
-        if (key_exists('objectid', $this->data)) {
-            $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
-            $this->table->delete($where);
-        }
     }
 
 }

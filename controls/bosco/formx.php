@@ -6,7 +6,9 @@ if (key_exists('id', $_REQUEST) && $_REQUEST['id'] != '') {
 } else if (key_exists('forma_id', $_REQUEST)) {
     $a = new \forest\entity\A();
     $a->loadFromId($_REQUEST['forma_id']);
-    $xcoll = $a->getXColl();
+    $b = $a->getBColl()->getFirst();
+    $b1 = $b->getB1Coll()->getFirst();
+    $xcoll = $b1->getXColl();
     $xcoll->loadAll();
     if ($xcoll->count() == 0)
         $x = $xcoll->addItem();
