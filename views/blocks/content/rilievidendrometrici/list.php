@@ -102,7 +102,7 @@
                                                             <a <?php echo $actions['last']['url'];?> <?php echo $actions['last']['data-update'];?> >
                                                                 <img class="actions last" src="images/empty.png" title="Ultimo">
                                                             </a>
-                                                            <a href="bosco.php?task=formx&action=manage&forma_id=<?php echo $a->getData('objectid');?>" data-update="content_rilievidendrometrici_edit" data-destination="forestcompartmentmaincontent">
+                                                            <a href="bosco.php?task=formx&action=manage&forma_id=<?php echo $a->getData('objectid');?>" data-update="content_rilievidendrometrici_edit" data-destination="content_rilievidendrometrici_list">
                                                                 <img class="actions addnew" src="images/empty.png" title="Aggiungi un nuovo rilievo"/>
                                                             </a>
                                                         </div>

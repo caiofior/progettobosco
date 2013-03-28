@@ -85,6 +85,10 @@ class BColl extends \forest\template\EntityColl {
         $b->setData($this->a->getData('proprieta'),'proprieta');
         $b->setData($this->a->getData('cod_part'),'cod_part');
         $b->setData($this->a->getData('cod_fo'),'cod_fo');
+        $b->setData(
+                trim($this->a->getData('proprieta')).'|'.
+                trim($this->a->getData('cod_part')).'|'.
+                trim($this->a->getData('cod_fo')),'objectid');
         $b->setData(0,'u');
         return $b;
     }

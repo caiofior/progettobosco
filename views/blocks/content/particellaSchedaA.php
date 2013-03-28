@@ -67,7 +67,7 @@ document.getElementById("tabrelatedcss").href="css/forma.css";
             <input readonly="readonly" id="prod_non_bosc_calcolo" name="prod_non_bosc_calcolo" value="<?php echo $a->getRawData('prod_non_bosc_calcolo');?>">
         </div>
         <div id="toponimo_container">
-            <label for="toponimo" class="double">Toponimo</label>
+            <label for="toponimo" class="double">NOme del luogo</label>
             <input id="toponimo" name="toponimo" value="<?php echo $a->getData('toponimo');?>">
         </div>
         <div id="pp_container">
@@ -78,12 +78,13 @@ document.getElementById("tabrelatedcss").href="css/forma.css";
         <fieldset id="sub_forest_parcel">
                 
         <legend>Sottoparticella</legend>
+        <input type="radio" disabled="disabled" name="delimitata" <?php echo ($a->getData('delimitata') == 't' ? 'checked="checked"' : '')?> value="1">Delimitata<br/>
+        <input type="radio" disabled="disabled" name="delimitata" <?php echo ($a->getData('delimitata') == 'f' ? 'checked="checked"' : '')?>value="0">Non delimitata
+
         <div id ="sup_container">
         <label for="sup">Estesa su (%)</label>
         <input id="sup" name="sup" value="<?php echo $a->getData('sup');?>">
         </div>
-        <input type="radio" disabled="disabled" name="delimitata" <?php echo ($a->getData('delimitata') == 't' ? 'checked="checked"' : '')?> value="1">Delimitata<br/>
-        <input type="radio" disabled="disabled" name="delimitata" <?php echo ($a->getData('delimitata') == 'f' ? 'checked="checked"' : '')?>value="0">Non delimitata
         
         </fieldset>
         <fieldset id="pf1container" >
@@ -388,219 +389,222 @@ document.getElementById("tabrelatedcss").href="css/forma.css";
         if ($item->getRawData('codice') == $a->getData('o'))
             $checked = 'checked="checked"';
         ?>
-        <input type="radio" name="o" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"><span class="o_descr"><?php echo $item->getData('descriz'); ?></span>
+        <span class="o_descr"><?php echo $item->getData('descriz'); ?></span><input type="radio" name="o" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>">
         <?php endforeach;?>
         </fieldset>
         <fieldset id="ccontainer">
             <legend>Condizionamenti eliminabili</legend>
-            <div id="c1_container">
-                <label class="double" for="c1">Nessuno</label>
+            <div >
                 <input type="checkbox" id="c1" name="c1" value="1" <?php echo ($a->getData('c1') == 't' ? 'checked="checked"' : '') ;?>>
+                <label class="double" for="c1">Nessuno</label>
             </div>
-            <div id="c2_container">
-                <label for="c2">Eccesso di pascolo</label>
+            <div >
                 <input type="checkbox" id="c2" name="c2" value="1" <?php echo ($a->getData('c2') == 't' ? 'checked="checked"' : '') ;?>>
+                <label for="c2">Eccesso di pascolo</label>
             </div>            
-            <div id="c3_container">
-                <label for="c3">Eccesso di selvatici</label>
+            <div >
                 <input type="checkbox" id="c3" name="c3" value="1" <?php echo ($a->getData('c3') == 't' ? 'checked="checked"' : '') ;?>>
+                <label for="c3">Eccesso di selvatici</label>
             </div>
-            <div id="c4_container">
-                <label for="c4">Contestazioni di proprietà</label>
+            <div >
                 <input type="checkbox" id="c4" name="c4" value="1" <?php echo ($a->getData('c4') == 't' ? 'checked="checked"' : '') ;?>>
+                <label for="c4">Contestazioni di proprietà</label>
             </div>
-            <div id="c5_container">
-                <label class="double" for="c5">Altre cause</label>
+            <div >
                 <input type="checkbox" id="c5" name="c5" value="1" <?php echo ($a->getData('c5') == 't' ? 'checked="checked"' : '') ;?>>
+                <label class="double" for="c5">Altre cause</label>
             </div>
-            <div id="c6_container">
-                <label for="c6">Specifica</label>
+            <div >
                 <input id="c6" name="c6" value="<?php echo $a->getData('c6');?>">
+                <label for="c6">Specifica</label>
             </div>
         </fieldset>
         <fieldset id="pcontainer">
             <legend>Condizionamenti eliminabili</legend>
-            <div id="p1_container">
-                <label class="triple" for="p1">Nessuno</label>
+            <div >
                 <input type="checkbox" id="p1" name="p1" value="1" <?php echo ($a->getData('p1') == 't' ? 'checked="checked"' : '') ;?>>
+                <label class="triple" for="p1">Nessuno</label>
             </div>
-            <div id="p2_container">
-                <label class="triple" for="p2">Pascolo in bosco</label>
+            <div >
                 <input type="checkbox" id="p2" name="p2" value="1" <?php echo ($a->getData('p2') == 't' ? 'checked="checked"' : '') ;?>>
-            </div>            
-            <div id="p3_container">
-                <label for="p3">Emergenze storico naturalistiche</label>
-                <input type="checkbox" id="p3" name="p3" value="1" <?php echo ($a->getData('p3') == 't' ? 'checked="checked"' : '') ;?>>
-            </div>
-            <div id="p4_container">
-                <label class="triple" for="p4">Sorgenti fonti</label>
-                <input type="checkbox" id="p4" name="p4" value="1" <?php echo ($a->getData('p4') == 't' ? 'checked="checked"' : '') ;?>>
-            </div>
-            <div id="p5_container">
-                <label class="triple" for="p5">Usi civici</label>
-                <input type="checkbox" id="p5" name="p5" value="1" <?php echo ($a->getData('p5') == 't' ? 'checked="checked"' : '') ;?>>
-            </div>
-            <div id="p6_container">
-                <label class="triple" for="p6">Altri fattori</label>
-                <input type="checkbox" id="p6" name="p6" value="1" <?php echo ($a->getData('p6') == 't' ? 'checked="checked"' : '') ;?>>
-            </div>
-            <div id="p8_container">
-                <label for="p8">Specifica</label>
-                <input id="p8" name="p8" value="<?php echo $a->getData('p8') ;?>">
-            </div>
+                <label class="triple" for="p2">Pascolo in bosco</label>
+            </div>      
             <div id="p7_container">
             <div id="p7_innercontainer">
-            <label for="p7">Specie pascolate</label>
+            <label for="p7">Specie pascolate</label><br/>
             <?php
             foreach($a->getControl('p7')->getItems() as $item) :
             $checked = '';
             if ($item->getRawData('codice') == $a->getData('p7'))
                 $checked = 'checked="checked"';
             ?>
-            <input type="radio" name="p7" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"><span class="p7_descr"><?php echo $item->getData('descriz'); ?></span>
+            <span class="p7_descr"><?php echo $item->getData('descriz'); ?></span><input type="radio" name="p7" <?php echo $checked; ?> value="<?php echo $item->getData('codice'); ?>"><br/>
             <?php endforeach;?>
             </div>
-            <div id="p9_container">
-                <label for="p9">Specifica</label>
+            <div >
                 <input id="p9" name="p9" value="<?php echo $a->getData('p9') ;?>">
+                <label for="p9">Specifica</label>
             </div>
-            </div>    
+            </div>  
+            <div >
+                <input type="checkbox" id="p3" name="p3" value="1" <?php echo ($a->getData('p3') == 't' ? 'checked="checked"' : '') ;?>>
+                <label for="p3">Emergenze storico naturalistiche</label>
+            </div>
+            <div >
+                <input type="checkbox" id="p4" name="p4" value="1" <?php echo ($a->getData('p4') == 't' ? 'checked="checked"' : '') ;?>>
+                <label class="triple" for="p4">Sorgenti fonti</label>
+            </div>
+            <div >
+                <input type="checkbox" id="p5" name="p5" value="1" <?php echo ($a->getData('p5') == 't' ? 'checked="checked"' : '') ;?>>
+                <label class="triple" for="p5">Usi civici</label>
+            </div>
+            <div >
+                <input type="checkbox" id="p6" name="p6" value="1" <?php echo ($a->getData('p6') == 't' ? 'checked="checked"' : '') ;?>>
+                <label class="triple" for="p6">Altri fattori</label>
+            </div>
+            <div >
+                <input id="p8" name="p8" value="<?php echo $a->getData('p8') ;?>">
+                <label for="p8">Specifica</label>
+            </div>
+  
         </fieldset>
         <fieldset id="icontainer">
             <legend>Improduttivi inclusi non cartografati</legend>
-            <div id="i1_container">
-                <label for="i1">Superficie (ha)</label>
+            <div >
                 <input id="i1" name="i1" value="<?php echo $a->getData('i1') ;?>">
+                <label for="i1">Superficie (ha)</label>
             </div>
-            <div id="i2_container">
-                <label class="double" for="i2">Superficie %</label>
+            <div >
                 <input id="i2" name="i2" value="<?php echo $a->getData('i2') ;?>">
+                <label class="double" for="i2">Superficie %</label>
             </div>
-            <div id="i3_container">
-                <label class="double" for="i3">Rocce</label>
+            <div >
                 <input type="checkbox" id="i3" name="i3" value="1" <?php echo ($a->getData('i3') == 't' ? 'checked="checked"' : '') ;?>>
+                <label class="double" for="i3">Rocce</label>
             </div>
-            <div id="i4_container">
-                <label class="double" for="i4">Acque</label>
+            <div >
                 <input type="checkbox" id="i4" name="i4" value="1" <?php echo ($a->getData('i4') == 't' ? 'checked="checked"' : '') ;?>>
+                <label class="double" for="i4">Acque</label>
             </div>
-            <div id="i5_container">
-                <label class="double" for="i5">Strade</label>
+            <div >
                 <input type="checkbox" id="i5" name="i5" value="1" <?php echo ($a->getData('i5') == 't' ? 'checked="checked"' : '') ;?>>
+                <label class="double" for="i5">Strade</label>
             </div>
-            <div id="i6_container">
-                <label  for="i6">Viali tagliafuoco</label>
+            <div >
                 <input type="checkbox" id="i6" name="i6" value="1" <?php echo ($a->getData('i6') == 't' ? 'checked="checked"' : '') ;?>>
+                <label  for="i6">Viali tagliafuoco</label>
             </div>
-            <div id="i7_container">
-                <label class="double" for="i7">Altri fattori</label>
+            <div >
                 <input type="checkbox" id="i7" name="i7" value="1" <?php echo ($a->getData('i7') == 't' ? 'checked="checked"' : '') ;?>>
+                <label class="double" for="i7">Altri fattori</label>
             </div>
-            <div id="i8_container">
-                <label class="double" for="i8">Specifica</label>
+            <div >
                 <input id="i8" name="i8" value="<?php echo $a->getData('i8') ;?>">
+                <label class="double" for="i8">Specifica</label>
             </div>
         </fieldset>
         <fieldset id="ibiscontainer">
             <legend>Produttivi non boscati inclusi non cartografati</legend>
-            <div id="i21_container">
+            <div >
                 <label class="double" for="i21">Superficie (ha)</label>
                 <input id="i21" name="i21" value="<?php echo $a->getData('i21') ;?>">
             </div>
-            <div id="i22_container">
+            <div >
                 <label class="double" for="i2">Superficie (%)</label>
                 <input id="i22" name="i22" value="<?php echo $a->getData('i22') ;?>">
             </div>
         </fieldset>
-        <fieldset id="mcontainer">
+        <fieldset id="mcontainer1">
             <legend>Opere e manufatti</legend>
-            <div id="m1_container">
-                <label class="triple" for="m1">Assenti</label>
+            <div >
                 <input type="checkbox" id="m1" name="m1" value="1" <?php echo ($a->getData('m1') == 't' ? 'checked="checked"' : '') ;?>>
+                <label class="triple" for="m1">Assenti</label>
             </div>
-             <div id="m2_container">
-                <label class="triple"  for="m2">Strade camionabili</label>
+             <div >
                 <input type="checkbox" id="m2" name="m2" value="1" <?php echo ($a->getData('m2') == 't' ? 'checked="checked"' : '') ;?>>
+                <label class="triple"  for="m2">Strade camionabili</label>
             </div>
-            <div id="m21_container">
-                <label class="triple"  for="m21">Piste camionabili</label>
+            <div >
                 <input type="checkbox" id="m21" name="m21" value="1" <?php echo ($a->getData('m21') == 't' ? 'checked="checked"' : '') ;?>>
+                <label class="triple"  for="m21">Piste camionabili</label>
             </div>
-            <div id="m3_container">
-                <label class="triple"  for="m3">Strade trattorabili</label>
+            <div >
                 <input type="checkbox" id="m3" name="m3" value="1" <?php echo ($a->getData('m3') == 't' ? 'checked="checked"' : '') ;?>>
+                <label class="triple"  for="m3">Strade trattorabili</label>
             </div>
-            <div id="m4_container">
-                <label class="triple"  for="m4">Piste trattorabili</label>
+            <div >
                 <input type="checkbox" id="m4" name="m4" value="1" <?php echo ($a->getData('m4') == 't' ? 'checked="checked"' : '') ;?>>
+                <label class="triple"  for="m4">Piste trattorabili</label>
             </div>
-            <div id="m22_container">
-                <label  for="m22">Tracciati per mezzi agricoli minori</label>
+            <div >
                 <input type="checkbox" id="m22" name="m22" value="1" <?php echo ($a->getData('m22') == 't' ? 'checked="checked"' : '') ;?>>
+                <label  for="m22">Tracciati per mezzi agricoli minori</label>
             </div>
-            <div id="m20_container">
-                <label  for="m20">Piazzali o buche di carico</label>
+            <div >
                 <input type="checkbox" id="m20" name="m20" value="1" <?php echo ($a->getData('m20') == 't' ? 'checked="checked"' : '') ;?>>
+                <label  for="m20">Piazzali o buche di carico</label>
             </div>
-            <div id="m5_container">
-                <label class="triple"  for="m5">Edifici</label>
+            <div >
                 <input type="checkbox" id="m5" name="m5" value="1" <?php echo ($a->getData('m5') == 't' ? 'checked="checked"' : '') ;?>>
+                <label class="triple"  for="m5">Edifici</label>
             </div>
-            <div id="m6_container">
-                <label class="triple" for="m6">Sistemazioni</label>
+            <div >
                 <input type="checkbox" id="m6" name="m6" value="1" <?php echo ($a->getData('m6') == 't' ? 'checked="checked"' : '') ;?>>
+                <label class="triple" for="m6">Sistemazioni</label>
             </div>
-            <div id="m7_container">
-                <label  for="m7">Gradonamenti</label>
+            </fieldset>
+            <fieldset id="mcontainer2">
+            <div >
                 <input type="checkbox" id="m7" name="m7" value="1" <?php echo ($a->getData('m7') == 't' ? 'checked="checked"' : '') ;?>>
+                <label  for="m7">Gradonamenti</label>
             </div>
-            <div id="m8_container">
-                <label class="double" for="m8">Muri recinti</label>
+            <div >
                 <input type="checkbox" id="m8" name="m8" value="1" <?php echo ($a->getData('m8') == 't' ? 'checked="checked"' : '') ;?>>
+                <label class="double" for="m8">Muri recinti</label>
             </div>
-            <div id="m9_container">
-                <label  for="m9">Paravalanghe</label>
+            <div >
                 <input type="checkbox" id="m9" name="m9" value="1" <?php echo ($a->getData('m9') == 't' ? 'checked="checked"' : '') ;?>>
+                <label  for="m9">Paravalanghe</label>
             </div>
-            <div id="m10_container">
-                <label class="double" for="m10">Elettrodotti</label>
+            <div >
                 <input type="checkbox" id="m10" name="m10" value="1" <?php echo ($a->getData('m10') == 't' ? 'checked="checked"' : '') ;?>>
+                <label class="double" for="m10">Elettrodotti</label>
             </div>
-            <div id="m12_container">
-                <label  for="m12">Tracciati teleferiche</label>
+            <div >
                 <input type="checkbox" id="m12" name="m12" value="1" <?php echo ($a->getData('m12') == 't' ? 'checked="checked"' : '') ;?>>
+                <label  for="m12">Tracciati teleferiche</label>
             </div>
-            <div id="m13_container">
-                <label  for="m13">Condotte idriche</label>
+            <div >
                 <input type="checkbox" id="m13" name="m13" value="1" <?php echo ($a->getData('m13') == 't' ? 'checked="checked"' : '') ;?>>
+                <label  for="m13">Condotte idriche</label>
             </div>
-            <div id="m15_container">
-                <label class="double" for="m15">Cave</label>
+            <div >
                 <input type="checkbox" id="m15" name="m15" value="1" <?php echo ($a->getData('m15') == 't' ? 'checked="checked"' : '') ;?>>
+                <label class="double" for="m15">Cave</label>
             </div>
-            <div id="m23_container">
-                <label class="double" for="m23">Aree sosta</label>
+            <div >
                 <input type="checkbox" id="m23" name="m23" value="1" <?php echo ($a->getData('m23') == 't' ? 'checked="checked"' : '') ;?>>
+                <label class="double" for="m23">Aree sosta</label>
             </div>
-            <div id="m14_container">
-                <label class="double" for="m14">Parcheggi</label>
+            <div >
                 <input type="checkbox" id="m14" name="m14" value="1" <?php echo ($a->getData('m14') == 't' ? 'checked="checked"' : '') ;?>>
+                <label class="double" for="m14">Parcheggi</label>
             </div>
-            <div id="m16_container">
-                <label  for="m16">Sentieri guidati</label>
+            <div >
                 <input type="checkbox" id="m16" name="m16" value="1" <?php echo ($a->getData('m16') == 't' ? 'checked="checked"' : '') ;?>>
+                <label  for="m16">Sentieri guidati</label>
             </div>
-            <div id="m17_container">
-                <label  for="m17">Impianti sciistici</label>
+            <div >
                 <input type="checkbox" id="m17" name="m17" value="1" <?php echo ($a->getData('m17') == 't' ? 'checked="checked"' : '') ;?>>
+                <label  for="m17">Impianti sciistici</label>
             </div>
-            <div id="m18_container">
-                <label class="double" for="m18">Altre cose</label>
+            <div >
                 <input type="checkbox" id="m18" name="m18" value="1" <?php echo ($a->getData('m18') == 't' ? 'checked="checked"' : '') ;?>>
+                <label class="double" for="m18">Altre cose</label>
             </div>
-            <div id="m19_container">
-                <label for="m19">Specifica</label>
+            <div >
                 <input id="m19" name="m19" value="<?php echo $a->getData('m19') ;?>">
+                <label for="m19">Specifica</label>
             </div>
         </fieldset>
         <fieldset id="notescontainer">

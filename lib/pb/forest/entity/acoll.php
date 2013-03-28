@@ -110,6 +110,7 @@ class AColl extends \forest\template\EntityColl {
     public function addItem() {
         $a = parent::addItem();
         $a->setData($this->forest->getData('codice'),'proprieta');
+        $a->setData(trim($this->forest->getData('codice')).'|','objectid');
         return $a;
     }
 

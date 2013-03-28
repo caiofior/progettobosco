@@ -75,7 +75,10 @@ class B extends \forest\template\Entity {
             throw new \Exception('Unable to update object without proprieta,cod_part and cod_fo',1301251130);
         foreach($this->data as $key=>$value)
             if ($value=='') $this->data[$key]=null;
-        unset($this->data['objectid']);
+        $this->data['objectid']=
+                trim($this->a->getData('proprieta')).'|'.
+                trim($this->a->getData('cod_part')).'|'.
+                trim($this->a->getData('cod_fo'));
         $where = $this->table->getAdapter()->quoteInto('proprieta = ? AND ', $this->data['proprieta']);
         $where .= $this->table->getAdapter()->quoteInto('cod_part = ? AND ', $this->data['cod_part']);
         $where .= $this->table->getAdapter()->quoteInto('cod_fo = ? ', $this->data['cod_fo']);

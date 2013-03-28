@@ -133,12 +133,8 @@ class A extends \forest\template\Entity {
      * Updates data
      */
     public function update() {
-        if (!key_exists('objectid', $this->data)) 
-            throw new Exception('Unable to update object without objectid',1301251130);
-        foreach($this->data as $key=>$value)
-            if ($value=='') $this->data[$key]=null;
-        $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
-        $this->table->update($this->data, $where);
+        $this->data['objectid'] = trim($this->data['proprieta']).'|'.trim($this->data['cod_part']);
+        parent::update();
     }
     /**
      * Deletes data
@@ -153,8 +149,7 @@ class A extends \forest\template\Entity {
                 }
                 $b->delete();
             }
-            $where = $this->table->getAdapter()->quoteInto('objectid = ?', $this->data['objectid']);
-            $this->table->delete($where);
+            parent::delete();
         }
     }
     /**

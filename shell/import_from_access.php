@@ -170,4 +170,5 @@ $error = file_exists($logname) && filesize($logname) > 0;
 if (is_file($logname) && !$error) unlink($logname);
 if (is_file($dataname) && !$error) unlink($dataname);
 }
-
+ $db->query('UPDATE schede_a SET objectid = TRIM(proprieta) || \'|\' || TRIM(cod_part)');
+ $db->query('UPDATE schede_b SET objectid = TRIM(proprieta) || \'|\' || TRIM(cod_part) || \'|\' || TRIM(cod_fo)');
