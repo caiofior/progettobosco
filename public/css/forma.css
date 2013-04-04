@@ -5,10 +5,6 @@
     Description:
         Purpose of the stylesheet follows.
 */
-
-#formA {
-    height: 3700px;
-}
 fieldset {
     border-style: solid;
     border-width: 1px;
@@ -453,12 +449,8 @@ input[type='radio'] {
 */
 #cadastraldata {
     margin-top: 40px;
-    width: 800px;
-    height: 470px;
 }
 #cadastral_filter {
-    margin-top: 10px;
-    margin-right: 10px;
 }
 #cadastraldata  div,table {
     font-size: 7px;
@@ -470,9 +462,6 @@ input[type='radio'] {
     margin: 0px;
     border: 0px;
     padding: 2px;
-}
-#cadastralsummary {
-    margin-top: -40px;
 }
 /**
 * note container

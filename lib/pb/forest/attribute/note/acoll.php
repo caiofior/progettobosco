@@ -62,14 +62,14 @@ class AColl  extends \ContentColl  {
                     '('.
                     $select->getAdapter()->select()->from('leg_note',
                             'intesta'
-                            )->where('leg_note.nomecampo = note_a.cod_nota').
+                            )->where('leg_note.archivio = \'SCHEDE_A\'')->where('leg_note.nomecampo = note_a.cod_nota').
                     ')')
             ,
             'nota_objectid'=>new \Zend_Db_Expr(
                     '('.
                     $select->getAdapter()->select()->from('leg_note',
                             'objectid'
-                            )->where('leg_note.nomecampo = note_a.cod_nota').
+                            )->where('leg_note.archivio = \'SCHEDE_A\'')->where('leg_note.nomecampo = note_a.cod_nota').
                     ')')
             )   
             );

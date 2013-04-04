@@ -643,12 +643,12 @@ document.getElementById("tabrelatedcss").href="css/forma.css";
         </fieldset>
         <fieldset class="datatable" id="cadastraldata">
             <legend>Dati catastali</legend>    
-                <a class="addcadastral" style="display: none;" href="#">
+                <!--<a class="addcadastral" style="display: none;" href="#">
                     <img class="actions addnew" src="images/empty.png" title="Aggiungi una particella"/>
                 </a>
                 <a class="surfacerecalc" style="display: none;" href="#">
                     Aggiorna superficie totale
-                </a>
+                </a>-->
                 <table cellpadding="0" cellspacing="0" border="0" class="display" id="cadastral">
                     <thead>
                             <tr>
@@ -682,22 +682,14 @@ document.getElementById("tabrelatedcss").href="css/forma.css";
                                     <th >Note</th>
                                     <th >Azioni</th>
                             </tr>
+                            <tr>
+                                <th colspan="3" >Totale</th>
+                                <th  ><div id="sum_sup_tot_cat"></div></th>
+                                <th  ><div id="sum_sup_tot"></div></th>
+                                <th  ><div id="sum_sup_bosc"></div></th>
+                                <th colspan="4"></th>
+                            </tr>
                     </tfoot>
-            </table>
-            <table id="cadastralsummary" style="display: none;" cellspacing="0" cellpadding="0" border="0" >
-            <tfoot>
-            <tr>
-            <th rowspan="1" colspan="1" ></th>
-            <th rowspan="1" colspan="1" >Totale</th>
-            <th rowspan="1" colspan="1" ><div id="sum_sup_tot_cat"></div></th>
-            <th rowspan="1" colspan="1" ><div id="sum_sup_tot"></div></th>
-            <th rowspan="1" colspan="1" ><div id="sum_sup_bosc"></div></th>
-            <th rowspan="1" colspan="1" ></th>
-            <th rowspan="1" colspan="1" ></th>
-            <th rowspan="1" colspan="1" ></th>
-            <th rowspan="1" colspan="1" ></th>
-            </tr>
-            </tfoot>
             </table>
          </fieldset>
         <fieldset id="forestnotecontainer">
@@ -715,7 +707,7 @@ document.getElementById("tabrelatedcss").href="css/forma.css";
         </div>
         <div id="improduttivi_calcolo1_container">
             <label for="improduttivi_calcolo1">Improduttivi (ha)</label>
-            <input readonly="readonly" id="improduttivi_calcolo1" name="improduttivi_calcolo1 value="<?php echo $a->getRawData('improduttivi_calcolo');?>">
+            <input readonly="readonly" id="improduttivi_calcolo1" name="improduttivi_calcolo1" value="<?php echo $a->getRawData('improduttivi_calcolo');?>">
         </div>
         <div id="prod_non_bosc_calcolo1_container">
             <label for="prod_non_bosc_calcolo1">Produttivi non boscati (ha)</label>

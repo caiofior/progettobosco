@@ -8,7 +8,7 @@
                             <div id="breadcrumb">
                                 <a href="<?php echo $GLOBALS['BASE_URL'];?>">Home</a> &gt;
                                 <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php">Elenco Boschi</a> &gt;
-                                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?action=manage&amp;id=<?php echo $forest->getData('objectid');?>">Elenco Particelle</a>
+                                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?action=manage&amp;id=<?php echo $forest->getData('codice');?>">Elenco Particelle</a>
                             </div>
 				<div class="post">
                                     <?php $profile = $this->user->getProfile(); ?>
@@ -25,7 +25,7 @@
                                             <span><a href="#">Scheda N</a></span><!--
                                         --><span><a data-update="content_particellaRilieviDendrometrici" data-destination="forestcompartmentmaincontent" href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?id=<?php echo $a->getData('objectid');?>">Rilievi dendrometrici</a>
                                         </div>
-                                        <?php require __DIR__.DIRECTORY_SEPARATOR.'particellaSchedaA.php';?>
+                                        <?php require __DIR__.DIRECTORY_SEPARATOR.'particellaSchedaB1.php';?>
 				<!-- /post -->	
 				</div>	
 

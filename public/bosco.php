@@ -13,10 +13,18 @@ $view->controler = basename(__FILE__);
 $header = 'header'.DIRECTORY_SEPARATOR.'bosco.php';
 $content = 'content'.DIRECTORY_SEPARATOR.'bosco.php';
 $sidebar = 'general'.DIRECTORY_SEPARATOR.'sidebar.php';
+$footer = array(
+          'general'.DIRECTORY_SEPARATOR.'footer.php',
+          'footer'.DIRECTORY_SEPARATOR.'bosco.php'
+      );
 if ($user === false) {
     $header = 'general'.DIRECTORY_SEPARATOR.'header.php';
     $content = 'content'.DIRECTORY_SEPARATOR.'login.php';
     $sidebar = 'sidebar'.DIRECTORY_SEPARATOR.'login.php';
+    $footer = array(
+          'general'.DIRECTORY_SEPARATOR.'footer.php',
+          'footer'.DIRECTORY_SEPARATOR.'login.php'
+      );
     $_REQUEST=array();
 }
 if (key_exists('task', $_REQUEST)) {
@@ -148,7 +156,7 @@ else if (key_exists('action', $_REQUEST)) {
                     $view->forest->loadFromCode($_REQUEST['forest_codice']);
                     $acoll = $view->forest->getForestCompartmentColl();
                     $a = $acoll->addItem();
-                    $a->setData($_REQUEST['cod_part'],'cod_part');
+                    $a->setData($_REQUEST['cod_part'], 'cod_part');
                     try{
                         $a->insert();
                         $log->setData(array(
@@ -195,9 +203,6 @@ $view->blocks = array(
       'HEADERS' => $header,
       'CONTENT' => $content,
       'SIDEBAR' => $sidebar,
-      'FOOTER' => array(
-          'general'.DIRECTORY_SEPARATOR.'footer.php',
-          'footer'.DIRECTORY_SEPARATOR.'bosco.php'
-      )
+      'FOOTER' => $footer
     );
 echo $view->render('Jungleland10.php');

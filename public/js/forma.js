@@ -221,16 +221,9 @@ oTable = $("#cadastral").dataTable( {
                 },
                 "height": "8px"
             } );
-            add = $(".addcadastral");
-            if (add.length > 0)
-                $("#cadastral_length").append(" ").append(add.remove().show());
-            $(".dataTables_scrollFoot th").each(function(id,el) {
-                $("#cadastralsummary th").eq(id).width($(el).width());
-            });
-            surf = $(".surfacerecalc");
+            /**surf = $(".surfacerecalc");
             if (surf.length > 0)
-                $("#cadastral_length").append(" ").append(surf.remove().show());
-            $("#cadastralsummary").show();
+                $("#cadastral_length").append(" ").append(surf.remove().show());**/
             $.get(
                 "bosco.php?task=forma&action=cadastratablesummary"
                 , {
@@ -246,9 +239,7 @@ oTable = $("#cadastral").dataTable( {
             
         },
         "bStateSave": true,
-        "bProcessing": true,
         "bServerSide": true,
-        "sScrollY": "100px",
         "sAjaxSource": "bosco.php?task=forma&action=cadastraltable&id="+$("#objectid").val()
 });
 $(document).on("click",".addcadastral",function (e) {

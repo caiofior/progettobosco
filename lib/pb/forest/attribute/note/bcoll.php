@@ -62,14 +62,14 @@ class BColl  extends \ContentColl  {
                     '('.
                     $select->getAdapter()->select()->from('leg_note',
                             'intesta'
-                            )->where('leg_note.nomecampo = note_b.cod_nota').
+                            )->where('leg_note.archivio = \'SCHEDE_B\'')->where('leg_note.nomecampo = note_b.cod_nota').
                     ')')
             ,
             'nota_objectid'=>new \Zend_Db_Expr(
                     '('.
                     $select->getAdapter()->select()->from('leg_note',
                             'objectid'
-                            )->where('leg_note.nomecampo = note_b.cod_nota').
+                            )->where('leg_note.archivio = \'SCHEDE_B\'')->where('leg_note.nomecampo = note_b.cod_nota').
                     ')')
             )   
             );

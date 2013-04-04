@@ -129,29 +129,6 @@ class A extends \forest\template\Entity {
         $cadastralcoll->setForm($this);
         return $cadastralcoll;
     }
-     /**
-     * Updates data
-     */
-    public function update() {
-        $this->data['objectid'] = trim($this->data['proprieta']).'|'.trim($this->data['cod_part']);
-        parent::update();
-    }
-    /**
-     * Deletes data
-     */
-    public function delete() {
-        if (key_exists('objectid', $this->data)) {
-            $bcoll = $this->getBColl();
-            foreach ($bcoll->getItems() as $b) {
-                $b1coll = $b->getB1Coll();
-                foreach ($b1coll->getItems() as $b1) {
-                    $b1->delete();
-                }
-                $b->delete();
-            }
-            parent::delete();
-        }
-    }
     /**
      * Return the associated B Collection
      * @return \forest\entity\BColl

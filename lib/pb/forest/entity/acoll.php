@@ -69,6 +69,7 @@ class AColl extends \forest\template\EntityColl {
         if ($this->forest instanceof \forest\Forest) {
             $select->where('schede_a.proprieta = ?', $this->forest->getData('codice'));
         }
+        $select->order('schede_a.cod_part');
         return $select;
     }
     /**
@@ -103,14 +104,13 @@ class AColl extends \forest\template\EntityColl {
             return parent::countAll();
 
     }
-    /**
+     /**
      * Adds new item to the form
      * @return \forest\entity\A
      */
     public function addItem() {
         $a = parent::addItem();
         $a->setData($this->forest->getData('codice'),'proprieta');
-        $a->setData(trim($this->forest->getData('codice')).'|','objectid');
         return $a;
     }
 

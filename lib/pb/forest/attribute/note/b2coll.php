@@ -62,14 +62,14 @@ class B2Coll  extends \ContentColl  {
                     '('.
                     $select->getAdapter()->select()->from('leg_note',
                             'intesta'
-                            )->where('leg_note.nomecampo = note_b2.cod_nota').
+                            )->where('leg_note.archivio = \'SCHED_B2\'')->where('leg_note.nomecampo = note_b2.cod_nota').
                     ')')
             ,
             'nota_objectid'=>new \Zend_Db_Expr(
                     '('.
                     $select->getAdapter()->select()->from('leg_note',
                             'objectid'
-                            )->where('leg_note.nomecampo = note_b2.cod_nota').
+                            )->where('leg_note.archivio = \'SCHED_B2\'')->where('leg_note.nomecampo = note_b2.cod_nota').
                     ')')
             )   
             );

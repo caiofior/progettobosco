@@ -11,7 +11,6 @@ fieldset {
     border-width: 1px;
     border-color: #000000;
     color: #325D27;
-    position: relative;
     display: block;
 }
 legend {
@@ -22,16 +21,12 @@ legend {
     font-weight: bold;
 }
 h4 {
-    position: relative;
     color: #010080!important;
     background-color: #ffffff;
     font-size: 12px!important;
-    margin: 0px!important;
-    padding: 0px;
-    
 }
 fieldset > div {
-    position:absolute;
+
 }
 fieldset > div > label {
     background-color: #010080;
@@ -63,259 +58,81 @@ input[type='radio'],input[type='checkbox'] {
 * General part
 **/
 #general {
-    left: 0px;
-    top: 0px;
-    height: 313px;
     border-style: none;
 }
 #regione_container {
     width: 500px;
-    top:4px;
-    left:4px;
 }
 #bosco_container {
     width: 250px;
-    top:58px;
-    left:4px;
 }
 #note_1 {
     width: 300px;
-    top:100px;
-    left: 4px;
 }
 #u_container {
     width: 200px;
-    top:166px;
-    left: 4px; 
 }
 #t_container {
     width: 200px;
-    top:166px;
-    left: 208px; 
+    margin-top: -60px;
+    margin-left: 208px; 
 }
 #cod_part_container {
     width: 200px;
-    top:166px;
-    left: 412px; 
+    margin-top: -60px;
+    margin-left: 412px; 
 }
 #s_container {
     width: 200px;
-    top:252px;
-    left: 4px; 
 }
-#c1_container {
-    width: 150px;
-    top:490px;
-    *top:420px;
-    left: 4px; 
-}
-#ce_container {
-    width: 150px;
-    top:590px;
-    *top:510px;
-    left: 164px; 
-}
-#spe_nov_container {
-    width: 150px;
-    top:1230px;
-    left: 600px; 
-}
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-    #spe_nov_container { 
-        top: 1180px; 
-    }
-}
-#int2_container {
-    width: 150px;
-    top:1300px;
-    left: 4px; 
-}
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-    #int2_container { 
-        top: 1250px; 
-    }
-}
-#int3_container {
-    width: 150px;
-    top:1300px;
-    left: 158px; 
-}
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-    #int3_container { 
-        top: 1250px; 
-    }
-}
-#f_container {
-    width: 150px;
-    top:1360px;
-    left: 4px; 
-}
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-    #f_container { 
-        top: 1310px; 
-    }
-}
-#p2_container {
-    width: 150px;
-    top:1600px;
-    left: 4px; 
-}
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-    #p2_container { 
-        top: 1560px; 
-    }
-}
-#p3_container {
-    width: 150px;
-    top:1600px;
-    left: 158px; 
-}
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-    #p3_container { 
-        top: 1560px; 
-    }
-}
-#p4_container {
-    width: 150px;
-    top:1600px;
-    left: 316px; 
-}
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-    #p4_container { 
-        top: 1560px; 
-    }
-}
-#label_dendro_1 {
-    top:1800px;
-    left: 4px; 
-    width: 180px;
-}
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-    #label_dendro_1 { 
-        top: 1740px; 
-    }
-}
-#d1_container {
-    width: 100px;
-    top:1850px;
-    left: 4px; 
-}
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-    #d1_container { 
-        top: 1790px; 
-    }
-}
-#d3_container {
-    width: 100px;
-    top:1850px;
-    left: 108px; 
-}
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-    #d3_container { 
-        top: 1790px; 
-    }
-}
-#d5_container {
-    width: 100px;
-    top:1850px;
-    left: 216px; 
-}
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-    #d5_container { 
-        top: 1790px; 
-    }
-}
-#label_dendro_2 {
-    top:1780px;
-    left: 200px; 
-    width: 70px;
-}
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-    #label_dendro_2{ 
-        top: 1720px; 
-    }
-}
-#d14_container {
-    width: 100px;
-    top:1840px;
-    left: 416px; 
-}
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-    #d14_container{ 
-        top: 1790px; 
-    }
-}
-#d15_container {
-    width: 100px;
-    top:1840px;
-    left: 520px; 
-}
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-    #d15_container{ 
-        top: 1790px; 
-    }
-}
-#d16_container {
-    width: 100px;
-    top:1840px;
-    left: 624px; 
-}
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-    #d16_container{ 
-        top: 1790px; 
-    }
-}
-#label_dendro_3 {
-    top:1750px;
-    left: 600px; 
-    width: 70px;
-}
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-    #label_dendro_3{ 
-        top: 1700px; 
-    }
-}
-/**
-* M container
-*/
 #mcontainer {
-    left: 208px;
-    top: -60px;
+    margin-top: -50px;
+    margin-left: 208px;
     width: 320px;
-    height: 50px;
 }
 /**
 * O container
 */
 #ocontainer {
-    left: 4px;
-    top: -30px;
     width: 525px;
-    height: 90px;
 }
-#ocontainer input,.o_descr {
+#ocontainer input,
+#ocontainer div {
     float:left;      
 }
-.o_descr {
-    display: block;
+
+#c1_container {
+    margin-top: 10px;
+    width: 150px;
 }
-/**
-* Vig container
-*/
 #vigcontainer {
-    left: 160px;
-    top: -20px;
+    margin-left: 160px;
+    margin-top: -60px;
     width: 370px;
-    height: 50px;
+}
+
+#vcontainer {
+    margin-top: 20px;
+    width: 135px;
+}
+#ce_container {
+    width: 150px;
+    margin-top: -60px;
+    margin-left: 164px; 
+}
+
+#dcontainer {
+    margin-top: -60px;
+    margin-left: 320px;
+    width: 210px;
 }
 /**
 * Arboree container
 */
 #arboreecontainer {
-    left: 550px;
-    top: -260px;
-    width: 260px;
-    height: 150px;
+    margin-left: 550px;
+    margin-top: -290px;
+    width: 250px;
 }
 #newarboree {
     top: 24px;
@@ -361,86 +178,56 @@ input[type='radio'],input[type='checkbox'] {
     margin-top: 5px;
     vertical-align:top;
 }
+
 /**
 * Prep terr container
 */
 #prep_terrcontainer {
-    left: 550px;
+    margin-left: 550px;
     top: -240px;
-    *top: -160px;
     width: 225px;
-    height: 50px;
 }
-/**
-* V container
-**/
-#vcontainer {
-    top: -200px;
-    left: 4px;
-    width: 135px;
-}
-/**
-* D container
-**/
-#dcontainer {
-    top: -250px;
-    left: 320px;
-    width: 210px;
-}
+
+
 /**
 * Sesto container
 */
 #sestocontainer {
     top: -350px;
-    *top: -280px;
-    left: 550px;
+    margin-left: 550px;
     width: 230px;
-    height: 140px;
-    *height: 170px;
 }
-#sesto_imp_tra_file_container {
-    width: 110px;
-    top: 22px;
-    left: 4px;
+#sestocontainer div {
+    float: left;
+    width: 90px;
 }
-#sesto_imp_su_file_container {
-    width: 110px;
-    top: 22px;
-    left: 118px;
-}
-#buche_container {
-    width: 110px;
-    top: 108px;
-    left: 4px;
-}
+
+
 /**
 * SR container
 **/
 #srcontainer {
-    top: -340px;
-    *top: -250px;
-    left: 4px;
+    margin-top: -150px;
     width: 270px;
 }
 /**
 * Arbustive container
 */
 #arbustivecontainer {
-    top: -400px;
-    *top: -320px;
-    left: 308px;
-    width: 260px;
+    margin-top: -70px;
+    margin-left: 308px;
+    width: 200px;
     height: 200px;
 }
 #newarbustive {
     top: 44px;
     left: 4px;
-    width: 250px;
+    width: 190px;
 }
 #content_schedab_arbustive {
     top: 104px;
     left: 4px;
-    width: 250px;
+    width: 190px;
 }
 #content_schedab_arbustive  div{
     position: relative;
@@ -469,7 +256,11 @@ input[type='radio'],input[type='checkbox'] {
     border-top-width: 1px;
     border-top-color: #000000;
 }
+#arbustivecontainer .scrollcontrols span{
+    width: 52px;
+}
 #arbustivecontainer .scrollcontrols span input{
+    width: 20px;
     display: inline;
 }
 #arbustivecontainer .scrollcontrols img {
@@ -480,18 +271,14 @@ input[type='radio'],input[type='checkbox'] {
 * SE container
 **/
 #secontainer {
-    top: -393px;
-    *top: -310px;
-    left: 4px;
     width: 270px;
 }
 /**
 * Erbacee container
 */
 #erbaceecontainer {
-    top: -450px;
-    *top: -380px;
-    left: 308px;
+    margin-top: -80px;
+    margin-left: 308px;
     width: 260px;
     height: 200px;
 }
@@ -543,15 +330,11 @@ input[type='radio'],input[type='checkbox'] {
 * N1 container
 **/
 #n1container {
-    top: -423px;
-    *top: -373px;
-    left: 4px;
     width: 200px;
 }
 #n1arrow_right {
-    top: -473px;
-    *top: -420px;
-    left: 225px;
+    margin-top: -60px;
+    margin-left: 225px;
     width: 10px;
     height: 43px;
     border-style: none;
@@ -561,9 +344,8 @@ input[type='radio'],input[type='checkbox'] {
 * N2 container
 **/
 #n2container {
-    top: -530px;
-    *top: -480px;
-    left: 246px;
+    margin-top: -60px;
+    margin-left: 246px;
     width: 140px;
 }
 #n2container input,.n2_descr {
@@ -577,9 +359,8 @@ input[type='radio'],input[type='checkbox'] {
 * N3 container
 **/
 #n3container {
-    top: -596px;
-    *top: -536px;
-    left: 406px;
+    margin-top: -60px;
+    margin-left: 406px;
     width: 140px;
 }
 #n3container input,.n3_descr {
@@ -591,41 +372,65 @@ input[type='radio'],input[type='checkbox'] {
     word-break: break-all;
 }
 #n3arrow_right {
-    top: -656px;
-    *top: -576px;
-    left: 570px;
+    margin-top: -60px;
+    margin-left: 570px;
     width: 10px;
     height: 43px;
     border-style: none;
     background: transparent url('../images/arrow-right.png') no-repeat;
 }
+#spe_nov_container {
+    width: 150px;
+    margin-top: -60px;
+    margin-left: 600px; 
+}
+#int2_container {
+    width: 150px;
+}
+#int3_container {
+    margin-top: -40px;
+    width: 150px;
+    margin-left: 158px; 
+}
+#f_container {
+    width: 150px;
+}
 /**
 * G container
 **/
 #gcontainer {
-    top: -520px;
-    *top: -420px;
-    left: 4px;
     width: 500px;
 }
 #gcontainer > span {
     display: block;
 }
-#gcontainer input,.g_descr {
+#gcontainer div input,
+#gcontainer div span {
     float:left;      
 }
-.g_descr {
+#gcontainer div span {
     display: block;
     width: 110px;
     word-break: break-all;
 }
+#p2_container {
+    width: 150px;
+}
+#p3_container {
+    width: 150px;
+    margin-top: -60px;
+    margin-left: 158px; 
+}
+#p4_container {
+    width: 150px;
+    margin-top:-60px;
+    margin-left: 316px; 
+}
+
 /**
 * G1 container
 **/
 #g1container {
-    top: -430px;
-    *top: -330px;
-    left: 4px;
     width: 600px;
 }
 #g1container input,.g1_descr {
@@ -638,8 +443,8 @@ input[type='radio'],input[type='checkbox'] {
     word-break: break-all;
 }
 #g1arrow_right {
-    top: 50px;
-    left: 350px;
+    margin-top: 20px;
+    margin-left: 350px;
     width: 10px;
     height: 43px;
     border-style: none;
@@ -656,59 +461,92 @@ input[type='radio'],input[type='checkbox'] {
     display: block;
     width: 70px;    
 }
-#sub_viab_label {
-    position: relative;
-    top: -10px;
-    left: -100px;
+#sub_viab_container {
+    display: block;
+    margin-top: -50px;
+    margin-left: 400px;
 }
+#label_dendro_1 {
+    width: 180px;
+}
+#label_dendro_2 {
+    margin-top:-30px;
+    margin-left:220px;
+    width: 70px;
+}
+#d1_container {
+    width: 100px;
+}
+#d3_container {
+    width: 100px;
+    margin-top:-60px;
+    margin-left: 108px; 
+}
+#d5_container {
+    width: 100px;
+    margin-top:-60px;
+    margin-left: 216px; 
+}
+#label_dendro_3 {
+    margin-top:-70px;
+    margin-left: 400px; 
+    width: 70px;
+}
+
+#d14_container {
+    width: 100px;
+    margin-top:0px;
+    margin-left: 416px; 
+}
+#d15_container {
+    width: 100px;
+    margin-top:-60px;
+    margin-left: 520px; 
+}
+#d16_container {
+    width: 100px;
+    margin-top:-60px;
+    margin-left: 624px; 
+}
+
 /**
 * Specific D container
 **/
 #d_spec_container {
-    top: -300px;
-    *top: -150px;
-    left: 4px;
+    margin-top: 50px;
     width: 800px;
     height: 250px;
 }
 #d21_container {
     width: 150px;
-    top:25px;
-    left: 4px; 
 }
 #d22_container {
     width: 150px;
-    top:25px;
-    left: 158px; 
+    margin-top:-60px;
+    margin-left: 158px; 
 }
 #d23_container {
     width: 150px;
-    top:95px;
-    left: 4px; 
 }
 #d24_container {
     width: 150px;
-    top:95px;
-    left: 158px; 
+    margin-top:-60px;
+    margin-left: 158px; 
 }
 #d26_container {
     width: 150px;
-    top:165px;
-    left: 4px; 
 }
 #d25_container {
     width: 150px;
-    top:165px;
-    left: 158px; 
+    margin-top:-60px;
+    margin-left: 158px; 
 }
 #newdspecieexitimation {
-    top: 44px;
-    left: 350px;
+    margin-top: -150px;
+    margin-left: 350px;
     width: 450px;
 }
 #content_schedab_dspecieexitimation {
-    top: 104px;
-    left: 350px;
     width: 450px;
 }
 #content_schedab_dspecieexitimation  div{
@@ -717,7 +555,7 @@ input[type='radio'],input[type='checkbox'] {
 }
 #content_schedab_dspecieexitimation  div span{
     float:left;
-    width: 100px;
+    width: 150px;
     text-align: center;
     word-break: break-all;
     border-top-style: solid;
@@ -731,7 +569,7 @@ input[type='radio'],input[type='checkbox'] {
 
 #newdspecieexitimation div span{
     float:left;
-    width: 100px;
+    width: 120px;
     text-align: center;
     word-break: break-all;
     border-top-style: solid;
@@ -749,9 +587,6 @@ input[type='radio'],input[type='checkbox'] {
 * notes container
 */
 #notescontainer {
-    top: -280px;
-    *top: -130px;
-    left: 4px;
     width: 800px;
     height: 310px;
 }
@@ -793,10 +628,10 @@ input[type='radio'],input[type='checkbox'] {
     border-top-width: 1px;
     border-top-color: #000000;
 }
-#scrollcontrols span input{
+#content_schedab_dspecieexitimation .scrollcontrols span input{
     display: inline;
 }
-#scrollcontrols img {
+#content_schedab_dspecieexitimation .scrollcontrols img {
     margin-top: 5px;
     vertical-align:top;
 }

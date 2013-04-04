@@ -408,6 +408,9 @@ form .error {
     float: left;
     display: inline;
 }
+.dataTable{
+    clear: both;
+}
 /**
 * Data tables actions
 **/

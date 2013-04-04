@@ -3,15 +3,15 @@ $PHPUNIT = true;
 require (__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'include'.DIRECTORY_SEPARATOR.'pageboot.php');
 $tables = array(
     //Observer,
-    'rilevato',
+    //'rilevato',
     //Forest types
-   'diz_tipi',
+   //'diz_tipi',
     //Tables
-   'diz_tavole',
-    'diz_tavole2',
-    'diz_tavole3',
-    'diz_tavole4',
-    'diz_tavole5',
+   //'diz_tavole',
+    //'diz_tavole2',
+    //'diz_tavole3',
+    //'diz_tavole4',
+    //'diz_tavole5',
     //Forest
     'propriet',
     //Foms
@@ -74,6 +74,25 @@ $tables = array(
     'problemi_b3',
     'problemi_b4'
 );
+$preserveid = array(
+    'schede_a',
+    'schede_b',
+    'sched_b1',
+    'sched_b2',
+);
+$incrementid = array(
+    'note_a',
+    'catasto',
+    'note_b',
+    'arboree',
+    'erbacee',
+    'arbusti',
+    'stime_b1',
+    'note_b2',
+    'arboree2',
+    'arbusti2',
+    'erbacee2',
+    );
 if ($argc < 1) {
     echo 'MDB path is required';
     exit;
@@ -93,7 +112,7 @@ user = '{$DB_CONFIG['username']}'
 pass = '{$DB_CONFIG['password']}'
 log_file            = pgloader.log
 log_min_messages    = INFO
-client_min_messages = WARNING
+client_min_messages = ERROR
 copy_every      = 100
 
 [tmpl]
@@ -121,6 +140,8 @@ foreach ($tables as $table) {
     $file_output = fopen ($filename_t,'w');
     $p = ftell($file_input);
     $columns_str = '';
+    $key_field = null;
+    $max_objectid=0;
     if (is_resource($file_input)) {
         while ($row = fgets($file_input)) {
             if ($p == 0) {
@@ -135,6 +156,16 @@ foreach ($tables as $table) {
                         $columns_str .= ',';
                     $columns_str .= $db_col.':'.($key+1);        
                 }
+                if ( in_array($table, $incrementid) && 
+                        in_array('objectid', $columns)) {
+                    $key_field = array_search('objectid', $columns);
+                    $max_objectid=  $db->fetchOne('SELECT MAX(objectid) FROM '.$table);
+                }
+                else if ( in_array($table, $preserveid) && 
+                        in_array('objectid', $columns)) {
+                    $key_field = array_search('objectid', $columns);
+                }
+
             }
             else {
                 preg_match_all('/[0-9]\.[0-9]*e\+[0-9]{2}/', $row,$e_matches);
@@ -142,6 +173,21 @@ foreach ($tables as $table) {
                     foreach($e_matches[0] as $e_match) {
                         $row = str_replace($e_match, floatval($e_match), $row);
                     }
+                }
+                if ( in_array($table, $incrementid)
+                        && in_array('objectid', $columns)) {
+                    fseek($file_input, $p);
+                    $row_csv = fgetcsv($file_input,0,',','"');
+                    $value = $row_csv[$key_field];
+                    $row = str_replace(','.$value.',', ','.($value+$max_objectid).',', $row);
+                    $row = preg_replace('/,'.$value.'$/', ','.($value+$max_objectid), $row);
+                }
+                else if ( in_array($table, $preserveid) && 
+                        in_array('objectid', $columns)) {
+                    fseek($file_input, $p);
+                    $row_csv = fgetcsv($file_input,0,',','"');
+                    $value = $row_csv[$key_field];
+                    $max_objectid = max($max_objectid,$value);
                 }
                 fputs($file_output,$row);
             }
@@ -162,7 +208,27 @@ reject_data = output/{$table}.data
 
 EOL
 );
+if ( in_array($table, $preserveid) && 
+    in_array('objectid', $columns)) {
+    $max_objectid=  max(0,$db->fetchOne('SELECT MAX(objectid) FROM '.$table));
+    $db->query('UPDATE '.$table.' SET objectid = objectid + '.intval($max_objectid));
+ }
 exec('pgloader '.$table);
+if ( in_array($table, $incrementid)
+    && in_array('objectid', $columns)) {
+     $max_objectid=  max(0,$db->fetchOne('SELECT MAX(objectid) FROM '.$table));
+     $db->query('UPDATE '.$table.' SET objectid = objectid+'.$max_objectid);
+     $db->query('SELECT setval(\''.$table.'_objectid_seq\', 1)');
+     $db->query('UPDATE '.$table.' SET objectid = DEFAULT');
+     $db->query('VACUUM '.$table);
+} else if ( in_array($table, $preserveid)
+    && in_array('objectid', $columns)) {
+     $max_objectid=  max(0,$db->fetchOne('SELECT MAX(objectid) FROM '.$table));
+     $db->query('UPDATE '.$table.' SET objectid = objectid+'.$max_objectid);
+     $db->query('SELECT setval(\''.$table.'_objectid_seq\', 1)');
+     $db->query('UPDATE '.$table.' SET objectid = DEFAULT');
+     $db->query('VACUUM '.$table);
+} 
 if (is_file('pgloader.conf')) unlink('pgloader.conf');
 if (is_file($filename)) unlink($filename);
 if (is_file($filename_t)) unlink($filename_t);
@@ -170,5 +236,3 @@ $error = file_exists($logname) && filesize($logname) > 0;
 if (is_file($logname) && !$error) unlink($logname);
 if (is_file($dataname) && !$error) unlink($dataname);
 }
- $db->query('UPDATE schede_a SET objectid = TRIM(proprieta) || \'|\' || TRIM(cod_part)');
- $db->query('UPDATE schede_b SET objectid = TRIM(proprieta) || \'|\' || TRIM(cod_part) || \'|\' || TRIM(cod_fo)');

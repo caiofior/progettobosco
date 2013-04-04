@@ -116,7 +116,7 @@ abstract class Content {
      */
     public function delete() {
         if (key_exists($this->primary, $this->data)) {
-            $where = $this->table->getAdapter()->quoteInto($this->primary.' = ?', $this->data['id']);
+            $where = $this->table->getAdapter()->quoteInto($this->primary.' = ?', $this->data[$this->primary]);
             $this->table->delete($where);
         }
     }
@@ -126,7 +126,7 @@ abstract class Content {
     public function update() {
         if (!key_exists($this->primary, $this->data)) 
             throw new Exception('Unable to update object without id',1301251051);
-        $where = $this->table->getAdapter()->quoteInto($this->primary.' = ?', $this->data['id']);
+        $where = $this->table->getAdapter()->quoteInto($this->primary.' = ?', $this->data[$this->primary]);
         $this->table->update($this->data, $where);
     }
     /**
