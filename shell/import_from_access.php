@@ -164,6 +164,7 @@ foreach ($tables as $table) {
                 else if ( in_array($table, $preserveid) && 
                         in_array('objectid', $columns)) {
                     $key_field = array_search('objectid', $columns);
+                    $max_objectid=  $db->fetchOne('SELECT MAX(objectid) FROM '.$table);
                 }
 
             }

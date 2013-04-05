@@ -33,7 +33,7 @@
         </span>
         <span>
             <div>
-                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&amp;id=<?php echo $b1->getData('objectid');?>&amp;deletearboree=<?php echo $corkcovercomposition->getData('objectid');?>"  >
+                <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formb2&amp;id=<?php echo $b2->getData('objectid');?>&amp;deletearboree=<?php echo $corkcovercomposition->getData('objectid');?>"  >
                     <img class="actions delete" src="images/empty.png" title="Cancella"/>
                 </a>
             </div>

@@ -1,10 +1,11 @@
                                                         <div id="content_bosco_forestlist" >       
                                                         <ul >
                                                             <?php 
+                                                            
                                                                 if (!key_exists('filter', $_GET))
                                                                         $_GET['filter'] = null;
                                                                 if (!isset($forestcoll))
-                                                                    $forestcoll = $user->getForestColl(!$user->isAdmin() || !($_GET['filter']=='checked'));
+                                                                    $forestcoll = $user->getForestColl($user->isAdmin() == false || ($_GET['filter'] != null && $_GET['filter'] != 'checked'));
                                                                 else
                                                                     $user = $this->user;
                                                                 if (!key_exists('start', $_GET))

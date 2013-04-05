@@ -10,7 +10,6 @@ fieldset {
     border-width: 1px;
     border-color: #000000;
     color: #325D27;
-    position: relative;
     display: block;
 }
 legend {
@@ -21,7 +20,6 @@ legend {
     font-weight: bold;
 }
 h4 {
-    position: relative;
     color: #010080!important;
     background-color: #ffffff;
     font-size: 12px!important;
@@ -66,48 +64,45 @@ input[type='radio'],input[type='checkbox'] {
     vertical-align:top;
 }
 #formB2 {
-    height: 2900px;
 }
 /**
 * General part
 **/
 #general {
-    left: 0px;
-    top: 0px;
     height: 0px;
     border-style: none;
 }
 #regione_container {
     width: 500px;
-    top:4px;
-    left:4px;
+    margin-top:4px;
+    margin-left:4px;
 }
 #bosco_container {
     width: 250px;
-    top:58px;
-    left:4px;
+    margin-top:58px;
+    margin-left:4px;
 }
 #note_1 {
     width: 400px;
-    top:82px;
-    left:4px;
+    margin-top:82px;
+    margin-left:4px;
 }
 #cod_part_container {
     width: 200px;
-    top:4px;
-    left: 612px; 
+    margin-top:4px;
+    margin-left: 612px; 
 }
 #t_container {
     width: 200px;
-    top:150px;
-    left: 612px; 
+    margin-top:150px;
+    margin-left: 612px; 
 }
 /**
 * Container of U blocks
 **/
 #ucontainer {
-    left: 400px;
-    top: 60px;
+    margin-left: 400px;
+    margin-top: 60px;
     width: 400px;
     height: 250px;
     border-style: none;
@@ -133,8 +128,8 @@ input[type='radio'],input[type='checkbox'] {
     background-color: #ffffff;
 }
 #tipocontainer {
-    top: -80px;
-    left: 120px;
+    margin-top: -80px;
+    margin-left: 120px;
     width: 300px;
     height: 80px;
 }
@@ -153,45 +148,46 @@ input[type='radio'],input[type='checkbox'] {
 * Tab 1 container
 */
 #tab1container {
-    top: 200px;
+    margin-top: 200px;
     height: 400px;
     border-style: none;
 }
 #anno_imp_container {
-    top: 4px;
-    left: 450px;
+    margin-top: -60px;
+    margin-left: 450px;
 }
 #anno_dest_container {
-    top: 4px;
-    left: 620px;
+    width: 200px;
+    margin-top: -60px;
+    margin-left: 620px;
 }
 #cod_coltup_container {
-    top: 114px;
-    left: 320px;
+    margin-top: -50px;
+    margin-left: 320px;
 }
 #cod_coltus_container {
-    top: 94px;
-    left: 600px;
+    margin-top: -50px;
+    margin-left: 600px;
 }
 #dist_container {
-    top: 170px;
+    margin-top: 10px;
      width: 100px;
 }
 #dist_princ_container {
-    top: 170px;
-    left: 122px;
+    margin-top: 10px;
+    margin-left: 122px;
     width: 100px;
 }
 #fall_container {
-    top: 280px;
-    left: 670px;
+    margin-top: -40px;
+    margin-left: 670px;
     width: 150px;
 }
 /**
 *Com Spec container
 **/
 #comp_specontainer {
-    top: -80px;
+    margin-top: 10px;
     height: 40px;
     width: 280px;
 }
@@ -210,8 +206,8 @@ input[type='radio'],input[type='checkbox'] {
 *Com Spec container
 **/
 #sesto_imp_arbcontainer {
-    top: -70px;
-    left: 244px;
+    margin-top: 10px;
+    margin-left: 244px;
     height: 60px;
     width: 250px;
 }
@@ -229,8 +225,8 @@ input[type='radio'],input[type='checkbox'] {
 *Com Spec container
 **/
 #sesto_imp_sp_princ_arbcontainer {
-    top: -140px;
-    left: 520px;
+    margin-top: -90px;
+    margin-left: 520px;
     height: 80px;
     width: 250px;
 }
@@ -248,8 +244,7 @@ input[type='radio'],input[type='checkbox'] {
 *Vig Arb Princ container
 **/
 #vig_arb_princcontainer {
-    top: -140px;
-    left: 0px;
+    margin-top: 30px;
     height: 40px;
     width: 300px;
 }
@@ -267,8 +262,8 @@ input[type='radio'],input[type='checkbox'] {
 *Vig Arb Sec container
 **/
 #vig_arb_seccontainer {
-    top: -200px;
-    left: 330px;
+    margin-top: -50px;
+    margin-left: 330px;
     height: 40px;
     width: 300px;
 }
@@ -279,15 +274,13 @@ input[type='radio'],input[type='checkbox'] {
 #vig_arb_seccontainer span {
     float:left;
     width: 80px;
-    *width: 75px;
     word-break: break-all;
 }
 /**
 *Qual pri container
 **/
 #qual_pricontainer {
-    top: -180px;
-    left: 0px;
+    margin-top: 10px;
     height: 40px;
     width: 300px;
 }
@@ -304,17 +297,15 @@ input[type='radio'],input[type='checkbox'] {
 * Tab 1 lines
 */
 #line1tab1 {
-    position: relative;
-    top: -170px;
+    margin-top: 10px;
     width: 450px;
     border-top-style: solid;
     border-top-width: 3px;
     border-top-color: #0063DC;
 }
 #line2tab1 {
-    position: relative;
-    left: 450px;
-    top: -173px;
+    margin-left: 450px;
+    margin-top: 10px;
     width: 350px;
     border-top-style: dashed;
     border-top-width: 3px;
@@ -324,13 +315,13 @@ input[type='radio'],input[type='checkbox'] {
 * Tab 2
 */
 #tab2container {
-    top: 220px;
+    margin-top: 20px;
     height: 170px;
     border-style: none;
 }
 #tab2note {
     position: relative;
-    top: 0px;
+    margin-top: 0px;
     width: 100px;
     border-style: solid;
     border-width: 1px;
@@ -340,8 +331,8 @@ input[type='radio'],input[type='checkbox'] {
 *Col cast container
 **/
 #colt_castcontainer {
-    top: -80px;
-    left: 120px;
+    margin-top: -60px;
+    margin-left: 120px;
     height: 80px;
     width: 500px;
 }
@@ -358,8 +349,7 @@ input[type='radio'],input[type='checkbox'] {
 *Vig cast container
 **/
 #vig_castcontainer {
-    top: -80px;
-    left: 0px;
+    margin-top: 10px;
     height: 40px;
     width: 300px;
 }
@@ -376,8 +366,8 @@ input[type='radio'],input[type='checkbox'] {
 *Sesto imp cast container
 **/
 #sesto_imp_castcontainer {
-    top: -120px;
-    left: 350px;
+    margin-top: -60px;
+    margin-left: 350px;
     height: 40px;
     width: 400px;
 }
@@ -394,17 +384,15 @@ input[type='radio'],input[type='checkbox'] {
 * Tab 2 lines
 */
 #line1tab2 {
-    position: relative;
-    top: -110px;
+    margin-top: 10px;
     width: 450px;
     border-top-style: solid;
     border-top-width: 3px;
     border-top-color: #0063DC;
 }
 #line2tab2 {
-    position: relative;
-    left: 450px;
-    top: -113px;
+    margin-left: 450px;
+    margin-top: 10px;
     width: 350px;
     border-top-style: dashed;
     border-top-width: 3px;
@@ -414,44 +402,39 @@ input[type='radio'],input[type='checkbox'] {
 * Tab 3
 */
 #tab3note {
-    position: relative;
-    top: 0px;
     width: 100px;
     border-style: solid;
     border-width: 1px;
     background-color: #ffffff;
 }
 #tab3container {
-    top: 250px;
-    height: 280px;
+    margin-top: 10px;
     border-style: none;
 }
 #cod_coltub_container {
-    top: 0px;
-    left: 150px;
+    margin-top: -80px;
+    margin-left: 150px;
 }
 #cod_coltua_container {
-    top: 80px;
-    left: 0px;
+    margin-top: 10px;
 }
 #fungo_ospi_container {
-    top: 120px;
-    left: 0px;
+    margin-top: 60px;
+    margin-left: 0px;
 }
 #num_piante_container {
-    top: 240px;
-    left: 50px;
+    margin-top: 10px;
+    margin-left: 50px;
 }
 #piant_tart_container {
-    top: 240px;
-    left: 250px;
+    margin-top: 10px;
+    margin-left: 250px;
 }
 /**
 *Sesto imp tart container
 **/
 #sesto_imp_tartcontainer {
-    top: 80px;
-    left: 0px;
+    margin-top: 120px;
     height: 40px;
     width: 400px;
 }
@@ -468,17 +451,15 @@ input[type='radio'],input[type='checkbox'] {
 * Tab 3 lines
 */
 #line1tab3 {
-    position: relative;
-    top: 170px;
+    margin-top: 60px;
     width: 450px;
     border-top-style: solid;
     border-top-width: 3px;
     border-top-color: #0063DC;
 }
 #line2tab3 {
-    position: relative;
-    left: 450px;
-    top: 167px;
+    margin-left: 450px;
+    margin-top: 60px;
     width: 350px;
     border-top-style: dashed;
     border-top-width: 3px;
@@ -488,109 +469,108 @@ input[type='radio'],input[type='checkbox'] {
 * Tab 4
 */
 #tab4note {
-    position: relative;
-    top: 30px;
+    margin-top: 0px;
     width: 100px;
     border-style: solid;
     border-width: 1px;
     background-color: #ffffff;
 }
 #tab4container {
-    top: 250px;
+    margin-top: 60px;
     border-style: none;
 }
 #s_container {
-    left:140px;
+    margin-top: -40px;
+    margin-left:140px;
 }
 /**
 *Fito bio container
 **/
 #fito_bio_container {
     width: 100px;
-    top: 410px;
-    left: 220px;
+    margin-top: -60px;
+    margin-left: 220px;
 }
 /**
 *Fito bio spec container
 **/
 #fito_bio_spec_container {
     width: 100px;
-    top: 470px;
-    left: 220px;
+    margin-top: 0px;
+    margin-left: 220px;
 }
 /**
 *Fito bio container
 **/
 #fito_abio_container {
     width: 100px;
-    top: 410px;
-    left: 330px;
+    margin-top: -60px;
+    margin-left: 330px;
 }
 /**
 *Fito bio spec container
 **/
 #fito_abio_spec_container {
     width: 100px;
-    top: 450px;
-    left: 330px;
+    margin-top: 0px;
+    margin-left: 330px;
 }
 /**
 * Spe nov container
 **/
 #spe_nov_container {
     width: 200px;
-    top: 640px;
-    left: 250px;
+    margin-top: -60px;
+    margin-left: 250px;
 }
 /**
 * Tipo int sug container
 **/
 #tipo_int_sug_container {
     width: 400px;
-    top: 750px;
-    left: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
 }
 /**
 * Int2 container
 **/
 #int2_container {
     width: 150px;
-    top: 800px;
-    left: 0px;
+    margin-top: 50px;
+    margin-left: 0px;
 }
 /**
 * Int3 container
 **/
 #int3_container {
     width: 120px;
-    top: 800px;
-    left: 160px;
+    margin-top: 50px;
+    margin-left: 160px;
 }
 /**
 * Estraz passata container
 */
 #estraz_passata_container {
     width: 120px;
-    top: 800px;
-    left: 290px;
+    margin-top: 50px;
+    margin-left: 290px;
 }
 /**
 * Arboree 2 container
 */
 #arboreecontainer {
-    left: 0px;
-    top: 50px;
+    margin-top: 10px;
     width: 260px;
     height: 150px;
 }
 #newarboree {
-    top: 24px;
-    left: 4px;
+    margin-top: 24px;
+    margin-left: 4px;
     width: 250px;
 }
 #content_schedab2_arboree {
-    top: 74px;
-    left: 4px;
+    margin-top: 74px;
+    margin-left: 4px;
     width: 250px;
 }
 #content_schedab2_arboree  div{
@@ -615,8 +595,8 @@ input[type='radio'],input[type='checkbox'] {
 *O container
 **/
 #ocontainer {
-    top: 60px;
-    left: 0px;
+    margin-top: 10px;
+    margin-left: 0px;
     height: 120px;
     width: 260px;
 }
@@ -634,8 +614,8 @@ input[type='radio'],input[type='checkbox'] {
 *Vig sug container
 **/
 #vig_sugcontainer {
-    top: -75px;
-    left: 280px;
+    margin-top: -120px;
+    margin-left: 280px;
     height: 120px;
     width: 140px;
 }
@@ -653,9 +633,8 @@ input[type='radio'],input[type='checkbox'] {
 *Fito sug container
 **/
 #fito_sugcontainer {
-    top: -75px;
-    left: 0px;
-    height: 40px;
+    margin-top: 0px;
+    height: 60px;
     width: 180px;
 }
 #fito_sugcontainer input {
@@ -665,15 +644,13 @@ input[type='radio'],input[type='checkbox'] {
 #fito_sugcontainer span {
     float:left;
     width: 50px;
-    *width: 45px;
     word-break: break-all;
 }
 /**
 *V container
 **/
 #vcontainer {
-    top: -30px;
-    left: 0px;
+    margin-top: 60px;
     height: 40px;
     width: 130px;
 }
@@ -691,8 +668,8 @@ input[type='radio'],input[type='checkbox'] {
 *D container
 **/
 #dcontainer {
-    top: -80px;
-    left: 150px;
+    margin-top: -60px;
+    margin-left: 150px;
     height: 40px;
     width: 230px;
 }
@@ -710,8 +687,7 @@ input[type='radio'],input[type='checkbox'] {
 *N1 container
 **/
 #n1container {
-    top: -80px;
-    left: 0px;
+    margin-top: 10px;
     height: 40px;
     width: 220px;
 }
@@ -729,8 +705,8 @@ input[type='radio'],input[type='checkbox'] {
 * N1 arrow
 */
 #n1arrow_right {
-    top: -130px;
-    left: 240px;
+    margin-top: -40px;
+    margin-left: 245px;
     width: 10px;
     height: 43px;
     border-style: none;
@@ -740,8 +716,8 @@ input[type='radio'],input[type='checkbox'] {
 *N2 container
 **/
 #n2container {
-    top: -190px;
-    left: 255px;
+    margin-top: -60px;
+    margin-left: 255px;
     height: 40px;
     width: 170px;
 }
@@ -752,15 +728,12 @@ input[type='radio'],input[type='checkbox'] {
 #n2container span {
     float:left;
     width: 70px;
-    *width: 65px;
     word-break: break-all;
 }
 /**
 *N3 container
 **/
 #n3container {
-    top: -180px;
-    left: 0px;
     height: 40px;
     width: 200px;
 }
@@ -778,8 +751,8 @@ input[type='radio'],input[type='checkbox'] {
 * N3 arrow
 */
 #n3arrow_right {
-    top: -350px;
-    left: 230px;
+    margin-top: -40px;
+    margin-left: 230px;
     width: 10px;
     height: 43px;
     border-style: none;
@@ -789,8 +762,8 @@ input[type='radio'],input[type='checkbox'] {
 * D cork container
 **/
 #dsugcontainer {
-    top: 0px;
-    left: 0px;
+    margin-top: 100px;
+    margin-left: 0px;
     height: 180px;
     width: 400px;
 }
@@ -805,52 +778,52 @@ input[type='radio'],input[type='checkbox'] {
 **/
 #d10_container {
     width: 90px;
-    left: 100px;
+    margin-left: 100px;
 }
 /**
 * D11 cork container
 **/
 #d11_container {
     width: 90px;
-    left: 200px;
+    margin-left: 200px;
 }
 /**
 * D12 cork container
 **/
 #d12_container {
     width: 90px;
-    left: 300px;
+    margin-left: 300px;
 }
 /**
 * D1 cork container
 **/
 #d1_container {
     width: 120px;
-    top: 100px;
+    margin-top: 100px;
 }
 /**
 * D3 cork container
 **/
 #d3_container {
     width: 120px;
-    top: 100px;
-    left: 130px;
+    margin-top: 100px;
+    margin-left: 130px;
 }
 /**
 * D13 cork container
 **/
 #d13_container {
     width: 120px;
-    top: 100px;
-    left: 260px;
+    margin-top: 100px;
+    margin-left: 260px;
 }
 /**
 * Vertical line
 */
 #tab4verticalline {
     position: relative;
-    top: -1257px;
-    left: 450px;
+    margin-top: -1257px;
+    margin-left: 450px;
     width: 1px;
     height: 1200px;
     border-right-style: dashed;
@@ -861,8 +834,8 @@ input[type='radio'],input[type='checkbox'] {
 * Tab 5 container
 */
 #tab5container {
-    top: -800px;
-    left: 460px;
+    margin-top: -920px;
+    margin-left: 460px;
     width: 200px;
     height: 1200px;
     border-style: none;
@@ -874,65 +847,74 @@ input[type='radio'],input[type='checkbox'] {
 * Ce container
 */
 #ce_container {
-    left: 210px;
+    margin-left: 210px;
 }
 /**
 * Tipo prescr sug container
 **/
 #tipo_prescr_sug_container {
-    top: 520px;
+    width: 300px;
+    margin-top: 10px;
 }
 /**
 * P2 container
 **/
 #p2_container {
-    top: 570px;
+    width: 250px;
+    margin-top: 60px;
+}
+#p2_container label{
+    width: 200px;
 }
 /**
 * Estraz futura container
 **/
 #estraz_futura_container {
-    top: 560px;
-    left: 220px;
+    margin-top: 50px;
+    margin-left: 220px;
     width: 150px;
 }
 /**
 * P3 container
 **/
 #p3_container {
-    top: 620px;
+    width: 250px;
+    margin-top: 100px;
+}
+#p3_container label{
+    width: 200px;
 }
 /**
 * P4 container
 **/
 #p4_container {
-    top: 700px;
+    margin-top: 170px;
 }
 /**
 * SR container
 */
 #srcontainer {
-    top: 80px;
-    left: 0px;
+    margin-top: 50px;
+    margin-left: 0px;
     width: 50px;
 }
 /**
 * Arbustive container
 */
 #arbustivecontainer {
-    top: -120px;
-    left: 120px;
+    margin-top: -200px;
+    margin-left: 120px;
     width: 200px;
     height: 200px;
 }
 #newarbustive {
-    top: 44px;
-    left: 4px;
+    margin-top: 44px;
+    margin-left: 4px;
     width: 250px;
 }
 #content_schedab2_arbustive {
-    top: 104px;
-    left: 4px;
+    margin-top: 104px;
+    margin-left: 4px;
     width: 250px;
 }
 #content_schedab2_arbustive  div{
@@ -969,27 +951,27 @@ input[type='radio'],input[type='checkbox'] {
 * SE container
 **/
 #secontainer {
-    top: -110px;
-    left: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
     width: 50px;
 }
 /**
 * Erbacee container
 */
 #erbaceecontainer {
-    top: -300px;
-    left: 120px;
+    margin-top: -180px;
+    margin-left: 120px;
     width: 200px;
     height: 200px;
 }
 #newerbacee {
-    top: 44px;
-    left: 4px;
+    margin-top: 44px;
+    margin-left: 4px;
     width: 250px;
 }
 #content_schedab2_erbacee {
-    top: 104px;
-    left: 4px;
+    margin-top: 104px;
+    margin-left: 4px;
     width: 200px;
 }
 #content_schedab2_erbacee  div{
@@ -1016,8 +998,8 @@ input[type='radio'],input[type='checkbox'] {
 * Container of G1 blocks
 **/
 #g1container{
-    top: -50px;
-    left: 0px;
+    margin-top: 220px;
+    margin-left: 0px;
     width: 220px;
     height: 100px;
 }
@@ -1035,8 +1017,8 @@ input[type='radio'],input[type='checkbox'] {
 * N1 arrow
 */
 #n5arrow_right {
-    top: -120px;
-    left: 245px;
+    margin-top: -80px;
+    margin-left: 245px;
     width: 10px;
     height: 43px;
     border-style: none;
@@ -1046,8 +1028,8 @@ input[type='radio'],input[type='checkbox'] {
 * Container of Sub Viab blocks
 **/
 #sub_viabcontainer{
-    top: -230px;
-    left: 260px;
+    margin-top: -80px;
+    margin-left: 260px;
     width: 80px;
     height: 100px;
 }
@@ -1069,28 +1051,28 @@ input[type='radio'],input[type='checkbox'] {
 * Note container
 **/
 #forestnotecontainer {
-    top: -200px;
-    left: 0px;
+    margin-top: 0px;
+    margin-left: 0px;
     width: 320px;
 }
 /**
 * notes container
 */
 #notescontainer {
-    top: -800px;
-    left: 4px;
+    margin-top: 0px;
+    margin-left: 4px;
     width: 800px;
     height: 310px;
 }
 
 #newnote {
-    top: 24px;
-    left: 70px;
+    margin-top: 24px;
+    margin-left: 70px;
     width: 700px;
 }
 #content_schedab2_note {
-    top: 124px;
-    left: 70px;
+    margin-top: 124px;
+    margin-left: 70px;
     width: 700px;
 }
 #content_schedab2_note  div{

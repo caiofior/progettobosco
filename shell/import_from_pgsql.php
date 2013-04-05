@@ -3,15 +3,15 @@ $PHPUNIT = true;
 require (__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'include'.DIRECTORY_SEPARATOR.'pageboot.php');
 $tables = array(
     //Observer,
-    'rilevato',
+    //'rilevato',
     //Forest types
-   'diz_tipi',
+   //'diz_tipi',
     //Tables
-   'diz_tavole',
-    'diz_tavole2',
-    'diz_tavole3',
-    'diz_tavole4',
-    'diz_tavole5',
+   //'diz_tavole',
+    //'diz_tavole2',
+    //'diz_tavole3',
+    //'diz_tavole4',
+    //'diz_tavole5',
     //Forest
     'propriet',
     //Foms
@@ -74,8 +74,27 @@ $tables = array(
     'problemi_b3',
     'problemi_b4'
 );
+$preserveid = array(
+    'schede_a',
+    'schede_b',
+    'sched_b1',
+    'sched_b2',
+);
+$incrementid = array(
+    'note_a',
+    'catasto',
+    'note_b',
+    'arboree',
+    'erbacee',
+    'arbusti',
+    'stime_b1',
+    'note_b2',
+    'arboree2',
+    'arbusti2',
+    'erbacee2',
+    );
 if ($argc < 1) {
-    echo 'MDB path is required';
+    echo 'postgres origin is required';
     exit;
 }
 $config = <<<EOL
@@ -86,40 +105,101 @@ base = '{$DB_CONFIG['dbname']}'
 user = '{$DB_CONFIG['username']}'
 pass = '{$DB_CONFIG['password']}'
 log_file            = pgloader.log
-log_min_messages    = INFO
-client_min_messages = WARNING
+client_min_messages = ERROR
 copy_every      = 100
 
 [tmpl]
 template     = True
 format       = text
-datestyle    = dmy
 field_sep    = ,
-trailing_sep = True
+
 
 EOL;
 if(!is_dir(__DIR__.DIRECTORY_SEPARATOR.'output'))
     mkdir (__DIR__.DIRECTORY_SEPARATOR.'output');
+$or_config = $DB_CONFIG;
+$or_config['dbname']=$argv[1];
+$db_or = Zend_Db::factory($DB_CONFIG['adapter'],$or_config);
+$db_or->getConnection();
 
 foreach ($tables as $table) {
     $filename = __DIR__.DIRECTORY_SEPARATOR.'output'.DIRECTORY_SEPARATOR.$table.'.txt';
+    $filename_t = __DIR__.DIRECTORY_SEPARATOR.'output'.DIRECTORY_SEPARATOR.$table.'_t.txt';
     $logname = __DIR__.DIRECTORY_SEPARATOR.'output'.DIRECTORY_SEPARATOR.$table.'.log';
     $dataname = __DIR__.DIRECTORY_SEPARATOR.'output'.DIRECTORY_SEPARATOR.$table.'.data';
     if (is_file($filename)) unlink($filename);
     if (is_file($logname)) unlink($logname);
     if (is_file($dataname)) unlink($dataname);
-    exec('sudo -u '.$DB_CONFIG['username'].' psql '.$argv[1].' -c "COPY '.$table.' TO \''.$filename.'\'  " ');
-    $config .= <<<EOL
+    $dest_cols = $db->fetchCol('SELECT column_name FROM information_schema.columns WHERE table_name =\''.$table.'\'');
+    $dest_cols = array_reverse($dest_cols);
+    $or_cols = $db_or->fetchCol('SELECT column_name FROM information_schema.columns WHERE table_name =\''.$table.'\'');
+    $or_cols = array_reverse($or_cols);
+    $columns_str='';
+    foreach ($dest_cols as $dest_col) {
+        $key = array_search($dest_col, $or_cols);
+        if ($key === false) continue;
+        if ($columns_str != '')
+            $columns_str .= ',';
+        $columns_str .= $dest_col.':'.($key+1);        
+    }
+    $max_objectid=0;
+    exec('sudo -u '.$DB_CONFIG['username'].' psql '.$argv[1].' -c "COPY '.$table.' TO \''.$filename.'\' WITH CSV "');
+    if ( in_array($table, $incrementid) && 
+            in_array('objectid', $or_cols)) {
+        $file_input = fopen($filename, 'r');
+        $file_output = fopen ($filename_t,'w');
+        $key_field = array_search('objectid', $or_cols);
+        $max_objectid=  $db->fetchOne('SELECT MAX(objectid) FROM '.$table);
+        $p=0;
+        while ($row = fgets($file_input)) {
+            fseek($file_input, $p);
+            $row_csv = fgetcsv($file_input,0,',','"');
+            $value = $row_csv[$key_field];
+            $row = str_replace(','.$value.',', ','.($value+$max_objectid).',', $row);
+            $row = preg_replace('/,'.$value.'$/', ','.($value+$max_objectid), $row);
+            fputs($file_output,$row);
+            $p = ftell($file_input);
+        }
+        fclose($file_input);
+        fclose($file_output);
+    } else if ( in_array($table, $preserveid) && 
+        in_array('objectid', $or_cols)) {
+        $key_field = array_search('objectid', $or_cols);
+        $max_objectid=  max(
+                $db_or->fetchOne('SELECT MAX(objectid) FROM '.$table),
+                $db->fetchOne('SELECT MAX(objectid) FROM '.$table)
+                );
+        $db->query('UPDATE '.$table.' SET objectid = objectid + '.intval($max_objectid));
+        copy($filename,$filename_t);
+    }
+    else copy($filename,$filename_t);
+    file_put_contents('pgloader.conf', $config. <<<EOL
 
 [{$table}]
 use_template    = tmpl
-table           = '{$table}'
-filename = {$filename}
+table           = {$table}
+filename = {$filename_t}
+columns = {$columns_str}
 reject_log = output/{$table}.log
 reject_data = output/{$table}.data
 
-EOL;
+EOL
+);
+    exec('pgloader '.$table);
+    if ( in_array($table, $incrementid) && 
+            in_array('objectid', $or_cols)) {
+     $max_objectid=  max(0,$db->fetchOne('SELECT MAX(objectid) FROM '.$table));
+     $db->query('UPDATE '.$table.' SET objectid = objectid+'.$max_objectid);
+     $db->query('SELECT setval(\''.$table.'_objectid_seq\', 1)');
+     $db->query('UPDATE '.$table.' SET objectid = DEFAULT');
+     $db->query('VACUUM '.$table);
+} else if ( in_array($table, $preserveid) && 
+        in_array('objectid', $or_cols)) {
+     $max_objectid=  max(0,$db->fetchOne('SELECT MAX(objectid) FROM '.$table));
+     $db->query('UPDATE '.$table.' SET objectid = objectid+'.$max_objectid);
+     $db->query('SELECT setval(\''.$table.'_objectid_seq\', 1)');
+     $db->query('UPDATE '.$table.' SET objectid = DEFAULT');
+     $db->query('VACUUM '.$table);
+} 
 }
-file_put_contents('pgloader.conf', $config);
-exec('pgloader');
 unlink('pgloader.conf');

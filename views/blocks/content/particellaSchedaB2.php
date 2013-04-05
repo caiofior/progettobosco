@@ -145,7 +145,7 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
         <?php endforeach;?>
         </div>
         </fieldset>
-                <fieldset id="vig_arb_princcontainer" >
+        <fieldset id="vig_arb_princcontainer" >
         <legend>Vigoria specie principale</legend>
         <div>
         <?php
@@ -430,7 +430,7 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
         <?php endforeach;?>
         </div>
         </fieldset>
-                <fieldset id="n1container" >
+        <fieldset id="n1container" >
         <legend>Novellame</legend>
         <div>
         <?php
@@ -473,6 +473,7 @@ document.getElementById("tabrelatedcss").href="css/formb2.css";
         <?php endforeach;?>
         </div>
         </fieldset>
+        <fieldset id="n3arrow_right"></fieldset>
         <div id="spe_nov_container">
             <label for="spe_nov">Specie prevalente rinnovazione</label>
             <?php 
