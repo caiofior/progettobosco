@@ -1,6 +1,7 @@
 <?php
 $PHPUNIT = true;
 require (__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'include'.DIRECTORY_SEPARATOR.'pageboot.php');
+$dir = __DIR__.DIRECTORY_SEPARATOR;
 $tables = array(
     //Observer,
     //'rilevato',
@@ -79,6 +80,10 @@ $preserveid = array(
     'schede_b',
     'sched_b1',
     'sched_b2',
+    'sched_b3',
+    'sched_b4',
+    'schede_x',
+    'schede_d',
 );
 $incrementid = array(
     'note_a',
@@ -92,6 +97,16 @@ $incrementid = array(
     'arboree2',
     'arbusti2',
     'erbacee2',
+    'note_b3',
+    'arbusti3',
+    'erbacee3',
+    'infestan',
+    'comp_arb',
+    'rinnovaz',
+    'arb_colt',
+    'arboree4a',
+    'arboree4b',
+    'erbacee4',
     );
 if ($argc < 1) {
     echo 'postgres origin is required';
@@ -115,18 +130,18 @@ field_sep    = ,
 
 
 EOL;
-if(!is_dir(__DIR__.DIRECTORY_SEPARATOR.'output'))
-    mkdir (__DIR__.DIRECTORY_SEPARATOR.'output');
+if(!is_dir($dir.'output'))
+    mkdir ($dir.'output');
 $or_config = $DB_CONFIG;
 $or_config['dbname']=$argv[1];
 $db_or = Zend_Db::factory($DB_CONFIG['adapter'],$or_config);
 $db_or->getConnection();
 
 foreach ($tables as $table) {
-    $filename = __DIR__.DIRECTORY_SEPARATOR.'output'.DIRECTORY_SEPARATOR.$table.'.txt';
-    $filename_t = __DIR__.DIRECTORY_SEPARATOR.'output'.DIRECTORY_SEPARATOR.$table.'_t.txt';
-    $logname = __DIR__.DIRECTORY_SEPARATOR.'output'.DIRECTORY_SEPARATOR.$table.'.log';
-    $dataname = __DIR__.DIRECTORY_SEPARATOR.'output'.DIRECTORY_SEPARATOR.$table.'.data';
+    $filename = $dir.'output'.DIRECTORY_SEPARATOR.$table.'.txt';
+    $filename_t = $dir.'output'.DIRECTORY_SEPARATOR.$table.'_t.txt';
+    $logname = $dir.'output'.DIRECTORY_SEPARATOR.$table.'.log';
+    $dataname = $dir.'output'.DIRECTORY_SEPARATOR.$table.'.data';
     if (is_file($filename)) unlink($filename);
     if (is_file($logname)) unlink($logname);
     if (is_file($dataname)) unlink($dataname);
@@ -180,8 +195,8 @@ use_template    = tmpl
 table           = {$table}
 filename = {$filename_t}
 columns = {$columns_str}
-reject_log = output/{$table}.log
-reject_data = output/{$table}.data
+reject_log = {$dir}output/{$table}.log
+reject_data = {$dir}output/{$table}.data
 
 EOL
 );
@@ -193,6 +208,7 @@ EOL
      $db->query('SELECT setval(\''.$table.'_objectid_seq\', 1)');
      $db->query('UPDATE '.$table.' SET objectid = DEFAULT');
      $db->query('VACUUM '.$table);
+     $db->query('REINDEX TABLE '.$table);
 } else if ( in_array($table, $preserveid) && 
         in_array('objectid', $or_cols)) {
      $max_objectid=  max(0,$db->fetchOne('SELECT MAX(objectid) FROM '.$table));
@@ -200,6 +216,12 @@ EOL
      $db->query('SELECT setval(\''.$table.'_objectid_seq\', 1)');
      $db->query('UPDATE '.$table.' SET objectid = DEFAULT');
      $db->query('VACUUM '.$table);
-} 
+     $db->query('REINDEX TABLE '.$table);
 }
-unlink('pgloader.conf');
+if (is_file('pgloader.conf')) unlink('pgloader.conf');
+if (is_file($filename)) unlink($filename);
+if (is_file($filename_t)) unlink($filename_t);
+$error = file_exists($logname) && filesize($logname) > 0;
+if (is_file($logname) && !$error) unlink($logname);
+if (is_file($dataname) && !$error) unlink($dataname);
+}
