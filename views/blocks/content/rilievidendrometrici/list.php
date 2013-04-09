@@ -23,14 +23,14 @@
                                                             foreach($xcoll->getItems() as $x) :
                                                             ?>
                                                             <li >
-                                                                <a href="bosco.php?task=formx&action=manage&id=<?php echo $x->getData('objectid'); ?>" >
+                                                                <a href="bosco.php?task=formx&action=manage&id=<?php echo $x->getData('objectid'); ?>" data-update="content_rilievidendrometrici_edit" data-destination="content_rilievidendrometrici_list">
                                                                 <img class="actions edit" src="images/empty.png" title="Visualizza/Modifica"/>
                                                                 </a>
                                                                 <a href="bosco.php?task=formx&delete=1&id=<?php echo $x->getData('objectid'); ?>" >
                                                                 <img class="actions delete" src="images/empty.png" title="Cancella"/>
                                                                 </a>
-                                                                <?php
-                                                                echo $x->getData('descrizion');?>
+                                                                <?php echo $x->getRawData('ril_descr');?>
+                                                                <?php echo $x->getData('data');?>
                                                             </li>
                                                             <?php endforeach; ?>
                                                         </ul>

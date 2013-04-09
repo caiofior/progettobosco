@@ -95,7 +95,7 @@ class X extends \forest\template\Entity {
      * Return the associated A form
      * @return \forest\entity\A
      */
-    private function getFormA() {
+    public function getFormA() {
         $a = new \forest\entity\A();
         if (
                 key_exists('proprieta',$this->data) &&

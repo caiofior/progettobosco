@@ -1,5 +1,5 @@
 <?php
-$x = new \forest\entity\B4();
+$x = new \forest\entity\x\X();
 if (key_exists('id', $_REQUEST) && $_REQUEST['id'] != '') {
     $x->loadFromId($_REQUEST['id']);
     $a = $x->getFormA();

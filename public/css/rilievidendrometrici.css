@@ -5,7 +5,7 @@
     Description:
         Purpose of the stylesheet follows.
 */
-fieldset div {
+fieldset > div {
     width: 250px;
 }
 fieldset div label{
@@ -94,7 +94,27 @@ fieldset p {
    margin-top: 60px;
    margin-left: 650px;
 }
+#ird_table_container {
+   margin-top: -100px;
+   width: 500px;
+}
+#ird_table_container > div {
+    width: 500px;
+}
+#ird_table_container > div > div {
+    clear: left;
+}
+#ird_table_container > div > div > span > div{
+   width: 60px;
+   float:left;
+}
+#ird_table_container > div > div > span > div > select{
+   width: 60px;
+}
 #note_container {
-   margin-top: 60px;
-   margin-left: 500px;
+   margin-top: 50px;
+   margin-left: 520px;
+}
+#content_rilievidendrometrici_list ul {
+    list-style-type: none;
 }

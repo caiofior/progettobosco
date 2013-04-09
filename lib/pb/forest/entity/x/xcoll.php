@@ -55,6 +55,14 @@ class XColl extends \forest\template\EntityColl {
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
         $select->setIntegrityCheck(false);
+        $select->from($this->content->getTable()->info('name'),array(
+            '*',
+            'ril_descr'=>new \Zend_Db_Expr('('.
+                    $select->getAdapter()->select()->from('diz_tiporil',
+                            new \Zend_Db_Expr('descrizion')
+                            )->where('diz_tiporil.codice = '.$this->content->getTable()->info('name').'.tipo_ril').
+                    ')')
+            ));
         if ($this->b1 instanceof \forest\entity\B1) {
             $select->where('schede_x.proprieta = ?', $this->b1->getData('proprieta'))
                    ->where('schede_x.cod_part = ?', $this->b1->getData('cod_part'))

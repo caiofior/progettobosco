@@ -116,5 +116,14 @@ class D extends \forest\template\Entity {
             $collector->loadFromId($this->data['codiope']);
         return $collector;
     }
+    /**
+     * Gets the associated D1 Collection
+     * @return \forest\entity\x\D1Coll
+     */
+    public function getD1Coll () {
+        $d1coll = new \forest\entity\x\D1Coll();
+        $d1coll->setFormD($this);
+        return $d1coll;
+    }
     
 } 

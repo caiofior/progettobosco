@@ -77,26 +77,25 @@ $tables = array(
 );
 $preserveid = array(
     'schede_a',
-    'schede_b',
-    'sched_b1',
-    'sched_b2',
-    'sched_b3',
-    'sched_b4',
-    'schede_x',
-    'schede_d',
-);
-$incrementid = array(
     'note_a',
+    
+    'schede_b',
     'catasto',
     'note_b',
+    
+    'sched_b1',
     'arboree',
     'erbacee',
     'arbusti',
     'stime_b1',
+    
+    'sched_b2',
     'note_b2',
     'arboree2',
     'arbusti2',
     'erbacee2',
+    
+    'sched_b3',
     'note_b3',
     'arbusti3',
     'erbacee3',
@@ -104,9 +103,14 @@ $incrementid = array(
     'comp_arb',
     'rinnovaz',
     'arb_colt',
+    
+    'sched_b4',
     'arboree4a',
     'arboree4b',
     'erbacee4',
+    
+    'schede_x',
+    'schede_d',
     );
 if ($argc < 1) {
     echo 'postgres origin is required';
@@ -142,6 +146,7 @@ foreach ($tables as $table) {
     $filename_t = $dir.'output'.DIRECTORY_SEPARATOR.$table.'_t.txt';
     $logname = $dir.'output'.DIRECTORY_SEPARATOR.$table.'.log';
     $dataname = $dir.'output'.DIRECTORY_SEPARATOR.$table.'.data';
+    $pgloader = $dir.'pgloader.conf';
     if (is_file($filename)) unlink($filename);
     if (is_file($logname)) unlink($logname);
     if (is_file($dataname)) unlink($dataname);
@@ -158,8 +163,9 @@ foreach ($tables as $table) {
         $columns_str .= $dest_col.':'.($key+1);        
     }
     $max_objectid=0;
+    $rc = 1;
     exec('sudo -u '.$DB_CONFIG['username'].' psql '.$argv[1].' -c "COPY '.$table.' TO \''.$filename.'\' WITH CSV "');
-    if ( in_array($table, $incrementid) && 
+    if ( in_array($table, $preserveid) && 
             in_array('objectid', $or_cols)) {
         $file_input = fopen($filename, 'r');
         $file_output = fopen ($filename_t,'w');
@@ -170,46 +176,35 @@ foreach ($tables as $table) {
             fseek($file_input, $p);
             $row_csv = fgetcsv($file_input,0,',','"');
             $value = $row_csv[$key_field];
-            $row = str_replace(','.$value.',', ','.($value+$max_objectid).',', $row);
-            $row = preg_replace('/,'.$value.'$/', ','.($value+$max_objectid), $row);
+            $row = str_replace(','.$value.',', ','.($rc).',', $row);
+            $row = preg_replace('/,'.$value.'$/', ','.($rc), $row);
             fputs($file_output,$row);
             $p = ftell($file_input);
+            $max_objectid = max($max_objectid,$rc);
+            $rc++;
         }
         fclose($file_input);
         fclose($file_output);
-    } else if ( in_array($table, $preserveid) && 
-        in_array('objectid', $or_cols)) {
-        $key_field = array_search('objectid', $or_cols);
-        $max_objectid=  max(
-                $db_or->fetchOne('SELECT MAX(objectid) FROM '.$table),
-                $db->fetchOne('SELECT MAX(objectid) FROM '.$table)
-                );
-        $db->query('UPDATE '.$table.' SET objectid = objectid + '.intval($max_objectid));
-        copy($filename,$filename_t);
-    }
+    } 
     else copy($filename,$filename_t);
-    file_put_contents('pgloader.conf', $config. <<<EOL
+    file_put_contents($pgloader, $config. <<<EOL
 
 [{$table}]
 use_template    = tmpl
 table           = {$table}
 filename = {$filename_t}
 columns = {$columns_str}
-reject_log = {$dir}output/{$table}.log
-reject_data = {$dir}output/{$table}.data
+reject_log = {$dir}output/{$argv[1]}_{$table}.log
+reject_data = {$dir}output/{$argv[1]}_{$table}.data
 
 EOL
 );
-    exec('pgloader '.$table);
-    if ( in_array($table, $incrementid) && 
-            in_array('objectid', $or_cols)) {
-     $max_objectid=  max(0,$db->fetchOne('SELECT MAX(objectid) FROM '.$table));
-     $db->query('UPDATE '.$table.' SET objectid = objectid+'.$max_objectid);
-     $db->query('SELECT setval(\''.$table.'_objectid_seq\', 1)');
-     $db->query('UPDATE '.$table.' SET objectid = DEFAULT');
-     $db->query('VACUUM '.$table);
-     $db->query('REINDEX TABLE '.$table);
-} else if ( in_array($table, $preserveid) && 
+if ( in_array($table, $preserveid) && 
+        in_array('objectid', $or_cols)) {
+    $db->query('UPDATE '.$table.' SET objectid = objectid + '.intval($max_objectid));
+ }
+    exec('pgloader -c '.$pgloader.' '.$table);
+    if ( in_array($table, $preserveid) && 
         in_array('objectid', $or_cols)) {
      $max_objectid=  max(0,$db->fetchOne('SELECT MAX(objectid) FROM '.$table));
      $db->query('UPDATE '.$table.' SET objectid = objectid+'.$max_objectid);
@@ -218,7 +213,7 @@ EOL
      $db->query('VACUUM '.$table);
      $db->query('REINDEX TABLE '.$table);
 }
-if (is_file('pgloader.conf')) unlink('pgloader.conf');
+if (is_file($pgloader)) unlink($pgloader);
 if (is_file($filename)) unlink($filename);
 if (is_file($filename_t)) unlink($filename_t);
 $error = file_exists($logname) && filesize($logname) > 0;

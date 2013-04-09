@@ -47,7 +47,7 @@ class AColl extends \forest\template\EntityColl {
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
         $select->setIntegrityCheck(false)
-        ->from('schede_a', array(
+        ->from($this->content->getTable()->info('name'), array(
             '*',
             'usosuolo' =>new \Zend_Db_Expr('( SELECT usosuolo.descriz FROM usosuolo 
             LEFT JOIN schede_b ON schede_b.u=usosuolo.codice

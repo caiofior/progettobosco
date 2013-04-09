@@ -1,8 +1,8 @@
 <?php
 /**
- * Manages Entity X forest compartment Collection
+ * Manages Entity D forest compartment Collection
  * 
- * Manages Entity X forest compartment Collection
+ * Manages Entity D forest compartment Collection
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
@@ -21,9 +21,9 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
- * Manages Entity X forest compartment Collection
+ * Manages Entity D forest compartment Collection
  * 
- * Manages Entity X forest compartment Collection
+ * Manages Entity D forest compartment Collection
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA

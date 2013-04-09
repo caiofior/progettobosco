@@ -48,10 +48,91 @@ else
     <label for="m_anel">cerchie annuali</label>
     <input id="m_anel" name="m_anel" value="<?php echo $d->getData('m_anel');?>">
 </div>
-
 <div id="note_container">
     <label for="note">Note</label>
     <textarea id="note" name="note" rows="5" cols="15"><?php echo $d->getData('note');?></textarea>
 </div>
+<fieldset id="ird_table_container" >
+    <legend><span>Composizione strato arboreo - arbustiva</span></legend>
+    <div id="new_ird">
+            <div>
+                <span>
+                    <div>Specie</div>
+                </span>
+                <span>
+                    <div>Diametro</div>
+                </span>
+                <span>
+                    <div>Frequenza</div>
+                </span>
+                <span>
+                    <div>Altezza</div>
+                </span>
+                <span>
+                    <div>Increm</div>
+                </span>
+                <span>
+                    <div>Frequenza prelievo</div>
+                </span>
+                <span>
+                    <div>Forma</div>
+                </span>
+                <span>
+                    <div>Azioni</div>
+                </span>
+            </div>
+        <div>
+        <span>
+            <div>
+            <input type="hidden" id="specie" name="specie" value=""/>
+            <input id="specie_descr" name="specie_descr" value=""/>
+            </div>
+        </span>
+        <span>
+            <div>
+            <input id="diam" name="diam" value=""/>
+            </div>
+        </span>
+        <span>
+            <div>
+            <input id="frequenza" name="frequenza" value=""/>
+            </div>
+        </span>
+        <span>
+            <div>
+            <input id="h" name="h" value=""/>
+            </div>
+        </span>
+        <span>
+            <div>
+            <input id="i" name="i" value=""/>
+            </div>
+        </span>
+        <span>
+            <div>
+            <input id="freq_prel" name="freq_prel" value=""/>
+            </div>
+        </span>
+        <span>
+            <div>
+            <select id="poll_matr" name="poll_matr" value="">
+                <option></option>
+                <?php foreach( $d->getD1Coll()->getFirst()->getControl('poll_matr')->getItems() as $poll) :?>
+                <option value="<?php echo $poll->getData('codice'); ?>"><?php echo $poll->getData('descriz'); ?></option>
+                <?php endforeach; ?>
+            </select>
+            </div>
+        </span>
+        <span>
+            <div>
+            <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formd&amp;action=editarbustive&amp;id=<?php echo $d->getData('objectid');?>" data-update="content_rilievidendrometrici_ird">
+                <img class="actions addnew" src="images/empty.png" title="Aggiungi una specie arbustiva"/>
+            </a>
+            </div>
+        </span>
+        </div>
+    </div>
+    <?php require (__DIR__.DIRECTORY_SEPARATOR.'listird.php');?>
 </fieldset>
-<script type="text/javascript" src="js/rilievidendrometriciedit.js" defer="defer"></script>
+</fieldset>
+<script type="text/javascript" src="js/ird.js" defer="defer"></script>
