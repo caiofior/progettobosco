@@ -114,5 +114,13 @@ class X extends \forest\template\Entity {
         $dcoll->setFormX($this);
         return $dcoll;
     }
-    
+    /**
+     * Returns the associated C collection
+     * @return \forest\entity\x\CColl
+     */
+    public function getCColl() {
+        $ccoll = new \forest\entity\x\CColl();
+        $ccoll->setFormX($this);
+        return $ccoll;
+    }    
 } 

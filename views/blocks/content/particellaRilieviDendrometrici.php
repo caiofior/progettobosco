@@ -39,7 +39,7 @@ document.getElementById("tabrelatedcss").href="css/rilievidendrometrici.css";
             </select>
         </div>
         </fieldset>
-        <?php require __DIR__.DIRECTORY_SEPARATOR.'rilievidendrometrici'.DIRECTORY_SEPARATOR.'edit_ird.php';?>
+        <?php require __DIR__.DIRECTORY_SEPARATOR.'rilievidendrometrici'.DIRECTORY_SEPARATOR.'edit.php';?>
     </form>
     <script type="text/javascript" src="js/rilievidendrometrici.js" defer="defer"></script>
 </div>

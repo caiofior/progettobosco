@@ -22,17 +22,21 @@ $tables = array(
     'sched_b2',
     'sched_b3',
     'sched_b4',
+    
     'schede_x',
-    'schede_c',
     'schede_d',
+    'sched_d1',
+    
+    'schede_c',
+    'sched_c1',
+    'sched_c2',
+        
     'schede_e',
     'schede_f',
     'schede_g',
     'schede_g1',
     'schede_n',
-    'sched_c1',
-    'sched_c2',
-    'sched_d1',
+
     'sched_e1',
     'sched_f1',
     'sched_f2',
@@ -78,6 +82,7 @@ $tables = array(
 $preserveid = array(
     'schede_a',
     'note_a',
+    'problemi_a',
     
     'schede_b',
     'catasto',
@@ -88,12 +93,14 @@ $preserveid = array(
     'erbacee',
     'arbusti',
     'stime_b1',
+    'problemi_b1',
     
     'sched_b2',
     'note_b2',
     'arboree2',
     'arbusti2',
     'erbacee2',
+    'problemi_b2',
     
     'sched_b3',
     'note_b3',
@@ -103,14 +110,26 @@ $preserveid = array(
     'comp_arb',
     'rinnovaz',
     'arb_colt',
+    'problemi_b3',
     
     'sched_b4',
     'arboree4a',
     'arboree4b',
     'erbacee4',
+    'problemi_b4',
     
     'schede_x',
+    
     'schede_d',
+    'sched_d1',
+    
+    'schede_c',
+    'sched_c1',
+    'sched_c2',
+    
+    'schede_f',
+    'sched_f1',
+    'sched_f2',
     );
 if ($argc < 1) {
     echo 'MDB path is required';

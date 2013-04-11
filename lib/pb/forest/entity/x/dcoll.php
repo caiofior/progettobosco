@@ -55,7 +55,10 @@ class DColl extends \forest\template\EntityColl {
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
         $select->setIntegrityCheck(false);
-        if ($this->x instanceof \forest\entity\x\X) {
+        if (
+                $this->x instanceof \forest\entity\x\X &&
+                is_array($this->x->getData())
+            ) {
             $select->where('schede_d.proprieta = ?', $this->x->getData('proprieta'))
                    ->where('schede_d.cod_part = ?', $this->x->getData('cod_part'))
                    ->where('schede_d.cod_fo = ?', $this->x->getData('cod_fo'));
@@ -67,7 +70,10 @@ class DColl extends \forest\template\EntityColl {
      * @param null|array $criteria Filtering criteria
      */
     public function countAll(array $criteria = null) {
-        if ($this->x instanceof \forest\entity\x\X)  {
+        if (
+                $this->x instanceof \forest\entity\x\X &&
+                is_array($this->x->getData())
+            )  {
             $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
             $select->where('schede_d.proprieta = ?', $this->x->getData('proprieta'))
                    ->where('schede_d.cod_part = ?', $this->x->getData('cod_part'))
@@ -79,7 +85,7 @@ class DColl extends \forest\template\EntityColl {
     }
     /**
      * Add new item to the collection
-     * @return \forest\entity\x\X
+     * @return \forest\entity\x\D
      */
     public function addItem() {
         $d = parent::addItem();

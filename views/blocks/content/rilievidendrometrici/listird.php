@@ -102,11 +102,11 @@
     if ($start>0) {
         $actions['prev']=array(
             'url'=>'href="?'.$baseurl.'&start='.max($start-$items_in_page,0).'"',
-            'data-update'=>'data-update="content_schedab_arboree"'
+            'data-update'=>'data-update="content_rilievidendrometrici_listird"'
         );
         $actions['first']=array(
             'url'=>'href="?'.$baseurl.'&start=0"',
-            'data-update'=>'data-update="content_schedab_arboree"'
+            'data-update'=>'data-update="content_rilievidendrometrici_listird"'
         );
     }
 
@@ -114,11 +114,11 @@
 
         $actions['next']=array(
             'url'=>'href="?'.$baseurl.'&start='.min($start+$items_in_page,$last_page).'"',
-            'data-update'=>'data-update="content_schedab_arboree"'
+            'data-update'=>'data-update="content_rilievidendrometrici_listird"'
         );
          $actions['last']=array(
             'url'=>'href="?'.$baseurl.'&start='.$last_page .'"',
-            'data-update'=>'data-update="content_schedab_arboree"'
+            'data-update'=>'data-update="content_rilievidendrometrici_listird"'
         );
     }
     ?>

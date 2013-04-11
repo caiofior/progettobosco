@@ -18,21 +18,25 @@ $tables = array(
     //Foms
     'schede_a',
     'schede_b',
-    'schede_c',
+    'sched_b1',
+    'sched_b2',
+    'sched_b3',
+    'sched_b4',
+    
+    'schede_x',
     'schede_d',
+    'sched_d1',
+    
+    'schede_c',
+    'sched_c1',
+    'sched_c2',
+    
     'schede_e',
     'schede_f',
     'schede_g',
     'schede_g1',
     'schede_n',
-    'schede_x',
-    'sched_b1',
-    'sched_b2',
-    'sched_b3',
-    'sched_b4',
-    'sched_c1',
-    'sched_c2',
-    'sched_d1',
+    
     'sched_e1',
     'sched_f1',
     'sched_f2',
@@ -110,7 +114,17 @@ $preserveid = array(
     'erbacee4',
     
     'schede_x',
+    
     'schede_d',
+    'sched_d1',
+    
+    'schede_c',
+    'sched_c1',
+    'sched_c2',
+    
+    'schede_f',
+    'sched_f1',
+    'sched_f2',
     );
 if ($argc < 1) {
     echo 'postgres origin is required';

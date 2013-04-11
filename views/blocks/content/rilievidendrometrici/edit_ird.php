@@ -6,6 +6,9 @@ if($dcoll->count() == 0)
 else
     $d = $dcoll->getFirst();
 ?>
+<script type="text/javascript" >
+document.getElementById("tabrelatedcss").href="css/ird.css";
+</script>
 <fieldset>
 <div id="data_container">
     <label for="data">Data</label>
