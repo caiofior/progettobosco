@@ -21,8 +21,8 @@ document.getElementById("tabrelatedcss").href="css/ict.css";
     <input type="text" id="codiope_descriz" name="codiope_descriz" value="<?php echo $c->getCollector()->getData('descriz');?>"/>
 </div>
 <div id="c_anel_container">
-    <label for="c_anel_">Incremento radiale: osservazioni riferite ad uno spessore di &#8230;&#8230; mm</label>
-    <input id="c_anel_" name="c_anel_" value="<?php echo $c->getData('c_anel');?>">
+    <label for="c_anel">Incremento radiale: osservazioni riferite ad uno spessore di &#8230;&#8230; mm</label>
+    <input id="c_anel" name="c_anel" value="<?php echo $c->getData('c_anel');?>">
 </div>
 <div id="m_anel_container">
     <label for="m_anel">o ad un periodo di &#8230;&#8230; anni</label>

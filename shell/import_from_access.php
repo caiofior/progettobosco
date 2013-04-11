@@ -33,8 +33,10 @@ $tables = array(
         
     'schede_e',
     'schede_f',
-    'schede_g',
+    
     'schede_g1',
+    'schede_g',
+    
     'schede_n',
 
     'sched_e1',
@@ -130,6 +132,9 @@ $preserveid = array(
     'schede_f',
     'sched_f1',
     'sched_f2',
+    
+    'schede_g1',
+    'schede_g',
     );
 if ($argc < 1) {
     echo 'MDB path is required';
