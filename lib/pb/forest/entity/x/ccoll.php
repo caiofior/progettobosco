@@ -57,11 +57,14 @@ class CColl extends \forest\template\EntityColl {
         $select->setIntegrityCheck(false);
         if (
                 $this->x instanceof \forest\entity\x\X  &&
-                is_array($this->x->getData())
+                is_array($this->x->getData()) &&
+                sizeof($this->x->getData()) == sizeof($this->content->getTable()->info('cols'))
                 ) {
             $select->where('schede_c.proprieta = ?', $this->x->getData('proprieta'))
                    ->where('schede_c.cod_part = ?', $this->x->getData('cod_part'))
                    ->where('schede_c.cod_fo = ?', $this->x->getData('cod_fo'));
+        } else {
+            $select->where('FALSE');
         }
         return $select;
     }
@@ -71,15 +74,15 @@ class CColl extends \forest\template\EntityColl {
      */
     public function countAll(array $criteria = null) {
         if ($this->x instanceof \forest\entity\x\X &&
-                is_array($this->x->getData()))  {
+                is_array($this->x->getData()) &&
+                sizeof($this->x->getData()) == sizeof($this->content->getTable()->info('cols')))  {
             $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
             $select->where('schede_c.proprieta = ?', $this->x->getData('proprieta'))
                    ->where('schede_c.cod_part = ?', $this->x->getData('cod_part'))
                    ->where('schede_c.cod_fo = ?', $this->x->getData('cod_fo'));
             return intval($this->content->getTable()->getAdapter()->fetchOne($select));
         }
-        else
-            return parent::countAll();
+        else  return 0;
     }
     /**
      * Add new item to the collection

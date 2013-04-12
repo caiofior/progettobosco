@@ -4,6 +4,8 @@
  * 
  * Manages Entity B3 forest compartment
  * 
+ * @link https://it.wikipedia.org/wiki/Formazione_erbacea
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */

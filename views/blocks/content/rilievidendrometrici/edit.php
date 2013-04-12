@@ -1,7 +1,7 @@
 <?php
 $x = new \forest\entity\x\X();
-if (key_exists('id', $_REQUEST))
-    $x->loadFromId ($_REQUEST['id']);
+/*if (key_exists('id', $_REQUEST))
+    $x->loadFromId ($_REQUEST['id']);*/
 switch ($x->getData('tipo_ril')) {
     //default;
     case 2 :
@@ -19,6 +19,7 @@ switch ($x->getData('tipo_ril')) {
     case 4 :
         require __DIR__.DIRECTORY_SEPARATOR.'edit_irs.php';
     break;
+    default;
     case 5 :
         require __DIR__.DIRECTORY_SEPARATOR.'edit_irp.php';
     break;

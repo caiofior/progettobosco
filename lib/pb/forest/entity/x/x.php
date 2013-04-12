@@ -4,6 +4,8 @@
  * 
  * Manages Entity X forest compartment
  * 
+ * @link https://it.wikipedia.org/wiki/Rilevamento_dendrometrico
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
@@ -23,6 +25,8 @@ if (!class_exists('Content')) {
  * Manages Entity X forest compartment
  * 
  * Manages Entity X forest compartment
+ * 
+ * @link https://it.wikipedia.org/wiki/Rilevamento_dendrometrico
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
@@ -123,7 +127,7 @@ class X extends \forest\template\Entity {
         $ccoll->setFormX($this);
         return $ccoll;
     }    
-        /**
+     /**
      * Returns the associated F collection
      * @return \forest\entity\x\FColl
      */
@@ -131,5 +135,14 @@ class X extends \forest\template\Entity {
         $fcoll = new \forest\entity\x\FColl();
         $fcoll->setFormX($this);
         return $fcoll;
-    }  
+    }
+    /**
+     * Returns the associated G1 collection
+     * @return \forest\entity\x\G1Coll
+     */
+    public function getG1Coll() {
+        $g1coll = new \forest\entity\x\G1Coll();
+        $g1coll->setFormX($this);
+        return $g1coll;
+    }
 } 

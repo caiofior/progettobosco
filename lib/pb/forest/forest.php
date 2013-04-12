@@ -4,6 +4,8 @@
  * 
  * Manages Forest
  * 
+ * @link https://it.wikipedia.org/wiki/Bosco
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
@@ -23,6 +25,8 @@ if (!class_exists('Content')) {
  * Manages Forest
  * 
  * Manages Forest
+ * 
+ * @link https://it.wikipedia.org/wiki/Bosco
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA

@@ -62,13 +62,17 @@ class D1Coll extends \forest\template\EntityColl {
                 '( SELECT diz_arbo.nome_itali || \' | \' || diz_arbo.nome_scien FROM diz_arbo WHERE diz_arbo.cod_coltu='.$this->content->getTable()->info('name').'.specie) '
                     )
                 ));
-        if ($this->d instanceof \forest\entity\x\D) {
+        if ($this->d instanceof \forest\entity\x\D &&
+                is_array($this->d->getData()) &&
+                sizeof($this->d->getData()) == sizeof($this->content->getTable()->info('cols'))) {
             $select->where('sched_d1.proprieta = ?', $this->d->getData('proprieta'))
                    ->where('sched_d1.cod_part = ?', $this->d->getData('cod_part'))
                    ->where('sched_d1.cod_fo = ?', $this->d->getData('cod_fo'))
                    ->where('sched_d1.n_camp = ?', $this->d->getData('n_camp'))
                    ->where('sched_d1.tipo_ril = ?', $this->d->getData('tipo_ril'))
                    ->where('sched_d1.data = ?', $this->d->getData('data'));
+        } else {
+            $select->where('FALSE');
         }
         return $select;
     }
@@ -77,7 +81,9 @@ class D1Coll extends \forest\template\EntityColl {
      * @param null|array $criteria Filtering criteria
      */
     public function countAll(array $criteria = null) {
-        if ($this->d instanceof \forest\entity\x\D)  {
+        if ($this->d instanceof \forest\entity\x\D &&
+                is_array($this->d->getData()) &&
+                sizeof($this->d->getData()) == sizeof($this->content->getTable()->info('cols')))  {
             $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
             $select->where('sched_d1.proprieta = ?', $this->d->getData('proprieta'))
                    ->where('sched_d1.cod_part = ?', $this->d->getData('cod_part'))
@@ -87,8 +93,7 @@ class D1Coll extends \forest\template\EntityColl {
                    ->where('sched_d1.data = ?', $this->d->getData('data'));
             return intval($this->content->getTable()->getAdapter()->fetchOne($select));
         }
-        else
-            return parent::countAll();
+        else  return 0;
     }
     /**
      * Add new item to the collection

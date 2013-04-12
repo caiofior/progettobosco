@@ -52,6 +52,8 @@ if (!class_exists('Forest')) {
         'entity'.DIRECTORY_SEPARATOR.'x'.DIRECTORY_SEPARATOR.'f1coll.php',
         'entity'.DIRECTORY_SEPARATOR.'x'.DIRECTORY_SEPARATOR.'f2.php',
         'entity'.DIRECTORY_SEPARATOR.'x'.DIRECTORY_SEPARATOR.'f2coll.php',
+        'entity'.DIRECTORY_SEPARATOR.'x'.DIRECTORY_SEPARATOR.'g1.php',
+        'entity'.DIRECTORY_SEPARATOR.'x'.DIRECTORY_SEPARATOR.'g1coll.php',
         'attribute'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'piu1_3.php',
         'attribute'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'piu1_3coll.php',
         'attribute'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'piu2_3.php',

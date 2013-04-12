@@ -4,6 +4,8 @@
  * 
  * Manages Entity B2 forest compartment
  * 
+ * @link https://it.wikipedia.org/wiki/Coltivi
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
@@ -23,6 +25,8 @@ if (!class_exists('Content')) {
  * Manages Entity B2 forest compartment
  * 
  * Manages Entity B2 forest compartment
+ * 
+ * @link https://it.wikipedia.org/wiki/Coltivi
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA

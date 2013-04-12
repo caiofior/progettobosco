@@ -4,6 +4,8 @@
  * 
  * Manages Entity A forest compartment
  * 
+ * @link https://it.wikipedia.org/wiki/Particella_assestamentale
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
@@ -25,6 +27,8 @@ if (!class_exists('Content')) {
  * Manages Entity A forest compartment
  * 
  * Manages Entity A forest compartment
+ * 
+ * @link https://it.wikipedia.org/wiki/Particella_assestamentale
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA

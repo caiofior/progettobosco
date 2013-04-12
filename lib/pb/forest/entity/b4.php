@@ -4,6 +4,8 @@
  * 
  * Manages Entity B4 forest compartment
  * 
+ * @link https://it.wikipedia.org/wiki/Formazione_arbustiva
+ * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
@@ -23,6 +25,8 @@ if (!class_exists('Content')) {
  * Manages Entity B4 forest compartment
  * 
  * Manages Entity B4 forest compartment
+ * 
+ * @link https://it.wikipedia.org/wiki/Formazione_arbustiva
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
