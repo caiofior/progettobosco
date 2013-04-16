@@ -142,6 +142,7 @@ $preserveid = array(
     'sched_e1',
     
     'schede_n',
+    'note_n',
     );
 if ($argc < 1) {
     echo 'postgres origin is required';
@@ -214,7 +215,8 @@ foreach ($tables as $table) {
             $max_objectid = max($max_objectid,$rc);
             $rc++;
         }
-        fclose($file_input);
+        if (is_resource($file_input))
+            fclose($file_input);
         fclose($file_output);
     } 
     else copy($filename,$filename_t);
