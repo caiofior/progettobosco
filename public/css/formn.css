@@ -1,0 +1,121 @@
+/* 
+    Document   : formn
+    Created on : 16-apr-2013, 14.40.41
+    Author     : caiofior
+    Description:
+        Purpose of the stylesheet follows.
+*/
+fieldset {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000000;
+    color: #325D27;
+    position: relative;
+    display: block;
+    *margin-top: 12px;
+    *margin-bottom: 0px;
+    -webkit-padding-before: 7.5px;
+    -webkit-padding-start: 0px;
+}
+legend {
+    border-style: dotted;
+    border-width: 1px;
+    border-color: #000000;
+    margin-left: 20px;
+    font-weight: bold;
+}
+h4 {
+    position: relative;
+    color: #010080!important;
+    background-color: #ffffff;
+    font-size: 12px!important;
+    margin: 0px!important;
+    padding: 0px;
+    
+}
+fieldset > div > label {
+    background-color: #010080;
+    color: #ffffff!important;
+    display: block;
+}
+label.double {
+    height: 40px;
+}
+label.triple {
+    height: 60px;
+}
+select {
+   margin: 0px !important;
+   padding: 0px !important;
+   height: 17px;
+   width: 80%;
+}
+input:not([type='radio']) {
+   width: 80%;
+   margin: 0px ;
+   padding: 0px;
+}
+input[type='radio'],input[type='checkbox'] {
+   background: transparent;
+   border: 0;
+}
+.scrollcontrols img {
+    margin-top: 5px;
+    vertical-align:top;
+}
+/**
+* General part
+**/
+#bosco_container {
+    width: 200px;
+}
+#codiope_container {
+    width: 200px;
+    margin-top: -40px;
+    margin-left: 220px;
+}
+#datasch_container {
+    width: 200px;
+    margin-top: -40px;
+    margin-left: 440px; 
+}
+#sup_container {
+    width: 100px;
+    margin-top: -60px;
+    margin-left: 300px;
+}
+#lung_container {
+    width: 100px;
+    margin-top: -60px;
+    margin-left: 410px;
+}
+#cod_part_container {
+    width: 100px;
+    margin-top: -60px;
+    margin-left: 520px;
+}
+#cod_ev_int_container {
+    width: 100px;
+    margin-top: -60px;
+    margin-left: 630px;
+}
+#dataeven_container {
+    width: 150px;
+    margin-top: 20px;
+}
+#l_container {
+    width: 600px;
+    margin-left: 160px;
+    margin-top: -40px;
+}
+#l_container div input[type='checkbox'],
+#l_container div div{
+    background-color: #808080;
+    float: left;
+    width: 80px;
+}
+#l1_container {
+    margin-top: -60px;
+    margin-left: 400px;
+    width: 100px;
+}

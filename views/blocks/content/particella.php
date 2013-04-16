@@ -22,10 +22,10 @@
                                          --><span><a data-update="content_particellaSchedaB3" data-destination="forestcompartmentmaincontent" href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?id=<?php echo $a->getData('objectid');?>">Scheda B3</a></span><?php endif; if (in_array('b4', $tabs)) :?><!--
                                          --><span><a data-update="content_particellaSchedaB4" data-destination="forestcompartmentmaincontent" href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?id=<?php echo $a->getData('objectid');?>">Scheda B4</a></span><?php endif; ?>
                                             <br />
-                                            <span><a href="#">Scheda N</a></span><!--
+                                            <span><a data-update="content_particellaSchedaN" data-destination="forestcompartmentmaincontent" href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?id=<?php echo $a->getData('objectid');?>">Scheda N</a></span><!--
                                         --><span><a data-update="content_particellaRilieviDendrometrici" data-destination="forestcompartmentmaincontent" href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?id=<?php echo $a->getData('objectid');?>">Rilievi dendrometrici</a>
                                         </div>
-                                        <?php require __DIR__.DIRECTORY_SEPARATOR.'particellaRilieviDendrometrici.php';?>
+                                        <?php require __DIR__.DIRECTORY_SEPARATOR.'particellaSchedaN.php';?>
 				<!-- /post -->	
 				</div>	
 
