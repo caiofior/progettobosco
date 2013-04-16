@@ -28,87 +28,54 @@ document.getElementById("tabrelatedcss").href="css/irp.css";
     <label for="d_ogni">È stato misurato un diametro ogni:</label>
     <input id="d_ogni" name="d_ogni" value="<?php echo $g1->getData('d_ogni');?>">
 </div>
-<fieldset id="ird_table_container" >
-    <legend><span>Composizione strato arboreo - arbustiva</span></legend>
-    <div id="new_ird">
-            <div>
-                <span>
-                    <div>Specie</div>
-                </span>
-                <span>
-                    <div>Diametro</div>
-                </span>
-                <span>
-                    <div>Frequenza</div>
-                </span>
-                <span>
-                    <div>Altezza</div>
-                </span>
-                <span>
-                    <div>Increm</div>
-                </span>
-                <span>
-                    <div>Frequenza prelievo</div>
-                </span>
-                <span>
-                    <div>Forma</div>
-                </span>
-                <span>
-                    <div>Azioni</div>
-                </span>
-            </div>
-        <div>
-        <span>
-            <div>
-            <input type="hidden" id="specie" name="specie" value=""/>
-            <input id="specie_descr" name="specie_descr" value=""/>
-            </div>
-        </span>
-        <span>
-            <div>
-            <input id="diam" name="diam" value=""/>
-            </div>
-        </span>
-        <span>
-            <div>
-            <input id="frequenza" name="frequenza" value=""/>
-            </div>
-        </span>
-        <span>
-            <div>
-            <input id="h" name="h" value=""/>
-            </div>
-        </span>
-        <span>
-            <div>
-            <input id="i" name="i" value=""/>
-            </div>
-        </span>
-        <span>
-            <div>
-            <input id="freq_prel" name="freq_prel" value=""/>
-            </div>
-        </span>
-        <span>
-            <div>
-            <select id="poll_matr" name="poll_matr" value="">
-                <option></option>
-                <?php foreach( $g1->getD1Coll()->getFirst()->getControl('poll_matr')->getItems() as $poll) :?>
-                <option value="<?php echo $poll->getData('codice'); ?>"><?php echo $poll->getData('descriz'); ?></option>
-                <?php endforeach; ?>
-            </select>
-            </div>
-        </span>
-        <span>
-            <div>
-            <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formd&amp;action=editarbustive&amp;id=<?php echo $g1->getData('objectid');?>" data-update="content_rilievidendrometrici_ird">
-                <img class="actions addnew" src="images/empty.png" title="Aggiungi una specie arbustiva"/>
-            </a>
-            </div>
-        </span>
-        </div>
-    </div>
-    <?php require (__DIR__.DIRECTORY_SEPARATOR.'listird.php');?>
+<fieldset id="irp_table_container" >
+    <table cellpadding="0" cellspacing="0" border="0" class="display" id="irp" data-objectid="<?php echo $g1->getData('objectid'); ?>">
+            <thead>
+                <tr>
+                    <th >Id</th>
+                    <th >N° AdS</th>
+                    <th >N° Alberi Contati</th>
+                    <th >H1</th>
+                    <th >H2</th>
+                    <th >H3</th>
+                    <th >H4</th>
+                    <th >H5</th>
+                    <th >D1</th>
+                    <th >D2</th>
+                    <th >D3</th>
+                    <th> D4</th>
+                    <th> D5</th>
+                    <th> D6</th>
+                    <th> D7</th>
+                    <th> Azioni</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="16" class="dataTables_empty">Caricamento dei dati</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                                <tr>
+                    <th >Id</th>
+                    <th >N° AdS</th>
+                    <th >N° Alberi Contati</th>
+                    <th >H1</th>
+                    <th >H2</th>
+                    <th >H3</th>
+                    <th >H4</th>
+                    <th >H5</th>
+                    <th >D1</th>
+                    <th >D2</th>
+                    <th >D3</th>
+                    <th> D4</th>
+                    <th> D5</th>
+                    <th> D6</th>
+                    <th> D7</th>
+                    <th> Azioni</th>
+                </tr>
+            </tfoot>
+        </table>
 </fieldset>
 </fieldset>
-<script type="text/javascript" src="js/ird.js" defer="defer"></script>
+<script type="text/javascript" src="js/irp.js" defer="defer"></script>

@@ -31,17 +31,19 @@ $tables = array(
     'sched_c1',
     'sched_c2',
         
-    'schede_e',
+
     'schede_f',
+    'sched_f1',
+    'sched_f2',
     
     'schede_g1',
     'schede_g',
     
+    'schede_e',
+    'sched_e1',
+    
     'schede_n',
 
-    'sched_e1',
-    'sched_f1',
-    'sched_f2',
     'sched_l1',
     'sched_l1b',
     //Cadastral
@@ -135,6 +137,11 @@ $preserveid = array(
     
     'schede_g1',
     'schede_g',
+    
+    'schede_e',
+    'sched_e1',
+    
+    'schede_n',
     );
 if ($argc < 1) {
     echo 'postgres origin is required';

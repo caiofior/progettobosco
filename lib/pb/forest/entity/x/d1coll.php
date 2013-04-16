@@ -97,14 +97,14 @@ class D1Coll extends \forest\template\EntityColl {
     }
     /**
      * Add new item to the collection
-     * @return \forest\entity\x\X
+     * @return \forest\entity\x\D1
      */
     public function addItem() {
-        $d = parent::addItem();
-        $d->setData($this->d->getData('proprieta'),'proprieta');
-        $d->setData($this->d->getData('cod_part'),'cod_part');
-        $d->setData($this->d->getData('cod_fo'),'cod_fo');
-        return $d;
+        $d1 = parent::addItem();
+        $d1->setData($this->d->getData('proprieta'),'proprieta');
+        $d1->setData($this->d->getData('cod_part'),'cod_part');
+        $d1->setData($this->d->getData('cod_fo'),'cod_fo');
+        return $d1;
     }
 
 }

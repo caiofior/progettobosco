@@ -53,6 +53,9 @@ if (key_exists('task', $_REQUEST)) {
         case 'autocomplete':
             require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'controls'.DIRECTORY_SEPARATOR.'bosco'.DIRECTORY_SEPARATOR.'autocomplete.php';
         break;
+        case 'irp':
+            require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'controls'.DIRECTORY_SEPARATOR.'bosco'.DIRECTORY_SEPARATOR.'irp.php';
+        break;
     }
 }
 if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
