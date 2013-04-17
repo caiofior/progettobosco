@@ -101,5 +101,14 @@ class N extends \forest\template\Entity {
         $collector->loadFromId($this->data['codiope']);
         return $collector;
     }
+     /**
+     * Return the associated note collection
+     * @return \forest\attribute\note\NColl
+     */
+    public function getNotes () {
+        $notes = new \forest\attribute\note\NColl();
+        $notes->setForm($this);
+        return $notes;
+    }
    
 } 

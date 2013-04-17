@@ -1,5 +1,7 @@
 /* 
  * Fom b1 controls
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
  */
 /**
  * Delete B1 form

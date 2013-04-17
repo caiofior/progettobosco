@@ -1,5 +1,7 @@
 /* 
  * Form b2 controls
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
  */
 /**
  * Delete B2 form

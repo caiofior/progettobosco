@@ -1,6 +1,7 @@
 /* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Form b4 controls
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
  */
 /**
  * Delete B4 form

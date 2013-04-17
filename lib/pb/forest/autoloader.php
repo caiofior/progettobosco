@@ -80,6 +80,8 @@ if (!class_exists('Forest')) {
         'attribute'.DIRECTORY_SEPARATOR.'note'.DIRECTORY_SEPARATOR.'b3coll.php',
         'attribute'.DIRECTORY_SEPARATOR.'note'.DIRECTORY_SEPARATOR.'b4.php',
         'attribute'.DIRECTORY_SEPARATOR.'note'.DIRECTORY_SEPARATOR.'b4coll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'note'.DIRECTORY_SEPARATOR.'n.php',
+        'attribute'.DIRECTORY_SEPARATOR.'note'.DIRECTORY_SEPARATOR.'ncoll.php',
         'attribute'.DIRECTORY_SEPARATOR.'note'.DIRECTORY_SEPARATOR.'template.php',
         'attribute'.DIRECTORY_SEPARATOR.'note'.DIRECTORY_SEPARATOR.'templatecoll.php',
         'attribute'.DIRECTORY_SEPARATOR.'cadastral.php',

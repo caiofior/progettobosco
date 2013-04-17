@@ -16,7 +16,7 @@ document.getElementById("tabrelatedcss").href="css/formn.css";
 </script>
     <div id="tabContent">
         <form id="formN" action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formn&action=update&id=<?php echo $a->getData('objectid');?>">
-        <div class="form_messages formb1_errors" style="display: none;"></div>
+        <div class="form_messages formn_errors" style="display: none;"></div>
         <a class="deleteTab" href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=forest_compartment&action=manage&id=<?php echo $a->getData('objectid');?>" alt="Cancella Scheda">
             <img class="actions delete" src="images/empty.png" title="Cancella"/>
             Cancella scheda
@@ -104,8 +104,164 @@ document.getElementById("tabrelatedcss").href="css/formn.css";
             <input id="l1" name="l1" value="<?php echo $n->getData('l1');?>">
             </div>
         </fieldset>
-            
-            
+        <fieldset id="eve_int_container" >
+            <legend>Tipo</legend>
+            <div>
+        <?php
+        $labels=array(
+          1=> 'Evento',
+          2=> 'Intervento',
+        );
+        foreach($labels as $key=>$item) :
+        $checked = '';
+        if ($key == $n->getData('eve_int'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="checkbox" name="eve_int" <?php echo $checked; ?> value="<?php echo $key; ?>"/><span><?php echo $item; ?></span>
+        <?php endforeach;?>
+        </fieldset>
+        </fieldset>
+        <fieldset id="dati_evento">
+            <p>Evento</p>
+        <fieldset id="evento_container" >
+            <legend>Tipo di evento</legend>
+            <div>
+        <?php
+        $labels=array(
+          1=> 'Incendio',
+          2=> 'Frana',
+          3=> 'Agenti meteorici',
+          4=> 'Movimenti di neve',
+          5=> 'Eventi di altro tipo',  
+        );
+        foreach($labels as $key=>$item) :
+        $checked = '';
+        if ($key == $n->getData('eve_int'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="checkbox" name="eve_int" <?php echo $checked; ?> value="<?php echo $key; ?>"/><div><?php echo $item; ?></div>
+        <?php endforeach;?>
+        <div id="spec_event_container">
+            <label for="spec_event">specifica</label>
+            <input id="spec_event" name="spec_event" value="<?php echo $n->getData('spec_event');?>">
+        </div>
+        </fieldset>
+        <div id="desc_eve_container">
+            <label for="desc_eve">Descrizione degli eventi imprevisti, cause ed effetti </label>
+            <textarea id="desc_eve" name="desc_eve" ><?php echo $n->getData('desc_eve');?></textarea>
+        </div>
+        </fieldset>
+        <fieldset id="dati_intervento">
+            <p>Intervento</p>
+        <fieldset id="tipo_inter_container" >
+            <legend>Tipo di intervento</legend>
+            <div>
+        <?php
+        $labels=array(
+          1=> 'Formazioni arboree',
+          2=> 'Formazioni specializzate',
+          3=> 'Formazioni arbustive ed erbacee',
+          4=> 'Viabilità',
+        );
+        foreach($labels as $key=>$item) :
+        $checked = '';
+        if ($key == $n->getData('tipo_inter'))
+            $checked = 'checked="checked"';
+        ?>
+        <input type="checkbox" name="tipo_inter" <?php echo $checked; ?> value="<?php echo $key; ?>"/><span><?php echo $item; ?></span>
+        <?php endforeach;?>
+        </fieldset>
+        <div id="intervento_container">
+        <label for="intervento">Intervento formazioni arboree</label>
+        <select id="intervento" name="intervento">
+            <option value="">Scegli una funzione</option>
+            <?php
+            foreach($n->getControl('intervento')->getItems() as $item) : ?>
+            <option <?php echo ($item->getData('codice') == $n->getData('intervento') ? 'selected="selected"' : '')?> value="<?php echo $item->getData('codice'); ?>"><?php echo $item->getData('descriz'); ?></option>
+            <?php endforeach;?>
+        </select>
+        </div>
+        <div id="m_prev_container">
+            <label for="m_prev">Massa prevista (m&#179;/ha)</label>
+            <input id="m_prev" name="m_prev" value="<?php echo $n->getData('m_prev');?>">
+        </div>
+        <div id="intervento_specia_container">
+        <label for="intervento_specia">Intervento formazioni specializzate</label>
+        <select id="intervento_specia" name="intervento_specia">
+            <option value="">Scegli una funzione</option>
+            <?php
+            foreach($n->getControl('intervento_specia')->getItems() as $item) : ?>
+            <option <?php echo ($item->getData('codice') == $n->getData('intervento_specia') ? 'selected="selected"' : '')?> value="<?php echo $item->getData('codice'); ?>"><?php echo $item->getData('descriz'); ?></option>
+            <?php endforeach;?>
+        </select>
+        </div>
+        <div id="m_prel_container">
+            <label for="m_prel">Massa prelevata (m&#179;/ha)</label>
+            <input id="m_prel" name="m_prel" value="<?php echo $n->getData('m_prel');?>">
+        </div>
+        <div id="intervento_arbus_container">
+        <label for="intervento_arbus">Intervento formazioni arbustive ed erbacee</label>
+        <select id="intervento_arbus" name="intervento_arbus">
+            <option value="">Scegli una funzione</option>
+            <?php
+            foreach($n->getControl('intervento_arbus')->getItems() as $item) : ?>
+            <option <?php echo ($item->getData('codice') == $n->getData('intervento_arbus') ? 'selected="selected"' : '')?> value="<?php echo $item->getData('codice'); ?>"><?php echo $item->getData('descriz'); ?></option>
+            <?php endforeach;?>
+        </select>
+        </div>
+        <div id="intervento_viabil_container">
+        <label for="intervento_viabil">Intervento viabilità</label>
+        <select id="intervento_viabil" name="intervento_viabil">
+            <option value="">Scegli una funzione</option>
+            <?php
+            foreach($n->getControl('intervento_viabil')->getItems() as $item) : ?>
+            <option <?php echo ($item->getData('codice') == $n->getData('intervento_viabil') ? 'selected="selected"' : '')?> value="<?php echo $item->getData('codice'); ?>"><?php echo $item->getData('descriz'); ?></option>
+            <?php endforeach;?>
+        </select>
+        </div>
+        <div id="desc_modi_container">
+            <label for="desc_modi">eventuali modifiche alle prescrizioni e loro causa </label>
+            <textarea id="desc_modi" name="desc_modi" ><?php echo $n->getData('desc_modi');?></textarea>
+        </div>
+        <div id="desc_effet_container">
+            <label for="desc_effet">valutazione di massima degli effetti degli interventi </label>
+            <textarea id="desc_effet" name="desc_effet" ><?php echo $n->getData('desc_effet');?></textarea>
+        </div>
+        </fieldset>
+        <fieldset id="notescontainer">
+        <legend>Note alle singole voci</legend>
+        <div id="newnote">
+                <div>
+                    <span>
+                        <div>Parametro</div>
+                    </span>
+                    <span>
+                        <div>Nota</div>
+                    </span>
+                    <span>
+                        <div>Azioni</div>
+                    </span>
+                </div>
+            <div>
+                <span>
+                    <input type="hidden" id="cod_nota" name="cod_nota" value=""/>
+                    <input id="cod_nota_descr" name="cod_nota_descr" value=""/>
+                </span>
+
+                <span>
+                    <textarea id="text_nota" name="text_nota" rows="2" cols="30"></textarea>
+                </span>
+                <span>
+                    <a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=formn&amp;action=editnote&amp;id=<?php echo $n->getData('objectid');?>" data-update="content_schedan_note">
+                        <img class="actions addnew" src="images/empty.png" title="Aggiungi una nota"/>
+                    </a>
+                </span>
+            </div>
+        </div>
+        <?php
+        require __DIR__.DIRECTORY_SEPARATOR.'schedan'.DIRECTORY_SEPARATOR.'note.php';
+        ?>
+        </fieldset>
     </form>
 </div>
 <script type="text/javascript" src="js/formn.js" defer="defer"></script>

@@ -1,5 +1,7 @@
 /* 
  * Form b3 controls
+ * @author Claudio Fior <caiofior@gmail.com>
+ * @copyright CRA
  */
 /**
  * Delete B3 form
