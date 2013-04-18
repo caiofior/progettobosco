@@ -31,7 +31,7 @@ if (!class_exists('Content')) {
 class XColl extends \forest\template\EntityColl {
     /**
      * Reference to the B1 form
-     * @var \forest\entity\B1
+     * @var \forest\entity\b\B1
      */
     private $b1;
     /**
@@ -42,9 +42,9 @@ class XColl extends \forest\template\EntityColl {
     }
     /**
      * Set the form a
-     * @param \forest\entity\B1 $b1
+     * @param \forest\entity\b\B1 $b1
      */
-    public function setFormB1(\forest\entity\B1 $b1) {
+    public function setFormB1(\forest\entity\b\B1 $b1) {
         $this->b1 = $b1;
     }
      /**
@@ -63,7 +63,7 @@ class XColl extends \forest\template\EntityColl {
                             )->where('diz_tiporil.codice = '.$this->content->getTable()->info('name').'.tipo_ril').
                     ')')
             ));
-        if ($this->b1 instanceof \forest\entity\B1) {
+        if ($this->b1 instanceof \forest\entity\b\B1) {
             $select->where('schede_x.proprieta = ?', $this->b1->getData('proprieta'))
                    ->where('schede_x.cod_part = ?', $this->b1->getData('cod_part'))
                    ->where('schede_x.cod_fo = ?', $this->b1->getData('cod_fo'));
@@ -75,7 +75,7 @@ class XColl extends \forest\template\EntityColl {
      * @param null|array $criteria Filtering criteria
      */
     public function countAll(array $criteria = null) {
-        if ($this->b1 instanceof \forest\entity\B1)  {
+        if ($this->b1 instanceof \forest\entity\b\B1)  {
             $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
             $select->where('schede_x.proprieta = ?', $this->b1->getData('proprieta'))
                    ->where('schede_x.cod_part = ?', $this->b1->getData('cod_part'))

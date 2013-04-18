@@ -30,7 +30,7 @@ if (!class_exists('Content')) {
 class NColl extends \forest\template\EntityColl {
     /**
      * Reference to the B form
-     * @var \forest\entity\B
+     * @var \forest\entity\b\B
      */
     private $b;
     /**
@@ -41,9 +41,9 @@ class NColl extends \forest\template\EntityColl {
     }
     /**
      * Set the form b
-     * @param \forest\entity\B $b
+     * @param \forest\entity\b\B $b
      */
-    public function setFormB(\forest\entity\B $b) {
+    public function setFormB(b\B $b) {
         $this->b = $b;
     }
      /**
@@ -54,7 +54,7 @@ class NColl extends \forest\template\EntityColl {
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
         $select->setIntegrityCheck(false);
-        if ($this->b instanceof \forest\entity\B) {
+        if ($this->b instanceof b\B) {
             $select->where('schede_n.proprieta = ?', $this->b->getData('proprieta'))
                    ->where('schede_n.cod_part = ?', $this->b->getData('cod_part'))
                    ->where('schede_n.cod_fo = ?', $this->b->getData('cod_fo'));
@@ -66,7 +66,7 @@ class NColl extends \forest\template\EntityColl {
      * @param null|array $criteria Filtering criteria
      */
     public function countAll(array $criteria = null) {
-        if ($this->b instanceof \forest\entity\B)  {
+        if ($this->b instanceof b\B)  {
             $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
             $select->where('schede_n.proprieta = ?', $this->b->getData('proprieta'))
                    ->where('schede_n.cod_part = ?', $this->b->getData('cod_part'))

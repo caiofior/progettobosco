@@ -135,10 +135,10 @@ class A extends \forest\template\Entity {
     }
     /**
      * Return the associated B Collection
-     * @return \forest\entity\BColl
+     * @return \forest\entity\b\BColl
      */
     public function getBColl () {
-        $bcoll = new \forest\entity\BColl();
+        $bcoll = new b\BColl();
         $bcoll->setFormA($this);
         $bcoll->loadAll();
         return $bcoll;

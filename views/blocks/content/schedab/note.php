@@ -2,7 +2,7 @@
 
     <?php
     if (!isset($b1)) {
-        $b1 = new \forest\entity\B1();
+        $b1 = new \forest\entity\b\B1();
         $b1->loadFromId($_REQUEST['id']);
     }
     $notes = $b1->getNotes();

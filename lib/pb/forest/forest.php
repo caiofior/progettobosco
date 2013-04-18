@@ -286,4 +286,13 @@ WHERE usosuolo.codice <> \'\' AND proprieta=\''.$this->data['codice'].'\''));
         return $messages;
 
     }
+    /**
+     * Gets the associated EColl collection
+     * @return \forest\entity\e\EColl
+     */
+    public function getEColl () {
+        $ecoll = new \forest\entity\e\EColl();
+        $ecoll->setForest($this);
+        return $ecoll;
+    }
 }

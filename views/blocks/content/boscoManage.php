@@ -38,7 +38,10 @@
                                         </p>
                                         <?php if ($this->forest->getData('codice') != '') : ?>
                                         <p class="no-border">
-                                                <a class="button" href="<?php echo $GLOBALS['BASE_URL'];?>daticat.php?id=<?php echo $this->forest->getData('objectid'); ?>">Dati Catastali</a>         		
+                                                <a class="button submit" href="<?php echo $GLOBALS['BASE_URL'];?>daticat.php?id=<?php echo $this->forest->getData('codice'); ?>">Dati Catastali</a>         		
+                                        </p>
+                                        <p class="no-border">
+                                                <a class="button submit" href="<?php echo $GLOBALS['BASE_URL'];?>viabilita.php?id=<?php echo $this->forest->getData('codice'); ?>">Viabilità</a>         		
                                         </p>
                                         <?php endif; ?>
                                         </form>	

@@ -1,7 +1,7 @@
 <div id="content_schedab2_arboree">
     <?php
     if (!isset($b2)) {
-        $b2 = new \forest\entity\B2();
+        $b2 = new \forest\entity\b\B2();
         $b2->loadFromId($_REQUEST['id']);
     }
     $corkcovercomposition = new \forest\attribute\covercomposition\B2();

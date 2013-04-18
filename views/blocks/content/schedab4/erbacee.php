@@ -1,7 +1,7 @@
 <div id="content_schedab4_erbacee">
     <?php
     if (!isset($b4)) {
-        $b4 = new \forest\entity\B4();
+        $b4 = new \forest\entity\b\B4();
         $b4->loadFromId($_REQUEST['id']);
     }
     $herbaceuscompositioncoll = $b4->getHerbaceusCompositionColl();

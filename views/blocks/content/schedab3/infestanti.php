@@ -1,7 +1,7 @@
 <div id="content_schedab3_infestanti">
     <?php
     if (!isset($b3)) {
-        $b3 = new \forest\entity\B3();
+        $b3 = new \forest\entity\b\B3();
         $b3->loadFromId($_REQUEST['id']);
     }
     $pastureweedcoll = $b3->getPastureWeedColl();

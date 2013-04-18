@@ -1,7 +1,7 @@
 <div id="content_schedab3_rinnovazione">
     <?php
     if (!isset($b3)) {
-        $b3 = new \forest\entity\B3();
+        $b3 = new \forest\entity\b\B3();
         $b3->loadFromId($_REQUEST['id']);
     }
     $b3renovationcomposition = new \forest\attribute\B3RenovationComposition();

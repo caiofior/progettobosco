@@ -31,7 +31,7 @@ if (!class_exists('Content')) {
 class B1Coll  extends \ContentColl  {
     /**
      * Forest Reference
-     * @var \forest\entity\B1
+     * @var \forest\entity\b\B1
      */
     protected $form_b1=null;
     /**
@@ -42,9 +42,9 @@ class B1Coll  extends \ContentColl  {
     }
     /**
      * Sets the form reference
-     * @param \forest\entity\B1 $form Entity b1
+     * @param \forest\entity\b\B1 $form Entity b1
      */
-    public function setForm(\forest\entity\B1 $form) {
+    public function setForm(\forest\entity\b\B1 $form) {
 
         $this->form_b1 = $form;
     }
@@ -65,7 +65,7 @@ class B1Coll  extends \ContentColl  {
                 '( SELECT per_arbo.descriz FROM per_arbo WHERE per_arbo.codice=arboree.cod_coper) '
              )
         ));
-        if ($this->form_b1 instanceof \forest\entity\B1) {
+        if ($this->form_b1 instanceof \forest\entity\b\B1) {
             $select->where(' cod_part = ? ',$this->form_b1->getData('cod_part'))
             ->where(' proprieta = ? ',$this->form_b1->getData('proprieta'))
             ->where(' cod_fo = ? ',$this->form_b1->getData('cod_fo'));
@@ -78,7 +78,7 @@ class B1Coll  extends \ContentColl  {
      * @param array $criteria Filtering criteria
      */
     public function countAll(array $criteria = null) {
-        if ($this->form_b1 instanceof \forest\entity\B1) {
+        if ($this->form_b1 instanceof \forest\entity\b\B1) {
             $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
             $select->where(' cod_part = ? ',$this->form_b1->getData('cod_part'))
             ->where(' proprieta = ? ',$this->form_b1->getData('proprieta'))

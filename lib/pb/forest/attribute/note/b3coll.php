@@ -31,7 +31,7 @@ if (!class_exists('Content')) {
 class B3Coll  extends \ContentColl  {
     /**
      * Entity B3 Reference
-     * @var \forest\entity\B3
+     * @var \forest\entity\b\B3
      */
     protected $form_b3=null;
     /**
@@ -42,9 +42,9 @@ class B3Coll  extends \ContentColl  {
     }
     /**
      * Sets the form reference
-     * @param \forest\entity\B3 $form
+     * @param \forest\entity\b\B3 $form
      */
-    public function setForm(\forest\entity\B3 $form) {
+    public function setForm(\forest\entity\b\B3 $form) {
 
         $this->form_b3 = $form;
     }
@@ -73,7 +73,7 @@ class B3Coll  extends \ContentColl  {
                     ')')
             )   
             );
-        if ($this->form_b3 instanceof \forest\entity\B3) {
+        if ($this->form_b3 instanceof \forest\entity\b\B3) {
             $select->where(' cod_part = ? ',$this->form_b3->getData('cod_part'))
             ->where(' proprieta = ? ',$this->form_b3->getData('proprieta'))
             ->where(' cod_fo = ? ',$this->form_b3->getData('cod_fo'))
@@ -87,7 +87,7 @@ class B3Coll  extends \ContentColl  {
      * @param array $criteria Filtering criteria
      */
     public function countAll(array $criteria = null) {
-        if ($this->form_b3 instanceof \forest\entity\B3) {
+        if ($this->form_b3 instanceof \forest\entity\b\B3) {
             $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
             $select->where(' cod_part = ? ',$this->form_b3->getData('cod_part'))
             ->where(' proprieta = ? ',$this->form_b3->getData('proprieta'))

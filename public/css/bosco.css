@@ -17,8 +17,15 @@
     display: inline-block;
     width: 50px;
 }
-#manage_bosco input,select {
+#manage_bosco a.submit {
+    display: block;
+    width: 93px;
+    height: 24px;
+    text-align: center;
+}
+#manage_bosco input {
     width: 100px;
+
 }
 #manage_bosco input.small,select.small {
     width: 50px;

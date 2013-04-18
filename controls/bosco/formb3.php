@@ -1,5 +1,5 @@
 <?php
-$b3 = new \forest\entity\B3();
+$b3 = new \forest\entity\b\B3();
 try{
 $b3->loadFromId($_REQUEST['id']);
 } catch (Exception $e) {
