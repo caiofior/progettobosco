@@ -1,10 +1,10 @@
                         <!-- main -->
 			<div id="main">	
                             <div id="breadcrumb"><a href="<?php echo $GLOBALS['BASE_URL'];?>">Home</a>&gt;<a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php">Elenco boschi</a></div>
-				<div class="post">
+				<div class="post" id="viabilita_main_content">
 					<h2>Viabilità</h2>
-                                        <form action="<?php echo $GLOBALS['BASE_URL'];?>tavole.php?" method="post" id="tavole_list">
-                                        <div class="form_messages tavole_messages" style="display: none;"></div>
+                                        <form action="<?php echo $GLOBALS['BASE_URL'];?>viabilita.php?id=<?php echo $this->forest->getData('codice');?>" method="post" id="viabilita_list">
+                                        <div class="form_messages viabilita_messages" style="display: none;"></div>
                                         <p>Seleziona una strada.</p>
                                         <p >	
                                             <label for="search">Cerca</label>

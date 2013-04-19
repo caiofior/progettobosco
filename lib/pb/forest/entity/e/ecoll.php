@@ -48,7 +48,15 @@ class EColl extends \forest\template\EntityColl {
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
         $select->setIntegrityCheck(false);
-        
+        if (key_exists('codiope', $criteria) && $criteria['codiope'] != '') {
+                 $select->where('schede_e.codiope = ? ',$criteria['codiope']);
+        }
+        if (key_exists('search', $criteria) && $criteria['search'] != '') {
+                 $select->where('(schede_e.nome_strada LIKE ? OR schede_e.da_valle  LIKE ? OR schede_e.a_monte  LIKE ? )','%'.$criteria['search'].'%');
+        }
+        if ($this->forest instanceof \forest\Forest) {
+                 $select->where('schede_e.proprieta = ?', $this->forest->getData('codice'));
+        }
         return $select;
     }
     /**

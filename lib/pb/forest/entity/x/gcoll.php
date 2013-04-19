@@ -42,7 +42,7 @@ class GColl extends \forest\template\EntityColl {
     }
     /**
      * Set the form G1
-     * @param \forest\entity\x\G1 $d
+     * @param \forest\entity\x\G1 $g1
      */
     public function setFormG1(\forest\entity\x\G1 $g1) {
         $this->g1 = $g1;

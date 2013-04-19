@@ -1,10 +1,11 @@
-                                                        <div id="content_tavole_list" >       
+                                                        <div id="content_viabilita_list" >       
                                                         <ul >
                                                             <?php 
                                                                 if (!isset($user))
                                                                     $user = $this->user;
-                                                                if (!isset($ecoll))
-                                                                    $ecoll = $this->forest->getEColl();
+                                                                if (!isset($forest))
+                                                                    $forest = $this->forest;
+                                                                    $ecoll = $forest->getEColl();
                                                                 if (!key_exists('start', $_GET))
                                                                     $_GET['start']=0;
                                                                 if (!key_exists('search', $_GET))
@@ -18,25 +19,29 @@
                                                                     'start'=>$_GET['start'],
                                                                     'length'=>$items_in_page,
                                                                     'search'=>$_GET['search'],
-                                                                    'tipo'=>$_GET['tipo'],
                                                                 )
                                                                 );
                                                             foreach($ecoll->getItems() as $e) :
                                                             ?>
                                                             <li >
-                                                                <a href="tavole.php?action=manage&codice=<?php echo $e->getData('codice'); ?>" >
+                                                                <a href="viabilita.php?action=manage&id=<?php echo $forest->getData('codice');?>&e_id=<?php echo $e->getData('objectid'); ?>" data-update="content_viabilita_edit" data-destination="main">
                                                                 <img class="actions edit" src="images/empty.png" title="Visualizza/Modifica"/>
                                                                 </a>
                                                                 <?php if ($user->getData('is_admin') == 't') :?>
-                                                                <a href="tavole.php?deletetable=1&codice=<?php echo $e->getData('codice'); ?>" >
+                                                                <a href="viuabilita.php?delete=1&id=<?php echo $forest->getData('codice');?>&e_id=<?php echo $e->getData('objectid'); ?>" >
                                                                 <img class="actions delete" src="images/empty.png" title="Cancella"/>
                                                                 </a>
                                                                 <?php endif; ?>
-                                                                Tavola <br/>
-                                                                Codice: <?php echo $e->getData('codice');?><br/>
-                                                                Descrizione: <?php echo $e->getData('descriz');?><br/>
-                                                                Tipo: <?php echo $e->getRawData('tipo_descriz');?><br/>
-                                                                Autore: <?php echo $e->getData('autore');?><br/>
+                                                                Strada <br/>
+                                                                <?php if ($e->getData('nome_strada') != '') :?>
+                                                                Nome: <?php echo $e->getData('nome_strada');?><br/>
+                                                                <?php endif;
+                                                                if ($e->getData('da_valle') != '') : ?>
+                                                                Da: <?php echo $e->getData('da_valle');?><br/>
+                                                                <?php endif;
+                                                                if ($e->getData('a_monte') != '') : ?>
+                                                                A: <?php echo $e->getRawData('a_monte');?><br/>
+                                                                <?php endif; ?>
                                                             </li>
                                                             <?php endforeach; ?>
                                                         </ul>
@@ -70,11 +75,11 @@
                                                         if ($start>0) {
                                                             $ections['prev']=array(
                                                                 'url'=>'href="?'.$baseurl.'&start='.max($start-$items_in_page,0).'"',
-                                                                'data-update'=>'data-update="content_tavole_list"'
+                                                                'data-update'=>'data-update="content_viabilita_list"'
                                                             );
                                                             $ections['first']=array(
                                                                 'url'=>'href="?'.$baseurl.'&start=0"',
-                                                                'data-update'=>'data-update="content_tavole_list"'
+                                                                'data-update'=>'data-update="content_viabilita_list"'
                                                             );
                                                         }
                                                         
@@ -82,11 +87,11 @@
                                                             
                                                             $ections['next']=array(
                                                                 'url'=>'href="?'.$baseurl.'&start='.min($start+$items_in_page,$last_page).'"',
-                                                                'data-update'=>'data-update="content_tavole_list"'
+                                                                'data-update'=>'data-update="content_viabilita_list"'
                                                             );
                                                              $ections['last']=array(
                                                                 'url'=>'href="?'.$baseurl.'&start='.$last_page .'"',
-                                                                'data-update'=>'data-update="content_tavole_list"'
+                                                                'data-update'=>'data-update="content_viabilita_list"'
                                                             );
                                                         }
                                                         ?>

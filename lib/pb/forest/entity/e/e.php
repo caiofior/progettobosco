@@ -69,5 +69,15 @@ class E extends \forest\template\Entity {
             $where .= $this->table->getAdapter()->quoteInto('strada = ? AND ', $this->data['strada']);
             $this->table->delete($where);
     }
+     /**
+     * Gets the associated collector
+     * @return \forest\attribute\Collector
+     */
+    public function getCollector() {
+        $collector = new \forest\attribute\Collector();
+        if (key_exists('codiope', $this->data))
+            $collector->loadFromId($this->data['codiope']);
+        return $collector;
+    }
   
 } 
