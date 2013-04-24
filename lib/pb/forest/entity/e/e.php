@@ -79,5 +79,15 @@ class E extends \forest\template\Entity {
             $collector->loadFromId($this->data['codiope']);
         return $collector;
     }
+     /**
+     * Return the associated E1 Collection
+     * @return \forest\entity\e\E1Coll
+     */
+    public function getE1Coll () {
+        $e1coll = new \forest\entity\e\E1Coll();
+        $e1coll->setFormE($this);
+        $e1coll->loadAll();
+        return $e1coll;
+    }
   
 } 

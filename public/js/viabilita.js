@@ -25,3 +25,38 @@ $("#codiope_descriz").autocomplete({
 }).focus(function() {
     $(this).val("").autocomplete("search","")
 });
+/**
+ * Manages autocomplete codinter cod coltu
+ **/
+function autocompleteCodInter () {
+        $("#cod_inter_descr, #content_viabilita_e1 input.cod_inter").autocomplete({
+        minLength: 0,
+        source: "bosco.php?task=autocomplete&action=cod_inter",
+        select: function( event, ui ) {
+            $("#cod_inter").val(ui.item.id );
+        },
+        change: function( event, ui ) {
+                if ( !ui.item ) {
+                      $("cod_inter_descr").val("");
+                }
+                el = $(this);
+                old = el.data("old-value");
+                if (typeof old == "string" && el.val() != "" && el.val() != old) {
+                    arboree_id = $(this).data("arboree-id");
+                    $("#cod_coper_"+arboree_id).trigger("change");
+                }
+        }
+    }).focus(function() {
+        $(this).val("").autocomplete("search","")
+    }).blur(function () {
+        el = $(this);
+        old = el.data("old-value");
+        if (typeof old == "string" && el.val() == "") {
+            el.val(old);
+        }
+    });
+}
+autocompleteCodInter ();
+$(document).ajaxComplete(function() {
+    autocompleteCodInter ();
+});

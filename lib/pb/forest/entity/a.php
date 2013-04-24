@@ -138,7 +138,7 @@ class A extends \forest\template\Entity {
      * @return \forest\entity\b\BColl
      */
     public function getBColl () {
-        $bcoll = new b\BColl();
+        $bcoll = new \forest\entity\b\BColl();
         $bcoll->setFormA($this);
         $bcoll->loadAll();
         return $bcoll;

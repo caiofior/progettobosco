@@ -79,7 +79,7 @@ abstract class Entity extends \Content {
         }
     }
     /**
-     * Return the fieelds associated to an entity
+     * Return the fields associated to an entity
      * @return boolean|array
      */
     public function getFields () {

@@ -63,6 +63,8 @@ if (!class_exists('Forest')) {
         
         'entity'.DIRECTORY_SEPARATOR.'e'.DIRECTORY_SEPARATOR.'e.php',
         'entity'.DIRECTORY_SEPARATOR.'e'.DIRECTORY_SEPARATOR.'ecoll.php',
+        'entity'.DIRECTORY_SEPARATOR.'e'.DIRECTORY_SEPARATOR.'e1.php',
+        'entity'.DIRECTORY_SEPARATOR.'e'.DIRECTORY_SEPARATOR.'e1coll.php',
         
         'attribute'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'piu1_3.php',
         'attribute'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'piu1_3coll.php',
@@ -142,6 +144,8 @@ if (!class_exists('Forest')) {
         'attribute'.DIRECTORY_SEPARATOR.'table'.DIRECTORY_SEPARATOR.'table5.php',
         'attribute'.DIRECTORY_SEPARATOR.'relivetype.php',
         'attribute'.DIRECTORY_SEPARATOR.'relivetypecoll.php',
+        'attribute'.DIRECTORY_SEPARATOR.'viabilityintervent.php',
+        'attribute'.DIRECTORY_SEPARATOR.'viabilityinterventcoll.php',
         );
     if (!isset($file)) $file = array();
     $files = array_diff($files, $file);

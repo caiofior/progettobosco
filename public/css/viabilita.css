@@ -98,3 +98,112 @@ input[type='radio'],input[type='checkbox'] {
 #nome_strada_container {
     width: 200px;
 }
+#da_valle_container {
+    margin-top: -40px;
+    margin-left: 220px;
+    width: 200px;
+}
+#a_monte_container {
+    margin-top: -40px;
+    margin-left: 440px;
+    width: 200px;
+}
+#class_amm_container {
+    width: 380px;
+}
+#class_prop_container {
+    margin-top: -80px;
+    margin-left: 400px;
+    width: 350px;
+}
+#larg_min_container {
+    width: 100px;
+}
+#larg_prev_container {
+    margin-top: -40px;
+    margin-left: 120px;
+    width: 100px;
+}
+#raggio_curve_container {
+    margin-top: -40px;
+    margin-left: 240px;
+    width: 100px;
+}
+#fondo_container {
+    margin-top: -60px;
+    margin-left: 360px;
+    width: 150px;
+}
+#pend_media_container {
+    width: 100px;
+}
+#pend_max_container {
+    margin-top: -40px;
+    margin-left: 120px;
+    width: 100px;
+}
+#contropend_container {
+    margin-top: -40px;
+    margin-left: 240px;
+    width: 100px;
+}
+#q_piazzole_container {
+    margin-top: -60px;
+    margin-left: 360px;
+    width: 150px;
+}
+#accesso_container {
+    width: 380px;
+}
+#transitabi_container {
+    margin-top: -60px;
+    margin-left: 400px;
+    width: 380px;
+}
+#manutenzione_container {
+    width: 380px;
+}
+#urgenza_container {
+    margin-top: -80px;
+    margin-left: 400px;
+    width: 380px;
+}
+#specifica_container {
+    margin-top: -40px;
+    margin-left: 600px;
+    width: 180px;
+}
+/**
+* e1 container
+*/
+#e1_container {
+
+}
+
+#newe1 {
+    top: 24px;
+    left: 70px;
+}
+#content_viabilita_e1 {
+    top: 124px;
+    left: 70px;
+    width: 700px;
+}
+#content_viabilita_e1  div,
+#newe1  div{
+    position: relative;
+    clear: both;
+}
+#content_viabilita_e1 div span,
+#newe1 div span {
+    float:left;
+    width: 220px;
+    text-align: center;
+    word-break: break-all;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #000000;
+}
+#e1_container .scrollcontrols span{
+    width: 65px;
+}

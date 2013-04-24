@@ -181,6 +181,22 @@ switch ($_REQUEST['action']) {
             $response[]=$data;
         }
     break;
+    case 'cod_inter' :
+        $codintcoll = new forest\attribute\ViabilityInterventColl();
+        $codintcoll->loadAll(array(
+            'start'=>0,
+            'length'=>10,
+            'mass_esteem'=>true,
+            'search'=>$_REQUEST['term']
+            ));
+        foreach($codintcoll->getItems() as $codint) {
+            $data = array(
+                'id'=>$codint->getData('codice'),
+                'value'=>$codint->getData('descriz')
+            );
+            $response[]=$data;
+        }
+    break;
 }
 header('Content-type: application/json');
 echo Zend_Json::encode($response);
