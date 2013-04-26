@@ -141,4 +141,7 @@ $preserveid = array(
     
     'schede_n',
     'note_n',
+    
+    'compresa',
+    'partcomp'
     );
