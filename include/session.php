@@ -40,5 +40,10 @@
  }
  else if (is_numeric($session['user_id'])) {
      $user = new User();
+     try{
      $user->loadFromId($session['user_id']);
+     } catch (Exception $e) {
+         session_destroy();
+     }
   }
+ 

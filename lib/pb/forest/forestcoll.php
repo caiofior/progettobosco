@@ -50,27 +50,55 @@ class ForestColl extends \ContentColl {
      * @return \Zend_Db_Select
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
-        $select->setIntegrityCheck(false)
-        ->from($this->content->getTable()->info('name'),array(
-            '*',
-            'propriet_codice_raw'=>'codice',
-            'propriet_objectid_raw'=>'objectid',
-            'read_users'=>new \Zend_Db_Expr(
-                    '('.
-                    $select->getAdapter()->select()->from('user_propriet',
-                            new \Zend_Db_Expr('STRING_AGG(CAST("user_propriet"."user_id" AS TEXT),\'|\')')
-                            )->where('user_propriet.propriet_codice = propriet.codice').
-                    ')'),
-            'write_users'=>new \Zend_Db_Expr(
-                    '('.
-                    $select->getAdapter()->select()->from('user_propriet',
-                            new \Zend_Db_Expr('STRING_AGG(CAST("user_propriet"."user_id" AS TEXT),\'|\')')
-                            )->where('user_propriet.propriet_codice = propriet.codice AND user_propriet.write=\'1\'').
-                    ')')
-            ))
-        ->join('diz_regioni','diz_regioni.codice = propriet.regione');
-        
-        if ($this->filterByUser) {
+        switch (get_class($this->content->getTable()->getAdapter())) {
+            
+            case 'Zend_Db_Adapter_Mysqli':
+                    $select->setIntegrityCheck(false)
+                    ->from($this->content->getTable()->info('name'),array(
+                        '*',
+                        'propriet_codice_raw'=>'codice',
+                        'propriet_objectid_raw'=>'objectid',
+                        'read_users'=>new \Zend_Db_Expr(
+                                '('.
+                                $select->getAdapter()->select()->from('user_propriet',
+                                        new \Zend_Db_Expr('GROUP_CONCAT(`user_propriet`.`user_id` SEPARATOR "|") ')
+                                        )->where('user_propriet.propriet_codice = propriet.codice').
+                                ')'),
+                        'write_users'=>new \Zend_Db_Expr(
+                                '('.
+                                $select->getAdapter()->select()->from('user_propriet',
+                                        new \Zend_Db_Expr('GROUP_CONCAT(`user_propriet`.`user_id` SEPARATOR "|") ')
+                                        )->where('user_propriet.propriet_codice = propriet.codice AND user_propriet.`write`=\'1\'').
+                                ')')
+                        ))
+                    ->join('diz_regioni','diz_regioni.codice = propriet.regione');
+            break;
+            case 'Zend_Db_Adapter_Pgsql':
+                $select->setIntegrityCheck(false)
+                ->from($this->content->getTable()->info('name'),array(
+                    '*',
+                    'propriet_codice_raw'=>'codice',
+                    'propriet_objectid_raw'=>'objectid',
+                    'read_users'=>new \Zend_Db_Expr(
+                            '('.
+                            $select->getAdapter()->select()->from('user_propriet',
+                                    new \Zend_Db_Expr('STRING_AGG(CAST("user_propriet"."user_id" AS TEXT),\'|\')')
+                                    )->where('user_propriet.propriet_codice = propriet.codice').
+                            ')'),
+                    'write_users'=>new \Zend_Db_Expr(
+                            '('.
+                            $select->getAdapter()->select()->from('user_propriet',
+                                    new \Zend_Db_Expr('STRING_AGG(CAST("user_propriet"."user_id" AS TEXT),\'|\')')
+                                    )->where('user_propriet.propriet_codice = propriet.codice AND user_propriet.write=\'1\'').
+                            ')')
+                    ))
+                ->join('diz_regioni','diz_regioni.codice = propriet.regione');
+        break;
+        }
+        if (
+                $this->user instanceof \User &&
+                is_numeric($this->user->getData('id')) &&
+                $this->filterByUser ) {
             $select->where(
                     new \Zend_Db_Expr(
                     ' ? IN ('.
@@ -87,12 +115,15 @@ class ForestColl extends \ContentColl {
         if (key_exists('regione', $criteria) && $criteria['regione'] != '') {
             $select->where('regione = ?', $criteria['regione']); 
         }
-        if ($this->user instanceof \User && !$this->filterByUser) {
+        if (
+                $this->user instanceof \User &&
+                is_numeric($this->user->getData('id')) &&
+                !$this->filterByUser) {
             $select->order(array(
                     new \Zend_Db_Expr(
                     $this->user->getData('id').' IN ('.
                     $select->getAdapter()->select()->from('user_propriet',
-                            new \Zend_Db_Expr('"user_propriet"."user_id"')
+                            new \Zend_Db_Expr('user_propriet.user_id')
                             )->where('user_propriet.propriet_codice = propriet.codice').
                     ') DESC')
                     ,'descrizion')
@@ -111,7 +142,11 @@ class ForestColl extends \ContentColl {
             $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'),'COUNT(*)');
             if (key_exists('search', $criteria))
                 $select->where('descrizion LIKE ?', $criteria['search'].'%');
-            if ($this->filterByUser)
+            if (
+                    $this->user instanceof \User &&
+                    is_numeric($this->user->getData('id')) &&
+                    $this->filterByUser
+                )
                 $select->where(new \Zend_Db_Expr($this->user->getData('id').' IN ( SELECT "user_id" FROM "user_propriet" WHERE "user_propriet"."propriet_codice" = "propriet"."codice" ) '));
             return intval($this->content->getTable()->getAdapter()->fetchOne($select));
         }

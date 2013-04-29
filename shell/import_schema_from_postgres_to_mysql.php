@@ -25,8 +25,22 @@ $all_tables = $db->fetchCol('SELECT table_name FROM information_schema.tables WH
 $common_table = array_diff($all_tables, $preserveid);
 $all_tables = array_merge($common_table, $preserveid);
 foreach ($all_tables as $table) {
+    $filename_or = $dir.'output'.DIRECTORY_SEPARATOR.$table.'_or.csv';
     $filename = $dir.'output'.DIRECTORY_SEPARATOR.$table.'.csv';
-    exec('sudo -u '.$DB_CONFIG['username'].' psql '.$DB_CONFIG['dbname'].' -c "COPY '.$table.' TO \''.$filename.'\' WITH CSV "');
-    echo exec('mysqlimport -h '.$db1[1].' -u '.$db1[2].$pass.' --local --fields-terminated-by="," --fields-enclosed-by="" '.$db1[4].' '.$filename);
+    exec('sudo -u '.$DB_CONFIG['username'].' psql '.$DB_CONFIG['dbname'].' -c "COPY \"'.$table.'\" TO \''.$filename_or.'\' WITH CSV "');
+    $file_input = fopen($filename_or,'r');
+    $file_output = fopen($filename,'w');
+    while ($row = fgets($file_input)) {
+        var_dump(strpos( $row,',t,'));
+        while (strpos($row,',t,' ) !== false)
+            $row = str_replace(',t,', ',1,', $row);
+        $row = preg_replace('/^t,/', '1,', $row);
+        $row = preg_replace('/,t$/', ',1', $row);
+        fputs($file_output,$row);
+    }
+    fclose($file_input);
+    fclose($file_output);
+    echo exec('mysqlimport -h '.$db1[1].' -u '.$db1[2].$pass.' --local --fields-terminated-by="," --fields-enclosed-by="" '.$db1[4].' '.$filename).PHP_EOL;
+    unlink($filename_or);
     unlink($filename);
 }

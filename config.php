@@ -35,6 +35,14 @@ $SITE_NAME='Progettobosco';
  * Database configuration
  */
 $DB_CONFIG = array(
+    'adapter'   => 'Mysqli', 
+    'host'      => 'localhost', 
+    'port'      => '3306', 
+    'username'  => 'root', 
+    'password'  => '', 
+    'dbname'    => 'progettobosco_master'
+    );
+$DB_CONFIG = array(
     'adapter'   => 'Pgsql', 
     'host'      => 'localhost', 
     'port'      => '5432', 

@@ -75,9 +75,14 @@ abstract class ContentColl {
                 key_exists('length',$criteria )
             )
         $select->limit($criteria['length'], $criteria['start']);
-        $data = $this->content->getTable()->fetchAll(
-                $select
-                )->toArray();
+        $data=array();
+        try {
+            $data = $this->content->getTable()->fetchAll(
+                    $select
+                    )->toArray();
+        } catch (Exception $e) {
+            $GLOBALS['firephp']->log($select->assemble());
+        }
         $this->items=array();
         foreach($data as $dataitem) {
             $item = clone $this->content;

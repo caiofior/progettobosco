@@ -30,8 +30,6 @@ class User extends Content {
     public function loadFromId($id) {
         $where = $this->table->getAdapter()->quoteInto('id = ?', $id); 
         $updated = $this->table->update(array('lastlogin_datetime'=>'NOW()'), $where);
-        if ($updated <> 1)
-            throw new Exception('User not found',1301130904);
         parent::loadFromId($id);
     }
      /**
@@ -115,7 +113,7 @@ class User extends Content {
     'user',
     'username',
     'password',
-    'MD5(?) AND "active" AND "confirmed"'
+    'MD5(?) AND '.Zend_Db_Table::getDefaultAdapter()->quoteIdentifier('active').' AND '.Zend_Db_Table::getDefaultAdapter()->quoteIdentifier('confirmed').''
 );
     }
     /**
@@ -167,7 +165,10 @@ class User extends Content {
     * @return boolean
     */
    public function isUserForestAdmin(forest\Forest $forest ) {
-       if ($this->data['is_admin'] == 't')
+       if (
+               key_exists('is_admin', $this->data) && 
+                ($this->data['is_admin'] == 't' || $this->data['is_admin'] == 1)
+        )
            return true;
        if (!is_array($forest->getRawData()) || !$forest->getRawData('write_users'))
            return false;
@@ -178,6 +179,8 @@ class User extends Content {
     * @return bool
     */
    public function isAdmin ()  {
-       return $this->data['is_admin'] == 't';
+       return 
+               key_exists('is_admin', $this->data) &&
+               ($this->data['is_admin'] == 't' || $this->data['is_admin'] == 1);
    }
 }
