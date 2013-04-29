@@ -126,11 +126,11 @@ function pg2mysql_large($infilename,$outfilename) {
 
 }
 
-function pg2mysql(&$input, $header=true)
+function pg2mysql($input, $header=true)
 {
 	global $config;
 
-	if(is_array(&$input)) {
+	if(is_array($input)) {
 		$lines=$input;
 	} else {
 		$lines=split("\n",$input);
@@ -161,7 +161,7 @@ function pg2mysql(&$input, $header=true)
 
 		if(substr($line,0,2)==");" && $in_create_table) {
 			$in_create_table=false;
-			$line=") TYPE={$config['engine']};\n\n";
+			$line=") ;\n\n";
 
 			$output.=$tbl_extra;
 			$output.=$line;
@@ -205,7 +205,7 @@ function pg2mysql(&$input, $header=true)
 				$num=$regs[1];
 				$line=ereg_replace(" DEFAULT \(([0-9\-]*)\)"," DEFAULT $num ",$line);
 			}
-			$line=ereg_replace(" DEFAULT nextval\(.*\) "," auto_increment ",$line);
+			$line=ereg_replace(" DEFAULT nextval\(.*\)"," auto_increment ",$line);
 			$line=ereg_replace("::.*,",",",$line);
 			$line=ereg_replace("::.*$","\n",$line);
 			if(ereg("character\(([0-9]*)\)",$line,$regs)) {
@@ -224,7 +224,10 @@ function pg2mysql(&$input, $header=true)
 			$line=str_replace(" time without time zone"," time",$line);
 
 			$line=str_replace(" timestamp DEFAULT now()"," timestamp DEFAULT CURRENT_TIMESTAMP",$line);
-
+                        //
+                        $line=str_replace(" int2 "," `int2` ",$line);
+                        $line=str_replace(" int3 "," `int3` ",$line);
+                        $line=str_replace(" write "," `write` ",$line);
 			if(strstr($line,"auto_increment")) {
 				$field=getfieldname($line);
 				$tbl_extra.=", PRIMARY KEY(`$field`)\n";
@@ -333,7 +336,8 @@ function pg2mysql(&$input, $header=true)
 			$pkey=$line;
 
 			$linenumber++;
-			$line=$lines[$linenumber];
+                        if (key_exists($linenumber, $lines))
+                            $line=$lines[$linenumber];
 
 			if(strstr($line," PRIMARY KEY ") && substr($line,-3,-1)==");") {
 				//looks like we have a single line PRIMARY KEY definition, lets go ahead and add it
