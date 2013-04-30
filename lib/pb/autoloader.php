@@ -22,9 +22,14 @@ if (!class_exists('Zend_Loader')) {
     Zend_Loader::loadClass('Zend_Cache');
     Zend_Loader::loadClass('Zend_Cache_Core');
     Zend_Loader::loadClass('Zend_Cache_Backend_Apc');
+    Zend_Loader::loadClass('Zend_Cache_Backend_File');
+    
     if (!key_exists('PHPUNIT',$GLOBALS) || !$GLOBALS['PHPUNIT']) {
         $GLOBALS['CACHE'] = new Zend_Cache_Core(array('automatic_serialization'=>true));
-        $GLOBALS['CACHE']->setBackend(new Zend_Cache_Backend_Apc());
+        /*if (in_array('apc',get_loaded_extensions()) || false)
+            $GLOBALS['CACHE']->setBackend(new Zend_Cache_Backend_Apc());
+        else */
+            $GLOBALS['CACHE']->setBackend(new Zend_Cache_Backend_File());
         Zend_Db_Table_Abstract::setDefaultMetadataCache($GLOBALS['CACHE']);
     }
     require (__DIR__.DIRECTORY_SEPARATOR.'core'.DIRECTORY_SEPARATOR.'content.php');
