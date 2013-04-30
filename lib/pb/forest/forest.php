@@ -44,6 +44,12 @@ class Forest extends template\Entity {
      */
     public function loadFromId($id) {
         parent::loadFromId($id);
+        if (
+                !is_array($this->data) ||
+                !key_exists('codice', $this->data) ||
+                !is_numeric($this->data['codice'])
+                )
+                throw new \Exception('Forest not found',1304301109);
         $this->addForestCompartmentCount();
     }
      /**

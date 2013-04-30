@@ -31,7 +31,6 @@ foreach ($all_tables as $table) {
     $file_input = fopen($filename_or,'r');
     $file_output = fopen($filename,'w');
     while ($row = fgets($file_input)) {
-        var_dump(strpos( $row,',t,'));
         while (strpos($row,',t,' ) !== false)
             $row = str_replace(',t,', ',1,', $row);
         $row = preg_replace('/^t,/', '1,', $row);

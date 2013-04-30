@@ -67,7 +67,7 @@ abstract class ContentColl {
                 $sort = ' ASC';
                 if (key_exists('sSortDir_'.$c, $criteria))
                     $sort = ' '.strtoupper($criteria['sSortDir_'.$c]);
-                $select->order($this->columns[$criteria['iSortCol_'.$c]].' '.$sort);
+                $select->order($this->content->getTable()->info('name').'.'.$this->columns[$criteria['iSortCol_'.$c]].' '.$sort);
             }
         }
         if (
@@ -82,6 +82,7 @@ abstract class ContentColl {
                     )->toArray();
         } catch (Exception $e) {
             $GLOBALS['firephp']->log($select->assemble());
+            throw $e;
         }
         $this->items=array();
         foreach($data as $dataitem) {

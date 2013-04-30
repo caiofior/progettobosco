@@ -18,12 +18,12 @@
             <img class="actions addnew" src="images/empty.png" title="Aggiungi una particella"/>
         </a>
         <p class="no-border">
-        <a class="button vercalc" href="<?php echo $GLOBALS['BASE_URL']; ?>daticat.php?action=vercalc&id=<?php echo $this->forest->getData('objectid'); ?>">Calcola/Verifica dati</a>
+        <a class="button vercalc" href="<?php echo $GLOBALS['BASE_URL']; ?>daticat.php?action=vercalc&id=<?php echo $this->forest->getData('codice'); ?>">Calcola/Verifica dati</a>
             </p>
         <p class="no-border">
-        <a class="button surfacerecalc" href="<?php echo $GLOBALS['BASE_URL']; ?>daticat.php?action=surfacerecalc&id=<?php echo $this->forest->getData('objectid'); ?>">Aggiorna superficie totale</a>
+        <a class="button surfacerecalc" href="<?php echo $GLOBALS['BASE_URL']; ?>daticat.php?action=surfacerecalc&id=<?php echo $this->forest->getData('codice'); ?>">Aggiorna superficie totale</a>
         </p>
-        <table cellpadding="0" cellspacing="0" border="0" class="display" id="cadastral" data-objectid="<?php echo $this->forest->getData('objectid'); ?>">
+        <table cellpadding="0" cellspacing="0" border="0" class="display" id="cadastral" data-objectid="<?php echo $this->forest->getData('codice'); ?>">
             <thead>
                 <tr>
                     <th colspan="13">Particella catastale</th>

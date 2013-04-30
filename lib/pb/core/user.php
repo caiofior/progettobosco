@@ -31,6 +31,12 @@ class User extends Content {
         $where = $this->table->getAdapter()->quoteInto('id = ?', $id); 
         $updated = $this->table->update(array('lastlogin_datetime'=>'NOW()'), $where);
         parent::loadFromId($id);
+        if (
+                !is_array($this->data) ||
+                !key_exists('id', $this->data) ||
+                !is_numeric($this->data['id'])
+                )
+                throw new \Exception('User not found',1301130904);
     }
      /**
      * Loads user from its username
