@@ -301,4 +301,13 @@ WHERE usosuolo.codice <> \'\' AND proprieta=\''.$this->data['codice'].'\''));
         $ecoll->setForest($this);
         return $ecoll;
     }
+    /**
+     * Gets the associated CompresaColl collection
+     * @return \forest\CompresaColl
+     */
+    public function getCompresaColl () {
+        $compresacoll = new \forest\CompresaColl();
+        $compresacoll->setForest($this);
+        return $compresacoll;
+    }
 }

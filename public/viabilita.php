@@ -2,13 +2,12 @@
 /**
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
- * Dati catastali page contoller
+ * Viabilità page contoller
  */
 require (__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'include'.DIRECTORY_SEPARATOR.'pageboot.php');
 $message = '';
 $header = 'header'.DIRECTORY_SEPARATOR.'viabilita.php';
-//$content = 'content'.DIRECTORY_SEPARATOR.'viabilita.php';
-$content = 'content'.DIRECTORY_SEPARATOR.'viabilita'.DIRECTORY_SEPARATOR.'edit.php';
+$content = 'content'.DIRECTORY_SEPARATOR.'viabilita.php';
 $sidebar = 'general'.DIRECTORY_SEPARATOR.'sidebar.php';
 if ($user === false) {
     $header = 'general'.DIRECTORY_SEPARATOR.'header.php';

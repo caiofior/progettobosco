@@ -19,8 +19,11 @@ if (!class_exists('Forest')) {
         'template'.DIRECTORY_SEPARATOR.'attributecoll.php',
         'forest.php',
         'forestcoll.php',
+        'compresa.php',
+        'compresacoll.php',
         'region.php',
         'regioncoll.php',
+        
         'entity'.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'formbx.php',
         'entity'.DIRECTORY_SEPARATOR.'a.php',
         'entity'.DIRECTORY_SEPARATOR.'acoll.php',
