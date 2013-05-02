@@ -45,9 +45,13 @@ class User extends Content {
     public function loadFromUsername($username) {
         $where = $this->table->getAdapter()->quoteInto('username = ?', $username); 
         $updated = $this->table->update(array('lastlogin_datetime'=>'NOW()'), $where);
-        if ($updated <> 1)
-            throw new Exception('User not found',1301130908);
         $this->data = $this->table->fetchRow($where)->toArray();
+        if (
+        !is_array($this->data) ||
+        !key_exists('id', $this->data) ||
+        !is_numeric($this->data['id'])
+        )
+        throw new \Exception('User not found',1301130904);
     }
      /**
      * Loads user from its confirmation code
@@ -56,9 +60,13 @@ class User extends Content {
     public function loadFromConformationCode($confirmation_code) {
         $where = $this->table->getAdapter()->quoteInto('confirmation_code = ?', $confirmation_code); 
         $updated = $this->table->update(array('lastlogin_datetime'=>'NOW()'), $where);
-        if ($updated <> 1)
-            throw new Exception('User not found',1301130908);
         $this->data = $this->table->fetchRow($where)->toArray();
+                if (
+                !is_array($this->data) ||
+                !key_exists('id', $this->data) ||
+                !is_numeric($this->data['id'])
+                )
+                throw new \Exception('User not found',1301130904);
     }
     /**
      * Adds a new user, please save the password in clear in password_new

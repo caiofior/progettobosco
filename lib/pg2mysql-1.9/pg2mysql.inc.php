@@ -396,7 +396,14 @@ function pg2mysql($input, $header=true)
 				}
 			}
 		}
-
+                if(substr($line, 0, 15) == 'ALTER SEQUENCE ') {
+                        preg_match('/ALTER SEQUENCE .* OWNED BY "?([a-zA-Z0-9_]*)"?."?([a-zA-Z0-9_]*)"?;/',$line,$matches);
+			$tablename=$matches[1];
+			$column=$matches[2];
+			if($tablename && $column) {
+                            	$output.="ALTER IGNORE TABLE `{$tablename}` CHANGE COLUMN {$column}  {$column} INT(11) NOT NULL AUTO_INCREMENT ;\n";
+			}
+                }
 		$linenumber++;
 	}
 	return $output;

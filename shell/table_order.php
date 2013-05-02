@@ -2,7 +2,7 @@
 
 $tables = array(
     //Observer,
-    //'rilevato',
+    'rilevato',
     //Forest types
    //'diz_tipi',
     //Tables
@@ -79,7 +79,9 @@ $tables = array(
     'problemi_b1',
     'problemi_b2',
     'problemi_b3',
-    'problemi_b4'
+    'problemi_b4',
+    //Other
+    'tipi_for'
 );
 $preserveid = array(
     'schede_a',
@@ -143,5 +145,6 @@ $preserveid = array(
     'note_n',
     
     'compresa',
-    'partcomp'
+    'partcomp',
+    'tipi_for'
     );
