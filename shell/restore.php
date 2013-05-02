@@ -4,7 +4,7 @@ switch ($DB_CONFIG['adapter']) {
     case 'Pgsql':
         echo exec ('sudo -u '.$DB_CONFIG['username'].' psql -c "DROP DATABASE '.$DB_CONFIG['dbname'].';"');
         echo exec ('sudo -u '.$DB_CONFIG['username'].' psql -c "CREATE DATABASE '.$DB_CONFIG['dbname'].';"');
-        echo exec ('sudo -u '.$DB_CONFIG['username'].' psql '.$DB_CONFIG['dbname'].' < '.__DIR__.DIRECTORY_SEPARATOR.$DB_CONFIG['dbname'].'.sql;');
+        echo exec ('sudo -u '.$DB_CONFIG['username'].' psql '.$DB_CONFIG['dbname'].' < '.__DIR__.DIRECTORY_SEPARATOR.'pg_'.$DB_CONFIG['dbname'].'.sql;');
            break;
     case 'Mysqli':
         $pass = '';
