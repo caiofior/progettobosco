@@ -101,7 +101,7 @@ else if (key_exists('action', $_REQUEST)) {
         case 'manage':
             $view->forest = new forest\Forest();
             if (key_exists('id', $_REQUEST)) {
-                $view->forest->loadFromId($_REQUEST['id']);
+                $view->forest->loadFromCode($_REQUEST['id']);
             }
             $content = 'content'.DIRECTORY_SEPARATOR.'boscoManage.php';
             if (key_exists('update', $_REQUEST)) {
@@ -146,7 +146,7 @@ else if (key_exists('action', $_REQUEST)) {
                         ));
                         }
                     $view->forest->addOwner($user,1);
-                    $formErrors->setOkMessage('Lo modifiche sono state salvate.<script type="text/javascript">window.location.href = "'.$BASE_URL.'bosco.php??action=manage&id='.$view->forest->getData('id').'"</script>');
+                    $formErrors->setOkMessage('Le modifiche sono state salvate.<script type="text/javascript">window.location.href = "'.$BASE_URL.'bosco.php??action=manage&id='.$view->forest->getData('id').'"</script>');
                     
                     $log->insert();
                     

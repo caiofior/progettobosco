@@ -13,7 +13,7 @@
      return false; 
  });
  /**
-  * Set focu to the top
+  * Set focus to the top
   */
 $(document).on("click", "a[data-update]",function () {
     $(window).scrollTop(0);

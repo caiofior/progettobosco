@@ -45,7 +45,9 @@ class User extends Content {
     public function loadFromUsername($username) {
         $where = $this->table->getAdapter()->quoteInto('username = ?', $username); 
         $updated = $this->table->update(array('lastlogin_datetime'=>'NOW()'), $where);
-        $this->data = $this->table->fetchRow($where)->toArray();
+        $data = $this->table->fetchRow($where);
+        if (is_object($data))
+            $this->data = $data->toArray();
         if (
         !is_array($this->data) ||
         !key_exists('id', $this->data) ||
@@ -93,7 +95,10 @@ class User extends Content {
      * Updates user data
      */
     public function update() {
-        $rows = $this->table->fetchAll($this->table->select()->where('username = ?', $this->data['username']));
+        $rows = array();
+        if (key_exists('username', $this->data))
+            $rows = $this->table->fetchAll($this->table->select()->where('username = ?', $this->data['username']));
+        else $this->data['username'] = '';
         if (sizeof($rows) <> 1)
             throw new Exception ('User with username '.$this->data['username'].' not present',130113905);
         if (key_exists('password_new', $this->data)) {

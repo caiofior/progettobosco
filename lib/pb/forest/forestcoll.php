@@ -103,7 +103,7 @@ class ForestColl extends \ContentColl {
                     new \Zend_Db_Expr(
                     ' ? IN ('.
                     $select->getAdapter()->select()->from('user_propriet',
-                            new \Zend_Db_Expr('"user_propriet"."user_id"')
+                            new \Zend_Db_Expr('user_propriet.user_id')
                             )->where('user_propriet.propriet_codice = propriet.codice').
                     ')')
                     , $this->user->getData('id'));
@@ -147,7 +147,7 @@ class ForestColl extends \ContentColl {
                     is_numeric($this->user->getData('id')) &&
                     $this->filterByUser
                 )
-                $select->where(new \Zend_Db_Expr($this->user->getData('id').' IN ( SELECT "user_id" FROM "user_propriet" WHERE "user_propriet"."propriet_codice" = "propriet"."codice" ) '));
+                $select->where(new \Zend_Db_Expr($this->user->getData('id').' IN ( SELECT user_id FROM user_propriet WHERE user_propriet.propriet_codice = propriet.codice ) '));
             return intval($this->content->getTable()->getAdapter()->fetchOne($select));
         }
         else 

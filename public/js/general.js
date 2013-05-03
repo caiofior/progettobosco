@@ -10,7 +10,7 @@
 */
 function formAjax(selector,messages_selector) {
     $(document).on("submit",selector, function() {
-        status = false;
+        var status = false;
         $(messages_selector).hide();
         $("#ajaxloader").show();
         el = $(this);

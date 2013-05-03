@@ -39,7 +39,7 @@ if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
     try{
         $new_user->loadFromUsername($_REQUEST['username']);
     } catch (Exception $e) {
-        if ($e->getCode()==1301130908)
+        if ($e->getCode()==1301130904)
             $user_unique = true;
         else  throw $e;
     }
@@ -122,7 +122,7 @@ if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
     try{
         $new_user->loadFromUsername($_REQUEST['username']);
     } catch (Exception $e) {
-        if ($e->getCode()==1301130908)
+        if ($e->getCode()==1301130904)
             $user_unique = true;
         else  throw $e;
     }
@@ -136,23 +136,25 @@ if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
        $formErrors->addError(FormErrors::custom,'username','non trovo questo nome utente');       
     }
     $password =  $new_user->generatePassword();
-    $new_user->update();
-    ob_start();
-    require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'mail'.DIRECTORY_SEPARATOR.'recoverpassword.php';
-    $content = ob_get_clean();
-    $mail = new Zend_Mail('UTF-8');
-    $mail->setBodyText(strip_tags($content));
-    $mail->setBodyHTML($content);
-    $mail->setFrom($MAIL_ADMIN_CONFIG['from'], $MAIL_ADMIN_CONFIG['from_name']);
-    $mail->addTo($_REQUEST['username'], $_REQUEST['username']);
-    $mail->setSubject('Recupero password del sito '.$SITE_NAME);
-    try{
-        $mail->send(new Zend_Mail_Transport_Smtp($MAIL_ADMIN_CONFIG['server'], $MAIL_ADMIN_CONFIG));
-    } catch (Exception $e) {
-        $user->delete();
-        $formErrors->addError(FormErrors::custom,'password','C\'è stato un problema durante la registrazione, prova in un secondo momento.');       
+    if($user_unique == false) {
+        $new_user->update();
+        ob_start();
+        require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'mail'.DIRECTORY_SEPARATOR.'recoverpassword.php';
+        $content = ob_get_clean();
+        $mail = new Zend_Mail('UTF-8');
+        $mail->setBodyText(strip_tags($content));
+        $mail->setBodyHTML($content);
+        $mail->setFrom($MAIL_ADMIN_CONFIG['from'], $MAIL_ADMIN_CONFIG['from_name']);
+        $mail->addTo($_REQUEST['username'], $_REQUEST['username']);
+        $mail->setSubject('Recupero password del sito '.$SITE_NAME);
+        try{
+            $mail->send(new Zend_Mail_Transport_Smtp($MAIL_ADMIN_CONFIG['server'], $MAIL_ADMIN_CONFIG));
+        } catch (Exception $e) {
+            $user->delete();
+            $formErrors->addError(FormErrors::custom,'password','C\'è stato un problema durante la registrazione, prova in un secondo momento.');       
+        }
+        $formErrors->setOkMessage('Ti è stata inviata una mail con una nuova password, accedi al tuo profilo e potrai modificarla');
     }
-    $formErrors->setOkMessage('Ti è stata inviata una mail con una nuova password, accedi al tuo profilo e potrai modificarla');
     if (key_exists('xhr', $_REQUEST)) {
          $formErrors->getJsonError();
     }

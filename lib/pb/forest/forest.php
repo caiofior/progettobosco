@@ -310,4 +310,16 @@ WHERE usosuolo.codice <> \'\' AND proprieta=\''.$this->data['codice'].'\''));
         $compresacoll->setForest($this);
         return $compresacoll;
     }
+    /**
+     * Increment objectid in mysql database
+     */
+    public function insert() {
+        if (get_class($this->table->getAdapter()) == 'Zend_Db_Adapter_Mysqli') {
+              $this->data['objectid'] =
+                $this->table->getAdapter()->fetchOne(
+                $this->table->select()->from($this->table->info('name'),'MAX(objectid)')
+                        )+1;
+        }
+        parent::insert();
+    }
 }

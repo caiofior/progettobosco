@@ -11,7 +11,7 @@ $("#user").dataTable( {
             "sUrl": "js/DataTables/locale/it_IT.json"
         },
         "aoColumns": [
-            { "bVisible": false, "sName": "user.id"},
+            { "bVisible": false, "sName": "id"},
             { "sName": "username", "sWidth": "20%"},
             { "sName": "first_name", "sWidth": "10%" },
             { "sName": "phone", "sWidth": "10%" },
