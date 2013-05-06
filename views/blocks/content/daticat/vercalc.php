@@ -7,7 +7,7 @@
     Di seguito sono riportate due immagini estratte rispettivamente dalla Scheda A<br/>
     e dalla maschera Dati catastali. La prima immagine si<br/>
     riferisce alla prima versione per la gestione dei dati catastali in<br/>
-    ProgettoBosco, mentre al momento state utilizzando la seconda versione.
+    <?php echo $GLOBALS['SITE_NAME']; ?>, mentre al momento state utilizzando la seconda versione.
 </p>
 <img src="images/daticat/forma.png">
 <img src="images/daticat/daticat.png">
@@ -30,7 +30,7 @@
     "Sup. afferente alla particella forestale (ha)" e "% afferente" e calcolare<br/>
     automaticamente la terza.<br/>
     Considerato che, come detto, vi è stato un elemento di confusione che ha portato<br/>
-    alcuni utilizzatori di ProgettoBosco ad inserire alla voce "Sup. totale afferente<br/>
+    alcuni utilizzatori di <?php echo $GLOBALS['SITE_NAME']; ?> ad inserire alla voce "Sup. totale afferente<br/>
     alla particella (ha)" la superficie totale della particella catastale, prima di<br/>
     avviare la procedura di calcolo è necessario indicare se tale evento si è verificato oppure no.
 </p>
@@ -49,6 +49,6 @@
 <p>
     N.B. l'opzione "Sup totale particella catastale" deve essere scelta solo la prima <br/>
     volta che si esegue l'elaborazione dati catastali dopo il passaggio dalla prima versione<br/>
-    per la gestione dei dati catastali in ProgettoBosco, alla seconda versione, ovvero questa<br/>
+    per la gestione dei dati catastali in <?php echo $GLOBALS['SITE_NAME']; ?>, alla seconda versione, ovvero questa<br/>
     che state utilizzando in questo momento
 </p>

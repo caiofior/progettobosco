@@ -11,7 +11,7 @@
                                         piani sia nello spazio sia nel tempo. Si sente quindi l’esigenza di un sistema informativo forestale per i
                                         diversi livelli di pianificazione e per le varie fonti informative relative alla foresta.</p>
 			
-					<p>Queste premesse hanno portato alla definizione di “Progettobosco”, un protocollo coordinato e integrato di
+					<p>Queste premesse hanno portato alla definizione di “<?php echo $GLOBALS['SITE_NAME']; ?>”, un protocollo coordinato e integrato di
                                         sistemi informativi a supporto della pianificazione forestale per la gestione aziendale e le caratteristiche
                                         del sistema.</p>			
 				

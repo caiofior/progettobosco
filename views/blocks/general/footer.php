@@ -37,7 +37,7 @@
 		
 			<h3>Risorse</h3>
 			
-			<p>Maggiori informazioni su progettobosco e sulla normativa nazionale relativa la pianificazione forestale</p>
+			<p>Maggiori informazioni su <?php echo $GLOBALS['SITE_NAME']; ?> e sulla normativa nazionale relativa la pianificazione forestale</p>
 			
 			<div class="footer-list">
                 <ul>

@@ -458,7 +458,7 @@ document.getElementById("tabrelatedcss").href="css/formb1.css";
         </div>
         </fieldset>
         <fieldset id="d_spec_container" >
-            <legend>Altre stime sintetiche ricavate esternamente a ProgettoBosco (richieste da Regione Lombardia)</legend>
+            <legend>Altre stime sintetiche ricavate esternamente a <?php echo $GLOBALS['SITE_NAME']; ?> (richieste da Regione Lombardia)</legend>
         <div id="d21_container">
             <label for="d21">Provvigione reale (m3/ha)</label>
             <input id="d21" name="d21" value="<?php echo $b1->getData('d21');?>">
