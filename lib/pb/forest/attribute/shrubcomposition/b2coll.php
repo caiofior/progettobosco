@@ -55,13 +55,25 @@ class B2Coll  extends \ContentColl  {
      * @return \Zend_Db_Select
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
-        $select->setIntegrityCheck(false)
-        ->from('arbusti2',array(
-            '*',
-            'cod_colt_descriz'=>new \Zend_Db_Expr(
-                '( SELECT diz_arbo.nome_itali || \' | \' || diz_arbo.nome_scien FROM diz_arbo WHERE diz_arbo.cod_coltu=arbusti2.cod_coltu) '
-             )
-        ));
+        $select->setIntegrityCheck(false);
+        switch (get_class($this->content->getTable()->getAdapter())) {
+            case 'Zend_Db_Adapter_Mysqli':
+                $select->from('arbusti2',array(
+                    '*',
+                    'cod_colt_descriz'=>new \Zend_Db_Expr(
+                        '( SELECT CONCAT(diz_arbo.nome_itali , \' | \' , diz_arbo.nome_scien) FROM diz_arbo WHERE diz_arbo.cod_coltu=arbusti2.cod_coltu) '
+                     )
+                ));
+            break;
+            case 'Zend_Db_Adapter_Pgsql':
+                $select->from('arbusti2',array(
+                    '*',
+                    'cod_colt_descriz'=>new \Zend_Db_Expr(
+                        '( SELECT diz_arbo.nome_itali || \' | \' || diz_arbo.nome_scien FROM diz_arbo WHERE diz_arbo.cod_coltu=arbusti2.cod_coltu) '
+                     )
+                ));
+        break;
+        }
         if ($this->form_b2 instanceof \forest\entity\b\B2) {
             $select->where(' cod_part = ? ',$this->form_b2->getData('cod_part'))
             ->where(' proprieta = ? ',$this->form_b2->getData('proprieta'))

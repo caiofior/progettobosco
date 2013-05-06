@@ -56,13 +56,27 @@ class B3RenovationCompositionColl  extends \ContentColl  {
      * @return \Zend_Db_Select
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
-        $select->setIntegrityCheck(false)
-        ->from('rinnovaz',array(
+        $select->setIntegrityCheck(false);
+        switch (get_class($this->content->getTable()->getAdapter())) {
+            case 'Zend_Db_Adapter_Mysqli':
+            $select->from('rinnovaz',array(
             '*',
             'cod_coltr_descriz'=>new \Zend_Db_Expr(
-                '( SELECT diz_arbo.nome_itali || \' | \' || diz_arbo.nome_scien FROM diz_arbo WHERE diz_arbo.cod_coltu=rinnovaz.cod_coltu) '
+                '( SELECT CONCAT(diz_arbo.nome_itali , \' | \' , diz_arbo.nome_scien) FROM diz_arbo WHERE diz_arbo.cod_coltu=rinnovaz.cod_coltu) '
              )
         ));
+
+            break;
+            case 'Zend_Db_Adapter_Pgsql':
+            $select->from('rinnovaz',array(
+                '*',
+                'cod_coltr_descriz'=>new \Zend_Db_Expr(
+                    '( SELECT diz_arbo.nome_itali || \' | \' || diz_arbo.nome_scien FROM diz_arbo WHERE diz_arbo.cod_coltu=rinnovaz.cod_coltu) '
+                 )
+            ));
+        break;
+    
+        }
         if ($this->form_b3 instanceof \forest\entity\b\B3) {
             $select->where(' cod_part = ? ',$this->form_b3->getData('cod_part'))
             ->where(' proprieta = ? ',$this->form_b3->getData('proprieta'))

@@ -55,8 +55,21 @@ class B1Coll  extends \ContentColl  {
      * @return \Zend_Db_Select
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
-        $select->setIntegrityCheck(false)
-        ->from('arboree',array(
+        $select->setIntegrityCheck(false);
+        switch (get_class($this->content->getTable()->getAdapter())) {
+            case 'Zend_Db_Adapter_Mysqli':
+                $select->from('arboree',array(
+            '*',
+            'cod_colt_descriz'=>new \Zend_Db_Expr(
+                '( SELECT CONCAT(diz_arbo.nome_itali , \' | \' , diz_arbo.nome_scien) FROM diz_arbo WHERE diz_arbo.cod_coltu=arboree.cod_coltu) '
+             ),
+            'cod_coper_descriz'=>new \Zend_Db_Expr(
+                '( SELECT per_arbo.descriz FROM per_arbo WHERE per_arbo.codice=arboree.cod_coper) '
+             )
+        ));
+            break;
+            case 'Zend_Db_Adapter_Pgsql':
+                $select->from('arboree',array(
             '*',
             'cod_colt_descriz'=>new \Zend_Db_Expr(
                 '( SELECT diz_arbo.nome_itali || \' | \' || diz_arbo.nome_scien FROM diz_arbo WHERE diz_arbo.cod_coltu=arboree.cod_coltu) '
@@ -65,6 +78,8 @@ class B1Coll  extends \ContentColl  {
                 '( SELECT per_arbo.descriz FROM per_arbo WHERE per_arbo.codice=arboree.cod_coper) '
              )
         ));
+            break;
+        }
         if ($this->form_b1 instanceof \forest\entity\b\B1) {
             $select->where(' cod_part = ? ',$this->form_b1->getData('cod_part'))
             ->where(' proprieta = ? ',$this->form_b1->getData('proprieta'))
