@@ -42,7 +42,7 @@ $DB_CONFIG = array(
     'password'  => '', 
     'dbname'    => 'progettobosco_master'
     );
-/*$DB_CONFIG = array(
+/**$DB_CONFIG = array(
     'adapter'   => 'Pgsql', 
     'host'      => 'localhost', 
     'port'      => '5432', 

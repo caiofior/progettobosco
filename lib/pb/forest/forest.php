@@ -2,8 +2,7 @@
 /**
  * Manages Forest
  * 
- * Manages Forest
- * 
+ * Manages Forest, Database Structure description ({@link http://www.forestmanagement.it/doc/db_structure.pdf})
  * @link https://it.wikipedia.org/wiki/Bosco
  * 
  * @author Claudio Fior <caiofior@gmail.com>

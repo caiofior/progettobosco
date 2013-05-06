@@ -346,6 +346,20 @@ function pg2mysql($input, $header=true)
 				//identical, so we can just add it as is.
 				$output.=$line;
 			}
+                        else if(strstr($line," UNIQUE ")) {
+				//looks like we have a single line PRIMARY KEY definition, lets go ahead and add it
+				$output.=$pkey;
+				//the postgres and mysql syntax for this is (at least, in the example im looking at)
+				//identical, so we can just add it as is.
+				$output.=$line;
+			}
+                        else if(strstr($line," FOREIGN KEY ")) {
+				//looks like we have a single line PRIMARY KEY definition, lets go ahead and add it
+				$output.=$pkey;
+				//the postgres and mysql syntax for this is (at least, in the example im looking at)
+				//identical, so we can just add it as is.
+				$output.=$line;
+			}
 
 		}
 
