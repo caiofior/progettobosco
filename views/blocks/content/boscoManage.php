@@ -53,7 +53,7 @@
                                         <form action="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?forest_codice=<?php echo $this->forest->getData('codice');?>" method="post" id="forestcompartment_list">		
                                         <p>Questo è l'elenco delle particelle di questo bosco, puoi modificarle o
                                         aggiungerne di nuove.</p>
-                                        <?php $acoll = $this->forest->getForestCompartmentColl(); ?>
+                                        <?php $acoll = $this->forest->getAColl(); ?>
 								<label for="usosuolo">Uso suolo</label>
                                                                 <select id="usosuolo" name="usosuolo"  tabindex="1" >
                                                                     <option value="">Tutti</option>

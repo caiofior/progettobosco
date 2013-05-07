@@ -1,48 +1,38 @@
-                                                        <div id="content_bosco_forestcompartmentlist" >       
+                                                        <?php
+                                                        $compresa = new \forest\Compresa();
+                                                        try{
+                                                            $forest = $compresa->getForest();
+                                                        } catch (Exception $e) {
+                                                            if ($e->getCode() == 0705131053)
+                                                                $forest = $this->forest;
+                                                            else
+                                                                throw $e;
+                                                        }
+                                                        ?>
+                                                        <div id="content_comprese_listall" >       
+                                                            <p>Particelle non associate alla compresa</p>
                                                         <ul >
                                                             <?php 
-                                                                if (!isset($forest))
-                                                                    $forest=$this->forest;
-                                                                if (!isset($acoll))
-                                                                    $acoll = $forest->getAColl();
+                                                                $acoll = $forest->getAColl();
+                                                                $items_in_page =10;
                                                                 if (!key_exists('start', $_GET))
                                                                     $_GET['start']=0;
                                                                 if (!key_exists('search', $_GET))
                                                                     $_GET['search']=null;
-                                                                if (!key_exists('usosuolo', $_GET))
-                                                                    $_GET['usosuolo']=null;
-                                                                if (!key_exists('t', $_GET))
-                                                                    $_GET['t']=null;
-                                                                if (!key_exists('codiope', $_GET))
-                                                                    $_GET['codiope']=null;
-                                                                unset($_GET['delete']);
-                                                                $items_in_page =10;
                                                                 $acoll->loadAll(
                                                                         array(
                                                                     'start'=>$_GET['start'],
                                                                     'length'=>$items_in_page,
                                                                     'search'=>$_GET['search'],
-                                                                    'usosuolo'=>$_GET['usosuolo'],
-                                                                    't'=>$_GET['t'],
-                                                                    'codiope'=>$_GET['codiope']
+                                                                    'associated_compresa'=>false
                                                                 )
                                                                 );
                                                             foreach($acoll->getItems() as $a) :
                                                             ?>
                                                             <li >
-                                                                <a href="bosco.php?task=forest_compartment&action=manage&id=<?php echo $a->getData('objectid'); ?>" >
-                                                                <img class="actions edit" src="images/empty.png" title="Visualizza/Modifica"/>
-                                                                </a>
-                                                                <a href="bosco.php?deleteforestcompartment=1&id=<?php echo $a->getData('objectid'); ?>" >
-                                                                <img class="actions delete" src="images/empty.png" title="Cancella"/>
-                                                                </a>
-                                                                Particella <?php echo $a->getData('cod_part');?>
-                                                                <?php $toponimo = $a->getData('toponimo');
-                                                                if ($toponimo != '') echo ' - '.$toponimo;
-                                                                $usosuolo = $a->getRaWData('usosuolo');
-                                                                if ($usosuolo != '') echo '<br/>Uso suolo:'.$usosuolo;
-                                                                $rilevato = $a->getRawData('rilevato');
-                                                                if ($rilevato != '' ) echo '<br/>Rilevatore:'.$rilevato;?>
+                                                                <?php echo $a->getData('cod_part');?> - 
+                                                                <?php echo $a->getData('cod_fo');?> - 
+                                                                <?php echo $a->getData('toponimo');?>
                                                             </li>
                                                             <?php endforeach; ?>
                                                         </ul>
@@ -68,21 +58,17 @@
                                                                 'data-update'=>''
                                                             ),
                                                         );
-                                                        $countall =$acoll->countAll(array(
-                                                                    'search'=>$_GET['search'],
-                                                                    'usosuolo'=>$_GET['usosuolo'],
-                                                                    'codiope'=>$_GET['codiope']
-                                                                ));
+                                                        $countall =$acoll->countAll(array('search'=>$_GET['search']));
                                                         $last_page = floor($countall/$items_in_page)*$items_in_page;
 
                                                         if ($start>0) {
                                                             $actions['prev']=array(
                                                                 'url'=>'href="?'.$baseurl.'&start='.max($start-$items_in_page,0).'"',
-                                                                'data-update'=>'data-update="content_bosco_forestcompartmentlist"'
+                                                                'data-update'=>'data-update="content_rilievidendrometrici_list"'
                                                             );
                                                             $actions['first']=array(
                                                                 'url'=>'href="?'.$baseurl.'&start=0"',
-                                                                'data-update'=>'data-update="content_bosco_forestcompartmentlist"'
+                                                                'data-update'=>'data-update="content_rilievidendrometrici_list"'
                                                             );
                                                         }
                                                         
@@ -90,11 +76,11 @@
                                                             
                                                             $actions['next']=array(
                                                                 'url'=>'href="?'.$baseurl.'&start='.min($start+$items_in_page,$last_page).'"',
-                                                                'data-update'=>'data-update="content_bosco_forestcompartmentlist"'
+                                                                'data-update'=>'data-update="content_rilievidendrometrici_list"'
                                                             );
                                                              $actions['last']=array(
                                                                 'url'=>'href="?'.$baseurl.'&start='.$last_page .'"',
-                                                                'data-update'=>'data-update="content_bosco_forestcompartmentlist"'
+                                                                'data-update'=>'data-update="content_rilievidendrometrici_list"'
                                                             );
                                                         }
                                                         ?>
@@ -118,8 +104,8 @@
                                                             <a <?php echo $actions['last']['url'];?> <?php echo $actions['last']['data-update'];?> >
                                                                 <img class="actions last" src="images/empty.png" title="Ultimo">
                                                             </a>
-                                                            <a href="bosco.php?action=createforestcompartment&forest_codice=<?php echo $forest->getData('codice'); ?>" >
-                                                                <img class="actions addnew" src="images/empty.png" title="Aggiungi una nuova particella"/>
+                                                            <a href="bosco.php?task=formx&action=manage&forma_id=<?php echo $a->getData('objectid');?>" data-update="content_rilievidendrometrici_edit" data-destination="content_rilievidendrometrici_list">
+                                                                <img class="actions addnew" src="images/empty.png" title="Aggiungi un nuovo rilievo"/>
                                                             </a>
                                                         </div>
                                                         </div>

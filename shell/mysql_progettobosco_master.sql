@@ -2682,11 +2682,11 @@ CREATE TABLE `partcomp` (
   `sup` double DEFAULT NULL,
   `sup_bosc` double DEFAULT NULL,
   `abstract` text,
-  `compresa` varchar(3) DEFAULT NULL,
+  `compresa` varchar(3) NOT NULL,
   `objectid` int(11) NOT NULL,
   `id_av_x_join` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`objectid`),
-  UNIQUE KEY `partcomp_uniquekey` (`proprieta`,`cod_part`),
+  UNIQUE KEY `partcomp_uniquekey` (`proprieta`,`cod_part`,`cod_fo`,`compresa`),
   KEY `compresa` (`compresa`,`proprieta`),
   KEY `proprieta` (`proprieta`,`cod_part`),
   CONSTRAINT `partcomt_schedea_fkey` FOREIGN KEY (`proprieta`, `cod_part`) REFERENCES `schede_a` (`proprieta`, `cod_part`) ON DELETE CASCADE ON UPDATE CASCADE
@@ -2699,6 +2699,7 @@ CREATE TABLE `partcomp` (
 
 LOCK TABLES `partcomp` WRITE;
 /*!40000 ALTER TABLE `partcomp` DISABLE KEYS */;
+INSERT INTO `partcomp` VALUES ('','13001','  26b','','',0,0,'\"Fattori ambientali e di gestione\r','',0,NULL);
 /*!40000 ALTER TABLE `partcomp` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5621,7 +5622,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (93,'caiofior@gmail.com','8f04a464e3660e912e8abaf8aefaa2fe',1,1,'2013-01-22 13:30:36','2013-04-30 10:46:45',1,'',93,'887a1f43ee1a30c0559a5278e700cad7','Amministratore'),(94,'caio.fior@libero.it','8f04a464e3660e912e8abaf8aefaa2fe',1,1,'2013-01-31 13:56:02','2013-04-08 07:41:42',0,'',94,'26302e79c797cd65f187b94f54bf309a','\"\"');
+INSERT INTO `user` VALUES (93,'caiofior@gmail.com','8f04a464e3660e912e8abaf8aefaa2fe',1,1,'2013-01-22 13:30:36','2013-05-07 10:10:56',1,'',93,'887a1f43ee1a30c0559a5278e700cad7','Amministratore'),(94,'caio.fior@libero.it','8f04a464e3660e912e8abaf8aefaa2fe',1,1,'2013-01-31 13:56:02','2013-04-08 07:41:42',0,'',94,'26302e79c797cd65f187b94f54bf309a','\"\"');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5829,4 +5830,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-05-06 12:04:07
+-- Dump completed on 2013-05-07 12:22:40

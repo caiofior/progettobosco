@@ -34,6 +34,11 @@ class AColl extends \forest\template\EntityColl {
      */
     private $forest;
     /**
+     * Compresa reference
+     * @var \forest\Compresa
+     */
+    private $compresa;
+    /**
      * Instantiates the table
      */
     public function __construct() {
@@ -53,7 +58,13 @@ class AColl extends \forest\template\EntityColl {
             LEFT JOIN schede_b ON schede_b.u=usosuolo.codice
             WHERE schede_b.proprieta=schede_a.proprieta AND schede_b.cod_part=schede_a.cod_part)'),
             'rilevato' => new \Zend_Db_Expr(' (SELECT rilevato.descriz FROM rilevato
-             WHERE rilevato.codice=schede_a.codiope) ')
+             WHERE rilevato.codice=schede_a.codiope) '),
+            'compresa' => new \Zend_Db_Expr(' (SELECT partcomp.compresa FROM partcomp
+             WHERE
+             partcomp.proprieta=schede_a.proprieta AND
+             partcomp.cod_part=schede_a.cod_part AND
+             partcomp.cod_fo=schede_a.cod_fo
+                ) ')
             )
         )
         ;
@@ -66,7 +77,37 @@ class AColl extends \forest\template\EntityColl {
         if (key_exists('search', $criteria) && $criteria['search'] != '') {
             $select->where('(schede_a.cod_part LIKE ? OR schede_a.toponimo  LIKE ? )','%'.$criteria['search'].'%');
         }
-        if ($this->forest instanceof \forest\Forest) {
+        if (
+                    $this->compresa instanceof \forest\Compresa &&
+                    $this->compresa->getData('objectid') != '' &&
+                    key_exists('associated_compresa', $criteria) &&
+                    $criteria['associated_compresa'] === true
+                ) {
+                    
+                        $select->where('schede_a.proprieta = ?', $this->compresa->getData('proprieta'));
+                        $select->having('compresa = ? ',$this->compresa->getData('compresa'));
+        }
+        else if (
+                    key_exists('associated_compresa', $criteria) &&
+                    $criteria['associated_compresa'] === true
+                ) {
+                    
+                        $select->where('FALSE');
+        }
+        else if (
+                    $this->compresa instanceof \forest\Compresa &&
+                    $this->compresa->getData('objectid') != '' &&
+                    key_exists('associated_compresa', $criteria) &&
+                    $criteria['associated_compresa'] === false
+                ) {
+                    
+                        $select->where('schede_a.proprieta <> ?', $this->compresa->getData('proprieta'));
+                        $select->having('compresa <> ? ',$this->compresa->getData('compresa'));
+        }
+        else if (
+                $this->forest instanceof \forest\Forest &&
+                $this->forest->getData('codice') != ''
+                ) {
             $select->where('schede_a.proprieta = ?', $this->forest->getData('codice'));
         }
         $select->order('schede_a.cod_part');
@@ -78,6 +119,15 @@ class AColl extends \forest\template\EntityColl {
      */
     public function setForest(\forest\Forest $forest) {
         $this->forest = $forest;
+    }
+    /**
+     * Set the compresa reference
+     * @param \forest\Compresa $compresa
+     */
+    public function setCompresa($compresa) {
+        $this->compresa = null;
+        if ($compresa instanceof \forest\Compresa)
+            $this->compresa = $compresa;
     }
     /**
      * Returns all contents without any filter
@@ -95,7 +145,36 @@ class AColl extends \forest\template\EntityColl {
              if (key_exists('search', $criteria) && $criteria['search'] != '') {
                  $select->where('(schede_a.cod_part LIKE ? OR schede_a.toponimo  LIKE ? )','%'.$criteria['search'].'%');
              }
-             if ($this->forest instanceof \forest\Forest) {
+             if (
+                    $this->compresa instanceof \forest\Compresa &&
+                    $this->compresa->getData('objectid') != '' &&
+                    key_exists('associated_compresa', $criteria) &&
+                    $criteria['associated_compresa'] === true
+                ) {
+                    
+                        $select->where('schede_a.proprieta = ?', $this->compresa->getData('proprieta'));
+                        $select->having('compresa = ? ',$this->compresa->getData('compresa'));
+                }
+                else if (
+                            key_exists('associated_compresa', $criteria) &&
+                            $criteria['associated_compresa'] === true
+                        ) {
+
+                                $select->where('FALSE');
+                }
+                else if (
+                            $this->compresa instanceof \forest\Compresa &&
+                            $this->compresa->getData('objectid') != '' &&
+                            key_exists('associated_compresa', $criteria) &&
+                            $criteria['associated_compresa'] === false
+                        ) {
+
+                                $select->where('schede_a.proprieta <> ?', $this->compresa->getData('proprieta'));
+                                $select->having('compresa <> ? ',$this->compresa->getData('compresa'));
+                }
+                else if (
+                $this->forest instanceof \forest\Forest  &&
+                $this->forest->getData('codice') != '') {
                  $select->where('schede_a.proprieta = ?', $this->forest->getData('codice'));
              }
             return intval($this->content->getTable()->getAdapter()->fetchOne($select));

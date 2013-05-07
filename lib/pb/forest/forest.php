@@ -31,6 +31,11 @@ if (!class_exists('Content')) {
  * @copyright CRA
  */
 class Forest extends template\Entity {
+    /**
+     * Compresa link
+     * @var forest\Compresa
+     */
+    private $compresa=null;
      /**
      * Instantiates the table
      */
@@ -119,9 +124,10 @@ class Forest extends template\Entity {
      * Gets the form a collection of the forest
      * @return \forest\entity\AColl
      */
-    public function getForestCompartmentColl () {
+    public function getAColl () {
         $acoll = new entity\AColl();
         $acoll->setForest($this);
+        $acoll->setCompresa($this->compresa);
         return $acoll;
     }
     /**
@@ -320,5 +326,13 @@ WHERE usosuolo.codice <> \'\' AND proprieta=\''.$this->data['codice'].'\''));
                         )+1;
         }
         parent::insert();
+    }
+    /**
+     * Set the compresa reference
+     * @param \forest\Compresa $compresa
+     */
+    public function setCompresa (\forest\Compresa $compresa) {
+        $this->compresa = $compresa;
+        
     }
 }

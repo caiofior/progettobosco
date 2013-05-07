@@ -160,7 +160,7 @@ else if (key_exists('action', $_REQUEST)) {
                     $content = 'content'.DIRECTORY_SEPARATOR.'boscoManage.php';
                     $view->forest = new forest\Forest();
                     $view->forest->loadFromCode($_REQUEST['forest_codice']);
-                    $acoll = $view->forest->getForestCompartmentColl();
+                    $acoll = $view->forest->getAColl();
                     $a = $acoll->addItem();
                     $a->setData($_REQUEST['cod_part'], 'cod_part');
                     try{

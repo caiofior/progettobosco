@@ -82,7 +82,7 @@ abstract class ContentColl {
                     )->toArray();
         } catch (Exception $e) {
             $GLOBALS['firephp']->log($select->assemble());
-            throw $e;
+            throw new  \Exception('Error in '.  get_called_class().' on query '.$select->assemble().' '.$e->getMessage(),0705131035);
         }
         $this->items=array();
         foreach($data as $dataitem) {

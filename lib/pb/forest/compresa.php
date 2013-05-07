@@ -52,9 +52,11 @@ class Compresa extends \forest\template\Entity {
      * @return \forest\Forest
      */
     public function getForest() {
-        $bosco = new \forest\Forest();
-        $bosco->loadFromCode($this->data['proprieta']);
-        return $bosco;
+        $forest = new \forest\Forest();
+        if (!key_exists('proprieta', $this->data))
+                throw new \Exception ('Compresa not associated with a forest',0705131053);
+        $forest->loadFromCode($this->data['proprieta']);
+        return $forest;
     }
     /**
      * Sets the calculated variables

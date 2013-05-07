@@ -106,4 +106,4 @@
                                                                 <img class="actions addnew" src="images/empty.png" title="Aggiungi un nuovo rilievo"/>
                                                             </a>
                                                         </div>
-                                                        </div>
+                                                        </fieldset>

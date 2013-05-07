@@ -40,7 +40,7 @@ if (key_exists('action', $_REQUEST)) {
         break;
         case 'autocomplete_code_part' :
             $response=array();
-            $acoll = $forest->getForestCompartmentColl();
+            $acoll = $forest->getAColl();
              $acoll->loadAll(array(
             'start'=>0,
             'length'=>10,
@@ -70,7 +70,7 @@ if (key_exists('action', $_REQUEST)) {
                 $cadrastal->setData($_REQUEST['value'],$_REQUEST['field']);
                 $cadrastal->update();
             } else {
-                $acoll = $forest->getForestCompartmentColl();
+                $acoll = $forest->getAColl();
                 $acoll->loadAll();
                 $cadastralcoll = $acoll->getFirst()->getCadastalColl();
                 $cadastral = $cadastralcoll->addItem();

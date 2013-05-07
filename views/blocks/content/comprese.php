@@ -19,8 +19,7 @@
                                         </select>
 				<!-- /post -->	
 				</div>	
-                            
-
-                            
+                                <?php require __DIR__.DIRECTORY_SEPARATOR.'comprese'.DIRECTORY_SEPARATOR.'listall.php';?>
+                                <?php require __DIR__.DIRECTORY_SEPARATOR.'comprese'.DIRECTORY_SEPARATOR.'listselected.php';?>
 			<!-- /main -->	
 			</div>
