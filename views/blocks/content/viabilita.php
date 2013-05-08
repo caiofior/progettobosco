@@ -1,6 +1,6 @@
                         <!-- main -->
 			<div id="main">	
-                            <div id="breadcrumb"><a href="<?php echo $GLOBALS['BASE_URL'];?>">Home</a>&gt;<a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php">Elenco boschi</a></div>
+                            <div id="breadcrumb"><a href="<?php echo $GLOBALS['BASE_URL'];?>">Home</a>&gt;<a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php">Elenco boschi</a>&gt;<a href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?action=manage&amp;id=<?php echo $this->forest->getData('codice');?>">Elenco Particelle</a></div>
 				<div class="post" id="viabilita_main_content">
 					<h2>Viabilità</h2>
                                         <form action="<?php echo $GLOBALS['BASE_URL'];?>viabilita.php?id=<?php echo $this->forest->getData('codice');?>" method="post" id="viabilita_list">

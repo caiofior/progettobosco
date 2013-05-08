@@ -1,16 +1,22 @@
                                                         <?php
                                                         $compresa = new \forest\WorkingCircle();
+                                                        if (!isset($forest))
+                                                                    $forest = $this->forest;
+                                                        if (
+                                                                key_exists('compresa', $_REQUEST) &&
+                                                                $_REQUEST['compresa'] != '')
+                                                            $compresa->loadFromId ($_REQUEST['compresa']);    
                                                         try{
                                                             $forest = $compresa->getForest();
                                                         } catch (Exception $e) {
-                                                            if ($e->getCode() == 0705131053)
-                                                                $forest = $this->forest;
-                                                            else
+                                                            if ($e->getCode() != 0705131053)
                                                                 throw $e;
                                                         }
                                                         ?>
                                                         <div id="content_comprese_listall" >       
-                                                            <p>Particelle non associate alla compresa</p>
+                                                            <p>Particelle non associate alla compresa<br/>
+                                                               Trascina qui le particelle che vuoi rimuovere dalla compresa
+                                                            </p>
                                                         <ul >
                                                             <?php 
                                                                 $acoll = $forest->getAColl();
@@ -27,11 +33,11 @@
                                                                     'associated_compresa'=>false
                                                                 )
                                                                 );
+                                                               
                                                             foreach($acoll->getItems() as $a) :
                                                             ?>
                                                             <li >
                                                                 <?php echo $a->getData('cod_part');?> - 
-                                                                <?php echo $a->getData('cod_fo');?> - 
                                                                 <?php echo $a->getData('toponimo');?>
                                                             </li>
                                                             <?php endforeach; ?>
@@ -104,7 +110,7 @@
                                                             <a <?php echo $actions['last']['url'];?> <?php echo $actions['last']['data-update'];?> >
                                                                 <img class="actions last" src="images/empty.png" title="Ultimo">
                                                             </a>
-                                                            <a href="bosco.php?task=formx&action=manage&forma_id=<?php echo $a->getData('objectid');?>" data-update="content_rilievidendrometrici_edit" data-destination="content_rilievidendrometrici_list">
+                                                            <a href="bosco.php?task=formx&action=manage&forma_id=<?php echo $compresa->getData('objectid');?>" data-update="content_rilievidendrometrici_edit" data-destination="content_rilievidendrometrici_list">
                                                                 <img class="actions addnew" src="images/empty.png" title="Aggiungi un nuovo rilievo"/>
                                                             </a>
                                                         </div>

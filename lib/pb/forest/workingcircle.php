@@ -56,6 +56,7 @@ class WorkingCircle extends \forest\template\Entity {
         if (!key_exists('proprieta', $this->data))
                 throw new \Exception ('Workin Circle not associated with a forest',0705131053);
         $forest->loadFromCode($this->data['proprieta']);
+        $forest->setWorkingCircle($this);
         return $forest;
     }
     /**

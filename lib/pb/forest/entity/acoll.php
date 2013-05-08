@@ -62,8 +62,7 @@ class AColl extends \forest\template\EntityColl {
             'compresa' => new \Zend_Db_Expr(' (SELECT partcomp.compresa FROM partcomp
              WHERE
              partcomp.proprieta=schede_a.proprieta AND
-             partcomp.cod_part=schede_a.cod_part AND
-             partcomp.cod_fo=schede_a.cod_fo
+             partcomp.cod_part=schede_a.cod_part 
                 ) ')
             )
         )
@@ -88,8 +87,7 @@ class AColl extends \forest\template\EntityColl {
                         $select->where(' (SELECT partcomp.compresa FROM partcomp
              WHERE
              partcomp.proprieta=schede_a.proprieta AND
-             partcomp.cod_part=schede_a.cod_part AND
-             partcomp.cod_fo=schede_a.cod_fo
+             partcomp.cod_part=schede_a.cod_part 
                 )  = ? ',$this->workingcircle->getData('compresa'));
         }
         else if (
@@ -106,13 +104,18 @@ class AColl extends \forest\template\EntityColl {
                     $criteria['associated_compresa'] === false
                 ) {
                     
-                        $select->where('schede_a.proprieta <> ?', $this->workingcircle->getData('proprieta'));
+                        $select->where('schede_a.proprieta = ?', $this->workingcircle->getData('proprieta'));
                         $select->where(' (SELECT partcomp.compresa FROM partcomp
              WHERE
              partcomp.proprieta=schede_a.proprieta AND
-             partcomp.cod_part=schede_a.cod_part AND
-             partcomp.cod_fo=schede_a.cod_fo
-                )  <> ? ',$this->workingcircle->getData('compresa'));
+             partcomp.cod_part=schede_a.cod_part
+                )  <> ? OR
+            (SELECT partcomp.compresa FROM partcomp
+             WHERE
+             partcomp.proprieta=schede_a.proprieta AND
+             partcomp.cod_part=schede_a.cod_part
+                )  IS NULL    
+            ',$this->workingcircle->getData('compresa'));
         }
         else if (
                 $this->forest instanceof \forest\Forest &&
@@ -155,6 +158,7 @@ class AColl extends \forest\template\EntityColl {
              if (key_exists('search', $criteria) && $criteria['search'] != '') {
                  $select->where('(schede_a.cod_part LIKE ? OR schede_a.toponimo  LIKE ? )','%'.$criteria['search'].'%');
              }
+             
              if (
                     $this->workingcircle instanceof \forest\WorkingCircle &&
                     $this->workingcircle->getData('objectid') != '' &&
@@ -166,8 +170,7 @@ class AColl extends \forest\template\EntityColl {
                         $select->where(' (SELECT partcomp.compresa FROM partcomp
              WHERE
              partcomp.proprieta=schede_a.proprieta AND
-             partcomp.cod_part=schede_a.cod_part AND
-             partcomp.cod_fo=schede_a.cod_fo
+             partcomp.cod_part=schede_a.cod_part 
                 )  = ? ',$this->workingcircle->getData('compresa'));
                 }
                 else if (
@@ -184,13 +187,18 @@ class AColl extends \forest\template\EntityColl {
                             $criteria['associated_compresa'] === false
                         ) {
 
-                                $select->where('schede_a.proprieta <> ?', $this->workingcircle->getData('proprieta'));
+                                $select->where('schede_a.proprieta = ?', $this->workingcircle->getData('proprieta'));
                                 $select->where(' (SELECT partcomp.compresa FROM partcomp
              WHERE
              partcomp.proprieta=schede_a.proprieta AND
-             partcomp.cod_part=schede_a.cod_part AND
-             partcomp.cod_fo=schede_a.cod_fo
-                ) <> ? ',$this->workingcircle->getData('compresa'));
+             partcomp.cod_part=schede_a.cod_part 
+                ) <> ? OR
+            (SELECT partcomp.compresa FROM partcomp
+             WHERE
+             partcomp.proprieta=schede_a.proprieta AND
+             partcomp.cod_part=schede_a.cod_part
+                )  IS NULL 
+                ',$this->workingcircle->getData('compresa'));
                 }
                 else if (
                 $this->forest instanceof \forest\Forest  &&
