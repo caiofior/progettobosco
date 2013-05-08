@@ -85,7 +85,12 @@ class AColl extends \forest\template\EntityColl {
                 ) {
                     
                         $select->where('schede_a.proprieta = ?', $this->compresa->getData('proprieta'));
-                        $select->having('compresa = ? ',$this->compresa->getData('compresa'));
+                        $select->where(' (SELECT partcomp.compresa FROM partcomp
+             WHERE
+             partcomp.proprieta=schede_a.proprieta AND
+             partcomp.cod_part=schede_a.cod_part AND
+             partcomp.cod_fo=schede_a.cod_fo
+                )  = ? ',$this->compresa->getData('compresa'));
         }
         else if (
                     key_exists('associated_compresa', $criteria) &&
@@ -102,7 +107,12 @@ class AColl extends \forest\template\EntityColl {
                 ) {
                     
                         $select->where('schede_a.proprieta <> ?', $this->compresa->getData('proprieta'));
-                        $select->having('compresa <> ? ',$this->compresa->getData('compresa'));
+                        $select->where(' (SELECT partcomp.compresa FROM partcomp
+             WHERE
+             partcomp.proprieta=schede_a.proprieta AND
+             partcomp.cod_part=schede_a.cod_part AND
+             partcomp.cod_fo=schede_a.cod_fo
+                )  <> ? ',$this->compresa->getData('compresa'));
         }
         else if (
                 $this->forest instanceof \forest\Forest &&
@@ -153,7 +163,12 @@ class AColl extends \forest\template\EntityColl {
                 ) {
                     
                         $select->where('schede_a.proprieta = ?', $this->compresa->getData('proprieta'));
-                        $select->having('compresa = ? ',$this->compresa->getData('compresa'));
+                        $select->where(' (SELECT partcomp.compresa FROM partcomp
+             WHERE
+             partcomp.proprieta=schede_a.proprieta AND
+             partcomp.cod_part=schede_a.cod_part AND
+             partcomp.cod_fo=schede_a.cod_fo
+                )  = ? ',$this->compresa->getData('compresa'));
                 }
                 else if (
                             key_exists('associated_compresa', $criteria) &&
@@ -170,7 +185,12 @@ class AColl extends \forest\template\EntityColl {
                         ) {
 
                                 $select->where('schede_a.proprieta <> ?', $this->compresa->getData('proprieta'));
-                                $select->having('compresa <> ? ',$this->compresa->getData('compresa'));
+                                $select->where(' (SELECT partcomp.compresa FROM partcomp
+             WHERE
+             partcomp.proprieta=schede_a.proprieta AND
+             partcomp.cod_part=schede_a.cod_part AND
+             partcomp.cod_fo=schede_a.cod_fo
+                ) <> ? ',$this->compresa->getData('compresa'));
                 }
                 else if (
                 $this->forest instanceof \forest\Forest  &&

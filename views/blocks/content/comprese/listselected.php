@@ -58,7 +58,7 @@
                                                                 'data-update'=>''
                                                             ),
                                                         );
-                                                        $countall =$acoll->countAll(array('search'=>$_GET['search']));
+                                                        $countall =$acoll->countAll(array('search'=>$_GET['search'],'associated_compresa'=>true));
                                                         $last_page = floor($countall/$items_in_page)*$items_in_page;
 
                                                         if ($start>0) {

@@ -5,3 +5,9 @@
     Description:
         Purpose of the stylesheet follows.
 */
+#content_comprese_listall {
+    float: left;
+}
+#content_comprese_listselected {
+    float: left;
+}
