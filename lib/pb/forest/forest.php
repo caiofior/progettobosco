@@ -32,10 +32,10 @@ if (!class_exists('Content')) {
  */
 class Forest extends template\Entity {
     /**
-     * Compresa link
-     * @var forest\Compresa
+     * Workin Circle link
+     * @var forest\WorkingCircle
      */
-    private $compresa=null;
+    private $workingcircle=null;
      /**
      * Instantiates the table
      */
@@ -127,7 +127,7 @@ class Forest extends template\Entity {
     public function getAColl () {
         $acoll = new entity\AColl();
         $acoll->setForest($this);
-        $acoll->setCompresa($this->compresa);
+        $acoll->setWorkingCircle($this->workingcircle);
         return $acoll;
     }
     /**
@@ -307,13 +307,13 @@ WHERE usosuolo.codice <> \'\' AND proprieta=\''.$this->data['codice'].'\''));
         return $ecoll;
     }
     /**
-     * Gets the associated CompresaColl collection
-     * @return \forest\CompresaColl
+     * Gets the associated WorkingCircleColl collection
+     * @return \forest\WorkingCircleColl
      */
-    public function getCompresaColl () {
-        $compresacoll = new \forest\CompresaColl();
-        $compresacoll->setForest($this);
-        return $compresacoll;
+    public function getWorkingCircleColl () {
+        $workingcirclecoll = new \forest\WorkingCircleColl();
+        $workingcirclecoll->setForest($this);
+        return $workingcirclecoll;
     }
     /**
      * Increment objectid in mysql database
@@ -328,11 +328,11 @@ WHERE usosuolo.codice <> \'\' AND proprieta=\''.$this->data['codice'].'\''));
         parent::insert();
     }
     /**
-     * Set the compresa reference
-     * @param \forest\Compresa $compresa
+     * Set the Workin Circle reference
+     * @param \forest\WorkingCircle $workingcircle
      */
-    public function setCompresa (\forest\Compresa $compresa) {
-        $this->compresa = $compresa;
+    public function setWorkingCircle (\forest\WorkingCircle $workingcircle) {
+        $this->workingcircle = $workingcircle;
         
     }
 }

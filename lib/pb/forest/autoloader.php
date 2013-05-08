@@ -19,8 +19,8 @@ if (!class_exists('Forest')) {
         'template'.DIRECTORY_SEPARATOR.'attributecoll.php',
         'forest.php',
         'forestcoll.php',
-        'compresa.php',
-        'compresacoll.php',
+        'workingcircle.php',
+        'workingcirclecoll.php',
         'region.php',
         'regioncoll.php',
         

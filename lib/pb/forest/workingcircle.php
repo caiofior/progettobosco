@@ -1,8 +1,8 @@
 <?php
 /**
- * Manages Compresa
+ * Manages Workin Circle
  * 
- * Manages Compresa
+ * Manages Workin Circle
  * 
  * @link https://it.wikipedia.org/wiki/Comprese
  * 
@@ -23,16 +23,16 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
- * Manages Compresa
+ * Manages Workin Circle
  * 
- * Manages Compresa
+ * Manages Workin Circle
  * 
  * @link https://it.wikipedia.org/wiki/Comprese
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class Compresa extends \forest\template\Entity {
+class WorkingCircle extends \forest\template\Entity {
      /**
      * Instantiates the table
      */
@@ -54,7 +54,7 @@ class Compresa extends \forest\template\Entity {
     public function getForest() {
         $forest = new \forest\Forest();
         if (!key_exists('proprieta', $this->data))
-                throw new \Exception ('Compresa not associated with a forest',0705131053);
+                throw new \Exception ('Workin Circle not associated with a forest',0705131053);
         $forest->loadFromCode($this->data['proprieta']);
         return $forest;
     }

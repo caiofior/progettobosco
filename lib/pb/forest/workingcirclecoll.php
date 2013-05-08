@@ -1,8 +1,8 @@
 <?php
 /**
- * Manages Compresa collection
+ * Manages Workin Circle collection
  * 
- * Manages Compresa collection
+ * Manages Workin Circle collection
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
@@ -19,14 +19,14 @@ if (!class_exists('Content')) {
                 DIRECTORY_SEPARATOR.'pageboot.php');
 }
 /**
- * Manages Compresa collection
+ * Manages Workin Circle collection
  * 
- * Manages Compresa collection
+ * Manages Workin Circle collection
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class CompresaColl extends \forest\template\EntityColl {
+class WorkingCircleColl extends \forest\template\EntityColl {
     /**
      * Forest object
      * @var \forest\Forest
@@ -36,7 +36,7 @@ class CompresaColl extends \forest\template\EntityColl {
      * Instantiates the table
      */
     public function __construct() {
-        parent::__construct(new \forest\Compresa());
+        parent::__construct(new \forest\WorkingCircle());
     }
      /**
      * Customizes the select statement
@@ -67,12 +67,12 @@ class CompresaColl extends \forest\template\EntityColl {
     }
      /**
      * Adds new item to the form
-     * @return \forest\Compresa
+     * @return \forest\WorkingCircle
      */
     public function addItem() {
-        $compresa = parent::addItem();
-        $compresa->setData($this->forest->getData('codice'),'proprieta');
-        return $compresa;
+        $workingcircle = parent::addItem();
+        $workingcircle->setData($this->forest->getData('codice'),'proprieta');
+        return $workingcircle;
     }
 
 }

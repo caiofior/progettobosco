@@ -1,5 +1,5 @@
                                                         <?php
-                                                        $compresa = new \forest\Compresa();
+                                                        $compresa = new \forest\WorkingCircle();
                                                         try{
                                                             $forest = $compresa->getForest();
                                                         } catch (Exception $e) {

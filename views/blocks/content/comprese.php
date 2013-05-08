@@ -11,7 +11,7 @@
                                         <select class="large" id="regione" name="compresa"  tabindex="1" >
                                             <option value="">Seleziona una compresa</option>
                                             <?php 
-                                                $compresacoll = $this->forest->getCompresaColl();
+                                                $compresacoll = $this->forest->getWorkingCircleColl();
                                                 $compresacoll->loadAll();
                                                 foreach($compresacoll->getItems() as $compresa) : ?>
                                             <option  value="<?php echo $compresa->getData('compresa');?>"><?php echo $compresa->getData('descrizion');?></option>        
