@@ -11,8 +11,17 @@ require (__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'config.php');
 if ((!isset($PHPUNIT) || !$PHPUNIT) && (isset($MONITORING) && $MONITORING))
     require (__DIR__.DIRECTORY_SEPARATOR.'monitoring.php');
 /**
+ * Include paths
+ */
+if (isset($ZEND_PATH))
+    set_include_path(get_include_path().PATH_SEPARATOR.$ZEND_PATH);
+if (isset($PEAR_PATH))
+    set_include_path(get_include_path().PATH_SEPARATOR.$PEAR_PATH);
+set_include_path(get_include_path().PATH_SEPARATOR.__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'lib');
+/**
  * Config debug options
  */
+ini_set('memory_limit', '128M');
 ini_set('session.gc_probability',0);
 if (isset($DEBUG) && $DEBUG) {
     error_reporting(E_ALL | E_STRICT);
@@ -28,14 +37,6 @@ if (isset($DEBUG) && $DEBUG) {
         
     }
 }
-/**
- * Include paths
- */
-if (isset($ZEND_PATH))
-    set_include_path(get_include_path().PATH_SEPARATOR.$ZEND_PATH);
-if (isset($PEAR_PATH))
-    set_include_path(get_include_path().PATH_SEPARATOR.$PEAR_PATH);
-set_include_path(get_include_path().PATH_SEPARATOR.__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'lib');
 /**
  * Loads forest progetto bosco module
  */
