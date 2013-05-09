@@ -36,7 +36,7 @@
                                                                
                                                             foreach($acoll->getItems() as $a) :
                                                             ?>
-                                                            <li >
+                                                            <li id="a<?php echo $a->getData('objectid');?>">
                                                                 <?php echo $a->getData('cod_part');?> - 
                                                                 <?php echo $a->getData('toponimo');?>
                                                             </li>

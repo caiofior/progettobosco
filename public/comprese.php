@@ -22,6 +22,31 @@ if (key_exists('action', $_REQUEST)) {
         
     }
 }
+if (key_exists('compresa', $_REQUEST)) {
+    if (key_exists('add', $_REQUEST)) {
+        if (substr($_REQUEST['add'], 0, 1) == 'a') {
+            $workingcircle = new \forest\WorkingCircle();
+            $workingcircle->loadFromId($_REQUEST['compresa']);
+            $forma = new \forest\entity\A();
+            $forma->loadFromId(substr($_REQUEST['add'], 1));
+            try{
+            $workingcircle->addFormA($forma);
+            } catch (Exception $e) {
+                if ($e->getCode() !== 0905131149)
+                    throw $e;
+            }
+        }
+    }
+    else if (key_exists('remove', $_REQUEST)) {
+        if (substr($_REQUEST['remove'], 0, 1) == 's') {
+            $workingcircle = new \forest\WorkingCircle();
+            $workingcircle->loadFromId($_REQUEST['compresa']);
+            $forma = new \forest\entity\A();
+            $forma->loadFromId(substr($_REQUEST['remove'], 1));
+            $workingcircle->removeFormA($forma);
+        }
+    }
+}
 if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
              
             $response = array();

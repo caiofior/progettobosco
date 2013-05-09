@@ -6,19 +6,29 @@
 $("#compresa").prepend("<a id=\"content_comprese_list_update\" style=\"display:none;\" data-basehref=\""+$("#comprese_list").attr("action")+"\" data-update=\"content_comprese_list\"></a>");
 $("#compresa").change(function() {
     el = $("#content_comprese_list_update");
-    el.attr("href",el.data("basehref")+"&compresa="+$(this).val());
+    el.attr("href",el.data("basehref")+"&compresa="+$("#compresa").val());
     el.click();
 });
 function draggable () {
     $("#content_comprese_listall ul li").draggable({ 
-        containment: "#main"});
-    $("#content_comprese_listselected p").droppable({drop:function() {
-        console.log("HI");
+        containment: "#main",
+        revert: true
+    });
+    $("#content_comprese_listselected p").droppable({drop:function(event, ui) {
+        el = $("#content_comprese_list_update");
+        el.attr("href",el.data("basehref")+"&compresa="+$("#compresa").val()+"&add="+ui.draggable.attr("id"));
+        el.click();
     }});
     $("#content_comprese_listselected ul li").draggable({ 
-        containment: "#main"});
-    $("#content_comprese_listall p").droppable({drop:function() {
-        console.log("HI");
+        containment: "#main",
+        revert: true
+
+    });
+     $("#content_comprese_listall p").droppable({drop:function(event, ui) {
+        el = $("#content_comprese_list_update");
+        el.attr("href",el.data("basehref")+"&compresa="+$("#compresa").val()+"&remove="+ui.draggable.attr("id"));
+        el.click();
+
     }});
 }
 draggable ();
