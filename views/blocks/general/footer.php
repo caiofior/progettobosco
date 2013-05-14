@@ -65,7 +65,7 @@
 		<div id="footer-bottom">
 	
 			<div class="bottom-left">
-<a rel="nofollow" href="http://creativecommons.org/licenses/by/3.0/it/"><img alt="Licenza Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/it/88x31.png" /></a><br />Quest' opera è distribuita con <a rel="license" href="http://creativecommons.org/licenses/by/3.0/it/">licenza Creative Commons Attribuzione 3.0 Italia</a>.			</div>		
+<a rel="nofollow" href="http://creativecommons.org/licenses/by/3.0/it/"><img alt="Licenza Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/it/88x31.png" /></a><br />Quest' opera è distribuita con <a rel="nofollow" href="http://creativecommons.org/licenses/by/3.0/it/">licenza Creative Commons Attribuzione 3.0 Italia</a>.			</div>		
 	
 			<div class="bottom-right">
 				<p>		

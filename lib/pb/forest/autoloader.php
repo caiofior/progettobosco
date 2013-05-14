@@ -149,6 +149,9 @@ if (!class_exists('Forest')) {
         'attribute'.DIRECTORY_SEPARATOR.'relivetypecoll.php',
         'attribute'.DIRECTORY_SEPARATOR.'viabilityintervent.php',
         'attribute'.DIRECTORY_SEPARATOR.'viabilityinterventcoll.php',
+        
+        'geo'.DIRECTORY_SEPARATOR.'polygon.php',
+        'geo'.DIRECTORY_SEPARATOR.'polygoncoll.php',
         );
     if (!isset($file)) $file = array();
     $files = array_diff($files, $file);
