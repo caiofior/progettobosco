@@ -81,7 +81,8 @@ $tables = array(
     'problemi_b3',
     'problemi_b4',
     //Other
-    'tipi_for'
+    'tipi_for',
+    'geo_particellare'
 );
 $preserveid = array(
     'schede_a',
