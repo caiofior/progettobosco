@@ -5,6 +5,7 @@
  * Page boot actions, requirments ad db connection
  */
 require (__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'config.php');
+$BASE_DIR = __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR;
 /**
  * Includes monitoring script
  */

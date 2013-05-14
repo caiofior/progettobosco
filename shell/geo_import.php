@@ -8,7 +8,7 @@ if ($argc < 3) {
 } 
 $placemark = array();
 $field_name=null;
-$poligoncoll = new \forest\geo\PolygonColl($argv[1]);
+$poligoncoll = new \forest\geo\Polygon($argv[1]);
 
 function startElement($parser, $name, $attrs) 
 {
@@ -21,13 +21,12 @@ function startElement($parser, $name, $attrs)
 function endElement($parser, $name) 
 {
     if ($name == 'PLACEMARK')
-        $GLOBALS['poligoncoll'] = new \forest\geo\PolygonColl($GLOBALS['argv'][1]);
+        $GLOBALS['poligoncoll'] = new \forest\geo\Polygon($GLOBALS['argv'][1]);
     $GLOBALS['field_name']=null;
 }
 function getElementText( $parser ,  $data ) {
     if ($GLOBALS['field_name']=='ID_AV') {
         $GLOBALS['poligoncoll']->setIdAv($data);
-        $GLOBALS['poligoncoll']->emptyColl();
     }
     if ($GLOBALS['field_name']=='coordinates'){
         $coordinates = explode(' ', $data);
@@ -35,10 +34,11 @@ function getElementText( $parser ,  $data ) {
             $coordinate = explode(',', $coordinate);
             if (sizeof($coordinate) <> 2) continue;
             $coordinate = array_combine(array('latitude','longitude'), $coordinate);
-            $poly = $GLOBALS['poligoncoll']->addItem();
+            $poly = $GLOBALS['poligoncoll']->appendItem();
             $poly->setData($coordinate);
-            $poly->insert();
         }
+        $GLOBALS['poligoncoll']->emptyColl();
+        $GLOBALS['poligoncoll']->insert();
     }
 }
 $xml_parser = xml_parser_create();
