@@ -26,9 +26,9 @@ if (!class_exists('Zend_Loader')) {
     
     if (!key_exists('PHPUNIT',$GLOBALS) || !$GLOBALS['PHPUNIT']) {
         $GLOBALS['CACHE'] = new Zend_Cache_Core(array('automatic_serialization'=>true));
-        /*if (in_array('apc',get_loaded_extensions()) || false)
+        if (in_array('apc',get_loaded_extensions()) )
             $GLOBALS['CACHE']->setBackend(new Zend_Cache_Backend_Apc());
-        else */
+        else
             $GLOBALS['CACHE']->setBackend(new Zend_Cache_Backend_File());
         Zend_Db_Table_Abstract::setDefaultMetadataCache($GLOBALS['CACHE']);
     }

@@ -150,6 +150,7 @@ if (!class_exists('Forest')) {
         'attribute'.DIRECTORY_SEPARATOR.'viabilityintervent.php',
         'attribute'.DIRECTORY_SEPARATOR.'viabilityinterventcoll.php',
         
+        '..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'gPoint'.DIRECTORY_SEPARATOR.'gPoint.php',
         'geo'.DIRECTORY_SEPARATOR.'polygon.php',
         'geo'.DIRECTORY_SEPARATOR.'polygonitem.php',
         );

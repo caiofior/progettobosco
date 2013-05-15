@@ -23,6 +23,9 @@ if (!class_exists('Content')) {
  * Manages Geographic Polygon
  * 
  * Manages Geographic Polygon
+ * Data are stored in database in UTM format using Ellipsoid WGS 84
+ * {@link http://www.phpclasses.org/browse/file/10671.html gPoint Tool} was user for transformation  for transforming Latitude and Longitude to UTM
+ * 
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
@@ -32,7 +35,7 @@ class Polygon  extends \ContentColl  {
      * SQL reference
      * @var string
      */
-    private $sql;
+    private static $sql;
     /**
      * Id av reference
      * @var string
@@ -81,34 +84,38 @@ class Polygon  extends \ContentColl  {
      * Insert a polygon to db
      */
     public function insert() {
+        $gpoint = new \gPoint();
         switch (get_class($this->content->getTable()->getAdapter())) {
             case 'Zend_Db_Adapter_Mysqli':
-            $this->sql = 'INSERT INTO '.$this->content->getTable()->info('name').' (id_av, forest_compartment) '.
-                   ' VALUES ('.$this->content->getTable()->getAdapter()->quote($this->id_av).' ,  GeomFromText(\'POLYGON (';
+            self::$sql = 'INSERT INTO '.$this->content->getTable()->info('name').' (id_av, forest_compartment) '.
+                   ' VALUES ('.$this->content->getTable()->getAdapter()->quote($this->id_av).' ,  GeomFromText(\'POLYGON ((';
             foreach ($this->items as $key=>$point) {
-                if ($key > 0 ) $this->sql .= ', ';
-                 $this->sql .= $point->getRawData('latitude').' '.$point->getRawData('longitude');
+                $gpoint->setLongLat($point->getRawData('longitude'),$point->getRawData('latitude'));
+                $gpoint->convertLLtoTM();
+                if ($key > 0 ) self::$sql .= ', ';
+                 self::$sql .= $gpoint->N().' '.$gpoint->E();
             }
-            $this->sql .= ')\')';
-
+            self::$sql .= '))\'))';
             $db = $this->content->getTable()->getAdapter()->getConnection();
             $old_eh = \set_error_handler(array(get_class($this),'error_handler'));
-            mysqli_query($db, $this->sql);
+            mysqli_query($db, self::$sql);
             set_error_handler($old_eh);
             break;
             case 'Zend_Db_Adapter_Pgsql':
         
-            $this->sql = 'INSERT INTO '.$this->content->getTable()->info('name').' (id_av, forest_compartment) '.
+            self::$sql = 'INSERT INTO '.$this->content->getTable()->info('name').' (id_av, forest_compartment) '.
                    ' VALUES ('.$this->content->getTable()->getAdapter()->quote($this->id_av).' , \'';
             foreach ($this->items as $key=>$point) {
-                if ($key > 0 ) $this->sql .= ', ';
-                $this->sql .= '('.$point->getRawData('latitude').','.$point->getRawData('longitude').')';
+                $gpoint->setLongLat($point->getRawData('longitude'),$point->getRawData('latitude'));
+                $gpoint->convertLLtoTM();
+                if ($key > 0 ) self::$sql .= ', ';
+                self::$sql .= '('.$gpoint->N().','.$gpoint->E().')';
             }
-            $this->sql .= '\')';
+            self::$sql .= '\')';
 
             $db = $this->content->getTable()->getAdapter()->getConnection();
             $old_eh = \set_error_handler(array(get_class($this),'error_handler'));
-            pg_query($db, $this->sql);
+            pg_query($db, self::$sql);
             set_error_handler($old_eh);
             break;
         }
@@ -120,7 +127,7 @@ class Polygon  extends \ContentColl  {
      * @param string $file
      * @param int $line
      */
-    public  function error_handler ($num,$err,$file,$line) {
-        file_put_contents($GLOBALS['BASE_DIR'].'log'.DIRECTORY_SEPARATOR.'last_wrong_query.sql', $this->sql);
+    public static function error_handler ($num,$err,$file,$line) {
+        file_put_contents($GLOBALS['BASE_DIR'].'log'.DIRECTORY_SEPARATOR.'last_wrong_query.sql', self::$sql);
     }
 }
