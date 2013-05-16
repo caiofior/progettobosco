@@ -109,7 +109,6 @@ function pg2mysql_large($infilename,$outfilename) {
 			print_r($pgsqlchunk);
 			echo "=======================\n";
 */
-			
 			$mysqlchunk=pg2mysql($pgsqlchunk,$first);
 			fputs($outfp,$mysqlchunk);
 
@@ -135,7 +134,7 @@ function pg2mysql($input, $header=true)
 	} else {
 		$lines=split("\n",$input);
 	}
-
+        
 	if($header) {
 		$output = "# Converted with ".PRODUCT."-".VERSION."\n";
 		$output.= "# Converted on ".date("r")."\n";
@@ -331,14 +330,26 @@ function pg2mysql($input, $header=true)
 			}
 		}
 		if(substr($line,0,16)=="ALTER TABLE ONLY") {
+                    
 			$line=preg_replace('/ ONLY/','',$line);
 			$line=str_replace("\"","`",$line);
 			$pkey=$line;
+                        
+                        if(strstr($line," SET DEFAULT nextval")) {
+                                $command = $pkey;
+                                $command = preg_replace('/ALTER COLUMN (.*) SET DEFAULT.*/', 'ADD PRIMARY KEY ( $1 );', $command);
+                                $output.= $command;
 
+                                $command = $pkey;
+                                $command = preg_replace('/ALTER COLUMN (.*) SET DEFAULT/', 'CHANGE COLUMN $1 $1 SET DEFAULT', $command);
+                                $command = preg_replace('/SET DEFAULT nextval.*/', 'int(11) auto_increment;', $command);
+                                $output.= $command;
+                                
+                        }
 			$linenumber++;
                         if (key_exists($linenumber, $lines))
                             $line=$lines[$linenumber];
-
+                        
 			if(strstr($line," PRIMARY KEY ") && substr($line,-3,-1)==");") {
 				//looks like we have a single line PRIMARY KEY definition, lets go ahead and add it
 				$output.=$pkey;
@@ -360,7 +371,7 @@ function pg2mysql($input, $header=true)
 				//identical, so we can just add it as is.
 				$output.=$line;
 			}
-
+                        
 		}
 
 		//while we're here, we might as well catch CREATE INDEX as well
@@ -415,6 +426,7 @@ function pg2mysql($input, $header=true)
 			$tablename=$matches[1];
 			$column=$matches[2];
 			if($tablename && $column) {
+                                $output.="ALTER IGNORE TABLE `{$tablename}` ADD PRIMARY KEY ( {$column} ) ;\n";
                             	$output.="ALTER IGNORE TABLE `{$tablename}` CHANGE COLUMN {$column}  {$column} INT(11) NOT NULL AUTO_INCREMENT ;\n";
 			}
                 }

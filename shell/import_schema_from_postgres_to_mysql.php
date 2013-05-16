@@ -11,6 +11,9 @@ if ($argc < 5) {
 }
 $db1 = $argv;
 echo exec ('sudo -u '.$DB_CONFIG['username'].' pg_dump --schema-only --format p --inserts '.$DB_CONFIG['dbname'].' > '.$dir.'output'.DIRECTORY_SEPARATOR.'pg_schema.sql;');
+$text = file_get_contents($dir.'output'.DIRECTORY_SEPARATOR.'pg_schema.sql');
+$text = preg_replace('/CREATE EXTENSION.*AS IMPLICIT/ms', '', $text);
+file_put_contents($dir.'output'.DIRECTORY_SEPARATOR.'pg_schema.sql', $text);
 $argv[1]=$dir.'output'.DIRECTORY_SEPARATOR.'pg_schema.sql';
 $argv[2]=$dir.'output'.DIRECTORY_SEPARATOR.'mysql_schema.sql';    
 require $dir.'..'.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR.'pg2mysql-1.9'.DIRECTORY_SEPARATOR.'pg2mysql_cli.php' ;
@@ -40,6 +43,18 @@ foreach ($all_tables as $table) {
     fclose($file_input);
     fclose($file_output);
     echo exec('mysqlimport -h '.$db1[1].' -u '.$db1[2].$pass.' --local --fields-terminated-by="," --fields-enclosed-by="" '.$db1[4].' '.$filename).PHP_EOL;
-    unlink($filename_or);
-    unlink($filename);
+    if (is_file($filename_or))
+        unlink($filename_or);
+    if (is_file($filename))
+        unlink($filename);
 }
+$sql = "
+ CREATE TABLE `geo_particellare` (
+ `id_av` varchar(12) NOT NULL DEFAULT '',
+ `forest_compartment` geometry DEFAULT NULL,
+ PRIMARY KEY (`id_av`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1";
+echo exec('mysql -h '.$db1[1].' -u '.$db1[2].$pass.' '.$db1[4].' -e"'.$sql.'"');
+echo exec('mysql -h '.$db1[1].' -u '.$db1[2].$pass.' '.$db1[4].' -e"ALTER TABLE propriet 
+CHANGE COLUMN objectid  objectid int(11),
+DROP PRIMARY KEY, ADD PRIMARY KEY(codice);"');
