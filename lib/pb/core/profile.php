@@ -35,14 +35,14 @@ class Profile extends Content {
      * Adds a new user, please save the password in clear in password_new
      */
     public function insert() {
-        $this->data['lastupdate_datetime']='NOW()';
+        $this->data['lastupdate_datetime']=new \Zend_Db_Expr('NOW()');
         parent::insert();
     }
     /**
      * Updates user data
      */
     public function update() {
-        $this->data['lastupdate_datetime']='NOW()';
+        $this->data['lastupdate_datetime']=new \Zend_Db_Expr('NOW()');
         parent::update();
     }
 }

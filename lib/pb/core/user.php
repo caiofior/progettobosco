@@ -29,7 +29,7 @@ class User extends Content {
      */
     public function loadFromId($id) {
         $where = $this->table->getAdapter()->quoteInto('id = ?', $id); 
-        $updated = $this->table->update(array('lastlogin_datetime'=>'NOW()'), $where);
+        $updated = $this->table->update(array('lastlogin_datetime'=>new \Zend_Db_Expr('NOW()')), $where);
         parent::loadFromId($id);
         if (
                 !is_array($this->data) ||
@@ -44,7 +44,7 @@ class User extends Content {
      */
     public function loadFromUsername($username) {
         $where = $this->table->getAdapter()->quoteInto('username = ?', $username); 
-        $updated = $this->table->update(array('lastlogin_datetime'=>'NOW()'), $where);
+        $updated = $this->table->update(array('lastlogin_datetime'=>new \Zend_Db_Expr('NOW()')), $where);
         $data = $this->table->fetchRow($where);
         if (is_object($data))
             $this->data = $data->toArray();
@@ -61,7 +61,7 @@ class User extends Content {
      */
     public function loadFromConformationCode($confirmation_code) {
         $where = $this->table->getAdapter()->quoteInto('confirmation_code = ?', $confirmation_code); 
-        $updated = $this->table->update(array('lastlogin_datetime'=>'NOW()'), $where);
+        $updated = $this->table->update(array('lastlogin_datetime'=>new \Zend_Db_Expr('NOW()')), $where);
         $this->data = $this->table->fetchRow($where)->toArray();
                 if (
                 !is_array($this->data) ||
@@ -84,7 +84,7 @@ class User extends Content {
         $this->data['password']=md5($this->data['password_new']);
         unset($this->data['password_new']);
         $this->data['confirmation_code']=md5(serialize($GLOBALS));
-        $this->data['creation_datetime']='NOW()';
+        $this->data['creation_datetime']=new \Zend_Db_Expr('NOW()');
         $profile = new Profile();
         $profile->setData($this->data['username'],'email');
         $profile->insert();
