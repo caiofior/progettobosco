@@ -65,12 +65,6 @@ class Polygon  extends \ContentColl  {
         $this->id_av = $id_av;
     }
     /**
-     * Deletes all item with a specific ID
-     */
-    public function emptyColl() {
-        $this->content->getTable()->getAdapter()->query('DELETE FROM '.$this->content->getTable()->info('name').' WHERE id_av = '.$this->content->getTable()->getAdapter()->quote($this->id_av));
-    }
-    /**
      * Returns a new polygon vertex
      * @return \forest\geo\PolygonItem
      */
@@ -84,6 +78,7 @@ class Polygon  extends \ContentColl  {
      * Insert a polygon to db
      */
     public function insert() {
+        $this->content->getTable()->getAdapter()->query('DELETE FROM '.$this->content->getTable()->info('name').' WHERE id_av = '.$this->content->getTable()->getAdapter()->quote($this->id_av));
         $gpoint = new \gPoint();
         switch (get_class($this->content->getTable()->getAdapter())) {
             case 'Zend_Db_Adapter_Mysqli':
@@ -97,26 +92,29 @@ class Polygon  extends \ContentColl  {
             }
             self::$sql .= '))\'))';
             $db = $this->content->getTable()->getAdapter()->getConnection();
-            $old_eh = \set_error_handler(array(get_class($this),'error_handler'));
+            set_error_handler(get_class($this).'::error_handler');
             mysqli_query($db, self::$sql);
-            set_error_handler($old_eh);
+            restore_error_handler();
             break;
             case 'Zend_Db_Adapter_Pgsql':
         
             self::$sql = 'INSERT INTO '.$this->content->getTable()->info('name').' (id_av, forest_compartment) '.
-                   ' VALUES ('.$this->content->getTable()->getAdapter()->quote($this->id_av).' , \'';
+                   ' VALUES ('.$this->content->getTable()->getAdapter()->quote($this->id_av).' , ST_GeomFromText(\'POLYGON((';
+            $first = null;    
             foreach ($this->items as $key=>$point) {
                 $gpoint->setLongLat($point->getRawData('longitude'),$point->getRawData('latitude'));
                 $gpoint->convertLLtoTM();
-                if ($key > 0 ) self::$sql .= ', ';
-                self::$sql .= '('.$gpoint->N().','.$gpoint->E().')';
+                if ($key == 0)
+                    $first = clone $gpoint;
+                self::$sql .= $gpoint->N().' '.$gpoint->E().', ';
             }
-            self::$sql .= '\')';
+            self::$sql .= $first->N().' '.$first->E();
+            self::$sql .= '))\',4326))';
 
             $db = $this->content->getTable()->getAdapter()->getConnection();
-            $old_eh = \set_error_handler(array(get_class($this),'error_handler'));
+            set_error_handler(get_class($this).'::error_handler');
             pg_query($db, self::$sql);
-            set_error_handler($old_eh);
+            restore_error_handler();
             break;
         }
     }
@@ -127,7 +125,8 @@ class Polygon  extends \ContentColl  {
      * @param string $file
      * @param int $line
      */
-    public static function error_handler ($num,$err,$file,$line) {
+    public static function error_handler ($num,$err,$file, $line) {
+        trigger_error('Error on insert '.$file.' '.$line.' '.$err);
         file_put_contents($GLOBALS['BASE_DIR'].'log'.DIRECTORY_SEPARATOR.'last_wrong_query.sql', self::$sql);
     }
 }
