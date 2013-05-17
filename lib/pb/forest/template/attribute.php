@@ -26,7 +26,7 @@ if (!class_exists('Content')) {
  * 
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
-*/
+ */
 interface Attribute {
     
 }

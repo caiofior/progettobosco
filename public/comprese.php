@@ -16,7 +16,8 @@ if ($user === false) {
     $_REQUEST=array();
 }
 $forest = new forest\Forest();
-$forest->loadFromId($_REQUEST['id']);
+if (key_exists('id', $_REQUEST))
+    $forest->loadFromId($_REQUEST['id']);
 if (key_exists('action', $_REQUEST)) {
     switch ($_REQUEST['action']) {
         
@@ -26,14 +27,20 @@ if (key_exists('compresa', $_REQUEST)) {
     if (key_exists('add', $_REQUEST)) {
         if (substr($_REQUEST['add'], 0, 1) == 'a') {
             $workingcircle = new \forest\WorkingCircle();
+            try{
             $workingcircle->loadFromId($_REQUEST['compresa']);
             $forma = new \forest\entity\A();
             $forma->loadFromId(substr($_REQUEST['add'], 1));
-            try{
             $workingcircle->addFormA($forma);
             } catch (Exception $e) {
-                if ($e->getCode() !== 0905131149)
-                    throw $e;
+                switch ($e->getCode()) {
+                    case 0905131149:
+                    case 1705130906:
+                    break;
+                    default : 
+                        throw $e;
+                    break;
+                }
             }
         }
     }

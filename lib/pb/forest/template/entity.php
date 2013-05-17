@@ -40,19 +40,8 @@ abstract class Entity extends \Content {
      */
     public function __construct($table = null) {
         parent::__construct($table);
-        $all_attributes_data = $GLOBALS['CACHE']->load('archivi');
-        if (is_array($all_attributes_data)) {
-            $this->all_attributes_data=$all_attributes_data;
-        } else {
-            $attibutes = new \Zend_Db_Table('archivi');
-            $all_attributes_data = $attibutes->fetchAll()->toArray();
-            foreach ($all_attributes_data as $attribute_data) {
-                if (!key_exists($attribute_data['archivio'],$this->all_attributes_data))
-                    $this->all_attributes_data[$attribute_data['archivio']] =array();
-                $this->all_attributes_data[$attribute_data['archivio']][$attribute_data['nomecampo']]=$attribute_data;
-            }
-            $GLOBALS['CACHE']->save($this->all_attributes_data,'archivi');
-        }
+        $archivicoll = \forest\template\ArchiveColl::getInstance();
+        $this->all_attributes_data = $archivicoll::getAllAttributes();
     }
     /**
      * Returns the associated control

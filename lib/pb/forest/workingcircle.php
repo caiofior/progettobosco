@@ -42,8 +42,11 @@ class WorkingCircle extends \forest\template\Entity {
     /**
      * Loads form a data
      * @param integer $id
+     * @throws Exception
      */
     public function loadFromId($id) {
+        if (!is_numeric($id))
+            throw new \Exception ('ID is not valid',1705130906);
         parent::loadFromId($id);
         $this->calculatedVariables();
     }
@@ -54,7 +57,7 @@ class WorkingCircle extends \forest\template\Entity {
     public function getForest() {
         $forest = new \forest\Forest();
         if (!key_exists('proprieta', $this->data))
-                throw new \Exception ('Workin Circle not associated with a forest',0705131053);
+                throw new \Exception ('Working Circle not associated with a forest',0705131053);
         $forest->loadFromCode($this->data['proprieta']);
         $forest->setWorkingCircle($this);
         return $forest;

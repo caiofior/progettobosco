@@ -2629,8 +2629,9 @@ DROP TABLE IF EXISTS `operator`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `operator` (
-  `codice` varchar(3) DEFAULT NULL,
-  `descriz` varchar(41) DEFAULT NULL
+  `codice` varchar(3) NOT NULL,
+  `descriz` varchar(41) DEFAULT NULL,
+  PRIMARY KEY (`codice`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -2640,7 +2641,7 @@ CREATE TABLE `operator` (
 
 LOCK TABLES `operator` WRITE;
 /*!40000 ALTER TABLE `operator` DISABLE KEYS */;
-INSERT INTO `operator` VALUES ('<',' minore di'),('<=',' minore uguale di'),('<>',' diverso da'),('=',' uguale a'),('>',' maggiore di'),('>=',' maggiore uguale di'),('and',' e'),('not',' non'),('or',' o'),('<',' minore di'),('<=',' minore uguale di'),('<>',' diverso da'),('=',' uguale a'),('>',' maggiore di'),('>=',' maggiore uguale di'),('and',' e'),('not',' non'),('or',' o'),('<',' minore di'),('<=',' minore uguale di'),('<>',' diverso da'),('=',' uguale a'),('>',' maggiore di'),('>=',' maggiore uguale di'),('and',' e'),('not',' non'),('or',' o'),('<',' minore di'),('<=',' minore uguale di'),('<>',' diverso da'),('=',' uguale a'),('>',' maggiore di'),('>=',' maggiore uguale di'),('and',' e'),('not',' non'),('or',' o');
+INSERT INTO `operator` VALUES ('<',' minore di'),('<=',' minore uguale di'),('<>',' diverso da'),('=',' uguale a'),('>',' maggiore di'),('>=',' maggiore uguale di'),('and',' e'),('not',' non'),('or',' o');
 /*!40000 ALTER TABLE `operator` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5648,7 +5649,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (93,'caiofior@gmail.com','8f04a464e3660e912e8abaf8aefaa2fe',1,1,'2013-01-22 13:30:36','2013-05-15 13:09:18',1,'',93,'887a1f43ee1a30c0559a5278e700cad7','Amministratore'),(94,'caio.fior@libero.it','8f04a464e3660e912e8abaf8aefaa2fe',1,1,'2013-01-31 13:56:02','2013-04-08 07:41:42',0,'',94,'26302e79c797cd65f187b94f54bf309a','\"\"');
+INSERT INTO `user` VALUES (93,'caiofior@gmail.com','8f04a464e3660e912e8abaf8aefaa2fe',1,1,'2013-01-22 13:30:36','2013-05-17 14:02:28',1,'',93,'887a1f43ee1a30c0559a5278e700cad7','Amministratore'),(94,'caio.fior@libero.it','8f04a464e3660e912e8abaf8aefaa2fe',1,1,'2013-01-31 13:56:02','2013-04-08 07:41:42',0,'',94,'26302e79c797cd65f187b94f54bf309a','\"\"');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5852,4 +5853,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-05-16 14:41:47
+-- Dump completed on 2013-05-17 16:17:19

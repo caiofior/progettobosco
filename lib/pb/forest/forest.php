@@ -333,6 +333,23 @@ WHERE usosuolo.codice <> \'\' AND proprieta=\''.$this->data['codice'].'\''));
      */
     public function setWorkingCircle (\forest\WorkingCircle $workingcircle) {
         $this->workingcircle = $workingcircle;
+    }
+    /**
+     * Return the filtering parameters
+     * @return \forest\template\ArchiveColl
+     */
+    public function getACollFiltering () {
+        $archivecoll = \forest\template\ArchiveColl::getInstance();
+        $all_attributes = $archivecoll->getAllAttributes();
         
+        $attributes = array_merge(
+                $all_attributes['schede_a'],
+                $all_attributes['schede_b'],
+                $all_attributes['sched_b1'],
+                $all_attributes['sched_b3'],
+                $all_attributes['arboree']
+                )
+                ;
+        return $attributes;
     }
 }

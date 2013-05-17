@@ -77,6 +77,23 @@ class AColl extends \forest\template\EntityColl {
             $select->where('(schede_a.cod_part LIKE ? OR schede_a.toponimo  LIKE ? )','%'.$criteria['search'].'%');
         }
         if (
+                (key_exists('parameter', $criteria) && $criteria['parameter'] != '') &&
+                (key_exists('operator', $criteria) && $criteria['operator'] != '')
+            ) {
+            $archivecoll = \forest\template\ArchiveColl::getInstance();
+            $attribute = $archivecoll->getAttributeById($criteria['parameter']);
+            $select->where(
+                    ' schede_a.objectid IN (
+                        SELECT objectid FROM '.$attribute['archivio'].'
+                        WHERE
+                        schede_a.proprieta = '.$attribute['archivio'].'.proprieta AND
+                        schede_a.cod_part = '.$attribute['archivio'].'.cod_part AND
+                        '.$attribute['archivio'].'.'.$attribute['nomecampo'].' '.$criteria['operator'].' '.floatval($criteria['value']).'
+                        )
+                    '
+            );
+            }
+        if (
                     $this->workingcircle instanceof \forest\WorkingCircle &&
                     $this->workingcircle->getData('objectid') != '' &&
                     key_exists('associated_compresa', $criteria) &&

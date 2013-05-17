@@ -15,8 +15,10 @@ if (!class_exists('Forest')) {
         'template'.DIRECTORY_SEPARATOR.'entitycoll.php',
         'template'.DIRECTORY_SEPARATOR.'control.php',
         'template'.DIRECTORY_SEPARATOR.'controlcoll.php',
+        'template'.DIRECTORY_SEPARATOR.'archivicoll.php',
         'template'.DIRECTORY_SEPARATOR.'attribute.php',
         'template'.DIRECTORY_SEPARATOR.'attributecoll.php',
+        
         'forest.php',
         'forestcoll.php',
         'workingcircle.php',

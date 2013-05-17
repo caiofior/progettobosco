@@ -15,7 +15,7 @@
                                                         ?>
                                                         <div id="content_comprese_listall" >       
                                                             <p>Particelle non associate alla compresa<br/>
-                                                               Trascina qui le particelle che vuoi rimuovere dalla compresa
+                                                                <span style="display: none;" class="working_circle_selected">Trascina qui le particelle che vuoi rimuovere dalla compresa</span>
                                                             </p>
                                                         <ul >
                                                             <?php 
@@ -25,15 +25,23 @@
                                                                     $_GET['start']=0;
                                                                 if (!key_exists('search', $_GET))
                                                                     $_GET['search']=null;
+                                                                if (!key_exists('parameter', $_GET))
+                                                                    $_GET['parameter']=null;
+                                                                if (!key_exists('operator', $_GET))
+                                                                    $_GET['operator']=null;
+                                                                if (!key_exists('value', $_GET))
+                                                                    $_GET['value']=null;
                                                                 $acoll->loadAll(
                                                                         array(
                                                                     'start'=>$_GET['start'],
                                                                     'length'=>$items_in_page,
                                                                     'search'=>$_GET['search'],
+                                                                    'parameter'=>$_GET['parameter'],
+                                                                    'operator'=>$_GET['operator'],
+                                                                    'value'=>$_GET['value'],
                                                                     'associated_compresa'=>false
                                                                 )
                                                                 );
-                                                               
                                                             foreach($acoll->getItems() as $a) :
                                                             ?>
                                                             <li id="a<?php echo $a->getData('objectid');?>">
