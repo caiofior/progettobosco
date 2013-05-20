@@ -81,17 +81,29 @@ class AColl extends \forest\template\EntityColl {
                 (key_exists('operator', $criteria) && $criteria['operator'] != '')
             ) {
             $archivecoll = \forest\template\ArchiveColl::getInstance();
-            $attribute = $archivecoll->getAttributeById($criteria['parameter']);
-            $select->where(
-                    ' schede_a.objectid IN (
-                        SELECT objectid FROM '.$attribute['archivio'].'
-                        WHERE
-                        schede_a.proprieta = '.$attribute['archivio'].'.proprieta AND
-                        schede_a.cod_part = '.$attribute['archivio'].'.cod_part AND
-                        '.$attribute['archivio'].'.'.$attribute['nomecampo'].' '.$criteria['operator'].' '.floatval($criteria['value']).'
-                        )
-                    '
-            );
+            if (!is_array($criteria['parameter']))
+                $criteria['parameter'] =array($criteria['parameter']);
+            if (!is_array($criteria['operator']))
+                $criteria['operator'] =array($criteria['operator']);
+            if (!is_array($criteria['value']))
+                $criteria['value'] =array($criteria['value']);
+            foreach ($criteria['parameter'] as $key=>$parameter) {
+                if (
+                        !key_exists($key, $criteria['operator']) ||
+                        !key_exists($key, $criteria['value'])
+                    ) continue;
+                $attribute = $archivecoll->getAttributeById($parameter);
+                $select->where(
+                        ' schede_a.objectid IN (
+                            SELECT objectid FROM '.$attribute['archivio'].'
+                            WHERE
+                            schede_a.proprieta = '.$attribute['archivio'].'.proprieta AND
+                            schede_a.cod_part = '.$attribute['archivio'].'.cod_part AND
+                            '.$attribute['archivio'].'.'.$attribute['nomecampo'].' '.$criteria['operator'][$key].' '.floatval($criteria['value'][$key]).'
+                            )
+                        '
+                );
+            }
             }
         if (
                     $this->workingcircle instanceof \forest\WorkingCircle &&
