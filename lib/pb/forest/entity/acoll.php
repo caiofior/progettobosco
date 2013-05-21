@@ -95,11 +95,15 @@ class AColl extends \forest\template\EntityColl {
                 $attribute = $archivecoll->getAttributeById($parameter);
                 $select->where(
                         ' schede_a.objectid IN (
-                            SELECT objectid FROM '.$attribute['archivio'].'
+                            SELECT a'.$key.'.objectid FROM schede_a AS a'.$key.'
+                            LEFT JOIN '.$attribute['archivio'].'
+                            ON
+                            a'.$key.'.proprieta = '.$attribute['archivio'].'.proprieta AND 
+                            a'.$key.'.cod_part = '.$attribute['archivio'].'.cod_part    
                             WHERE
                             schede_a.proprieta = '.$attribute['archivio'].'.proprieta AND
                             schede_a.cod_part = '.$attribute['archivio'].'.cod_part AND
-                            '.$attribute['archivio'].'.'.$attribute['nomecampo'].' '.$criteria['operator'][$key].' '.floatval($criteria['value'][$key]).'
+                            CAST('.$attribute['archivio'].'.'.$attribute['nomecampo'].' AS float) '.$criteria['operator'][$key].' '.floatval($criteria['value'][$key]).'
                             )
                         '
                 );
@@ -187,7 +191,39 @@ class AColl extends \forest\template\EntityColl {
              if (key_exists('search', $criteria) && $criteria['search'] != '') {
                  $select->where('(schede_a.cod_part LIKE ? OR schede_a.toponimo  LIKE ? )','%'.$criteria['search'].'%');
              }
-             
+             if (
+                (key_exists('parameter', $criteria) && $criteria['parameter'] != '') &&
+                (key_exists('operator', $criteria) && $criteria['operator'] != '')
+            ) {
+            $archivecoll = \forest\template\ArchiveColl::getInstance();
+            if (!is_array($criteria['parameter']))
+                $criteria['parameter'] =array($criteria['parameter']);
+            if (!is_array($criteria['operator']))
+                $criteria['operator'] =array($criteria['operator']);
+            if (!is_array($criteria['value']))
+                $criteria['value'] =array($criteria['value']);
+            foreach ($criteria['parameter'] as $key=>$parameter) {
+                if (
+                        !key_exists($key, $criteria['operator']) ||
+                        !key_exists($key, $criteria['value'])
+                    ) continue;
+                $attribute = $archivecoll->getAttributeById($parameter);
+                $select->where(
+                        ' schede_a.objectid IN (
+                            SELECT a'.$key.'.objectid FROM schede_a AS a'.$key.'
+                            LEFT JOIN '.$attribute['archivio'].'
+                            ON
+                            a'.$key.'.proprieta = '.$attribute['archivio'].'.proprieta AND 
+                            a'.$key.'.cod_part = '.$attribute['archivio'].'.cod_part    
+                            WHERE
+                            schede_a.proprieta = '.$attribute['archivio'].'.proprieta AND
+                            schede_a.cod_part = '.$attribute['archivio'].'.cod_part AND
+                            CAST('.$attribute['archivio'].'.'.$attribute['nomecampo'].' AS float) '.$criteria['operator'][$key].' '.floatval($criteria['value'][$key]).'
+                            )
+                        '
+                );
+            }
+            }
              if (
                     $this->workingcircle instanceof \forest\WorkingCircle &&
                     $this->workingcircle->getData('objectid') != '' &&

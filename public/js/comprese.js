@@ -4,12 +4,10 @@
  * @copyright CRA
  */
 $("#compresa").prepend("<a id=\"content_comprese_list_update\" style=\"display:none;\" data-basehref=\""+$("#comprese_list").attr("action")+"\" data-update=\"content_comprese_list\"></a>");
-$(document).on("change","#parameter, #search, .operator, .value, .compresa", function (){
-
+$(document).on("change",".parameter, #search, .operator, .value,  #compresa", function () {
     trigger = $(this);
     parameters_url = $("#comprese_list").serialize();
-    search = $("#search").val();
-    compresa = $("#compresa").val();
+    $("#todo").val("");
     el = $("#content_comprese_list_update");
     el.attr(
             "href",el.data("basehref")+"&"+parameters_url
@@ -51,6 +49,16 @@ $("#add_filter").click(function() {
 $(document).on("click",".remove_filter",function () {
    $(this).parent("fieldset").remove();
    $("#search").change();
+   return false; 
+});
+$(document).on("click","#add_all",function () {
+    $("#todo").val("add_all");
+    $("#search").change();
+   return false; 
+});
+$(document).on("click","#remove_all",function () {
+    $("#todo").val("remove_all");
+    $("#search").change();
    return false; 
 });
 function draggable () {

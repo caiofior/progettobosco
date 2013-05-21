@@ -6,8 +6,10 @@
         Purpose of the stylesheet follows.
 */
 #content_comprese_listall {
+    width: 350px;
     float: left;
 }
 #content_comprese_listselected {
-    float: left;
+    width: 350px;
+    float: left; 
 }

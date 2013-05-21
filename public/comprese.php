@@ -53,6 +53,53 @@ if (key_exists('compresa', $_REQUEST)) {
             $workingcircle->removeFormA($forma);
         }
     }
+    else if (key_exists('todo', $_REQUEST) && $_REQUEST['todo'] != '') {
+            $workingcircle = new \forest\WorkingCircle();
+            $workingcircle->loadFromId($_REQUEST['compresa']);
+            $acoll = $forest->getAColl();
+            if (!key_exists('search', $_GET))
+                $_GET['search']=null;
+            if (!key_exists('parameter', $_GET))
+                $_GET['parameter']=null;
+            if (!key_exists('operator', $_GET))
+                $_GET['operator']=null;
+            if (!key_exists('value', $_GET))
+                $_GET['value']=null;
+            
+                                                           
+        if ($_REQUEST['todo']='add_all') {
+            $acoll->loadAll(
+                    array(
+                'search'=>$_GET['search'],
+                'parameter'=>$_GET['parameter'],
+                'operator'=>$_GET['operator'],
+                'value'=>$_GET['value'],
+                'associated_compresa'=>false
+            )
+            );
+             foreach($acoll->getItems() as $a) 
+                 try {
+                 $workingcircle->addFormA($a);
+                 } catch (Exception $e)
+                 { 
+                    if ($e->getCode() != 0905131149)
+                    throw $e;
+                 }
+        }
+        else if ($_REQUEST['todo']='removeall_all') {
+            $acoll->loadAll(
+                    array(
+                'search'=>$_GET['search'],
+                'parameter'=>$_GET['parameter'],
+                'operator'=>$_GET['operator'],
+                'value'=>$_GET['value'],
+                'associated_compresa'=>true
+            )
+            );
+             foreach($acoll->getItems() as $a) 
+                 $workingcircle->removeFormA($a);
+        }
+    }
 }
 if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
              

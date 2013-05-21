@@ -14,9 +14,11 @@
                                                         }
                                                         ?>
                                                         <div id="content_comprese_listselected" >       
+                                                            
                                                             <p>
                                                                 Particelle associate alla compresa<br>
                                                                 <span style="display: none;" class="working_circle_selected">Trascina qui le particelle che vuoi aggiungere alla compresa</span>
+                                                                <a id="remove_all" class="working_circle_selected" href="#">Rimuovi tutte</a>
                                                             </p>
                                                         <ul >
                                                             <?php 
@@ -73,7 +75,14 @@
                                                                 'data-update'=>''
                                                             ),
                                                         );
-                                                        $countall =$acoll->countAll(array('search'=>$_GET['search'],'associated_compresa'=>true));
+                                                        $countall =$acoll->countAll(array(
+                                                            'search'=>$_GET['search'],
+                                                            'parameter'=>$_GET['parameter'],
+                                                            'operator'=>$_GET['operator'],
+                                                            'value'=>$_GET['value'],
+                                                            'associated_compresa'=>false)                                                            
+                                                            
+                                                        );
                                                         $last_page = floor($countall/$items_in_page)*$items_in_page;
 
                                                         if ($start>0) {

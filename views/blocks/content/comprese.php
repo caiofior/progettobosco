@@ -15,6 +15,7 @@
                                         <p>
                                         <input type="hidden" id="id" name="id" value="<?php echo $this->forest->getData('codice');?>" />
                                         <input type="hidden" id="sequence" name="sequence" value="0" />
+                                        <input type="hidden" id="todo" name="todo" value="" />
                                         <label for="compresa">Compresa/Classe colturale</label>
                                         <select class="large" id="compresa" name="compresa"  tabindex="1" >
                                             <option value="">Seleziona una compresa</option>
