@@ -3,7 +3,7 @@
     <div id="breadcrumb">
         <a href="<?php echo $GLOBALS['BASE_URL']; ?>">Home</a> &gt;
         <a href="<?php echo $GLOBALS['BASE_URL']; ?>bosco.php">Elenco Boschi</a> &gt;
-        <a href="<?php echo $GLOBALS['BASE_URL']; ?>bosco.php?action=manage&amp;id=<?php echo $this->forest->getData('objectid'); ?>">Elenco Particelle</a>
+        <a href="<?php echo $GLOBALS['BASE_URL']; ?>bosco.php?action=manage&amp;id=<?php echo $this->forest->getData('codice'); ?>">Elenco Particelle</a>
     </div>
     <div class="post">
         <?php $profile = $this->user->getProfile(); ?>
