@@ -23,9 +23,10 @@
                                          --><span><a data-update="content_particellaSchedaB4" data-destination="forestcompartmentmaincontent" href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?id=<?php echo $a->getData('objectid');?>">Scheda B4</a></span><?php endif; ?>
                                             <br />
                                             <span><a data-update="content_particellaSchedaN" data-destination="forestcompartmentmaincontent" href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?id=<?php echo $a->getData('objectid');?>">Scheda N</a></span><!--
-                                        --><span><a data-update="content_particellaRilieviDendrometrici" data-destination="forestcompartmentmaincontent" href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?id=<?php echo $a->getData('objectid');?>">Rilievi dendrometrici</a>
+                                        --><span><a data-update="content_particellaRilieviDendrometrici" data-destination="forestcompartmentmaincontent" href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?id=<?php echo $a->getData('objectid');?>">Rilievi dendrometrici</a></span><!--
+                                        --><span><a data-update="content_particellaCartografia" data-destination="forestcompartmentmaincontent" href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?id=<?php echo $a->getData('objectid');?>">Cartografia</a>
                                         </div>
-                                        <?php require __DIR__.DIRECTORY_SEPARATOR.'particellaSchedaA.php';?>
+                                        <?php require __DIR__.DIRECTORY_SEPARATOR.'particellaCartografia.php';?>
 				<!-- /post -->	
 				</div>	
 

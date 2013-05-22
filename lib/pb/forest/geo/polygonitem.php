@@ -29,13 +29,6 @@ if (!class_exists('Content')) {
  */
 class PolygonItem  extends \Content {
     /**
-     * Instantiates the table
-     * @param string $name table name
-     */
-    public function __construct($name) {
-        parent::__construct($name);
-    }
-    /**
      * Sets the data and checks invalid data
      * @param variant $data
      * @param string|null $field

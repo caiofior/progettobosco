@@ -201,4 +201,13 @@ class A extends \forest\template\Entity {
         }
         return array_unique($tabs);
     }
+    /**
+     * Gets the associated poligon
+     * @return \forest\geo\Polygon
+     */
+    public function getPoligon() {
+        $poligon = new \forest\geo\Polygon('geo_particellare');
+        $poligon->loadFromId('1400300011');
+        return $poligon;
+    }
 } 

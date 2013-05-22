@@ -563,7 +563,7 @@ CREATE TABLE `catasto` (
   KEY `proprieta_2` (`proprieta`,`cod_part`),
   KEY `proprieta_3` (`proprieta`,`cod_part`),
   CONSTRAINT `catasto_schede_a` FOREIGN KEY (`proprieta`, `cod_part`) REFERENCES `schede_a` (`proprieta`, `cod_part`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1024,7 +1024,7 @@ CREATE TABLE `diz_arbo` (
   PRIMARY KEY (`objectid`),
   KEY `nome_itali` (`nome_itali`),
   KEY `nome_scien` (`nome_scien`)
-) ENGINE=InnoDB AUTO_INCREMENT=562 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=365 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1166,7 +1166,7 @@ CREATE TABLE `diz_tavole` (
   PRIMARY KEY (`objectid`),
   KEY `autore` (`autore`),
   KEY `descriz` (`descriz`)
-) ENGINE=InnoDB AUTO_INCREMENT=730 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=701 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2383,7 +2383,7 @@ CREATE TABLE `note_a` (
   UNIQUE KEY `prop_part_nota` (`proprieta`,`cod_part`,`cod_nota`),
   KEY `proprieta` (`proprieta`,`cod_part`),
   CONSTRAINT `note_a_schede_a` FOREIGN KEY (`proprieta`, `cod_part`) REFERENCES `schede_a` (`proprieta`, `cod_part`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2476,7 +2476,7 @@ CREATE TABLE `note_b3` (
   KEY `id_av` (`id_av`),
   KEY `note_b3_sched_b3_fkey` (`proprieta`,`cod_part`,`cod_fo`),
   CONSTRAINT `note_b3_sched_b3_fkey` FOREIGN KEY (`proprieta`, `cod_part`, `cod_fo`) REFERENCES `sched_b3` (`proprieta`, `cod_part`, `cod_fo`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2718,7 +2718,7 @@ CREATE TABLE `partcomp` (
   KEY `compresa` (`compresa`,`proprieta`),
   KEY `proprieta` (`proprieta`,`cod_part`),
   CONSTRAINT `partcomt_schedea_fkey` FOREIGN KEY (`proprieta`, `cod_part`) REFERENCES `schede_a` (`proprieta`, `cod_part`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3149,7 +3149,7 @@ CREATE TABLE `problemi_a` (
   PRIMARY KEY (`objectid`),
   KEY `problemi_a_schede_a_fkey` (`proprieta`,`cod_part`),
   CONSTRAINT `problemi_a_schede_a_fkey` FOREIGN KEY (`proprieta`, `cod_part`) REFERENCES `schede_a` (`proprieta`, `cod_part`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4138,7 +4138,7 @@ CREATE TABLE `sched_b3` (
   PRIMARY KEY (`objectid`),
   UNIQUE KEY `sched_b3_unique` (`proprieta`,`cod_part`,`cod_fo`),
   CONSTRAINT `sched_b3_schede_b_fkey` FOREIGN KEY (`proprieta`, `cod_part`, `cod_fo`) REFERENCES `schede_b` (`proprieta`, `cod_part`, `cod_fo`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -4649,7 +4649,7 @@ CREATE TABLE `schede_b` (
   KEY `proprieta` (`proprieta`,`cod_part`),
   KEY `u` (`u`),
   CONSTRAINT `schede_b_schede_a` FOREIGN KEY (`proprieta`, `cod_part`) REFERENCES `schede_a` (`proprieta`, `cod_part`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -5649,7 +5649,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (93,'caiofior@gmail.com','8f04a464e3660e912e8abaf8aefaa2fe',1,1,'2013-01-22 13:30:36','2013-05-17 14:02:28',1,'',93,'887a1f43ee1a30c0559a5278e700cad7','Amministratore'),(94,'caio.fior@libero.it','8f04a464e3660e912e8abaf8aefaa2fe',1,1,'2013-01-31 13:56:02','2013-04-08 07:41:42',0,'',94,'26302e79c797cd65f187b94f54bf309a','\"\"');
+INSERT INTO `user` VALUES (93,'caiofior@gmail.com','8f04a464e3660e912e8abaf8aefaa2fe',1,1,'2013-05-22 10:39:31','2013-05-22 10:39:31',1,'',93,'887a1f43ee1a30c0559a5278e700cad7','Amministratore'),(94,'caio.fior@libero.it','8f04a464e3660e912e8abaf8aefaa2fe',1,1,'2013-01-31 13:56:02','2013-04-08 07:41:42',0,'',94,'26302e79c797cd65f187b94f54bf309a','\"\"');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5853,4 +5853,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-05-17 16:17:19
+-- Dump completed on 2013-05-22 12:41:01
