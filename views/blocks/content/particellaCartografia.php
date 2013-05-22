@@ -5,12 +5,16 @@ else {
     $a = new \forest\entity\A();
     $a->loadFromId($_REQUEST['id']);
 }
-$forest = $a->getForest();
 $poligon = $a->getPoligon();
 $centroid = $poligon->getCentroid();
-var_dump($centroid->E());
-var_dump($centroid->Long());
 ?>
+<script type="text/javascript">
+    var center = {
+    lat : <?php echo $centroid->Lat();?>,
+    long : <?php echo $centroid->Long();?>,
+    id_av : "<?php echo $GLOBALS['BASE_URL'].'kml.php?table=geo_particellare&id_av='.$poligon->getData('id_av'); ?>"
+    };
+</script>
 <div id="forestcompartmentmaincontent">
 <script type="text/javascript" >
 document.getElementById("tabrelatedcss").href="css/cartografia.css";

@@ -50,8 +50,9 @@ foreach ($all_tables as $table) {
 }
 $sql = "
  CREATE TABLE `geo_particellare` (
- `id_av` varchar(12) NOT NULL DEFAULT '',
- `forest_compartment` geometry DEFAULT NULL,
+  `id_av` varchar(12) NOT NULL,
+  `poligon` geometry DEFAULT NULL,
+  `zone` varchar(3) DEFAULT NULL,
  PRIMARY KEY (`id_av`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1";
 echo exec('mysql -h '.$db1[1].' -u '.$db1[2].$pass.' '.$db1[4].' -e"'.$sql.'"');

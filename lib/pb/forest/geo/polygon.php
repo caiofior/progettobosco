@@ -46,13 +46,25 @@ class Polygon  extends \Content  {
      * @param string $name table name
      */
     public function __construct($name) {
-        parent::__construct($name);
+        try {
+            parent::__construct($name);
+        } catch (\Exception $e) {
+            throw new \Exception('Table name is required',1423220513);
+        }
     }
     /**
      * Sets the reference to the vector
      * @param type $id
      */
     public function loadFromId($id) {
+        $this->data['id_av'] = $id;
+    }
+    /**
+     * Sets the id av of a new poligon
+     * @param string $id
+     */
+    public function setIdAv ($id) {
+        $this->data = array();
         $this->data['id_av'] = $id;
     }
 
@@ -62,7 +74,7 @@ class Polygon  extends \Content  {
      */
     public function appendItem() {
         $polygon = new \forest\geo\PolygonItem();
-        $polygon->setData($this->id_av, 'id_av');
+        $polygon->setData($this->data['id_av'], 'id_av');
         $this->items[] = $polygon;
         return $polygon;
     }
@@ -70,19 +82,19 @@ class Polygon  extends \Content  {
      * Insert a polygon to db
      */
     public function insert() {
-        $this->table->getAdapter()->query('DELETE FROM '.$this->table->info('name').' WHERE id_av = '.$this->table->getAdapter()->quote($this->id_av));
+        $this->table->getAdapter()->query('DELETE FROM '.$this->table->info('name').' WHERE id_av = '.$this->table->getAdapter()->quote($this->data['id_av']));
         $gpoint = new \gPoint();
         switch (get_class($this->table->getAdapter())) {
             case 'Zend_Db_Adapter_Mysqli':
-            self::$sql = 'INSERT INTO '.$this->table->info('name').' (id_av, forest_compartment) '.
-                   ' VALUES ('.$this->table->getAdapter()->quote($this->id_av).' ,  GeomFromText(\'POLYGON ((';
+            self::$sql = 'INSERT INTO '.$this->table->info('name').' (id_av, poligon,zone) '.
+                   ' VALUES ('.$this->table->getAdapter()->quote($this->data['id_av']).' ,  GeomFromText(\'POLYGON ((';
             foreach ($this->items as $key=>$point) {
                 $gpoint->setLongLat($point->getRawData('longitude'),$point->getRawData('latitude'));
                 $gpoint->convertLLtoTM();
                 if ($key > 0 ) self::$sql .= ', ';
                  self::$sql .= $gpoint->N().' '.$gpoint->E();
             }
-            self::$sql .= '))\'))';
+            self::$sql .= '))\'),"'.$gpoint->Z().'")';
             $db = $this->table->getAdapter()->getConnection();
             set_error_handler(get_class($this).'::error_handler');
             mysqli_query($db, self::$sql);
@@ -90,8 +102,8 @@ class Polygon  extends \Content  {
             break;
             case 'Zend_Db_Adapter_Pgsql':
         
-            self::$sql = 'INSERT INTO '.$this->table->info('name').' (id_av, forest_compartment) '.
-                   ' VALUES ('.$this->table->getAdapter()->quote($this->id_av).' , ST_GeomFromText(\'POLYGON((';
+            self::$sql = 'INSERT INTO '.$this->table->info('name').' (id_av, poligon, zone) '.
+                   ' VALUES ('.$this->table->getAdapter()->quote($this->data['id_av']).' , ST_GeomFromText(\'POLYGON((';
             $first = null;    
             foreach ($this->items as $key=>$point) {
                 $gpoint->setLongLat($point->getRawData('longitude'),$point->getRawData('latitude'));
@@ -101,7 +113,7 @@ class Polygon  extends \Content  {
                 self::$sql .= $gpoint->N().' '.$gpoint->E().', ';
             }
             self::$sql .= $first->N().' '.$first->E();
-            self::$sql .= '))\',4326))';
+            self::$sql .= '))\',4326),\''.$first->Z().'\')';
 
             $db = $this->table->getAdapter()->getConnection();
             set_error_handler(get_class($this).'::error_handler');
@@ -122,6 +134,54 @@ class Polygon  extends \Content  {
         file_put_contents($GLOBALS['BASE_DIR'].'log'.DIRECTORY_SEPARATOR.'last_wrong_query.sql', self::$sql);
     }
     /**
+     * Returns a collection of vertex
+     * @return array
+     */
+    public function getVertexColl()  {
+        if (sizeof($this->items) == 0) {
+            switch (get_class($this->table->getAdapter())) {
+               case 'Zend_Db_Adapter_Mysqli':
+                   self::$sql = 'SELECT AsText(poligon) as XY , zone FROM geo_particellare WHERE id_av = "'.$this->data['id_av'].'"';
+                   set_error_handler(get_class($this).'::error_handler');
+                   $point = $this->table->getAdapter()->fetchRow(self::$sql);
+                   restore_error_handler();
+                   $jpointcoll = explode(',',str_replace(array('POLYGON((','))'), '', $point['XY']));
+                   $gpoint = new \gPoint();
+                   foreach($jpointcoll as $jpoint) {
+                        $jpoint = explode(' ', $jpoint);
+                        $poligonitem = $this->appendItem();
+                        $gpoint->setUTM($jpoint[0], $jpoint[1],$point['zone']);
+                        $gpoint->convertTMtoLL();
+                        $poligonitem->setData(array(
+                            'latitude'=>$gpoint->Lat(),
+                            'longitude'=>$gpoint->Long(),
+                        ));
+                    }
+                   
+               break;
+               case 'Zend_Db_Adapter_Pgsql':
+                    self::$sql = 'SELECT ST_AsGeoJson(poligon) as XY, zone FROM geo_particellare WHERE id_av = \''.$this->data['id_av'].'\'';
+                    set_error_handler(get_class($this).'::error_handler');
+                    $point = $this->table->getAdapter()->fetchRow(self::$sql);
+                    restore_error_handler();
+                    $jpointcoll = json_decode($point['xy']);
+                    $gpoint = new \gPoint();
+                    foreach($jpointcoll->coordinates[0] as $jpoint) {
+                        $poligonitem = $this->appendItem();
+                        $gpoint->setUTM($jpoint[0], $jpoint[1],$point['zone']);
+                        $gpoint->convertTMtoLL();
+                        $poligonitem->setData(array(
+                            'latitude'=>$gpoint->Lat(),
+                            'longitude'=>$gpoint->Long(),
+                        ));
+                    }
+                   
+               break;
+            }
+        }
+        return $this->items;
+    }
+    /**
      * get Centroid Point
      * @return \gPoint
      */
@@ -129,21 +189,21 @@ class Polygon  extends \Content  {
         if (!key_exists('centroid',$this->data)) {
             switch (get_class($this->table->getAdapter())) {
                 case 'Zend_Db_Adapter_Mysqli':
-                    self::$sql = 'SELECT X(Centroid(forest_compartment)) as X, Y(Centroid(forest_compartment)) as Y  FROM geo_particellare WHERE id_av = "'.$this->data['id_av'].'"';
+                    self::$sql = 'SELECT X(Centroid(poligon)) as X, Y(Centroid(poligon)) as Y , zone FROM geo_particellare WHERE id_av = "'.$this->data['id_av'].'"';
                     $point = $this->table->getAdapter()->fetchRow(self::$sql);
                     $gpoint = new \gPoint();
-                    $gpoint->setUTM($point['X'], $point['Y']);
+                    $gpoint->setUTM($point['X'], $point['Y'], $point['zone']);
                     $gpoint->convertTMtoLL();
                     $this->data['centroid']=$gpoint;
                 break;
                 case 'Zend_Db_Adapter_Pgsql':
-                    self::$sql = 'SELECT ST_AsGeoJson(ST_Centroid(forest_compartment)) FROM geo_particellare WHERE id_av = \''.$this->data['id_av'].'\'';
+                    self::$sql = 'SELECT ST_AsGeoJson(ST_Centroid(poligon)) as XY, zone FROM geo_particellare WHERE id_av = \''.$this->data['id_av'].'\'';
                     set_error_handler(get_class($this).'::error_handler');
-                    $point = $this->table->getAdapter()->fetchOne(self::$sql);
+                    $point = $this->table->getAdapter()->fetchRow(self::$sql);
                     restore_error_handler();
-                    $point = json_decode($point);
+                    $jpoint = json_decode($point['xy']);
                     $gpoint = new \gPoint();
-                    $gpoint->setUTM($point->coordinates[0], $point->coordinates[1]);
+                    $gpoint->setUTM($jpoint->coordinates[0], $jpoint->coordinates[1],$point['zone']);
                     $gpoint->convertTMtoLL();
                     $this->data['centroid']=$gpoint;
                 break;

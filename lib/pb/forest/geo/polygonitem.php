@@ -37,11 +37,11 @@ class PolygonItem  extends \Content {
     public function setData($data, $field = null) {
         if (is_array($data)) {
             if (key_exists('latitude', $data) &&
-                ($data['latitude'] < 0 || $data['latitude'] > 90 )
+                ($data['latitude'] < -90 || $data['latitude'] > 90 )
                )
                    throw new \Exception('Latitude not valid ',1605131048);
             if (key_exists('longitude', $data) &&
-                ($data['longitude'] < 0 || $data['longitude'] > 90 )
+                ($data['longitude'] < -180 || $data['longitude'] > 180 )
                )
                    throw new \Exception('Longitude not valid ',1605131049);
             
