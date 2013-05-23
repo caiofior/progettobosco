@@ -207,7 +207,8 @@ class A extends \forest\template\Entity {
      */
     public function getPoligon() {
         $poligon = new \forest\geo\Polygon('geo_particellare');
-        $poligon->loadFromId('1400300011');
+        $poligon->loadFromId($this->data['id_av']);
+        //$poligon->loadFromId('1400300011');
         return $poligon;
     }
 } 

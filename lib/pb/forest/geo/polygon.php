@@ -92,7 +92,7 @@ class Polygon  extends \Content  {
                 $gpoint->setLongLat($point->getRawData('longitude'),$point->getRawData('latitude'));
                 $gpoint->convertLLtoTM();
                 if ($key > 0 ) self::$sql .= ', ';
-                 self::$sql .= $gpoint->N().' '.$gpoint->E();
+                 self::$sql .= $gpoint->E().' '.$gpoint->N();
             }
             self::$sql .= '))\'),"'.$gpoint->Z().'")';
             $db = $this->table->getAdapter()->getConnection();
@@ -110,9 +110,9 @@ class Polygon  extends \Content  {
                 $gpoint->convertLLtoTM();
                 if ($key == 0)
                     $first = clone $gpoint;
-                self::$sql .= $gpoint->N().' '.$gpoint->E().', ';
+                self::$sql .= $gpoint->E().' '.$gpoint->N().', ';
             }
-            self::$sql .= $first->N().' '.$first->E();
+            self::$sql .= $first->E().' '.$first->N();
             self::$sql .= '))\',4326),\''.$first->Z().'\')';
 
             $db = $this->table->getAdapter()->getConnection();
@@ -211,5 +211,57 @@ class Polygon  extends \Content  {
             }
         }
         return $this->data['centroid'];
+    }
+    /**
+     * Return the polygon area
+     * @return float
+     */
+    public function getArea () {
+        if (!key_exists('area',$this->data)) {
+            switch (get_class($this->table->getAdapter())) {
+                case 'Zend_Db_Adapter_Mysqli':
+                    self::$sql = 'SELECT Area(poligon) as area FROM geo_particellare WHERE id_av = "'.$this->data['id_av'].'"';
+                    set_error_handler(get_class($this).'::error_handler');
+                    $area = $this->table->getAdapter()->fetchOne(self::$sql);
+                    restore_error_handler();
+                    $this->data['area']=$area;
+                break;
+                case 'Zend_Db_Adapter_Pgsql':
+                    self::$sql = 'SELECT ST_Area(poligon) as area FROM geo_particellare WHERE id_av = \''.$this->data['id_av'].'\'';
+                    set_error_handler(get_class($this).'::error_handler');
+                    $area = $this->table->getAdapter()->fetchOne(self::$sql);
+                    restore_error_handler();
+                    $this->data['area']=$area;
+                break;
+
+            }
+        }
+        return $this->data['area'];
+    }
+    /**
+     * Return the polygon perimiter
+     * @return float
+     */
+    public function getPerimeter () {
+        if (!key_exists('perimeter',$this->data)) {
+            switch (get_class($this->table->getAdapter())) {
+                case 'Zend_Db_Adapter_Mysqli':
+                    self::$sql = 'SELECT GLength(ExteriorRing(poligon)) as area FROM geo_particellare WHERE id_av = "'.$this->data['id_av'].'"';
+                    set_error_handler(get_class($this).'::error_handler');
+                    $perimeter = $this->table->getAdapter()->fetchOne(self::$sql);
+                    restore_error_handler();
+                    $this->data['perimeter']=$perimeter;
+                break;
+                case 'Zend_Db_Adapter_Pgsql':
+                    self::$sql = 'SELECT ST_Perimeter(poligon) as area FROM geo_particellare WHERE id_av = \''.$this->data['id_av'].'\'';
+                    set_error_handler(get_class($this).'::error_handler');
+                    $perimeter = $this->table->getAdapter()->fetchOne(self::$sql);
+                    restore_error_handler();
+                    $this->data['perimeter']=$perimeter;
+                break;
+
+            }
+        }
+        return $this->data['perimeter'];
     }
 }

@@ -34,7 +34,7 @@ function endElement($parser, $name)
                 trigger_error (' Invalid coordinates '.$or_coordinates);
                 continue;
             }
-            $coordinate = array_combine(array('latitude','longitude'), $coordinate);
+            $coordinate = array_combine(array('longitude','latitude'), $coordinate);
             $poly = $GLOBALS['poligoncoll']->appendItem();
             try {
                 $poly->setData($coordinate);
