@@ -5,7 +5,13 @@ else {
     $a = new \forest\entity\A();
     $a->loadFromId($_REQUEST['id']);
 }
+try{
 $poligon = $a->getPoligon();
+} catch (Exception $e) {
+    if($e->getCode() == 1217230513)
+        $poligon = false;
+}
+if ($poligon !== false) :
 $centroid = $poligon->getCentroid();
 ?>
 <script type="text/javascript">
@@ -15,6 +21,7 @@ $centroid = $poligon->getCentroid();
     id_av : "<?php echo $GLOBALS['BASE_URL'].'kml.php?table=geo_particellare&id_av='.$poligon->getData('id_av'); ?>"
     };
 </script>
+<?php endif; ?>
 <div id="forestcompartmentmaincontent">
 <script type="text/javascript" >
 document.getElementById("tabrelatedcss").href="css/cartografia.css";

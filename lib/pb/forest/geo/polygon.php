@@ -55,8 +55,12 @@ class Polygon  extends \Content  {
     /**
      * Sets the reference to the vector
      * @param type $id
+     * @throws Exception 
      */
     public function loadFromId($id) {
+        $count = $this->table->getAdapter()->fetchOne('SELECT COUNT(id_av) FROM '.$this->table->info('name').' WHERE id_av='.$this->table->getAdapter()->quote($id));
+        if ($count <> 1)
+            throw new \Exception('Geographic data not found',1217230513);
         $this->data['id_av'] = $id;
     }
     /**
@@ -141,7 +145,7 @@ class Polygon  extends \Content  {
         if (sizeof($this->items) == 0) {
             switch (get_class($this->table->getAdapter())) {
                case 'Zend_Db_Adapter_Mysqli':
-                   self::$sql = 'SELECT AsText(poligon) as XY , zone FROM geo_particellare WHERE id_av = "'.$this->data['id_av'].'"';
+                   self::$sql = 'SELECT AsText(poligon) as XY , zone FROM '.$this->table->info('name').' WHERE id_av = "'.$this->data['id_av'].'"';
                    set_error_handler(get_class($this).'::error_handler');
                    $point = $this->table->getAdapter()->fetchRow(self::$sql);
                    restore_error_handler();
@@ -160,7 +164,7 @@ class Polygon  extends \Content  {
                    
                break;
                case 'Zend_Db_Adapter_Pgsql':
-                    self::$sql = 'SELECT ST_AsGeoJson(poligon) as XY, zone FROM geo_particellare WHERE id_av = \''.$this->data['id_av'].'\'';
+                    self::$sql = 'SELECT ST_AsGeoJson(poligon) as XY, zone FROM '.$this->table->info('name').' WHERE id_av = \''.$this->data['id_av'].'\'';
                     set_error_handler(get_class($this).'::error_handler');
                     $point = $this->table->getAdapter()->fetchRow(self::$sql);
                     restore_error_handler();
@@ -189,7 +193,7 @@ class Polygon  extends \Content  {
         if (!key_exists('centroid',$this->data)) {
             switch (get_class($this->table->getAdapter())) {
                 case 'Zend_Db_Adapter_Mysqli':
-                    self::$sql = 'SELECT X(Centroid(poligon)) as X, Y(Centroid(poligon)) as Y , zone FROM geo_particellare WHERE id_av = "'.$this->data['id_av'].'"';
+                    self::$sql = 'SELECT X(Centroid(poligon)) as X, Y(Centroid(poligon)) as Y , zone FROM '.$this->table->info('name').' WHERE id_av = "'.$this->data['id_av'].'"';
                     $point = $this->table->getAdapter()->fetchRow(self::$sql);
                     $gpoint = new \gPoint();
                     $gpoint->setUTM($point['X'], $point['Y'], $point['zone']);
@@ -197,7 +201,7 @@ class Polygon  extends \Content  {
                     $this->data['centroid']=$gpoint;
                 break;
                 case 'Zend_Db_Adapter_Pgsql':
-                    self::$sql = 'SELECT ST_AsGeoJson(ST_Centroid(poligon)) as XY, zone FROM geo_particellare WHERE id_av = \''.$this->data['id_av'].'\'';
+                    self::$sql = 'SELECT ST_AsGeoJson(ST_Centroid(poligon)) as XY, zone FROM '.$this->table->info('name').' WHERE id_av = \''.$this->data['id_av'].'\'';
                     set_error_handler(get_class($this).'::error_handler');
                     $point = $this->table->getAdapter()->fetchRow(self::$sql);
                     restore_error_handler();
@@ -220,14 +224,14 @@ class Polygon  extends \Content  {
         if (!key_exists('area',$this->data)) {
             switch (get_class($this->table->getAdapter())) {
                 case 'Zend_Db_Adapter_Mysqli':
-                    self::$sql = 'SELECT Area(poligon) as area FROM geo_particellare WHERE id_av = "'.$this->data['id_av'].'"';
+                    self::$sql = 'SELECT Area(poligon) as area FROM '.$this->table->info('name').' WHERE id_av = "'.$this->data['id_av'].'"';
                     set_error_handler(get_class($this).'::error_handler');
                     $area = $this->table->getAdapter()->fetchOne(self::$sql);
                     restore_error_handler();
                     $this->data['area']=$area;
                 break;
                 case 'Zend_Db_Adapter_Pgsql':
-                    self::$sql = 'SELECT ST_Area(poligon) as area FROM geo_particellare WHERE id_av = \''.$this->data['id_av'].'\'';
+                    self::$sql = 'SELECT ST_Area(poligon) as area FROM '.$this->table->info('name').' WHERE id_av = \''.$this->data['id_av'].'\'';
                     set_error_handler(get_class($this).'::error_handler');
                     $area = $this->table->getAdapter()->fetchOne(self::$sql);
                     restore_error_handler();
