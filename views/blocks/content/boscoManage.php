@@ -46,6 +46,9 @@
                                         <p class="no-border">
                                                 <a class="button submit" href="<?php echo $GLOBALS['BASE_URL'];?>comprese.php?id=<?php echo $this->forest->getData('codice'); ?>">Comprese/<br/>Classi colturali</a>         		
                                         </p>
+                                        <p class="no-border">
+                                                <a class="button submit" href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?task=cartografia&id=<?php echo $this->forest->getData('codice'); ?>">Cartografia</a>         		
+                                        </p>
                                         <?php endif; ?>
                                         </form>	
                                         <?php if ($this->forest->getData('codice') != '') : ?>

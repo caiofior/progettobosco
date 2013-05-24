@@ -4,13 +4,13 @@ $tables = array(
     //Observer,
     'rilevato',
     //Forest types
-   //'diz_tipi',
+   'diz_tipi',
     //Tables
-   //'diz_tavole',
-    //'diz_tavole2',
-    //'diz_tavole3',
-    //'diz_tavole4',
-    //'diz_tavole5',
+    'diz_tavole',
+    'diz_tavole2',
+    'diz_tavole3',
+    'diz_tavole4',
+    'diz_tavole5',
     //Forest
     'propriet',
     //Foms
