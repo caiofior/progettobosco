@@ -13,8 +13,13 @@
 			
 					<p>Queste premesse hanno portato alla definizione di “<?php echo $GLOBALS['SITE_NAME']; ?>”, un protocollo coordinato e integrato di
                                         sistemi informativi a supporto della pianificazione forestale per la gestione aziendale e le caratteristiche
-                                        del sistema.</p>			
-				
+                                        del sistema.</p>
+                                        
+                                        <?php if (key_exists('TEST_FOREST', $GLOBALS)) : ?>
+                                        <p><a href="bosco.php?action=manage&id=<?php echo $GLOBALS['TEST_FOREST']; ?>">Prova ora gli strumenti messi a disposizione da quest'applicativo</a>, la tua opinone ci aiuterà a migliorare questo
+                                        prodotto.</p>
+                                        <?php endif; ?>
+                                        
 					<p>Iscriviti e accedi per integrare le tue conoscenze con la rete dei tecnici
                                         forestali italiani.</p>
 					

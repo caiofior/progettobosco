@@ -45,5 +45,13 @@
      } catch (Exception $e) {
          session_destroy();
      }
+  } else if (
+          key_exists ('TEST_FOREST', $GLOBALS) &&
+          key_exists ('id', $_REQUEST) &&
+          $GLOBALS['TEST_FOREST'] == $_REQUEST['id']
+          ) {
+     $user = new User();
+     $authStorage = $auth->getStorage();
+     $authStorage->write(array('user_id'=>0));
   }
  

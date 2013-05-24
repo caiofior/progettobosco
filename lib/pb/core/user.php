@@ -113,12 +113,14 @@ class User extends Content {
      */
     public function getProfile() {
         $profile = new Profile();
-        try{
-            $profile->loadFromId($this->data['id']);
-        } catch (Exception $e) {
-            $profile->insert();
-            $this->data['profile_id']=$profile->getData('id');
-            $this->update();
+        if (is_array($this->data)  && key_exists('id', $this->data)) {
+            try{
+                $profile->loadFromId($this->data['id']);
+            } catch (Exception $e) {
+                $profile->insert();
+                $this->data['profile_id']=$profile->getData('id');
+                $this->update();
+            }
         }
         return $profile;
     }

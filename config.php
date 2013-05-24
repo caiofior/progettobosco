@@ -66,3 +66,7 @@ $MAIL_ADMIN_CONFIG = array(
  * Debug mail for server maitenance
  */
 //$DEBUG_MAIL='caiofior@gmail.com';
+/**
+ * Test forest
+ */
+$TEST_FOREST = '14003';

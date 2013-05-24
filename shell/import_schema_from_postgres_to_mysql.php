@@ -24,6 +24,17 @@ echo exec ('mysqladmin -h '.$db1[1].' -u '.$db1[2].$pass.' CREATE '.$db1[4]);
 echo exec ('mysql -h '.$db1[1].' -u '.$db1[2].$pass.' '.$db1[4].' --force < '.$dir.'output'.DIRECTORY_SEPARATOR.'mysql_schema.sql');
 unlink ($dir.'output'.DIRECTORY_SEPARATOR.'pg_schema.sql');
 unlink ($dir.'output'.DIRECTORY_SEPARATOR.'mysql_schema.sql');
+$sql = "
+ CREATE TABLE `geo_particellare` (
+  `id_av` varchar(12) NOT NULL,
+  `poligon` geometry DEFAULT NULL,
+  `zone` varchar(3) DEFAULT NULL,
+ PRIMARY KEY (`id_av`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1";
+echo exec('mysql -h '.$db1[1].' -u '.$db1[2].$pass.' '.$db1[4].' -e"'.$sql.'"');
+echo exec('mysql -h '.$db1[1].' -u '.$db1[2].$pass.' '.$db1[4].' -e"ALTER TABLE propriet 
+CHANGE COLUMN objectid  objectid int(11),
+DROP PRIMARY KEY, ADD PRIMARY KEY(codice);"');
 $all_tables = $db->fetchCol('SELECT table_name FROM information_schema.tables WHERE table_schema=\'public\'');
 $common_table = array_diff($all_tables, $preserveid);
 $all_tables = array_merge($common_table, $preserveid);
@@ -48,14 +59,4 @@ foreach ($all_tables as $table) {
     if (is_file($filename))
         unlink($filename);
 }
-$sql = "
- CREATE TABLE `geo_particellare` (
-  `id_av` varchar(12) NOT NULL,
-  `poligon` geometry DEFAULT NULL,
-  `zone` varchar(3) DEFAULT NULL,
- PRIMARY KEY (`id_av`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1";
-echo exec('mysql -h '.$db1[1].' -u '.$db1[2].$pass.' '.$db1[4].' -e"'.$sql.'"');
-echo exec('mysql -h '.$db1[1].' -u '.$db1[2].$pass.' '.$db1[4].' -e"ALTER TABLE propriet 
-CHANGE COLUMN objectid  objectid int(11),
-DROP PRIMARY KEY, ADD PRIMARY KEY(codice);"');
+
