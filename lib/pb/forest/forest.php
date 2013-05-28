@@ -352,4 +352,12 @@ WHERE usosuolo.codice <> \'\' AND proprieta=\''.$this->data['codice'].'\''));
                 ;
         return $attributes;
     }
+     /**
+     * Gets the associated poligon collection
+     * @return \forest\geo\Polygon
+     */
+    public function getPoligonColl() {
+        $poligoncoll = new \forest\geo\PolygonColl('geo_particellare');
+        return $poligon;
+    }
 }
