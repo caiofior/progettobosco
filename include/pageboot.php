@@ -32,7 +32,6 @@ if (isset($DEBUG) && $DEBUG) {
     ini_set('xdebug.dump_globals', 0);
     ini_set('xdebug.show_local_vars', 0);
     if (!(isset($PHPUNIT) && $PHPUNIT)) {
-        require_once('FirePHPCore/FirePHP.class.php');
         ini_set('html_errors',1);
         ini_set('xdebug.show_local_vars', 1);
         
