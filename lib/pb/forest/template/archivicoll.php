@@ -44,7 +44,7 @@ final class ArchiveColl {
      */
     private static $all_attributes_id=array();
     /**
-     * Loads the arcive data in cache
+     * Loads the archive data in cache
      */
     private function __construct() {
         $all_attributes_data = $GLOBALS['CACHE']->load('archivi');

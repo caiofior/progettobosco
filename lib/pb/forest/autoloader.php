@@ -7,10 +7,28 @@
  * @copyright CRA
  */
 namespace forest;
-if (!class_exists('Forest')) {
-    if (!class_exists('Content'))
-        require (__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'autoloader.php');
-    $files = array(
+if (!class_exists('Autoloader')) {
+   if (!class_exists('\\Autoloader'))
+        require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'autoloader.php';
+   /**
+    * Module configuration class
+    */
+   class Autoloader extends \StdClass {
+       /**
+        * Module base directory
+        * @var string
+        */
+       public $dir = __DIR__;
+       /**
+        * Module required files
+        * @var array
+        */
+       public $files = array();
+       /**
+        * Sets module required file
+        */
+       public function __construct() {
+           $this->files = array(
         'template'.DIRECTORY_SEPARATOR.'entity.php',
         'template'.DIRECTORY_SEPARATOR.'entitycoll.php',
         'template'.DIRECTORY_SEPARATOR.'control.php',
@@ -154,11 +172,10 @@ if (!class_exists('Forest')) {
         
         '..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'gPoint'.DIRECTORY_SEPARATOR.'gPoint.php',
         'geo'.DIRECTORY_SEPARATOR.'polygon.php',
-        'geo'.DIRECTORY_SEPARATOR.'polygonitem.php',
-        );
-    if (!isset($file)) $file = array();
-    $files = array_diff($files, $file);
-    foreach ($files as $file) {
-        require (__DIR__.DIRECTORY_SEPARATOR.$file);
-    }
+        'geo'.DIRECTORY_SEPARATOR.'polygonitem.php'
+               );
+        }
+   }
+   $class = new Autoloader();
+   \AutoLoader::loadRequiredFiles($class);
 }

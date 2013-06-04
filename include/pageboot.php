@@ -41,21 +41,6 @@ if (isset($DEBUG) && $DEBUG) {
  * Loads forest progetto bosco module
  */
 require(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'lib'.DIRECTORY_SEPARATOR.'pb'.DIRECTORY_SEPARATOR.'forest'.DIRECTORY_SEPARATOR.'autoloader.php') ;
-$db = Zend_Db::factory($DB_CONFIG['adapter'],$DB_CONFIG);
-$db->getConnection();
-Zend_Db_Table::setDefaultAdapter($db);
 $log = new Log();
-//Profiler
-if (isset($DEBUG) && $DEBUG) {
-    $profiler = $db->getProfiler();
-    $profiler->setEnabled(true);
-    $firephp = FirePHP::getInstance(true);
-    function lastQuery(){
-        $query_profile = $GLOBALS['profiler']->getLastQueryProfile();
-        $GLOBALS['firephp']->log($query_profile);
-    }
-} else {
-    function lastQuery(){}
-}
 // Manages session
 require(__DIR__.DIRECTORY_SEPARATOR.'session.php');
