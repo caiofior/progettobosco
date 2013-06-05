@@ -171,9 +171,11 @@ if (!class_exists('Autoloader')) {
         'attribute'.DIRECTORY_SEPARATOR.'viabilityinterventcoll.php',
         
         '..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'gPoint'.DIRECTORY_SEPARATOR.'gPoint.php',
+        '..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'rdp'.DIRECTORY_SEPARATOR.'rdp.php',
         'geo'.DIRECTORY_SEPARATOR.'polygon.php',
-        'geo'.DIRECTORY_SEPARATOR.'polygonitem.php'
-               );
+        'geo'.DIRECTORY_SEPARATOR.'polygonitem.php',
+        'geo'.DIRECTORY_SEPARATOR.'polygoncoll.php'
+        );
         }
    }
    $class = new Autoloader();

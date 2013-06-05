@@ -37,6 +37,21 @@ class Polygon  extends \Content  {
      */
     private $items =array();
     /**
+     * Raw coordinates
+     * @var array
+     */
+    private $coordinates = array();
+    /**
+     * Collection of semplified poligon items
+     * @var array
+     */
+    private $semplified=array();
+    /**
+     * Bound limits
+     * @var array
+     */
+    private $bounds=array();
+    /**
      * SQL reference
      * @var string
      */
@@ -80,6 +95,16 @@ class Polygon  extends \Content  {
         $polygon = new \forest\geo\PolygonItem();
         $polygon->setData($this->data['id_av'], 'id_av');
         $this->items[] = $polygon;
+        return $polygon;
+    }
+    /**
+     * Returns a new semplified polygon vertex
+     * @return \forest\geo\PolygonItem
+     */
+    public function appendSemplifiedItem() {
+        $polygon = new \forest\geo\PolygonItem();
+        $polygon->setData($this->data['id_av'], 'id_av');
+        $this->semplified[] = $polygon;
         return $polygon;
     }
     /**
@@ -143,6 +168,8 @@ class Polygon  extends \Content  {
      */
     public function getVertexColl()  {
         if (sizeof($this->items) == 0) {
+            $this->bounds['E']=array('min'=>PHP_INT_MAX,'max'=>0);
+            $this->bounds['N']=array('min'=>PHP_INT_MAX,'max'=>0);
             switch (get_class($this->table->getAdapter())) {
                case 'Zend_Db_Adapter_Mysqli':
                    self::$sql = 'SELECT AsText(poligon) as XY , zone FROM '.$this->table->info('name').' WHERE id_av = "'.$this->data['id_av'].'"';
@@ -154,12 +181,20 @@ class Polygon  extends \Content  {
                    foreach($jpointcoll as $jpoint) {
                         $jpoint = explode(' ', $jpoint);
                         $poligonitem = $this->appendItem();
+
                         $gpoint->setUTM($jpoint[0], $jpoint[1],$point['zone']);
                         $gpoint->convertTMtoLL();
                         $poligonitem->setData(array(
                             'latitude'=>$gpoint->Lat(),
                             'longitude'=>$gpoint->Long(),
                         ));
+                        $this->coordinates[]=array('E'=>$gpoint->Long(),'N'=>$gpoint->Lat());
+                        
+                        $this->bounds['E']['min'] = min ($this->bounds['E']['min'],$gpoint->Long());
+                        $this->bounds['E']['max'] = max ($this->bounds['E']['max'],$gpoint->Long());
+                        $this->bounds['N']['min'] = min ($this->bounds['N']['min'],$gpoint->Lat());
+                        $this->bounds['N']['max'] = max ($this->bounds['N']['max'],$gpoint->Lat());
+                        
                     }
                    
                break;
@@ -172,18 +207,45 @@ class Polygon  extends \Content  {
                     $gpoint = new \gPoint();
                     foreach($jpointcoll->coordinates[0] as $jpoint) {
                         $poligonitem = $this->appendItem();
+                        
                         $gpoint->setUTM($jpoint[0], $jpoint[1],$point['zone']);
                         $gpoint->convertTMtoLL();
                         $poligonitem->setData(array(
                             'latitude'=>$gpoint->Lat(),
                             'longitude'=>$gpoint->Long(),
                         ));
+                        $this->coordinates[]=array('E'=>$gpoint->Long(),'N'=>$gpoint->Lat());
+                        
+                        $this->bounds['E']['min'] = min ($this->bounds['E']['min'],$gpoint->Long());
+                        $this->bounds['E']['max'] = max ($this->bounds['E']['max'],$gpoint->Long());
+                        $this->bounds['N']['min'] = min ($this->bounds['N']['min'],$gpoint->Lat());
+                        $this->bounds['N']['max'] = max ($this->bounds['N']['max'],$gpoint->Lat());
                     }
                    
                break;
             }
         }
         return $this->items;
+    }
+    /**
+     * Returns a reduced collection of vertex
+     * @return array
+     */
+    public function getSemplifiedVertexColl() {
+        if (sizeof($this->semplified) == 0) {
+            $this->getVertexColl();
+            $size = ($this->bounds['E']['max']-$this->bounds['E']['min']+$this->bounds['N']['max']-$this->bounds['N']['min'])/(2*sizeof($this->coordinates));
+            $rdp = RamerDouglasPeucker($this->coordinates,$size);
+            foreach ($rdp as $jpoint) {
+                $poligonitem = $this->appendSemplifiedItem();
+                $poligonitem->setData(array(
+                    'latitude'=>$jpoint['N'],
+                    'longitude'=>$jpoint['E'],
+                ));
+            }
+
+        }
+        return $this->semplified;
     }
     /**
      * get Centroid Point

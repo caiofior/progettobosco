@@ -357,7 +357,8 @@ WHERE usosuolo.codice <> \'\' AND proprieta=\''.$this->data['codice'].'\''));
      * @return \forest\geo\Polygon
      */
     public function getPoligonColl() {
-        $poligoncoll = new \forest\geo\PolygonColl('geo_particellare');
-        return $poligon;
+        $polygoncoll = new \forest\geo\PolygonColl('geo_particellare');
+        $polygoncoll->setForest($this);
+        return $polygoncoll;
     }
 }

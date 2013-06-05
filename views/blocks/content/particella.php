@@ -26,7 +26,7 @@
                                         --><span><a data-update="content_particellaRilieviDendrometrici" data-destination="forestcompartmentmaincontent" href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?id=<?php echo $a->getData('objectid');?>">Rilievi dendrometrici</a></span><!--
                                         --><span><a data-update="content_particellaCartografia" data-destination="forestcompartmentmaincontent" href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?id=<?php echo $a->getData('objectid');?>">Cartografia</a>
                                         </div>
-                                        <?php require __DIR__.DIRECTORY_SEPARATOR.'particellaCartografia.php';?>
+                                        <?php require __DIR__.DIRECTORY_SEPARATOR.'particellaSchedaA.php';?>
 				<!-- /post -->	
 				</div>	
 

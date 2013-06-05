@@ -11,7 +11,10 @@ $poligon = $a->getPoligon();
     if($e->getCode() == 1217230513)
         $poligon = false;
 }
-if ($poligon !== false) :
+if (
+        isset ($poligon) && 
+        is_object($poligon) &&
+        $poligon !== false) :
 $centroid = $poligon->getCentroid();
 ?>
 <script type="text/javascript">
