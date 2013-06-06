@@ -97,8 +97,8 @@ class PolygonColl extends \ContentColl {
             switch (get_class($this->content->getTable()->getAdapter())) {
                 case 'Zend_Db_Adapter_Mysqli':
                     $select = $this->content->getTable()->select()->from($this->content->getTable()->info('name'), array(
-                        'X'=> new \Zend_Db_Expr('AVG(X(Centroid(poligon)))'),
-                        'Y'=> new \Zend_Db_Expr('AVG(Y(Centroid(poligon)))'),
+                        'X'=> new \Zend_Db_Expr('SUM(X(Centroid(poligon))*Area(poligon))/ (SELECT SUM(Area(poligon)) FROM geo_particellare AS g3 WHERE g3.id_av IN (SELECT id_av FROM schede_a))'),
+                        'Y'=> new \Zend_Db_Expr('SUM(Y(Centroid(poligon))*Area(poligon))/ (SELECT SUM(Area(poligon)) FROM geo_particellare AS g3 WHERE g3.id_av IN (SELECT id_av FROM schede_a))'),
                         'zone'=>new \Zend_Db_Expr('(SELECT g2.zone FROM geo_particellare AS g2 WHERE g2.id_av=MIN(geo_particellare.id_av) LIMIT 1)'),
                         'forest'=>new \Zend_Db_Expr('(SELECT schede_a.proprieta FROM schede_a WHERE schede_a.id_av= geo_particellare.id_av)')
                     ));
