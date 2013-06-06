@@ -1,6 +1,9 @@
 <?php
                         if (!isset($forest))
                             $forest = $this->forest;
+                            $poligoncoll = $forest->getPoligonColl();
+                            $centroid = $poligoncoll->getCentroid();
+                            var_dump($poligoncoll->getArea());
 ?>                     <!-- main -->
 			<div id="main">	
                             <div id="breadcrumb">
@@ -11,8 +14,8 @@
 				<div class="post">
                                     <script type="text/javascript">
                                         var center = {
-                                        lat : 0,
-                                        long : 0,
+                                        lat : <?php echo $centroid->Lat();?>,
+                                        long : <?php echo $centroid->Long();?>,
                                         id_av : "<?php echo $GLOBALS['BASE_URL'].'kml.php?table=geo_particellare&forest_id='.$forest->getData('codice'); ?>&t=<?php echo time();?>"
                                         };
                                     </script>
