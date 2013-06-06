@@ -3,7 +3,6 @@
                             $forest = $this->forest;
                             $poligoncoll = $forest->getPoligonColl();
                             $centroid = $poligoncoll->getCentroid();
-                            var_dump($poligoncoll->getArea());
 ?>                     <!-- main -->
 			<div id="main">	
                             <div id="breadcrumb">
