@@ -6,6 +6,7 @@
  */
 require (__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'config.php');
 $BASE_DIR = __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR;
+header('Content-type: text/html; charset=utf-8');
 /**
  * Includes monitoring script
  */
