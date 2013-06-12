@@ -46,5 +46,34 @@ class Template extends Zend_View {
                         }
             }
     }
+    /**
+     * Renders the template
+     * @param string $template
+     * @return string
+     */
+    public function render ($template) {
+        try{
+            $controler = \Controler::getInstance();
+            $xhr_files =  $controler::getXhrFiles();
+            if (sizeof($xhr_files) > 0) {
+                    $response = array();
+                    $script_path = $this->getScriptPaths();
+                    $script_path = array_shift($script_path).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'blocks'.DIRECTORY_SEPARATOR;
+                    foreach ($xhr_files as  $xhr_files) {
+                        $file_path = $script_path.str_replace('_', DIRECTORY_SEPARATOR, $xhr_file).'.php';
+                        if (is_file($file_path)) {
+                            ob_start();
+                            require $file_path;
+                            $response[ $value]=  ob_get_clean();
+                            }
+                    }
+                    header('Content-type: application/json');
+                    echo Zend_Json::encode($response);
+                    exit;
+            }
+        }
+        catch (\Exception $e) {}
+        return parent::render($template);
+    }
 
 }

@@ -17,6 +17,7 @@ if ($user === false) {
     $content = 'content'.DIRECTORY_SEPARATOR.'login.php';
     $sidebar = 'sidebar'.DIRECTORY_SEPARATOR.'login.php';
 }
+
 if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
     $response = array();
     $request = new RegexIterator(new ArrayIterator($_REQUEST), '/^[0-9]+$/',  RegexIterator::MATCH,  RegexIterator::USE_KEY); 

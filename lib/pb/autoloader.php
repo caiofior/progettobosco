@@ -76,6 +76,7 @@ if (!class_exists('AutoLoader')) {
             require (__DIR__ . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR . 'usercoll.php');
             require (__DIR__ . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR . 'profile.php');
             require (__DIR__ . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR . 'log.php');
+            require (__DIR__ . DIRECTORY_SEPARATOR . 'core' . DIRECTORY_SEPARATOR . 'controler.php');
             $db = Zend_Db::factory($GLOBALS['DB_CONFIG']['adapter'], $GLOBALS['DB_CONFIG']);
             $db->getConnection();
             Zend_Db_Table::setDefaultAdapter($db);
