@@ -63,7 +63,13 @@ class AColl extends \forest\template\EntityColl {
              WHERE
              partcomp.proprieta=schede_a.proprieta AND
              partcomp.cod_part=schede_a.cod_part 
+                ) '),
+            'descrizione' => new \Zend_Db_Expr(' (SELECT partcomp.abstract FROM partcomp
+             WHERE
+             partcomp.proprieta=schede_a.proprieta AND
+             partcomp.cod_part=schede_a.cod_part 
                 ) ')
+            
             )
         )
         ;
