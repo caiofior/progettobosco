@@ -80,7 +80,7 @@
                                                             'parameter'=>$_GET['parameter'],
                                                             'operator'=>$_GET['operator'],
                                                             'value'=>$_GET['value'],
-                                                            'associated_compresa'=>false)                                                            
+                                                            'associated_compresa'=>true)                                                            
                                                             
                                                         );
                                                         $last_page = floor($countall/$items_in_page)*$items_in_page;
