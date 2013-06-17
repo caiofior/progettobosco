@@ -59,6 +59,9 @@ if (key_exists('task', $_REQUEST)) {
         case 'cartografia':
             require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'controls'.DIRECTORY_SEPARATOR.'bosco'.DIRECTORY_SEPARATOR.'cartografia.php';
         break;
+        case 'descrizione' :
+            require __DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'controls'.DIRECTORY_SEPARATOR.'bosco'.DIRECTORY_SEPARATOR.'descrizione.php';
+        break;
     }
 }
 if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {

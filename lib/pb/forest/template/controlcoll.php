@@ -31,6 +31,11 @@ if (!class_exists('Content')) {
  */
 class ControlColl extends \ContentColl {
     /**
+     * Criteria reference
+     * @var array|null
+     */
+    private $criteria;
+    /**
      * Initalizes the table
      * @param string $tablename
      */
@@ -42,6 +47,7 @@ class ControlColl extends \ContentColl {
      * @param array $criteria
      */
     public function loadAll(array $criteria = null) {
+        $this->criteria = $criteria;
         $table =$this->content->getTable();
         if(is_null($table))
             throw new \Exception('Unable to find the attribute in this form',1303041646);
@@ -54,6 +60,23 @@ class ControlColl extends \ContentColl {
             parent::loadAll();
             $GLOBALS['CACHE']->save($this->items,$dbname.'_'.$this->content->getTable()->info('name'));
         }
+    }
+    /**
+     * Return an array of content
+     * @return array[\Content]
+     */
+    public function getFirst() {
+        if (is_array($this->criteria)) {
+            $raw_items = parent::getItems();
+            $selected_item = clone $this->content;
+            foreach($raw_items as $item) {
+                if ($item->getData(key($this->criteria))==current($this->criteria))
+                    $selected_item = $item;
+            }
+            return $selected_item;
+            
+        }
+        else return parent::getFirst ();
     }
     /**
      * Customizes the selct

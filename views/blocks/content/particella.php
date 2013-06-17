@@ -27,7 +27,7 @@
                                         --><span><a data-update="content_particellaDescrizione" data-destination="forestcompartmentmaincontent" href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?id=<?php echo $a->getData('objectid');?>">Descrizione</a></span><!--
                                         --><span><a data-update="content_particellaCartografia" data-destination="forestcompartmentmaincontent" href="<?php echo $GLOBALS['BASE_URL'];?>bosco.php?id=<?php echo $a->getData('objectid');?>">Cartografia</a>
                                         </div>
-                                        <?php require __DIR__.DIRECTORY_SEPARATOR.'particellaSchedaA.php';?>
+                                        <?php require __DIR__.DIRECTORY_SEPARATOR.'particellaDescrizione.php';?>
 				<!-- /post -->	
 				</div>	
 

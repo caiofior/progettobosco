@@ -174,7 +174,9 @@ if (!class_exists('Autoloader')) {
         '..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'rdp'.DIRECTORY_SEPARATOR.'rdp.php',
         'geo'.DIRECTORY_SEPARATOR.'polygon.php',
         'geo'.DIRECTORY_SEPARATOR.'polygonitem.php',
-        'geo'.DIRECTORY_SEPARATOR.'polygoncoll.php'
+        'geo'.DIRECTORY_SEPARATOR.'polygoncoll.php',
+               
+        'mediator'.DIRECTORY_SEPARATOR.'a_description.php'
         );
         }
    }

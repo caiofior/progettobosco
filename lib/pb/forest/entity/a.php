@@ -76,6 +76,15 @@ class A extends \forest\template\Entity {
      * Sets the calculated variables
      */
     private function calculatedVariables () {
+        $this->rawData['descrizione'] = '';
+        if (
+                key_exists('proprieta', $this->data) &&
+                key_exists('cod_part', $this->data)
+                ) {
+            $partcomp = new \Zend_Db_Table('partcomp');
+            $select = $partcomp->select()->from('partcomp','abstract')->where('proprieta = ?', $this->data['proprieta'])->where('cod_part = ?', $this->data['cod_part']);
+            $this->rawData['descrizione'] = $partcomp->getAdapter()->fetchOne($select);
+        }
         /**
          * calcolo improduttivi
          */
@@ -210,4 +219,14 @@ class A extends \forest\template\Entity {
         $poligon->loadFromId($this->data['id_av']);
         return $poligon;
     }
+    /**
+     * Generates forest compartment description
+     * @return string
+     */
+    public function generateDescription () {
+        $adesc = new \forest\mediator\ADescription($this);
+        $description = $adesc->generateDescription();;
+        return $description;
+    }
+
 } 

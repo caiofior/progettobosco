@@ -83,9 +83,9 @@ function server_resource_monitoring() {
                     memory NUMERIC,
                     error TEXT
                     );');
-        $resource_log_db->exec('DELETE FROM resources WHERE datetime < DATETIME("now","-1 hour");');
+        @$resource_log_db->exec('DELETE FROM resources WHERE datetime < DATETIME("now","-1 hour");');
 
-        $resource_log_db->exec('INSERT INTO resources (
+        @$resource_log_db->exec('INSERT INTO resources (
                         url,
                         site,
                         ip,
@@ -107,7 +107,7 @@ function server_resource_monitoring() {
                 '"' . htmlentities ($error_message) . '"' .
                 ');');
         if (rand(1, 100) == 100)
-            $resource_log_db->exec('VACUUM;');
+            @$resource_log_db->exec('VACUUM;');
     }
 }
 register_shutdown_function('server_resource_monitoring');

@@ -141,7 +141,7 @@ abstract class ContentColl {
         return $this->items[0];
     }
     /**
-     * Removes a conte by its id
+     * Removes an itme by its id
      * @param type $key int
      */
     public function deleteByKey($key) {
