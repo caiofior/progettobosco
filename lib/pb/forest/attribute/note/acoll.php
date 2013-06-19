@@ -79,6 +79,8 @@ class AColl  extends \ContentColl  {
             ->where(' cod_fo = ? ',$this->form_a->getData('cod_fo'))
             ;
         }
+        if (key_exists('field', $criteria) & $criteria['field']!= '')
+            $select->where ('cod_nota = ?', $criteria['field']);
         $select->order('cod_nota');
         return $select;
     }
@@ -93,6 +95,8 @@ class AColl  extends \ContentColl  {
             ->where(' proprieta = ? ',$this->form_a->getData('proprieta'))
             ->where(' cod_fo = ? ',$this->form_a->getData('cod_fo'))
             ;
+            if (key_exists('field', $criteria) & $criteria['field']!= '')
+                $select->where ('cod_nota = ?', $criteria['field']);
             return intval($this->content->getTable()->getAdapter()->fetchOne($select));
         }
         else 

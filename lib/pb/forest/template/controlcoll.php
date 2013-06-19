@@ -79,13 +79,25 @@ class ControlColl extends \ContentColl {
         else return parent::getFirst ();
     }
     /**
-     * Customizes the selct
+     * Customizes the select
      * @param \Zend_Db_Select $select
      * @param array $criteria
      * @return \Zend_Db_Select
      */
     public function customSelect(\Zend_Db_Select $select, array $criteria) {
         return $select;
+    }
+    /**
+     * Gets the table associated with a form and field
+     * @param string $form form name
+     * @param string $field field name
+     * @return string table name
+     */
+    public static function getTable($form, $field) {
+        $form = 'schede_a';
+        $archivicoll = \forest\template\ArchiveColl::getInstance();
+        $archivicoll = $archivicoll->getAllAttributes();
+        return $archivicoll[$form][$field]['dizionario'];
     }
     
 }
