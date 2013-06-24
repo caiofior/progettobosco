@@ -61,15 +61,15 @@ class ADescription  {
         if (!$this->a instanceof \forest\entity\A )
             return $description;
         
-        $this->t['a']['pf1'] = $this->getValue('a','pf1', $this->a->getData('pf1'));
-        if ($this->t['a']['pf1'] != '') $this->t['a']['pf1'] = 'Posta '.$this->t['a']['pf1'].$this->getNote('a', 'pf1');
+        $this->t['a']['pf1'] = strtolower($this->getValue('a','pf1', $this->a->getData('pf1')));
+        if ($this->t['a']['pf1'] != '') $this->t['a']['pf1'] = 'posta '.$this->t['a']['pf1'].$this->getNote('a', 'pf1');
         else $this->addIssue('a', 'pf1', 'Posizione fisiografica non inserita');
         
         $this->t['a']['ap'] = $this->a->getData('ap');
         if ($this->t['a']['ap'] != '') $this->t['a']['ap'] = ' ad un\'altitudine prevalente di '.$this->t['a']['ap']. ' metri'.$this->getNote('a', 'ap');
         else $this->addIssue('a', 'pf1','Altitudine prevalente non inserita');
         
-        $this->t['a']['e1'] = $this->getValue('a','e1', $this->a->getData('e1'));
+        $this->t['a']['e1'] = strtolower($this->getValue('a','e1', $this->a->getData('e1')));
         if ($this->t['a']['e1'] != '') $this->t['a']['e1'] = ' esposizione prevalente '.$this->t['a']['e1'].$this->getNote('a', 'e1');
         else $this->addIssue('a', 'e1','Esposizione prevalente non inserita');
         
@@ -80,16 +80,16 @@ class ADescription  {
         $this->t['a']['o'] = '';
         switch ($this->a->getData('o')) {
            case 1 :
-                $this->t['a']['o'] = ', accidentalità debole'.$this->getNote('a', 'o');
+                $this->t['a']['o'] = ' accidentalità debole'.$this->getNote('a', 'o');
            break;
            case 2 :
-                $this->t['a']['o'] = ', accidentalità media'.$this->getNote('a', 'o');
+                $this->t['a']['o'] = ' accidentalità media'.$this->getNote('a', 'o');
            break;
            case 3:
-                $this->t['a']['o'] = ', accidentalità forte'.$this->getNote('a', 'o');
+                $this->t['a']['o'] = ' accidentalità forte'.$this->getNote('a', 'o');
            break;
            case 4:
-                $this->t['a']['o'] = ', accidentalità molto forte'.$this->getNote('a', 'o');
+                $this->t['a']['o'] = ' accidentalità molto forte'.$this->getNote('a', 'o');
            break;
            default:
                $this->addIssue('a', 'o','Ostacoli agli interventi non inseriti');
@@ -143,7 +143,7 @@ class ADescription  {
         $phitosanitary_labels = array(
             1 => ' pericolo di peggioramento della situazione fitosanitaria dovuto a',
             2 => ' danni lievi causati da',
-            3 => 'danni gravi causati da',
+            3 => ' danni gravi causati da',
             4 => ' danni molto gravi causati da'
         );
         $phitosanitary_assets = array(
@@ -198,10 +198,12 @@ class ADescription  {
                 $this->t['a']['p'] .= $particular_asset.', ';
             }
         }
-        if ($this->t['a']['p'] == '')
-            $this->t['a']['p'] = 'Assenza di fatti particlolari';
+        if ($this->t['a']['p'] == '') {
+            $this->t['a']['p'] = 'assenza di fatti particolari';
+            $this->addIssue('a', 'p2','fatti particolari non inseriti');
+        }
         else {
-            $this->t['a']['p'] = 'Fatti particlolari: '.$this->t['a']['p'];
+            $this->t['a']['p'] = 'fatti particolari: '.$this->t['a']['p'];
             $this->t['a']['p'] .= $this->getNote('a', 'p2');
         }
         
@@ -236,16 +238,55 @@ class ADescription  {
             }
         }
         if ($this->t['a']['m'] != '') {
-            $this->t['a']['m'] = 'Presenti '.$this->t['a']['m'];
+            $this->t['a']['m'] = 'presenti '.$this->t['a']['m'];
             $this->t['a']['m'] .= $this->getNote('a', 'm2');
         }
+        else
+            $this->addIssue('a', 'm2','opere e manufatti non inseriti non inseriti');
         
+        $temporary_restictions = array(
+               2 => ' eccesso di pascolo',
+               3 => ' eccesso di selvatici',
+               4 => ' contestazioni di proprietà',
+               5 => ''
+        );
+        $this->t['a']['c'] = '';
+        foreach ($temporary_restictions as $key => $temporary_restiction) {
+            if (key_exists($this->a->getData('c'.$key),$temporary_restictions)) {
+                if ($key == 5)
+                    $this->t['a']['c'] .= $this->a->getData('c'.$key).', ';
+                else
+                    $this->t['a']['c'] .= $temporary_restiction.', ';
+            }
+        }
+        if ($this->t['a']['c'] == '') {
+            $this->t['a']['c'] = 'inoltre sono assenti fattori temporaneamente condizionanti';
+            $this->addIssue('a', 'c2','fattori temporaneamente non inseriti');
+        }
+        else {
+            $this->t['a']['c'] = 'inoltre è temporaneamente condizionante la presenza di '.$this->t['a']['c'];
+            $this->t['a']['c'] .= $this->getNote('a', 'c2');
+        }
         
+        $this->t['a']['v']='';
+        if ($this->a->getData('v1') != '') {
+            $this->t['a']['v']='accessibilità buona sul '.$this->a->getData('v1').' % della particella';
+        }
+        if ($this->a->getData('v3') != '') {
+            if ($this->t['a']['v']=='')
+                $this->t['a']['v']='accesibilità ';
+            $this->t['a']['v']='insufficiente sul '.$this->a->getData('v3').' % della particella';
+        }
+        if ($this->t['a']['v'] == '')
+            $this->t['a']['v'] .= $this->getNote('a', 'v1');
+        else
+             $this->addIssue('a', 'v1','Viabilità non inserita');
+            
         $description .= <<<EOT
 Particella {$this->a->getData('proprieta')} {$this->a->getData('toponimo')} {$this->a->getData('sup_tot')} ha
 Fattori ambientali e di gestione
 {$this->t['a']['pf1']}{$this->t['a']['ap']}{$this->t['a']['e1']}{$this->t['a']['pp']}{$this->t['a']['o']}
-{$this->t['a']['a']}{$this->t['a']['r']}{$this->t['a']['f']}{$this->t['a']['p']}{$this->t['a']['m']}
+{$this->t['a']['a']}{$this->t['a']['r']}{$this->t['a']['f']}{$this->t['a']['p']}{$this->t['a']['m']}{$this->t['a']['c']}
 EOT;
                 
         
