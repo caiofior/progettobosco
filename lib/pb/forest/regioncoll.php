@@ -41,9 +41,9 @@ class RegionColl extends \ContentColl {
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
         if (key_exists('filter_forest', $criteria)) {
+                $select = $this->content->getTable()->select($this->content->getTable()->info('name'));
                 $select->setIntegrityCheck(false)
-                ->from($this->content->getTable()->info('name'),array('*','regione_codice'=>'codice'))
-                ->join('propriet','diz_regioni.codice = propriet.regione');
+                ->join('propriet','diz_regioni.codice = propriet.regione',array())->group('diz_regioni.codice');
         }
         $select->order('descriz');
         return $select;

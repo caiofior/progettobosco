@@ -7,14 +7,9 @@
 				
 			<h3>Contatti</h3>
 			
-			<p>
-			<strong>Telefono: </strong>0461 381111<br/>
-			<strong>Fax: </strong>0461 381131
-			</p>
-			
-			<p><strong>Indirizzo: </strong><br/>Piazza Nicolini Monsignor Giuseppe Placido, 6 <br/> 38123 Trento</p>
+                        <p><strong>Coordinatore: </strong><br/>Fabrizio Ferretii</p>
 				
-			<p><strong>E-mail: </strong>mpf@entecra.it</p>
+			<p><strong>E-mail: </strong><br/>fabrizio.ferretti@entecra.it</p>
 				
 		</div>
 		
@@ -26,8 +21,8 @@
 				<ul>			
                                         <li><a rel="nofollow" href="http://sito.entecra.it/	"><img src="images/cra.jpg" alt="Logo CRA"/></a></li>
 					<li><a rel="nofollow" href="http://mpf.entecra.it/">CRA-MPF</a></li>
-					<li><a rel="nofollow" href="http://www.selvicoltura.eu/">CRA-ISS</a></li>
-					<li><a rel="nofollow" href="https://github.com/caiofior/progettobosco">GitHub</a></li>
+					<li><a rel="nofollow" href="http://www.selvicoltura.eu/">CRA-SEL</a></li>
+					<li><a rel="nofollow" href="http://sito.entecra.it/portale/cra_dati_istituto.php?id=240">CRA-SFA</a></li>
 				</ul>
 			</div>					
 				
@@ -53,9 +48,11 @@
 			<h3>Dubbi e suggerimenti</h3>			
 			
 			<p>
-			<a href="<?php echo $GLOBALS['BASE_URL'];?>"><img src="https://secure.gravatar.com/avatar/2e8d2d37da66c6874a65f69879f8e590?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="40" height="40" alt="Programmazione e sviluppo" class="float-left" /></a>
-			Per dubbi e suggerimenti puoi contattare chi ha realizzato queste pagine su  </p>
+			<img src="https://secure.gravatar.com/avatar/2e8d2d37da66c6874a65f69879f8e590?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-user-420.png" width="40" height="40" alt="Programmazione e sviluppo" class="float-left" />
+			Per dubbi e suggerimenti puoi contattare chi ha realizzato queste pagine su</p>
+                        <p>
                         <a rel="nofollow" href="https://www.facebook.com/pages/Forest-Management/516686821727689" title="Facebook"><img src="images/facebook.png" alt="Facebook"></a>
+                        </p>
 			
 		</div>		
 		
@@ -69,8 +66,6 @@
 	
 			<div class="bottom-right">
 				<p>		
-					<a rel="nofollow" href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | 
-		   		<a href="http://validator.w3.org/check/referer">XHTML</a>	|			
 					<a rel="nofollow" href="<?php echo $GLOBALS['BASE_URL'];?>">Home</a> |
 					<strong><a href="#top" class="back-to-top">Vai all'inizio</a></strong>								
 				</p>

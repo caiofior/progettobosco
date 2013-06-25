@@ -163,7 +163,7 @@ class ForestColl extends \ContentColl {
         $regioncoll->loadAll(array(
             'filter_forest'=>1
         ));
-        return $regioncoll;
+         return $regioncoll;
     }
     /**
      * Set the user forest owner
