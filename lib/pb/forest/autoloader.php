@@ -175,7 +175,9 @@ if (!class_exists('Autoloader')) {
         'geo'.DIRECTORY_SEPARATOR.'polygon.php',
         'geo'.DIRECTORY_SEPARATOR.'polygonitem.php',
         'geo'.DIRECTORY_SEPARATOR.'polygoncoll.php',
-               
+        
+        'mediator'.DIRECTORY_SEPARATOR.'description.php',
+        'mediator'.DIRECTORY_SEPARATOR.'formadescription.php',
         'mediator'.DIRECTORY_SEPARATOR.'forestcompartmentdescription.php'
         );
         }
