@@ -51,8 +51,30 @@ class AColl extends \forest\template\EntityColl {
      * @return \Zend_Db_Select
      */
     protected function customSelect(\Zend_Db_Select $select,array $criteria ) {
-        $select->setIntegrityCheck(false)
-        ->from($this->content->getTable()->info('name'), array(
+        $select->setIntegrityCheck(false);
+        if ($this->forest->getRawData('guest') === true) {
+        $select->from($this->content->getTable()->info('name'), array(
+            '*',
+            'usosuolo' =>new \Zend_Db_Expr('( SELECT usosuolo.descriz FROM usosuolo 
+            LEFT JOIN schede_b ON schede_b.u=usosuolo.codice
+            WHERE schede_b.proprieta=schede_a.proprieta AND schede_b.cod_part=schede_a.cod_part)'),
+            'compresa' => new \Zend_Db_Expr(' (SELECT partcomp.compresa FROM partcomp
+             WHERE
+             partcomp.proprieta=schede_a.proprieta AND
+             partcomp.cod_part=schede_a.cod_part 
+                ) '),
+            'descrizione' => new \Zend_Db_Expr(' (SELECT partcomp.abstract FROM partcomp
+             WHERE
+             partcomp.proprieta=schede_a.proprieta AND
+             partcomp.cod_part=schede_a.cod_part 
+                ) ')
+            
+            )
+        )
+        ;    
+        }
+        else { 
+        $select->from($this->content->getTable()->info('name'), array(
             '*',
             'usosuolo' =>new \Zend_Db_Expr('( SELECT usosuolo.descriz FROM usosuolo 
             LEFT JOIN schede_b ON schede_b.u=usosuolo.codice
@@ -73,6 +95,7 @@ class AColl extends \forest\template\EntityColl {
             )
         )
         ;
+        }
         if (key_exists('usosuolo', $criteria) && $criteria['usosuolo'] != '') {
            $select->where(new \Zend_Db_Expr('(SELECT schede_b.u FROM schede_b  WHERE schede_b.proprieta=schede_a.proprieta AND schede_b.cod_part=schede_a.cod_part) = \''.$criteria['usosuolo'].'\''));
         }

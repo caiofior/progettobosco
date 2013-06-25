@@ -107,7 +107,7 @@ else if (key_exists('action', $_REQUEST)) {
         case 'manage':
             $view->forest = new forest\Forest();
             if (key_exists('id', $_REQUEST)) {
-                $view->forest->loadFromCode($_REQUEST['id']);
+                $view->forest->loadFromCode($_REQUEST['id'],$user);
             }
             $content = 'content'.DIRECTORY_SEPARATOR.'boscoManage.php';
             if (key_exists('update', $_REQUEST)) {

@@ -46,7 +46,7 @@ class Forest extends template\Entity {
      * Loads forest from its id
      * @param int $id
      */
-    public function loadFromId($id) {
+    public function loadFromId($id,$user = null) {
         parent::loadFromId($id);
         if (
                 !is_array($this->data) ||
@@ -54,18 +54,20 @@ class Forest extends template\Entity {
                 !is_numeric($this->data['codice'])
                 )
                 throw new \Exception('Forest not found',1304301109);
+        $this->calculatedVariables($user);
         $this->addForestCompartmentCount();
     }
      /**
      * Loads forest from its code
      * @param string $code
      */
-    public function loadFromCode($code) {
+    public function loadFromCode($code,$user = null) {
         $where = $this->table->getAdapter()->quoteInto('codice = ?', $code);
         $data = $this->table->fetchRow($where);
         if (is_null($data))
             throw new \Exception('Unable to find the forest',1301251056);
         $this->data = $data->toArray();
+        $this->calculatedVariables($user);
         $this->addForestCompartmentCount();
     }
     /**
@@ -108,6 +110,17 @@ class Forest extends template\Entity {
         $where = $table->getAdapter()->quoteInto('user_id = ?', $user->getData('id')).
         $table->getAdapter()->quoteInto(' AND propriet_codice = ?', $this->data['codice']);
         $table->delete($where); 
+   }
+   /**
+    * Hides sensible data for gest user
+    * @param \forest\User $user
+    */
+   private function calculatedVariables($user=null) {
+       if (! $user instanceof \User || $user->getData('id') == '') {
+           $this->rawData['guest']=true;
+           $this->data['regione']='**';
+           $this->data['descrizion']='******';
+       }
    }
     /**
      * Add the count of forest compartments
