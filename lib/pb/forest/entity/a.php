@@ -224,7 +224,7 @@ class A extends \forest\template\Entity {
      * @return string
      */
     public function generateDescription () {
-        $adesc = new \forest\mediator\ADescription($this);
+        $adesc = new \forest\mediator\ForestCompartmentDescription($this);
         $description = $adesc->generateDescription();;
         return $description;
     }

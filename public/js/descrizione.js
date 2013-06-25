@@ -7,7 +7,10 @@ $("#recreate_description").click(function () {
     $.ajax({
         type: "GET",
         url: $("#formDescrizione").attr("action"),
-        data: {'action':'generate'}
+        data: {'action':'generate'},
+        success: function(response) {
+            $("#descrizione").val(response);
+        }
     });
     return false;
 });

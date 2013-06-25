@@ -4,14 +4,16 @@
  * @copyright CRA
  * Descrizione page contoller
  */
+$response = array();
 $a = new \forest\entity\A();
 $a->loadFromId($_REQUEST['id']);
 if (key_exists('action', $_REQUEST)) {
     switch ($_REQUEST['action']) {
         case 'generate':
-            echo $a->generateDescription();
-            die('Generate');
+            $response = $a->generateDescription();
         break;
     }
 }
-die('HI');
+header('Content-type: application/json');
+echo Zend_Json::encode($response);
+exit;
