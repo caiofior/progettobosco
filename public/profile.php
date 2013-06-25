@@ -42,6 +42,18 @@ if (key_exists('profile', $_REQUEST)) {
          $formErrors->getJsonError();
      }
 }
+else if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='remove') {
+    $log->setData(array(
+            'user_id'=>$user->getData('id'),
+            'username'=>$user->getData('username'),
+            'description'=>'Cancellazione profilo',
+        ));
+    $log->insert();
+    $user->delete();
+    $GLOBALS['auth']->clearIdentity();
+    header('Location: '.$BASE_URL);
+    exit;
+}
 else if (key_exists('modify_password', $_REQUEST)) {
     if($user->checkPassword($_REQUEST['old_password']))
         $formErrors->addError(FormErrors::custom,'old_password', 'la vecchia password è errata');
