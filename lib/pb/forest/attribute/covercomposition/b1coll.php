@@ -63,6 +63,9 @@ class B1Coll  extends \ContentColl  {
             'cod_colt_descriz'=>new \Zend_Db_Expr(
                 '( SELECT CONCAT(diz_arbo.nome_itali , \' | \' , diz_arbo.nome_scien) FROM diz_arbo WHERE diz_arbo.cod_coltu=arboree.cod_coltu) '
              ),
+            'cod_colt_nome_per_trad'=>new \Zend_Db_Expr(
+                '( SELECT diz_arbo.nome_per_trad FROM diz_arbo WHERE diz_arbo.cod_coltu=arboree.cod_coltu) '
+             ),
             'cod_coper_descriz'=>new \Zend_Db_Expr(
                 '( SELECT per_arbo.descriz FROM per_arbo WHERE per_arbo.codice=arboree.cod_coper) '
              )
@@ -73,6 +76,9 @@ class B1Coll  extends \ContentColl  {
             '*',
             'cod_colt_descriz'=>new \Zend_Db_Expr(
                 '( SELECT diz_arbo.nome_itali || \' | \' || diz_arbo.nome_scien FROM diz_arbo WHERE diz_arbo.cod_coltu=arboree.cod_coltu) '
+             ),
+            'cod_colt_nome_per_trad'=>new \Zend_Db_Expr(
+                '( SELECT diz_arbo.nome_per_trad FROM diz_arbo WHERE diz_arbo.cod_coltu=arboree.cod_coltu) '
              ),
             'cod_coper_descriz'=>new \Zend_Db_Expr(
                 '( SELECT per_arbo.descriz FROM per_arbo WHERE per_arbo.codice=arboree.cod_coper) '

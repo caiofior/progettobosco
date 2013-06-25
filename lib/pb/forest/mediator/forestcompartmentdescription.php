@@ -50,12 +50,13 @@ class ForestCompartmentDescription extends \forest\mediator\FormADescription {
         if (!$this->a instanceof \forest\entity\A )
             return $description;
         
-        FormADescription::generateDescription();
+        \forest\mediator\FormADescription::generateDescription();
+        \forest\mediator\FormBDescription::generateDescription();
         
         $description .= <<<EOT
 Particella {$this->a->getData('proprieta')} {$this->a->getData('toponimo')} {$this->a->getData('sup_tot')} ha
 {$this->t['a']}
-Descrizione fisionomico-colturale
+{$this->t['b']}
 EOT;
                 
         

@@ -29,7 +29,7 @@ if (!class_exists('Content')) {
  * @author Claudio Fior <caiofior@gmail.com>
  * @copyright CRA
  */
-class FormADescription extends \forest\mediator\Description {
+abstract class FormADescription extends \forest\mediator\FormBDescription {
      /**
      * Reference to Form a Object
      * @var \forest\entity\A
@@ -46,11 +46,13 @@ class FormADescription extends \forest\mediator\Description {
      * Generates description iterating through all private methods and ading notes
      * @return string
      */
-    public function generateDescription() {
-        $relflection = new \ReflectionClass(__CLASS__);
-        foreach ($relflection->getMethods(\ReflectionMethod::IS_PRIVATE) as $method) {
-            $method->setAccessible(true);
-            $method->invoke($this);
+    protected function generateDescription() {
+        $reflection = new \ReflectionClass(__CLASS__);
+        foreach ($reflection->getMethods(\ReflectionMethod::IS_PRIVATE) as $method) {
+            if($method->class == __CLASS__) {
+                $method->setAccessible(true);
+                $method->invoke($this);
+            }
         }
        
         $this->t['a']['note'] = '';
@@ -71,7 +73,7 @@ class FormADescription extends \forest\mediator\Description {
     /**
      * Phisiographic position
      */
-    private function a_pf1() {
+    private function pf1() {
         $this->t['a']['pf1'] = strtolower($this->getValue('a','pf1', $this->a->getData('pf1')));
         if ($this->t['a']['pf1'] != '') $this->t['a']['pf1'] = 'posta '.$this->t['a']['pf1'].$this->getNote('a', 'pf1');
         else $this->addIssue('a', 'pf1', 'Posizione fisiografica non inserita');
@@ -79,7 +81,7 @@ class FormADescription extends \forest\mediator\Description {
     /**
      * Main altitude
      */
-     private function a_ap() {
+     private function ap() {
         $this->t['a']['ap'] = $this->a->getData('ap');
         if ($this->t['a']['ap'] != '') $this->t['a']['ap'] = 'ad un\'altitudine prevalente di '.$this->t['a']['ap']. ' metri'.$this->getNote('a', 'ap');
         else $this->addIssue('a', 'pf1','Altitudine prevalente non inserita');
@@ -87,7 +89,7 @@ class FormADescription extends \forest\mediator\Description {
      /**
       * Exposition
       */
-     private function a_e1() {
+     private function e1() {
                  $this->t['a']['e1'] = strtolower($this->getValue('a','e1', $this->a->getData('e1')));
         if ($this->t['a']['e1'] != '') $this->t['a']['e1'] = 'esposizione prevalente '.$this->t['a']['e1'].$this->getNote('a', 'e1');
         else $this->addIssue('a', 'e1','Esposizione prevalente non inserita');
@@ -95,7 +97,7 @@ class FormADescription extends \forest\mediator\Description {
      /**
       * Main slope
       */
-     private function a_pp () {
+     private function pp () {
         $this->t['a']['pp'] = $this->a->getData('pp');
         if ($this->t['a']['pp'] != '') {
             $this->t['a']['pp'] = 'pendenza prevalente del '.$this->t['a']['pp'].' %';
@@ -107,7 +109,7 @@ class FormADescription extends \forest\mediator\Description {
      /**
       * Obstacles
       */
-     private function a_o () {
+     private function o () {
         $this->t['a']['o'] = '';
         switch ($this->a->getData('o')) {
            case 1 :
@@ -130,7 +132,7 @@ class FormADescription extends \forest\mediator\Description {
      /**
       * Terrain assets
       */
-     private function a_a () {
+     private function a () {
         $labels = array(
                1 => 'pericolo di peggioramento della situazione di dissesto causato da',
                2 => 'alcuni contenuti problemi di dissesto legati alla presenza di',
@@ -157,7 +159,7 @@ class FormADescription extends \forest\mediator\Description {
      /**
       * Terrain water
       */
-     private function a_r () {
+     private function r () {
         $labels = array(
                   1 => 'su meno del 30% della superficie',
                   2 => 'su di una superficie compresa fra il 30 e il 60% del totale',
@@ -181,7 +183,7 @@ class FormADescription extends \forest\mediator\Description {
      /**
       * Phitosanitary conditions
       */
-     private function a_f () {
+     private function f () {
         $labels = array(
             1 => 'pericolo di peggioramento della situazione fitosanitaria dovuto a',
             2 => 'danni lievi causati da',
@@ -211,7 +213,7 @@ class FormADescription extends \forest\mediator\Description {
      /**
       * Graze
       */
-     private function a_p () {
+     private function p () {
          $phrases = array(
                2 => 'pascolo in bosco',
                3 => 'emergenze storico-naturalistiche',
@@ -256,7 +258,7 @@ class FormADescription extends \forest\mediator\Description {
      /**
       * Manufacts
       */
-     private function a_m () {
+     private function m () {
           $phrases = array(
             2  => 'strade camionabili',
             3  => 'strade trattorabili',
@@ -296,7 +298,7 @@ class FormADescription extends \forest\mediator\Description {
      /**
       * Temporary factors
       */
-     private function a_c() {
+     private function c() {
          $phrases = array(
                2 => 'eccesso di pascolo',
                3 => 'eccesso di selvatici',
@@ -324,7 +326,7 @@ class FormADescription extends \forest\mediator\Description {
      /**
       * Viability
       */
-     private function a_v () {
+     private function v () {
         $this->t['a']['v']='';
         if ($this->a->getData('v1') != '') {
             $this->t['a']['v']='accessibilità buona sul '.$this->a->getData('v1').' % della particella';
@@ -344,7 +346,7 @@ class FormADescription extends \forest\mediator\Description {
      /**
       * Improductives
       */
-     private function a_i () {
+     private function i () {
         $phrases = array (
                   3 => 'rocce',
                   4 => 'acque',
