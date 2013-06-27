@@ -21,7 +21,7 @@ $centroid = $poligon->getCentroid();
     var center = {
     lat : <?php echo $centroid->Lat();?>,
     long : <?php echo $centroid->Long();?>,
-    id_av : "<?php echo $GLOBALS['BASE_URL'].'kml.php?table=geo_particellare&id_av='.$poligon->getData('id_av'); ?>&t=<?php echo time();?>"
+    id_av : "<?php echo $GLOBALS['BASE_URL'].'kml.php?table=geo_particellare&id_av='.$poligon->getData('id_av'); ?>"
     };
 </script>
 <?php endif; ?>

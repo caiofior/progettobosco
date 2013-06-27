@@ -15,7 +15,7 @@
                                         var center = {
                                         lat : <?php echo $centroid->Lat();?>,
                                         long : <?php echo $centroid->Long();?>,
-                                        id_av : "<?php echo $GLOBALS['BASE_URL'].'kml.php?table=geo_particellare&forest_id='.$forest->getData('codice'); ?>&t=<?php echo time();?>"
+                                        id_av : "<?php echo $GLOBALS['BASE_URL'].'kml.php?table=geo_particellare&forest_id='.$forest->getData('codice'); ?>"
                                         };
                                     </script>
                                     <div id="forestcompartmentmaincontent">
