@@ -124,3 +124,27 @@ function defaultInputValue (selector,value) {
     });
     return false;
 });
+if(
+        $("#forestcompartmentmaincontent input:not([type='radio'])").length > 0 &&
+        $("#forestcompartmentmaincontent input:not([type='radio'])").css("width") != "80%"
+    ) {
+    function resetStyles() {
+        $("#forestcompartmentmaincontent input:not([type='radio'])").css({
+            width: "80%",
+            margin: "0px",
+            padding: "0px"
+        });
+        $("#forestcompartmentmaincontent input[type='radio']").css({
+            background: "transparent",
+            border: 0
+        });
+        $("#forestcompartmentmaincontent input[type='checkbox']").css({
+            background: "transparent",
+            border: 0
+        });
+    }
+    resetStyles ();
+    $(document).ajaxComplete(function() {
+        resetStyles ();
+    });
+}

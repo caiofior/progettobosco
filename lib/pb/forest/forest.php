@@ -116,7 +116,8 @@ class Forest extends template\Entity {
     * @param \forest\User $user
     */
    private function calculatedVariables($user=null) {
-       if (! $user instanceof \User || $user->getData('id') == '') {
+       $GLOBALS['firephp']->log($user);
+       if ($user instanceof \User && $user->getData('id') == '') {
            $this->rawData['guest']=true;
            $this->data['regione']='**';
            $this->data['descrizion']='******';

@@ -67,7 +67,7 @@ document.getElementById("tabrelatedcss").href="css/forma.css";
             <input readonly="readonly" id="prod_non_bosc_calcolo" name="prod_non_bosc_calcolo" value="<?php echo $a->getRawData('prod_non_bosc_calcolo');?>">
         </div>
         <div id="toponimo_container">
-            <label for="toponimo" class="double">NOme del luogo</label>
+            <label for="toponimo" class="double">Nome del luogo</label>
             <input id="toponimo" name="toponimo" value="<?php echo $a->getData('toponimo');?>">
         </div>
         <div id="pp_container">

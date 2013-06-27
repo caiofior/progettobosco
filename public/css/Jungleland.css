@@ -129,8 +129,7 @@ label {
 	color: #000000;
 }
 input, select, textarea {
-	margin: 5px 0;
-	padding: 7px 5px;
+	margin: 0px;
 	border-width: 1px;
 	border-style: solid;
   	border-color: #322014; 	
