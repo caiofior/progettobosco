@@ -79,7 +79,7 @@ class B4Coll  extends \ContentColl  {
             ->where(' cod_fo = ? ',$this->form_b4->getData('cod_fo'))
             ;
         }
-        if (key_exists('field', $criteria) & $criteria['field']!= '')
+        if (is_array ($criteria) && key_exists('field', $criteria) && $criteria['field']!= '')
             $select->where ('cod_nota = ?', $criteria['field']);
         $select->order('cod_nota');
         return $select;
@@ -95,7 +95,7 @@ class B4Coll  extends \ContentColl  {
             ->where(' proprieta = ? ',$this->form_b4->getData('proprieta'))
             ->where(' cod_fo = ? ',$this->form_b4->getData('cod_fo'))
             ;
-            if (key_exists('field', $criteria) & $criteria['field']!= '')
+            if (is_array ($criteria) && key_exists('field', $criteria) && $criteria['field']!= '')
                 $select->where ('cod_nota = ?', $criteria['field']);
             return intval($this->content->getTable()->getAdapter()->fetchOne($select));
         }

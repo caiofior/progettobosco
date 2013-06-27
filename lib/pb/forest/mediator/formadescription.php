@@ -150,6 +150,8 @@ abstract class FormADescription extends \forest\mediator\FormBDescription {
         $this->t['a']['a'] = '';
         foreach ($phrases as $key => $phrase) {
             if (key_exists($this->a->getData('a'.$key),$labels)) {
+                if (!key_exists('a'.$key, $this->t['a']))
+                    $this->t['a']['a'.$key] = '';        
                 $this->t['a']['a'.$key] .= $labels[$this->a->getData('a'.$key)];
                 $this->t['a']['a'.$key] .= ' '.$phrase.', ';
             }
@@ -175,10 +177,11 @@ abstract class FormADescription extends \forest\mediator\FormBDescription {
         foreach ($phrases as $key => $phrase) {
             if (key_exists($this->a->getData('r'.$key),$labels)) {
                 if ($this->t['a']['r'] == '')
-                    $this->t['a']['r'] = 'Possibili limitazioni allo sviluppo dell\'apparato radicale per la presenza di ';
+                    $this->t['a']['r'] = 'possibili limitazioni allo sviluppo dell\'apparato radicale per la presenza di ';
                 $this->t['a']['r'] .= $phrase.' '.$labels[$this->a->getData('r'.$key)].', ';
             }
         }
+        $this->t['a']['r'] = preg_replace('/, $/', '', $this->t['a']['r']);
      }
      /**
       * Phitosanitary conditions
@@ -200,14 +203,16 @@ abstract class FormADescription extends \forest\mediator\FormBDescription {
            8 => 'utilizzazioni',
            9 => 'movimenti di terra',
           10 => 'attività turistico-ricreative',
-          11 =>''
+          11 => $this->a->getData('f12')
         );
         $this->t['a']['f'] = '';
         foreach ($phrases as $key => $phrase) {
+            if ($phrase == '') continue;
             if (key_exists($this->a->getData('f'.$key),$labels)) {
-                $this->t['a']['f'] .= $phrase.' '.$labels[$this->a->getData('f'.$key)].', ';
+                $this->t['a']['f'] .= $labels[$this->a->getData('f'.$key)].' '.$phrase.', ';
             }
         }
+        $this->t['a']['f'] = preg_replace('/, $/', '', $this->t['a']['f']);
         $this->t['a']['f'] .= $this->getNote('a', 'f2');
      }
      /**
@@ -334,7 +339,7 @@ abstract class FormADescription extends \forest\mediator\FormBDescription {
         if ($this->a->getData('v3') != '') {
             if ($this->t['a']['v']=='')
                 $this->t['a']['v']='accesibilità ';
-            $this->t['a']['v']='insufficiente sul '.$this->a->getData('v3').' % della particella';
+            $this->t['a']['v']='accessibilità insufficiente sul '.$this->a->getData('v3').' % della particella';
         }
         if ($this->t['a']['v'] == '')
             $this->t['a']['v'] .= $this->getNote('a', 'v1');
@@ -354,7 +359,7 @@ abstract class FormADescription extends \forest\mediator\FormBDescription {
                   6 => 'viali tagliafuoco',
                   7 => ''
         );
-                 $this->t['a']['i'] = '';
+        $this->t['a']['i'] = '';
         foreach ($phrases as $key => $phrase) {
             if (key_exists($this->a->getData('i'.$key),$phrases)) {
                 if ($key == 7)
@@ -363,10 +368,12 @@ abstract class FormADescription extends \forest\mediator\FormBDescription {
                     $this->t['a']['i'] .= $phrase.', ';
             }
         }
-        if ($this->a->getData('i1') >0)
-            $this->t['a']['i'] =  'improduttivi '.$this->a->getData('i1').' ha circa per la presenza di '.$this->t['a']['i'].$this->getNote('a', 'i2');
-        else if ($this->a->getData('i2') >0) 
-            $this->t['a']['i'] =  'improduttivo '.$this->a->getData('i2').' % circa della superficie per la presenza di '.$this->t['a']['i'].$this->getNote('a', 'i2');
+        if ( $this->t['a']['i'] != '') {
+            if ($this->a->getData('i1') >0)
+                $this->t['a']['i'] =  'improduttivi '.$this->a->getData('i1').' ha circa per la presenza di '.$this->t['a']['i'].$this->getNote('a', 'i2');
+            else if ($this->a->getData('i2') >0) 
+                $this->t['a']['i'] =  'improduttivo '.$this->a->getData('i2').' % circa della superficie per la presenza di '.$this->t['a']['i'].$this->getNote('a', 'i2');
+        }
         else
             $this->addIssue('a', 'i2','Improduttivi non inseriti');
         

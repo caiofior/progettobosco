@@ -52,5 +52,7 @@ class FormBDescription extends \forest\mediator\FormB1Description {
             \forest\mediator\FormB1Description::generateDescription();
         }
         $this->t['b']='';
+        if (key_exists('b1', $this->t))
+            $this->t['b'].=$this->t['b1'];
     }
 }

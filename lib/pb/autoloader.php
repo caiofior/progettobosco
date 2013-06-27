@@ -92,7 +92,13 @@ if (!class_exists('AutoLoader')) {
             function lastQuery() {
                 if (key_exists('profiler', $GLOBALS) && key_exists('firephp', $GLOBALS)) {
                     $query_profile = $GLOBALS['profiler']->getLastQueryProfile();
-                    $GLOBALS['firephp']->log($query_profile);
+                    $params = $query_profile->getQueryParams();
+                    $querystr  = $query_profile->getQuery();
+
+                    foreach ($params as $par) {
+                        $querystr = preg_replace('/\\?/', "'" . $par . "'", $querystr, 1);
+                    }
+                    $GLOBALS['firephp']->log($query_profile,$querystr);
                 }
             }
 

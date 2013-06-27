@@ -48,7 +48,6 @@ class FormB1Description extends \forest\mediator\Description {
                 $method->invoke($this);
             }
         }
-       
         $this->t['b1']['note'] = '';
         $note = $this->b1->getData('note');
         if ($note != '')
@@ -64,7 +63,12 @@ class FormB1Description extends \forest\mediator\Description {
             $this->t['b1'] = 'Descrizione fisionomico-colturale'.PHP_EOL.$this->t['b1'];
         
     }
+    /**
+     * Creates cover composition description
+     * @return null
+     */
     private function coverComposition () {
+        $this->t['b1']['spe_arbq']='';
         $cod_coper = array(
             1=>'',
             2=>'',
@@ -87,5 +91,44 @@ class FormB1Description extends \forest\mediator\Description {
             $this->addIssue('b1', 'spe_arbq','Specie arboree non inserite');
             return;
         }
+        if (key_exists(4, $cod_coper)) {
+            if ($cod_coper[3] != '') $cod_coper[3] .= ', ';
+                $cod_coper[3] .= $cod_coper[4];
+        }
+
+        $this->t['b1']['spe_arbq'].=$cod_coper[1];
+        if (key_exists(2, $cod_coper))
+            $this->t['b1']['spe_arbq'].= ' e '.$cod_coper[2];
+        if (key_exists(3, $cod_coper))
+            $this->t['b1']['spe_arbq'].= ' e in subordine '.$cod_coper[3];
+        $this->t['b1']['spe_arbq'] .= $this->getNote('b1', 'spe_arbo');
+        
+    }
+    /**
+     * Density description
+     */
+    private function d() {
+        if ($this->b1->getData('g') <> 10) {
+            $phrases = array(
+               1 => 'densità insufficiente',
+               2 => 'densità scarsa',
+               3 => 'densità adeguata',
+               4 => 'densità eccessiva'
+            );
+            if (key_exists($this->b1->getData('d'), $phrases)) 
+                $this->t['b1']['d'] = $phrases[$this->b1->getData('d')].$this->t['b1']['spe_arbq'].$this->getNote('b1', 'd');
+            else
+                $this->addIssue('b1', 'd','Densità non inserita');
+       }
+    }
+     /**
+     * Cover grade
+     */
+    private function ce() {
+        if ($this->b1->getData('ce') != '') 
+            $this->t['b1']['ce'] = 'grado di copertura pari a '.$this->b1->getData('ce').$this->getNote('b1', 'ce');
+        else
+            $this->addIssue('b1', 'ce','Grado di copertura non inserita');
+
     }
 }

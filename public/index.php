@@ -137,6 +137,7 @@ if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
        $formErrors->addError(FormErrors::custom,'username','non trovo questo nome utente');       
     }
     $password =  $new_user->generatePassword();
+    
     if($user_unique == false) {
         $new_user->update();
         ob_start();
@@ -151,7 +152,6 @@ if (key_exists('action', $_REQUEST) && $_REQUEST['action']=='xhr_update') {
         try{
             $mail->send(new Zend_Mail_Transport_Smtp($MAIL_ADMIN_CONFIG['server'], $MAIL_ADMIN_CONFIG));
         } catch (Exception $e) {
-            $user->delete();
             $formErrors->addError(FormErrors::custom,'password','C\'è stato un problema durante la registrazione, prova in un secondo momento.');       
         }
         $formErrors->setOkMessage('Ti è stata inviata una mail con una nuova password, accedi al tuo profilo e potrai modificarla');
