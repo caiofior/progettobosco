@@ -13,6 +13,7 @@ if ($argc < 1) {
         
     }
 }
+$db = Zend_Db_Table::getDefaultAdapter();
 $config = <<<EOL
 [pgsql]     
 host = '{$DB_CONFIG['host']}'

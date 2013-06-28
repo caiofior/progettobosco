@@ -9,6 +9,7 @@ if ($argc < 5) {
     echo 'Mysql connection is required';
     exit;
 }
+$db = Zend_Db_Table::getDefaultAdapter();
 $db1 = $argv;
 echo exec ('sudo -u '.$DB_CONFIG['username'].' pg_dump --schema-only --format p --inserts '.$DB_CONFIG['dbname'].' > '.$dir.'output'.DIRECTORY_SEPARATOR.'pg_schema.sql;');
 $text = file_get_contents($dir.'output'.DIRECTORY_SEPARATOR.'pg_schema.sql');
